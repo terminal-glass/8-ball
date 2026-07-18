@@ -1,0 +1,11 @@
+curated_sources:
+  - name: nocloudgpt
+    url: https://nocloudgpt.com/models
+    required: false
+  - name: terminal-glass
+    url: https://terminal.glass/models
+    required: false
+official_sources:
+  ollama_library:
+    url: https://ollama.com/library
+    required: true

@@ -1,0 +1,19 @@
+request_timeout_seconds: 30
+maximum_retries: 4
+retry_backoff_seconds:
+  - 2
+  - 5
+  - 10
+  - 20
+request_delay_seconds: 1
+maximum_concurrency: 4
+user_agent: ycgpt-model-metadata-catalog/1.0
+include_local_models: true
+include_cloud_models: true
+include_aliases: true
+retain_small_source_snapshots: true
+retain_binary_payloads: false
+generate_installers: false
+maximum_source_snapshot_bytes: 2000000
+size_unit_policy: decimal
+# Decimal (SI) conversion: 1 KB = 1000 bytes, 1 MB = 1_000_000 bytes, 1 GB = 1_000_000_000 bytes.
