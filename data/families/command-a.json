@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "command-a",
+    "display_name": "command-a",
+    "description": "67GB · 16K context window · Text · 1 year ago",
+    "ollama_url": "https://ollama.com/library/command-a",
+    "capabilities": [
+      "tools"
+    ],
+    "pull_count_text": "220.2K",
+    "updated_text": "1 year ago 111 billion parameter model optimized for demanding enterprises that require fast, secure, and high-quality AI 111 billion parameter model optimized for demanding enterprises that require fast, secure, and high-quality AI Cancel tools 111b CLI cURL Python JavaScript Documentation Documentation ollama run command-a curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"command-a\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'command-a' ,\n    messages=[{ 'role' : 'user' , 'content' : 'Hello!' }],\n) print (response",
+    "curated_source_urls": [],
+    "curated_sources": []
+  },
+  "variants": [
+    {
+      "exact_tag": "command-a:latest",
+      "family_slug": "command-a",
+      "tag_suffix": "latest",
+      "pull_command": "ollama pull command-a:latest",
+      "run_command": "ollama run command-a:latest",
+      "parameter_label": null,
+      "parameter_count": null,
+      "download_size_text": "67GB",
+      "download_size_bytes": 67000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": true,
+      "alias_target": null,
+      "manifest_digest": "cd22bd484599",
+      "quantization": null,
+      "context_length": "16K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/command-a:latest",
+      "verified_at_utc": "2026-07-16T05:05:31Z"
+    },
+    {
+      "exact_tag": "command-a:111b",
+      "family_slug": "command-a",
+      "tag_suffix": "111b",
+      "pull_command": "ollama pull command-a:111b",
+      "run_command": "ollama run command-a:111b",
+      "parameter_label": "111b",
+      "parameter_count": 111000000000,
+      "download_size_text": "67GB",
+      "download_size_bytes": 67000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "command-a:latest",
+      "manifest_digest": "cd22bd484599",
+      "quantization": null,
+      "context_length": "16K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/command-a:111b",
+      "verified_at_utc": "2026-07-16T05:05:31Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "command-a:111b-03-2025-q4_K_M",
+      "family_slug": "command-a",
+      "tag_suffix": "111b-03-2025-q4_K_M",
+      "pull_command": "ollama pull command-a:111b-03-2025-q4_K_M",
+      "run_command": "ollama run command-a:111b-03-2025-q4_K_M",
+      "parameter_label": "111b",
+      "parameter_count": 111000000000,
+      "download_size_text": "67GB",
+      "download_size_bytes": 67000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "command-a:latest",
+      "manifest_digest": "cd22bd484599",
+      "quantization": "q4_K_M",
+      "context_length": "16K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/command-a:111b-03-2025-q4_K_M",
+      "verified_at_utc": "2026-07-16T05:05:31Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "command-a:111b-03-2025-q8_0",
+      "family_slug": "command-a",
+      "tag_suffix": "111b-03-2025-q8_0",
+      "pull_command": "ollama pull command-a:111b-03-2025-q8_0",
+      "run_command": "ollama run command-a:111b-03-2025-q8_0",
+      "parameter_label": "111b",
+      "parameter_count": 111000000000,
+      "download_size_text": "118GB",
+      "download_size_bytes": 118000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "4f32dc902f62",
+      "quantization": "q8_0",
+      "context_length": "16K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/command-a:111b-03-2025-q8_0",
+      "verified_at_utc": "2026-07-16T05:05:31Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "command-a:111b-03-2025-fp16",
+      "family_slug": "command-a",
+      "tag_suffix": "111b-03-2025-fp16",
+      "pull_command": "ollama pull command-a:111b-03-2025-fp16",
+      "run_command": "ollama run command-a:111b-03-2025-fp16",
+      "parameter_label": "111b",
+      "parameter_count": 111000000000,
+      "download_size_text": "222GB",
+      "download_size_bytes": 222000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "5d5425f22323",
+      "quantization": "fp16",
+      "context_length": "16K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/command-a:111b-03-2025-fp16",
+      "verified_at_utc": "2026-07-16T05:05:31Z",
+      "architecture_type": "dense"
+    }
+  ]
+}

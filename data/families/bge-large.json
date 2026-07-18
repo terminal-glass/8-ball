@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "bge-large",
+    "display_name": "bge-large",
+    "description": "671MB · 512 context window · Text · 1 year ago",
+    "ollama_url": "https://ollama.com/library/bge-large",
+    "capabilities": [
+      "embedding"
+    ],
+    "pull_count_text": "275K",
+    "updated_text": "1 year ago Embedding model from BAAI mapping texts to vectors",
+    "curated_source_urls": [],
+    "curated_sources": []
+  },
+  "variants": [
+    {
+      "exact_tag": "bge-large:latest",
+      "family_slug": "bge-large",
+      "tag_suffix": "latest",
+      "pull_command": "ollama pull bge-large:latest",
+      "run_command": "ollama run bge-large:latest",
+      "parameter_label": null,
+      "parameter_count": null,
+      "download_size_text": "671MB",
+      "download_size_bytes": 671000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": true,
+      "alias_target": null,
+      "manifest_digest": "b3d71c928059",
+      "quantization": null,
+      "context_length": "512",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/bge-large:latest",
+      "verified_at_utc": "2026-07-16T05:05:09Z"
+    },
+    {
+      "exact_tag": "bge-large:335m",
+      "family_slug": "bge-large",
+      "tag_suffix": "335m",
+      "pull_command": "ollama pull bge-large:335m",
+      "run_command": "ollama run bge-large:335m",
+      "parameter_label": "335m",
+      "parameter_count": 335000000,
+      "download_size_text": "671MB",
+      "download_size_bytes": 671000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "bge-large:latest",
+      "manifest_digest": "b3d71c928059",
+      "quantization": null,
+      "context_length": "512",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/bge-large:335m",
+      "verified_at_utc": "2026-07-16T05:05:09Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "bge-large:335m-en-v1.5-fp16",
+      "family_slug": "bge-large",
+      "tag_suffix": "335m-en-v1.5-fp16",
+      "pull_command": "ollama pull bge-large:335m-en-v1.5-fp16",
+      "run_command": "ollama run bge-large:335m-en-v1.5-fp16",
+      "parameter_label": "335m",
+      "parameter_count": 335000000,
+      "download_size_text": "671MB",
+      "download_size_bytes": 671000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "bge-large:latest",
+      "manifest_digest": "b3d71c928059",
+      "quantization": "fp16",
+      "context_length": "512",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/bge-large:335m-en-v1.5-fp16",
+      "verified_at_utc": "2026-07-16T05:05:09Z",
+      "architecture_type": "dense"
+    }
+  ]
+}

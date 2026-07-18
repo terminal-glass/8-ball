@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "lfm2",
+    "display_name": "lfm2",
+    "description": "14GB · 32K context window · Text · 4 months ago",
+    "ollama_url": "https://ollama.com/library/lfm2",
+    "capabilities": [
+      "tools"
+    ],
+    "pull_count_text": "1.1M",
+    "updated_text": "4 months ago LFM2 is a family of hybrid models designed for on-device deployment",
+    "curated_source_urls": [
+      "https://nocloudgpt.com/models/"
+    ],
+    "curated_sources": [
+      "nocloudgpt"
+    ]
+  },
+  "variants": [
+    {
+      "exact_tag": "lfm2:latest",
+      "family_slug": "lfm2",
+      "tag_suffix": "latest",
+      "pull_command": "ollama pull lfm2:latest",
+      "run_command": "ollama run lfm2:latest",
+      "parameter_label": null,
+      "parameter_count": null,
+      "download_size_text": "14GB",
+      "download_size_bytes": 14000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": true,
+      "alias_target": null,
+      "manifest_digest": "d6c816d74887",
+      "quantization": null,
+      "context_length": "32K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/lfm2:latest",
+      "verified_at_utc": "2026-07-16T05:07:55Z"
+    },
+    {
+      "exact_tag": "lfm2:24b",
+      "family_slug": "lfm2",
+      "tag_suffix": "24b",
+      "pull_command": "ollama pull lfm2:24b",
+      "run_command": "ollama run lfm2:24b",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "14GB",
+      "download_size_bytes": 14000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "lfm2:latest",
+      "manifest_digest": "d6c816d74887",
+      "quantization": null,
+      "context_length": "32K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/lfm2:24b",
+      "verified_at_utc": "2026-07-16T05:07:55Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "lfm2:24b-a2b",
+      "family_slug": "lfm2",
+      "tag_suffix": "24b-a2b",
+      "pull_command": "ollama pull lfm2:24b-a2b",
+      "run_command": "ollama run lfm2:24b-a2b",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "14GB",
+      "download_size_bytes": 14000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "lfm2:latest",
+      "manifest_digest": "d6c816d74887",
+      "quantization": null,
+      "context_length": "32K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/lfm2:24b-a2b",
+      "verified_at_utc": "2026-07-16T05:07:55Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "lfm2:24b-q4_K_M",
+      "family_slug": "lfm2",
+      "tag_suffix": "24b-q4_K_M",
+      "pull_command": "ollama pull lfm2:24b-q4_K_M",
+      "run_command": "ollama run lfm2:24b-q4_K_M",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "14GB",
+      "download_size_bytes": 14000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "lfm2:latest",
+      "manifest_digest": "d6c816d74887",
+      "quantization": "q4_K_M",
+      "context_length": "32K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/lfm2:24b-q4_K_M",
+      "verified_at_utc": "2026-07-16T05:07:55Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "lfm2:24b-q8_0",
+      "family_slug": "lfm2",
+      "tag_suffix": "24b-q8_0",
+      "pull_command": "ollama pull lfm2:24b-q8_0",
+      "run_command": "ollama run lfm2:24b-q8_0",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "25GB",
+      "download_size_bytes": 25000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "a6771778beca",
+      "quantization": "q8_0",
+      "context_length": "32K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/lfm2:24b-q8_0",
+      "verified_at_utc": "2026-07-16T05:07:55Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "lfm2:24b-bf16",
+      "family_slug": "lfm2",
+      "tag_suffix": "24b-bf16",
+      "pull_command": "ollama pull lfm2:24b-bf16",
+      "run_command": "ollama run lfm2:24b-bf16",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "48GB",
+      "download_size_bytes": 48000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "aa84dcec6c70",
+      "quantization": "bf16",
+      "context_length": "32K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/lfm2:24b-bf16",
+      "verified_at_utc": "2026-07-16T05:07:55Z",
+      "architecture_type": "dense"
+    }
+  ]
+}

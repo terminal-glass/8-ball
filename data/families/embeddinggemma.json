@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "embeddinggemma",
+    "display_name": "embeddinggemma",
+    "description": "622MB · 2K context window · Text · 10 months ago",
+    "ollama_url": "https://ollama.com/library/embeddinggemma",
+    "capabilities": [
+      "embedding"
+    ],
+    "pull_count_text": "1.4M",
+    "updated_text": "10 months ago EmbeddingGemma is a 300M parameter embedding model from Google",
+    "curated_source_urls": [],
+    "curated_sources": []
+  },
+  "variants": [
+    {
+      "exact_tag": "embeddinggemma:latest",
+      "family_slug": "embeddinggemma",
+      "tag_suffix": "latest",
+      "pull_command": "ollama pull embeddinggemma:latest",
+      "run_command": "ollama run embeddinggemma:latest",
+      "parameter_label": null,
+      "parameter_count": null,
+      "download_size_text": "622MB",
+      "download_size_bytes": 622000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": true,
+      "alias_target": null,
+      "manifest_digest": "85462619ee72",
+      "quantization": null,
+      "context_length": "2K",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/embeddinggemma:latest",
+      "verified_at_utc": "2026-07-16T05:06:29Z"
+    },
+    {
+      "exact_tag": "embeddinggemma:300m",
+      "family_slug": "embeddinggemma",
+      "tag_suffix": "300m",
+      "pull_command": "ollama pull embeddinggemma:300m",
+      "run_command": "ollama run embeddinggemma:300m",
+      "parameter_label": "300m",
+      "parameter_count": 300000000,
+      "download_size_text": "622MB",
+      "download_size_bytes": 622000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "embeddinggemma:latest",
+      "manifest_digest": "85462619ee72",
+      "quantization": null,
+      "context_length": "2K",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/embeddinggemma:300m",
+      "verified_at_utc": "2026-07-16T05:06:29Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "embeddinggemma:300m-qat-q4_0",
+      "family_slug": "embeddinggemma",
+      "tag_suffix": "300m-qat-q4_0",
+      "pull_command": "ollama pull embeddinggemma:300m-qat-q4_0",
+      "run_command": "ollama run embeddinggemma:300m-qat-q4_0",
+      "parameter_label": "300m",
+      "parameter_count": 300000000,
+      "download_size_text": "239MB",
+      "download_size_bytes": 239000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "101341d65c2c",
+      "quantization": "q4_0",
+      "context_length": "2K",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/embeddinggemma:300m-qat-q4_0",
+      "verified_at_utc": "2026-07-16T05:06:29Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "embeddinggemma:300m-qat-q8_0",
+      "family_slug": "embeddinggemma",
+      "tag_suffix": "300m-qat-q8_0",
+      "pull_command": "ollama pull embeddinggemma:300m-qat-q8_0",
+      "run_command": "ollama run embeddinggemma:300m-qat-q8_0",
+      "parameter_label": "300m",
+      "parameter_count": 300000000,
+      "download_size_text": "338MB",
+      "download_size_bytes": 338000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "e84a7acc2394",
+      "quantization": "q8_0",
+      "context_length": "2K",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/embeddinggemma:300m-qat-q8_0",
+      "verified_at_utc": "2026-07-16T05:06:29Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "embeddinggemma:300m-bf16",
+      "family_slug": "embeddinggemma",
+      "tag_suffix": "300m-bf16",
+      "pull_command": "ollama pull embeddinggemma:300m-bf16",
+      "run_command": "ollama run embeddinggemma:300m-bf16",
+      "parameter_label": "300m",
+      "parameter_count": 300000000,
+      "download_size_text": "622MB",
+      "download_size_bytes": 622000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "embeddinggemma:latest",
+      "manifest_digest": "85462619ee72",
+      "quantization": "bf16",
+      "context_length": "2K",
+      "input_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "source_url": "https://ollama.com/library/embeddinggemma:300m-bf16",
+      "verified_at_utc": "2026-07-16T05:06:29Z",
+      "architecture_type": "dense"
+    }
+  ]
+}

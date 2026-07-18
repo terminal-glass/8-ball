@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "devstral",
+    "display_name": "devstral",
+    "description": "14GB · 128K context window · Text · 1 year ago",
+    "ollama_url": "https://ollama.com/library/devstral",
+    "capabilities": [
+      "tools"
+    ],
+    "pull_count_text": "981.2K",
+    "updated_text": "1 year ago Devstral: the best open source model for coding agents Devstral: the best open source model for coding agents Cancel tools 24b CLI cURL Python JavaScript Documentation Documentation ollama run devstral curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"devstral\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'devstral' ,\n    messages=[{ 'role' : 'user' , 'content' : 'Hello!' }],\n) print (response",
+    "curated_source_urls": [
+      "https://nocloudgpt.com/models/"
+    ],
+    "curated_sources": [
+      "nocloudgpt"
+    ]
+  },
+  "variants": [
+    {
+      "exact_tag": "devstral:latest",
+      "family_slug": "devstral",
+      "tag_suffix": "latest",
+      "pull_command": "ollama pull devstral:latest",
+      "run_command": "ollama run devstral:latest",
+      "parameter_label": null,
+      "parameter_count": null,
+      "download_size_text": "14GB",
+      "download_size_bytes": 14000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": true,
+      "alias_target": null,
+      "manifest_digest": "9bd74193e939",
+      "quantization": null,
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/devstral:latest",
+      "verified_at_utc": "2026-07-16T05:06:09Z"
+    },
+    {
+      "exact_tag": "devstral:24b",
+      "family_slug": "devstral",
+      "tag_suffix": "24b",
+      "pull_command": "ollama pull devstral:24b",
+      "run_command": "ollama run devstral:24b",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "14GB",
+      "download_size_bytes": 14000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "devstral:latest",
+      "manifest_digest": "9bd74193e939",
+      "quantization": null,
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/devstral:24b",
+      "verified_at_utc": "2026-07-16T05:06:09Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "devstral:24b-small-2505-q4_K_M",
+      "family_slug": "devstral",
+      "tag_suffix": "24b-small-2505-q4_K_M",
+      "pull_command": "ollama pull devstral:24b-small-2505-q4_K_M",
+      "run_command": "ollama run devstral:24b-small-2505-q4_K_M",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "14GB",
+      "download_size_bytes": 14000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "devstral:latest",
+      "manifest_digest": "9bd74193e939",
+      "quantization": "q4_K_M",
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/devstral:24b-small-2505-q4_K_M",
+      "verified_at_utc": "2026-07-16T05:06:09Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "devstral:24b-small-2505-q8_0",
+      "family_slug": "devstral",
+      "tag_suffix": "24b-small-2505-q8_0",
+      "pull_command": "ollama pull devstral:24b-small-2505-q8_0",
+      "run_command": "ollama run devstral:24b-small-2505-q8_0",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "25GB",
+      "download_size_bytes": 25000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "25a16f448fb3",
+      "quantization": "q8_0",
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/devstral:24b-small-2505-q8_0",
+      "verified_at_utc": "2026-07-16T05:06:09Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "devstral:24b-small-2505-fp16",
+      "family_slug": "devstral",
+      "tag_suffix": "24b-small-2505-fp16",
+      "pull_command": "ollama pull devstral:24b-small-2505-fp16",
+      "run_command": "ollama run devstral:24b-small-2505-fp16",
+      "parameter_label": "24b",
+      "parameter_count": 24000000000,
+      "download_size_text": "47GB",
+      "download_size_bytes": 47000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "d1e6469472dc",
+      "quantization": "fp16",
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/devstral:24b-small-2505-fp16",
+      "verified_at_utc": "2026-07-16T05:06:09Z",
+      "architecture_type": "dense"
+    }
+  ]
+}
