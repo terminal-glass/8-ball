@@ -1,0 +1,5 @@
+beautifulsoup4>=4.12,<5
+jsonschema>=4.20,<5
+PyYAML>=6.0,<7
+requests>=2.31,<3
+pytest>=7.4,<9

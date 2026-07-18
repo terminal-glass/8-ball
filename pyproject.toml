@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ycgpt-models"
+version = "1.0.0"
+description = "Ollama model metadata catalog (metadata only, no model payloads)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.12,<5",
+    "jsonschema>=4.20,<5",
+    "PyYAML>=6.0,<7",
+    "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4,<9",
+]
+
+[project.scripts]
+ycgpt-refresh-catalog = "ycgpt_models.cli:refresh_catalog"
+ycgpt-validate-catalog = "ycgpt_models.cli:validate_catalog"
+ycgpt-build-indexes = "ycgpt_models.cli:build_indexes"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
