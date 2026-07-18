@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "phi4-mini",
+    "display_name": "phi4-mini",
+    "description": "2.5GB · 128K context window · Text · 1 year ago",
+    "ollama_url": "https://ollama.com/library/phi4-mini",
+    "capabilities": [
+      "tools"
+    ],
+    "pull_count_text": "1.3M",
+    "updated_text": "1 year ago Phi-4-mini brings significant enhancements in multilingual support, reasoning, and mathematics, and now, the long-awaited function calling feature is finally supported",
+    "curated_source_urls": [],
+    "curated_sources": []
+  },
+  "variants": [
+    {
+      "exact_tag": "phi4-mini:latest",
+      "family_slug": "phi4-mini",
+      "tag_suffix": "latest",
+      "pull_command": "ollama pull phi4-mini:latest",
+      "run_command": "ollama run phi4-mini:latest",
+      "parameter_label": null,
+      "parameter_count": null,
+      "download_size_text": "2.5GB",
+      "download_size_bytes": 2500000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": true,
+      "alias_target": null,
+      "manifest_digest": "78fad5d182a7",
+      "quantization": null,
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/phi4-mini:latest",
+      "verified_at_utc": "2026-07-16T05:10:41Z"
+    },
+    {
+      "exact_tag": "phi4-mini:3.8b",
+      "family_slug": "phi4-mini",
+      "tag_suffix": "3.8b",
+      "pull_command": "ollama pull phi4-mini:3.8b",
+      "run_command": "ollama run phi4-mini:3.8b",
+      "parameter_label": "3.8b",
+      "parameter_count": 3800000000,
+      "download_size_text": "2.5GB",
+      "download_size_bytes": 2500000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "phi4-mini:latest",
+      "manifest_digest": "78fad5d182a7",
+      "quantization": null,
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/phi4-mini:3.8b",
+      "verified_at_utc": "2026-07-16T05:10:41Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "phi4-mini:3.8b-q4_K_M",
+      "family_slug": "phi4-mini",
+      "tag_suffix": "3.8b-q4_K_M",
+      "pull_command": "ollama pull phi4-mini:3.8b-q4_K_M",
+      "run_command": "ollama run phi4-mini:3.8b-q4_K_M",
+      "parameter_label": "3.8b",
+      "parameter_count": 3800000000,
+      "download_size_text": "2.5GB",
+      "download_size_bytes": 2500000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": "phi4-mini:latest",
+      "manifest_digest": "78fad5d182a7",
+      "quantization": "q4_K_M",
+      "context_length": "128K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/phi4-mini:3.8b-q4_K_M",
+      "verified_at_utc": "2026-07-16T05:10:41Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "phi4-mini:3.8b-q8_0",
+      "family_slug": "phi4-mini",
+      "tag_suffix": "3.8b-q8_0",
+      "pull_command": "ollama pull phi4-mini:3.8b-q8_0",
+      "run_command": "ollama run phi4-mini:3.8b-q8_0",
+      "parameter_label": "3.8b",
+      "parameter_count": 3800000000,
+      "download_size_text": "4.1GB",
+      "download_size_bytes": 4100000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "0be8e6979181",
+      "quantization": "q8_0",
+      "context_length": "4K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/phi4-mini:3.8b-q8_0",
+      "verified_at_utc": "2026-07-16T05:10:41Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "phi4-mini:3.8b-fp16",
+      "family_slug": "phi4-mini",
+      "tag_suffix": "3.8b-fp16",
+      "pull_command": "ollama pull phi4-mini:3.8b-fp16",
+      "run_command": "ollama run phi4-mini:3.8b-fp16",
+      "parameter_label": "3.8b",
+      "parameter_count": 3800000000,
+      "download_size_text": "7.7GB",
+      "download_size_bytes": 7700000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "bd71721a0e80",
+      "quantization": "fp16",
+      "context_length": "4K",
+      "input_capabilities": [
+        "text",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/phi4-mini:3.8b-fp16",
+      "verified_at_utc": "2026-07-16T05:10:41Z",
+      "architecture_type": "dense"
+    }
+  ]
+}
