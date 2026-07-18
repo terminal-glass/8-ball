@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "nemotron3",
+    "display_name": "nemotron3",
+    "description": "28GB · 128K context window · Text, Image · 2 months ago",
+    "ollama_url": "https://ollama.com/library/nemotron3",
+    "capabilities": [
+      "vision",
+      "tools",
+      "thinking",
+      "audio"
+    ],
+    "pull_count_text": "617.8K",
+    "updated_text": "2 months ago NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that unifies video, audio, image, and text understanding to support enterprise-grade Q&A, summarization, transcription, and document intelligence workflows",
+    "curated_source_urls": [],
+    "curated_sources": []
+  },
+  "variants": [
+    {
+      "exact_tag": "nemotron3:33b",
+      "family_slug": "nemotron3",
+      "tag_suffix": "33b",
+      "pull_command": "ollama pull nemotron3:33b",
+      "run_command": "ollama run nemotron3:33b",
+      "parameter_label": "33b",
+      "parameter_count": 33000000000,
+      "download_size_text": "28GB",
+      "download_size_bytes": 28000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "f6d8b7ff496c",
+      "quantization": null,
+      "context_length": "128K",
+      "input_capabilities": [
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "source_url": "https://ollama.com/library/nemotron3:33b",
+      "verified_at_utc": "2026-07-16T05:09:45Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "nemotron3:33b-q8",
+      "family_slug": "nemotron3",
+      "tag_suffix": "33b-q8",
+      "pull_command": "ollama pull nemotron3:33b-q8",
+      "run_command": "ollama run nemotron3:33b-q8",
+      "parameter_label": "33b",
+      "parameter_count": 33000000000,
+      "download_size_text": "36GB",
+      "download_size_bytes": 36000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "74d89c84a443",
+      "quantization": "q8",
+      "context_length": "128K",
+      "input_capabilities": [
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "source_url": "https://ollama.com/library/nemotron3:33b-q8",
+      "verified_at_utc": "2026-07-16T05:09:45Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "nemotron3:33b-q4_K_M",
+      "family_slug": "nemotron3",
+      "tag_suffix": "33b-q4_K_M",
+      "pull_command": "ollama pull nemotron3:33b-q4_K_M",
+      "run_command": "ollama run nemotron3:33b-q4_K_M",
+      "parameter_label": "33b",
+      "parameter_count": 33000000000,
+      "download_size_text": "28GB",
+      "download_size_bytes": 28000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "baa676a14e13",
+      "quantization": "q4_K_M",
+      "context_length": "128K",
+      "input_capabilities": [
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "source_url": "https://ollama.com/library/nemotron3:33b-q4_K_M",
+      "verified_at_utc": "2026-07-16T05:09:45Z",
+      "architecture_type": "dense"
+    },
+    {
+      "exact_tag": "nemotron3:33b-bf16",
+      "family_slug": "nemotron3",
+      "tag_suffix": "33b-bf16",
+      "pull_command": "ollama pull nemotron3:33b-bf16",
+      "run_command": "ollama run nemotron3:33b-bf16",
+      "parameter_label": "33b",
+      "parameter_count": 33000000000,
+      "download_size_text": "66GB",
+      "download_size_bytes": 66000000000,
+      "local_available": true,
+      "cloud_available": false,
+      "cloud_only": false,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "b318f0929784",
+      "quantization": "bf16",
+      "context_length": "128K",
+      "input_capabilities": [
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "source_url": "https://ollama.com/library/nemotron3:33b-bf16",
+      "verified_at_utc": "2026-07-16T05:09:45Z",
+      "architecture_type": "dense"
+    }
+  ]
+}

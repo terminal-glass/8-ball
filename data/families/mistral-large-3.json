@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026.07.16",
+  "generated_at_utc": "2026-07-16T05:12:39Z",
+  "family": {
+    "slug": "mistral-large-3",
+    "display_name": "mistral-large-3",
+    "description": "Medium Usage · 256K context window · Text, Image · 7 months ago",
+    "ollama_url": "https://ollama.com/library/mistral-large-3",
+    "capabilities": [
+      "vision",
+      "tools",
+      "cloud"
+    ],
+    "pull_count_text": "74.8K",
+    "updated_text": "7 months ago A general-purpose multimodal mixture-of-experts model for production-grade tasks and enterprise workloads",
+    "curated_source_urls": [
+      "https://nocloudgpt.com/models/",
+      "https://terminal.glass/models/"
+    ],
+    "curated_sources": [
+      "nocloudgpt",
+      "terminal-glass"
+    ]
+  },
+  "variants": [
+    {
+      "exact_tag": "mistral-large-3:675b-cloud",
+      "family_slug": "mistral-large-3",
+      "tag_suffix": "675b-cloud",
+      "pull_command": "ollama pull mistral-large-3:675b-cloud",
+      "run_command": "ollama run mistral-large-3:675b-cloud",
+      "parameter_label": "675b",
+      "parameter_count": 675000000000,
+      "download_size_text": null,
+      "download_size_bytes": null,
+      "local_available": false,
+      "cloud_available": true,
+      "cloud_only": true,
+      "is_default_alias": false,
+      "alias_target": null,
+      "manifest_digest": "3130fd5a5a1e",
+      "quantization": null,
+      "context_length": "256K",
+      "input_capabilities": [
+        "vision",
+        "tools"
+      ],
+      "source_url": "https://ollama.com/library/mistral-large-3:675b-cloud",
+      "verified_at_utc": "2026-07-16T05:09:11Z",
+      "architecture_type": "dense"
+    }
+  ]
+}
