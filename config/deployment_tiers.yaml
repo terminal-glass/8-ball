@@ -1,0 +1,23 @@
+runtime_policies:
+  - id: interactive
+    display_name: Interactive chat
+    context_tokens: 4096
+    safety_margin: 1.15
+  - id: long_context
+    display_name: Long context
+    context_tokens: 32768
+    safety_margin: 1.25
+  - id: batch
+    display_name: Batch / offline
+    context_tokens: 8192
+    safety_margin: 1.10
+
+assessment_labels:
+  - recommended
+  - runs_with_constraints
+  - cpu_only_practical
+  - partial_gpu_offload
+  - full_gpu_fit
+  - insufficient_memory
+  - cloud_only
+  - unknown

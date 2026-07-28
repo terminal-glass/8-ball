@@ -1,89 +1,105 @@
-# Ollama Model Metadata Catalog
+# 8-BALL
 
-**This repository stores model metadata only. It does not download, cache, mirror, package, or distribute Ollama model payloads.**
+**8-BALL** is the Terminal.Glass model-intelligence catalog for publicly available Ollama models. This repository stores **metadata only**. It does not download, cache, mirror, package, or distribute model payloads.
 
-This project is the authoritative, versioned metadata catalog for Ollama model families and tags. It supports separate installer-authoring work and does **not** generate installer scripts (`8.sh`) in the initial workflow.
+8-BALL supports separate installer-authoring work. It does **not** generate customer installer scripts.
 
 ## What this repository contains
 
-- Exact Ollama tags and commands (`ollama pull`, `ollama run`)
+- Publishers, model families, models, and tags in a normalized JSON catalog
+- Exact Ollama tags plus `ollama pull` / `ollama run` commands
 - Published download sizes and normalized byte values
-- Parameter labels and architecture metadata
-- Capabilities and local/cloud availability
-- Source provenance and verification timestamps
-- Searchable metadata indexes and validation reports
+- Parameter labels, quantizations, context windows, and availability
+- Provenance/confidence metadata (`observed`, `derived`, `estimated`, `manual`, `unknown`)
+- Configurable hardware estimates and generated deployment recommendations
+- Validation and coverage reports
 
 ## What this repository does not contain
 
 - Model weights, GGUF files, layers, or blobs
-- Cached payloads or mirrored binaries
-- Installer scripts or deployment logic
-- Customer fulfillment configuration
+- Installer scripts, Passport integration, or fulfillment logic
+- Live crawling in CI (tests use offline fixtures)
 
 ## Authoritative sources
 
-1. **Official Ollama pages** (`https://ollama.com/library`) — authoritative for tags, commands, sizes, capabilities, and availability.
-2. **NoCloudGPT models page** (`https://nocloudgpt.com/models`) — curated discovery only.
-3. **Terminal.Glass models page** (`https://terminal.glass/models`) — curated discovery only.
+1. [Official Ollama library](https://ollama.com/library)
+2. [NoCloudGPT models](https://nocloudgpt.com/models) — discovery only
+3. [Terminal.Glass models](https://terminal.glass/models) — discovery only
 
-Curated sources help discover families but are not authoritative for exact tags or download sizes.
-
-## Key concepts
-
-| Concept | Description |
-| --- | --- |
-| Parameter label | Human-readable size label from Ollama (e.g. `7b`, `8x7b`) |
-| Download size | Published pull size from Ollama; separate from parameter count |
-| Local model | Variant with verified local download metadata |
-| Cloud model | Variant with cloud availability per official Ollama metadata |
-| Catalog version | `YYYY.MM.DD` metadata snapshot version, independent from installer versions |
-
-Download sizes are normalized using **decimal (SI) units**: 1 GB = 1,000,000,000 bytes.
+Curated sources help discover coverage gaps but are not authoritative for exact tags or download sizes.
 
 ## Repository layout
 
-```
-config/          Source URLs and crawl policy
-schemas/         JSON schemas for families, variants, and catalog
-src/ycgpt_models Python metadata tooling
-data/            Catalog outputs, snapshots, and reports
-indexes/         Generated metadata indexes
-scripts/         Refresh, validate, and index build scripts
-tests/           Offline tests and fixtures
+```text
+config/                 Source URLs, crawl policy, capabilities, hardware profiles
+schemas/                JSON schemas for normalized entities
+src/eight_ball/         Collection, normalization, validation, estimation, generation
+data/families/          Legacy per-family catalog input (preserved)
+data/normalized/        Normalized JSON entities
+data/generated/         Generated deployment outputs
+data/snapshots/         Small sanitized source snapshots
+reports/                Human-readable and machine-readable reports
+scripts/                Shell wrappers around the CLI
+tests/fixtures/         Offline sample fixtures
 ```
 
-## Usage
-
-### Refresh the catalog
+## Install
 
 ```bash
-bash scripts/refresh-catalog.sh
+pip install -e ".[dev]"
 ```
 
-This crawls configured sources, normalizes records, validates output, builds indexes, generates reports, and runs tests. It does **not** call `ollama pull` or `ollama run`.
+## CLI
 
-### Validate without network access
+```bash
+eight-ball collect      # Fetch and cache public source snapshots
+eight-ball normalize    # Normalize legacy/catalog inputs into data/normalized/
+eight-ball validate     # Schema and integrity validation
+eight-ball generate     # Generate deployment recommendations and exports
+eight-ball report       # Write coverage and validation reports
+eight-ball all          # Run the full offline-capable pipeline
+```
+
+Useful flags:
+
+- `--sample` — limit to the six representative fixture families
+- `--offline` — use cached snapshots only
+- `--fixture` — use `tests/fixtures` inputs
+
+Shell wrappers remain available for compatibility:
 
 ```bash
 bash scripts/validate-catalog.sh
-```
-
-### Rebuild indexes from existing catalog data
-
-```bash
+bash scripts/refresh-catalog.sh
 bash scripts/build-indexes.sh
 ```
 
-## Catalog versioning
+## Representative sample
 
-Catalog versions use `YYYY.MM.DD`. Multiple refreshes on the same day use `YYYY.MM.DD.1`, `YYYY.MM.DD.2`, etc.
+The offline sample pipeline covers:
 
-Installer versions (for future `8.sh` work) remain independent and may change for reasons unrelated to catalog refreshes (Ollama behavior, OpenWebUI, cloud providers, fulfillment requirements).
+- `tinyllama` — small local model
+- `llama3` — multiple parameter sizes
+- `codestral` — coding model
+- `llava` — vision model
+- `nomic-embed-text` — embedding model
+- `gemini-3-flash-preview` — cloud model
 
-## Indexes for future installer authoring
+```bash
+eight-ball all --fixture --offline --sample
+```
 
-Generated indexes (for example `indexes/by-download-size.json`, `indexes/local-models.json`) are metadata-only views intended for separate installer-authoring agents. This repository does not generate installers.
+## Provenance and estimates
+
+Observed values come directly from cited public sources. Derived values are calculated from observed inputs. Estimated values, such as RAM/VRAM recommendations, are heuristic and documented in `src/eight_ball/estimate/`. They are not vendor guarantees.
 
 ## Agent guidance
 
-See `AGENTS.md` and `AGENTS/cursorFileA0.md` for full requirements and prohibited actions.
+See `AGENTS.md` and `AGENTS/cursorFileA0.md` for repository boundaries and prohibited actions.
+
+## Validation
+
+```bash
+bash scripts/validate-catalog.sh
+pytest -q
+```

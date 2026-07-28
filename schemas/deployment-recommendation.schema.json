@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/deployment-recommendation.schema.json",
+  "title": "DeploymentRecommendation",
+  "type": "object",
+  "required": [
+    "id",
+    "tag_id",
+    "hardware_profile_id",
+    "runtime_policy_id",
+    "assessment",
+    "reason_codes"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "tag_id": { "type": "string" },
+    "hardware_profile_id": { "type": "string" },
+    "runtime_policy_id": { "type": "string" },
+    "assessment": {
+      "type": "string",
+      "enum": [
+        "recommended",
+        "runs_with_constraints",
+        "cpu_only_practical",
+        "partial_gpu_offload",
+        "full_gpu_fit",
+        "insufficient_memory",
+        "cloud_only",
+        "unknown"
+      ]
+    },
+    "reason_codes": { "type": "array", "items": { "type": "string" } },
+    "explanation": { "type": "string" },
+    "min_system_ram_gb_estimated": { "type": ["number", "null"] },
+    "recommended_system_ram_gb_estimated": { "type": ["number", "null"] },
+    "min_vram_gb_estimated": { "type": ["number", "null"] },
+    "recommended_vram_gb_estimated": { "type": ["number", "null"] }
+  },
+  "additionalProperties": false
+}

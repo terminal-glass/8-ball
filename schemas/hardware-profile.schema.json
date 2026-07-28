@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/hardware-profile.schema.json",
+  "title": "HardwareProfile",
+  "type": "object",
+  "required": ["id", "display_name", "system_ram_gb", "vram_gb"],
+  "properties": {
+    "id": { "type": "string" },
+    "display_name": { "type": "string" },
+    "system_ram_gb": { "type": "number", "minimum": 0 },
+    "vram_gb": { "type": "number", "minimum": 0 },
+    "cpu_only": { "type": "boolean" },
+    "notes": { "type": ["string", "null"] }
+  },
+  "additionalProperties": false
+}

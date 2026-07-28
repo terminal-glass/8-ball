@@ -1,0 +1,50 @@
+# Canonical capability vocabulary for 8-BALL normalized records.
+capabilities:
+  - id: chat
+    display_name: Chat
+    description: Conversational instruction-following
+  - id: text_generation
+    display_name: Text generation
+    description: General text completion or generation
+  - id: coding
+    display_name: Coding
+    description: Code generation or software development assistance
+  - id: reasoning
+    display_name: Reasoning
+    description: Extended reasoning or chain-of-thought behavior
+  - id: vision
+    display_name: Vision
+    description: Image or multimodal visual understanding
+  - id: embeddings
+    display_name: Embeddings
+    description: Text or multimodal embedding vectors
+  - id: tool_use
+    display_name: Tool use
+    description: Function or tool calling
+  - id: structured_output
+    display_name: Structured output
+    description: Structured or schema-constrained outputs
+  - id: multilingual
+    display_name: Multilingual
+    description: Strong multilingual coverage
+  - id: audio
+    display_name: Audio
+    description: Audio input or output
+  - id: cloud
+    display_name: Cloud
+    description: Cloud-hosted inference availability
+
+# Map legacy family capability strings and input_capabilities to canonical ids.
+legacy_capability_map:
+  embedding: embeddings
+  embeddings: embeddings
+  vision: vision
+  tools: tool_use
+  tool_use: tool_use
+  thinking: reasoning
+  cloud: cloud
+  audio: audio
+  text: text_generation
+  chat: chat
+  code: coding
+  coding: coding

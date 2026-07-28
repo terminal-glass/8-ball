@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/model.schema.json",
+  "title": "Model",
+  "type": "object",
+  "required": ["id", "ollama_name", "display_name", "publisher_id", "family_id"],
+  "properties": {
+    "id": { "type": "string" },
+    "ollama_name": { "type": "string" },
+    "display_name": { "type": "string" },
+    "publisher_id": { "type": "string" },
+    "family_id": { "type": "string" },
+    "description": { "type": ["string", "null"] },
+    "availability": {
+      "type": "string",
+      "enum": ["local", "cloud", "both", "unknown"]
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": ["true", "false", "unknown"]
+      }
+    },
+    "default_tag": { "type": ["string", "null"] },
+    "source_url": { "type": ["string", "null"], "format": "uri" },
+    "retrieved_at": { "type": ["string", "null"], "format": "date-time" },
+    "validation_status": {
+      "type": "string",
+      "enum": ["valid", "needs_review", "invalid", "unknown"]
+    }
+  },
+  "additionalProperties": false
+}

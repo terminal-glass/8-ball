@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+*.log
+.DS_Store
+
+# Generated catalog outputs (reproduced by eight-ball generate)
+data/generated/
+indexes/
+reports/*.json
+!reports/.gitkeep
+!reports/*.md
+
+# Raw collection cache (may be refreshed; keep fixtures in tests/)
+data/raw/
+
+# Do not cache model payloads
+*.gguf
+*.bin
+*.safetensors
