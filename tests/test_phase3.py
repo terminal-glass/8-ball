@@ -134,7 +134,10 @@ def test_compare_manual_review_items_are_deduplicated(tmp_path, monkeypatch):
     monkeypatch.setattr("eight_ball.report.compare.CANDIDATE_NORMALIZED_DIR", candidate_dir)
 
     normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama", "llama3"])
-    comparison = compare_catalogs(family_filter={"tinyllama", "llama3"})
+    comparison = compare_catalogs(
+        candidate_dir=candidate_dir,
+        family_filter={"tinyllama", "llama3"},
+    )
     model_items = [item for item in comparison.manual_review_items if item["kind"] == "model"]
     model_ids = [item["id"] for item in model_items]
     assert len(model_ids) == len(set(model_ids))
