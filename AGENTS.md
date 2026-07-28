@@ -26,7 +26,9 @@ Keep these directories distinguishable:
 | `data/catalog.json*` | Historical aggregate exports from the legacy pipeline | Commit as historical reference only |
 | `data/overrides/` | Reviewed manual metadata overrides | Commit when present |
 | `data/raw/` | Ephemeral collection cache | Do not commit |
-| `data/snapshots/` | Small sanitized source snapshots for repeatable parsing | Do not commit |
+| `data/snapshots/` | Large fetched pages for repeatable parsing | Do not commit |
+| `data/manifests/` | Collection manifests with checksums and provenance | Commit |
+| `data/candidate/` | Candidate normalized catalogs from live collection | Do not commit |
 | `data/normalized/` | Normalized source-derived entities | Commit |
 | `data/generated/` | Reproducible generated recommendations, exports, and indexes | Do not commit |
 | `reports/` | Human-readable reports; machine summaries are reproducible | Commit markdown optionally; JSON reports are reproducible |
@@ -36,7 +38,7 @@ Keep these directories distinguishable:
 **Source versus generated**
 
 - Treat `data/families/` and `data/normalized/` as source-derived data, not generated recommendations.
-- Treat `data/generated/`, `indexes/`, and reproducible JSON under `reports/` as generated output.
+- Treat `data/generated/`, `indexes/`, `data/candidate/`, and reproducible JSON under `reports/` as generated output.
 - Never edit generated files by hand. Regenerate them with `eight-ball generate` or `eight-ball all`.
 - Do not treat generated deployment counts or recommendations as manually maintained truth.
 
@@ -223,3 +225,11 @@ python -m pip install -e ".[dev]"
 ```
 
 Routine wrappers must not reinstall the package automatically.
+
+### Snapshot policy (Phase 2)
+
+- Raw live responses remain in `data/raw/` (gitignored).
+- Large fetched pages remain in `data/snapshots/` (gitignored) unless promoted.
+- Every collection writes a manifest under `data/manifests/` with source URL, retrieval timestamp, HTTP status, checksum, parser version, and snapshot location.
+- Compact offline fixtures under `tests/fixtures/snapshots/` are committed for deterministic parser tests.
+- Candidate normalized output lives under `data/candidate/` and must never overwrite `data/families/` or `data/normalized/`.

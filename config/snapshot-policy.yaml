@@ -1,0 +1,25 @@
+# Snapshot and manifest policy for Phase 2 collection.
+#
+# Raw live responses remain in data/raw/ (gitignored).
+# Large fetched pages remain in data/snapshots/ (gitignored) unless promoted.
+# Committed manifests in data/manifests/ record checksums and provenance.
+# Compact offline fixtures live under tests/fixtures/snapshots/.
+
+parser_version: "1.0.0"
+
+raw_cache_dir: data/raw
+ephemeral_snapshot_dir: data/snapshots
+manifest_dir: data/manifests
+fixture_snapshot_dir: tests/fixtures/snapshots
+candidate_normalized_dir: data/candidate/normalized
+
+# Do not commit raw or ephemeral snapshots above this size unless promoted as fixtures.
+maximum_ephemeral_snapshot_bytes: 2000000
+
+# Approved compact fixtures may be committed when under this limit.
+maximum_committed_fixture_bytes: 500000
+
+# Candidate collection must never overwrite legacy July 16 source files.
+protected_legacy_paths:
+  - data/families
+  - data/normalized

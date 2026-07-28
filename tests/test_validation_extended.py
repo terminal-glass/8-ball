@@ -137,7 +137,7 @@ def test_generated_recommendation_validation(tmp_path, monkeypatch):
     monkeypatch.setattr("eight_ball.validate.catalog.GENERATED_DIR", generated)
 
     with pytest.raises(ValidationError) as exc:
-        validate_catalog(catalog, include_artifacts=True)
+        validate_catalog(catalog, include_artifacts=True, generated_dir=generated)
     errors = exc.value.errors
     assert any("duplicate deployment recommendation" in error for error in errors)
     assert any("references missing tag" in error for error in errors)

@@ -8,13 +8,17 @@ from eight_ball.paths import GENERATED_DIR, NORMALIZED_DIR, REPORTS_DIR
 from eight_ball.provenance import utc_now_iso
 
 
-def coverage_summary(catalog: dict[str, Any] | None = None) -> dict[str, Any]:
+def coverage_summary(
+    catalog: dict[str, Any] | None = None,
+    *,
+    normalized_dir: Path = NORMALIZED_DIR,
+) -> dict[str, Any]:
     if catalog is None:
         catalog = {
-            "publishers": load_json(NORMALIZED_DIR / "publishers.json"),
-            "families": load_json(NORMALIZED_DIR / "families.json"),
-            "models": load_json(NORMALIZED_DIR / "models.json"),
-            "tags": load_json(NORMALIZED_DIR / "tags.json"),
+            "publishers": load_json(normalized_dir / "publishers.json"),
+            "families": load_json(normalized_dir / "families.json"),
+            "models": load_json(normalized_dir / "models.json"),
+            "tags": load_json(normalized_dir / "tags.json"),
         }
     tags = catalog["tags"]
     models = catalog["models"]
@@ -39,17 +43,19 @@ def coverage_summary(catalog: dict[str, Any] | None = None) -> dict[str, Any]:
     }
 
 
-def _deployment_count_from_generated() -> int:
-    path = GENERATED_DIR / "deployment_recommendations.json"
+def _deployment_count_from_generated(*, generated_dir: Path = GENERATED_DIR) -> int:
+    path = generated_dir / "deployment_recommendations.json"
     if not path.exists():
         return 0
     return len(load_json(path))
 
 
-def _input_identifier() -> str:
-    meta_path = NORMALIZED_DIR / "catalog-meta.json"
+def _input_identifier(*, normalized_dir: Path = NORMALIZED_DIR) -> str:
+    meta_path = normalized_dir / "catalog-meta.json"
     if meta_path.exists():
         meta = load_json(meta_path)
+        if meta.get("candidate"):
+            return "data/candidate/normalized"
         if meta.get("sample_only"):
             return "tests/fixtures/families"
         return "data/families"
@@ -60,16 +66,19 @@ def write_reports(
     *,
     validation_report: dict[str, Any] | None = None,
     generation_summary: dict[str, Any] | None = None,
+    normalized_dir: Path = NORMALIZED_DIR,
+    generated_dir: Path = GENERATED_DIR,
+    report_path: Path | None = None,
 ) -> Path:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    coverage = coverage_summary()
+    coverage = coverage_summary(normalized_dir=normalized_dir)
     deployment_count = 0
     if generation_summary and "deployment_combinations" in generation_summary:
         deployment_count = generation_summary["deployment_combinations"]
     else:
-        deployment_count = _deployment_count_from_generated()
+        deployment_count = _deployment_count_from_generated(generated_dir=generated_dir)
     coverage["deployment_combinations"] = deployment_count
-    coverage["input_identifier"] = _input_identifier()
+    coverage["input_identifier"] = _input_identifier(normalized_dir=normalized_dir)
     coverage["report_generated_at"] = utc_now_iso()
     if validation_report is not None:
         coverage["validation_valid"] = validation_report.get("valid", False)
@@ -106,6 +115,6 @@ def write_reports(
                 f"- Warnings: {validation_report.get('warning_count', 0)}",
             ]
         )
-    report_path = REPORTS_DIR / "catalog-report.md"
+    report_path = report_path or REPORTS_DIR / "catalog-report.md"
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return report_path

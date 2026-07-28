@@ -1,0 +1,149 @@
+{
+  "collection_id": "20260728T202457Z",
+  "entries": [
+    {
+      "source_url": "https://ollama.com/library/tinyllama",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "fa3da8892471fab70e7f02ab1e1745bd3ce6af91cee9d0ee40927f743ed5c2f7",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/tinyllama.html",
+      "content_bytes": 69026,
+      "snapshot_kind": "family",
+      "family_slug": "tinyllama",
+      "notes": "offline fixture tests/fixtures/snapshots/tinyllama.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/tinyllama/tags",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "38a0eaa032bb113e97ed40c4b60bccb52643d027230212433ec3c69bade712eb",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/tinyllama-tags.html",
+      "content_bytes": 139075,
+      "snapshot_kind": "family_tags",
+      "family_slug": "tinyllama",
+      "notes": "offline fixture tests/fixtures/snapshots/tinyllama-tags.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/llama3",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "18070f8551f5b2b8594939453082ce1e88d431ce31a4b13086a54b12ed24b5bc",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/llama3.html",
+      "content_bytes": 73225,
+      "snapshot_kind": "family",
+      "family_slug": "llama3",
+      "notes": "offline fixture tests/fixtures/snapshots/llama3.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/llama3/tags",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "b30f9e4b0bf566f219d41e5509ccfea60e76d78b893d1cccb7babd054a4f7c6c",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/llama3-tags.html",
+      "content_bytes": 242701,
+      "snapshot_kind": "family_tags",
+      "family_slug": "llama3",
+      "notes": "offline fixture tests/fixtures/snapshots/llama3-tags.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/codestral",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "ab5fe93d382f8fca3d2539475ce1a613a4ecb90fd491a71eec4aff2fd7ac913e",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/codestral.html",
+      "content_bytes": 70344,
+      "snapshot_kind": "family",
+      "family_slug": "codestral",
+      "notes": "offline fixture tests/fixtures/snapshots/codestral.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/codestral/tags",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "197e301fbecb7ed1f3b44fcc571173633f3045ca22a354ac20fa4a25c7d3a229",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/codestral-tags.html",
+      "content_bytes": 75931,
+      "snapshot_kind": "family_tags",
+      "family_slug": "codestral",
+      "notes": "offline fixture tests/fixtures/snapshots/codestral-tags.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/llava",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "1934fc5c3dbd35e9787d3122bb901d09a8587283800a315ef28dc03bfa03f4fd",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/llava.html",
+      "content_bytes": 85953,
+      "snapshot_kind": "family",
+      "family_slug": "llava",
+      "notes": "offline fixture tests/fixtures/snapshots/llava.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/llava/tags",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "1359de1f06e1f43729dad7deb962f4999be43a071740c1d38c87a77691b97c10",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/llava-tags.html",
+      "content_bytes": 344275,
+      "snapshot_kind": "family_tags",
+      "family_slug": "llava",
+      "notes": "offline fixture tests/fixtures/snapshots/llava-tags.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/nomic-embed-text",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "10c901a976a20cbbabe8bb3f86d37f7001811276ddbb7d547392d783e09a7b8f",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/nomic-embed-text.html",
+      "content_bytes": 72776,
+      "snapshot_kind": "family",
+      "family_slug": "nomic-embed-text",
+      "notes": "offline fixture tests/fixtures/snapshots/nomic-embed-text.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/nomic-embed-text/tags",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "4e8e538339baf8e30972327216824ca5f0aa5a66a3e4f2df86e90eb0d821fe43",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/nomic-embed-text-tags.html",
+      "content_bytes": 30153,
+      "snapshot_kind": "family_tags",
+      "family_slug": "nomic-embed-text",
+      "notes": "offline fixture tests/fixtures/snapshots/nomic-embed-text-tags.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/gemini-3-flash-preview",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "389a5422028b41fb2deb52539262b0dc92a0f51983d228e499e5b1a3c12724a1",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/gemini-3-flash-preview.html",
+      "content_bytes": 74465,
+      "snapshot_kind": "family",
+      "family_slug": "gemini-3-flash-preview",
+      "notes": "offline fixture tests/fixtures/snapshots/gemini-3-flash-preview.html"
+    },
+    {
+      "source_url": "https://ollama.com/library/gemini-3-flash-preview/tags",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "http_status": 200,
+      "checksum_sha256": "3758778c4f1e22ebb1ca9eacd434f2bca6b7e5c657714ac38603e544b40b8956",
+      "parser_version": "1.0.0",
+      "snapshot_location": "tests/fixtures/snapshots/gemini-3-flash-preview-tags.html",
+      "content_bytes": 23906,
+      "snapshot_kind": "family_tags",
+      "family_slug": "gemini-3-flash-preview",
+      "notes": "offline fixture tests/fixtures/snapshots/gemini-3-flash-preview-tags.html"
+    }
+  ]
+}

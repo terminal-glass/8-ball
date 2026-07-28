@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
@@ -78,14 +79,18 @@ def _duplicate_ids(records: list[dict[str, Any]], label: str) -> list[str]:
     return errors
 
 
-def _load_catalog(catalog: dict[str, Any] | None) -> dict[str, Any]:
+def _load_catalog(
+    catalog: dict[str, Any] | None,
+    *,
+    normalized_dir: Path = NORMALIZED_DIR,
+) -> dict[str, Any]:
     if catalog is not None:
         return catalog
     return {
-        "publishers": load_json(NORMALIZED_DIR / "publishers.json"),
-        "families": load_json(NORMALIZED_DIR / "families.json"),
-        "models": load_json(NORMALIZED_DIR / "models.json"),
-        "tags": load_json(NORMALIZED_DIR / "tags.json"),
+        "publishers": load_json(normalized_dir / "publishers.json"),
+        "families": load_json(normalized_dir / "families.json"),
+        "models": load_json(normalized_dir / "models.json"),
+        "tags": load_json(normalized_dir / "tags.json"),
     }
 
 
@@ -93,9 +98,15 @@ def validate_catalog(
     catalog: dict[str, Any] | None = None,
     *,
     include_artifacts: bool | None = None,
+    normalized_dir: Path | None = None,
+    generated_dir: Path | None = None,
+    indexes_dir: Path | None = None,
 ) -> dict[str, Any]:
+    normalized_dir = normalized_dir or NORMALIZED_DIR
+    generated_dir = generated_dir or GENERATED_DIR
+    indexes_dir = indexes_dir or INDEXES_DIR
     catalog_provided = catalog is not None
-    catalog = _load_catalog(catalog)
+    catalog = _load_catalog(catalog, normalized_dir=normalized_dir)
     if include_artifacts is None:
         include_artifacts = not catalog_provided
     errors: list[str] = []
@@ -228,9 +239,9 @@ def validate_catalog(
     generation_summary: dict[str, Any] = {"present": False, "deployment_combinations": 0}
     index_summary: dict[str, Any] = {"present": False}
     if include_artifacts:
-        generation_errors, generation_summary = _validate_generated(tag_ids)
+        generation_errors, generation_summary = _validate_generated(tag_ids, generated_dir)
         errors.extend(generation_errors)
-        index_errors, index_summary = _validate_indexes(catalog)
+        index_errors, index_summary = _validate_indexes(catalog, indexes_dir)
         errors.extend(index_errors)
 
     report = {
@@ -254,9 +265,12 @@ def validate_catalog(
     return report
 
 
-def _validate_generated(tag_ids: set[str]) -> tuple[list[str], dict[str, Any]]:
+def _validate_generated(
+    tag_ids: set[str],
+    generated_dir: Path = GENERATED_DIR,
+) -> tuple[list[str], dict[str, Any]]:
     summary: dict[str, Any] = {"present": False, "deployment_combinations": 0}
-    deployment_path = GENERATED_DIR / "deployment_recommendations.json"
+    deployment_path = generated_dir / "deployment_recommendations.json"
     if not deployment_path.exists():
         return [], summary
 
@@ -285,17 +299,61 @@ def _validate_generated(tag_ids: set[str]) -> tuple[list[str], dict[str, Any]]:
     return errors, summary
 
 
-def _validate_indexes(catalog: dict[str, Any]) -> tuple[list[str], dict[str, Any]]:
+def _validate_indexes(
+    catalog: dict[str, Any],
+    indexes_dir: Path = INDEXES_DIR,
+) -> tuple[list[str], dict[str, Any]]:
     summary: dict[str, Any] = {"present": False}
-    local_path = INDEXES_DIR / "local-tags.json"
-    if not local_path.exists():
+    by_family_path = indexes_dir / "by-family.json"
+    if not by_family_path.exists():
         return [], summary
 
     summary["present"] = True
-    local_index = load_json(local_path)
-    cloud_index = load_json(INDEXES_DIR / "cloud-tags.json")
-    ollama_ids = {t["ollama_identifier"] for t in catalog["tags"]}
+    by_family = load_json(by_family_path)
+    by_model = load_json(indexes_dir / "by-model.json")
+    local_index = load_json(indexes_dir / "local-tags.json")
+    cloud_index = load_json(indexes_dir / "cloud-tags.json")
+
+    tags = catalog["tags"]
+    models = catalog["models"]
+    ollama_ids = {t["ollama_identifier"] for t in tags}
+    model_ids = {m["id"] for m in models}
+    family_ids = {f["id"] for f in catalog["families"]}
+    model_to_family = {m["id"]: m["family_id"] for m in models}
+
     errors: list[str] = []
+
+    expected_by_model: dict[str, list[str]] = {}
+    expected_by_family: dict[str, list[str]] = {}
+    for tag in tags:
+        ollama_id = tag["ollama_identifier"]
+        model_id = tag["model_id"]
+        family_id = model_to_family.get(model_id)
+        if family_id is None:
+            continue
+        expected_by_model.setdefault(model_id, []).append(ollama_id)
+        expected_by_family.setdefault(family_id, []).append(ollama_id)
+
+    for model_id, tag_ids in by_model.items():
+        if model_id not in model_ids:
+            errors.append(f"index by-model references unknown model {model_id}")
+        for tag_id in tag_ids:
+            if tag_id not in ollama_ids:
+                errors.append(f"index by-model references unknown tag {tag_id}")
+    for model_id, expected in expected_by_model.items():
+        if sorted(by_model.get(model_id, [])) != sorted(expected):
+            errors.append(f"index by-model inconsistent for model {model_id}")
+
+    for family_id, tag_ids in by_family.items():
+        if family_id not in family_ids:
+            errors.append(f"index by-family references unknown family {family_id}")
+        for tag_id in tag_ids:
+            if tag_id not in ollama_ids:
+                errors.append(f"index by-family references unknown tag {tag_id}")
+    for family_id, expected in expected_by_family.items():
+        if sorted(by_family.get(family_id, [])) != sorted(expected):
+            errors.append(f"index by-family inconsistent for family {family_id}")
+
     for tag_id in local_index:
         if tag_id not in ollama_ids:
             errors.append(f"index local-tags references unknown tag {tag_id}")
@@ -304,11 +362,21 @@ def _validate_indexes(catalog: dict[str, Any]) -> tuple[list[str], dict[str, Any
             errors.append(f"index cloud-tags references unknown tag {tag_id}")
     expected_local = sorted(
         t["ollama_identifier"]
-        for t in catalog["tags"]
+        for t in tags
         if t.get("availability") in {"local", "both"}
+    )
+    expected_cloud = sorted(
+        t["ollama_identifier"]
+        for t in tags
+        if t.get("availability") in {"cloud", "cloud_only", "both"}
     )
     if sorted(local_index) != expected_local:
         errors.append("index local-tags inconsistent with normalized tag availability")
+    if sorted(cloud_index) != expected_cloud:
+        errors.append("index cloud-tags inconsistent with normalized tag availability")
+
+    summary["families_indexed"] = len(by_family)
+    summary["models_indexed"] = len(by_model)
     summary["local_tags"] = len(local_index)
     summary["cloud_tags"] = len(cloud_index)
     return errors, summary

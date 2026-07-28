@@ -21,11 +21,7 @@ indexes/
 # Ephemeral collection caches
 data/raw/
 data/snapshots/
+data/candidate/
 
-# Reproducible machine-readable reports
-reports/*.json
-
-# Do not cache model payloads
-*.gguf
-*.bin
-*.safetensors
+# Collection manifests: ephemeral live-run manifests; fixture manifests live under tests/fixtures/manifests/
+data/manifests/*.json
