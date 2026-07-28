@@ -34,20 +34,26 @@ Curated sources help discover coverage gaps but are not authoritative for exact 
 config/                 Source URLs, crawl policy, capabilities, hardware profiles
 schemas/                JSON schemas for normalized entities
 src/eight_ball/         Collection, normalization, validation, estimation, generation
-data/families/          Legacy per-family catalog input (preserved)
-data/normalized/        Normalized JSON entities
-data/generated/         Generated deployment outputs
-data/snapshots/         Small sanitized source snapshots
-reports/                Human-readable and machine-readable reports
+data/families/          Legacy per-family source observations (preserved)
+data/overrides/         Reviewed manual metadata overrides
+data/normalized/        Normalized source-derived entities (committed)
+data/generated/         Reproducible generated output (not committed)
+data/snapshots/         Cached sanitized snapshots (not committed)
+reports/                Human-readable reports and reproducible JSON summaries
+indexes/                Generated metadata indexes (not committed)
 scripts/                Shell wrappers around the CLI
 tests/fixtures/         Offline sample fixtures
 ```
 
 ## Install
 
+One-time development setup:
+
 ```bash
-pip install -e ".[dev]"
+python -m pip install -e ".[dev]"
 ```
+
+Routine commands use the installed `eight-ball` CLI or `python -m eight_ball` and do not reinstall the package.
 
 ## CLI
 

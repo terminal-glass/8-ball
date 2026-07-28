@@ -2,17 +2,43 @@
 
 ## Repository Purpose
 
-This repository is the authoritative Ollama model metadata catalog used to support future installer-authoring work.
+This repository is the public **8-BALL** Ollama model-intelligence and data-science catalog for Terminal.Glass.
 
-It stores metadata only.
+It collects, normalizes, validates, and reports on **public model metadata only**. It may estimate hardware compatibility and generate deployment recommendations from observed or configured inputs.
 
-It must not download, cache, mirror, package, or distribute Ollama model payloads.
+It supports separate future installer-authoring work but must never contain installer, licensing, customer-record, Passport, RecordsCore, or production deployment infrastructure.
 
 The full project requirements are defined in:
 
 `AGENTS/cursorFileA0.md`
 
 All agents must read that file before making changes.
+
+---
+
+## Repository Layout and Data Classes
+
+Keep these directories distinguishable:
+
+| Path | Role | Commit policy |
+| --- | --- | --- |
+| `data/families/` | Legacy per-family source observations preserved from prior catalog work | Commit |
+| `data/catalog.json*` | Historical aggregate exports from the legacy pipeline | Commit as historical reference only |
+| `data/overrides/` | Reviewed manual metadata overrides | Commit when present |
+| `data/raw/` | Ephemeral collection cache | Do not commit |
+| `data/snapshots/` | Small sanitized source snapshots for repeatable parsing | Do not commit |
+| `data/normalized/` | Normalized source-derived entities | Commit |
+| `data/generated/` | Reproducible generated recommendations, exports, and indexes | Do not commit |
+| `reports/` | Human-readable reports; machine summaries are reproducible | Commit markdown optionally; JSON reports are reproducible |
+| `indexes/` | Generated metadata indexes derived from normalized records | Do not commit |
+| `tests/fixtures/` | Offline fixtures for tests | Commit |
+
+**Source versus generated**
+
+- Treat `data/families/` and `data/normalized/` as source-derived data, not generated recommendations.
+- Treat `data/generated/`, `indexes/`, and reproducible JSON under `reports/` as generated output.
+- Never edit generated files by hand. Regenerate them with `eight-ball generate` or `eight-ball all`.
+- Do not treat generated deployment counts or recommendations as manually maintained truth.
 
 ---
 
@@ -46,6 +72,8 @@ Allowed work includes:
 - recording capabilities;
 - distinguishing local, cloud-capable, and cloud-only models;
 - preserving source provenance;
+- estimating hardware requirements when clearly labeled `estimated`;
+- generating deployment recommendations deterministically;
 - building metadata indexes;
 - generating validation reports;
 - building offline tests;
@@ -67,10 +95,9 @@ Agents must not:
 - mirror model binaries;
 - package model weights;
 - store Ollama model directories;
-- generate `8.sh`;
-- generate installer scripts;
+- generate `8.sh` or other installer scripts;
 - modify deployment repositories;
-- modify Passport;
+- modify Passport or RecordsCore;
 - upload artifacts to S3;
 - create customer fulfillment logic;
 - store credentials, cookies, tokens, or session data;
@@ -96,7 +123,9 @@ When official metadata cannot be verified:
 - store `null`;
 - record the unresolved field;
 - preserve the source URL;
-- do not estimate or guess.
+- do not estimate or guess observed model facts.
+
+Hardware and deployment outputs may be `estimated` or `derived` when documented and labeled.
 
 ---
 
@@ -112,24 +141,14 @@ Keep these concepts separate:
 - context length;
 - local availability;
 - cloud availability;
-- cloud-only status.
+- cloud-only status;
+- observed versus estimated hardware requirements.
 
 Do not infer download size from parameter count.
 
 Do not flatten mixture-of-experts models into misleading dense parameter counts.
 
 Preserve exact Ollama tag spelling.
-
-Preserve suffixes such as:
-
-- `instruct`;
-- `thinking`;
-- `vision`;
-- `cloud`;
-- quantization suffixes;
-- context suffixes;
-- version suffixes;
-- architecture suffixes.
 
 Only mark two tags as aliases when official metadata supports that conclusion.
 
@@ -158,8 +177,6 @@ Not allowed:
 
 Respect the configured snapshot-size limit.
 
-Do not commit unexpectedly large source responses.
-
 ---
 
 ## Versioning
@@ -176,35 +193,15 @@ For multiple refreshes on one day:
 
 `YYYY.MM.DD.2`
 
-Do not use catalog versions as `8.sh` versions.
-
-Installer versions may later change independently because of:
-
-- Ollama behavior;
-- OpenWebUI behavior;
-- NoCloudGPT behavior;
-- cloud-provider behavior;
-- fulfillment requirements;
-- fallback logic.
-
 ---
 
 ## Change Safety
 
 Keep changes narrow and intentional.
 
-Before editing:
-
-- inspect `git status`;
-- inspect the relevant files;
-- avoid unrelated formatting changes;
-- avoid mass rewrites unless explicitly requested.
-
 Do not silently delete existing catalog records.
 
 When upstream metadata disappears or changes, report it in the change report.
-
-Preserve historical visibility for removed or changed model entries.
 
 ---
 
@@ -216,4 +213,13 @@ At minimum:
 
 ```bash
 bash scripts/validate-catalog.sh
+pytest
 ```
+
+Development setup is a separate, explicit step:
+
+```bash
+python -m pip install -e ".[dev]"
+```
+
+Routine wrappers must not reinstall the package automatically.

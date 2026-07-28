@@ -14,15 +14,16 @@ venv/
 *.log
 .DS_Store
 
-# Generated catalog outputs (reproduced by eight-ball generate)
+# Reproducible generated output (regenerate with eight-ball generate)
 data/generated/
 indexes/
-reports/*.json
-!reports/.gitkeep
-!reports/*.md
 
-# Raw collection cache (may be refreshed; keep fixtures in tests/)
+# Ephemeral collection caches
 data/raw/
+data/snapshots/
+
+# Reproducible machine-readable reports
+reports/*.json
 
 # Do not cache model payloads
 *.gguf
