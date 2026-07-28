@@ -7,15 +7,18 @@ from pathlib import Path
 import requests
 
 from eight_ball.collect.manifest import (
-    PARSER_VERSION,
     CollectionManifest,
+    begin_collection,
+    is_collection_complete,
+    load_collection_state,
+    mark_collection_complete,
     record_snapshot,
     relative_repo_path,
+    save_collection_state,
     snapshot_policy,
-    utc_now_iso,
     write_manifest,
 )
-from eight_ball.config import catalog_policy, sources_config, write_json
+from eight_ball.config import catalog_policy, sources_config
 from eight_ball.paths import FIXTURES_DIR, RAW_DIR, SNAPSHOTS_DIR
 
 
@@ -49,10 +52,6 @@ def _cache_path(url: str, suffix: str = ".html") -> Path:
     return RAW_DIR / f"{digest}{suffix}"
 
 
-def _collection_id() -> str:
-    return utc_now_iso().replace(":", "").replace("-", "")
-
-
 def _resolve_snapshot_path(
     *,
     family_slug: str | None,
@@ -77,9 +76,9 @@ def _resolve_snapshot_path(
     return SNAPSHOTS_DIR / f"{family_slug}.html", None
 
 
-def _store_response(
-    *,
+def _append_entry(
     manifest: CollectionManifest,
+    *,
     source_url: str,
     content: str,
     http_status: int,
@@ -88,6 +87,7 @@ def _store_response(
     family_slug: str | None = None,
     retrieved_at: str | None = None,
     notes: str | None = None,
+    state: dict | None = None,
 ) -> None:
     cache = _cache_path(source_url)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -96,31 +96,44 @@ def _store_response(
     policy = snapshot_policy()
     max_bytes = policy.get("maximum_ephemeral_snapshot_bytes", 2_000_000)
     encoded = content.encode("utf-8")
-    if len(encoded) <= max_bytes and snapshot_path.parent != FIXTURES_DIR:
-        entry = record_snapshot(
-            source_url=source_url,
-            content=content,
-            http_status=http_status,
-            snapshot_path=snapshot_path,
-            snapshot_kind=snapshot_kind,
-            family_slug=family_slug,
-            retrieved_at=retrieved_at,
-            notes=notes,
-        )
-        manifest.entries.append(entry)
-    else:
-        manifest.entries.append(
-            record_snapshot(
-                source_url=source_url,
-                content=content,
-                http_status=http_status,
-                snapshot_path=cache,
-                snapshot_kind=snapshot_kind,
-                family_slug=family_slug,
-                retrieved_at=retrieved_at,
-                notes=notes or "stored in raw cache only; exceeds ephemeral snapshot limit",
-            )
-        )
+    target_path = snapshot_path
+    if len(encoded) > max_bytes or snapshot_path.parent == FIXTURES_DIR:
+        target_path = cache
+        notes = notes or "stored in raw cache only; exceeds ephemeral snapshot limit"
+
+    entry = record_snapshot(
+        source_url=source_url,
+        content=content,
+        http_status=http_status,
+        snapshot_path=target_path,
+        snapshot_kind=snapshot_kind,
+        family_slug=family_slug,
+        retrieved_at=retrieved_at,
+        notes=notes,
+    )
+    manifest.entries.append(entry)
+    if state is not None:
+        mark_collection_complete(state, entry)
+
+
+def _should_skip_live_fetch(
+    *,
+    resume: bool,
+    state: dict,
+    snapshot_kind: str,
+    family_slug: str | None,
+    snapshot_path: Path,
+    source_url: str,
+) -> str | None:
+    if not resume:
+        return None
+    if is_collection_complete(state, snapshot_kind=snapshot_kind, family_slug=family_slug):
+        if snapshot_path.exists():
+            return snapshot_path.read_text(encoding="utf-8")
+        cache = _cache_path(source_url)
+        if cache.exists():
+            return cache.read_text(encoding="utf-8")
+    return None
 
 
 def collect_ollama_library(
@@ -128,6 +141,10 @@ def collect_ollama_library(
     offline: bool = False,
     fixture_dir: Path | None = None,
     candidate: bool = False,
+    manifest: CollectionManifest | None = None,
+    write: bool = True,
+    resume: bool = False,
+    state: dict | None = None,
 ) -> CollectionManifest:
     url = sources_config()["official_sources"]["ollama_library"]["url"]
     snapshot_path, fixture_source = _resolve_snapshot_path(
@@ -136,73 +153,63 @@ def collect_ollama_library(
         offline=offline,
         fixture_dir=fixture_dir,
     )
-    manifest = CollectionManifest(collection_id=_collection_id())
+    manifest = manifest or begin_collection()
     SNAPSHOTS_DIR.mkdir(parents=True, exist_ok=True)
+    state = state if state is not None else load_collection_state()
 
     if offline:
-        if fixture_source and snapshot_path.exists():
-            content = snapshot_path.read_text(encoding="utf-8")
-            manifest.entries.append(
-                record_snapshot(
-                    source_url=url,
-                    content=content,
-                    http_status=200,
-                    snapshot_path=snapshot_path,
-                    snapshot_kind="library_index",
-                    retrieved_at="2026-01-01T00:00:00Z",
-                    notes=f"offline fixture {fixture_source}",
-                )
-            )
-        elif snapshot_path.exists():
-            content = snapshot_path.read_text(encoding="utf-8")
-            manifest.entries.append(
-                record_snapshot(
-                    source_url=url,
-                    content=content,
-                    http_status=200,
-                    snapshot_path=snapshot_path,
-                    snapshot_kind="library_index",
-                    notes="offline cached snapshot",
-                )
-            )
-        else:
+        if not snapshot_path.exists():
             cache = _cache_path(url)
             if not cache.exists():
                 raise CollectionError(
                     "Offline mode requires cached snapshot at "
                     f"{snapshot_path} or raw cache at {cache}"
                 )
-            content = cache.read_text(encoding="utf-8")
-            manifest.entries.append(
-                record_snapshot(
-                    source_url=url,
-                    content=content,
-                    http_status=200,
-                    snapshot_path=cache,
-                    snapshot_kind="library_index",
-                    notes="offline raw cache",
-                )
-            )
-    else:
-        response = _request(url)
-        _store_response(
-            manifest=manifest,
+            snapshot_path = cache
+        content = snapshot_path.read_text(encoding="utf-8")
+        _append_entry(
+            manifest,
             source_url=url,
-            content=response.text,
-            http_status=response.status_code,
+            content=content,
+            http_status=200,
             snapshot_path=snapshot_path,
             snapshot_kind="library_index",
+            retrieved_at="2026-01-01T00:00:00Z" if fixture_source else None,
+            notes=f"offline fixture {fixture_source}" if fixture_source else "offline cached snapshot",
+            state=state,
+        )
+    else:
+        cached = _should_skip_live_fetch(
+            resume=resume,
+            state=state,
+            snapshot_kind="library_index",
+            family_slug=None,
+            snapshot_path=snapshot_path,
+            source_url=url,
+        )
+        if cached is not None:
+            content = cached
+            http_status = 200
+            notes = "resume: reused cached snapshot"
+        else:
+            response = _request(url)
+            content = response.text
+            http_status = response.status_code
+            notes = None
+        _append_entry(
+            manifest,
+            source_url=url,
+            content=content,
+            http_status=http_status,
+            snapshot_path=snapshot_path,
+            snapshot_kind="library_index",
+            notes=notes,
+            state=state,
         )
 
-    write_manifest(manifest, candidate=candidate)
-    write_json(
-        RAW_DIR / "ollama-library-manifest.json",
-        {
-            "collection_id": manifest.collection_id,
-            "parser_version": PARSER_VERSION,
-            "entries": [entry.to_dict() for entry in manifest.entries],
-        },
-    )
+    if write:
+        write_manifest(manifest, candidate=candidate)
+        save_collection_state(state)
     return manifest
 
 
@@ -211,12 +218,15 @@ def collect_family_snapshot(
     *,
     offline: bool = False,
     fixture_dir: Path | None = None,
-    candidate: bool = False,
     manifest: CollectionManifest | None = None,
     include_tags_page: bool = True,
+    write: bool = False,
+    resume: bool = False,
+    state: dict | None = None,
 ) -> CollectionManifest:
-    manifest = manifest or CollectionManifest(collection_id=_collection_id())
+    manifest = manifest or begin_collection()
     SNAPSHOTS_DIR.mkdir(parents=True, exist_ok=True)
+    state = state if state is not None else load_collection_state()
 
     pages = [("family", f"https://ollama.com/library/{family_slug}")]
     if include_tags_page:
@@ -233,35 +243,54 @@ def collect_family_snapshot(
             if not snapshot_path.exists():
                 raise CollectionError(f"No offline snapshot for {family_slug} ({snapshot_kind})")
             content = snapshot_path.read_text(encoding="utf-8")
-            manifest.entries.append(
-                record_snapshot(
-                    source_url=url,
-                    content=content,
-                    http_status=200,
-                    snapshot_path=snapshot_path,
-                    snapshot_kind=snapshot_kind,
-                    family_slug=family_slug,
-                    retrieved_at="2026-01-01T00:00:00Z" if fixture_source else None,
-                    notes=f"offline fixture {fixture_source}" if fixture_source else "offline cached snapshot",
-                )
+            _append_entry(
+                manifest,
+                source_url=url,
+                content=content,
+                http_status=200,
+                snapshot_path=snapshot_path,
+                snapshot_kind=snapshot_kind,
+                family_slug=family_slug,
+                retrieved_at="2026-01-01T00:00:00Z" if fixture_source else None,
+                notes=f"offline fixture {fixture_source}" if fixture_source else "offline cached snapshot",
+                state=state,
             )
             continue
 
-        response = _request(url)
-        _store_response(
-            manifest=manifest,
+        cached = _should_skip_live_fetch(
+            resume=resume,
+            state=state,
+            snapshot_kind=snapshot_kind,
+            family_slug=family_slug,
+            snapshot_path=snapshot_path,
             source_url=url,
-            content=response.text,
-            http_status=response.status_code,
+        )
+        if cached is not None:
+            content = cached
+            http_status = 200
+            notes = "resume: reused cached snapshot"
+        else:
+            response = _request(url)
+            content = response.text
+            http_status = response.status_code
+            notes = None
+        _append_entry(
+            manifest,
+            source_url=url,
+            content=content,
+            http_status=http_status,
             snapshot_path=snapshot_path,
             snapshot_kind=snapshot_kind,
             family_slug=family_slug,
+            notes=notes,
+            state=state,
         )
         delay = catalog_policy().get("request_delay_seconds", 1)
         if delay:
             time.sleep(delay)
 
-    write_manifest(manifest, candidate=candidate)
+    if write:
+        save_collection_state(state)
     return manifest
 
 
@@ -271,15 +300,21 @@ def collect_families(
     offline: bool = False,
     fixture_dir: Path | None = None,
     candidate: bool = False,
+    manifest: CollectionManifest | None = None,
+    resume: bool = False,
+    state: dict | None = None,
 ) -> CollectionManifest:
-    manifest = CollectionManifest(collection_id=_collection_id())
+    manifest = manifest or begin_collection()
+    state = state if state is not None else load_collection_state()
     for slug in family_slugs:
         collect_family_snapshot(
             slug,
             offline=offline,
             fixture_dir=fixture_dir,
-            candidate=candidate,
             manifest=manifest,
+            resume=resume,
+            state=state,
         )
     write_manifest(manifest, candidate=candidate)
+    save_collection_state(state)
     return manifest

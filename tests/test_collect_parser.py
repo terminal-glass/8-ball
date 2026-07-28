@@ -74,6 +74,7 @@ def test_snapshot_checksum_is_stable():
 
 
 def test_manifest_fixture_pipeline_offline(tmp_path, monkeypatch):
+    from eight_ball.collect.manifest import begin_collection
     from eight_ball.collect.ollama import collect_families, collect_ollama_library
 
     snapshots = tmp_path / "snapshots"
@@ -87,14 +88,23 @@ def test_manifest_fixture_pipeline_offline(tmp_path, monkeypatch):
         target = snapshots / name
         target.write_text((FIXTURE_SNAPSHOTS / name).read_text(encoding="utf-8"), encoding="utf-8")
 
-    collect_ollama_library(offline=True, fixture_dir=FIXTURE_SNAPSHOTS, candidate=True)
+    manifest = begin_collection()
+    collect_ollama_library(
+        offline=True,
+        fixture_dir=FIXTURE_SNAPSHOTS.parent,
+        candidate=True,
+        manifest=manifest,
+        write=False,
+    )
     manifest = collect_families(
         ["tinyllama"],
         offline=True,
-        fixture_dir=FIXTURE_SNAPSHOTS,
+        fixture_dir=FIXTURE_SNAPSHOTS.parent,
         candidate=True,
+        manifest=manifest,
     )
     assert manifest.entries
+    assert any(entry.snapshot_kind == "library_index" for entry in manifest.entries)
     assert all(entry.checksum_sha256 for entry in manifest.entries)
     assert all(entry.parser_version for entry in manifest.entries)
 

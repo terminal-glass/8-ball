@@ -45,8 +45,8 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/public/android-chrome-icon-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/public/android-chrome-icon-512x512.png" />
 
-    
-    
+
+
 
     <link href="/public/tailwind.css?v=ca09acdfcc39b6224c865f55d0624510" rel="stylesheet" />
     <link href="/public/vendor/prism/prism.css?v=ca09acdfcc39b6224c865f55d0624510" rel="stylesheet" />
@@ -99,9 +99,9 @@
           })
       }
     </script>
-    
+
     <script>
-      
+
       function getIcon(url) {
         url = url.toLowerCase();
         if (url.includes('x.com') || url.includes('twitter.com')) return 'x';
@@ -125,7 +125,7 @@
         imgElement.alt = `${icon} icon`;
       }
     </script>
-    
+
     <script src="/public/vendor/htmx/bundle.js"></script>
   </head>
 
@@ -150,27 +150,27 @@
       }
     "
   >
-    
-        
+
+
 <header class="sticky top-0 z-40 bg-white underline-offset-4 lg:static">
   <nav class="flex w-full items-center justify-between px-6 py-[9px]">
     <a href="/" class="z-50">
       <img src="/public/ollama.png" class="w-8" alt="Ollama" />
     </a>
-    
-    
+
+
     <div class="hidden lg:flex xl:flex-1 items-center space-x-6 ml-6 mr-6 xl:mr-0 text-lg">
       <a class="hover:underline focus:underline focus:outline-none focus:ring-0" href="/search">Models</a>
       <a class="hover:underline focus:underline focus:outline-none focus:ring-0" href="/docs">Docs</a>
       <a class="hover:underline focus:underline focus:outline-none focus:ring-0" href="/pricing">Pricing</a>
     </div>
 
-    
+
     <div class="flex-grow justify-center items-center hidden lg:flex">
       <div class="relative w-full xl:max-w-[28rem]">
-        
+
 <form action="/search" autocomplete="off">
-  <div 
+  <div
     class="relative flex w-full appearance-none bg-black/5 border border-neutral-100 items-center rounded-full"
     hx-on:focusout="
       if (!this.contains(event.relatedTarget)) {
@@ -209,7 +209,7 @@
         htmx.addClass('#searchpreview', 'hidden');
         return;
       }
-      if (event.key === 'Tab') { 
+      if (event.key === 'Tab') {
         htmx.addClass('#searchpreview', 'hidden');
         return;
       }
@@ -236,15 +236,15 @@
       </div>
     </div>
 
-    
+
     <div class="hidden lg:flex xl:flex-1 items-center space-x-2 justify-end ml-6 xl:ml-0">
-      
+
         <a class="flex cursor-pointer items-center rounded-full bg-black/5 hover:bg-black/10 text-lg px-4 py-1.5 text-black whitespace-nowrap" href="/signin">Sign in</a>
         <a class="flex cursor-pointer items-center rounded-full bg-neutral-800 text-lg px-4 py-1.5 text-white hover:bg-black whitespace-nowrap focus:bg-black" href="/download">Download</a>
-      
+
     </div>
-    
-    
+
+
     <div class="lg:hidden flex items-center">
       <input type="checkbox" id="menu" class="peer hidden" />
       <label for="menu" class="z-50 cursor-pointer peer-checked:hidden block">
@@ -279,50 +279,50 @@
           />
         </svg>
       </label>
-      
+
       <div class="fixed inset-0 bg-white z-40 hidden peer-checked:block overflow-y-auto">
         <div class="flex flex-col space-y-5 pt-[5.5rem] text-3xl">
-          
 
-          
+
+
           <a class="px-6" href="/search">Models</a>
           <a class="px-6" href="/download">Download</a>
           <a class="px-6" href="/docs">Docs</a>
           <a class="px-6" href="/pricing">Pricing</a>
 
-          
-          <a href="/signin" class="block px-6">Sign in</a>
-          
 
-          
+          <a href="/signin" class="block px-6">Sign in</a>
+
+
+
         </div>
       </div>
     </div>
   </nav>
 </header>
 
-    
 
-    
+
+
 <div class="mx-auto flex w-full max-w-[52rem] flex-col px-6 py-10 md:py-24 lg:px-8">
 	<div class="flex flex-col space-y-3">
     <div class="flex items-center min-w-0">
         <div class="flex items-center min-w-0 space-x-2">
             <div class="flex items-center min-w-0">
-                
+
                 <span class="text-xl tracking-tight sm:text-[28px] min-w-0 truncate font-medium leading-normal text-black decoration-2">
                     <a  href="/library/tinyllama" title="tinyllama" class="underline-offset-[5px] hover:underline">tinyllama</a>
                 </span>
-                    
-                    
+
+
             </div>
         </div>
     </div>
-    
+
     <div class="flex flex-col space-y-2">
       <div class="flex flex-col space-y-2">
           <p class="flex space-x-5 text-[13px] font-medium text-neutral-500">
-              
+
                 <span class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-1.5 h-[14px] w-[14px] sm:h-4 sm:w-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
@@ -330,8 +330,8 @@
                   <span >5.3M</span>
                   <span class="hidden sm:flex">&nbsp;Downloads</span>
                 </span>
-              
-              
+
+
                   <span class="flex items-center" title="Jan 1, 2024 2:44 AM UTC">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-1.5 h-[14px] w-[14px] sm:h-4 sm:w-4">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
@@ -339,17 +339,17 @@
                       <span class="hidden sm:flex">Updated&nbsp;</span>
                       <span >2 years ago</span>
                   </span>
-              
+
           </p>
       </div>
       <div id="summary" class="flex flex-col space-y-2">
           <h2 id="summary-display" class="break-words text-neutral-800">
               <span id="summary-content">
-                
+
                     The TinyLlama project is an open endeavor to train a compact 1.1B Llama model on 3 trillion tokens.
-                
+
               </span>
-              
+
           </h2>
           <div id="summary-edit-form" class="hidden">
               <form
@@ -401,25 +401,25 @@
           </div>
       </div>
       <div class="flex flex-wrap gap-2">
-          
-          
-          
-          
-          
-          
-          
-          
+
+
+
+
+
+
+
+
               <span  class="inline-flex items-center rounded-md bg-[#ddf4ff] px-2 py-0.5 text-xs font-medium text-blue-600 sm:text-[13px]">1.1b</span>
-          
+
       </div>
-      
+
     </div>
   </div>
-	
+
 <section class="w-full max-w-full mt-8 mb-4 md:mt-16 md:mb-2">
-  
-    
-    
+
+
+
     <div class="overflow-hidden rounded-lg border border-neutral-200">
       <div class="min-w-full divide-y divide-gray-200">
         <div class="items-center grid bg-neutral-50 px-4 py-3 text-xs grid-cols-12 text-neutral-900">
@@ -429,46 +429,46 @@
           <p class="col-span-2 hidden md:block">Context</p>
           <p class="col-span-2 hidden md:block">Input</p>
         </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:latest" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:latest</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    2644915ede35</span> • 638MB • 2K context window  • 
+                    2644915ede35</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:latest" class="group-hover:underline">tinyllama:latest</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:latest" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -480,13 +480,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -494,46 +494,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:chat" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:chat</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    2644915ede35</span> • 638MB • 2K context window  • 
+                    2644915ede35</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:chat" class="group-hover:underline">tinyllama:chat</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:chat" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -545,13 +545,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -559,46 +559,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:v0.6" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:v0.6</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    cb4df2e70049</span> • 638MB • 2K context window  • 
+                    cb4df2e70049</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:v0.6" class="group-hover:underline">tinyllama:v0.6</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:v0.6" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -610,13 +610,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -624,46 +624,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:v1" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:v1</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    2644915ede35</span> • 638MB • 2K context window  • 
+                    2644915ede35</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:v1" class="group-hover:underline">tinyllama:v1</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:v1" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -675,13 +675,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -689,50 +689,50 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b</span>
                     </span>
-                    
+
                       <span class="ml-2 inline-flex items-center rounded-full px-2 py-px text-xs font-medium border border-blue-500 text-blue-600">latest</span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    2644915ede35</span> • 638MB • 2K context window  • 
+                    2644915ede35</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b" class="group-hover:underline">tinyllama:1.1b</a>
-                  
+
                     <span class="ml-2 inline-flex items-center rounded-full px-2 py-px text-xs font-medium border border-blue-500 text-blue-600">latest</span>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -744,13 +744,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -758,46 +758,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    2644915ede35</span> • 638MB • 2K context window  • 
+                    2644915ede35</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat" class="group-hover:underline">tinyllama:1.1b-chat</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -809,13 +809,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -823,46 +823,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q2_K" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q2_K</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    a2aa7f9e13b4</span> • 483MB • 2K context window  • 
+                    a2aa7f9e13b4</span> • 483MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q2_K" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q2_K</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q2_K" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -874,13 +874,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">483MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -888,46 +888,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q3_K_S" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q3_K_S</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    f09e5b1786e1</span> • 500MB • 2K context window  • 
+                    f09e5b1786e1</span> • 500MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q3_K_S" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q3_K_S</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q3_K_S" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -939,13 +939,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">500MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -953,46 +953,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q3_K_M" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q3_K_M</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    d36765ee7b2a</span> • 551MB • 2K context window  • 
+                    d36765ee7b2a</span> • 551MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q3_K_M" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q3_K_M</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q3_K_M" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1004,13 +1004,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">551MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1018,46 +1018,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q3_K_L" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q3_K_L</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    3dca23077eec</span> • 593MB • 2K context window  • 
+                    3dca23077eec</span> • 593MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q3_K_L" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q3_K_L</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q3_K_L" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1069,13 +1069,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">593MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1083,46 +1083,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q4_0" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_0</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    cb4df2e70049</span> • 638MB • 2K context window  • 
+                    cb4df2e70049</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q4_0" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_0</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q4_0" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1134,13 +1134,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1148,46 +1148,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q4_1" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_1</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    ad5344d40d22</span> • 702MB • 2K context window  • 
+                    ad5344d40d22</span> • 702MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q4_1" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_1</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q4_1" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1199,13 +1199,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">702MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1213,46 +1213,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q4_K_S" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_K_S</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    e68e39e22c5c</span> • 644MB • 2K context window  • 
+                    e68e39e22c5c</span> • 644MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q4_K_S" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_K_S</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q4_K_S" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1264,13 +1264,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">644MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1278,46 +1278,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q4_K_M" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_K_M</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    078cb72856ab</span> • 669MB • 2K context window  • 
+                    078cb72856ab</span> • 669MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q4_K_M" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q4_K_M</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q4_K_M" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1329,13 +1329,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">669MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1343,46 +1343,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q5_0" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_0</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    8df5040f8c77</span> • 767MB • 2K context window  • 
+                    8df5040f8c77</span> • 767MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q5_0" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_0</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q5_0" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1394,13 +1394,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">767MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1408,46 +1408,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q5_1" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_1</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    6b68a0890709</span> • 832MB • 2K context window  • 
+                    6b68a0890709</span> • 832MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q5_1" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_1</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q5_1" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1459,13 +1459,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">832MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1473,46 +1473,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q5_K_S" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_K_S</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    86ebaf63decb</span> • 767MB • 2K context window  • 
+                    86ebaf63decb</span> • 767MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q5_K_S" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_K_S</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q5_K_S" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1524,13 +1524,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">767MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1538,46 +1538,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q5_K_M" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_K_M</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    630e23132e37</span> • 783MB • 2K context window  • 
+                    630e23132e37</span> • 783MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q5_K_M" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q5_K_M</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q5_K_M" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1589,13 +1589,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">783MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1603,46 +1603,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q6_K" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q6_K</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    4ea10b64d2c3</span> • 904MB • 2K context window  • 
+                    4ea10b64d2c3</span> • 904MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q6_K" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q6_K</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q6_K" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1654,13 +1654,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">904MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1668,46 +1668,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-q8_0" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q8_0</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    b939c0e77079</span> • 1.2GB • 2K context window  • 
+                    b939c0e77079</span> • 1.2GB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-q8_0" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-q8_0</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-q8_0" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1719,13 +1719,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">1.2GB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1733,46 +1733,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v0.6-fp16" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v0.6-fp16</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    a40b38e0c72d</span> • 2.2GB • 2K context window  • 
+                    a40b38e0c72d</span> • 2.2GB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v0.6-fp16" class="group-hover:underline">tinyllama:1.1b-chat-v0.6-fp16</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v0.6-fp16" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1784,13 +1784,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2.2GB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1798,46 +1798,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q2_K" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q2_K</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    721a0fc5ae2d</span> • 483MB • 2K context window  • 
+                    721a0fc5ae2d</span> • 483MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q2_K" class="group-hover:underline">tinyllama:1.1b-chat-v1-q2_K</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q2_K" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1849,13 +1849,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">483MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1863,46 +1863,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q3_K_S" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q3_K_S</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    5042a43d653b</span> • 500MB • 2K context window  • 
+                    5042a43d653b</span> • 500MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q3_K_S" class="group-hover:underline">tinyllama:1.1b-chat-v1-q3_K_S</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q3_K_S" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1914,13 +1914,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">500MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1928,46 +1928,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q3_K_M" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q3_K_M</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    1bbb25f9a630</span> • 551MB • 2K context window  • 
+                    1bbb25f9a630</span> • 551MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q3_K_M" class="group-hover:underline">tinyllama:1.1b-chat-v1-q3_K_M</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q3_K_M" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -1979,13 +1979,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">551MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -1993,46 +1993,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q3_K_L" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q3_K_L</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    317426342de6</span> • 593MB • 2K context window  • 
+                    317426342de6</span> • 593MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q3_K_L" class="group-hover:underline">tinyllama:1.1b-chat-v1-q3_K_L</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q3_K_L" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2044,13 +2044,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">593MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2058,46 +2058,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q4_0" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_0</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    2644915ede35</span> • 638MB • 2K context window  • 
+                    2644915ede35</span> • 638MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q4_0" class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_0</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q4_0" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2109,13 +2109,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">638MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2123,46 +2123,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q4_1" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_1</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    2ce57eb5c622</span> • 702MB • 2K context window  • 
+                    2ce57eb5c622</span> • 702MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q4_1" class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_1</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q4_1" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2174,13 +2174,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">702MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2188,46 +2188,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q4_K_S" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_K_S</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    ac37fe61e9f7</span> • 644MB • 2K context window  • 
+                    ac37fe61e9f7</span> • 644MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q4_K_S" class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_K_S</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q4_K_S" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2239,13 +2239,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">644MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2253,46 +2253,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q4_K_M" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_K_M</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    86b3ca80c6c5</span> • 669MB • 2K context window  • 
+                    86b3ca80c6c5</span> • 669MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q4_K_M" class="group-hover:underline">tinyllama:1.1b-chat-v1-q4_K_M</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q4_K_M" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2304,13 +2304,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">669MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2318,46 +2318,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q5_0" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_0</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    70c60394cb6e</span> • 767MB • 2K context window  • 
+                    70c60394cb6e</span> • 767MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q5_0" class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_0</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q5_0" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2369,13 +2369,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">767MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2383,46 +2383,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q5_1" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_1</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    5efe2a172290</span> • 832MB • 2K context window  • 
+                    5efe2a172290</span> • 832MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q5_1" class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_1</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q5_1" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2434,13 +2434,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">832MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2448,46 +2448,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q5_K_S" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_K_S</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    913a3797a111</span> • 767MB • 2K context window  • 
+                    913a3797a111</span> • 767MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q5_K_S" class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_K_S</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q5_K_S" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2499,13 +2499,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">767MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2513,46 +2513,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q5_K_M" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_K_M</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    920ba90fb00e</span> • 783MB • 2K context window  • 
+                    920ba90fb00e</span> • 783MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q5_K_M" class="group-hover:underline">tinyllama:1.1b-chat-v1-q5_K_M</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q5_K_M" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2564,13 +2564,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">783MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2578,46 +2578,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q6_K" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q6_K</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    d53bb0758e48</span> • 904MB • 2K context window  • 
+                    d53bb0758e48</span> • 904MB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q6_K" class="group-hover:underline">tinyllama:1.1b-chat-v1-q6_K</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q6_K" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2629,13 +2629,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">904MB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2643,46 +2643,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-q8_0" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-q8_0</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    3746473cdb1e</span> • 1.2GB • 2K context window  • 
+                    3746473cdb1e</span> • 1.2GB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-q8_0" class="group-hover:underline">tinyllama:1.1b-chat-v1-q8_0</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-q8_0" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2694,13 +2694,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">1.2GB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2708,46 +2708,46 @@
               </div>
             </div>
           </div>
-        
+
           <div class="group px-4 py-3">
-            
+
             <a href="/library/tinyllama:1.1b-chat-v1-fp16" class="md:hidden flex flex-col space-y-[6px] group">
               <div class="flex items-center font-medium">
                 <div class="flex items-center justify-between w-full">
                   <div>
                     <span class="group-hover:underline">tinyllama:1.1b-chat-v1-fp16</span>
                     </span>
-                    
-                    
-                  </div>              
-                  
+
+
+                  </div>
+
                 </div>
               </div>
               <div class="flex flex-col text-neutral-500 text-[13px]">
                 <span>
                   <span class="font-mono">
-                    71c2f9b69b52</span> • 2.2GB • 2K context window  • 
+                    71c2f9b69b52</span> • 2.2GB • 2K context window  •
                   <span class="hidden sm:inline">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </span>
                 </span>
                   <div class="flex sm:hidden">
-                    Text input • 
+                    Text input •
                     2 years ago
                   </div>
                 </span>
               </div>
             </a>
-            
+
             <div class="hidden md:flex flex-col space-y-[6px]">
               <div class="grid grid-cols-12 items-center">
                 <span class="flex items-center font-medium col-span-6 group text-sm">
                   <a href="/library/tinyllama:1.1b-chat-v1-fp16" class="group-hover:underline">tinyllama:1.1b-chat-v1-fp16</a>
-                  
-                  
+
+
                   <input class="command hidden" value="tinyllama:1.1b-chat-v1-fp16" />
-                  <button 
+                  <button
                     class="hidden group-hover:inline-flex ml-1.5 text-neutral-500 hover:text-black items-center"
                     onclick="copyToClipboard(this)"
                   >
@@ -2759,13 +2759,13 @@
                     </svg>
                   </button>
                 </span>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2.2GB</p>
-                
+
                 <p class="col-span-2 text-neutral-500 text-[13px]">2K</p>
                 <div class="col-span-2 text-neutral-500 text-[13px] ">
                   Text
-                  
+
                 </div>
               </div>
               <div class="flex text-neutral-500 text-xs items-center">
@@ -2773,17 +2773,17 @@
               </div>
             </div>
           </div>
-        
+
       </div>
     </div>
-  
+
 </section>
 
 </div>
 
 
-    
-      
+
+
 <footer class="mt-auto">
 
   <div class="underline-offset-4 hidden md:block">
@@ -2847,9 +2847,9 @@
 
 </footer>
 
-    
 
-    
+
+
     <span class="hidden" id="end_of_template"></span>
   </body>
 </html>

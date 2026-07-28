@@ -2,12 +2,23 @@ from __future__ import annotations
 
 import argparse
 import sys
+from pathlib import Path
 
-from eight_ball.collect.manifest import utc_now_iso
+from eight_ball.collect.manifest import (
+    begin_collection,
+    load_collection_state,
+    save_collection_state,
+    utc_now_iso,
+    write_manifest,
+)
 from eight_ball.collect.ollama import collect_families, collect_ollama_library
+from eight_ball.collect.parse_ollama import parse_library_index
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.normalize.catalog import normalize_legacy_catalog
-from eight_ball.normalize.ollama_web import normalize_ollama_snapshots
+from eight_ball.normalize.ollama_web import (
+    normalize_ollama_from_manifest,
+    normalize_ollama_snapshots,
+)
 from eight_ball.paths import (
     CANDIDATE_GENERATED_DIR,
     CANDIDATE_INDEXES_DIR,
@@ -58,14 +69,53 @@ def _add_common_args(parser: argparse.ArgumentParser) -> None:
         default="",
         help="Comma-separated family slugs for Ollama collection/normalization.",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume live collection using cached snapshots and collection state.",
+    )
+    parser.add_argument(
+        "--manifest",
+        default="",
+        help="Path to a collection manifest for manifest-driven normalization.",
+    )
 
 
-def _family_slugs(args: argparse.Namespace) -> list[str]:
+def _family_slugs_from_args(args: argparse.Namespace) -> list[str]:
     if args.families:
         return [slug.strip() for slug in args.families.split(",") if slug.strip()]
     if args.sample:
         return list(SAMPLE_FAMILIES)
     return []
+
+
+def _discover_families_from_index(*, fixture: bool, offline: bool) -> list[str]:
+    if fixture:
+        index_path = FIXTURES_DIR / "snapshots" / "ollama-library-index.html"
+    elif offline:
+        index_path = SNAPSHOTS_DIR / "ollama-library-index.html"
+    else:
+        return []
+    if not index_path.exists():
+        return []
+    html = index_path.read_text(encoding="utf-8")
+    return [entry.slug for entry in parse_library_index(html)]
+
+
+def _require_ollama_family_selection(args: argparse.Namespace) -> list[str]:
+    slugs = _family_slugs_from_args(args)
+    if slugs:
+        return slugs
+    discovered = _discover_families_from_index(fixture=args.fixture, offline=args.offline)
+    if discovered:
+        return discovered
+    print(
+        "Ollama normalization requires an explicit family selection. "
+        "Pass --sample, --families <slug,...>, or collect with --offline/--fixture "
+        "so the library index is available for discovery.",
+        file=sys.stderr,
+    )
+    raise SystemExit(2)
 
 
 def _catalog_paths(args: argparse.Namespace) -> tuple:
@@ -87,18 +137,36 @@ def _stage_fixture_snapshots(family_slugs: list[str]) -> None:
             target.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
 
 
+def _resolve_manifest_path(args: argparse.Namespace) -> Path | None:
+    if args.manifest:
+        return Path(args.manifest)
+    if args.fixture:
+        fixture_manifest = FIXTURES_DIR / "manifests" / "six-family-sample.json"
+        if fixture_manifest.exists():
+            return fixture_manifest
+    return None
+
+
 def cmd_collect(args: argparse.Namespace) -> int:
     fixture_dir = FIXTURES_DIR if args.fixture else None
-    family_slugs = _family_slugs(args)
+    family_slugs = _family_slugs_from_args(args)
     offline = args.offline or args.fixture
+    manifest = begin_collection()
+    state = load_collection_state()
 
     if args.fixture and family_slugs:
         _stage_fixture_snapshots(family_slugs)
 
-    if offline:
-        collect_ollama_library(offline=True, fixture_dir=fixture_dir, candidate=args.candidate)
-    else:
-        collect_ollama_library(offline=False, candidate=args.candidate)
+    collect_ollama_library(
+        offline=offline,
+        fixture_dir=fixture_dir,
+        candidate=args.candidate,
+        manifest=manifest,
+        write=False,
+        resume=args.resume,
+        state=state,
+    )
+    save_collection_state(state)
 
     if family_slugs:
         collect_families(
@@ -106,7 +174,13 @@ def cmd_collect(args: argparse.Namespace) -> int:
             offline=offline,
             fixture_dir=fixture_dir,
             candidate=args.candidate,
+            manifest=manifest,
+            resume=args.resume,
+            state=state,
         )
+    else:
+        write_manifest(manifest, candidate=args.candidate)
+        save_collection_state(state)
 
     print("Collection complete.")
     return 0
@@ -114,7 +188,18 @@ def cmd_collect(args: argparse.Namespace) -> int:
 
 def cmd_normalize(args: argparse.Namespace) -> int:
     if args.source == "ollama":
-        family_slugs = _family_slugs(args) or list(SAMPLE_FAMILIES)
+        manifest_path = _resolve_manifest_path(args)
+        if manifest_path is not None:
+            family_slugs = _family_slugs_from_args(args) or None
+            catalog = normalize_ollama_from_manifest(manifest_path, family_slugs=family_slugs)
+            summary = coverage_summary(catalog)
+            print(
+                "Normalized candidate catalog from manifest: "
+                f"{summary['families']} families, {summary['models']} models, {summary['tags']} tags"
+            )
+            return 0
+
+        family_slugs = _require_ollama_family_selection(args)
         snapshot_dir = SNAPSHOTS_DIR if not args.fixture else FIXTURES_DIR / "snapshots"
         if args.fixture:
             _stage_fixture_snapshots(family_slugs)
@@ -194,7 +279,7 @@ def cmd_report(args: argparse.Namespace) -> int:
 
 
 def cmd_compare(args: argparse.Namespace) -> int:
-    family_slugs = set(_family_slugs(args)) if _family_slugs(args) else None
+    family_slugs = set(_family_slugs_from_args(args)) or None
     comparison = compare_catalogs(family_filter=family_slugs)
     path = write_comparison_report(comparison)
     print(
@@ -208,6 +293,13 @@ def cmd_compare(args: argparse.Namespace) -> int:
 
 
 def cmd_all(args: argparse.Namespace) -> int:
+    if args.source == "ollama" and not args.sample and not args.families:
+        print(
+            "Ollama pipeline requires --sample or --families for explicit family selection.",
+            file=sys.stderr,
+        )
+        return 2
+
     if cmd_collect(args) != 0:
         return 1
     if cmd_normalize(args) != 0:
@@ -268,7 +360,8 @@ def cmd_all(args: argparse.Namespace) -> int:
         ),
     )
     if args.source == "ollama":
-        write_comparison_report(compare_catalogs(family_filter=set(_family_slugs(args))))
+        family_slugs = set(_family_slugs_from_args(args)) or None
+        write_comparison_report(compare_catalogs(family_filter=family_slugs))
     print(
         "Pipeline complete: "
         f"{generation_summary['deployment_combinations']} deployment combinations written. "

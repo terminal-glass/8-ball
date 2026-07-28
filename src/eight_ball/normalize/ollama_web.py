@@ -3,6 +3,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from eight_ball.collect.manifest import (
+    CollectionManifest,
+    ManifestVerificationError,
+    load_manifest,
+    read_verified_snapshot,
+)
 from eight_ball.collect.parse_ollama import (
     ParsedFamilyPage,
     ParsedTag,
@@ -28,11 +34,35 @@ def _infer_model_id(family_slug: str, tag: ParsedTag) -> str:
     return family_slug
 
 
+def _canonical_model_id(family_slug: str, group: list[ParsedTag]) -> str:
+    with_params = [tag for tag in group if tag.parameter_label]
+    if with_params:
+        return _infer_model_id(family_slug, with_params[0])
+    return family_slug
+
+
+def _resolve_model_id_map(family_slug: str, tags: list[ParsedTag]) -> dict[str, str]:
+    """Assign model ids, merging digest-linked tags into parameter-specific models."""
+    model_ids = {tag.ollama_identifier: _infer_model_id(family_slug, tag) for tag in tags}
+    by_digest: dict[str, list[ParsedTag]] = {}
+    for tag in tags:
+        if tag.digest:
+            by_digest.setdefault(tag.digest, []).append(tag)
+
+    for digest_tags in by_digest.values():
+        canonical = _canonical_model_id(family_slug, digest_tags)
+        for tag in digest_tags:
+            model_ids[tag.ollama_identifier] = canonical
+
+    return model_ids
+
+
 def build_candidate_catalog(
     *,
     families: list[ParsedFamilyPage],
     tags_by_family: dict[str, list[ParsedTag]],
     retrieved_at: str,
+    retrieved_at_by_family: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     publishers = [
         {
@@ -46,10 +76,12 @@ def build_candidate_catalog(
     models: list[dict[str, Any]] = []
     tags: list[dict[str, Any]] = []
     model_ids_seen: set[str] = set()
+    family_retrieved = retrieved_at_by_family or {}
 
     for family in families:
         slug = family.slug
         family_tags = tags_by_family.get(slug, [])
+        family_retrieved_at = family_retrieved.get(slug, retrieved_at)
         legacy_tokens = _input_capabilities_to_legacy(family_tags) + family.capability_badges
         family_caps = map_capabilities(legacy_tokens)
         normalized_families.append(
@@ -62,11 +94,12 @@ def build_candidate_catalog(
                 "primary_capabilities": family_caps,
                 "ollama_url": family.source_url,
                 "source_url": family.source_url,
-                "retrieved_at": retrieved_at,
+                "retrieved_at": family_retrieved_at,
             }
         )
 
-        model_ids_for_family = sorted({_infer_model_id(slug, tag) for tag in family_tags} or {slug})
+        model_id_map = _resolve_model_id_map(slug, family_tags)
+        model_ids_for_family = sorted(set(model_id_map.values()) or {slug})
         for model_id in model_ids_for_family:
             if model_id in model_ids_seen:
                 continue
@@ -74,7 +107,7 @@ def build_candidate_catalog(
             model_tags = [
                 tag
                 for tag in family_tags
-                if _infer_model_id(slug, tag) == model_id
+                if model_id_map[tag.ollama_identifier] == model_id
             ]
             default_tag = _default_tag(model_tags)
             models.append(
@@ -89,14 +122,15 @@ def build_candidate_catalog(
                     "capabilities": family_caps,
                     "default_tag": default_tag,
                     "source_url": family.source_url,
-                    "retrieved_at": retrieved_at,
+                    "retrieved_at": family_retrieved_at,
                     "validation_status": "needs_review",
                 }
             )
 
         for tag in family_tags:
-            model_id = _infer_model_id(slug, tag)
+            model_id = model_id_map[tag.ollama_identifier]
             source_url = f"https://ollama.com/library/{slug}/tags"
+            tag_retrieved_at = family_retrieved_at
             tags.append(
                 {
                     "id": _tag_id(tag.ollama_identifier),
@@ -116,13 +150,13 @@ def build_candidate_catalog(
                     "run_command": f"ollama run {tag.ollama_identifier}",
                     "alias_target": tag.alias_target,
                     "source_url": source_url,
-                    "retrieved_at": retrieved_at,
+                    "retrieved_at": tag_retrieved_at,
                     "provenance": {
                         "download_size_bytes": (
                             ProvenanceField.observed(
                                 tag.download_size_bytes,
                                 source_url=source_url,
-                                retrieved_at=retrieved_at,
+                                retrieved_at=tag_retrieved_at,
                             ).to_dict()
                             if tag.download_size_bytes is not None
                             else ProvenanceField.unknown("download size not published").to_dict()
@@ -131,7 +165,7 @@ def build_candidate_catalog(
                             ProvenanceField.observed(
                                 tag.parameter_count,
                                 source_url=source_url,
-                                retrieved_at=retrieved_at,
+                                retrieved_at=tag_retrieved_at,
                             ).to_dict()
                             if tag.parameter_count is not None
                             else ProvenanceField.unknown("parameter count not published").to_dict()
@@ -161,7 +195,9 @@ def _input_capabilities_to_legacy(tags: list[ParsedTag]) -> list[str]:
             if "embed" in lowered:
                 tokens.add("embedding")
             if "text" in lowered:
-                tokens.add("tools")
+                tokens.add("text")
+            if "audio" in lowered:
+                tokens.add("audio")
     return sorted(tokens)
 
 
@@ -224,20 +260,66 @@ def normalize_ollama_snapshots(
     family_slugs: list[str],
     snapshot_dir: Path,
     retrieved_at: str,
+    manifest: CollectionManifest | None = None,
 ) -> dict[str, Any]:
     families: list[ParsedFamilyPage] = []
     tags_by_family: dict[str, list[ParsedTag]] = {}
+    retrieved_at_by_family: dict[str, str] = {}
 
     for slug in family_slugs:
-        family_html = (snapshot_dir / f"{slug}.html").read_text(encoding="utf-8")
-        tags_html = (snapshot_dir / f"{slug}-tags.html").read_text(encoding="utf-8")
+        family_html: str
+        tags_html: str
+        family_retrieved = retrieved_at
+        tags_retrieved = retrieved_at
+
+        if manifest is not None:
+            family_entry = manifest.find_entry("family", family_slug=slug)
+            tags_entry = manifest.find_entry("family_tags", family_slug=slug)
+            if family_entry is None or tags_entry is None:
+                raise ManifestVerificationError(
+                    f"Manifest missing family or tags entry for {slug}"
+                )
+            family_html = read_verified_snapshot(family_entry)
+            tags_html = read_verified_snapshot(tags_entry)
+            family_retrieved = family_entry.retrieved_at
+            tags_retrieved = tags_entry.retrieved_at
+        else:
+            family_html = (snapshot_dir / f"{slug}.html").read_text(encoding="utf-8")
+            tags_html = (snapshot_dir / f"{slug}-tags.html").read_text(encoding="utf-8")
+
         families.append(parse_family_page(family_html, slug))
         tags_by_family[slug] = parse_family_tags_page(tags_html, slug)
+        retrieved_at_by_family[slug] = max(family_retrieved, tags_retrieved)
 
     catalog = build_candidate_catalog(
         families=families,
         tags_by_family=tags_by_family,
         retrieved_at=retrieved_at,
+        retrieved_at_by_family=retrieved_at_by_family,
     )
     write_candidate_catalog(catalog)
     return catalog
+
+
+def normalize_ollama_from_manifest(
+    manifest_path: Path,
+    *,
+    family_slugs: list[str] | None = None,
+) -> dict[str, Any]:
+    manifest = load_manifest(manifest_path)
+    slugs = family_slugs or sorted(
+        {
+            entry.family_slug
+            for entry in manifest.entries
+            if entry.family_slug and entry.snapshot_kind == "family"
+        }
+    )
+    if not slugs:
+        raise ManifestVerificationError("No family slugs found in manifest")
+    retrieved_at = max(entry.retrieved_at for entry in manifest.entries)
+    return normalize_ollama_snapshots(
+        family_slugs=slugs,
+        snapshot_dir=Path("."),
+        retrieved_at=retrieved_at,
+        manifest=manifest,
+    )
