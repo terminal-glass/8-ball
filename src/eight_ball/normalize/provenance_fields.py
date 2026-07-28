@@ -1,0 +1,129 @@
+from __future__ import annotations
+
+from typing import Any
+
+from eight_ball.provenance import ProvenanceField
+
+
+def observed_or_unknown(
+    value: Any,
+    *,
+    source_url: str | None,
+    retrieved_at: str | None,
+    unknown_note: str,
+) -> dict[str, Any]:
+    if value is None:
+        return ProvenanceField.unknown(unknown_note).to_dict()
+    return ProvenanceField.observed(
+        value,
+        source_url=source_url,
+        retrieved_at=retrieved_at,
+    ).to_dict()
+
+
+def derived_field(
+    value: Any,
+    *,
+    source_url: str | None = None,
+    retrieved_at: str | None = None,
+    notes: str | None = None,
+) -> dict[str, Any]:
+    return ProvenanceField.derived(
+        value,
+        source_url=source_url,
+        retrieved_at=retrieved_at,
+        notes=notes,
+    ).to_dict()
+
+
+def build_tag_provenance(
+    *,
+    tag: dict[str, Any],
+    source_url: str | None,
+    retrieved_at: str | None,
+    capabilities: dict[str, str],
+) -> dict[str, Any]:
+    return {
+        "download_size_bytes": observed_or_unknown(
+            tag.get("download_size_bytes"),
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            unknown_note="download size not published",
+        ),
+        "parameter_count": observed_or_unknown(
+            tag.get("parameter_count"),
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            unknown_note="parameter count not published",
+        ),
+        "context_window_tokens": observed_or_unknown(
+            tag.get("context_window_tokens"),
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            unknown_note="context window not published",
+        ),
+        "quantization": observed_or_unknown(
+            tag.get("quantization"),
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            unknown_note="quantization not published",
+        ),
+        "availability": derived_field(
+            tag.get("availability"),
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            notes="derived from download size and family cloud status",
+        ),
+        "capabilities": derived_field(
+            capabilities,
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            notes="derived from tag input capabilities and inherited family badges",
+        ),
+    }
+
+
+def build_family_provenance(
+    *,
+    publisher_inference: Any,
+    catalog_source_id: str,
+    source_url: str | None,
+    retrieved_at: str | None,
+) -> dict[str, Any]:
+    confidence = getattr(publisher_inference, "confidence", "unknown")
+    if confidence == "unknown":
+        publisher_provenance = ProvenanceField.unknown(
+            getattr(publisher_inference, "notes", "publisher not identified")
+        ).to_dict()
+    elif confidence == "manual":
+        publisher_provenance = ProvenanceField.manual(
+            getattr(publisher_inference, "publisher_id", None),
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            notes=getattr(publisher_inference, "notes", None),
+        ).to_dict()
+    else:
+        publisher_provenance = ProvenanceField.derived(
+            getattr(publisher_inference, "publisher_id", None),
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+            notes=getattr(publisher_inference, "notes", None),
+        ).to_dict()
+    return {
+        "publisher_id": publisher_provenance,
+        "catalog_source_id": ProvenanceField.observed(
+            catalog_source_id,
+            source_url=source_url,
+            retrieved_at=retrieved_at,
+        ).to_dict(),
+    }
+
+
+def provenance_confidence_counts(records: list[dict[str, Any]]) -> dict[str, int]:
+    counts = {"observed": 0, "derived": 0, "estimated": 0, "manual": 0, "unknown": 0}
+    for record in records:
+        provenance = record.get("provenance", {}) or {}
+        for field in provenance.values():
+            confidence = field.get("confidence", "unknown")
+            counts[confidence] = counts.get(confidence, 0) + 1
+    return counts

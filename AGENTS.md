@@ -236,3 +236,11 @@ Routine wrappers must not reinstall the package automatically.
 - Normalization verifies manifest checksums and uses per-snapshot retrieval timestamps when a manifest is supplied.
 - Compact offline fixtures under `tests/fixtures/snapshots/` are committed for deterministic parser tests.
 - Candidate normalized output lives under `data/candidate/` and must never overwrite `data/families/` or `data/normalized/`.
+
+### Publisher, capability, and provenance policy (Phase 3)
+
+- `config/publishers.yaml` defines catalog sources (`ollama-library`) separately from model publishers (Meta, Google, Mistral AI, etc.).
+- Family `publisher_id` is inferred from slug patterns, page text, and explicit `family_overrides`.
+- Capabilities inherit from family badges and refine at model and tag levels from `input_capabilities`.
+- Tag provenance records observed, derived, and unknown confidence for download size, parameters, context, quantization, availability, and capabilities.
+- Coverage and comparison reports include publisher counts, capability coverage, provenance confidence, and deduplicated review items.

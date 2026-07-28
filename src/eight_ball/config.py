@@ -42,6 +42,10 @@ def hardware_profiles_config() -> dict[str, Any]:
     return load_yaml(CONFIG_DIR / "hardware_profiles.yaml")
 
 
+def publishers_config() -> dict[str, Any]:
+    return load_yaml(CONFIG_DIR / "publishers.yaml")
+
+
 def deployment_tiers_config() -> dict[str, Any]:
     return load_yaml(CONFIG_DIR / "deployment_tiers.yaml")
 

@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
 from eight_ball.config import load_json, write_json
+from eight_ball.normalize.capabilities import CAPABILITY_KEYS, capability_coverage_summary
+from eight_ball.normalize.provenance_fields import provenance_confidence_counts
 from eight_ball.paths import GENERATED_DIR, NORMALIZED_DIR, REPORTS_DIR
 from eight_ball.provenance import utc_now_iso
 
@@ -22,15 +25,38 @@ def coverage_summary(
         }
     tags = catalog["tags"]
     models = catalog["models"]
+    families = catalog["families"]
     total = len(tags)
     unknown_params = sum(1 for t in tags if t.get("parameter_count") is None)
     unknown_sizes = sum(1 for t in tags if t.get("download_size_bytes") is None)
     cloud_tags = sum(1 for t in tags if t.get("availability") in {"cloud", "cloud_only", "both"})
     local_tags = sum(1 for t in tags if t.get("availability") in {"local", "both"})
     manual_review = sum(1 for m in models if m.get("validation_status") == "needs_review")
+
+    publisher_counts = Counter(family.get("publisher_id", "unknown") for family in families)
+    unknown_publishers = publisher_counts.get("unknown", 0)
+
+    model_capability_coverage = capability_coverage_summary(models, "capabilities")
+    tag_capability_coverage = capability_coverage_summary(tags, "capabilities")
+    provenance_counts = provenance_confidence_counts(tags)
+
+    review_reason_counts: Counter[str] = Counter()
+    for model in models:
+        for reason in model.get("review_reasons", []):
+            review_reason_counts[reason] += 1
+    for family in families:
+        for reason in family.get("review_reasons", []):
+            review_reason_counts[reason] += 1
+
+    unknown_capability_fields = 0
+    for tag in tags:
+        for cap_id in CAPABILITY_KEYS:
+            if (tag.get("capabilities") or {}).get(cap_id) == "unknown":
+                unknown_capability_fields += 1
+
     return {
         "publishers": len(catalog["publishers"]),
-        "families": len(catalog["families"]),
+        "families": len(families),
         "models": len(models),
         "tags": total,
         "local_tags": local_tags,
@@ -40,6 +66,14 @@ def coverage_summary(
         "unknown_parameter_count_rate": round(unknown_params / total, 4) if total else 0,
         "unknown_download_size_rate": round(unknown_sizes / total, 4) if total else 0,
         "manual_review_count": manual_review,
+        "publisher_counts": dict(sorted(publisher_counts.items())),
+        "unknown_publisher_families": unknown_publishers,
+        "unknown_publisher_rate": round(unknown_publishers / len(families), 4) if families else 0,
+        "model_capability_coverage": model_capability_coverage,
+        "tag_capability_coverage": tag_capability_coverage,
+        "unknown_capability_field_count": unknown_capability_fields,
+        "provenance_confidence_counts": provenance_counts,
+        "review_reason_counts": dict(sorted(review_reason_counts.items())),
     }
 
 
@@ -104,6 +138,19 @@ def write_reports(
         f"- Unknown download size: {coverage['unknown_download_size']}",
         f"- Manual review count: {coverage['manual_review_count']}",
         f"- Deployment combinations: {deployment_count}",
+        "",
+        "## Publisher coverage",
+        f"- Unknown publisher families: {coverage['unknown_publisher_families']}",
+        f"- Publisher counts: {coverage['publisher_counts']}",
+        "",
+        "## Capability coverage",
+        f"- Unknown capability field count (tag-level): {coverage['unknown_capability_field_count']}",
+        "",
+        "## Provenance coverage",
+        f"- Tag provenance confidence counts: {coverage['provenance_confidence_counts']}",
+        "",
+        "## Review coverage",
+        f"- Review reason counts: {coverage['review_reason_counts']}",
     ]
     if validation_report is not None:
         lines.extend(

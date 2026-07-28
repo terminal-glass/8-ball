@@ -15,7 +15,6 @@ from eight_ball.collect.manifest import (
 from eight_ball.collect.ollama import collect_families, collect_ollama_library
 from eight_ball.collect.parse_ollama import ParseError, parse_family_tags_page
 from eight_ball.normalize.ollama_web import (
-    _input_capabilities_to_legacy,
     _resolve_model_id_map,
     normalize_ollama_from_manifest,
     normalize_ollama_snapshots,
@@ -33,6 +32,9 @@ def test_parse_size_4_1gb_decimal():
 
 def test_text_input_does_not_map_to_tools():
     from eight_ball.collect.parse_ollama import ParsedTag
+    from eight_ball.normalize.capabilities import (
+        tag_tokens_from_input_capabilities,
+    )
     from eight_ball.normalize.legacy import map_capabilities
 
     tags = [
@@ -43,7 +45,7 @@ def test_text_input_does_not_map_to_tools():
             input_capabilities=["Text"],
         )
     ]
-    legacy_tokens = _input_capabilities_to_legacy(tags)
+    legacy_tokens = tag_tokens_from_input_capabilities(tags[0].input_capabilities)
     assert "tools" not in legacy_tokens
     assert "text" in legacy_tokens
     caps = map_capabilities(legacy_tokens)

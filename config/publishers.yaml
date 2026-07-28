@@ -1,0 +1,62 @@
+# Catalog sources are metadata listing origins (not model publishers).
+catalog_sources:
+  - id: ollama-library
+    display_name: Ollama Library
+    official_url: https://ollama.com/library
+
+default_publisher_id: unknown
+default_catalog_source_id: ollama-library
+
+# Canonical model publishers / organizations.
+publishers:
+  - id: meta
+    display_name: Meta
+    aliases: [meta ai, meta-llama]
+    official_url: https://ai.meta.com/
+    slug_prefixes: [llama, llama2, llama3, llama4, codellama]
+    text_patterns: [meta llama, meta ai]
+  - id: google
+    display_name: Google
+    aliases: [google deepmind, gemma]
+    official_url: https://ai.google/
+    slug_prefixes: [gemini, gemma]
+    text_patterns: [google, deepmind]
+  - id: mistral-ai
+    display_name: Mistral AI
+    aliases: [mistral, mixtral]
+    official_url: https://mistral.ai/
+    slug_prefixes: [mistral, mixtral, codestral, ministral, pixtral]
+    text_patterns: [mistral ai, mistral-ai]
+  - id: microsoft
+    display_name: Microsoft
+    aliases: [phi]
+    official_url: https://www.microsoft.com/
+    slug_prefixes: [phi, wizardlm, orca]
+    text_patterns: [microsoft]
+  - id: nomic-ai
+    display_name: Nomic
+    aliases: [nomic ai]
+    official_url: https://www.nomic.ai/
+    slug_prefixes: [nomic-embed, nomic]
+    text_patterns: [nomic]
+  - id: tinyllama
+    display_name: TinyLlama
+    slug_prefixes: [tinyllama]
+    text_patterns: [tinyllama]
+  - id: llava-project
+    display_name: LLaVA
+    aliases: [llava]
+    slug_prefixes: [llava]
+    text_patterns: [llava]
+  - id: unknown
+    display_name: Unknown
+    aliases: []
+
+# Explicit family slug to publisher assignments override pattern inference.
+family_overrides:
+  gemini-3-flash-preview: google
+  nomic-embed-text: nomic-ai
+  tinyllama: tinyllama
+  llama3: meta
+  codestral: mistral-ai
+  llava: llava-project

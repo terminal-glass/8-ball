@@ -264,24 +264,49 @@ def compare_catalogs(
                 }
             )
 
+    review_seen: set[tuple[str, str]] = set()
+
+    def _add_review_item(item: dict[str, Any]) -> None:
+        key = (item.get("kind", ""), item.get("id", ""))
+        if key in review_seen:
+            return
+        review_seen.add(key)
+        manual_review_items.append(item)
+
+    for model_id, candidate_model in sorted(candidate_models.items()):
         if candidate_model.get("validation_status") == "needs_review":
-            manual_review_items.append(
+            reasons = candidate_model.get("review_reasons") or ["candidate model marked needs_review"]
+            _add_review_item(
                 {
                     "kind": "model",
-                    "id": candidate_model.get("id"),
+                    "id": model_id,
                     "family_id": candidate_model.get("family_id"),
-                    "reason": "candidate model marked needs_review",
+                    "reason": "; ".join(sorted(set(reasons))),
+                }
+            )
+        if candidate_model.get("publisher_id") == "unknown":
+            _add_review_item(
+                {
+                    "kind": "model",
+                    "id": model_id,
+                    "family_id": candidate_model.get("family_id"),
+                    "reason": "unknown publisher",
                 }
             )
 
     for family_id in sorted(candidate_family_ids):
         family = candidate_families[family_id]
-        if family.get("description") is None:
-            manual_review_items.append(
+        family_reasons = family.get("review_reasons") or []
+        if family.get("description") is None and "missing_family_description" not in family_reasons:
+            family_reasons = [*family_reasons, "missing_family_description"]
+        if family.get("publisher_id") == "unknown":
+            family_reasons = [*family_reasons, "unknown_publisher"]
+        if family_reasons:
+            _add_review_item(
                 {
                     "kind": "family",
                     "id": family_id,
-                    "reason": "missing family description",
+                    "reason": "; ".join(sorted(set(family_reasons))),
                 }
             )
 

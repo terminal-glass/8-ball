@@ -231,6 +231,27 @@ def mark_collection_complete(state: dict[str, Any], entry: SnapshotEntry) -> Non
     }
 
 
-def is_collection_complete(state: dict[str, Any], *, snapshot_kind: str, family_slug: str | None) -> bool:
+def get_collection_state_entry(
+    state: dict[str, Any],
+    *,
+    snapshot_kind: str,
+    family_slug: str | None,
+) -> dict[str, Any] | None:
     key = f"{snapshot_kind}:{family_slug or 'library'}"
-    return key in state.get("completed", {})
+    return state.get("completed", {}).get(key)
+
+
+def is_collection_complete(state: dict[str, Any], *, snapshot_kind: str, family_slug: str | None) -> bool:
+    return get_collection_state_entry(
+        state,
+        snapshot_kind=snapshot_kind,
+        family_slug=family_slug,
+    ) is not None
+
+
+def verify_content_checksum(content: str, expected_checksum: str, *, label: str) -> None:
+    actual = checksum_text(content)
+    if actual != expected_checksum:
+        raise ManifestVerificationError(
+            f"Checksum mismatch for {label}: expected {expected_checksum}, got {actual}"
+        )

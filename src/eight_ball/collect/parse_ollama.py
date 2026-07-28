@@ -279,4 +279,10 @@ def parse_library_index(html: str) -> list[ParsedFamilyIndexEntry]:
         )
 
     entries.sort(key=lambda item: item.slug)
+    if not entries:
+        raise ParseError(
+            "Ollama library index produced zero family records. "
+            "Expected anchor links matching /library/<slug>. "
+            f"source_checksum={checksum_text(html)}"
+        )
     return entries

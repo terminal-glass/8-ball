@@ -36,12 +36,37 @@ class ProvenanceField:
         return cls(value, "observed", source_url, retrieved_at, notes)
 
     @classmethod
-    def derived(cls, value: Any, *, notes: str | None = None) -> ProvenanceField:
-        return cls(value, "derived", notes=notes)
+    def derived(
+        cls,
+        value: Any,
+        *,
+        source_url: str | None = None,
+        retrieved_at: str | None = None,
+        notes: str | None = None,
+    ) -> ProvenanceField:
+        return cls(value, "derived", source_url, retrieved_at, notes)
 
     @classmethod
-    def estimated(cls, value: Any, *, notes: str | None = None) -> ProvenanceField:
-        return cls(value, "estimated", notes=notes)
+    def estimated(
+        cls,
+        value: Any,
+        *,
+        source_url: str | None = None,
+        retrieved_at: str | None = None,
+        notes: str | None = None,
+    ) -> ProvenanceField:
+        return cls(value, "estimated", source_url, retrieved_at, notes)
+
+    @classmethod
+    def manual(
+        cls,
+        value: Any,
+        *,
+        source_url: str | None = None,
+        retrieved_at: str | None = None,
+        notes: str | None = None,
+    ) -> ProvenanceField:
+        return cls(value, "manual", source_url, retrieved_at, notes)
 
     @classmethod
     def unknown(cls, notes: str | None = None) -> ProvenanceField:
