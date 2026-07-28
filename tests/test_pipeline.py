@@ -31,11 +31,17 @@ def test_offline_fixture_pipeline(tmp_path, monkeypatch):
     monkeypatch.setattr("eight_ball.normalize.catalog.NORMALIZED_DIR", normalized)
     monkeypatch.setattr("eight_ball.generate.outputs.NORMALIZED_DIR", normalized)
     monkeypatch.setattr("eight_ball.generate.outputs.GENERATED_DIR", generated)
+    indexes = tmp_path / "indexes"
+    indexes.mkdir()
     monkeypatch.setattr("eight_ball.validate.catalog.NORMALIZED_DIR", normalized)
+    monkeypatch.setattr("eight_ball.validate.catalog.GENERATED_DIR", generated)
+    monkeypatch.setattr("eight_ball.validate.catalog.INDEXES_DIR", indexes)
+    monkeypatch.setattr("eight_ball.generate.indexes.INDEXES_DIR", indexes)
 
     collect_ollama_library(offline=True)
     normalize_legacy_catalog(sample_only=False, families_dir=FIXTURES_DIR / "families")
     validate_catalog()
     summary = generate_outputs()
+    validate_catalog()
     assert summary["tags"] > 0
     assert summary["deployment_combinations"] == summary["tags"] * 8 * 3

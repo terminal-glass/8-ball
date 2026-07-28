@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-pip install -e ".[dev]" -q
-eight-ball "$@"
+exec python3 -m eight_ball.cli "$@"

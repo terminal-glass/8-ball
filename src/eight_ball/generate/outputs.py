@@ -7,6 +7,7 @@ from typing import Any
 from eight_ball.config import load_json, write_json
 from eight_ball.estimate.hardware import estimate_installed_storage_bytes
 from eight_ball.generate.deployments import generate_deployments
+from eight_ball.generate.indexes import build_indexes
 from eight_ball.paths import GENERATED_DIR, NORMALIZED_DIR
 
 
@@ -25,9 +26,17 @@ def generate_outputs() -> dict[str, Any]:
     write_json(GENERATED_DIR / "capabilities.json", load_json(NORMALIZED_DIR / "capabilities.json"))
     write_json(GENERATED_DIR / "deployment_recommendations.json", deployments)
     _write_deployments_csv(GENERATED_DIR / "deployment_recommendations.csv", deployments)
+    index_summary = build_indexes(
+        {
+            "families": load_json(NORMALIZED_DIR / "families.json"),
+            "models": load_json(NORMALIZED_DIR / "models.json"),
+            "tags": tags,
+        }
+    )
     return {
         "tags": len(tags),
         "deployment_combinations": len(deployments),
+        "indexes": index_summary,
     }
 
 

@@ -67,7 +67,14 @@ def cmd_validate(args: argparse.Namespace) -> int:
     try:
         report = validate_catalog()
     except ValidationError as exc:
-        write_reports(validation_report={"valid": False, "error_count": len(exc.errors), "errors": exc.errors})
+        failure_report = {
+            "valid": False,
+            "error_count": len(exc.errors),
+            "warning_count": len(exc.warnings),
+            "errors": exc.errors,
+            "warnings": exc.warnings,
+        }
+        write_reports(validation_report=failure_report)
         print(f"Validation failed with {len(exc.errors)} error(s).", file=sys.stderr)
         for error in exc.errors[:20]:
             print(f"  - {error}", file=sys.stderr)
@@ -90,11 +97,52 @@ def cmd_report(args: argparse.Namespace) -> int:
 
 
 def cmd_all(args: argparse.Namespace) -> int:
-    steps = [cmd_collect, cmd_normalize, cmd_validate, cmd_generate, cmd_report]
-    for step in steps:
-        code = step(args)
-        if code != 0:
-            return code
+    if cmd_collect(args) != 0:
+        return 1
+    if cmd_normalize(args) != 0:
+        return 1
+    try:
+        validation_report = validate_catalog(include_artifacts=False)
+    except ValidationError as exc:
+        failure_report = {
+            "valid": False,
+            "error_count": len(exc.errors),
+            "warning_count": len(exc.warnings),
+            "errors": exc.errors,
+            "warnings": exc.warnings,
+        }
+        write_reports(validation_report=failure_report)
+        print(f"Validation failed with {len(exc.errors)} error(s).", file=sys.stderr)
+        return 1
+    generation_summary = generate_outputs()
+    try:
+        validate_catalog(include_artifacts=True)
+    except ValidationError as exc:
+        failure_report = {
+            "valid": False,
+            "error_count": len(exc.errors),
+            "warning_count": len(exc.warnings),
+            "errors": exc.errors,
+            "warnings": exc.warnings,
+        }
+        write_reports(
+            validation_report=failure_report,
+            generation_summary=generation_summary,
+        )
+        print(
+            f"Post-generation validation failed with {len(exc.errors)} error(s).",
+            file=sys.stderr,
+        )
+        return 1
+    path = write_reports(
+        validation_report=validation_report,
+        generation_summary=generation_summary,
+    )
+    print(
+        "Pipeline complete: "
+        f"{generation_summary['deployment_combinations']} deployment combinations written. "
+        f"Report: {path}"
+    )
     return 0
 
 

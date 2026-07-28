@@ -13,7 +13,14 @@ from eight_ball.normalize.legacy import (
 )
 from eight_ball.normalize.parse import parse_context_length, parse_parameter_label
 from eight_ball.paths import LEGACY_FAMILIES_DIR, NORMALIZED_DIR
-from eight_ball.provenance import ProvenanceField, utc_now_iso
+from eight_ball.provenance import ProvenanceField
+
+
+def _latest_source_timestamp(record: dict[str, Any], variants: list[dict[str, Any]]) -> str | None:
+    timestamps = [record.get("generated_at_utc")]
+    timestamps.extend(v.get("verified_at_utc") for v in variants)
+    valid = [value for value in timestamps if value]
+    return max(valid) if valid else None
 
 DEFAULT_PUBLISHER_ID = "ollama-library"
 
@@ -35,10 +42,15 @@ def build_catalog(
     models: list[dict[str, Any]] = []
     tags: list[dict[str, Any]] = []
     catalog_version = "unknown"
+    latest_timestamp: str | None = None
 
     for path in iter_legacy_family_files(families_dir, sample_only=sample_only):
         record = load_legacy_family(path)
         catalog_version = record.get("catalog_version", catalog_version)
+        variants = record.get("variants", [])
+        family_timestamp = _latest_source_timestamp(record, variants)
+        if family_timestamp and (latest_timestamp is None or family_timestamp > latest_timestamp):
+            latest_timestamp = family_timestamp
         family = record["family"]
         slug = family["slug"]
         variants = record.get("variants", [])
@@ -121,7 +133,7 @@ def build_catalog(
 
     return {
         "catalog_version": catalog_version,
-        "generated_at": utc_now_iso(),
+        "generated_at": latest_timestamp,
         "publishers": publishers,
         "families": families,
         "models": models,
