@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/tag.schema.json",
+  "title": "ModelTag",
+  "type": "object",
+  "required": ["id", "ollama_identifier", "model_id", "tag"],
+  "properties": {
+    "id": { "type": "string" },
+    "ollama_identifier": { "type": "string" },
+    "model_id": { "type": "string" },
+    "tag": { "type": "string" },
+    "parameter_count": { "type": ["integer", "null"], "minimum": 0 },
+    "parameter_unit": { "type": ["string", "null"] },
+    "quantization": { "type": ["string", "null"] },
+    "architecture": { "type": ["string", "null"] },
+    "context_window_tokens": { "type": ["integer", "null"], "minimum": 0 },
+    "download_size_bytes": { "type": ["integer", "null"], "minimum": 0 },
+    "download_size_text": { "type": ["string", "null"] },
+    "installed_storage_bytes_estimated": { "type": ["integer", "null"], "minimum": 0 },
+    "availability": {
+      "type": "string",
+      "enum": ["local", "cloud", "both", "cloud_only", "unknown"]
+    },
+    "pull_command": { "type": ["string", "null"] },
+    "run_command": { "type": ["string", "null"] },
+    "alias_target": { "type": ["string", "null"] },
+    "source_url": { "type": ["string", "null"], "format": "uri" },
+    "retrieved_at": { "type": ["string", "null"], "format": "date-time" },
+    "provenance": { "type": "object" }
+  },
+  "additionalProperties": false
+}

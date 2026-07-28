@@ -7,7 +7,7 @@ retry_backoff_seconds:
   - 20
 request_delay_seconds: 1
 maximum_concurrency: 4
-user_agent: ycgpt-model-metadata-catalog/1.0
+user_agent: eight-ball-model-metadata-catalog/0.1
 include_local_models: true
 include_cloud_models: true
 include_aliases: true

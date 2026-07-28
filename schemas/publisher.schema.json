@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/publisher.schema.json",
+  "title": "Publisher",
+  "type": "object",
+  "required": ["id", "display_name"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "display_name": { "type": "string", "minLength": 1 },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "official_url": { "type": ["string", "null"], "format": "uri" }
+  },
+  "additionalProperties": false
+}

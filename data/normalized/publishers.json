@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ollama-library",
+    "display_name": "Ollama Library",
+    "aliases": [
+      "ollama"
+    ],
+    "official_url": "https://ollama.com/library"
+  }
+]
