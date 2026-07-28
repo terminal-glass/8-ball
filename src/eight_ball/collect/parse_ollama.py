@@ -6,6 +6,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from eight_ball.collect.manifest import checksum_text
 from eight_ball.normalize.parse import (
     parse_context_length,
     parse_parameter_label,
@@ -37,6 +38,10 @@ _QUANT_SUFFIXES = (
     "q3_K_S",
     "q2_K",
 )
+
+
+class ParseError(RuntimeError):
+    pass
 
 
 @dataclass
@@ -186,6 +191,12 @@ def parse_family_tags_page(html: str, family_slug: str) -> list[ParsedTag]:
 
     tags.sort(key=lambda item: item.ollama_identifier)
     apply_alias_targets(tags)
+    if not tags:
+        raise ParseError(
+            f"Ollama tags-page layout produced zero tag records for {family_slug}. "
+            f"Expected anchor links matching /library/{family_slug}:<tag>. "
+            f"source_checksum={checksum_text(html)}"
+        )
     return tags
 
 

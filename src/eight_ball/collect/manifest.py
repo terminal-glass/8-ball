@@ -1,15 +1,21 @@
 from __future__ import annotations
 
 import hashlib
+import uuid
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from eight_ball.config import load_yaml, write_json
-from eight_ball.paths import MANIFESTS_DIR, REPO_ROOT
+from eight_ball.config import load_json, load_yaml, write_json
+from eight_ball.paths import MANIFESTS_DIR, RAW_DIR, REPO_ROOT
 
 PARSER_VERSION = "1.0.0"
+COLLECTION_STATE_NAME = "collection-state.json"
+
+
+class ManifestVerificationError(RuntimeError):
+    pass
 
 
 @dataclass
@@ -51,16 +57,39 @@ class CollectionManifest:
     def to_dict(self) -> dict[str, Any]:
         return {
             "collection_id": self.collection_id,
+            "parser_version": PARSER_VERSION,
             "entries": [entry.to_dict() for entry in self.entries],
         }
+
+    def find_entry(
+        self,
+        snapshot_kind: str,
+        *,
+        family_slug: str | None = None,
+    ) -> SnapshotEntry | None:
+        for entry in self.entries:
+            if entry.snapshot_kind != snapshot_kind:
+                continue
+            if family_slug is not None and entry.family_slug != family_slug:
+                continue
+            return entry
+        return None
 
 
 def utc_now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def new_collection_id() -> str:
+    return uuid.uuid4().hex
+
+
 def checksum_bytes(content: bytes) -> str:
     return hashlib.sha256(content).hexdigest()
+
+
+def checksum_text(content: str) -> str:
+    return checksum_bytes(content.encode("utf-8"))
 
 
 def relative_repo_path(path: Path) -> str:
@@ -70,8 +99,23 @@ def relative_repo_path(path: Path) -> str:
         return str(path)
 
 
+def resolve_repo_path(location: str) -> Path:
+    path = Path(location)
+    if path.is_absolute():
+        return path
+    return REPO_ROOT / path
+
+
 def snapshot_policy() -> dict[str, Any]:
     return load_yaml(REPO_ROOT / "config" / "snapshot-policy.yaml")
+
+
+def collection_state_path() -> Path:
+    return RAW_DIR / COLLECTION_STATE_NAME
+
+
+def begin_collection() -> CollectionManifest:
+    return CollectionManifest(collection_id=new_collection_id())
 
 
 def record_snapshot(
@@ -107,12 +151,11 @@ def write_manifest(manifest: CollectionManifest, *, candidate: bool = False) -> 
     prefix = "candidate-" if candidate else "collection-"
     path = MANIFESTS_DIR / f"{prefix}{manifest.collection_id}.json"
     write_json(path, manifest.to_dict())
+    write_json(RAW_DIR / "latest-manifest.json", {"path": relative_repo_path(path), **manifest.to_dict()})
     return path
 
 
 def load_manifest(path: Path) -> CollectionManifest:
-    from eight_ball.config import load_json
-
     data = load_json(path)
     entries = [
         SnapshotEntry(
@@ -130,3 +173,64 @@ def load_manifest(path: Path) -> CollectionManifest:
         for item in data.get("entries", [])
     ]
     return CollectionManifest(collection_id=data["collection_id"], entries=entries)
+
+
+def latest_manifest_path(*, candidate: bool = False) -> Path | None:
+    prefix = "candidate-" if candidate else "collection-"
+    if not MANIFESTS_DIR.exists():
+        return None
+    matches = sorted(MANIFESTS_DIR.glob(f"{prefix}*.json"))
+    return matches[-1] if matches else None
+
+
+def load_latest_manifest(*, candidate: bool = False) -> CollectionManifest:
+    path = latest_manifest_path(candidate=candidate)
+    if path is None:
+        raise FileNotFoundError("No collection manifest found under data/manifests/")
+    return load_manifest(path)
+
+
+def verify_snapshot_file(path: Path, expected_checksum: str) -> None:
+    if not path.exists():
+        raise ManifestVerificationError(f"Snapshot missing at {path}")
+    actual = checksum_bytes(path.read_bytes())
+    if actual != expected_checksum:
+        raise ManifestVerificationError(
+            f"Checksum mismatch for {path}: expected {expected_checksum}, got {actual}"
+        )
+
+
+def read_verified_snapshot(entry: SnapshotEntry) -> str:
+    path = resolve_repo_path(entry.snapshot_location)
+    verify_snapshot_file(path, entry.checksum_sha256)
+    return path.read_text(encoding="utf-8")
+
+
+def load_collection_state() -> dict[str, Any]:
+    path = collection_state_path()
+    if not path.exists():
+        return {"completed": {}}
+    return load_json(path)
+
+
+def save_collection_state(state: dict[str, Any]) -> None:
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    write_json(collection_state_path(), state)
+
+
+def state_key(entry: SnapshotEntry) -> str:
+    slug = entry.family_slug or "library"
+    return f"{entry.snapshot_kind}:{slug}"
+
+
+def mark_collection_complete(state: dict[str, Any], entry: SnapshotEntry) -> None:
+    state.setdefault("completed", {})[state_key(entry)] = {
+        "checksum_sha256": entry.checksum_sha256,
+        "snapshot_location": entry.snapshot_location,
+        "retrieved_at": entry.retrieved_at,
+    }
+
+
+def is_collection_complete(state: dict[str, Any], *, snapshot_kind: str, family_slug: str | None) -> bool:
+    key = f"{snapshot_kind}:{family_slug or 'library'}"
+    return key in state.get("completed", {})

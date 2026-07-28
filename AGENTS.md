@@ -27,7 +27,8 @@ Keep these directories distinguishable:
 | `data/overrides/` | Reviewed manual metadata overrides | Commit when present |
 | `data/raw/` | Ephemeral collection cache | Do not commit |
 | `data/snapshots/` | Large fetched pages for repeatable parsing | Do not commit |
-| `data/manifests/` | Collection manifests with checksums and provenance | Commit |
+| `data/manifests/` | Ephemeral live collection manifests (gitignored) | Do not commit |
+| `tests/fixtures/manifests/` | Committed fixture manifests for offline tests | Commit |
 | `data/candidate/` | Candidate normalized catalogs from live collection | Do not commit |
 | `data/normalized/` | Normalized source-derived entities | Commit |
 | `data/generated/` | Reproducible generated recommendations, exports, and indexes | Do not commit |
@@ -230,6 +231,8 @@ Routine wrappers must not reinstall the package automatically.
 
 - Raw live responses remain in `data/raw/` (gitignored).
 - Large fetched pages remain in `data/snapshots/` (gitignored) unless promoted.
-- Every collection writes a manifest under `data/manifests/` with source URL, retrieval timestamp, HTTP status, checksum, parser version, and snapshot location.
+- Every live collection writes an ephemeral manifest under `data/manifests/` (gitignored) with source URL, retrieval timestamp, HTTP status, checksum, parser version, and snapshot location.
+- Committed fixture manifests live under `tests/fixtures/manifests/` for deterministic offline tests.
+- Normalization verifies manifest checksums and uses per-snapshot retrieval timestamps when a manifest is supplied.
 - Compact offline fixtures under `tests/fixtures/snapshots/` are committed for deterministic parser tests.
 - Candidate normalized output lives under `data/candidate/` and must never overwrite `data/families/` or `data/normalized/`.
