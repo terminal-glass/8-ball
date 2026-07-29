@@ -33,6 +33,7 @@ from eight_ball.normalize.publishers import (
     publisher_mapping_needs_review,
 )
 from eight_ball.paths import CANDIDATE_NORMALIZED_DIR
+from eight_ball.recreate.protect import assert_candidate_output_path
 
 
 def _tag_id(ollama_identifier: str) -> str:
@@ -283,6 +284,7 @@ def _model_availability(model_tags: list[ParsedTag], *, is_cloud_family: bool = 
 
 
 def write_candidate_catalog(catalog: dict[str, Any]) -> Path:
+    assert_candidate_output_path(CANDIDATE_NORMALIZED_DIR)
     CANDIDATE_NORMALIZED_DIR.mkdir(parents=True, exist_ok=True)
     write_json(CANDIDATE_NORMALIZED_DIR / "publishers.json", catalog["publishers"])
     write_json(CANDIDATE_NORMALIZED_DIR / "families.json", catalog["families"])

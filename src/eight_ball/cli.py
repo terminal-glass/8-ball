@@ -12,7 +12,7 @@ from eight_ball.collect.manifest import (
     write_manifest,
 )
 from eight_ball.collect.ollama import collect_families, collect_ollama_library
-from eight_ball.collect.parse_ollama import parse_library_index
+from eight_ball.config import write_json
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
@@ -32,6 +32,13 @@ from eight_ball.paths import (
     SAMPLE_FAMILIES,
     SNAPSHOTS_DIR,
 )
+from eight_ball.recreate.plan import (
+    build_recreate_plan,
+    discover_family_slugs_from_index,
+    write_recreate_plan,
+    write_recreate_plan_markdown,
+)
+from eight_ball.recreate.promote import promote_candidate_catalog
 from eight_ball.report.compare import compare_catalogs, write_comparison_report
 from eight_ball.report.summary import coverage_summary, write_reports
 from eight_ball.validate.catalog import ValidationError, validate_catalog
@@ -70,6 +77,14 @@ def _add_common_args(parser: argparse.ArgumentParser) -> None:
         help="Comma-separated family slugs for Ollama collection/normalization.",
     )
     parser.add_argument(
+        "--from-index",
+        action="store_true",
+        help=(
+            "Discover family slugs from the Ollama library index snapshot. "
+            "Use with --offline/--fixture for cached indexes, or after collecting the index."
+        ),
+    )
+    parser.add_argument(
         "--resume",
         action="store_true",
         help="Resume live collection using cached snapshots and collection state.",
@@ -90,29 +105,21 @@ def _family_slugs_from_args(args: argparse.Namespace) -> list[str]:
 
 
 def _discover_families_from_index(*, fixture: bool, offline: bool) -> list[str]:
-    if fixture:
-        index_path = FIXTURES_DIR / "snapshots" / "ollama-library-index.html"
-    elif offline:
-        index_path = SNAPSHOTS_DIR / "ollama-library-index.html"
-    else:
-        return []
-    if not index_path.exists():
-        return []
-    html = index_path.read_text(encoding="utf-8")
-    return [entry.slug for entry in parse_library_index(html)]
+    return discover_family_slugs_from_index(fixture=fixture, offline=offline)
 
 
 def _require_ollama_family_selection(args: argparse.Namespace) -> list[str]:
     slugs = _family_slugs_from_args(args)
     if slugs:
         return slugs
-    discovered = _discover_families_from_index(fixture=args.fixture, offline=args.offline)
-    if discovered:
-        return discovered
+    if getattr(args, "from_index", False) or args.fixture or args.offline:
+        discovered = _discover_families_from_index(fixture=args.fixture, offline=args.offline)
+        if discovered:
+            return discovered
     print(
         "Ollama normalization requires an explicit family selection. "
-        "Pass --sample, --families <slug,...>, or collect with --offline/--fixture "
-        "so the library index is available for discovery.",
+        "Pass --sample, --families <slug,...>, or --from-index with an available "
+        "library index (--offline/--fixture).",
         file=sys.stderr,
     )
     raise SystemExit(2)
@@ -147,6 +154,38 @@ def _resolve_manifest_path(args: argparse.Namespace) -> Path | None:
     return None
 
 
+def cmd_plan(args: argparse.Namespace) -> int:
+    """Offline recreate plan: no network, no writes to legacy paths."""
+    family_slugs = _family_slugs_from_args(args) or None
+    sample_only = bool(args.sample)
+    # Default plan uses the library index when available; --sample keeps the small set.
+    if not sample_only and family_slugs is None and not args.from_index:
+        # Prefer a full index plan when an index snapshot/fixture exists.
+        args.from_index = True
+    plan = build_recreate_plan(
+        fixture=args.fixture,
+        offline=True,
+        sample_only=sample_only,
+        family_slugs=family_slugs,
+    )
+    json_path = write_recreate_plan(plan)
+    md_path = write_recreate_plan_markdown(plan)
+    print(
+        "Recreate plan: "
+        f"{plan['selected_family_count']} selected / "
+        f"{plan['index_family_count']} index / "
+        f"{plan['legacy_family_count']} legacy families; "
+        f"{plan['estimated_page_fetches']} estimated metadata page fetches."
+    )
+    print(
+        "Publisher preview: "
+        f"{plan['publisher_preview']['unknown_publisher_count']} unknown, "
+        f"{plan['publisher_preview']['inferred_needs_review_count']} inferred needing review."
+    )
+    print(f"Plan written to {json_path} and {md_path}")
+    return 0
+
+
 def cmd_collect(args: argparse.Namespace) -> int:
     fixture_dir = FIXTURES_DIR if args.fixture else None
     family_slugs = _family_slugs_from_args(args)
@@ -168,7 +207,20 @@ def cmd_collect(args: argparse.Namespace) -> int:
     )
     save_collection_state(state)
 
+    if not family_slugs and args.from_index:
+        family_slugs = _discover_families_from_index(fixture=args.fixture, offline=offline)
+        if not family_slugs:
+            print(
+                "No families discovered from library index. "
+                "Collect/cache ollama-library-index.html first or use --fixture.",
+                file=sys.stderr,
+            )
+            return 2
+        print(f"Discovered {len(family_slugs)} families from library index.")
+
     if family_slugs:
+        if args.fixture:
+            _stage_fixture_snapshots(family_slugs)
         collect_families(
             family_slugs,
             offline=offline,
@@ -189,7 +241,7 @@ def cmd_collect(args: argparse.Namespace) -> int:
 def cmd_normalize(args: argparse.Namespace) -> int:
     if args.source == "ollama":
         manifest_path = _resolve_manifest_path(args)
-        if manifest_path is not None:
+        if manifest_path is not None and not args.from_index:
             family_slugs = _family_slugs_from_args(args) or None
             catalog = normalize_ollama_from_manifest(manifest_path, family_slugs=family_slugs)
             summary = coverage_summary(catalog)
@@ -292,10 +344,40 @@ def cmd_compare(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_all(args: argparse.Namespace) -> int:
-    if args.source == "ollama" and not args.sample and not args.families:
+def cmd_promote(args: argparse.Namespace) -> int:
+    dry_run = not args.apply
+    if args.apply and not args.confirm:
         print(
-            "Ollama pipeline requires --sample or --families for explicit family selection.",
+            "Refusing promote --apply without --confirm. "
+            "This archives data/normalized and replaces it with the candidate catalog.",
+            file=sys.stderr,
+        )
+        return 2
+    try:
+        result = promote_candidate_catalog(dry_run=dry_run, apply=args.apply and args.confirm)
+    except (FileNotFoundError, ValueError, PermissionError) as exc:
+        print(f"Promote failed: {exc}", file=sys.stderr)
+        return 1
+
+    write_json(REPORTS_DIR / "promote-report.json", result)
+    print(
+        "Promote "
+        f"{'dry-run' if result['dry_run'] else 'applied'}: "
+        f"candidate {result['candidate_counts']} -> current {result['current_counts']}"
+    )
+    for note in result["notes"]:
+        print(f"  - {note}")
+    if result.get("archive_path"):
+        print(f"Archive: {result['archive_path']}")
+    print(f"Report written to {REPORTS_DIR / 'promote-report.json'}")
+    return 0
+
+
+def cmd_all(args: argparse.Namespace) -> int:
+    if args.source == "ollama" and not args.sample and not args.families and not args.from_index:
+        print(
+            "Ollama pipeline requires --sample, --families, or --from-index "
+            "for explicit family selection.",
             file=sys.stderr,
         )
         return 2
@@ -375,6 +457,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     for name, handler in [
+        ("plan", cmd_plan),
         ("collect", cmd_collect),
         ("normalize", cmd_normalize),
         ("validate", cmd_validate),
@@ -386,6 +469,28 @@ def build_parser() -> argparse.ArgumentParser:
         sub = subparsers.add_parser(name)
         _add_common_args(sub)
         sub.set_defaults(handler=handler)
+
+    promote = subparsers.add_parser(
+        "promote",
+        help="Dry-run or apply promotion of candidate catalog into data/normalized.",
+    )
+    promote.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=True,
+        help="Show promote plan without writing (default).",
+    )
+    promote.add_argument(
+        "--apply",
+        action="store_true",
+        help="Apply promotion after archiving the current canonical catalog.",
+    )
+    promote.add_argument(
+        "--confirm",
+        action="store_true",
+        help="Required with --apply to confirm irreversible canonical replacement.",
+    )
+    promote.set_defaults(handler=cmd_promote)
     return parser
 
 

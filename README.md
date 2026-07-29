@@ -71,14 +71,62 @@ Useful flags:
 - `--sample` — limit to the six representative fixture families
 - `--offline` — use cached snapshots only
 - `--fixture` — use `tests/fixtures` inputs
+- `--source ollama --candidate` — rebuild into `data/candidate/` without touching legacy data
+- `--from-index` — discover families from the Ollama library index snapshot
+- `--resume` — resume live collection from cached snapshots/state
 
 Shell wrappers remain available for compatibility:
 
 ```bash
 bash scripts/validate-catalog.sh
-bash scripts/refresh-catalog.sh
+bash scripts/refresh-catalog.sh            # legacy pipeline (data/families → data/normalized)
+bash scripts/plan-candidate-collect.sh     # offline recreate plan
+bash scripts/refresh-candidate-sample.sh   # offline six-family candidate rebuild
+bash scripts/promote-candidate.sh          # dry-run promote candidate → normalized
 bash scripts/build-indexes.sh
 ```
+
+## Recreate catalog (candidate scaffolding)
+
+Canonical recreate flow keeps legacy observations intact and writes a reviewable candidate first:
+
+```text
+plan → collect/normalize candidate → validate/compare → promote (dry-run) → promote --apply --confirm
+```
+
+1. **Plan** (offline, no network):
+
+```bash
+eight-ball plan --fixture --offline --from-index
+# or: bash scripts/plan-candidate-collect.sh
+```
+
+2. **Rebuild candidate from fixtures** (safe CI/sample path):
+
+```bash
+bash scripts/refresh-candidate-sample.sh
+eight-ball compare --sample
+```
+
+3. **Full-index recreate later** (metadata pages only; not run in CI):
+
+```bash
+# After an index snapshot exists under data/snapshots/:
+eight-ball collect --source ollama --candidate --offline --from-index
+eight-ball normalize --source ollama --candidate --offline --from-index
+eight-ball validate --candidate --source ollama
+eight-ball compare
+eight-ball promote --dry-run
+```
+
+4. **Promote** only after review. Promote archives `data/normalized/` into `data/history/<version>/` and never modifies `data/families/`:
+
+```bash
+eight-ball promote --dry-run
+# eight-ball promote --apply --confirm   # explicit; irreversible without history restore
+```
+
+This repository still does **not** run `ollama pull`, download weights, or generate installer scripts.
 
 ## Representative sample
 
@@ -93,6 +141,8 @@ The offline sample pipeline covers:
 
 ```bash
 eight-ball all --fixture --offline --sample
+# Candidate path (preferred recreate scaffolding):
+eight-ball all --source ollama --candidate --fixture --offline --sample
 ```
 
 ## Provenance and estimates

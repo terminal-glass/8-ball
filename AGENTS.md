@@ -25,6 +25,7 @@ Keep these directories distinguishable:
 | `data/families/` | Legacy per-family source observations preserved from prior catalog work | Commit |
 | `data/catalog.json*` | Historical aggregate exports from the legacy pipeline | Commit as historical reference only |
 | `data/overrides/` | Reviewed manual metadata overrides | Commit when present |
+| `data/history/` | Archived canonical normalized catalogs from promote | Commit version archives when promoted |
 | `data/raw/` | Ephemeral collection cache | Do not commit |
 | `data/snapshots/` | Large fetched pages for repeatable parsing | Do not commit |
 | `data/manifests/` | Ephemeral live collection manifests (gitignored) | Do not commit |
