@@ -16,7 +16,7 @@ venv/
 
 # Reproducible generated output (regenerate with eight-ball generate)
 data/generated/
-indexes/
+/indexes/
 
 # Ephemeral collection caches
 data/raw/

@@ -159,6 +159,24 @@ eight-ball all --fixture --offline --sample
 eight-ball all --source ollama --candidate --fixture --offline --sample
 ```
 
+## Installer-authoring datasets (P-steps)
+
+The repository also hosts static planning datasets and committed exports that
+separate installer repositories (for example `terminal-glass/8-ball-installer`)
+consume. These are metadata only; installer scripts are never generated here.
+
+| Folder | Contents |
+| --- | --- |
+| `P1-Estimator/` | Provider hardware specs, NoCloudGPT planning templates, overhead reserves, workload profiles |
+| `P2-Provider-Datasets/` | Provider plan metadata plus committed indexes (`indexes/`) |
+| `P3-Ollama-Metadata-Catalog/` | Catalog provenance and compact installer-consumable indexes, including `indexes/model-selection.json` (per-hardware-profile local model candidates with estimated RAM/VRAM) |
+
+Rebuild the committed P2/P3 exports after catalog or dataset changes:
+
+```bash
+eight-ball export-datasets
+```
+
 ## Provenance and estimates
 
 Observed values come directly from cited public sources. Derived values are calculated from observed inputs. Estimated values, such as RAM/VRAM recommendations, are heuristic and documented in `src/eight_ball/estimate/`. They are not vendor guarantees.

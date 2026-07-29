@@ -1,0 +1,422 @@
+[
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "s-1vcpu-1gb",
+    "display_name": "Basic 1 vCPU / 1 GiB",
+    "vcpu": 1,
+    "ram_gb": 1,
+    "disk_gb": 25,
+    "monthly_price_usd": 6,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "s-1vcpu-2gb",
+    "display_name": "Basic 1 vCPU / 2 GiB",
+    "vcpu": 1,
+    "ram_gb": 2,
+    "disk_gb": 50,
+    "monthly_price_usd": 12,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "s-2vcpu-2gb",
+    "display_name": "Basic 2 vCPU / 2 GiB",
+    "vcpu": 2,
+    "ram_gb": 2,
+    "disk_gb": 60,
+    "monthly_price_usd": 18,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "s-2vcpu-4gb",
+    "display_name": "Basic 2 vCPU / 4 GiB",
+    "vcpu": 2,
+    "ram_gb": 4,
+    "disk_gb": 80,
+    "monthly_price_usd": 24,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "s-4vcpu-8gb",
+    "display_name": "Basic 4 vCPU / 8 GiB",
+    "vcpu": 4,
+    "ram_gb": 8,
+    "disk_gb": 160,
+    "monthly_price_usd": 48,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "s-8vcpu-16gb",
+    "display_name": "Basic 8 vCPU / 16 GiB",
+    "vcpu": 8,
+    "ram_gb": 16,
+    "disk_gb": 320,
+    "monthly_price_usd": 96,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "s-8vcpu-32gb",
+    "display_name": "Basic 8 vCPU / 32 GiB",
+    "vcpu": 8,
+    "ram_gb": 32,
+    "disk_gb": 640,
+    "monthly_price_usd": 192,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "c-2vcpu-4gb",
+    "display_name": "CPU Optimized 2 vCPU / 4 GiB",
+    "vcpu": 2,
+    "ram_gb": 4,
+    "disk_gb": 25,
+    "monthly_price_usd": 42,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "c-4vcpu-8gb",
+    "display_name": "CPU Optimized 4 vCPU / 8 GiB",
+    "vcpu": 4,
+    "ram_gb": 8,
+    "disk_gb": 50,
+    "monthly_price_usd": 84,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "c-8vcpu-16gb",
+    "display_name": "CPU Optimized 8 vCPU / 16 GiB",
+    "vcpu": 8,
+    "ram_gb": 16,
+    "disk_gb": 100,
+    "monthly_price_usd": 168,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "c-16vcpu-32gb",
+    "display_name": "CPU Optimized 16 vCPU / 32 GiB",
+    "vcpu": 16,
+    "ram_gb": 32,
+    "disk_gb": 200,
+    "monthly_price_usd": 336,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "c-32vcpu-64gb",
+    "display_name": "CPU Optimized 32 vCPU / 64 GiB",
+    "vcpu": 32,
+    "ram_gb": 64,
+    "disk_gb": 400,
+    "monthly_price_usd": 672,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "c-48vcpu-96gb",
+    "display_name": "CPU Optimized 48 vCPU / 96 GiB",
+    "vcpu": 48,
+    "ram_gb": 96,
+    "disk_gb": 600,
+    "monthly_price_usd": 1008,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "g-2vcpu-8gb",
+    "display_name": "General Purpose 2 vCPU / 8 GiB",
+    "vcpu": 2,
+    "ram_gb": 8,
+    "disk_gb": 25,
+    "monthly_price_usd": 63,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "g-4vcpu-16gb",
+    "display_name": "General Purpose 4 vCPU / 16 GiB",
+    "vcpu": 4,
+    "ram_gb": 16,
+    "disk_gb": 50,
+    "monthly_price_usd": 126,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "g-8vcpu-32gb",
+    "display_name": "General Purpose 8 vCPU / 32 GiB",
+    "vcpu": 8,
+    "ram_gb": 32,
+    "disk_gb": 100,
+    "monthly_price_usd": 252,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "g-16vcpu-64gb",
+    "display_name": "General Purpose 16 vCPU / 64 GiB",
+    "vcpu": 16,
+    "ram_gb": 64,
+    "disk_gb": 200,
+    "monthly_price_usd": 504,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "g-32vcpu-128gb",
+    "display_name": "General Purpose 32 vCPU / 128 GiB",
+    "vcpu": 32,
+    "ram_gb": 128,
+    "disk_gb": 400,
+    "monthly_price_usd": 1008,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "g-40vcpu-160gb",
+    "display_name": "General Purpose 40 vCPU / 160 GiB",
+    "vcpu": 40,
+    "ram_gb": 160,
+    "disk_gb": 500,
+    "monthly_price_usd": 1260,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "m-2vcpu-16gb",
+    "display_name": "Memory Optimized 2 vCPU / 16 GiB",
+    "vcpu": 2,
+    "ram_gb": 16,
+    "disk_gb": 50,
+    "monthly_price_usd": 84,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "m-4vcpu-32gb",
+    "display_name": "Memory Optimized 4 vCPU / 32 GiB",
+    "vcpu": 4,
+    "ram_gb": 32,
+    "disk_gb": 100,
+    "monthly_price_usd": 168,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "m-8vcpu-64gb",
+    "display_name": "Memory Optimized 8 vCPU / 64 GiB",
+    "vcpu": 8,
+    "ram_gb": 64,
+    "disk_gb": 200,
+    "monthly_price_usd": 336,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "m-16vcpu-128gb",
+    "display_name": "Memory Optimized 16 vCPU / 128 GiB",
+    "vcpu": 16,
+    "ram_gb": 128,
+    "disk_gb": 400,
+    "monthly_price_usd": 672,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "m-32vcpu-256gb",
+    "display_name": "Memory Optimized 32 vCPU / 256 GiB",
+    "vcpu": 32,
+    "ram_gb": 256,
+    "disk_gb": 800,
+    "monthly_price_usd": 1344,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "so-2vcpu-16gb",
+    "display_name": "Storage Optimized 2 vCPU / 16 GiB",
+    "vcpu": 2,
+    "ram_gb": 16,
+    "disk_gb": 300,
+    "monthly_price_usd": 131,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "so-4vcpu-32gb",
+    "display_name": "Storage Optimized 4 vCPU / 32 GiB",
+    "vcpu": 4,
+    "ram_gb": 32,
+    "disk_gb": 600,
+    "monthly_price_usd": 262,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "so-8vcpu-64gb",
+    "display_name": "Storage Optimized 8 vCPU / 64 GiB",
+    "vcpu": 8,
+    "ram_gb": 64,
+    "disk_gb": 1200,
+    "monthly_price_usd": 524,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "so-16vcpu-128gb",
+    "display_name": "Storage Optimized 16 vCPU / 128 GiB",
+    "vcpu": 16,
+    "ram_gb": 128,
+    "disk_gb": 2400,
+    "monthly_price_usd": 1048,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "digitalocean",
+    "plan_id": "so-32vcpu-256gb",
+    "display_name": "Storage Optimized 32 vCPU / 256 GiB",
+    "vcpu": 32,
+    "ram_gb": 256,
+    "disk_gb": 4800,
+    "monthly_price_usd": 2096,
+    "source_url": "https://www.digitalocean.com/pricing/droplets"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "nano_3_0",
+    "display_name": "Nano-512MB Linux with public IPv4",
+    "vcpu": 2,
+    "ram_gb": 0.5,
+    "disk_gb": 20,
+    "monthly_price_usd": 5,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "micro_3_0",
+    "display_name": "Micro-1GB Linux with public IPv4",
+    "vcpu": 2,
+    "ram_gb": 1,
+    "disk_gb": 40,
+    "monthly_price_usd": 7,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "small_3_0",
+    "display_name": "Small-2GB Linux with public IPv4",
+    "vcpu": 2,
+    "ram_gb": 2,
+    "disk_gb": 60,
+    "monthly_price_usd": 12,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "medium_3_0",
+    "display_name": "Medium-4GB Linux with public IPv4",
+    "vcpu": 2,
+    "ram_gb": 4,
+    "disk_gb": 80,
+    "monthly_price_usd": 24,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "large_3_0",
+    "display_name": "Large-8GB Linux with public IPv4",
+    "vcpu": 2,
+    "ram_gb": 8,
+    "disk_gb": 160,
+    "monthly_price_usd": 44,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "xlarge_3_0",
+    "display_name": "Xlarge-16GB Linux with public IPv4",
+    "vcpu": 4,
+    "ram_gb": 16,
+    "disk_gb": 320,
+    "monthly_price_usd": 84,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "2xlarge_3_0",
+    "display_name": "2Xlarge-32GB Linux with public IPv4",
+    "vcpu": 8,
+    "ram_gb": 32,
+    "disk_gb": 640,
+    "monthly_price_usd": 164,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "4xlarge_3_0",
+    "display_name": "4Xlarge-64GB Linux with public IPv4",
+    "vcpu": 16,
+    "ram_gb": 64,
+    "disk_gb": 1280,
+    "monthly_price_usd": 384,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "8xlarge_3_0",
+    "display_name": "8Xlarge-128GB Linux with public IPv4",
+    "vcpu": 32,
+    "ram_gb": 128,
+    "disk_gb": 1280,
+    "monthly_price_usd": 884,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "12xlarge_3_0",
+    "display_name": "12Xlarge-192GB Linux with public IPv4",
+    "vcpu": 48,
+    "ram_gb": 192,
+    "disk_gb": 1280,
+    "monthly_price_usd": 1324,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "16xlarge_3_0",
+    "display_name": "16Xlarge-256GB Linux with public IPv4",
+    "vcpu": 64,
+    "ram_gb": 256,
+    "disk_gb": 1280,
+    "monthly_price_usd": 1764,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "mo_large_3_0",
+    "display_name": "Memory-optimized Large-16GB Linux with public IPv4",
+    "vcpu": 2,
+    "ram_gb": 16,
+    "disk_gb": 160,
+    "monthly_price_usd": 74,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  },
+  {
+    "provider_id": "lightsail",
+    "plan_id": "co_large_3_0",
+    "display_name": "Compute-optimized Large-4GB Linux with public IPv4",
+    "vcpu": 2,
+    "ram_gb": 4,
+    "disk_gb": 160,
+    "monthly_price_usd": 42,
+    "source_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html"
+  }
+]
