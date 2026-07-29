@@ -249,18 +249,16 @@ def compare_catalogs(
                 }
             )
 
-        legacy_model = legacy_models.get(legacy_tag.get("model_id", ""), {})
-        candidate_model = candidate_models.get(candidate_tag.get("model_id", ""), {})
-        model_cap_delta = _capability_delta(
-            legacy_model.get("capabilities"),
-            candidate_model.get("capabilities"),
+        tag_cap_delta = _capability_delta(
+            legacy_tag.get("capabilities"),
+            candidate_tag.get("capabilities"),
         )
-        if model_cap_delta:
+        if tag_cap_delta:
             capability_deltas.append(
                 {
                     "ollama_identifier": tag_id,
                     "model_id": candidate_tag.get("model_id"),
-                    "capability_changes": model_cap_delta,
+                    "capability_changes": tag_cap_delta,
                 }
             )
 
@@ -284,23 +282,10 @@ def compare_catalogs(
                     "reason": "; ".join(sorted(set(reasons))),
                 }
             )
-        if candidate_model.get("publisher_id") == "unknown":
-            _add_review_item(
-                {
-                    "kind": "model",
-                    "id": model_id,
-                    "family_id": candidate_model.get("family_id"),
-                    "reason": "unknown publisher",
-                }
-            )
 
     for family_id in sorted(candidate_family_ids):
         family = candidate_families[family_id]
-        family_reasons = family.get("review_reasons") or []
-        if family.get("description") is None and "missing_family_description" not in family_reasons:
-            family_reasons = [*family_reasons, "missing_family_description"]
-        if family.get("publisher_id") == "unknown":
-            family_reasons = [*family_reasons, "unknown_publisher"]
+        family_reasons = list(family.get("review_reasons") or [])
         if family_reasons:
             _add_review_item(
                 {

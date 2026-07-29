@@ -6,13 +6,13 @@ import pytest
 
 from eight_ball.collect.manifest import (
     checksum_text,
-    verify_content_checksum,
 )
 from eight_ball.collect.ollama import ResumedSnapshot, _should_skip_live_fetch
-from eight_ball.collect.parse_ollama import ParseError, parse_library_index
-from eight_ball.normalize.ollama_web import normalize_ollama_from_manifest
-from eight_ball.normalize.publishers import infer_publisher_id
+from eight_ball.collect.parse_ollama import ParsedTag, ParseError, parse_library_index
+from eight_ball.normalize.ollama_web import build_candidate_catalog, normalize_ollama_from_manifest
+from eight_ball.normalize.publishers import infer_publisher_id, slug_token_match
 from eight_ball.report.compare import compare_catalogs
+from eight_ball.validate.catalog import ValidationError, validate_catalog
 
 FIXTURE_SNAPSHOTS = Path("tests/fixtures/snapshots")
 FIXTURE_MANIFEST = Path("tests/fixtures/manifests/six-family-sample.json")
@@ -22,6 +22,20 @@ def test_parse_empty_library_index_raises():
     html = (FIXTURE_SNAPSHOTS / "malformed-index.html").read_text(encoding="utf-8")
     with pytest.raises(ParseError, match="zero family records"):
         parse_library_index(html)
+
+
+def test_slug_token_match_rejects_false_positives():
+    assert slug_token_match("llama3", "llama3")
+    assert not slug_token_match("llamax", "llama")
+    assert not slug_token_match("philosopher", "phi")
+    assert not slug_token_match("mistrallite", "mistral")
+    assert infer_publisher_id(family_slug="llamax").publisher_id == "unknown"
+    assert infer_publisher_id(family_slug="philosopher").publisher_id == "unknown"
+    assert infer_publisher_id(family_slug="mistrallite").publisher_id == "unknown"
+
+
+def test_community_slug_blocks_base_publisher_inference():
+    assert infer_publisher_id(family_slug="dolphin-llama3").publisher_id == "unknown"
 
 
 def test_resume_verifies_checksum(tmp_path):
@@ -73,65 +87,145 @@ def test_resume_checksum_mismatch_raises(tmp_path):
         )
 
 
-def test_verify_content_checksum_helper():
-    content = "fixture"
-    digest = checksum_text(content)
-    verify_content_checksum(content, digest, label="fixture")
-    with pytest.raises(Exception, match="Checksum mismatch"):
-        verify_content_checksum("changed", digest, label="fixture")
-
-
 def test_publisher_inference_for_sample_families():
-    assert infer_publisher_id(family_slug="llama3").publisher_id == "meta"
+    llama3 = infer_publisher_id(family_slug="llama3")
+    assert llama3.publisher_id == "meta"
+    assert llama3.confidence == "manual"
+    assert llama3.review_status == "approved"
     assert infer_publisher_id(family_slug="codestral").publisher_id == "mistral-ai"
     assert infer_publisher_id(family_slug="gemini-3-flash-preview").publisher_id == "google"
     assert infer_publisher_id(family_slug="nomic-embed-text").publisher_id == "nomic-ai"
     assert infer_publisher_id(family_slug="llava").publisher_id == "llava-project"
 
 
-def test_candidate_catalog_has_catalog_source_and_publishers(tmp_path, monkeypatch):
+def test_capabilities_do_not_leak_between_tags():
+    from eight_ball.collect.parse_ollama import ParsedFamilyPage
+
+    family = ParsedFamilyPage(
+        slug="demo",
+        display_name="demo",
+        capability_badges=[],
+    )
+    tags = [
+        ParsedTag(
+            ollama_identifier="demo:vision",
+            family_slug="demo",
+            tag_suffix="vision",
+            input_capabilities=["Image"],
+        ),
+        ParsedTag(
+            ollama_identifier="demo:text",
+            family_slug="demo",
+            tag_suffix="text",
+            input_capabilities=["Text"],
+        ),
+    ]
+    catalog = build_candidate_catalog(
+        families=[family],
+        tags_by_family={"demo": tags},
+        retrieved_at="2026-07-28T12:00:00Z",
+        retrieved_at_by_family={"demo": {"family": "2026-07-28T12:00:00Z", "tags": "2026-07-28T12:00:00Z"}},
+    )
+    by_id = {tag["ollama_identifier"]: tag for tag in catalog["tags"]}
+    assert catalog["families"][0]["primary_capabilities"].get("vision") != "true"
+    assert by_id["demo:vision"]["capabilities"].get("vision") == "true"
+    assert by_id["demo:text"]["capabilities"].get("vision") != "true"
+    assert by_id["demo:text"]["capabilities"].get("text_generation") == "true"
+
+
+def test_per_snapshot_timestamps_use_family_and_tags_pages_separately():
+    from eight_ball.collect.parse_ollama import ParsedFamilyPage
+
+    family = ParsedFamilyPage(slug="demo", display_name="demo")
+    tags = [
+        ParsedTag(
+            ollama_identifier="demo:latest",
+            family_slug="demo",
+            tag_suffix="latest",
+            input_capabilities=["Text"],
+            download_size_text="1.0GB",
+            download_size_bytes=1_000_000_000,
+        )
+    ]
+    catalog = build_candidate_catalog(
+        families=[family],
+        tags_by_family={"demo": tags},
+        retrieved_at="2026-07-28T12:00:00Z",
+        retrieved_at_by_family={
+            "demo": {
+                "family": "2026-07-01T10:00:00Z",
+                "tags": "2026-07-02T11:00:00Z",
+            }
+        },
+    )
+    assert catalog["families"][0]["retrieved_at"] == "2026-07-01T10:00:00Z"
+    assert catalog["tags"][0]["retrieved_at"] == "2026-07-02T11:00:00Z"
+    assert (
+        catalog["families"][0]["provenance"]["catalog_source_id"]["retrieved_at"]
+        == "2026-07-01T10:00:00Z"
+    )
+    assert catalog["tags"][0]["provenance"]["download_size_bytes"]["retrieved_at"] == "2026-07-02T11:00:00Z"
+
+
+def test_per_snapshot_timestamps_from_manifest_fixture(tmp_path, monkeypatch):
     candidate_dir = tmp_path / "candidate" / "normalized"
     monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
 
     catalog = normalize_ollama_from_manifest(
         FIXTURE_MANIFEST,
-        family_slugs=["llama3", "llava", "nomic-embed-text"],
+        family_slugs=["tinyllama"],
     )
-    assert catalog["catalog_source_id"] == "ollama-library"
-    publisher_ids = {publisher["id"] for publisher in catalog["publishers"]}
-    assert "ollama-library" not in publisher_ids
-    assert {"meta", "llava-project", "nomic-ai"} <= publisher_ids
-
-    families = {family["id"]: family for family in catalog["families"]}
-    assert families["llama3"]["catalog_source_id"] == "ollama-library"
-    assert families["llama3"]["publisher_id"] == "meta"
-    assert "provenance" in families["llama3"]
-
-    tags = catalog["tags"]
-    llama_tag = next(tag for tag in tags if tag["ollama_identifier"] == "llama3:latest")
-    assert "capabilities" in llama_tag
-    assert "context_window_tokens" in llama_tag["provenance"]
-    assert llama_tag["provenance"]["capabilities"]["confidence"] == "derived"
+    family = catalog["families"][0]
+    tag = catalog["tags"][0]
+    assert family["retrieved_at"] == "2026-01-01T00:00:00Z"
+    assert tag["retrieved_at"] == "2026-01-01T00:00:00Z"
+    assert family["provenance"]["catalog_source_id"]["retrieved_at"] == family["retrieved_at"]
+    assert tag["provenance"]["download_size_bytes"]["retrieved_at"] == tag["retrieved_at"]
 
 
-def test_tag_capabilities_refine_family_defaults(tmp_path, monkeypatch):
+def test_tag_provenance_marks_normalized_values_as_derived(tmp_path, monkeypatch):
     candidate_dir = tmp_path / "candidate" / "normalized"
     monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
 
+    catalog = normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["llama3"])
+    tag = next(tag for tag in catalog["tags"] if tag["ollama_identifier"] == "llama3:latest")
+    assert tag["provenance"]["download_size_text"]["confidence"] == "observed"
+    assert tag["provenance"]["download_size_bytes"]["confidence"] == "derived"
+    assert tag["provenance"]["parameter_count"]["confidence"] in {"derived", "unknown"}
+    assert tag["provenance"]["context_window_tokens"]["confidence"] == "derived"
+
+
+def test_candidate_validation_rejects_invalid_capability_and_missing_provenance(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama"])
+
+    from eight_ball.config import load_json, write_json
+
+    tags = load_json(candidate_dir / "tags.json")
+    tags[0]["capabilities"]["not_a_real_capability"] = "true"
+    del tags[0]["provenance"]["quantization"]
+    write_json(candidate_dir / "tags.json", tags)
+
+    with pytest.raises(ValidationError):
+        validate_catalog(normalized_dir=candidate_dir, include_artifacts=False)
+
+
+def test_manual_override_models_are_valid_not_noisy_review(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
     catalog = normalize_ollama_from_manifest(
         FIXTURE_MANIFEST,
-        family_slugs=["llava"],
+        family_slugs=["llama3", "codestral", "tinyllama"],
     )
-    family = next(item for item in catalog["families"] if item["id"] == "llava")
-    tag = next(item for item in catalog["tags"] if item["ollama_identifier"] == "llava:latest")
-    assert family["primary_capabilities"].get("vision") == "true"
-    assert tag["capabilities"].get("vision") == "true"
+    reviewed_models = [model for model in catalog["models"] if model["validation_status"] == "needs_review"]
+    assert reviewed_models == []
+    assert all("publisher_inferred" not in model.get("review_reasons", []) for model in catalog["models"])
 
 
 def test_compare_manual_review_items_are_deduplicated(tmp_path, monkeypatch):
     candidate_dir = tmp_path / "candidate" / "normalized"
     monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
-    monkeypatch.setattr("eight_ball.report.compare.CANDIDATE_NORMALIZED_DIR", candidate_dir)
 
     normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama", "llama3"])
     comparison = compare_catalogs(

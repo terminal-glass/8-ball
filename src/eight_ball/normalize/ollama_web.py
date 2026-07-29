@@ -19,7 +19,6 @@ from eight_ball.config import capabilities_config, write_json
 from eight_ball.normalize.capabilities import (
     capabilities_from_tokens,
     family_tokens_from_badges,
-    merge_capability_maps,
     refine_capabilities,
     tag_tokens_from_input_capabilities,
 )
@@ -31,6 +30,7 @@ from eight_ball.normalize.publishers import (
     build_publisher_records,
     default_catalog_source_id,
     infer_publisher_id,
+    publisher_mapping_needs_review,
 )
 from eight_ball.paths import CANDIDATE_NORMALIZED_DIR
 
@@ -67,24 +67,30 @@ def _resolve_model_id_map(family_slug: str, tags: list[ParsedTag]) -> dict[str, 
     return model_ids
 
 
-def _review_reasons(
+def _actionable_review_reasons(
     *,
     publisher_id: str,
-    publisher_inference_notes: str | None,
+    publisher_inference: Any,
     description: str | None,
 ) -> list[str]:
     reasons: list[str] = []
     if publisher_id == "unknown":
         reasons.append("unknown_publisher")
+    if publisher_mapping_needs_review(publisher_inference):
+        reasons.append("publisher_mapping_needs_review")
     if not description:
         reasons.append("missing_family_description")
-    if publisher_inference_notes and publisher_id != "unknown":
-        reasons.append("publisher_inferred")
     return reasons
 
 
-def _validation_status(review_reasons: list[str]) -> str:
-    if review_reasons:
+def _unknown_field_flags(capability_map: dict[str, str]) -> list[str]:
+    if any(value == "unknown" for value in capability_map.values()):
+        return ["unknown_capabilities"]
+    return []
+
+
+def _validation_status(actionable_reasons: list[str]) -> str:
+    if actionable_reasons:
         return "needs_review"
     return "valid"
 
@@ -94,7 +100,7 @@ def build_candidate_catalog(
     families: list[ParsedFamilyPage],
     tags_by_family: dict[str, list[ParsedTag]],
     retrieved_at: str,
-    retrieved_at_by_family: dict[str, str] | None = None,
+    retrieved_at_by_family: dict[str, dict[str, str]] | None = None,
 ) -> dict[str, Any]:
     catalog_source_id = default_catalog_source_id()
     normalized_families: list[dict[str, Any]] = []
@@ -102,12 +108,14 @@ def build_candidate_catalog(
     tags: list[dict[str, Any]] = []
     model_ids_seen: set[str] = set()
     publisher_ids: set[str] = set()
-    family_retrieved = retrieved_at_by_family or {}
+    family_times = retrieved_at_by_family or {}
 
     for family in families:
         slug = family.slug
         family_tags = tags_by_family.get(slug, [])
-        family_retrieved_at = family_retrieved.get(slug, retrieved_at)
+        times = family_times.get(slug, {})
+        family_retrieved_at = times.get("family", retrieved_at)
+        tags_retrieved_at = times.get("tags", retrieved_at)
         family_source_url = family.source_url or f"https://ollama.com/library/{slug}"
 
         publisher_inference = infer_publisher_id(
@@ -118,18 +126,13 @@ def build_candidate_catalog(
         publisher_ids.add(publisher_inference.publisher_id)
 
         badge_tokens = family_tokens_from_badges(family.capability_badges)
-        tag_input_tokens = tag_tokens_from_input_capabilities(
-            [item for tag in family_tags for item in tag.input_capabilities]
-        )
-        family_caps = merge_capability_maps(
-            capabilities_from_tokens(badge_tokens),
-            capabilities_from_tokens(tag_input_tokens),
-        )
-        family_review_reasons = _review_reasons(
+        family_caps = capabilities_from_tokens(badge_tokens)
+        actionable_reasons = _actionable_review_reasons(
             publisher_id=publisher_inference.publisher_id,
-            publisher_inference_notes=publisher_inference.notes,
+            publisher_inference=publisher_inference,
             description=family.description,
         )
+        unknown_flags = _unknown_field_flags(family_caps)
 
         normalized_families.append(
             {
@@ -149,7 +152,8 @@ def build_candidate_catalog(
                     source_url=family_source_url,
                     retrieved_at=family_retrieved_at,
                 ),
-                "review_reasons": family_review_reasons,
+                "review_reasons": actionable_reasons,
+                "unknown_field_flags": unknown_flags,
             }
         )
 
@@ -167,10 +171,8 @@ def build_candidate_catalog(
             model_tag_tokens = tag_tokens_from_input_capabilities(
                 [item for tag in model_tags for item in tag.input_capabilities]
             )
-            model_caps = refine_capabilities(family_caps, badge_tokens + model_tag_tokens)
-            model_review_reasons = list(family_review_reasons)
-            if any(cap_value == "unknown" for cap_value in model_caps.values()):
-                model_review_reasons.append("unknown_capabilities")
+            model_caps = refine_capabilities(family_caps, model_tag_tokens)
+            model_unknown_flags = _unknown_field_flags(model_caps)
             models.append(
                 {
                     "id": model_id,
@@ -185,8 +187,9 @@ def build_candidate_catalog(
                     "default_tag": _default_tag(model_tags),
                     "source_url": family_source_url,
                     "retrieved_at": family_retrieved_at,
-                    "validation_status": _validation_status(model_review_reasons),
-                    "review_reasons": sorted(set(model_review_reasons)),
+                    "validation_status": _validation_status(actionable_reasons),
+                    "review_reasons": actionable_reasons,
+                    "unknown_field_flags": sorted(set(unknown_flags + model_unknown_flags)),
                     "provenance": build_family_provenance(
                         publisher_inference=publisher_inference,
                         catalog_source_id=catalog_source_id,
@@ -199,9 +202,8 @@ def build_candidate_catalog(
         tags_source_url = f"https://ollama.com/library/{slug}/tags"
         for tag in family_tags:
             model_id = model_id_map[tag.ollama_identifier]
-            tag_retrieved_at = family_retrieved_at
             tag_tokens = tag_tokens_from_input_capabilities(tag.input_capabilities)
-            tag_caps = refine_capabilities(family_caps, badge_tokens + tag_tokens)
+            tag_caps = refine_capabilities(family_caps, tag_tokens)
             tag_record = {
                 "id": _tag_id(tag.ollama_identifier),
                 "ollama_identifier": tag.ollama_identifier,
@@ -221,12 +223,13 @@ def build_candidate_catalog(
                 "run_command": f"ollama run {tag.ollama_identifier}",
                 "alias_target": tag.alias_target,
                 "source_url": tags_source_url,
-                "retrieved_at": tag_retrieved_at,
+                "retrieved_at": tags_retrieved_at,
             }
             tag_record["provenance"] = build_tag_provenance(
                 tag=tag_record,
+                parsed_tag=tag,
                 source_url=tags_source_url,
-                retrieved_at=tag_retrieved_at,
+                retrieved_at=tags_retrieved_at,
                 capabilities=tag_caps,
             )
             tags.append(tag_record)
@@ -307,7 +310,7 @@ def normalize_ollama_snapshots(
 ) -> dict[str, Any]:
     families: list[ParsedFamilyPage] = []
     tags_by_family: dict[str, list[ParsedTag]] = {}
-    retrieved_at_by_family: dict[str, str] = {}
+    retrieved_at_by_family: dict[str, dict[str, str]] = {}
 
     for slug in family_slugs:
         family_html: str
@@ -332,7 +335,10 @@ def normalize_ollama_snapshots(
 
         families.append(parse_family_page(family_html, slug))
         tags_by_family[slug] = parse_family_tags_page(tags_html, slug)
-        retrieved_at_by_family[slug] = max(family_retrieved, tags_retrieved)
+        retrieved_at_by_family[slug] = {
+            "family": family_retrieved,
+            "tags": tags_retrieved,
+        }
 
     catalog = build_candidate_catalog(
         families=families,

@@ -25,6 +25,10 @@
     "review_reasons": {
       "type": "array",
       "items": { "type": "string" }
+    },
+    "unknown_field_flags": {
+      "type": "array",
+      "items": { "type": "string" }
     }
   },
   "additionalProperties": false

@@ -7,56 +7,149 @@ catalog_sources:
 default_publisher_id: unknown
 default_catalog_source_id: ollama-library
 
+# Slug prefixes that indicate community or derived builds. These block base-model
+# publisher inference unless an explicit family override exists.
+community_slug_prefixes:
+  - dolphin
+  - nous
+  - openchat
+  - everythinglm
+  - neural-chat
+  - open-orca
+  - wizard-vicuna
+  - yarn
+  - samantha
+  - stable-beluga
+  - starling
+  - vicuna
+  - zephyr
+
 # Canonical model publishers / organizations.
 publishers:
   - id: meta
     display_name: Meta
     aliases: [meta ai, meta-llama]
     official_url: https://ai.meta.com/
-    slug_prefixes: [llama, llama2, llama3, llama4, codellama]
+    evidence_url: https://ai.meta.com/llama/
+    provenance_type: inferred
+    review_status: approved
+    slug_prefixes: [llama2, llama3, llama4, codellama]
     text_patterns: [meta llama, meta ai]
   - id: google
     display_name: Google
     aliases: [google deepmind, gemma]
     official_url: https://ai.google/
+    evidence_url: https://ai.google/
+    provenance_type: inferred
+    review_status: approved
     slug_prefixes: [gemini, gemma]
-    text_patterns: [google, deepmind]
+    text_patterns: [google deepmind, google gemini]
   - id: mistral-ai
     display_name: Mistral AI
     aliases: [mistral, mixtral]
     official_url: https://mistral.ai/
+    evidence_url: https://mistral.ai/
+    provenance_type: inferred
+    review_status: approved
     slug_prefixes: [mistral, mixtral, codestral, ministral, pixtral]
-    text_patterns: [mistral ai, mistral-ai]
+    text_patterns: [mistral ai]
   - id: microsoft
     display_name: Microsoft
     aliases: [phi]
     official_url: https://www.microsoft.com/
-    slug_prefixes: [phi, wizardlm, orca]
-    text_patterns: [microsoft]
+    evidence_url: https://azure.microsoft.com/en-us/products/phi
+    provenance_type: inferred
+    review_status: approved
+    slug_prefixes: [phi]
+    text_patterns: [microsoft phi]
+  - id: alibaba-qwen
+    display_name: Alibaba / Qwen
+    aliases: [qwen, alibaba]
+    official_url: https://qwenlm.github.io/
+    evidence_url: https://qwenlm.github.io/
+    provenance_type: inferred
+    review_status: approved
+    slug_prefixes: [qwen, qwen2, qwen3]
+    text_patterns: [alibaba qwen, qwen]
+  - id: deepseek
+    display_name: DeepSeek
+    aliases: [deepseek ai]
+    official_url: https://www.deepseek.com/
+    evidence_url: https://www.deepseek.com/
+    provenance_type: inferred
+    review_status: approved
+    slug_prefixes: [deepseek]
+    text_patterns: [deepseek]
+  - id: ibm
+    display_name: IBM
+    aliases: [granite]
+    official_url: https://www.ibm.com/granite
+    evidence_url: https://www.ibm.com/granite
+    provenance_type: inferred
+    review_status: approved
+    slug_prefixes: [granite]
+    text_patterns: [ibm granite, granite]
   - id: nomic-ai
     display_name: Nomic
     aliases: [nomic ai]
     official_url: https://www.nomic.ai/
+    evidence_url: https://www.nomic.ai/
+    provenance_type: inferred
+    review_status: approved
     slug_prefixes: [nomic-embed, nomic]
-    text_patterns: [nomic]
+    text_patterns: [nomic ai]
   - id: tinyllama
     display_name: TinyLlama
+    official_url: https://github.com/jzhang38/TinyLlama
+    evidence_url: https://github.com/jzhang38/TinyLlama
+    provenance_type: inferred
+    review_status: approved
     slug_prefixes: [tinyllama]
     text_patterns: [tinyllama]
   - id: llava-project
     display_name: LLaVA
     aliases: [llava]
+    official_url: https://llava-vl.github.io/
+    evidence_url: https://llava-vl.github.io/
+    provenance_type: inferred
+    review_status: approved
     slug_prefixes: [llava]
     text_patterns: [llava]
   - id: unknown
     display_name: Unknown
     aliases: []
+    provenance_type: unknown
+    review_status: needs_review
 
-# Explicit family slug to publisher assignments override pattern inference.
+# Explicit reviewed family slug to publisher assignments.
 family_overrides:
-  gemini-3-flash-preview: google
-  nomic-embed-text: nomic-ai
-  tinyllama: tinyllama
-  llama3: meta
-  codestral: mistral-ai
-  llava: llava-project
+  gemini-3-flash-preview:
+    publisher_id: google
+    evidence_url: https://ollama.com/library/gemini-3-flash-preview
+    provenance_type: manual
+    review_status: approved
+  nomic-embed-text:
+    publisher_id: nomic-ai
+    evidence_url: https://ollama.com/library/nomic-embed-text
+    provenance_type: manual
+    review_status: approved
+  tinyllama:
+    publisher_id: tinyllama
+    evidence_url: https://ollama.com/library/tinyllama
+    provenance_type: manual
+    review_status: approved
+  llama3:
+    publisher_id: meta
+    evidence_url: https://ollama.com/library/llama3
+    provenance_type: manual
+    review_status: approved
+  codestral:
+    publisher_id: mistral-ai
+    evidence_url: https://ollama.com/library/codestral
+    provenance_type: manual
+    review_status: approved
+  llava:
+    publisher_id: llava-project
+    evidence_url: https://ollama.com/library/llava
+    provenance_type: manual
+    review_status: approved

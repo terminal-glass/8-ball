@@ -224,7 +224,7 @@ def parse_family_page(html: str, family_slug: str) -> ParsedFamilyPage:
         label = span.get_text(strip=True).lower()
         if label in {"vision", "tools", "thinking", "embedding", "cloud"}:
             capability_badges.append(label)
-    is_cloud_family = "cloud" in capability_badges or "cloud" in html.lower()
+    is_cloud_family = "cloud" in capability_badges
 
     return ParsedFamilyPage(
         slug=family_slug,
