@@ -13,6 +13,7 @@ from eight_ball.collect.manifest import (
 )
 from eight_ball.collect.ollama import collect_families, collect_ollama_library
 from eight_ball.config import write_json
+from eight_ball.export.installer_datasets import build_p2_indexes, export_p3_catalog
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
@@ -464,6 +465,24 @@ def cmd_all(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_export_datasets(args: argparse.Namespace) -> int:
+    p2_summary = build_p2_indexes()
+    print(
+        "P2 indexes written: "
+        f"{p2_summary['digitalocean_plan_count']} DigitalOcean plans, "
+        f"{p2_summary['lightsail_bundle_count']} Lightsail bundles."
+    )
+    provenance = export_p3_catalog()
+    counts = provenance["counts"]
+    print(
+        "P3 export written: "
+        f"{counts['families']} families, {counts['models']} models, "
+        f"{counts['tags']} tags from catalog {provenance['catalog_version']} "
+        f"(commit {str(provenance['source_commit'])[:12]})."
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="eight-ball", description="8-BALL Ollama metadata catalog tooling")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -513,6 +532,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Explicitly acknowledge canonical families/models/tags absent from candidate.",
     )
     promote.set_defaults(handler=cmd_promote)
+
+    export_datasets = subparsers.add_parser(
+        "export-datasets",
+        help="Rebuild committed P2 provider indexes and the P3 catalog export.",
+    )
+    export_datasets.set_defaults(handler=cmd_export_datasets)
     return parser
 
 
