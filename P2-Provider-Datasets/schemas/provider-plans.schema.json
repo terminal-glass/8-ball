@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "provider",
+      "family",
+      "plan_slug",
+      "vcpu",
+      "ram_gb",
+      "disk_gb",
+      "monthly_price_usd",
+      "source_url",
+      "verified_at_utc"
+    ]
+  }
+}

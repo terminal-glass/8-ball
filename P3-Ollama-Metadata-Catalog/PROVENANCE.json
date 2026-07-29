@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-29T03:54:22Z",
+  "source_repository": "terminal-glass/8-ball",
+  "source_commit": "c9c85067a69e34e4298902f1d2bf2d7fedc93841",
+  "catalog_version": "2026.07.16",
+  "catalog_source_id": null,
+  "normalized_dir": "data/normalized",
+  "source_files": {
+    "publishers.json": {
+      "path": "data/normalized/publishers.json",
+      "sha256": "f4dc7c6b2c34d88fdf79511fac8ccb3813c956a7264d3cd23d221516b199dd75",
+      "bytes": 166
+    },
+    "families.json": {
+      "path": "data/normalized/families.json",
+      "sha256": "835eb58d155b0ee75327d41bb8a5e7d45f6009ab08bad5f71c3e9e38d3a466a9",
+      "bytes": 182149
+    },
+    "models.json": {
+      "path": "data/normalized/models.json",
+      "sha256": "37a445b9c0a4847dd2bda1d916febbee6d052e80b5f5f7a6582e5b7685fd0b35",
+      "bytes": 204579
+    },
+    "tags.json": {
+      "path": "data/normalized/tags.json",
+      "sha256": "000aafed21cc45f36daf39fb6fb774b4caad7591fde8db4d0b87c67d764d32e6",
+      "bytes": 9078566
+    },
+    "capabilities.json": {
+      "path": "data/normalized/capabilities.json",
+      "sha256": "751edec3909939f3e4e72a241f1a189984dc954a8fd1f15a3763442b8b38cec5",
+      "bytes": 1350
+    },
+    "catalog-meta.json": {
+      "path": "data/normalized/catalog-meta.json",
+      "sha256": "0a5c0d2bdaab491fcd53b7d19c870fa613c7a6a41ad7375cb1c2b04e5e7f583a",
+      "bytes": 104
+    }
+  },
+  "counts": {
+    "publishers": 1,
+    "families": 231,
+    "models": 231,
+    "tags": 7246
+  },
+  "exports": [
+    "indexes/model-selection.json",
+    "indexes/catalog-summary.json"
+  ],
+  "policy": {
+    "metadata_only": true,
+    "model_payloads_included": false,
+    "installer_scripts_included": false
+  }
+}

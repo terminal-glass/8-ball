@@ -1,0 +1,128 @@
+[
+  {
+    "template_id": "nc-cpu-minimum-lab",
+    "display_name": "Minimum Lab (CPU-only)",
+    "ram_gb_minimum": 8,
+    "ram_gb_recommended": 16,
+    "vcpu_minimum": 2,
+    "vcpu_recommended": 4,
+    "disk_gb_minimum": 80,
+    "disk_gb_recommended": 120,
+    "gpu_required": false,
+    "cpu_only": true,
+    "expected_users": 1,
+    "recommended_workloads": [
+      "personal chat",
+      "developer experimentation"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "Suitable for evaluation and single-user lab deployments."
+    ]
+  },
+  {
+    "template_id": "nc-cpu-personal",
+    "display_name": "Personal (CPU-only)",
+    "ram_gb_minimum": 16,
+    "ram_gb_recommended": 32,
+    "vcpu_minimum": 4,
+    "vcpu_recommended": 4,
+    "disk_gb_minimum": 120,
+    "disk_gb_recommended": 200,
+    "gpu_required": false,
+    "cpu_only": true,
+    "expected_users": 1,
+    "recommended_workloads": [
+      "personal chat",
+      "documentation and RAG"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "Comfortable for one primary user with small models."
+    ]
+  },
+  {
+    "template_id": "nc-cpu-balanced",
+    "display_name": "Balanced (CPU-only)",
+    "ram_gb_minimum": 32,
+    "ram_gb_recommended": 64,
+    "vcpu_minimum": 4,
+    "vcpu_recommended": 8,
+    "disk_gb_minimum": 200,
+    "disk_gb_recommended": 400,
+    "gpu_required": false,
+    "cpu_only": true,
+    "expected_users": 3,
+    "recommended_workloads": [
+      "small business",
+      "coding assistant"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "Balances concurrent chat and moderate RAG workloads."
+    ]
+  },
+  {
+    "template_id": "nc-cpu-business",
+    "display_name": "Business (CPU-only)",
+    "ram_gb_minimum": 64,
+    "ram_gb_recommended": 128,
+    "vcpu_minimum": 8,
+    "vcpu_recommended": 16,
+    "disk_gb_minimum": 400,
+    "disk_gb_recommended": 800,
+    "gpu_required": false,
+    "cpu_only": true,
+    "expected_users": 10,
+    "recommended_workloads": [
+      "small business",
+      "multi-user office"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "Targets office deployments without discrete GPU acceleration."
+    ]
+  },
+  {
+    "template_id": "nc-cpu-multi-user",
+    "display_name": "Multi-User (CPU-only)",
+    "ram_gb_minimum": 128,
+    "ram_gb_recommended": 192,
+    "vcpu_minimum": 16,
+    "vcpu_recommended": 24,
+    "disk_gb_minimum": 600,
+    "disk_gb_recommended": 1000,
+    "gpu_required": false,
+    "cpu_only": true,
+    "expected_users": 25,
+    "recommended_workloads": [
+      "multi-user office",
+      "documentation and RAG"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "Supports larger teams with CPU inference and shared knowledge bases."
+    ]
+  },
+  {
+    "template_id": "nc-cpu-heavy-inference",
+    "display_name": "Heavy CPU Inference (CPU-only)",
+    "ram_gb_minimum": 192,
+    "ram_gb_recommended": 256,
+    "vcpu_minimum": 24,
+    "vcpu_recommended": 32,
+    "disk_gb_minimum": 800,
+    "disk_gb_recommended": 1200,
+    "gpu_required": false,
+    "cpu_only": true,
+    "expected_users": 10,
+    "recommended_workloads": [
+      "heavy AI research",
+      "coding assistant"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "For CPU-only inference with larger quantized models and high concurrency."
+    ]
+  }
+]

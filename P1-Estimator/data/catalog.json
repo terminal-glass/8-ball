@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "estimator_data_version": "P1.0.0",
+  "datasets": [
+    {
+      "id": "digitalocean-droplets",
+      "path": "DO/droplets.json",
+      "type": "provider-plans"
+    },
+    {
+      "id": "lightsail-linux-ipv4",
+      "path": "LS/lightsail-linux-ipv4.json",
+      "type": "provider-plans"
+    },
+    {
+      "id": "nc-cpu-only",
+      "path": "NC/cpu-only-templates.json",
+      "type": "hardware-templates"
+    },
+    {
+      "id": "nc-gpu",
+      "path": "NC/gpu-templates.json",
+      "type": "hardware-templates"
+    },
+    {
+      "id": "nc-overhead",
+      "path": "NC/overhead-reserves.json",
+      "type": "application-overhead"
+    },
+    {
+      "id": "nc-workloads",
+      "path": "NC/workload-profiles.json",
+      "type": "workload-profiles"
+    }
+  ]
+}

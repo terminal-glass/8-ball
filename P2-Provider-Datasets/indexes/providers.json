@@ -1,0 +1,31 @@
+[
+  {
+    "provider_id": "digitalocean",
+    "display_name": "DigitalOcean",
+    "dataset_paths": [
+      "providers/digitalocean/basic.json",
+      "providers/digitalocean/cpu-optimized.json",
+      "providers/digitalocean/general-purpose.json",
+      "providers/digitalocean/memory-optimized.json",
+      "providers/digitalocean/storage-optimized.json"
+    ],
+    "plan_count": 29
+  },
+  {
+    "provider_id": "lightsail",
+    "display_name": "AWS Lightsail",
+    "dataset_paths": [
+      "providers/lightsail/linux-unix-public-ipv4-bundles.json"
+    ],
+    "plan_count": 13
+  },
+  {
+    "provider_id": "nocloudgpt",
+    "display_name": "NoCloudGPT internal planning",
+    "dataset_paths": [
+      "providers/nocloudgpt/appliance-overhead.json",
+      "providers/nocloudgpt/deployment-templates.json"
+    ],
+    "plan_count": 0
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "provider_identifiers": [
+    "digitalocean",
+    "lightsail",
+    "nocloudgpt"
+  ],
+  "cpu_architectures": {
+    "x86_64": "64-bit x86/AMD64",
+    "arm64": "64-bit ARM"
+  },
+  "storage_units": {
+    "disk_gb": "decimal gigabytes unless provider states GiB"
+  },
+  "ram_units": {
+    "ram_gb": "provider-published GB/GiB normalized as numeric GB"
+  },
+  "bandwidth_definitions": {
+    "bandwidth_tb": "monthly outbound transfer allowance in TB",
+    "transfer_tb": "monthly transfer allowance in TB"
+  },
+  "billing_terms": {
+    "monthly_price_usd": "published monthly price in USD",
+    "hourly_price_usd": "published hourly price in USD where available"
+  }
+}

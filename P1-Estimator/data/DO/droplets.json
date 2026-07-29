@@ -1,0 +1,560 @@
+[
+  {
+    "provider": "digitalocean",
+    "family": "basic",
+    "plan_slug": null,
+    "display_name": "Basic Droplet 512 MiB / 1 vCPU",
+    "vcpu": 1,
+    "ram_gb": 0.5,
+    "disk_gb": 10,
+    "bandwidth_tb": 0.488281,
+    "monthly_price_usd": 4.0,
+    "hourly_price_usd": 0.00595,
+    "architecture": null,
+    "recommended_use": [
+      "Bursty applications that can handle variable CPU levels."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "basic",
+    "plan_slug": null,
+    "display_name": "Basic Droplet 1 GiB / 1 vCPU",
+    "vcpu": 1,
+    "ram_gb": 1,
+    "disk_gb": 25,
+    "bandwidth_tb": 0.976562,
+    "monthly_price_usd": 6.0,
+    "hourly_price_usd": 0.00893,
+    "architecture": null,
+    "recommended_use": [
+      "Bursty applications that can handle variable CPU levels."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "basic",
+    "plan_slug": null,
+    "display_name": "Basic Droplet 2 GiB / 1 vCPU",
+    "vcpu": 1,
+    "ram_gb": 2,
+    "disk_gb": 50,
+    "bandwidth_tb": 1.953125,
+    "monthly_price_usd": 12.0,
+    "hourly_price_usd": 0.01786,
+    "architecture": null,
+    "recommended_use": [
+      "Bursty applications that can handle variable CPU levels."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "basic",
+    "plan_slug": null,
+    "display_name": "Basic Droplet 2 GiB / 2 vCPUs",
+    "vcpu": 2,
+    "ram_gb": 2,
+    "disk_gb": 60,
+    "bandwidth_tb": 2.929688,
+    "monthly_price_usd": 18.0,
+    "hourly_price_usd": 0.02679,
+    "architecture": null,
+    "recommended_use": [
+      "Bursty applications that can handle variable CPU levels."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "basic",
+    "plan_slug": null,
+    "display_name": "Basic Droplet 4 GiB / 2 vCPUs",
+    "vcpu": 2,
+    "ram_gb": 4,
+    "disk_gb": 80,
+    "bandwidth_tb": 3.90625,
+    "monthly_price_usd": 24.0,
+    "hourly_price_usd": 0.03571,
+    "architecture": null,
+    "recommended_use": [
+      "Bursty applications that can handle variable CPU levels."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "basic",
+    "plan_slug": null,
+    "display_name": "Basic Droplet 8 GiB / 4 vCPUs",
+    "vcpu": 4,
+    "ram_gb": 8,
+    "disk_gb": 160,
+    "bandwidth_tb": 4.882812,
+    "monthly_price_usd": 48.0,
+    "hourly_price_usd": 0.07143,
+    "architecture": null,
+    "recommended_use": [
+      "Bursty applications that can handle variable CPU levels."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "basic",
+    "plan_slug": null,
+    "display_name": "Basic Droplet 16 GiB / 8 vCPUs",
+    "vcpu": 8,
+    "ram_gb": 16,
+    "disk_gb": 320,
+    "bandwidth_tb": 5.859375,
+    "monthly_price_usd": 96.0,
+    "hourly_price_usd": 0.14286,
+    "architecture": null,
+    "recommended_use": [
+      "Bursty applications that can handle variable CPU levels."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "cpu-optimized",
+    "plan_slug": null,
+    "display_name": "CPU-Optimized 4 GiB / 2 vCPUs",
+    "vcpu": 2,
+    "ram_gb": 4,
+    "disk_gb": 25,
+    "bandwidth_tb": 3.90625,
+    "monthly_price_usd": 42.0,
+    "hourly_price_usd": 0.0625,
+    "architecture": null,
+    "recommended_use": [
+      "Media streaming, gaming, and data analytics requiring fast dedicated vCPUs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "cpu-optimized",
+    "plan_slug": null,
+    "display_name": "CPU-Optimized 8 GiB / 4 vCPUs",
+    "vcpu": 4,
+    "ram_gb": 8,
+    "disk_gb": 50,
+    "bandwidth_tb": 4.882812,
+    "monthly_price_usd": 84.0,
+    "hourly_price_usd": 0.125,
+    "architecture": null,
+    "recommended_use": [
+      "Media streaming, gaming, and data analytics requiring fast dedicated vCPUs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "cpu-optimized",
+    "plan_slug": null,
+    "display_name": "CPU-Optimized 16 GiB / 8 vCPUs",
+    "vcpu": 8,
+    "ram_gb": 16,
+    "disk_gb": 100,
+    "bandwidth_tb": 5.859375,
+    "monthly_price_usd": 168.0,
+    "hourly_price_usd": 0.25,
+    "architecture": null,
+    "recommended_use": [
+      "Media streaming, gaming, and data analytics requiring fast dedicated vCPUs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "cpu-optimized",
+    "plan_slug": null,
+    "display_name": "CPU-Optimized 32 GiB / 16 vCPUs",
+    "vcpu": 16,
+    "ram_gb": 32,
+    "disk_gb": 200,
+    "bandwidth_tb": 6.835938,
+    "monthly_price_usd": 336.0,
+    "hourly_price_usd": 0.5,
+    "architecture": null,
+    "recommended_use": [
+      "Media streaming, gaming, and data analytics requiring fast dedicated vCPUs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "cpu-optimized",
+    "plan_slug": null,
+    "display_name": "CPU-Optimized 64 GiB / 32 vCPUs",
+    "vcpu": 32,
+    "ram_gb": 64,
+    "disk_gb": 400,
+    "bandwidth_tb": 8.789062,
+    "monthly_price_usd": 672.0,
+    "hourly_price_usd": 1.0,
+    "architecture": null,
+    "recommended_use": [
+      "Media streaming, gaming, and data analytics requiring fast dedicated vCPUs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "cpu-optimized",
+    "plan_slug": null,
+    "display_name": "CPU-Optimized 96 GiB / 48 vCPUs",
+    "vcpu": 48,
+    "ram_gb": 96,
+    "disk_gb": 600,
+    "bandwidth_tb": 10.742188,
+    "monthly_price_usd": 1008.0,
+    "hourly_price_usd": 1.5,
+    "architecture": null,
+    "recommended_use": [
+      "Media streaming, gaming, and data analytics requiring fast dedicated vCPUs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "general-purpose",
+    "plan_slug": null,
+    "display_name": "General Purpose 8 GiB / 2 vCPUs",
+    "vcpu": 2,
+    "ram_gb": 8,
+    "disk_gb": 25,
+    "bandwidth_tb": 3.90625,
+    "monthly_price_usd": 63.0,
+    "hourly_price_usd": 0.09375,
+    "architecture": null,
+    "recommended_use": [
+      "General production workloads requiring dedicated compute power."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "general-purpose",
+    "plan_slug": null,
+    "display_name": "General Purpose 16 GiB / 4 vCPUs",
+    "vcpu": 4,
+    "ram_gb": 16,
+    "disk_gb": 50,
+    "bandwidth_tb": 4.882812,
+    "monthly_price_usd": 126.0,
+    "hourly_price_usd": 0.1875,
+    "architecture": null,
+    "recommended_use": [
+      "General production workloads requiring dedicated compute power."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "general-purpose",
+    "plan_slug": null,
+    "display_name": "General Purpose 32 GiB / 8 vCPUs",
+    "vcpu": 8,
+    "ram_gb": 32,
+    "disk_gb": 100,
+    "bandwidth_tb": 5.859375,
+    "monthly_price_usd": 252.0,
+    "hourly_price_usd": 0.375,
+    "architecture": null,
+    "recommended_use": [
+      "General production workloads requiring dedicated compute power."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "general-purpose",
+    "plan_slug": null,
+    "display_name": "General Purpose 64 GiB / 16 vCPUs",
+    "vcpu": 16,
+    "ram_gb": 64,
+    "disk_gb": 200,
+    "bandwidth_tb": 6.835938,
+    "monthly_price_usd": 504.0,
+    "hourly_price_usd": 0.75,
+    "architecture": null,
+    "recommended_use": [
+      "General production workloads requiring dedicated compute power."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "general-purpose",
+    "plan_slug": null,
+    "display_name": "General Purpose 128 GiB / 32 vCPUs",
+    "vcpu": 32,
+    "ram_gb": 128,
+    "disk_gb": 400,
+    "bandwidth_tb": 7.8125,
+    "monthly_price_usd": 1008.0,
+    "hourly_price_usd": 1.5,
+    "architecture": null,
+    "recommended_use": [
+      "General production workloads requiring dedicated compute power."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "general-purpose",
+    "plan_slug": null,
+    "display_name": "General Purpose 160 GiB / 40 vCPUs",
+    "vcpu": 40,
+    "ram_gb": 160,
+    "disk_gb": 500,
+    "bandwidth_tb": 8.789062,
+    "monthly_price_usd": 1260.0,
+    "hourly_price_usd": 1.875,
+    "architecture": null,
+    "recommended_use": [
+      "General production workloads requiring dedicated compute power."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "memory-optimized",
+    "plan_slug": null,
+    "display_name": "Memory-Optimized 16 GiB / 2 vCPUs",
+    "vcpu": 2,
+    "ram_gb": 16,
+    "disk_gb": 50,
+    "bandwidth_tb": 3.90625,
+    "monthly_price_usd": 84.0,
+    "hourly_price_usd": 0.125,
+    "architecture": null,
+    "recommended_use": [
+      "Memory-intensive databases and analytics workloads."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "memory-optimized",
+    "plan_slug": null,
+    "display_name": "Memory-Optimized 32 GiB / 4 vCPUs",
+    "vcpu": 4,
+    "ram_gb": 32,
+    "disk_gb": 100,
+    "bandwidth_tb": 5.859375,
+    "monthly_price_usd": 168.0,
+    "hourly_price_usd": 0.25,
+    "architecture": null,
+    "recommended_use": [
+      "Memory-intensive databases and analytics workloads."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "memory-optimized",
+    "plan_slug": null,
+    "display_name": "Memory-Optimized 64 GiB / 8 vCPUs",
+    "vcpu": 8,
+    "ram_gb": 64,
+    "disk_gb": 200,
+    "bandwidth_tb": 6.835938,
+    "monthly_price_usd": 336.0,
+    "hourly_price_usd": 0.5,
+    "architecture": null,
+    "recommended_use": [
+      "Memory-intensive databases and analytics workloads."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "memory-optimized",
+    "plan_slug": null,
+    "display_name": "Memory-Optimized 128 GiB / 16 vCPUs",
+    "vcpu": 16,
+    "ram_gb": 128,
+    "disk_gb": 400,
+    "bandwidth_tb": 7.8125,
+    "monthly_price_usd": 672.0,
+    "hourly_price_usd": 1.0,
+    "architecture": null,
+    "recommended_use": [
+      "Memory-intensive databases and analytics workloads."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "memory-optimized",
+    "plan_slug": null,
+    "display_name": "Memory-Optimized 192 GiB / 24 vCPUs",
+    "vcpu": 24,
+    "ram_gb": 192,
+    "disk_gb": 600,
+    "bandwidth_tb": 8.789062,
+    "monthly_price_usd": 1008.0,
+    "hourly_price_usd": 1.5,
+    "architecture": null,
+    "recommended_use": [
+      "Memory-intensive databases and analytics workloads."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "memory-optimized",
+    "plan_slug": null,
+    "display_name": "Memory-Optimized 256 GiB / 32 vCPUs",
+    "vcpu": 32,
+    "ram_gb": 256,
+    "disk_gb": 800,
+    "bandwidth_tb": 9.765625,
+    "monthly_price_usd": 1344.0,
+    "hourly_price_usd": 2.0,
+    "architecture": null,
+    "recommended_use": [
+      "Memory-intensive databases and analytics workloads."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "storage-optimized",
+    "plan_slug": null,
+    "display_name": "Storage-Optimized 16 GiB / 2 vCPUs",
+    "vcpu": 2,
+    "ram_gb": 16,
+    "disk_gb": 300,
+    "bandwidth_tb": 3.90625,
+    "monthly_price_usd": 131.0,
+    "hourly_price_usd": 0.19494,
+    "architecture": null,
+    "recommended_use": [
+      "High-throughput storage workloads using NVMe SSDs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "storage-optimized",
+    "plan_slug": null,
+    "display_name": "Storage-Optimized 32 GiB / 4 vCPUs",
+    "vcpu": 4,
+    "ram_gb": 32,
+    "disk_gb": 600,
+    "bandwidth_tb": 5.859375,
+    "monthly_price_usd": 262.0,
+    "hourly_price_usd": 0.38988,
+    "architecture": null,
+    "recommended_use": [
+      "High-throughput storage workloads using NVMe SSDs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "storage-optimized",
+    "plan_slug": null,
+    "display_name": "Storage-Optimized 64 GiB / 8 vCPUs",
+    "vcpu": 8,
+    "ram_gb": 64,
+    "disk_gb": 1170,
+    "bandwidth_tb": 6.835938,
+    "monthly_price_usd": 524.0,
+    "hourly_price_usd": 0.77976,
+    "architecture": null,
+    "recommended_use": [
+      "High-throughput storage workloads using NVMe SSDs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "storage-optimized",
+    "plan_slug": null,
+    "display_name": "Storage-Optimized 128 GiB / 16 vCPUs",
+    "vcpu": 16,
+    "ram_gb": 128,
+    "disk_gb": 2340,
+    "bandwidth_tb": 7.8125,
+    "monthly_price_usd": 1048.0,
+    "hourly_price_usd": 1.55952,
+    "architecture": null,
+    "recommended_use": [
+      "High-throughput storage workloads using NVMe SSDs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "storage-optimized",
+    "plan_slug": null,
+    "display_name": "Storage-Optimized 192 GiB / 24 vCPUs",
+    "vcpu": 24,
+    "ram_gb": 192,
+    "disk_gb": 3520,
+    "bandwidth_tb": 8.789062,
+    "monthly_price_usd": 1572.0,
+    "hourly_price_usd": 2.33929,
+    "architecture": null,
+    "recommended_use": [
+      "High-throughput storage workloads using NVMe SSDs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  },
+  {
+    "provider": "digitalocean",
+    "family": "storage-optimized",
+    "plan_slug": null,
+    "display_name": "Storage-Optimized 256 GiB / 32 vCPUs",
+    "vcpu": 32,
+    "ram_gb": 256,
+    "disk_gb": 4690,
+    "bandwidth_tb": 9.765625,
+    "monthly_price_usd": 2096.0,
+    "hourly_price_usd": 3.11905,
+    "architecture": null,
+    "recommended_use": [
+      "High-throughput storage workloads using NVMe SSDs."
+    ],
+    "source_url": "https://www.digitalocean.com/pricing/droplets",
+    "verified_at_utc": "2026-07-16T00:00:00Z"
+  }
+]

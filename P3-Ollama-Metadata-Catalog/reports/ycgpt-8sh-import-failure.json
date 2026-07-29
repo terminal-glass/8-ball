@@ -1,0 +1,19 @@
+{
+  "source_repository": "funtech64/ycgpt-8.sh",
+  "source_branch": "main",
+  "import_status": "failed",
+  "failure_stage": "git clone",
+  "attempted_at_utc": "2026-07-17T04:55:10Z",
+  "commands": [
+    "git clone --depth 1 https://github.com/funtech64/ycgpt-8.sh.git <tempdir>/ycgpt-8.sh",
+    "GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -o BatchMode=yes' git clone --depth 1 git@github.com:funtech64/ycgpt-8.sh.git <tempdir>/repo"
+  ],
+  "errors": [
+    "fatal: unable to access 'https://github.com/funtech64/ycgpt-8.sh.git/': CONNECT tunnel failed, response 403",
+    "ssh: Could not resolve hostname github.com: Temporary failure in name resolution\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists."
+  ],
+  "metadata_imported": false,
+  "partial_snapshot_created": false,
+  "p1_p2_p4_changed_after_failure": false,
+  "next_step": "Retry the import when GitHub access to the private source repository is available. Do not fabricate P3 metadata."
+}

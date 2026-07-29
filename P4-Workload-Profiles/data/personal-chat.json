@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workload_id": "personal-chat",
+  "display_name": "Personal Chat",
+  "description": "Private text chat for one primary user with light document use.",
+  "planning_status": "internal-guidance",
+  "expected_users": {
+    "minimum": 1,
+    "typical": 1,
+    "maximum": 2
+  },
+  "expected_concurrency": {
+    "typical": 1,
+    "peak": 2
+  },
+  "required_capabilities": [
+    "text"
+  ],
+  "optional_capabilities": [
+    "tools",
+    "embedding"
+  ],
+  "compute": {
+    "cpu_supported": true,
+    "gpu_optional": true,
+    "gpu_recommended": false,
+    "preferred_compute": "cpu-or-gpu"
+  },
+  "resources": {
+    "minimum_ram_gb": 8,
+    "recommended_ram_gb": 16,
+    "minimum_vcpu": 2,
+    "recommended_vcpu": 4,
+    "base_disk_gb": 80,
+    "customer_data_reserve_gb": 40
+  },
+  "model_guidance": {
+    "recommended_model_classes": [
+      "small",
+      "medium"
+    ],
+    "maximum_model_class": "medium",
+    "exact_model_selection_deferred_to": "P5-Compatibility-Estimator"
+  },
+  "service_requirements": [
+    "ollama",
+    "openwebui"
+  ],
+  "latency_expectation": "interactive",
+  "priority": "balanced",
+  "limitations": [],
+  "notes": [
+    "CPU operation remains possible; GPU can improve responsiveness but is not required."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "provider": "nocloudgpt",
+  "appliance_overhead": {
+    "controller_reserved_vcpu": 1,
+    "controller_reserved_ram_gb": 2,
+    "controller_reserved_storage_gb": 20
+  },
+  "recommended_reserved_storage_gb": 40,
+  "recommended_reserved_ram_gb": 2,
+  "source": "NoCloudGPT internal planning baseline",
+  "verified_at_utc": "2026-07-16T00:00:00Z"
+}

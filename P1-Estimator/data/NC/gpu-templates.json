@@ -1,0 +1,98 @@
+[
+  {
+    "template_id": "nc-gpu-entry",
+    "display_name": "Entry GPU",
+    "ram_gb_minimum": 16,
+    "ram_gb_recommended": 32,
+    "vcpu_minimum": 4,
+    "vcpu_recommended": 8,
+    "disk_gb_minimum": 120,
+    "disk_gb_recommended": 250,
+    "gpu_required": true,
+    "gpu_count": 1,
+    "vram_gb_minimum": 8,
+    "vram_gb_recommended": 12,
+    "gpu_class": "entry GPU",
+    "expected_users": 2,
+    "recommended_workloads": [
+      "developer",
+      "personal chat"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "General entry-class discrete GPU; no specific model officially verified."
+    ]
+  },
+  {
+    "template_id": "nc-gpu-midrange",
+    "display_name": "Midrange GPU",
+    "ram_gb_minimum": 32,
+    "ram_gb_recommended": 64,
+    "vcpu_minimum": 8,
+    "vcpu_recommended": 16,
+    "disk_gb_minimum": 250,
+    "disk_gb_recommended": 500,
+    "gpu_required": true,
+    "gpu_count": 1,
+    "vram_gb_minimum": 16,
+    "vram_gb_recommended": 24,
+    "gpu_class": "midrange GPU",
+    "expected_users": 5,
+    "recommended_workloads": [
+      "coding assistant",
+      "small business"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "Midrange GPU class for faster inference and moderate concurrent usage."
+    ]
+  },
+  {
+    "template_id": "nc-gpu-high-memory",
+    "display_name": "High-Memory GPU",
+    "ram_gb_minimum": 64,
+    "ram_gb_recommended": 128,
+    "vcpu_minimum": 16,
+    "vcpu_recommended": 24,
+    "disk_gb_minimum": 500,
+    "disk_gb_recommended": 1000,
+    "gpu_required": true,
+    "gpu_count": 1,
+    "vram_gb_minimum": 24,
+    "vram_gb_recommended": 48,
+    "gpu_class": "high-memory GPU",
+    "expected_users": 10,
+    "recommended_workloads": [
+      "documentation and RAG",
+      "multi-user office"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "High VRAM for larger models and RAG workloads."
+    ]
+  },
+  {
+    "template_id": "nc-gpu-multi",
+    "display_name": "Multi-GPU",
+    "ram_gb_minimum": 128,
+    "ram_gb_recommended": 256,
+    "vcpu_minimum": 32,
+    "vcpu_recommended": 48,
+    "disk_gb_minimum": 1000,
+    "disk_gb_recommended": 2000,
+    "gpu_required": true,
+    "gpu_count": 2,
+    "vram_gb_minimum": 48,
+    "vram_gb_recommended": 96,
+    "gpu_class": "multi-GPU",
+    "expected_users": 25,
+    "recommended_workloads": [
+      "heavy AI research",
+      "multi-user office"
+    ],
+    "notes": [
+      "Internal NoCloudGPT planning guidance.",
+      "Multi-GPU planning tier; specific hardware not officially verified."
+    ]
+  }
+]

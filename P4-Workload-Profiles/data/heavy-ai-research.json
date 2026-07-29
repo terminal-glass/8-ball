@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workload_id": "heavy-ai-research",
+  "display_name": "Heavy AI Research",
+  "description": "Specialist deployment planning for large context, advanced reasoning, model comparison, substantial storage, and high compute expectations.",
+  "planning_status": "specialist-guidance",
+  "expected_users": {
+    "minimum": 1,
+    "typical": 3,
+    "maximum": 8
+  },
+  "expected_concurrency": {
+    "typical": 1,
+    "peak": 4
+  },
+  "required_capabilities": [
+    "text",
+    "thinking"
+  ],
+  "optional_capabilities": [
+    "tools",
+    "coding",
+    "vision"
+  ],
+  "compute": {
+    "cpu_supported": true,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "preferred_compute": "gpu-preferred"
+  },
+  "resources": {
+    "minimum_ram_gb": 64,
+    "recommended_ram_gb": 128,
+    "minimum_vcpu": 16,
+    "recommended_vcpu": 32,
+    "base_disk_gb": 500,
+    "customer_data_reserve_gb": 1000
+  },
+  "model_guidance": {
+    "recommended_model_classes": [
+      "large",
+      "specialist"
+    ],
+    "maximum_model_class": "specialist",
+    "exact_model_selection_deferred_to": "P5-Compatibility-Estimator"
+  },
+  "service_requirements": [
+    "ollama",
+    "openwebui"
+  ],
+  "latency_expectation": "batch-or-interactive",
+  "priority": "specialist",
+  "limitations": [
+    "Not suitable for small baseline instances."
+  ],
+  "notes": [
+    "Specialist profile for advanced planning, not a baseline NoCloudGPT deployment."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workload_id": "documents-rag",
+  "display_name": "Documents and RAG",
+  "description": "Private document search, knowledge retrieval, and question answering.",
+  "planning_status": "internal-guidance",
+  "expected_users": {
+    "minimum": 1,
+    "typical": 3,
+    "maximum": 10
+  },
+  "expected_concurrency": {
+    "typical": 1,
+    "peak": 3
+  },
+  "required_capabilities": [
+    "text",
+    "embedding"
+  ],
+  "optional_capabilities": [
+    "tools",
+    "vision"
+  ],
+  "compute": {
+    "cpu_supported": true,
+    "gpu_optional": true,
+    "gpu_recommended": false,
+    "preferred_compute": "cpu-or-gpu"
+  },
+  "resources": {
+    "minimum_ram_gb": 8,
+    "recommended_ram_gb": 16,
+    "minimum_vcpu": 4,
+    "recommended_vcpu": 8,
+    "base_disk_gb": 120,
+    "customer_data_reserve_gb": 100
+  },
+  "model_guidance": {
+    "recommended_model_classes": [
+      "small",
+      "medium"
+    ],
+    "maximum_model_class": "medium",
+    "exact_model_selection_deferred_to": "P5-Compatibility-Estimator"
+  },
+  "service_requirements": [
+    "ollama",
+    "openwebui"
+  ],
+  "latency_expectation": "interactive",
+  "priority": "balanced",
+  "limitations": [],
+  "notes": [
+    "Customer-data reserve is for moderate private document collections."
+  ]
+}

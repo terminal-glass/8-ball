@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workload_id": "coding-assistant",
+  "display_name": "Coding Assistant",
+  "description": "Code explanation, drafting, debugging, and repository assistance.",
+  "planning_status": "internal-guidance",
+  "expected_users": {
+    "minimum": 1,
+    "typical": 2,
+    "maximum": 5
+  },
+  "expected_concurrency": {
+    "typical": 1,
+    "peak": 2
+  },
+  "required_capabilities": [
+    "text",
+    "coding"
+  ],
+  "optional_capabilities": [
+    "tools",
+    "thinking"
+  ],
+  "compute": {
+    "cpu_supported": true,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "preferred_compute": "gpu-preferred"
+  },
+  "resources": {
+    "minimum_ram_gb": 16,
+    "recommended_ram_gb": 32,
+    "minimum_vcpu": 4,
+    "recommended_vcpu": 8,
+    "base_disk_gb": 120,
+    "customer_data_reserve_gb": 80
+  },
+  "model_guidance": {
+    "recommended_model_classes": [
+      "medium",
+      "large"
+    ],
+    "maximum_model_class": "large",
+    "exact_model_selection_deferred_to": "P5-Compatibility-Estimator"
+  },
+  "service_requirements": [
+    "ollama",
+    "openwebui"
+  ],
+  "latency_expectation": "interactive",
+  "priority": "performance",
+  "limitations": [],
+  "notes": [
+    "GPU is recommended for stronger interactive performance, but CPU-only use is not impossible."
+  ]
+}
