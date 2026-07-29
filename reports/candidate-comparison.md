@@ -1,80 +1,175 @@
 # Candidate vs Legacy Catalog Comparison
 
 ## Summary
-- Legacy tags (in scope): 223
-- Candidate tags (in scope): 223
-- Shared tag identifiers: 223
+- Legacy tags (in scope): 7246
+- Candidate tags (in scope): 7270
+- Shared tag identifiers: 7246
 - Legacy-only tags: 0
-- Candidate-only tags: 0
-- Legacy families: 6
-- Candidate families: 6
+- Candidate-only tags: 24
+- Legacy families: 231
+- Candidate families: 234
 - Legacy-only families: 0
-- Candidate-only families: 0
-- Legacy models: 6
-- Candidate models: 9
-- Legacy-only models: 5
-- Candidate-only models: 8
-- Families compared: 6
-- Download size mismatches: 0
-- Parameter mismatches: 0
-- Quantization mismatches: 0
-- Context mismatches: 0
-- Capability mismatches: 223
-- Availability mismatches: 1
-- Alias target mismatches: 19
-- Manual review items: 0
+- Candidate-only families: 3
+- Legacy models: 231
+- Candidate models: 437
+- Legacy-only models: 202
+- Candidate-only models: 408
+- Families compared: 234
+- Download size mismatches: 11
+- Parameter mismatches: 175
+- Quantization mismatches: 19
+- Context mismatches: 4
+- Capability mismatches: 7246
+- Availability mismatches: 6
+- Alias target mismatches: 718
+- Manual review items: 656
 - Parse failures: 0
+
+## Candidate-only tags (sample)
+
+- `kimi-k3:cloud`
+- `laguna-s-2.1:f16`
+- `laguna-s-2.1:latest`
+- `laguna-s-2.1:mlx-bf16`
+- `laguna-s-2.1:mxfp8`
+- `laguna-s-2.1:nvfp4`
+- `laguna-s-2.1:q4_K_M`
+- `laguna-s-2.1:q8_0`
+- `laguna-xs-2.1:mlx-bf16`
+- `laguna-xs-2.1:mxfp8`
+- `laguna-xs-2.1:nvfp4`
+- `ministral-3:14b`
+- `ministral-3:14b-instruct-2512-fp16`
+- `ministral-3:14b-instruct-2512-q4_K_M`
+- `ministral-3:14b-instruct-2512-q8_0`
+- `ministral-3:3b`
+- `ministral-3:3b-instruct-2512-fp16`
+- `ministral-3:3b-instruct-2512-q4_K_M`
+- `ministral-3:3b-instruct-2512-q8_0`
+- `ministral-3:8b`
+- `ministral-3:8b-instruct-2512-fp16`
+- `ministral-3:8b-instruct-2512-q4_K_M`
+- `ministral-3:8b-instruct-2512-q8_0`
+- `ministral-3:latest`
+
+## Download size mismatches (sample)
+
+- `devstral-small-2:24b-cloud`: legacy=15000000000 candidate=48000000000
+- `gemma4:31b-cloud`: legacy=64000000000 candidate=19000000000
+- `gemma4:cloud`: legacy=7200000000 candidate=19000000000
+- `gpt-oss:120b-cloud`: legacy=None candidate=65000000000
+- `gpt-oss:20b-cloud`: legacy=None candidate=65000000000
+- `laguna-xs.2:mxfp8`: legacy=36000000000 candidate=39000000000
+- `laguna-xs.2:nvfp4`: legacy=22000000000 candidate=19000000000
+- `nemotron-3-nano:30b-cloud`: legacy=None candidate=63000000000
+- `nemotron-3-super:cloud`: legacy=87000000000 candidate=247000000000
+- `qwen3.5:397b-cloud`: legacy=None candidate=81000000000
+- `qwen3.5:cloud`: legacy=1000000000 candidate=81000000000
 
 ## Capability mismatches (sample)
 
-- `codestral:22b`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q2_K`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q3_K_L`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q3_K_M`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q3_K_S`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q4_0`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q4_1`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q4_K_M`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q4_K_S`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q5_0`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q5_1`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q5_K_M`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q5_K_S`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q6_K`: {'text_generation': 'unknown -> true'}
-- `codestral:22b-v0.1-q8_0`: {'text_generation': 'unknown -> true'}
-- `codestral:latest`: {'text_generation': 'unknown -> true'}
-- `codestral:v0.1`: {'text_generation': 'unknown -> true'}
-- `gemini-3-flash-preview:latest`: {'text_generation': 'unknown -> true', 'reasoning': 'unknown -> true', 'vision': 'unknown -> true', 'tool_use': 'unknown -> true', 'cloud': 'unknown -> true'}
-- `llama3:70b`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-fp16`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q2_K`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q3_K_L`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q3_K_M`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q3_K_S`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q4_0`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q4_1`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q4_K_M`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q4_K_S`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q5_0`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q5_1`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q5_K_M`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q5_K_S`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q6_K`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-instruct-q8_0`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-fp16`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q2_K`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q3_K_L`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q3_K_M`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q3_K_S`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q4_0`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q4_1`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q4_K_M`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q4_K_S`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q5_0`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q5_1`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q5_K_M`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q5_K_S`: {'text_generation': 'unknown -> true'}
-- `llama3:70b-text-q6_K`: {'text_generation': 'unknown -> true'}
-- ... and 173 more (see JSON report)
+- `alfred:40b`: {'text_generation': 'unknown -> true'}
+- `alfred:40b-1023-q4_0`: {'text_generation': 'unknown -> true'}
+- `alfred:40b-1023-q4_1`: {'text_generation': 'unknown -> true'}
+- `alfred:40b-1023-q5_0`: {'text_generation': 'unknown -> true'}
+- `alfred:40b-1023-q5_1`: {'text_generation': 'unknown -> true'}
+- `alfred:40b-1023-q8_0`: {'text_generation': 'unknown -> true'}
+- `alfred:latest`: {'text_generation': 'unknown -> true'}
+- `all-minilm:22m`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:22m-l6-v2-fp16`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:33m`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:33m-l12-v2-fp16`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:l12`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:l12-v2`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:l6`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:l6-v2`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:latest`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `all-minilm:v2`: {'text_generation': 'unknown -> true', 'embeddings': 'unknown -> true'}
+- `athene-v2:72b`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-fp16`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q2_K`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q3_K_L`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q3_K_M`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q3_K_S`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q4_0`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q4_1`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q4_K_M`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q4_K_S`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q5_0`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q5_1`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q5_K_M`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q5_K_S`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q6_K`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:72b-q8_0`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `athene-v2:latest`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-fp16`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q2_K`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q3_K_L`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q3_K_M`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q3_K_S`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q4_0`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q4_1`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q4_K_M`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q4_K_S`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q5_0`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q5_1`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q5_K_M`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q5_K_S`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q6_K`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- `aya-expanse:32b-q8_0`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
+- ... and 7196 more (see JSON report)
+
+## Manual review items (sample)
+
+- model `alfred-40b`: unknown_publisher
+- model `all-minilm-22m`: unknown_publisher
+- model `all-minilm-33m`: unknown_publisher
+- model `athene-v2-72b`: unknown_publisher
+- model `aya-35b`: unknown_publisher
+- model `aya-8b`: unknown_publisher
+- model `aya-expanse-32b`: unknown_publisher
+- model `aya-expanse-8b`: unknown_publisher
+- model `bakllava-7b`: unknown_publisher
+- model `bespoke-minicheck-7b`: unknown_publisher
+- model `bge-large-335m`: unknown_publisher
+- model `bge-m3-567m`: unknown_publisher
+- model `codebooga-34b`: unknown_publisher
+- model `codegeex4-9b`: unknown_publisher
+- model `codegemma-2b`: publisher_mapping_needs_review
+- model `codegemma-7b`: publisher_mapping_needs_review
+- model `codellama-13b`: publisher_mapping_needs_review
+- model `codellama-34b`: publisher_mapping_needs_review
+- model `codellama-70b`: publisher_mapping_needs_review
+- model `codellama-7b`: publisher_mapping_needs_review
+- model `codeqwen-7b`: publisher_mapping_needs_review
+- model `codeup-13b`: unknown_publisher
+- model `cogito-14b`: unknown_publisher
+- model `cogito-2.1-671b`: unknown_publisher
+- model `cogito-32b`: unknown_publisher
+- model `cogito-3b`: unknown_publisher
+- model `cogito-70b`: unknown_publisher
+- model `cogito-8b`: unknown_publisher
+- model `command-a-111b`: unknown_publisher
+- model `command-r-35b`: unknown_publisher
+- model `command-r-plus-104b`: unknown_publisher
+- model `command-r7b-7b`: unknown_publisher
+- model `command-r7b-arabic-7b`: unknown_publisher
+- model `dbrx-132b`: unknown_publisher
+- model `deepcoder-1.5b`: unknown_publisher
+- model `deepcoder-14b`: unknown_publisher
+- model `deepscaler-1.5b`: unknown_publisher
+- model `deepseek-coder-1.3b`: publisher_mapping_needs_review
+- model `deepseek-coder-33b`: publisher_mapping_needs_review
+- model `deepseek-coder-6.7b`: publisher_mapping_needs_review
+- model `deepseek-coder-v2-16b`: publisher_mapping_needs_review
+- model `deepseek-coder-v2-236b`: publisher_mapping_needs_review
+- model `deepseek-llm-67b`: publisher_mapping_needs_review
+- model `deepseek-llm-7b`: publisher_mapping_needs_review
+- model `deepseek-ocr-3b`: publisher_mapping_needs_review
+- model `deepseek-r1-1.5b`: publisher_mapping_needs_review
+- model `deepseek-r1-14b`: publisher_mapping_needs_review
+- model `deepseek-r1-32b`: publisher_mapping_needs_review
+- model `deepseek-r1-671b`: publisher_mapping_needs_review
+- model `deepseek-r1-70b`: publisher_mapping_needs_review
+- ... and 606 more (see JSON report)

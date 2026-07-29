@@ -12,7 +12,7 @@ from eight_ball.collect.manifest import (
     write_manifest,
 )
 from eight_ball.collect.ollama import collect_families, collect_ollama_library
-from eight_ball.config import write_json
+from eight_ball.config import load_json, write_json
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
@@ -28,6 +28,8 @@ from eight_ball.paths import (
     INDEXES_DIR,
     LEGACY_FAMILIES_DIR,
     NORMALIZED_DIR,
+    RAW_DIR,
+    REPO_ROOT,
     REPORTS_DIR,
     SAMPLE_FAMILIES,
     SNAPSHOTS_DIR,
@@ -151,6 +153,15 @@ def _resolve_manifest_path(args: argparse.Namespace) -> Path | None:
         fixture_manifest = FIXTURES_DIR / "manifests" / "six-family-sample.json"
         if fixture_manifest.exists():
             return fixture_manifest
+    if args.candidate:
+        latest_path = RAW_DIR / "latest-manifest.json"
+        if latest_path.exists():
+            latest = load_json(latest_path)
+            manifest_path = Path(latest["path"])
+            if not manifest_path.is_absolute():
+                manifest_path = REPO_ROOT / manifest_path
+            if manifest_path.exists():
+                return manifest_path
     return None
 
 
@@ -245,7 +256,7 @@ def cmd_collect(args: argparse.Namespace) -> int:
 def cmd_normalize(args: argparse.Namespace) -> int:
     if args.source == "ollama":
         manifest_path = _resolve_manifest_path(args)
-        if manifest_path is not None and not args.from_index:
+        if manifest_path is not None:
             family_slugs = _family_slugs_from_args(args) or None
             catalog = normalize_ollama_from_manifest(manifest_path, family_slugs=family_slugs)
             summary = coverage_summary(catalog)
