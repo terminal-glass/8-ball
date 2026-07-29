@@ -82,6 +82,7 @@ bash scripts/validate-catalog.sh
 bash scripts/refresh-catalog.sh            # legacy pipeline (data/families → data/normalized)
 bash scripts/plan-candidate-collect.sh     # offline recreate plan
 bash scripts/refresh-candidate-sample.sh   # offline six-family candidate rebuild
+bash scripts/refresh-candidate-live.sh     # live metadata crawl (metadata pages only)
 bash scripts/promote-candidate.sh          # dry-run promote candidate → normalized
 bash scripts/build-indexes.sh
 ```
