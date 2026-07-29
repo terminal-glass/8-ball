@@ -12,12 +12,8 @@ from eight_ball.collect.manifest import (
     write_manifest,
 )
 from eight_ball.collect.ollama import collect_families, collect_ollama_library
-<<<<<<< HEAD
 from eight_ball.config import load_json, write_json
-=======
-from eight_ball.config import write_json
 from eight_ball.export.installer_datasets import build_p2_indexes, export_p3_catalog
->>>>>>> origin/main
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
