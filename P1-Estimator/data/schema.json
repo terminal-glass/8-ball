@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nocloudgpt.local/P1-Estimator/data/schema.json",
+  "title": "P1 Estimator Dataset Schema",
+  "description": "Field expectations for static estimator datasets in P1-Estimator.",
+  "type": "object",
+  "definitions": {
+    "provider-plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "display_name",
+        "ram_gb",
+        "vcpu",
+        "disk_gb",
+        "source_url",
+        "verified_at_utc"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["digitalocean", "aws-lightsail"]
+        },
+        "family": {
+          "type": ["string", "null"],
+          "description": "DigitalOcean droplet family (basic, general-purpose, cpu-optimized, memory-optimized, storage-optimized)."
+        },
+        "plan_slug": {
+          "type": ["string", "null"],
+          "description": "Official provider plan slug when verified from API metadata."
+        },
+        "bundle_id": {
+          "type": ["string", "null"],
+          "description": "Official Lightsail bundle identifier when verified from API metadata."
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vcpu": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ram_gb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "disk_gb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "bandwidth_tb": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "transfer_tb": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "monthly_price_usd": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "hourly_price_usd": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "operating_system": {
+          "type": ["string", "null"]
+        },
+        "architecture": {
+          "type": ["string", "null"]
+        },
+        "recommended_use": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "source_url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        },
+        "verified_at_utc": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["provider", "family", "plan_slug", "bandwidth_tb", "monthly_price_usd", "hourly_price_usd", "recommended_use"],
+          "properties": { "provider": { "const": "digitalocean" } }
+        },
+        {
+          "required": ["provider", "bundle_id", "transfer_tb", "monthly_price_usd", "operating_system"],
+          "properties": { "provider": { "const": "aws-lightsail" } }
+        }
+      ]
+    },
+    "cpu-template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "template_id",
+        "display_name",
+        "ram_gb_minimum",
+        "ram_gb_recommended",
+        "vcpu_minimum",
+        "vcpu_recommended",
+        "disk_gb_minimum",
+        "disk_gb_recommended",
+        "gpu_required",
+        "cpu_only",
+        "expected_users",
+        "recommended_workloads",
+        "notes"
+      ],
+      "properties": {
+        "template_id": { "type": "string", "minLength": 1 },
+        "display_name": { "type": "string", "minLength": 1 },
+        "ram_gb_minimum": { "type": ["number", "null"], "minimum": 0 },
+        "ram_gb_recommended": { "type": ["number", "null"], "minimum": 0 },
+        "vcpu_minimum": { "type": ["number", "null"], "minimum": 0 },
+        "vcpu_recommended": { "type": ["number", "null"], "minimum": 0 },
+        "disk_gb_minimum": { "type": ["number", "null"], "minimum": 0 },
+        "disk_gb_recommended": { "type": ["number", "null"], "minimum": 0 },
+        "gpu_required": { "type": "boolean", "const": false },
+        "cpu_only": { "type": "boolean", "const": true },
+        "expected_users": { "type": ["number", "null"], "minimum": 0 },
+        "recommended_workloads": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "gpu-template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "template_id",
+        "display_name",
+        "ram_gb_minimum",
+        "ram_gb_recommended",
+        "vcpu_minimum",
+        "vcpu_recommended",
+        "disk_gb_minimum",
+        "disk_gb_recommended",
+        "gpu_required",
+        "gpu_count",
+        "vram_gb_minimum",
+        "vram_gb_recommended",
+        "gpu_class",
+        "expected_users",
+        "recommended_workloads",
+        "notes"
+      ],
+      "properties": {
+        "template_id": { "type": "string", "minLength": 1 },
+        "display_name": { "type": "string", "minLength": 1 },
+        "ram_gb_minimum": { "type": ["number", "null"], "minimum": 0 },
+        "ram_gb_recommended": { "type": ["number", "null"], "minimum": 0 },
+        "vcpu_minimum": { "type": ["number", "null"], "minimum": 0 },
+        "vcpu_recommended": { "type": ["number", "null"], "minimum": 0 },
+        "disk_gb_minimum": { "type": ["number", "null"], "minimum": 0 },
+        "disk_gb_recommended": { "type": ["number", "null"], "minimum": 0 },
+        "gpu_required": { "type": "boolean", "const": true },
+        "gpu_count": { "type": ["number", "null"], "minimum": 1 },
+        "vram_gb_minimum": { "type": ["number", "null"], "minimum": 0 },
+        "vram_gb_recommended": { "type": ["number", "null"], "minimum": 0 },
+        "gpu_class": { "type": ["string", "null"] },
+        "expected_users": { "type": ["number", "null"], "minimum": 0 },
+        "recommended_workloads": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "overhead-record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component", "reserved_ram_gb", "reserved_disk_gb", "required", "notes"],
+      "properties": {
+        "component": { "type": "string", "minLength": 1 },
+        "reserved_ram_gb": { "type": ["number", "null"], "minimum": 0 },
+        "reserved_disk_gb": { "type": ["number", "null"], "minimum": 0 },
+        "required": { "type": "boolean" },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "workload-profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workload_id",
+        "display_name",
+        "minimum_ram_gb",
+        "recommended_ram_gb",
+        "minimum_vcpu",
+        "recommended_vcpu",
+        "minimum_disk_gb",
+        "recommended_disk_gb",
+        "gpu_optional",
+        "gpu_recommended",
+        "expected_concurrent_users",
+        "recommended_model_classes",
+        "notes"
+      ],
+      "properties": {
+        "workload_id": { "type": "string", "minLength": 1 },
+        "display_name": { "type": "string", "minLength": 1 },
+        "minimum_ram_gb": { "type": ["number", "null"], "minimum": 0 },
+        "recommended_ram_gb": { "type": ["number", "null"], "minimum": 0 },
+        "minimum_vcpu": { "type": ["number", "null"], "minimum": 0 },
+        "recommended_vcpu": { "type": ["number", "null"], "minimum": 0 },
+        "minimum_disk_gb": { "type": ["number", "null"], "minimum": 0 },
+        "recommended_disk_gb": { "type": ["number", "null"], "minimum": 0 },
+        "gpu_optional": { "type": "boolean" },
+        "gpu_recommended": { "type": "boolean" },
+        "expected_concurrent_users": { "type": ["number", "null"], "minimum": 0 },
+        "recommended_model_classes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "catalog-entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "type"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": [
+            "provider-plans",
+            "hardware-templates",
+            "application-overhead",
+            "workload-profiles"
+          ]
+        }
+      }
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "estimator_data_version", "datasets"],
+      "properties": {
+        "schema_version": { "type": "string", "minLength": 1 },
+        "estimator_data_version": { "type": "string", "minLength": 1 },
+        "datasets": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/catalog-entry" }
+        }
+      }
+    }
+  },
+  "datasetBindings": {
+    "DO/droplets.json": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/provider-plan" }
+    },
+    "LS/lightsail-linux-ipv4.json": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/provider-plan" }
+    },
+    "NC/cpu-only-templates.json": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/cpu-template" }
+    },
+    "NC/gpu-templates.json": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/gpu-template" }
+    },
+    "NC/overhead-reserves.json": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/overhead-record" }
+    },
+    "NC/workload-profiles.json": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/workload-profile" }
+    },
+    "catalog.json": {
+      "$ref": "#/definitions/catalog"
+    }
+  }
+}

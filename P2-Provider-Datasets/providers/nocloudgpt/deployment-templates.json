@@ -1,0 +1,40 @@
+{
+  "cpu_only_templates": [
+    {
+      "template_id": "cpu-small",
+      "display_name": "CPU-only small",
+      "deployment_class": "cpu-only",
+      "minimum_vcpu": 2,
+      "minimum_ram_gb": 4,
+      "recommended_reserved_ram_gb": 1,
+      "recommended_reserved_storage_gb": 20
+    },
+    {
+      "template_id": "cpu-standard",
+      "display_name": "CPU-only standard",
+      "deployment_class": "cpu-only",
+      "minimum_vcpu": 4,
+      "minimum_ram_gb": 8,
+      "recommended_reserved_ram_gb": 2,
+      "recommended_reserved_storage_gb": 40
+    }
+  ],
+  "gpu_templates": [
+    {
+      "template_id": "gpu-single",
+      "display_name": "Single GPU node",
+      "deployment_class": "gpu",
+      "minimum_vcpu": 8,
+      "minimum_ram_gb": 32,
+      "minimum_gpu_count": 1,
+      "recommended_reserved_ram_gb": 4,
+      "recommended_reserved_storage_gb": 100
+    }
+  ],
+  "supported_deployment_classes": [
+    "cpu-only",
+    "gpu",
+    "appliance"
+  ],
+  "note": "Internal NoCloudGPT planning metadata, not cloud-provider specifications."
+}

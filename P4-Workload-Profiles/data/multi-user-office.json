@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workload_id": "multi-user-office",
+  "display_name": "Multi-user Office",
+  "description": "Shared AI chat and internal knowledge for multiple simultaneous office users.",
+  "planning_status": "internal-guidance",
+  "expected_users": {
+    "minimum": 5,
+    "typical": 15,
+    "maximum": 50
+  },
+  "expected_concurrency": {
+    "typical": 5,
+    "peak": 15
+  },
+  "required_capabilities": [
+    "text",
+    "embedding"
+  ],
+  "optional_capabilities": [
+    "tools",
+    "vision"
+  ],
+  "compute": {
+    "cpu_supported": true,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "preferred_compute": "gpu-preferred"
+  },
+  "resources": {
+    "minimum_ram_gb": 32,
+    "recommended_ram_gb": 64,
+    "minimum_vcpu": 8,
+    "recommended_vcpu": 16,
+    "base_disk_gb": 240,
+    "customer_data_reserve_gb": 500
+  },
+  "model_guidance": {
+    "recommended_model_classes": [
+      "medium",
+      "large"
+    ],
+    "maximum_model_class": "large",
+    "exact_model_selection_deferred_to": "P5-Compatibility-Estimator"
+  },
+  "service_requirements": [
+    "ollama",
+    "openwebui"
+  ],
+  "latency_expectation": "interactive",
+  "priority": "concurrency",
+  "limitations": [],
+  "notes": [
+    "Larger reserve accounts for shared customer documents and workflow artifacts."
+  ]
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "workload_id": "personal-chat",
+    "display_name": "Personal Chat",
+    "minimum_ram_gb": 8,
+    "recommended_ram_gb": 16,
+    "minimum_vcpu": 2,
+    "recommended_vcpu": 4,
+    "minimum_disk_gb": 80,
+    "recommended_disk_gb": 120,
+    "gpu_optional": true,
+    "gpu_recommended": false,
+    "expected_concurrent_users": 1,
+    "recommended_model_classes": [
+      "small",
+      "medium-quantized"
+    ],
+    "notes": [
+      "Single-user conversational AI."
+    ]
+  },
+  {
+    "workload_id": "developer",
+    "display_name": "Developer",
+    "minimum_ram_gb": 16,
+    "recommended_ram_gb": 32,
+    "minimum_vcpu": 4,
+    "recommended_vcpu": 8,
+    "minimum_disk_gb": 120,
+    "recommended_disk_gb": 250,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "expected_concurrent_users": 2,
+    "recommended_model_classes": [
+      "medium",
+      "code"
+    ],
+    "notes": [
+      "Experimentation, tooling integration, and local model testing."
+    ]
+  },
+  {
+    "workload_id": "coding-assistant",
+    "display_name": "Coding Assistant",
+    "minimum_ram_gb": 32,
+    "recommended_ram_gb": 64,
+    "minimum_vcpu": 8,
+    "recommended_vcpu": 16,
+    "minimum_disk_gb": 200,
+    "recommended_disk_gb": 400,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "expected_concurrent_users": 5,
+    "recommended_model_classes": [
+      "code",
+      "medium"
+    ],
+    "notes": [
+      "IDE-integrated or team coding assistance workloads."
+    ]
+  },
+  {
+    "workload_id": "documentation-rag",
+    "display_name": "Documentation and RAG",
+    "minimum_ram_gb": 32,
+    "recommended_ram_gb": 64,
+    "minimum_vcpu": 4,
+    "recommended_vcpu": 8,
+    "minimum_disk_gb": 300,
+    "recommended_disk_gb": 600,
+    "gpu_optional": true,
+    "gpu_recommended": false,
+    "expected_concurrent_users": 10,
+    "recommended_model_classes": [
+      "medium",
+      "embedding"
+    ],
+    "notes": [
+      "Knowledge base ingestion, retrieval, and question answering."
+    ]
+  },
+  {
+    "workload_id": "small-business",
+    "display_name": "Small Business",
+    "minimum_ram_gb": 32,
+    "recommended_ram_gb": 64,
+    "minimum_vcpu": 4,
+    "recommended_vcpu": 8,
+    "minimum_disk_gb": 250,
+    "recommended_disk_gb": 500,
+    "gpu_optional": true,
+    "gpu_recommended": false,
+    "expected_concurrent_users": 10,
+    "recommended_model_classes": [
+      "small",
+      "medium"
+    ],
+    "notes": [
+      "Departmental chat and light automation for small teams."
+    ]
+  },
+  {
+    "workload_id": "multi-user-office",
+    "display_name": "Multi-User Office",
+    "minimum_ram_gb": 64,
+    "recommended_ram_gb": 128,
+    "minimum_vcpu": 8,
+    "recommended_vcpu": 16,
+    "minimum_disk_gb": 500,
+    "recommended_disk_gb": 1000,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "expected_concurrent_users": 25,
+    "recommended_model_classes": [
+      "medium",
+      "large-quantized"
+    ],
+    "notes": [
+      "Shared office deployment with concurrent sessions."
+    ]
+  },
+  {
+    "workload_id": "heavy-ai-research",
+    "display_name": "Heavy AI Research",
+    "minimum_ram_gb": 128,
+    "recommended_ram_gb": 256,
+    "minimum_vcpu": 16,
+    "recommended_vcpu": 32,
+    "minimum_disk_gb": 800,
+    "recommended_disk_gb": 2000,
+    "gpu_optional": false,
+    "gpu_recommended": true,
+    "expected_concurrent_users": 5,
+    "recommended_model_classes": [
+      "large",
+      "multimodal"
+    ],
+    "notes": [
+      "Experimentation with larger models and high-throughput inference."
+    ]
+  }
+]

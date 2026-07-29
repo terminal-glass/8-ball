@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workloads": [
+    {
+      "workload_id": "personal-chat",
+      "display_name": "Personal Chat",
+      "path": "personal-chat.json",
+      "expected_typical_users": 1,
+      "expected_peak_concurrency": 2,
+      "minimum_ram_gb": 8,
+      "recommended_ram_gb": 16,
+      "minimum_vcpu": 2,
+      "recommended_vcpu": 4,
+      "gpu_recommended": false,
+      "required_capabilities": [
+        "text"
+      ],
+      "profile_version": "P4.0.1"
+    },
+    {
+      "workload_id": "documents-rag",
+      "display_name": "Documents and RAG",
+      "path": "documents-rag.json",
+      "expected_typical_users": 3,
+      "expected_peak_concurrency": 3,
+      "minimum_ram_gb": 8,
+      "recommended_ram_gb": 16,
+      "minimum_vcpu": 4,
+      "recommended_vcpu": 8,
+      "gpu_recommended": false,
+      "required_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "profile_version": "P4.0.1"
+    },
+    {
+      "workload_id": "coding-assistant",
+      "display_name": "Coding Assistant",
+      "path": "coding-assistant.json",
+      "expected_typical_users": 2,
+      "expected_peak_concurrency": 2,
+      "minimum_ram_gb": 16,
+      "recommended_ram_gb": 32,
+      "minimum_vcpu": 4,
+      "recommended_vcpu": 8,
+      "gpu_recommended": true,
+      "required_capabilities": [
+        "text",
+        "coding"
+      ],
+      "profile_version": "P4.0.1"
+    },
+    {
+      "workload_id": "small-business",
+      "display_name": "Small Business",
+      "path": "small-business.json",
+      "expected_typical_users": 5,
+      "expected_peak_concurrency": 5,
+      "minimum_ram_gb": 16,
+      "recommended_ram_gb": 32,
+      "minimum_vcpu": 4,
+      "recommended_vcpu": 8,
+      "gpu_recommended": false,
+      "required_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "profile_version": "P4.0.1"
+    },
+    {
+      "workload_id": "multi-user-office",
+      "display_name": "Multi-user Office",
+      "path": "multi-user-office.json",
+      "expected_typical_users": 15,
+      "expected_peak_concurrency": 15,
+      "minimum_ram_gb": 32,
+      "recommended_ram_gb": 64,
+      "minimum_vcpu": 8,
+      "recommended_vcpu": 16,
+      "gpu_recommended": true,
+      "required_capabilities": [
+        "text",
+        "embedding"
+      ],
+      "profile_version": "P4.0.1"
+    },
+    {
+      "workload_id": "vision-documents",
+      "display_name": "Vision and Documents",
+      "path": "vision-documents.json",
+      "expected_typical_users": 3,
+      "expected_peak_concurrency": 4,
+      "minimum_ram_gb": 24,
+      "recommended_ram_gb": 48,
+      "minimum_vcpu": 6,
+      "recommended_vcpu": 12,
+      "gpu_recommended": true,
+      "required_capabilities": [
+        "text",
+        "vision"
+      ],
+      "profile_version": "P4.0.1"
+    },
+    {
+      "workload_id": "agents-automation",
+      "display_name": "Agents and Automation",
+      "path": "agents-automation.json",
+      "expected_typical_users": 4,
+      "expected_peak_concurrency": 8,
+      "minimum_ram_gb": 32,
+      "recommended_ram_gb": 64,
+      "minimum_vcpu": 8,
+      "recommended_vcpu": 16,
+      "gpu_recommended": true,
+      "required_capabilities": [
+        "text",
+        "tools"
+      ],
+      "profile_version": "P4.0.1"
+    },
+    {
+      "workload_id": "heavy-ai-research",
+      "display_name": "Heavy AI Research",
+      "path": "heavy-ai-research.json",
+      "expected_typical_users": 3,
+      "expected_peak_concurrency": 4,
+      "minimum_ram_gb": 64,
+      "recommended_ram_gb": 128,
+      "minimum_vcpu": 16,
+      "recommended_vcpu": 32,
+      "gpu_recommended": true,
+      "required_capabilities": [
+        "text",
+        "thinking"
+      ],
+      "profile_version": "P4.0.1"
+    }
+  ]
+}

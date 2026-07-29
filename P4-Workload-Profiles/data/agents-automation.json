@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workload_id": "agents-automation",
+  "display_name": "Agents and Automation",
+  "description": "Glass Agent and automation-style workloads for tool use, structured task execution, logs, and workflow state.",
+  "planning_status": "internal-guidance",
+  "expected_users": {
+    "minimum": 1,
+    "typical": 4,
+    "maximum": 20
+  },
+  "expected_concurrency": {
+    "typical": 2,
+    "peak": 8
+  },
+  "required_capabilities": [
+    "text",
+    "tools"
+  ],
+  "optional_capabilities": [
+    "thinking"
+  ],
+  "compute": {
+    "cpu_supported": true,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "preferred_compute": "gpu-preferred"
+  },
+  "resources": {
+    "minimum_ram_gb": 32,
+    "recommended_ram_gb": 64,
+    "minimum_vcpu": 8,
+    "recommended_vcpu": 16,
+    "base_disk_gb": 240,
+    "customer_data_reserve_gb": 250
+  },
+  "model_guidance": {
+    "recommended_model_classes": [
+      "medium",
+      "large"
+    ],
+    "maximum_model_class": "large",
+    "exact_model_selection_deferred_to": "P5-Compatibility-Estimator"
+  },
+  "service_requirements": [
+    "ollama",
+    "openwebui"
+  ],
+  "latency_expectation": "interactive",
+  "priority": "reliability",
+  "limitations": [],
+  "notes": [
+    "Glass Agent describes an action-capable worker; Jet Agent represents cloud-model-powered work.",
+    "NoCloudGPT and YourCloudGPT deployment types remain distinct.",
+    "P4 does not implement OpenClaw or agent execution."
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/p4/workload-profile.schema.json",
+  "title": "NoCloudGPT P4 Workload Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_version",
+    "workload_id",
+    "display_name",
+    "description",
+    "planning_status",
+    "expected_users",
+    "expected_concurrency",
+    "required_capabilities",
+    "optional_capabilities",
+    "compute",
+    "resources",
+    "model_guidance",
+    "service_requirements",
+    "latency_expectation",
+    "priority",
+    "limitations",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "profile_version": { "type": "string", "pattern": "^P4\\.[0-9]+\\.[0-9]+$" },
+    "workload_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "display_name": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "planning_status": { "type": "string", "enum": ["internal-guidance", "specialist-guidance"] },
+    "expected_users": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum", "typical", "maximum"],
+      "properties": {
+        "minimum": { "type": "integer", "minimum": 0 },
+        "typical": { "type": "integer", "minimum": 0 },
+        "maximum": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "expected_concurrency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["typical", "peak"],
+      "properties": {
+        "typical": { "type": "integer", "minimum": 0 },
+        "peak": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "required_capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/capability" }
+    },
+    "optional_capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/capability" }
+    },
+    "compute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cpu_supported", "gpu_optional", "gpu_recommended", "preferred_compute"],
+      "properties": {
+        "cpu_supported": { "type": "boolean" },
+        "gpu_optional": { "type": "boolean" },
+        "gpu_recommended": { "type": "boolean" },
+        "preferred_compute": { "type": "string", "enum": ["cpu", "cpu-or-gpu", "gpu-preferred", "gpu-required"] }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_ram_gb", "recommended_ram_gb", "minimum_vcpu", "recommended_vcpu", "base_disk_gb", "customer_data_reserve_gb"],
+      "properties": {
+        "minimum_ram_gb": { "type": "number", "minimum": 0 },
+        "recommended_ram_gb": { "type": "number", "minimum": 0 },
+        "minimum_vcpu": { "type": "number", "minimum": 0 },
+        "recommended_vcpu": { "type": "number", "minimum": 0 },
+        "base_disk_gb": { "type": "number", "minimum": 0 },
+        "customer_data_reserve_gb": { "type": "number", "minimum": 0 }
+      }
+    },
+    "model_guidance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recommended_model_classes", "maximum_model_class", "exact_model_selection_deferred_to"],
+      "properties": {
+        "recommended_model_classes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["small", "medium", "large", "specialist"] }
+        },
+        "maximum_model_class": { "type": "string", "enum": ["small", "medium", "large", "specialist"] },
+        "exact_model_selection_deferred_to": { "type": "string", "const": "P5-Compatibility-Estimator" }
+      }
+    },
+    "service_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["ollama", "openwebui"] }
+    },
+    "latency_expectation": { "type": "string", "enum": ["interactive", "batch-or-interactive"] },
+    "priority": { "type": "string", "enum": ["balanced", "performance", "concurrency", "capability", "reliability", "specialist"] },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "capability": {
+      "type": "string",
+      "enum": ["text", "coding", "embedding", "vision", "tools", "thinking", "audio"]
+    }
+  }
+}

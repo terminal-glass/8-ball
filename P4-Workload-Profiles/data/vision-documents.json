@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "profile_version": "P4.0.1",
+  "workload_id": "vision-documents",
+  "display_name": "Vision and Documents",
+  "description": "Image-aware document work, scanned pages, visual analysis, and OCR-adjacent workflows without claiming OCR accuracy.",
+  "planning_status": "internal-guidance",
+  "expected_users": {
+    "minimum": 1,
+    "typical": 3,
+    "maximum": 12
+  },
+  "expected_concurrency": {
+    "typical": 1,
+    "peak": 4
+  },
+  "required_capabilities": [
+    "text",
+    "vision"
+  ],
+  "optional_capabilities": [
+    "embedding"
+  ],
+  "compute": {
+    "cpu_supported": true,
+    "gpu_optional": true,
+    "gpu_recommended": true,
+    "preferred_compute": "gpu-preferred"
+  },
+  "resources": {
+    "minimum_ram_gb": 24,
+    "recommended_ram_gb": 48,
+    "minimum_vcpu": 6,
+    "recommended_vcpu": 12,
+    "base_disk_gb": 180,
+    "customer_data_reserve_gb": 200
+  },
+  "model_guidance": {
+    "recommended_model_classes": [
+      "medium",
+      "large"
+    ],
+    "maximum_model_class": "large",
+    "exact_model_selection_deferred_to": "P5-Compatibility-Estimator"
+  },
+  "service_requirements": [
+    "ollama",
+    "openwebui"
+  ],
+  "latency_expectation": "interactive",
+  "priority": "capability",
+  "limitations": [],
+  "notes": [
+    "GPU is recommended for image-aware document work.",
+    "This profile does not claim OCR accuracy."
+  ]
+}
