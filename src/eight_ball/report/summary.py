@@ -20,18 +20,49 @@ def _capability_conflicts(
     models: list[dict[str, Any]],
     tags: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
+    """Flag contradictions only.
+
+    Tags and models may add capabilities beyond family badge evidence. That is
+    expected under Phase 3 isolation and is not a conflict. A conflict is when
+    family evidence says true and a child record says false.
+    """
     family_caps = {family["id"]: family.get("primary_capabilities", {}) for family in families}
-    model_caps = {model["id"]: model.get("capabilities", {}) for model in models}
+    model_by_id = {model["id"]: model for model in models}
     conflicts: list[dict[str, Any]] = []
+    seen_model_conflicts: set[tuple[str, str]] = set()
+
+    for model in models:
+        family_id = model.get("family_id")
+        model_caps = model.get("capabilities", {}) or {}
+        for cap_id in CAPABILITY_KEYS:
+            family_value = family_caps.get(family_id, {}).get(cap_id, "unknown")
+            model_value = model_caps.get(cap_id, "unknown")
+            if family_value == "true" and model_value == "false":
+                key = (model["id"], cap_id)
+                if key in seen_model_conflicts:
+                    continue
+                seen_model_conflicts.add(key)
+                conflicts.append(
+                    {
+                        "model_id": model["id"],
+                        "capability": cap_id,
+                        "family_value": family_value,
+                        "model_value": model_value,
+                        "kind": "model_contradicts_family",
+                    }
+                )
+
     for tag in tags:
         family_id = tag["ollama_identifier"].split(":", 1)[0]
         model_id = tag["model_id"]
         tag_caps = tag.get("capabilities", {}) or {}
         for cap_id in CAPABILITY_KEYS:
             family_value = family_caps.get(family_id, {}).get(cap_id, "unknown")
-            model_value = model_caps.get(model_id, {}).get(cap_id, "unknown")
+            model_value = (model_by_id.get(model_id) or {}).get("capabilities", {}).get(
+                cap_id, "unknown"
+            )
             tag_value = tag_caps.get(cap_id, "unknown")
-            if tag_value == "true" and family_value != "true":
+            if family_value == "true" and tag_value == "false":
                 conflicts.append(
                     {
                         "ollama_identifier": tag["ollama_identifier"],
@@ -39,17 +70,7 @@ def _capability_conflicts(
                         "family_value": family_value,
                         "model_value": model_value,
                         "tag_value": tag_value,
-                        "kind": "tag_exceeds_family",
-                    }
-                )
-            elif model_value == "true" and family_value != "true":
-                conflicts.append(
-                    {
-                        "model_id": model_id,
-                        "capability": cap_id,
-                        "family_value": family_value,
-                        "model_value": model_value,
-                        "kind": "model_exceeds_family",
+                        "kind": "tag_contradicts_family",
                     }
                 )
     return conflicts

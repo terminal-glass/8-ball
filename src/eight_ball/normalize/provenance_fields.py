@@ -14,6 +14,17 @@ TAG_PROVENANCE_FIELDS = (
     "capabilities",
 )
 
+# Normalized values must not be labeled observed; raw text is observed separately.
+DERIVED_TAG_PROVENANCE_FIELDS = (
+    "download_size_bytes",
+    "parameter_count",
+    "context_window_tokens",
+    "quantization",
+    "availability",
+    "capabilities",
+)
+DERIVED_PROVENANCE_CONFIDENCES = frozenset({"derived", "unknown"})
+
 
 def observed_or_unknown(
     value: Any,

@@ -13,7 +13,11 @@ from eight_ball.config import (
     load_json,
     load_yaml,
 )
-from eight_ball.normalize.provenance_fields import TAG_PROVENANCE_FIELDS
+from eight_ball.normalize.provenance_fields import (
+    DERIVED_PROVENANCE_CONFIDENCES,
+    DERIVED_TAG_PROVENANCE_FIELDS,
+    TAG_PROVENANCE_FIELDS,
+)
 from eight_ball.paths import CONFIG_DIR, GENERATED_DIR, INDEXES_DIR, NORMALIZED_DIR, SCHEMAS_DIR
 
 ISO_TIMESTAMP_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
@@ -217,8 +221,23 @@ def validate_catalog(
                 if field not in provenance:
                     errors.append(f"tag {tag['id']}: missing provenance for {field}")
                     continue
-                if provenance[field].get("confidence") not in provenance_confidences:
+                field_prov = provenance[field]
+                if not isinstance(field_prov, dict):
+                    errors.append(f"tag {tag['id']}: provenance for {field} must be an object")
+                    continue
+                confidence = field_prov.get("confidence")
+                if confidence not in provenance_confidences:
                     errors.append(f"tag {tag['id']}: invalid provenance confidence for {field}")
+                    continue
+                if (
+                    candidate_catalog
+                    and field in DERIVED_TAG_PROVENANCE_FIELDS
+                    and confidence not in DERIVED_PROVENANCE_CONFIDENCES
+                ):
+                    errors.append(
+                        f"tag {tag['id']}: provenance for {field} must be derived or unknown, "
+                        f"got {confidence}"
+                    )
 
     manual_review_count = 0
     for model in catalog["models"]:

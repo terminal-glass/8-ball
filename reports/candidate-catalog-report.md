@@ -1,6 +1,6 @@
 # 8-BALL Catalog Report
 
-- Report generated at: 2026-07-29T00:56:25Z
+- Report generated at: 2026-07-29T01:07:18Z
 - Input identifier: data/candidate/normalized
 
 ## Coverage
@@ -25,7 +25,7 @@
 
 ## Capability coverage
 - Unknown capability field count (tag-level): 2125
-- Capability conflicts: 223
+- Capability conflicts: 0
 
 ## Provenance coverage
 - Tag provenance confidence counts: {'observed': 222, 'derived': 1295, 'estimated': 0, 'manual': 0, 'unknown': 44}
@@ -33,7 +33,7 @@
 
 ## Review coverage
 - Actionable review reason counts: {}
-- Unknown field flag counts: {'unknown_capabilities': 15}
+- Unknown field flag counts: {}
 
 ## Validation
 - Valid: True

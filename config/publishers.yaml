@@ -9,6 +9,7 @@ default_catalog_source_id: ollama-library
 
 # Slug prefixes that indicate community or derived builds. These block base-model
 # publisher inference unless an explicit family override exists.
+# Matching is boundary-aware and allows digit-glued versions (dolphin3).
 community_slug_prefixes:
   - dolphin
   - nous
@@ -16,6 +17,7 @@ community_slug_prefixes:
   - everythinglm
   - neural-chat
   - open-orca
+  - openhermes
   - wizard-vicuna
   - yarn
   - samantha
@@ -23,8 +25,28 @@ community_slug_prefixes:
   - starling
   - vicuna
   - zephyr
+  - tinydolphin
+  - megadolphin
+  - dolphincoder
+
+# Token markers that indicate a derivative/community build even when the slug
+# begins with an official base-model prefix (e.g. mistral-openorca, llama2-uncensored).
+derivative_slug_markers:
+  - uncensored
+  - openorca
+  - chatqa
+  - gradient
+  - chinese
+  - groq
+  - free
+  - cybertron
+  - notus
+  - notux
 
 # Canonical model publishers / organizations.
+# review_status on a publisher means the organization record itself is approved.
+# Automatic slug/text inferences always require review; only family_overrides
+# may set review_status: approved on a mapping.
 publishers:
   - id: meta
     display_name: Meta
@@ -33,7 +55,7 @@ publishers:
     evidence_url: https://ai.meta.com/llama/
     provenance_type: inferred
     review_status: approved
-    slug_prefixes: [llama2, llama3, llama4, codellama]
+    slug_prefixes: [llama2, llama3, llama4, codellama, llama-guard]
     text_patterns: [meta llama, meta ai]
   - id: google
     display_name: Google
@@ -42,8 +64,16 @@ publishers:
     evidence_url: https://ai.google/
     provenance_type: inferred
     review_status: approved
-    slug_prefixes: [gemini, gemma]
-    text_patterns: [google deepmind, google gemini]
+    slug_prefixes:
+      - gemini
+      - gemma
+      - codegemma
+      - shieldgemma
+      - embeddinggemma
+      - medgemma
+      - functiongemma
+      - translategemma
+    text_patterns: [google deepmind, google gemini, google gemma]
   - id: mistral-ai
     display_name: Mistral AI
     aliases: [mistral, mixtral]
@@ -51,7 +81,7 @@ publishers:
     evidence_url: https://mistral.ai/
     provenance_type: inferred
     review_status: approved
-    slug_prefixes: [mistral, mixtral, codestral, ministral, pixtral]
+    slug_prefixes: [mistral, mixtral, codestral, ministral, pixtral, devstral, magistral]
     text_patterns: [mistral ai]
   - id: microsoft
     display_name: Microsoft
@@ -69,8 +99,8 @@ publishers:
     evidence_url: https://qwenlm.github.io/
     provenance_type: inferred
     review_status: approved
-    slug_prefixes: [qwen, qwen2, qwen3]
-    text_patterns: [alibaba qwen, qwen]
+    slug_prefixes: [qwen, qwen2, qwen3, codeqwen]
+    text_patterns: [alibaba qwen]
   - id: deepseek
     display_name: DeepSeek
     aliases: [deepseek ai]
@@ -79,7 +109,7 @@ publishers:
     provenance_type: inferred
     review_status: approved
     slug_prefixes: [deepseek]
-    text_patterns: [deepseek]
+    text_patterns: [deepseek ai]
   - id: ibm
     display_name: IBM
     aliases: [granite]
@@ -88,7 +118,7 @@ publishers:
     provenance_type: inferred
     review_status: approved
     slug_prefixes: [granite]
-    text_patterns: [ibm granite, granite]
+    text_patterns: [ibm granite]
   - id: nomic-ai
     display_name: Nomic
     aliases: [nomic ai]
@@ -105,7 +135,7 @@ publishers:
     provenance_type: inferred
     review_status: approved
     slug_prefixes: [tinyllama]
-    text_patterns: [tinyllama]
+    text_patterns: []
   - id: llava-project
     display_name: LLaVA
     aliases: [llava]
@@ -114,7 +144,7 @@ publishers:
     provenance_type: inferred
     review_status: approved
     slug_prefixes: [llava]
-    text_patterns: [llava]
+    text_patterns: []
   - id: unknown
     display_name: Unknown
     aliases: []

@@ -76,16 +76,17 @@ def _actionable_review_reasons(
     reasons: list[str] = []
     if publisher_id == "unknown":
         reasons.append("unknown_publisher")
-    if publisher_mapping_needs_review(publisher_inference):
+    elif publisher_mapping_needs_review(publisher_inference):
+        # Inferred (non-override) mappings need review; keep separate from unknown.
         reasons.append("publisher_mapping_needs_review")
     if not description:
         reasons.append("missing_family_description")
     return reasons
 
 
-def _unknown_field_flags(capability_map: dict[str, str]) -> list[str]:
-    if any(value == "unknown" for value in capability_map.values()):
-        return ["unknown_capabilities"]
+def _unknown_field_flags() -> list[str]:
+    # Unknown capability rates belong in coverage summaries, not review flags.
+    # Record-level flags are reserved for actionable field gaps added later.
     return []
 
 
@@ -132,7 +133,7 @@ def build_candidate_catalog(
             publisher_inference=publisher_inference,
             description=family.description,
         )
-        unknown_flags = _unknown_field_flags(family_caps)
+        unknown_flags = _unknown_field_flags()
 
         normalized_families.append(
             {
@@ -172,7 +173,7 @@ def build_candidate_catalog(
                 [item for tag in model_tags for item in tag.input_capabilities]
             )
             model_caps = refine_capabilities(family_caps, model_tag_tokens)
-            model_unknown_flags = _unknown_field_flags(model_caps)
+            model_unknown_flags = _unknown_field_flags()
             models.append(
                 {
                     "id": model_id,

@@ -37,6 +37,10 @@ def _community_slug_prefixes() -> list[str]:
     return [value.lower() for value in publishers_config().get("community_slug_prefixes", [])]
 
 
+def _derivative_slug_markers() -> list[str]:
+    return [value.lower() for value in publishers_config().get("derivative_slug_markers", [])]
+
+
 def catalog_source_records() -> list[dict[str, Any]]:
     return list(publishers_config().get("catalog_sources", []))
 
@@ -68,11 +72,22 @@ def build_publisher_records(*, publisher_ids: set[str]) -> list[dict[str, Any]]:
 
 
 def slug_token_match(slug: str, token: str) -> bool:
+    """Match token at slug start with a boundary after the token.
+
+    Boundaries are end-of-string, separators (._-), or a digit (phi3, gemma2).
+    Letter continuation is rejected (llamax, philosopher, mistrallite).
+    """
     token = token.lower()
     slug = slug.lower()
+    if not token:
+        return False
     if slug == token:
         return True
-    return bool(re.match(rf"^{re.escape(token)}([._-]|$)", slug))
+    return bool(re.match(rf"^{re.escape(token)}([._-]|\d|$)", slug))
+
+
+def _slug_tokens(slug: str) -> list[str]:
+    return [part for part in re.split(r"[._-]+", slug.lower()) if part]
 
 
 def _is_community_slug(slug: str) -> bool:
@@ -82,10 +97,25 @@ def _is_community_slug(slug: str) -> bool:
     return False
 
 
+def _has_derivative_marker(slug: str) -> bool:
+    markers = set(_derivative_slug_markers())
+    if not markers:
+        return False
+    return any(token in markers for token in _slug_tokens(slug))
+
+
 def _text_pattern_match(haystack: str, pattern: str) -> bool:
     if not pattern:
         return False
-    return bool(re.search(rf"\b{re.escape(pattern)}\b", haystack, flags=re.IGNORECASE))
+    # Require whitespace-separated phrase matches; do not treat hyphens as
+    # word boundaries that would let bare tokens match mid-slug tokens.
+    return bool(
+        re.search(
+            rf"(?<![A-Za-z0-9]){re.escape(pattern)}(?![A-Za-z0-9])",
+            haystack,
+            flags=re.IGNORECASE,
+        )
+    )
 
 
 def _inference_from_publisher(
@@ -95,13 +125,15 @@ def _inference_from_publisher(
     notes: str,
     confidence: str = "derived",
 ) -> PublisherInference:
+    # Automatic inferences always need review. Publisher.review_status only
+    # describes the organization record, not each inferred mapping.
     return PublisherInference(
         publisher_id=publisher["id"],
         confidence=confidence,
         method=method,
         notes=notes,
-        review_status=publisher.get("review_status", "needs_review"),
-        provenance_type=publisher.get("provenance_type", "inferred"),
+        review_status="needs_review",
+        provenance_type="inferred",
         evidence_url=publisher.get("evidence_url"),
     )
 
@@ -140,34 +172,44 @@ def infer_publisher_id(
         )
 
     slug = family_slug.lower()
-    if _is_community_slug(slug):
+    if _is_community_slug(slug) or _has_derivative_marker(slug):
         unknown = registry.get(default_publisher_id(), {})
+        reason = (
+            "community or derived slug prefix blocked publisher inference"
+            if _is_community_slug(slug)
+            else "derivative slug marker blocked publisher inference"
+        )
         return PublisherInference(
             publisher_id=default_publisher_id(),
             confidence="unknown",
             method="community_slug",
-            notes="community or derived slug prefix blocked publisher inference",
+            notes=reason,
             review_status=unknown.get("review_status", "needs_review"),
             provenance_type="unknown",
         )
 
     haystack = " ".join(
         part
-        for part in [family_slug, display_name or "", description or "", updated_text or ""]
+        for part in [display_name or "", description or "", updated_text or ""]
         if part
     )
 
+    # Prefer longer slug prefixes first so qwen2 beats qwen, etc.
+    prefix_candidates: list[tuple[int, dict[str, Any], str]] = []
     for publisher in config.get("publishers", []):
         publisher_id = publisher["id"]
         if publisher_id == "unknown":
             continue
         for prefix in _slug_prefixes(publisher):
             if slug_token_match(slug, prefix):
-                return _inference_from_publisher(
-                    publisher,
-                    method="slug_prefix",
-                    notes=f"matched slug prefix {prefix}",
-                )
+                prefix_candidates.append((len(prefix), publisher, prefix))
+    if prefix_candidates:
+        _length, publisher, prefix = max(prefix_candidates, key=lambda item: item[0])
+        return _inference_from_publisher(
+            publisher,
+            method="slug_prefix",
+            notes=f"matched slug prefix {prefix}",
+        )
 
     lowered_haystack = haystack.lower()
     for publisher in config.get("publishers", []):
