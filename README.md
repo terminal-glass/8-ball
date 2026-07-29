@@ -101,6 +101,10 @@ eight-ball plan --fixture --offline --from-index
 # or: bash scripts/plan-candidate-collect.sh
 ```
 
+`--fixture` is explicit test data. Without it, an offline index plan requires
+`data/snapshots/ollama-library-index.html`; it never silently substitutes the
+test fixture for a collected index.
+
 2. **Rebuild candidate from fixtures** (safe CI/sample path):
 
 ```bash
@@ -119,11 +123,21 @@ eight-ball compare
 eight-ball promote --dry-run
 ```
 
-4. **Promote** only after review. Promote archives `data/normalized/` into `data/history/<version>/` and never modifies `data/families/`:
+4. **Promote** only after review. Promote validates the candidate, blocks
+unresolved review records and unacknowledged removals, archives
+`data/normalized/` into `data/history/<version>/`, and swaps the staged catalog
+into place with rollback protection. It never modifies `data/families/`:
 
 ```bash
 eight-ball promote --dry-run
-# eight-ball promote --apply --confirm   # explicit; irreversible without history restore
+# eight-ball promote --apply --confirm   # explicit canonical replacement
+```
+
+If reviewed upstream removals or unresolved review records are intentionally
+accepted, acknowledge each gate explicitly:
+
+```bash
+eight-ball promote --apply --confirm --allow-removals --allow-review-items
 ```
 
 This repository still does **not** run `ollama pull`, download weights, or generate installer scripts.

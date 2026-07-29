@@ -162,12 +162,16 @@ def cmd_plan(args: argparse.Namespace) -> int:
     if not sample_only and family_slugs is None and not args.from_index:
         # Prefer a full index plan when an index snapshot/fixture exists.
         args.from_index = True
-    plan = build_recreate_plan(
-        fixture=args.fixture,
-        offline=True,
-        sample_only=sample_only,
-        family_slugs=family_slugs,
-    )
+    try:
+        plan = build_recreate_plan(
+            fixture=args.fixture,
+            offline=True,
+            sample_only=sample_only,
+            family_slugs=family_slugs,
+        )
+    except ValueError as exc:
+        print(f"Plan failed: {exc}", file=sys.stderr)
+        return 2
     json_path = write_recreate_plan(plan)
     md_path = write_recreate_plan_markdown(plan)
     print(
@@ -354,8 +358,13 @@ def cmd_promote(args: argparse.Namespace) -> int:
         )
         return 2
     try:
-        result = promote_candidate_catalog(dry_run=dry_run, apply=args.apply and args.confirm)
-    except (FileNotFoundError, ValueError, PermissionError) as exc:
+        result = promote_candidate_catalog(
+            dry_run=dry_run,
+            apply=args.apply and args.confirm,
+            allow_review_items=args.allow_review_items,
+            allow_removals=args.allow_removals,
+        )
+    except (FileNotFoundError, OSError, ValueError, PermissionError) as exc:
         print(f"Promote failed: {exc}", file=sys.stderr)
         return 1
 
@@ -365,12 +374,15 @@ def cmd_promote(args: argparse.Namespace) -> int:
         f"{'dry-run' if result['dry_run'] else 'applied'}: "
         f"candidate {result['candidate_counts']} -> current {result['current_counts']}"
     )
+    print(f"Eligible: {result['eligible']}")
+    for blocker in result["blockers"]:
+        print(f"  - BLOCKED: {blocker}")
     for note in result["notes"]:
         print(f"  - {note}")
     if result.get("archive_path"):
         print(f"Archive: {result['archive_path']}")
     print(f"Report written to {REPORTS_DIR / 'promote-report.json'}")
-    return 0
+    return 0 if result["eligible"] else 1
 
 
 def cmd_all(args: argparse.Namespace) -> int:
@@ -489,6 +501,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--confirm",
         action="store_true",
         help="Required with --apply to confirm irreversible canonical replacement.",
+    )
+    promote.add_argument(
+        "--allow-review-items",
+        action="store_true",
+        help="Explicitly acknowledge unresolved actionable review records.",
+    )
+    promote.add_argument(
+        "--allow-removals",
+        action="store_true",
+        help="Explicitly acknowledge canonical families/models/tags absent from candidate.",
     )
     promote.set_defaults(handler=cmd_promote)
     return parser

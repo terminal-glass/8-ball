@@ -20,12 +20,9 @@ def resolve_library_index_path(*, fixture: bool = False, offline: bool = True) -
     if fixture:
         path = FIXTURES_DIR / "snapshots" / "ollama-library-index.html"
         return path if path.exists() else None
-    for candidate in (
-        SNAPSHOTS_DIR / "ollama-library-index.html",
-        FIXTURES_DIR / "snapshots" / "ollama-library-index.html",
-    ):
-        if candidate.exists():
-            return candidate
+    candidate = SNAPSHOTS_DIR / "ollama-library-index.html"
+    if candidate.exists():
+        return candidate
     if offline:
         return None
     return None
@@ -72,14 +69,20 @@ def build_recreate_plan(
     legacy = _legacy_family_slugs()
 
     if family_slugs:
-        selected = list(family_slugs)
+        selected = list(dict.fromkeys(family_slugs))
         selection_mode = "explicit"
     elif sample_only:
         selected = list(SAMPLE_FAMILIES)
         selection_mode = "sample"
     else:
-        selected = discovered
+        selected = list(dict.fromkeys(discovered))
         selection_mode = "from_index"
+
+    if not selected:
+        raise ValueError(
+            "No families selected for recreate plan. Provide --sample, --families, "
+            "or an available library index snapshot (use --fixture only for test data)."
+        )
 
     selected_set = set(selected)
     index_only = sorted(selected_set - legacy)
