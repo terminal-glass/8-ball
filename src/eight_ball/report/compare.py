@@ -249,39 +249,49 @@ def compare_catalogs(
                 }
             )
 
-        legacy_model = legacy_models.get(legacy_tag.get("model_id", ""), {})
-        candidate_model = candidate_models.get(candidate_tag.get("model_id", ""), {})
-        model_cap_delta = _capability_delta(
-            legacy_model.get("capabilities"),
-            candidate_model.get("capabilities"),
+        tag_cap_delta = _capability_delta(
+            legacy_tag.get("capabilities"),
+            candidate_tag.get("capabilities"),
         )
-        if model_cap_delta:
+        if tag_cap_delta:
             capability_deltas.append(
                 {
                     "ollama_identifier": tag_id,
                     "model_id": candidate_tag.get("model_id"),
-                    "capability_changes": model_cap_delta,
+                    "capability_changes": tag_cap_delta,
                 }
             )
 
+    review_seen: set[tuple[str, str]] = set()
+
+    def _add_review_item(item: dict[str, Any]) -> None:
+        key = (item.get("kind", ""), item.get("id", ""))
+        if key in review_seen:
+            return
+        review_seen.add(key)
+        manual_review_items.append(item)
+
+    for model_id, candidate_model in sorted(candidate_models.items()):
         if candidate_model.get("validation_status") == "needs_review":
-            manual_review_items.append(
+            reasons = candidate_model.get("review_reasons") or ["candidate model marked needs_review"]
+            _add_review_item(
                 {
                     "kind": "model",
-                    "id": candidate_model.get("id"),
+                    "id": model_id,
                     "family_id": candidate_model.get("family_id"),
-                    "reason": "candidate model marked needs_review",
+                    "reason": "; ".join(sorted(set(reasons))),
                 }
             )
 
     for family_id in sorted(candidate_family_ids):
         family = candidate_families[family_id]
-        if family.get("description") is None:
-            manual_review_items.append(
+        family_reasons = list(family.get("review_reasons") or [])
+        if family_reasons:
+            _add_review_item(
                 {
                     "kind": "family",
                     "id": family_id,
-                    "reason": "missing family description",
+                    "reason": "; ".join(sorted(set(family_reasons))),
                 }
             )
 

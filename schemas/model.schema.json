@@ -10,6 +10,7 @@
     "display_name": { "type": "string" },
     "publisher_id": { "type": "string" },
     "family_id": { "type": "string" },
+    "catalog_source_id": { "type": "string" },
     "description": { "type": ["string", "null"] },
     "availability": {
       "type": "string",
@@ -28,6 +29,15 @@
     "validation_status": {
       "type": "string",
       "enum": ["valid", "needs_review", "invalid", "unknown"]
+    },
+    "provenance": { "type": "object" },
+    "review_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "unknown_field_flags": {
+      "type": "array",
+      "items": { "type": "string" }
     }
   },
   "additionalProperties": false

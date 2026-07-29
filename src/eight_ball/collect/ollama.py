@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import time
+from dataclasses import dataclass
 from pathlib import Path
 
 import requests
@@ -9,13 +10,14 @@ import requests
 from eight_ball.collect.manifest import (
     CollectionManifest,
     begin_collection,
-    is_collection_complete,
+    get_collection_state_entry,
     load_collection_state,
     mark_collection_complete,
     record_snapshot,
     relative_repo_path,
     save_collection_state,
     snapshot_policy,
+    verify_content_checksum,
     write_manifest,
 )
 from eight_ball.config import catalog_policy, sources_config
@@ -24,6 +26,12 @@ from eight_ball.paths import FIXTURES_DIR, RAW_DIR, SNAPSHOTS_DIR
 
 class CollectionError(RuntimeError):
     pass
+
+
+@dataclass(frozen=True)
+class ResumedSnapshot:
+    content: str
+    retrieved_at: str
 
 
 def _request(url: str) -> requests.Response:
@@ -124,16 +132,31 @@ def _should_skip_live_fetch(
     family_slug: str | None,
     snapshot_path: Path,
     source_url: str,
-) -> str | None:
+) -> ResumedSnapshot | None:
     if not resume:
         return None
-    if is_collection_complete(state, snapshot_kind=snapshot_kind, family_slug=family_slug):
-        if snapshot_path.exists():
-            return snapshot_path.read_text(encoding="utf-8")
+    state_entry = get_collection_state_entry(
+        state,
+        snapshot_kind=snapshot_kind,
+        family_slug=family_slug,
+    )
+    if state_entry is None:
+        return None
+
+    expected_checksum = state_entry["checksum_sha256"]
+    retrieved_at = state_entry["retrieved_at"]
+    label = f"{snapshot_kind}:{family_slug or 'library'}"
+
+    if snapshot_path.exists():
+        content = snapshot_path.read_text(encoding="utf-8")
+    else:
         cache = _cache_path(source_url)
-        if cache.exists():
-            return cache.read_text(encoding="utf-8")
-    return None
+        if not cache.exists():
+            return None
+        content = cache.read_text(encoding="utf-8")
+
+    verify_content_checksum(content, expected_checksum, label=label)
+    return ResumedSnapshot(content=content, retrieved_at=retrieved_at)
 
 
 def collect_ollama_library(
@@ -179,7 +202,7 @@ def collect_ollama_library(
             state=state,
         )
     else:
-        cached = _should_skip_live_fetch(
+        resumed = _should_skip_live_fetch(
             resume=resume,
             state=state,
             snapshot_kind="library_index",
@@ -187,15 +210,17 @@ def collect_ollama_library(
             snapshot_path=snapshot_path,
             source_url=url,
         )
-        if cached is not None:
-            content = cached
+        if resumed is not None:
+            content = resumed.content
             http_status = 200
             notes = "resume: reused cached snapshot"
+            retrieved_at = resumed.retrieved_at
         else:
             response = _request(url)
             content = response.text
             http_status = response.status_code
             notes = None
+            retrieved_at = None
         _append_entry(
             manifest,
             source_url=url,
@@ -203,6 +228,7 @@ def collect_ollama_library(
             http_status=http_status,
             snapshot_path=snapshot_path,
             snapshot_kind="library_index",
+            retrieved_at=retrieved_at,
             notes=notes,
             state=state,
         )
@@ -257,7 +283,7 @@ def collect_family_snapshot(
             )
             continue
 
-        cached = _should_skip_live_fetch(
+        resumed = _should_skip_live_fetch(
             resume=resume,
             state=state,
             snapshot_kind=snapshot_kind,
@@ -265,15 +291,17 @@ def collect_family_snapshot(
             snapshot_path=snapshot_path,
             source_url=url,
         )
-        if cached is not None:
-            content = cached
+        if resumed is not None:
+            content = resumed.content
             http_status = 200
             notes = "resume: reused cached snapshot"
+            retrieved_at = resumed.retrieved_at
         else:
             response = _request(url)
             content = response.text
             http_status = response.status_code
             notes = None
+            retrieved_at = None
         _append_entry(
             manifest,
             source_url=url,
@@ -282,6 +310,7 @@ def collect_family_snapshot(
             snapshot_path=snapshot_path,
             snapshot_kind=snapshot_kind,
             family_slug=family_slug,
+            retrieved_at=retrieved_at,
             notes=notes,
             state=state,
         )

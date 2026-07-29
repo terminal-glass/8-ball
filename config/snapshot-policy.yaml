@@ -19,7 +19,18 @@ maximum_ephemeral_snapshot_bytes: 2000000
 # Approved compact fixtures may be committed when under this limit.
 maximum_committed_fixture_bytes: 500000
 
-# Candidate collection must never overwrite legacy July 16 source files.
+# Candidate collection/normalization must never overwrite these legacy paths.
+# Promote archives data/normalized into data/history/ before replacement.
+# data/families is never modified by candidate or promote flows.
 protected_legacy_paths:
   - data/families
   - data/normalized
+
+# Recreate scaffolding outputs (gitignored candidate tree + reports).
+recreate:
+  candidate_normalized_dir: data/candidate/normalized
+  history_dir: data/history
+  plan_report: reports/candidate-collect-plan.md
+  promote_report: reports/promote-report.json
+  require_promote_for_canonical: true
+  downloads_model_weights: false

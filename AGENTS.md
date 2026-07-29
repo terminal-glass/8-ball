@@ -25,6 +25,7 @@ Keep these directories distinguishable:
 | `data/families/` | Legacy per-family source observations preserved from prior catalog work | Commit |
 | `data/catalog.json*` | Historical aggregate exports from the legacy pipeline | Commit as historical reference only |
 | `data/overrides/` | Reviewed manual metadata overrides | Commit when present |
+| `data/history/` | Archived canonical normalized catalogs from promote | Commit version archives when promoted |
 | `data/raw/` | Ephemeral collection cache | Do not commit |
 | `data/snapshots/` | Large fetched pages for repeatable parsing | Do not commit |
 | `data/manifests/` | Ephemeral live collection manifests (gitignored) | Do not commit |
@@ -236,3 +237,11 @@ Routine wrappers must not reinstall the package automatically.
 - Normalization verifies manifest checksums and uses per-snapshot retrieval timestamps when a manifest is supplied.
 - Compact offline fixtures under `tests/fixtures/snapshots/` are committed for deterministic parser tests.
 - Candidate normalized output lives under `data/candidate/` and must never overwrite `data/families/` or `data/normalized/`.
+
+### Publisher, capability, and provenance policy (Phase 3)
+
+- `config/publishers.yaml` defines catalog sources (`ollama-library`) separately from model publishers (Meta, Google, Mistral AI, etc.).
+- Family `publisher_id` is inferred from slug patterns, page text, and explicit `family_overrides`.
+- Capabilities inherit from family badges and refine at model and tag levels from `input_capabilities`.
+- Tag provenance records observed, derived, and unknown confidence for download size, parameters, context, quantization, availability, and capabilities.
+- Coverage and comparison reports include publisher counts, capability coverage, provenance confidence, and deduplicated review items.

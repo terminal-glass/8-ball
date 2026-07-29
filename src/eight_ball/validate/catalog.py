@@ -13,6 +13,11 @@ from eight_ball.config import (
     load_json,
     load_yaml,
 )
+from eight_ball.normalize.provenance_fields import (
+    DERIVED_PROVENANCE_CONFIDENCES,
+    DERIVED_TAG_PROVENANCE_FIELDS,
+    TAG_PROVENANCE_FIELDS,
+)
 from eight_ball.paths import CONFIG_DIR, GENERATED_DIR, INDEXES_DIR, NORMALIZED_DIR, SCHEMAS_DIR
 
 ISO_TIMESTAMP_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
@@ -86,12 +91,20 @@ def _load_catalog(
 ) -> dict[str, Any]:
     if catalog is not None:
         return catalog
-    return {
+    loaded = {
         "publishers": load_json(normalized_dir / "publishers.json"),
         "families": load_json(normalized_dir / "families.json"),
         "models": load_json(normalized_dir / "models.json"),
         "tags": load_json(normalized_dir / "tags.json"),
     }
+    meta_path = normalized_dir / "catalog-meta.json"
+    if meta_path.exists():
+        loaded["catalog_meta"] = load_json(meta_path)
+    return loaded
+
+
+def _is_candidate_catalog(catalog: dict[str, Any]) -> bool:
+    return bool(catalog.get("catalog_meta", {}).get("candidate"))
 
 
 def validate_catalog(
@@ -129,6 +142,8 @@ def validate_catalog(
     tag_ids = {t["id"] for t in catalog["tags"]}
     known_caps = _known_capability_ids()
     known_quants = _known_quantizations()
+    candidate_catalog = _is_candidate_catalog(catalog)
+    provenance_confidences = {"observed", "derived", "estimated", "manual", "unknown"}
 
     for publisher in catalog["publishers"]:
         if publisher.get("official_url") and not _is_valid_url(publisher["official_url"]):
@@ -178,6 +193,12 @@ def validate_catalog(
             errors.append(f"tag {tag['id']}: cloud_only tag has download size")
         if availability == "local" and tag.get("download_size_bytes") is None:
             errors.append(f"tag {tag['id']}: local tag missing download_size_bytes")
+        tag_capabilities = tag.get("capabilities") or {}
+        for cap_id in tag_capabilities:
+            if cap_id not in known_caps:
+                errors.append(f"tag {tag['id']}: unsupported capability {cap_id}")
+            elif tag_capabilities[cap_id] not in CAPABILITY_VALUES:
+                errors.append(f"tag {tag['id']}: invalid capability value for {cap_id}")
         expected_pull = f"ollama pull {tag['ollama_identifier']}"
         expected_run = f"ollama run {tag['ollama_identifier']}"
         if tag.get("pull_command") and tag["pull_command"] != expected_pull:
@@ -191,17 +212,32 @@ def validate_catalog(
         if not provenance:
             errors.append(f"tag {tag['id']}: missing provenance")
         else:
-            for field in ("download_size_bytes", "parameter_count"):
+            required_fields = (
+                TAG_PROVENANCE_FIELDS
+                if candidate_catalog
+                else ("download_size_bytes", "parameter_count")
+            )
+            for field in required_fields:
                 if field not in provenance:
                     errors.append(f"tag {tag['id']}: missing provenance for {field}")
-                elif provenance[field].get("confidence") not in {
-                    "observed",
-                    "derived",
-                    "estimated",
-                    "manual",
-                    "unknown",
-                }:
+                    continue
+                field_prov = provenance[field]
+                if not isinstance(field_prov, dict):
+                    errors.append(f"tag {tag['id']}: provenance for {field} must be an object")
+                    continue
+                confidence = field_prov.get("confidence")
+                if confidence not in provenance_confidences:
                     errors.append(f"tag {tag['id']}: invalid provenance confidence for {field}")
+                    continue
+                if (
+                    candidate_catalog
+                    and field in DERIVED_TAG_PROVENANCE_FIELDS
+                    and confidence not in DERIVED_PROVENANCE_CONFIDENCES
+                ):
+                    errors.append(
+                        f"tag {tag['id']}: provenance for {field} must be derived or unknown, "
+                        f"got {confidence}"
+                    )
 
     manual_review_count = 0
     for model in catalog["models"]:

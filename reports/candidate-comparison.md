@@ -6,9 +6,75 @@
 - Shared tag identifiers: 223
 - Legacy-only tags: 0
 - Candidate-only tags: 0
+- Legacy families: 6
+- Candidate families: 6
+- Legacy-only families: 0
+- Candidate-only families: 0
+- Legacy models: 6
+- Candidate models: 9
+- Legacy-only models: 5
+- Candidate-only models: 8
 - Families compared: 6
-- Download size mismatches: 1
+- Download size mismatches: 0
+- Parameter mismatches: 0
+- Quantization mismatches: 0
+- Context mismatches: 0
+- Capability mismatches: 223
+- Availability mismatches: 1
+- Alias target mismatches: 19
+- Manual review items: 0
+- Parse failures: 0
 
-## Download size mismatches (sample)
+## Capability mismatches (sample)
 
-- `llava:7b-v1.6-mistral-q3_K_M`: legacy=4100000000 candidate=4099999999
+- `codestral:22b`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q2_K`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q3_K_L`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q3_K_M`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q3_K_S`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q4_0`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q4_1`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q4_K_M`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q4_K_S`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q5_0`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q5_1`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q5_K_M`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q5_K_S`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q6_K`: {'text_generation': 'unknown -> true'}
+- `codestral:22b-v0.1-q8_0`: {'text_generation': 'unknown -> true'}
+- `codestral:latest`: {'text_generation': 'unknown -> true'}
+- `codestral:v0.1`: {'text_generation': 'unknown -> true'}
+- `gemini-3-flash-preview:latest`: {'text_generation': 'unknown -> true', 'reasoning': 'unknown -> true', 'vision': 'unknown -> true', 'tool_use': 'unknown -> true', 'cloud': 'unknown -> true'}
+- `llama3:70b`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-fp16`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q2_K`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q3_K_L`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q3_K_M`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q3_K_S`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q4_0`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q4_1`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q4_K_M`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q4_K_S`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q5_0`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q5_1`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q5_K_M`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q5_K_S`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q6_K`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-instruct-q8_0`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-fp16`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q2_K`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q3_K_L`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q3_K_M`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q3_K_S`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q4_0`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q4_1`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q4_K_M`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q4_K_S`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q5_0`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q5_1`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q5_K_M`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q5_K_S`: {'text_generation': 'unknown -> true'}
+- `llama3:70b-text-q6_K`: {'text_generation': 'unknown -> true'}
+- ... and 173 more (see JSON report)

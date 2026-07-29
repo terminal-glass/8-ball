@@ -21,6 +21,13 @@
       "type": "string",
       "enum": ["local", "cloud", "both", "cloud_only", "unknown"]
     },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": ["true", "false", "unknown"]
+      }
+    },
     "pull_command": { "type": ["string", "null"] },
     "run_command": { "type": ["string", "null"] },
     "alias_target": { "type": ["string", "null"] },

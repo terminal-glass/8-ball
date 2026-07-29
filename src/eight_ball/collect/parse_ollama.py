@@ -224,7 +224,7 @@ def parse_family_page(html: str, family_slug: str) -> ParsedFamilyPage:
         label = span.get_text(strip=True).lower()
         if label in {"vision", "tools", "thinking", "embedding", "cloud"}:
             capability_badges.append(label)
-    is_cloud_family = "cloud" in capability_badges or "cloud" in html.lower()
+    is_cloud_family = "cloud" in capability_badges
 
     return ParsedFamilyPage(
         slug=family_slug,
@@ -279,4 +279,10 @@ def parse_library_index(html: str) -> list[ParsedFamilyIndexEntry]:
         )
 
     entries.sort(key=lambda item: item.slug)
+    if not entries:
+        raise ParseError(
+            "Ollama library index produced zero family records. "
+            "Expected anchor links matching /library/<slug>. "
+            f"source_checksum={checksum_text(html)}"
+        )
     return entries
