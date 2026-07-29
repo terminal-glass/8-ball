@@ -6,6 +6,7 @@ known_quantizations:
   - fp16
   - fp4
   - mxfp8
+  - nvfp4
   - q2_K
   - q3_K_S
   - q3_K_M
