@@ -178,12 +178,6 @@ def _adjusted_removal_summary(
         for family in comparison.legacy_only_families
         if family in source_exception_families
     )
-    retained_models = sorted(
-        model_id
-        for model_id in comparison.legacy_only_models
-        if model_id in regrouped_models
-        or legacy_model_families.get(model_id) in source_exception_families
-    )
     retained_tags = sorted(
         tag_id
         for tag_id in comparison.legacy_only_tags
