@@ -25,6 +25,7 @@ from eight_ball.paths import (
     CANDIDATE_GENERATED_DIR,
     CANDIDATE_NORMALIZED_DIR,
     LEGACY_FAMILIES_DIR,
+    MANIFESTS_DIR,
     NORMALIZED_DIR,
     RAW_DIR,
     REPO_ROOT,
@@ -78,9 +79,16 @@ class ReconciliationReport:
     deployment_count: int
     alias_digest_merge_count: int
     alias_digest_merges: list[dict[str, Any]] = field(default_factory=list)
+    collection_stats: dict[str, Any] = field(default_factory=dict)
     legacy_comparison: dict[str, Any] = field(default_factory=dict)
+    classified_items: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     live_absences: list[dict[str, Any]] = field(default_factory=list)
+    regrouped_items: list[dict[str, Any]] = field(default_factory=list)
+    renamed_or_merged_items: list[dict[str, Any]] = field(default_factory=list)
+    candidate_only_items: list[dict[str, Any]] = field(default_factory=list)
     source_exceptions: list[dict[str, Any]] = field(default_factory=list)
+    grouping_integrity: dict[str, Any] = field(default_factory=dict)
+    promotion_review: dict[str, Any] = field(default_factory=dict)
     review_queue: list[dict[str, Any]] = field(default_factory=list)
     mapping: CandidateMapping | None = None
 
@@ -91,6 +99,8 @@ class ReconciliationReport:
             "collection_id": self.collection_id,
             "live_counts": {
                 "index_families": self.index_family_count,
+                "snapshot_count": self.collection_stats.get("snapshot_count"),
+                "collected_families": self.collection_stats.get("collected_family_count"),
                 "normalized_families": self.normalized_family_count,
                 "models": self.model_count,
                 "tags": self.tag_count,
@@ -98,11 +108,21 @@ class ReconciliationReport:
             },
             "alias_digest_merge_count": self.alias_digest_merge_count,
             "alias_digest_merges": self.alias_digest_merges,
+            "collection_stats": self.collection_stats,
             "legacy_comparison": self.legacy_comparison,
+            "classified_items": self.classified_items,
             "live_absence_count": len(self.live_absences),
             "live_absences": self.live_absences,
+            "regrouped_count": len(self.regrouped_items),
+            "regrouped_items": self.regrouped_items,
+            "renamed_or_merged_count": len(self.renamed_or_merged_items),
+            "renamed_or_merged_items": self.renamed_or_merged_items,
+            "candidate_only_count": len(self.candidate_only_items),
+            "candidate_only_items": self.candidate_only_items,
             "source_exception_count": len(self.source_exceptions),
             "source_exceptions": self.source_exceptions,
+            "grouping_integrity": self.grouping_integrity,
+            "promotion_review": self.promotion_review,
             "review_queue_count": len(self.review_queue),
             "review_queue": self.review_queue,
             "mapping": self.mapping.to_dict() if self.mapping else None,
@@ -112,13 +132,18 @@ class ReconciliationReport:
 def _resolve_manifest_path(manifest_path: Path | None) -> Path:
     if manifest_path is not None:
         return manifest_path
+
+    candidate_manifests = sorted(MANIFESTS_DIR.glob("candidate-*.json"))
+    if candidate_manifests:
+        return candidate_manifests[-1]
+
     latest_path = RAW_DIR / "latest-manifest.json"
     if latest_path.exists():
         latest = load_json(latest_path)
         path = Path(latest["path"])
         if not path.is_absolute():
             path = REPO_ROOT / path
-        if path.exists():
+        if path.exists() and len(latest.get("entries", [])) > 1:
             return path
     raise FileNotFoundError(
         "No collection manifest found. Pass --manifest or run collect first."
@@ -480,6 +505,203 @@ def _classify_legacy_tag(
     }
 
 
+def _manifest_collection_stats(manifest: CollectionManifest) -> dict[str, Any]:
+    collected_families = sorted(
+        {
+            entry.family_slug
+            for entry in manifest.entries
+            if entry.snapshot_kind == "family" and entry.family_slug
+        }
+    )
+    return {
+        "snapshot_count": len(manifest.entries),
+        "collected_family_count": len(collected_families),
+        "index_family_count": len(_index_family_slugs(manifest)),
+    }
+
+
+def _classify_candidate_only_tag(tag_id: str) -> dict[str, Any]:
+    family_slug = tag_id.split(":", 1)[0]
+    return {
+        "ollama_identifier": tag_id,
+        "family_slug": family_slug,
+        "disposition": "candidate_only_new_live",
+        "evidence": {"present_in_candidate_catalog": True, "absent_from_legacy_canonical": True},
+        "recommended_disposition": "accept_as_new_live_tag",
+    }
+
+
+def _verify_grouping_integrity(
+    tags: list[dict[str, Any]],
+    alias_digest_merges: list[dict[str, Any]],
+) -> dict[str, Any]:
+    tag_ids = {tag["ollama_identifier"] for tag in tags}
+    alias_targets = [tag.get("alias_target") for tag in tags if tag.get("alias_target")]
+    missing_alias_targets = sorted({target for target in alias_targets if target not in tag_ids})
+    deployment_tags = [tag for tag in tags if not tag.get("alias_target")]
+    merge_pairs = {
+        (item["alias_tag"], item["canonical_tag"])
+        for item in alias_digest_merges
+        if item.get("alias_tag") and item.get("canonical_tag")
+    }
+    preserved_variants = len(deployment_tags)
+    return {
+        "valid": not missing_alias_targets,
+        "total_tags": len(tags),
+        "deployment_variant_tags": preserved_variants,
+        "alias_target_tags": len(alias_targets),
+        "alias_digest_merge_pairs": len(merge_pairs),
+        "missing_alias_targets": missing_alias_targets,
+        "note": (
+            "Alias and digest merges collapse model grouping only; each non-alias tag "
+            "remains a distinct deployment variant."
+        ),
+    }
+
+
+def _build_human_review_queue(
+    *,
+    source_exceptions: list[dict[str, Any]],
+    ambiguous_items: list[dict[str, Any]],
+    candidate_dir: Path,
+) -> list[dict[str, Any]]:
+    queue: list[dict[str, Any]] = []
+    for item in source_exceptions:
+        queue.append(
+            {
+                "kind": "source_exception",
+                "id": item["family_slug"],
+                "disposition": item["disposition"],
+                "reason": item["reason"],
+                "evidence": item.get("evidence", {}),
+                "recommended_disposition": item.get("recommended_disposition"),
+            }
+        )
+    for item in ambiguous_items:
+        queue.append(
+            {
+                "kind": "legacy_tag",
+                "id": item["ollama_identifier"],
+                "disposition": item["disposition"],
+                "evidence": item.get("evidence", {}),
+                "recommended_disposition": item.get("recommended_disposition"),
+            }
+        )
+
+    families = load_json(candidate_dir / "families.json")
+    publisher_review_families = sorted(
+        family["id"]
+        for family in families
+        if family.get("review_reasons")
+    )
+    if publisher_review_families:
+        queue.append(
+            {
+                "kind": "publisher_mapping",
+                "id": "publisher_mapping_batch",
+                "disposition": "human_editorial_review",
+                "evidence": {
+                    "family_count": len(publisher_review_families),
+                    "sample_families": publisher_review_families[:10],
+                },
+                "recommended_disposition": (
+                    "review config/publishers.yaml overrides before promotion; "
+                    "does not block accepting live tag inventory"
+                ),
+            }
+        )
+    return queue
+
+
+def _build_promotion_review(
+    *,
+    candidate_dir: Path,
+    legacy_dir: Path,
+    report: ReconciliationReport,
+) -> dict[str, Any]:
+    from eight_ball.recreate.promote import _promotion_gates
+
+    gates, blockers = _promotion_gates(
+        candidate_dir=candidate_dir,
+        target_dir=legacy_dir,
+        allow_review_items=False,
+        allow_removals=False,
+    )
+    interpretations: list[dict[str, Any]] = []
+    for blocker in blockers:
+        if "would remove canonical records" in blocker:
+            interpretations.append(
+                {
+                    "blocker": blocker,
+                    "interpretation": (
+                        "Legacy grouping delta, not evidence of live catalog shrinkage. "
+                        f"{report.legacy_comparison.get('legacy_only_models_likely_regrouped', 0)} "
+                        "legacy model IDs map to candidate tags under digest-based grouping; "
+                        f"{len(report.source_exceptions)} families are source exceptions; "
+                        f"{len(report.live_absences)} tags are true live absences."
+                    ),
+                    "recommended_disposition": (
+                        "Review candidate-reconciliation.md, then acknowledge with "
+                        "--allow-removals only after confirming no true live absences remain."
+                    ),
+                }
+            )
+        elif "unresolved actionable review records" in blocker:
+            interpretations.append(
+                {
+                    "blocker": blocker,
+                    "interpretation": (
+                        "Publisher inference and family metadata review flags on the candidate "
+                        "catalog. These do not indicate missing live tags."
+                    ),
+                    "recommended_disposition": (
+                        "Resolve high-traffic publisher overrides or acknowledge with "
+                        "--allow-review-items after editorial review."
+                    ),
+                }
+            )
+        else:
+            interpretations.append(
+                {
+                    "blocker": blocker,
+                    "interpretation": "Unresolved promotion gate.",
+                    "recommended_disposition": "Resolve before promotion.",
+                }
+            )
+
+    return {
+        "eligible": not blockers,
+        "dry_run_required": True,
+        "blockers": blockers,
+        "blocker_interpretations": interpretations,
+        "gates": gates,
+        "decision_summary": (
+            "Promotion remains blocked pending editorial review. The candidate catalog "
+            "reflects current live Ollama metadata size ("
+            f"{report.normalized_family_count} families, {report.model_count} models, "
+            f"{report.tag_count} tags). Legacy July canonical is continuity baseline only."
+        ),
+    }
+
+
+def _bucket_classified_items(
+    classified_legacy_tags: list[dict[str, Any]],
+    candidate_only_items: list[dict[str, Any]],
+) -> dict[str, list[dict[str, Any]]]:
+    buckets: dict[str, list[dict[str, Any]]] = {
+        "live_absent": [],
+        "renamed_aliased_digest_merged": [],
+        "regrouped": [],
+        "source_unparseable": [],
+        "ambiguous_review": [],
+        "candidate_only_new_live": [],
+    }
+    for item in classified_legacy_tags:
+        buckets.setdefault(item["disposition"], []).append(item)
+    buckets["candidate_only_new_live"] = candidate_only_items
+    return buckets
+
+
 def _candidate_digest_index(
     manifest: CollectionManifest,
     normalized_family_ids: set[str],
@@ -544,7 +766,9 @@ def reconcile_candidate_catalog(
     }
     classified_legacy_tags: list[dict[str, Any]] = []
     live_absences: list[dict[str, Any]] = []
-    review_queue: list[dict[str, Any]] = []
+    regrouped_items: list[dict[str, Any]] = []
+    renamed_or_merged_items: list[dict[str, Any]] = []
+    ambiguous_items: list[dict[str, Any]] = []
 
     for tag_id in legacy_only_tags:
         legacy_tag = next(tag for tag in legacy_tags if tag["ollama_identifier"] == tag_id)
@@ -564,10 +788,15 @@ def reconcile_candidate_catalog(
         disposition_counts[disposition] = disposition_counts.get(disposition, 0) + 1
         if disposition == "live_absent":
             live_absences.append(classification)
+        elif disposition == "regrouped":
+            regrouped_items.append(classification)
+        elif disposition == "renamed_aliased_digest_merged":
+            renamed_or_merged_items.append(classification)
         elif disposition == "ambiguous_review":
-            review_queue.append(classification)
+            ambiguous_items.append(classification)
 
     candidate_only_tags = sorted(candidate_tag_ids - legacy_tag_ids)
+    candidate_only_items = [_classify_candidate_only_tag(tag_id) for tag_id in candidate_only_tags]
     legacy_model_ids = set(legacy_models)
     candidate_model_ids = {model["id"] for model in load_json(candidate_dir / "models.json")}
     legacy_only_models = sorted(legacy_model_ids - candidate_model_ids)
@@ -590,7 +819,15 @@ def reconcile_candidate_catalog(
             regrouped_models += 1
 
     meta = load_json(candidate_dir / "catalog-meta.json")
-    return ReconciliationReport(
+    collection_stats = _manifest_collection_stats(manifest)
+    grouping_integrity = _verify_grouping_integrity(tags, alias_digest_merges)
+    classified_items = _bucket_classified_items(classified_legacy_tags, candidate_only_items)
+    review_queue = _build_human_review_queue(
+        source_exceptions=source_exceptions,
+        ambiguous_items=ambiguous_items,
+        candidate_dir=candidate_dir,
+    )
+    report = ReconciliationReport(
         catalog_version=meta.get("catalog_version", mapping.catalog_version),
         generated_at=meta.get("generated_at", mapping.generated_at),
         collection_id=manifest.collection_id,
@@ -601,26 +838,38 @@ def reconcile_candidate_catalog(
         deployment_count=mapping.deployment_count,
         alias_digest_merge_count=len(alias_digest_merges),
         alias_digest_merges=alias_digest_merges,
+        collection_stats=collection_stats,
         legacy_comparison={
             "legacy_tag_count": len(legacy_tags),
             "candidate_tag_count": len(tags),
             "shared_tags": len(legacy_tag_ids & candidate_tag_ids),
             "legacy_only_tags": len(legacy_only_tags),
-            "candidate_only_tags": len(candidate_only_tags),
+            "candidate_only_tags": len(candidate_only_items),
             "legacy_only_models": len(legacy_only_models),
             "legacy_only_models_likely_regrouped": regrouped_models,
             "legacy_only_models_not_explained_by_regrouping": len(legacy_only_models) - regrouped_models,
             "disposition_counts": disposition_counts,
             "note": (
                 "Legacy-only model IDs are usually digest regrouping, not live removals. "
-                "See disposition_counts for per-tag classification."
+                "See disposition_counts and regrouped_items for evidence."
             ),
         },
+        classified_items=classified_items,
         live_absences=live_absences,
+        regrouped_items=regrouped_items,
+        renamed_or_merged_items=renamed_or_merged_items,
+        candidate_only_items=candidate_only_items,
         source_exceptions=source_exceptions,
+        grouping_integrity=grouping_integrity,
         review_queue=review_queue,
         mapping=mapping,
     )
+    report.promotion_review = _build_promotion_review(
+        candidate_dir=candidate_dir,
+        legacy_dir=legacy_dir,
+        report=report,
+    )
+    return report
 
 
 def write_reconciliation_reports(
@@ -636,6 +885,7 @@ def write_reconciliation_reports(
     review_path = output_dir / "candidate-review-queue.json"
     exceptions_path = output_dir / "candidate-source-exceptions.json"
     mapping_path = output_dir / "candidate-mapping.json"
+    promotion_path = output_dir / "candidate-promotion-review.json"
 
     write_json(json_path, report.to_dict())
     write_json(
@@ -656,41 +906,54 @@ def write_reconciliation_reports(
             "items": report.source_exceptions,
         },
     )
+    write_json(promotion_path, report.promotion_review)
     if report.mapping is not None:
         write_json(mapping_path, report.mapping.to_dict())
 
+    stats = report.collection_stats
     lines = [
         "# Candidate Catalog Reconciliation",
+        "",
+        (
+            "Decision-ready summary for Phase 3E promotion review. The July legacy canonical "
+            "catalog is continuity baseline only; live candidate counts below are authoritative."
+        ),
         "",
         f"- Catalog version: `{report.catalog_version}`",
         f"- Generated at: {report.generated_at}",
         f"- Collection ID: `{report.collection_id}`",
         "",
-        "## Authoritative live candidate counts",
-        f"- Index families (live Ollama library): **{report.index_family_count}**",
+        "## Live inventory (authoritative)",
+        f"- Index families: **{stats.get('index_family_count', report.index_family_count)}**",
+        f"- Snapshots collected: **{stats.get('snapshot_count', 0)}**",
+        f"- Families with snapshots: **{stats.get('collected_family_count', 0)}**",
         f"- Normalized families: **{report.normalized_family_count}**",
         f"- Canonical candidate models: **{report.model_count}**",
-        f"- Tags / deployments: **{report.tag_count}** tags, **{report.deployment_count}** deployment combinations",
+        f"- Tags: **{report.tag_count}**",
+        f"- Deployment combinations: **{report.deployment_count}**",
+        f"- Alias/digest merges: **{report.alias_digest_merge_count}**",
         "",
-        "## Alias and digest merges (candidate)",
-        f"- Merge records: **{report.alias_digest_merge_count}**",
+        "## Grouping integrity",
+        f"- Valid: **{report.grouping_integrity.get('valid', False)}**",
+        f"- Deployment variant tags (non-alias): **{report.grouping_integrity.get('deployment_variant_tags', 0)}**",
+        f"- Alias-target tags: **{report.grouping_integrity.get('alias_target_tags', 0)}**",
+        f"- {report.grouping_integrity.get('note', '')}",
         "",
-        "## Legacy comparison (informational only)",
+        "## Legacy delta classification",
     ]
     legacy = report.legacy_comparison
     lines.extend(
         [
-            f"- Legacy tags: {legacy.get('legacy_tag_count', 0)}",
-            f"- Candidate tags: {legacy.get('candidate_tag_count', 0)}",
             f"- Shared tags: {legacy.get('shared_tags', 0)}",
+            f"- Candidate-only tags (new live): {legacy.get('candidate_only_tags', 0)}",
             f"- Legacy-only tags: {legacy.get('legacy_only_tags', 0)}",
-            f"- Candidate-only tags: {legacy.get('candidate_only_tags', 0)}",
             (
-                f"- Legacy-only model IDs: {legacy.get('legacy_only_models', 0)} "
-                f"({legacy.get('legacy_only_models_likely_regrouped', 0)} likely regrouped)"
+                "- Legacy-only model IDs: "
+                f"{legacy.get('legacy_only_models', 0)} "
+                f"({legacy.get('legacy_only_models_likely_regrouped', 0)} explained by regrouping)"
             ),
             "",
-            "### Legacy-only tag disposition",
+            "### Disposition counts",
         ]
     )
     for disposition, count in sorted(legacy.get("disposition_counts", {}).items()):
@@ -700,10 +963,21 @@ def write_reconciliation_reports(
             "",
             f"> {legacy.get('note', '')}",
             "",
-            "## True live absences",
+            "## True current-live absences",
             f"- Count: **{len(report.live_absences)}**",
+        ]
+    )
+    for item in report.live_absences[:10]:
+        lines.append(f"- `{item['ollama_identifier']}`")
+    lines.extend(
+        [
             "",
-            "## Source exceptions (unparseable snapshots)",
+            "## Regrouped or renamed (not removals)",
+            f"- Regrouped tag records: **{len(report.regrouped_items)}**",
+            f"- Renamed/alias/digest-merged: **{len(report.renamed_or_merged_items)}**",
+            f"- Candidate-only new live tags: **{len(report.candidate_only_items)}**",
+            "",
+            "## Source exceptions",
             f"- Count: **{len(report.source_exceptions)}**",
         ]
     )
@@ -712,11 +986,33 @@ def write_reconciliation_reports(
     lines.extend(
         [
             "",
-            "## Ambiguous human-review queue",
+            "## Promotion decision",
+            f"- Eligible: **{report.promotion_review.get('eligible', False)}**",
+            f"- {report.promotion_review.get('decision_summary', '')}",
+            "",
+            "### Blocker interpretations",
+        ]
+    )
+    for item in report.promotion_review.get("blocker_interpretations", []):
+        lines.append(f"- {item['interpretation']}")
+        lines.append(f"  - Recommended: {item['recommended_disposition']}")
+    lines.extend(
+        [
+            "",
+            "## Human-review queue",
             f"- Count: **{len(report.review_queue)}**",
+        ]
+    )
+    for item in report.review_queue:
+        lines.append(
+            f"- {item['kind']} `{item.get('id', '')}`: {item.get('recommended_disposition', '')}"
+        )
+    lines.extend(
+        [
             "",
             "Artifacts:",
             f"- `{json_path}`",
+            f"- `{promotion_path}`",
             f"- `{review_path}`",
             f"- `{exceptions_path}`",
             f"- `{mapping_path}`",
@@ -730,4 +1026,5 @@ def write_reconciliation_reports(
         "review_queue": review_path,
         "source_exceptions": exceptions_path,
         "mapping": mapping_path,
+        "promotion_review": promotion_path,
     }

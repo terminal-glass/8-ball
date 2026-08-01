@@ -138,6 +138,32 @@ def test_reconcile_includes_configured_source_exceptions(tmp_path, monkeypatch):
     assert "minimax-m2.5" in slugs
 
 
+def test_reconcile_includes_promotion_review_and_grouping_integrity(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    reports_dir = tmp_path / "reports"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.NORMALIZED_DIR", Path("data/normalized"))
+    monkeypatch.setattr("eight_ball.report.reconcile.REPORTS_DIR", reports_dir)
+
+    normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama", "llama3"])
+    report = reconcile_candidate_catalog(
+        candidate_dir=candidate_dir,
+        manifest_path=FIXTURE_MANIFEST,
+    )
+    assert report.collection_stats["snapshot_count"] > 0
+    assert report.grouping_integrity["valid"] is True
+    assert report.grouping_integrity["deployment_variant_tags"] > 0
+    assert report.promotion_review["eligible"] is False
+    assert report.promotion_review["blocker_interpretations"]
+    assert len(report.candidate_only_items) >= 0
+    assert "candidate_only_new_live" in report.classified_items
+    kinds = {item["kind"] for item in report.review_queue}
+    assert "source_exception" in kinds
+    paths = write_reconciliation_reports(report, output_dir=reports_dir)
+    assert paths["promotion_review"].exists()
+
+
 def test_reconcile_requires_manifest_or_latest_pointer(tmp_path, monkeypatch):
     candidate_dir = tmp_path / "candidate" / "normalized"
     monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)

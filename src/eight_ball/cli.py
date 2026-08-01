@@ -502,7 +502,8 @@ def cmd_reconcile(args: argparse.Namespace) -> int:
         f"Alias/digest merges: {report.alias_digest_merge_count}; "
         f"live absences: {len(report.live_absences)}; "
         f"source exceptions: {len(report.source_exceptions)}; "
-        f"review queue: {len(report.review_queue)}."
+        f"review queue: {len(report.review_queue)}; "
+        f"promotion eligible: {report.promotion_review.get('eligible', False)}."
     )
     print(f"Report written to {paths['markdown']}")
     return 0
