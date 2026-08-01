@@ -15,7 +15,7 @@ exec > >(tee -a "$LOG") 2>&1
 echo "=== eight-ball live candidate crawl started at $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
 
 echo "--- collect (library index + all families) ---"
-eight-ball collect --candidate --from-index
+eight-ball collect --candidate --from-index --resume
 
 echo "--- normalize from latest manifest ---"
 eight-ball normalize --source ollama --candidate
