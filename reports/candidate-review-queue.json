@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-08-01T12:00:16Z",
   "catalog_version": "2026.08.01",
-  "count": 3,
+  "count": 2,
   "items": [
     {
       "kind": "source_exception",
@@ -28,27 +28,6 @@
         "in_live_index": false
       },
       "recommended_disposition": "parser_update_or_manual_review"
-    },
-    {
-      "kind": "publisher_mapping",
-      "id": "publisher_mapping_batch",
-      "disposition": "human_editorial_review",
-      "evidence": {
-        "family_count": 226,
-        "sample_families": [
-          "alfred",
-          "all-minilm",
-          "athene-v2",
-          "aya",
-          "aya-expanse",
-          "bakllava",
-          "bespoke-minicheck",
-          "bge-large",
-          "bge-m3",
-          "codebooga"
-        ]
-      },
-      "recommended_disposition": "review config/publishers.yaml overrides before promotion; does not block accepting live tag inventory"
     }
   ]
 }

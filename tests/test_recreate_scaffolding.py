@@ -216,7 +216,7 @@ def test_promote_blocks_invalid_candidate(tmp_path, monkeypatch):
     assert "validation failed" in result["blockers"][0]
 
 
-def test_promote_blocks_unresolved_review_records(tmp_path, monkeypatch):
+def test_promote_does_not_block_publisher_enrichment_backlog(tmp_path, monkeypatch):
     candidate = tmp_path / "candidate"
     target = tmp_path / "normalized"
     _write_catalog(candidate, candidate=True, needs_review=True)
@@ -229,9 +229,39 @@ def test_promote_blocks_unresolved_review_records(tmp_path, monkeypatch):
         dry_run=True,
         apply=False,
     )
+    assert result["eligible"] is True
+    assert result["gates"]["review_records"]["enrichment_backlog"] == {
+        "families": 1,
+        "models": 1,
+    }
+    assert result["gates"]["review_records"]["structural"] == {
+        "families": 0,
+        "models": 0,
+    }
+    assert not any("unresolved actionable review" in item for item in result["blockers"])
+    assert not any("unresolved structural review" in item for item in result["blockers"])
+
+
+def test_promote_blocks_unresolved_review_records(tmp_path, monkeypatch):
+    candidate = tmp_path / "candidate"
+    target = tmp_path / "normalized"
+    _write_catalog(candidate, candidate=True, needs_review=True)
+    _write_catalog(target, candidate=False)
+    _allow_tmp_promote_target(monkeypatch)
+    models = load_json(candidate / "models.json")
+    models[0]["validation_status"] = "needs_review"
+    models[0]["review_reasons"] = ["structural_data_gap"]
+    write_json(candidate / "models.json", models)
+
+    result = promote_candidate_catalog(
+        candidate_dir=candidate,
+        target_dir=target,
+        dry_run=True,
+        apply=False,
+    )
     assert result["eligible"] is False
-    assert result["gates"]["review_records"] == {"families": 1, "models": 1}
-    assert any("unresolved actionable review" in item for item in result["blockers"])
+    assert result["gates"]["review_records"]["structural"] == {"families": 0, "models": 1}
+    assert any("unresolved structural review" in item for item in result["blockers"])
 
 
 def test_promote_blocks_unacknowledged_removals(tmp_path, monkeypatch):

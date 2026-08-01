@@ -2,11 +2,16 @@
   "collection_id": "bab19a56868744a5a39e39ae8eecfa4c",
   "catalog_version": "2026.08.01",
   "generated_at": "2026-08-01T12:00:16Z",
-  "index_family_count": 232,
-  "normalized_family_count": 232,
-  "model_count": 435,
-  "tag_count": 7269,
-  "deployment_count": 174456,
+  "live_counts": {
+    "source_indexed_families": 234,
+    "parseable_source_families": 232,
+    "source_exception_families": 2,
+    "collected_snapshots": 465,
+    "normalized_candidate_families": 232,
+    "candidate_canonical_models": 435,
+    "tags": 7269,
+    "deployment_combinations": 174456
+  },
   "families": [
     {
       "family_id": "alfred",
