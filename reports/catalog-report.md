@@ -1,38 +1,38 @@
 # 8-BALL Catalog Report
 
-- Report generated at: 2026-07-29T00:56:23Z
+- Report generated at: 2026-08-01T14:12:21Z
 - Input identifier: data/families
 
 ## Coverage
-- Publishers: 1
-- Families: 231
-- Models: 231
-- Tags: 7246
-- Local tags: 7229
-- Cloud-related tags: 148
-- Unknown parameter count: 561
-- Unknown download size: 17
-- Unknown quantizations: 1003
+- Publishers: 12
+- Families: 234
+- Models: 437
+- Tags: 7271
+- Local tags: 7256
+- Cloud-related tags: 149
+- Unknown parameter count: 578
+- Unknown download size: 15
+- Unknown quantizations: 1010
 - Unknown context windows: 40
-- Unknown architectures: 390
-- Manual review count: 231
-- Deployment combinations: 173904
+- Unknown architectures: 7271
+- Manual review count: 428
+- Deployment combinations: 174504
 
 ## Publisher coverage
-- Unknown publisher families: 0
-- Publisher mappings needing review: 153
-- Publisher counts: {'ollama-library': 231}
+- Unknown publisher families: 142
+- Publisher mappings needing review: 228
+- Publisher counts: {'alibaba-qwen': 15, 'deepseek': 11, 'google': 13, 'ibm': 13, 'llava-project': 3, 'meta': 9, 'microsoft': 7, 'mistral-ai': 16, 'nomic-ai': 2, 'ollama-library': 2, 'tinyllama': 1, 'unknown': 142}
 
 ## Capability coverage
-- Unknown capability field count (tag-level): 0
+- Unknown capability field count (tag-level): 69588
 - Capability conflicts: 0
 
 ## Provenance coverage
-- Tag provenance confidence counts: {'observed': 13931, 'derived': 0, 'estimated': 0, 'manual': 0, 'unknown': 561}
-- Records missing field-level provenance: 7246
+- Tag provenance confidence counts: {'observed': 7258, 'derived': 41977, 'estimated': 0, 'manual': 0, 'unknown': 1652}
+- Records missing field-level provenance: 2
 
 ## Review coverage
-- Actionable review reason counts: {}
+- Actionable review reason counts: {'publisher_mapping_needs_review': 276, 'unknown_publisher': 376}
 - Unknown field flag counts: {}
 
 ## Validation

@@ -38,7 +38,8 @@
     "unknown_field_flags": {
       "type": "array",
       "items": { "type": "string" }
-    }
+    },
+    "source_exception_retained": { "type": "boolean" }
   },
   "additionalProperties": false
 }

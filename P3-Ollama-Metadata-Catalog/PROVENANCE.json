@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-07-29T03:54:22Z",
+  "generated_at": "2026-08-01T14:11:11Z",
   "source_repository": "terminal-glass/8-ball",
-  "source_commit": "c9c85067a69e34e4298902f1d2bf2d7fedc93841",
-  "catalog_version": "2026.07.16",
-  "catalog_source_id": null,
+  "source_commit": "5e10890f95c1372dc01adb035d7b810f44a51b75",
+  "catalog_version": "2026.08.01",
+  "catalog_source_id": "ollama-library",
   "normalized_dir": "data/normalized",
   "source_files": {
     "publishers.json": {
       "path": "data/normalized/publishers.json",
-      "sha256": "f4dc7c6b2c34d88fdf79511fac8ccb3813c956a7264d3cd23d221516b199dd75",
-      "bytes": 166
+      "sha256": "3ae69ab64dda0fa9315bedb0de2f15364f713b6a5885515ea4c50ffe5601da94",
+      "bytes": 1823
     },
     "families.json": {
       "path": "data/normalized/families.json",
-      "sha256": "835eb58d155b0ee75327d41bb8a5e7d45f6009ab08bad5f71c3e9e38d3a466a9",
-      "bytes": 182149
+      "sha256": "5de61b5ac42de917d8349be962c83394f6a47a2c8ca8f62b28a86d68c6709d5b",
+      "bytes": 413447
     },
     "models.json": {
       "path": "data/normalized/models.json",
-      "sha256": "37a445b9c0a4847dd2bda1d916febbee6d052e80b5f5f7a6582e5b7685fd0b35",
-      "bytes": 204579
+      "sha256": "e6526f49768dc3e5689569cf25ac0fad784bc6f86c32f35ed5efb151be76eb25",
+      "bytes": 813099
     },
     "tags.json": {
       "path": "data/normalized/tags.json",
-      "sha256": "000aafed21cc45f36daf39fb6fb774b4caad7591fde8db4d0b87c67d764d32e6",
-      "bytes": 9078566
+      "sha256": "666a2d59da9f022e10c4517fdd6157fd5603ffc16642d19825107f2b10bd8401",
+      "bytes": 24469403
     },
     "capabilities.json": {
       "path": "data/normalized/capabilities.json",
@@ -33,15 +33,15 @@
     },
     "catalog-meta.json": {
       "path": "data/normalized/catalog-meta.json",
-      "sha256": "0a5c0d2bdaab491fcd53b7d19c870fa613c7a6a41ad7375cb1c2b04e5e7f583a",
-      "bytes": 104
+      "sha256": "ae87daa2bde9d5b87fa97cff5b7677087759ee16f9c353f4a455c01e22a9f29a",
+      "bytes": 1367
     }
   },
   "counts": {
-    "publishers": 1,
-    "families": 231,
-    "models": 231,
-    "tags": 7246
+    "publishers": 12,
+    "families": 234,
+    "models": 437,
+    "tags": 7271
   },
   "exports": [
     "indexes/model-selection.json",

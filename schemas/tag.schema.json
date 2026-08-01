@@ -33,7 +33,8 @@
     "alias_target": { "type": ["string", "null"] },
     "source_url": { "type": ["string", "null"], "format": "uri" },
     "retrieved_at": { "type": ["string", "null"], "format": "date-time" },
-    "provenance": { "type": "object" }
+    "provenance": { "type": "object" },
+    "source_exception_retained": { "type": "boolean" }
   },
   "additionalProperties": false
 }
