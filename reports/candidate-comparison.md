@@ -23,7 +23,7 @@
 - Availability mismatches: 6
 - Alias target mismatches: 718
 - Manual review items: 652
-- Parse failures: 2
+- Parse failures: 0
 
 ## Candidate-only tags (sample)
 

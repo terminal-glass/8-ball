@@ -63139,16 +63139,5 @@
       "reason": "unknown_publisher"
     }
   ],
-  "parse_failures": [
-    {
-      "family_slug": "kimi-k2.5",
-      "error": "Ollama tags-page layout produced zero tag records for kimi-k2.5. Expected anchor links matching /library/kimi-k2.5:<tag>. source_checksum=215a546411f7c17ba2c6856f48249a135955fde90a97e49b9ff4eaf36b74cfb0",
-      "source_url": "https://ollama.com/library/kimi-k2.5/tags"
-    },
-    {
-      "family_slug": "minimax-m2.5",
-      "error": "Ollama tags-page layout produced zero tag records for minimax-m2.5. Expected anchor links matching /library/minimax-m2.5:<tag>. source_checksum=f5ea3157e8ae4f265d0c72cd7eb26f4d2f14846d52f4169d124ba6a2cc29ccfe",
-      "source_url": "https://ollama.com/library/minimax-m2.5/tags"
-    }
-  ]
+  "parse_failures": []
 }

@@ -34,3 +34,13 @@ recreate:
   promote_report: reports/promote-report.json
   require_promote_for_canonical: true
   downloads_model_weights: false
+
+# Families with collected snapshots that the current static HTML parser cannot
+# normalize. Reconcile keeps them visible in the source-exception queue.
+known_static_parse_failures:
+  - family_slug: kimi-k2.5
+    reason: static_html_parse_failure
+    notes: Ollama tags-page layout produced zero tag records with the current parser.
+  - family_slug: minimax-m2.5
+    reason: static_html_parse_failure
+    notes: Ollama tags-page layout produced zero tag records with the current parser.

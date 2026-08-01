@@ -1,6 +1,6 @@
 # 8-BALL Catalog Report
 
-- Report generated at: 2026-08-01T10:44:21Z
+- Report generated at: 2026-08-01T13:26:44Z
 - Input identifier: data/candidate/normalized
 
 ## Coverage
