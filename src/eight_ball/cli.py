@@ -491,12 +491,13 @@ def cmd_reconcile(args: argparse.Namespace) -> int:
         print(f"Reconcile failed: {exc}", file=sys.stderr)
         return 1
     paths = write_reconciliation_reports(report)
+    counts = report.live_counts
     print(
         "Reconciliation complete: "
-        f"{report.normalized_family_count} families, "
-        f"{report.model_count} models, "
-        f"{report.tag_count} tags, "
-        f"{report.deployment_count} deployments."
+        f"{counts.get('normalized_candidate_families', 0)} families, "
+        f"{counts.get('candidate_canonical_models', 0)} models, "
+        f"{counts.get('tags', 0)} tags, "
+        f"{counts.get('deployment_combinations', 0)} deployments."
     )
     print(
         f"Alias/digest merges: {report.alias_digest_merge_count}; "

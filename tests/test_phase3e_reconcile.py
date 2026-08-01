@@ -27,6 +27,7 @@ def test_build_candidate_mapping_groups_models_and_tags(tmp_path, monkeypatch):
         ),
     )
     assert mapping.normalized_family_count == 2
+    assert mapping.parseable_source_families == 2
     assert mapping.tag_count > 0
     assert mapping.model_count > 0
     tinyllama = next(row for row in mapping.families if row["family_id"] == "tinyllama")
@@ -111,9 +112,9 @@ def test_reconcile_classifies_legacy_only_models_as_regrouping_not_absence(tmp_p
         legacy_dir=legacy_dir,
         manifest_path=FIXTURE_MANIFEST,
     )
-    assert report.legacy_comparison["legacy_only_models"] > 0
-    assert report.legacy_comparison["legacy_only_models_likely_regrouped"] > 0
-    assert "disposition_counts" in report.legacy_comparison
+    assert report.legacy_model_evidence["legacy_only_model_count"] > 0
+    assert report.legacy_model_evidence["explained_by_digest_regrouping"] > 0
+    assert report.legacy_comparison["disposition_counts"]["regrouped"] > 0
     paths = write_reconciliation_reports(report, output_dir=reports_dir)
     assert paths["markdown"].exists()
     assert paths["review_queue"].exists()
@@ -156,10 +157,12 @@ def test_reconcile_includes_promotion_review_and_grouping_integrity(tmp_path, mo
     assert report.grouping_integrity["deployment_variant_tags"] > 0
     assert report.promotion_review["eligible"] is False
     assert report.promotion_review["blocker_interpretations"]
+    assert report.live_counts["normalized_candidate_families"] > 0
     assert len(report.candidate_only_items) >= 0
     assert "candidate_only_new_live" in report.classified_items
     kinds = {item["kind"] for item in report.review_queue}
     assert "source_exception" in kinds
+    assert "publisher_mapping" not in kinds
     paths = write_reconciliation_reports(report, output_dir=reports_dir)
     assert paths["promotion_review"].exists()
 
@@ -170,3 +173,110 @@ def test_reconcile_requires_manifest_or_latest_pointer(tmp_path, monkeypatch):
     monkeypatch.setattr("eight_ball.report.reconcile.RAW_DIR", tmp_path / "raw")
     with pytest.raises(FileNotFoundError):
         reconcile_candidate_catalog(candidate_dir=candidate_dir)
+
+
+def test_live_count_contract_uses_distinct_inventory_fields(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.NORMALIZED_DIR", Path("data/normalized"))
+
+    normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama"])
+    report = reconcile_candidate_catalog(
+        candidate_dir=candidate_dir,
+        manifest_path=FIXTURE_MANIFEST,
+    )
+    counts = report.live_counts
+    assert counts["source_indexed_families"] >= counts["parseable_source_families"]
+    assert counts["source_exception_families"] == len(report.source_exceptions)
+    assert counts["source_indexed_families"] == report.collection_stats["source_indexed_families"]
+    assert counts["normalized_candidate_families"] == counts["parseable_source_families"]
+    assert counts["tags"] > 0
+    assert counts["deployment_combinations"] > 0
+    assert "index_families" not in counts
+
+
+def test_regrouping_evidence_totals_align_with_dispositions(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    legacy_dir = tmp_path / "legacy" / "normalized"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.NORMALIZED_DIR", legacy_dir)
+
+    normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama"])
+    legacy_dir.mkdir(parents=True)
+    for name in ("families.json", "models.json", "tags.json", "catalog-meta.json"):
+        target = legacy_dir / name
+        target.write_text((Path("data/normalized") / name).read_text(encoding="utf-8"), encoding="utf-8")
+
+    report = reconcile_candidate_catalog(
+        candidate_dir=candidate_dir,
+        legacy_dir=legacy_dir,
+        manifest_path=FIXTURE_MANIFEST,
+    )
+    evidence = report.legacy_model_evidence
+    dispositions = report.legacy_comparison["disposition_counts"]
+    assert dispositions["regrouped"] == len(report.regrouped_items)
+    assert evidence["legacy_only_model_count"] == (
+        evidence["explained_by_digest_regrouping"]
+        + evidence["explained_by_source_exception"]
+        + evidence["unexplained_model_count"]
+    )
+
+
+def test_source_exception_retention_policy_documented(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.NORMALIZED_DIR", Path("data/normalized"))
+
+    normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama"])
+    report = reconcile_candidate_catalog(
+        candidate_dir=candidate_dir,
+        manifest_path=FIXTURE_MANIFEST,
+    )
+    slugs = {item["family_slug"] for item in report.source_exceptions}
+    assert slugs >= {"kimi-k2.5", "minimax-m2.5"}
+    assert report.to_dict()["source_exception_retention_policy"]
+    assert all(
+        item["disposition"] == "source_unparseable"
+        for item in report.source_exceptions
+        if item["family_slug"] in {"kimi-k2.5", "minimax-m2.5"}
+    )
+
+
+def test_publisher_enrichment_backlog_does_not_block_promotion(tmp_path, monkeypatch):
+    from eight_ball.config import write_json
+
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.NORMALIZED_DIR", Path("data/normalized"))
+
+    normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama"])
+    families = __import__("eight_ball.config", fromlist=["load_json"]).load_json(
+        candidate_dir / "families.json"
+    )
+    families[0]["review_reasons"] = ["publisher_mapping_needs_review"]
+    write_json(candidate_dir / "families.json", families)
+    models = __import__("eight_ball.config", fromlist=["load_json"]).load_json(
+        candidate_dir / "models.json"
+    )
+    for model in models:
+        model["review_reasons"] = ["publisher_mapping_needs_review"]
+        model["validation_status"] = "valid"
+    write_json(candidate_dir / "models.json", models)
+
+    report = reconcile_candidate_catalog(
+        candidate_dir=candidate_dir,
+        manifest_path=FIXTURE_MANIFEST,
+    )
+    assert report.enrichment_backlog
+    assert not any(
+        "unresolved actionable review records" in blocker
+        for blocker in report.promotion_review.get("blockers", [])
+    )
+    assert not any(
+        "unresolved structural review records" in blocker
+        for blocker in report.promotion_review.get("blockers", [])
+    )

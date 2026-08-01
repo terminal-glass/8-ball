@@ -31,6 +31,10 @@ from eight_ball.paths import (
     REPO_ROOT,
     REPORTS_DIR,
 )
+from eight_ball.report.source_exceptions import (
+    SOURCE_EXCEPTION_RETENTION_POLICY,
+    known_source_exception_slugs,
+)
 
 Disposition = Literal[
     "live_absent",
@@ -46,7 +50,10 @@ class CandidateMapping:
     collection_id: str | None
     catalog_version: str
     generated_at: str
-    index_family_count: int
+    source_indexed_families: int
+    parseable_source_families: int
+    source_exception_families: int
+    collected_snapshots: int
     normalized_family_count: int
     model_count: int
     tag_count: int
@@ -58,11 +65,16 @@ class CandidateMapping:
             "collection_id": self.collection_id,
             "catalog_version": self.catalog_version,
             "generated_at": self.generated_at,
-            "index_family_count": self.index_family_count,
-            "normalized_family_count": self.normalized_family_count,
-            "model_count": self.model_count,
-            "tag_count": self.tag_count,
-            "deployment_count": self.deployment_count,
+            "live_counts": {
+                "source_indexed_families": self.source_indexed_families,
+                "parseable_source_families": self.parseable_source_families,
+                "source_exception_families": self.source_exception_families,
+                "collected_snapshots": self.collected_snapshots,
+                "normalized_candidate_families": self.normalized_family_count,
+                "candidate_canonical_models": self.model_count,
+                "tags": self.tag_count,
+                "deployment_combinations": self.deployment_count,
+            },
             "families": self.families,
         }
 
@@ -72,15 +84,12 @@ class ReconciliationReport:
     catalog_version: str
     generated_at: str
     collection_id: str | None
-    index_family_count: int
-    normalized_family_count: int
-    model_count: int
-    tag_count: int
-    deployment_count: int
+    live_counts: dict[str, int]
     alias_digest_merge_count: int
     alias_digest_merges: list[dict[str, Any]] = field(default_factory=list)
     collection_stats: dict[str, Any] = field(default_factory=dict)
     legacy_comparison: dict[str, Any] = field(default_factory=dict)
+    legacy_model_evidence: dict[str, Any] = field(default_factory=dict)
     classified_items: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     live_absences: list[dict[str, Any]] = field(default_factory=list)
     regrouped_items: list[dict[str, Any]] = field(default_factory=list)
@@ -90,6 +99,7 @@ class ReconciliationReport:
     grouping_integrity: dict[str, Any] = field(default_factory=dict)
     promotion_review: dict[str, Any] = field(default_factory=dict)
     review_queue: list[dict[str, Any]] = field(default_factory=list)
+    enrichment_backlog: list[dict[str, Any]] = field(default_factory=list)
     mapping: CandidateMapping | None = None
 
     def to_dict(self) -> dict[str, Any]:
@@ -97,34 +107,30 @@ class ReconciliationReport:
             "catalog_version": self.catalog_version,
             "generated_at": self.generated_at,
             "collection_id": self.collection_id,
-            "live_counts": {
-                "index_families": self.index_family_count,
-                "snapshot_count": self.collection_stats.get("snapshot_count"),
-                "collected_families": self.collection_stats.get("collected_family_count"),
-                "normalized_families": self.normalized_family_count,
-                "models": self.model_count,
-                "tags": self.tag_count,
-                "deployments": self.deployment_count,
-            },
+            "live_counts": self.live_counts,
             "alias_digest_merge_count": self.alias_digest_merge_count,
             "alias_digest_merges": self.alias_digest_merges,
             "collection_stats": self.collection_stats,
             "legacy_comparison": self.legacy_comparison,
+            "legacy_model_evidence": self.legacy_model_evidence,
             "classified_items": self.classified_items,
             "live_absence_count": len(self.live_absences),
             "live_absences": self.live_absences,
             "regrouped_count": len(self.regrouped_items),
-            "regrouped_items": self.regrouped_items,
+            "regrouped_items_sample": self.regrouped_items[:25],
             "renamed_or_merged_count": len(self.renamed_or_merged_items),
-            "renamed_or_merged_items": self.renamed_or_merged_items,
+            "renamed_or_merged_items_sample": self.renamed_or_merged_items[:25],
             "candidate_only_count": len(self.candidate_only_items),
             "candidate_only_items": self.candidate_only_items,
             "source_exception_count": len(self.source_exceptions),
             "source_exceptions": self.source_exceptions,
+            "source_exception_retention_policy": SOURCE_EXCEPTION_RETENTION_POLICY,
             "grouping_integrity": self.grouping_integrity,
             "promotion_review": self.promotion_review,
             "review_queue_count": len(self.review_queue),
             "review_queue": self.review_queue,
+            "enrichment_backlog_count": len(self.enrichment_backlog),
+            "enrichment_backlog": self.enrichment_backlog,
             "mapping": self.mapping.to_dict() if self.mapping else None,
         }
 
@@ -201,10 +207,20 @@ def _deployment_count(candidate_dir: Path, tag_count: int) -> int:
     return tag_count * profiles * policies
 
 
+def _source_indexed_family_count(
+    manifest: CollectionManifest,
+    *,
+    source_exception_families: set[str],
+) -> int:
+    index_slugs = set(_index_family_slugs(manifest))
+    return len(index_slugs | source_exception_families)
+
+
 def build_candidate_mapping(
     *,
     candidate_dir: Path = CANDIDATE_NORMALIZED_DIR,
     manifest: CollectionManifest | None = None,
+    source_exception_count: int = 0,
 ) -> CandidateMapping:
     families = load_json(candidate_dir / "families.json")
     models = load_json(candidate_dir / "models.json")
@@ -247,17 +263,27 @@ def build_candidate_mapping(
             }
         )
 
-    index_count = len(families)
+    parseable_source_families = len(families)
+    collected_snapshots = 0
+    source_exception_slugs = known_source_exception_slugs()
+    source_indexed_families = parseable_source_families + source_exception_count
     if manifest is not None:
-        index_count = len(_index_family_slugs(manifest))
+        collected_snapshots = len(manifest.entries)
+        source_indexed_families = _source_indexed_family_count(
+            manifest,
+            source_exception_families=source_exception_slugs,
+        )
 
     tag_count = len(tags)
     return CandidateMapping(
         collection_id=manifest.collection_id if manifest else None,
         catalog_version=meta.get("catalog_version", "unknown"),
         generated_at=meta.get("generated_at", "unknown"),
-        index_family_count=index_count,
-        normalized_family_count=len(families),
+        source_indexed_families=source_indexed_families,
+        parseable_source_families=parseable_source_families,
+        source_exception_families=source_exception_count,
+        collected_snapshots=collected_snapshots,
+        normalized_family_count=parseable_source_families,
         model_count=len(models),
         tag_count=tag_count,
         deployment_count=_deployment_count(candidate_dir, tag_count),
@@ -421,6 +447,69 @@ def _collect_alias_digest_merges(
     return merges
 
 
+def _classify_shared_tag(
+    tag_id: str,
+    *,
+    legacy_model_id: str,
+    candidate_model_id: str | None,
+) -> dict[str, Any]:
+    if candidate_model_id and candidate_model_id != legacy_model_id:
+        return {
+            "ollama_identifier": tag_id,
+            "disposition": "regrouped",
+            "evidence": {
+                "legacy_model_id": legacy_model_id,
+                "candidate_model_id": candidate_model_id,
+            },
+            "recommended_disposition": "accept_candidate_grouping",
+        }
+    return {
+        "ollama_identifier": tag_id,
+        "disposition": "renamed_aliased_digest_merged",
+        "evidence": {"note": "shared tag with unchanged candidate presence"},
+        "recommended_disposition": "no_action",
+    }
+
+
+def _build_legacy_model_evidence(
+    *,
+    legacy_models: dict[str, dict[str, Any]],
+    legacy_tags: list[dict[str, Any]],
+    candidate_tag_ids: set[str],
+    candidate_model_ids: set[str],
+    source_exception_families: set[str],
+) -> dict[str, Any]:
+    legacy_model_ids = set(legacy_models)
+    legacy_only_models = sorted(legacy_model_ids - candidate_model_ids)
+    digest_regrouped: list[str] = []
+    source_exception_models: list[str] = []
+    unexplained: list[str] = []
+
+    for model_id in legacy_only_models:
+        model_tags = [
+            tag["ollama_identifier"]
+            for tag in legacy_tags
+            if tag.get("model_id") == model_id
+        ]
+        family_id = legacy_models[model_id].get("family_id")
+        if family_id in source_exception_families:
+            source_exception_models.append(model_id)
+        elif model_tags and all(tag_id in candidate_tag_ids for tag_id in model_tags):
+            digest_regrouped.append(model_id)
+        else:
+            unexplained.append(model_id)
+
+    return {
+        "legacy_only_model_count": len(legacy_only_models),
+        "explained_by_digest_regrouping": len(digest_regrouped),
+        "explained_by_source_exception": len(source_exception_models),
+        "unexplained_model_count": len(unexplained),
+        "digest_regrouped_model_ids_sample": digest_regrouped[:25],
+        "source_exception_model_ids": source_exception_models,
+        "unexplained_model_ids": unexplained,
+    }
+
+
 def _classify_legacy_tag(
     tag_id: str,
     *,
@@ -505,7 +594,12 @@ def _classify_legacy_tag(
     }
 
 
-def _manifest_collection_stats(manifest: CollectionManifest) -> dict[str, Any]:
+def _manifest_collection_stats(
+    manifest: CollectionManifest,
+    *,
+    source_exception_families: set[str],
+    normalized_family_count: int,
+) -> dict[str, Any]:
     collected_families = sorted(
         {
             entry.family_slug
@@ -513,10 +607,17 @@ def _manifest_collection_stats(manifest: CollectionManifest) -> dict[str, Any]:
             if entry.snapshot_kind == "family" and entry.family_slug
         }
     )
+    index_family_count = len(_index_family_slugs(manifest))
     return {
         "snapshot_count": len(manifest.entries),
         "collected_family_count": len(collected_families),
-        "index_family_count": len(_index_family_slugs(manifest)),
+        "index_family_count": index_family_count,
+        "source_indexed_families": _source_indexed_family_count(
+            manifest,
+            source_exception_families=source_exception_families,
+        ),
+        "parseable_source_families": normalized_family_count,
+        "source_exception_families": len(source_exception_families),
     }
 
 
@@ -563,7 +664,6 @@ def _build_human_review_queue(
     *,
     source_exceptions: list[dict[str, Any]],
     ambiguous_items: list[dict[str, Any]],
-    candidate_dir: Path,
 ) -> list[dict[str, Any]]:
     queue: list[dict[str, Any]] = []
     for item in source_exceptions:
@@ -587,30 +687,58 @@ def _build_human_review_queue(
                 "recommended_disposition": item.get("recommended_disposition"),
             }
         )
+    return queue
 
+
+def _build_enrichment_backlog(candidate_dir: Path) -> list[dict[str, Any]]:
     families = load_json(candidate_dir / "families.json")
+    models = load_json(candidate_dir / "models.json")
+    backlog: list[dict[str, Any]] = []
+
     publisher_review_families = sorted(
-        family["id"]
-        for family in families
-        if family.get("review_reasons")
+        family["id"] for family in families if family.get("review_reasons")
     )
     if publisher_review_families:
-        queue.append(
+        backlog.append(
             {
                 "kind": "publisher_mapping",
                 "id": "publisher_mapping_batch",
-                "disposition": "human_editorial_review",
+                "disposition": "unverified_editorial_enrichment",
+                "blocking": False,
                 "evidence": {
                     "family_count": len(publisher_review_families),
                     "sample_families": publisher_review_families[:10],
                 },
                 "recommended_disposition": (
-                    "review config/publishers.yaml overrides before promotion; "
-                    "does not block accepting live tag inventory"
+                    "Review config/publishers.yaml overrides when convenient; "
+                    "does not block promotion of structurally valid live inventory"
                 ),
             }
         )
-    return queue
+
+    unverified_models = sorted(
+        model["id"]
+        for model in models
+        if model.get("review_reasons")
+        and model.get("validation_status") == "valid"
+    )
+    if unverified_models:
+        backlog.append(
+            {
+                "kind": "publisher_model_enrichment",
+                "id": "publisher_model_enrichment_batch",
+                "disposition": "unverified_editorial_enrichment",
+                "blocking": False,
+                "evidence": {
+                    "model_count": len(unverified_models),
+                    "sample_models": unverified_models[:10],
+                },
+                "recommended_disposition": (
+                    "Publisher metadata remains visible for later enrichment"
+                ),
+            }
+        )
+    return backlog
 
 
 def _build_promotion_review(
@@ -634,30 +762,26 @@ def _build_promotion_review(
                 {
                     "blocker": blocker,
                     "interpretation": (
-                        "Legacy grouping delta, not evidence of live catalog shrinkage. "
-                        f"{report.legacy_comparison.get('legacy_only_models_likely_regrouped', 0)} "
-                        "legacy model IDs map to candidate tags under digest-based grouping; "
-                        f"{len(report.source_exceptions)} families are source exceptions; "
+                        "Legacy grouping delta after excluding source exceptions and "
+                        "digest regrouping. "
+                        f"{report.legacy_model_evidence.get('explained_by_digest_regrouping', 0)} "
+                        "legacy model IDs are explained by digest regrouping; "
+                        f"{report.legacy_model_evidence.get('explained_by_source_exception', 0)} "
+                        "are source exceptions; "
                         f"{len(report.live_absences)} tags are true live absences."
                     ),
                     "recommended_disposition": (
                         "Review candidate-reconciliation.md, then acknowledge with "
-                        "--allow-removals only after confirming no true live absences remain."
+                        "--allow-removals only if blocking removals remain."
                     ),
                 }
             )
-        elif "unresolved actionable review records" in blocker:
+        elif "unresolved structural review records" in blocker:
             interpretations.append(
                 {
                     "blocker": blocker,
-                    "interpretation": (
-                        "Publisher inference and family metadata review flags on the candidate "
-                        "catalog. These do not indicate missing live tags."
-                    ),
-                    "recommended_disposition": (
-                        "Resolve high-traffic publisher overrides or acknowledge with "
-                        "--allow-review-items after editorial review."
-                    ),
+                    "interpretation": "Unresolved structural data-quality review flags.",
+                    "recommended_disposition": "Resolve before promotion.",
                 }
             )
         else:
@@ -669,18 +793,33 @@ def _build_promotion_review(
                 }
             )
 
+    enrichment_backlog = report.enrichment_backlog
+    eligible = not blockers
+    decision_summary = (
+        "Promotion is eligible based on structural data quality."
+        if eligible
+        else "Promotion remains blocked by structural gates."
+    )
+    decision_summary += (
+        f" The candidate catalog reflects current live Ollama metadata size "
+        f"({report.live_counts.get('normalized_candidate_families', 0)} families, "
+        f"{report.live_counts.get('candidate_canonical_models', 0)} models, "
+        f"{report.live_counts.get('tags', 0)} tags)."
+    )
+    if enrichment_backlog:
+        decision_summary += (
+            f" {len(enrichment_backlog)} publisher-enrichment backlog item(s) "
+            "are documented and non-blocking."
+        )
+
     return {
-        "eligible": not blockers,
+        "eligible": eligible,
         "dry_run_required": True,
         "blockers": blockers,
         "blocker_interpretations": interpretations,
         "gates": gates,
-        "decision_summary": (
-            "Promotion remains blocked pending editorial review. The candidate catalog "
-            "reflects current live Ollama metadata size ("
-            f"{report.normalized_family_count} families, {report.model_count} models, "
-            f"{report.tag_count} tags). Legacy July canonical is continuity baseline only."
-        ),
+        "enrichment_backlog_count": len(enrichment_backlog),
+        "decision_summary": decision_summary,
     }
 
 
@@ -729,7 +868,6 @@ def reconcile_candidate_catalog(
     manifest_path: Path | None = None,
 ) -> ReconciliationReport:
     manifest = load_manifest(_resolve_manifest_path(manifest_path))
-    mapping = build_candidate_mapping(candidate_dir=candidate_dir, manifest=manifest)
 
     families = load_json(candidate_dir / "families.json")
     normalized_family_ids = {family["id"] for family in families}
@@ -745,8 +883,14 @@ def reconcile_candidate_catalog(
             normalized_family_ids=normalized_family_ids,
         ),
     )
-    unparseable_families = {item["family_slug"] for item in source_exceptions}
-    index_families = set(_index_family_slugs(manifest))
+    source_exception_families = {item["family_slug"] for item in source_exceptions}
+    mapping = build_candidate_mapping(
+        candidate_dir=candidate_dir,
+        manifest=manifest,
+        source_exception_count=len(source_exceptions),
+    )
+    unparseable_families = source_exception_families
+    index_families = set(_index_family_slugs(manifest)) | source_exception_families
 
     alias_digest_merges = _collect_alias_digest_merges(tags, manifest)
     candidate_digest_to_tags = _candidate_digest_index(manifest, normalized_family_ids)
@@ -756,6 +900,7 @@ def reconcile_candidate_catalog(
     legacy_models = {model["id"]: model for model in load_json(legacy_dir / "models.json")}
     legacy_tag_ids = {tag["ollama_identifier"] for tag in legacy_tags}
     legacy_only_tags = sorted(legacy_tag_ids - candidate_tag_ids)
+    shared_tag_ids = sorted(legacy_tag_ids & candidate_tag_ids)
 
     disposition_counts: dict[str, int] = {
         "live_absent": 0,
@@ -770,19 +915,7 @@ def reconcile_candidate_catalog(
     renamed_or_merged_items: list[dict[str, Any]] = []
     ambiguous_items: list[dict[str, Any]] = []
 
-    for tag_id in legacy_only_tags:
-        legacy_tag = next(tag for tag in legacy_tags if tag["ollama_identifier"] == tag_id)
-        legacy_model_id = legacy_tag.get("model_id", tag_id.split(":", 1)[0])
-        classification = _classify_legacy_tag(
-            tag_id,
-            candidate_tag_ids=candidate_tag_ids,
-            candidate_tags_by_id=candidate_tags_by_id,
-            candidate_digest_to_tags=candidate_digest_to_tags,
-            legacy_digest=legacy_digests.get(tag_id),
-            index_families=index_families,
-            unparseable_families=unparseable_families,
-            legacy_model_id=legacy_model_id,
-        )
+    def _record_classification(classification: dict[str, Any]) -> None:
         classified_legacy_tags.append(classification)
         disposition = classification["disposition"]
         disposition_counts[disposition] = disposition_counts.get(disposition, 0) + 1
@@ -795,65 +928,90 @@ def reconcile_candidate_catalog(
         elif disposition == "ambiguous_review":
             ambiguous_items.append(classification)
 
+    for tag_id in shared_tag_ids:
+        legacy_tag = next(tag for tag in legacy_tags if tag["ollama_identifier"] == tag_id)
+        legacy_model_id = legacy_tag.get("model_id", tag_id.split(":", 1)[0])
+        candidate_model_id = candidate_tags_by_id[tag_id].get("model_id")
+        _record_classification(
+            _classify_shared_tag(
+                tag_id,
+                legacy_model_id=legacy_model_id,
+                candidate_model_id=candidate_model_id,
+            )
+        )
+
+    for tag_id in legacy_only_tags:
+        legacy_tag = next(tag for tag in legacy_tags if tag["ollama_identifier"] == tag_id)
+        legacy_model_id = legacy_tag.get("model_id", tag_id.split(":", 1)[0])
+        _record_classification(
+            _classify_legacy_tag(
+                tag_id,
+                candidate_tag_ids=candidate_tag_ids,
+                candidate_tags_by_id=candidate_tags_by_id,
+                candidate_digest_to_tags=candidate_digest_to_tags,
+                legacy_digest=legacy_digests.get(tag_id),
+                index_families=index_families,
+                unparseable_families=unparseable_families,
+                legacy_model_id=legacy_model_id,
+            )
+        )
+
     candidate_only_tags = sorted(candidate_tag_ids - legacy_tag_ids)
     candidate_only_items = [_classify_candidate_only_tag(tag_id) for tag_id in candidate_only_tags]
-    legacy_model_ids = set(legacy_models)
     candidate_model_ids = {model["id"] for model in load_json(candidate_dir / "models.json")}
-    legacy_only_models = sorted(legacy_model_ids - candidate_model_ids)
-    regrouped_models = 0
-    for model_id in legacy_only_models:
-        model_tags = [
-            tag["ollama_identifier"]
-            for tag in legacy_tags
-            if tag.get("model_id") == model_id
-        ]
-        if model_tags and all(tag_id in candidate_tag_ids for tag_id in model_tags):
-            regrouped_models += 1
-            continue
-        tag_dispositions = {
-            item["disposition"]
-            for item in classified_legacy_tags
-            if item["ollama_identifier"] in model_tags
-        }
-        if tag_dispositions and tag_dispositions <= {"regrouped", "renamed_aliased_digest_merged"}:
-            regrouped_models += 1
+    legacy_model_evidence = _build_legacy_model_evidence(
+        legacy_models=legacy_models,
+        legacy_tags=legacy_tags,
+        candidate_tag_ids=candidate_tag_ids,
+        candidate_model_ids=candidate_model_ids,
+        source_exception_families=source_exception_families,
+    )
 
     meta = load_json(candidate_dir / "catalog-meta.json")
-    collection_stats = _manifest_collection_stats(manifest)
+    collection_stats = _manifest_collection_stats(
+        manifest,
+        source_exception_families=source_exception_families,
+        normalized_family_count=mapping.normalized_family_count,
+    )
+    live_counts = {
+        "source_indexed_families": mapping.source_indexed_families,
+        "parseable_source_families": mapping.parseable_source_families,
+        "source_exception_families": mapping.source_exception_families,
+        "collected_snapshots": mapping.collected_snapshots,
+        "normalized_candidate_families": mapping.normalized_family_count,
+        "candidate_canonical_models": mapping.model_count,
+        "tags": mapping.tag_count,
+        "deployment_combinations": mapping.deployment_count,
+    }
     grouping_integrity = _verify_grouping_integrity(tags, alias_digest_merges)
     classified_items = _bucket_classified_items(classified_legacy_tags, candidate_only_items)
     review_queue = _build_human_review_queue(
         source_exceptions=source_exceptions,
         ambiguous_items=ambiguous_items,
-        candidate_dir=candidate_dir,
     )
+    enrichment_backlog = _build_enrichment_backlog(candidate_dir)
     report = ReconciliationReport(
         catalog_version=meta.get("catalog_version", mapping.catalog_version),
         generated_at=meta.get("generated_at", mapping.generated_at),
         collection_id=manifest.collection_id,
-        index_family_count=mapping.index_family_count,
-        normalized_family_count=mapping.normalized_family_count,
-        model_count=mapping.model_count,
-        tag_count=mapping.tag_count,
-        deployment_count=mapping.deployment_count,
+        live_counts=live_counts,
         alias_digest_merge_count=len(alias_digest_merges),
         alias_digest_merges=alias_digest_merges,
         collection_stats=collection_stats,
         legacy_comparison={
             "legacy_tag_count": len(legacy_tags),
             "candidate_tag_count": len(tags),
-            "shared_tags": len(legacy_tag_ids & candidate_tag_ids),
+            "shared_tags": len(shared_tag_ids),
             "legacy_only_tags": len(legacy_only_tags),
             "candidate_only_tags": len(candidate_only_items),
-            "legacy_only_models": len(legacy_only_models),
-            "legacy_only_models_likely_regrouped": regrouped_models,
-            "legacy_only_models_not_explained_by_regrouping": len(legacy_only_models) - regrouped_models,
             "disposition_counts": disposition_counts,
             "note": (
-                "Legacy-only model IDs are usually digest regrouping, not live removals. "
-                "See disposition_counts and regrouped_items for evidence."
+                "Disposition counts include shared tags with digest regrouping and "
+                "legacy-only tags. Legacy-only model IDs are explained in "
+                "legacy_model_evidence."
             ),
         },
+        legacy_model_evidence=legacy_model_evidence,
         classified_items=classified_items,
         live_absences=live_absences,
         regrouped_items=regrouped_items,
@@ -862,6 +1020,7 @@ def reconcile_candidate_catalog(
         source_exceptions=source_exceptions,
         grouping_integrity=grouping_integrity,
         review_queue=review_queue,
+        enrichment_backlog=enrichment_backlog,
         mapping=mapping,
     )
     report.promotion_review = _build_promotion_review(
@@ -911,6 +1070,7 @@ def write_reconciliation_reports(
         write_json(mapping_path, report.mapping.to_dict())
 
     stats = report.collection_stats
+    counts = report.live_counts
     lines = [
         "# Candidate Catalog Reconciliation",
         "",
@@ -924,13 +1084,15 @@ def write_reconciliation_reports(
         f"- Collection ID: `{report.collection_id}`",
         "",
         "## Live inventory (authoritative)",
-        f"- Index families: **{stats.get('index_family_count', report.index_family_count)}**",
-        f"- Snapshots collected: **{stats.get('snapshot_count', 0)}**",
+        f"- Source-indexed families: **{counts.get('source_indexed_families', 0)}**",
+        f"- Parseable source families: **{counts.get('parseable_source_families', 0)}**",
+        f"- Source-exception families: **{counts.get('source_exception_families', 0)}**",
+        f"- Collected snapshots: **{counts.get('collected_snapshots', 0)}**",
         f"- Families with snapshots: **{stats.get('collected_family_count', 0)}**",
-        f"- Normalized families: **{report.normalized_family_count}**",
-        f"- Canonical candidate models: **{report.model_count}**",
-        f"- Tags: **{report.tag_count}**",
-        f"- Deployment combinations: **{report.deployment_count}**",
+        f"- Normalized candidate families: **{counts.get('normalized_candidate_families', 0)}**",
+        f"- Candidate canonical models: **{counts.get('candidate_canonical_models', 0)}**",
+        f"- Tags: **{counts.get('tags', 0)}**",
+        f"- Deployment combinations: **{counts.get('deployment_combinations', 0)}**",
         f"- Alias/digest merges: **{report.alias_digest_merge_count}**",
         "",
         "## Grouping integrity",
@@ -942,6 +1104,7 @@ def write_reconciliation_reports(
         "## Legacy delta classification",
     ]
     legacy = report.legacy_comparison
+    model_evidence = report.legacy_model_evidence
     lines.extend(
         [
             f"- Shared tags: {legacy.get('shared_tags', 0)}",
@@ -949,8 +1112,9 @@ def write_reconciliation_reports(
             f"- Legacy-only tags: {legacy.get('legacy_only_tags', 0)}",
             (
                 "- Legacy-only model IDs: "
-                f"{legacy.get('legacy_only_models', 0)} "
-                f"({legacy.get('legacy_only_models_likely_regrouped', 0)} explained by regrouping)"
+                f"{model_evidence.get('legacy_only_model_count', 0)} "
+                f"({model_evidence.get('explained_by_digest_regrouping', 0)} digest regrouping, "
+                f"{model_evidence.get('explained_by_source_exception', 0)} source exceptions)"
             ),
             "",
             "### Disposition counts",
@@ -962,6 +1126,11 @@ def write_reconciliation_reports(
         [
             "",
             f"> {legacy.get('note', '')}",
+            "",
+            "## Legacy model evidence",
+            f"- Digest regrouping: **{model_evidence.get('explained_by_digest_regrouping', 0)}**",
+            f"- Source exceptions: **{model_evidence.get('explained_by_source_exception', 0)}**",
+            f"- Unexplained: **{model_evidence.get('unexplained_model_count', 0)}**",
             "",
             "## True current-live absences",
             f"- Count: **{len(report.live_absences)}**",
@@ -979,6 +1148,7 @@ def write_reconciliation_reports(
             "",
             "## Source exceptions",
             f"- Count: **{len(report.source_exceptions)}**",
+            f"- Retention policy: {SOURCE_EXCEPTION_RETENTION_POLICY}",
         ]
     )
     for item in report.source_exceptions:
@@ -999,11 +1169,22 @@ def write_reconciliation_reports(
     lines.extend(
         [
             "",
-            "## Human-review queue",
+            "## Structural review queue",
             f"- Count: **{len(report.review_queue)}**",
         ]
     )
     for item in report.review_queue:
+        lines.append(
+            f"- {item['kind']} `{item.get('id', '')}`: {item.get('recommended_disposition', '')}"
+        )
+    lines.extend(
+        [
+            "",
+            "## Publisher enrichment backlog (non-blocking)",
+            f"- Count: **{len(report.enrichment_backlog)}**",
+        ]
+    )
+    for item in report.enrichment_backlog:
         lines.append(
             f"- {item['kind']} `{item.get('id', '')}`: {item.get('recommended_disposition', '')}"
         )

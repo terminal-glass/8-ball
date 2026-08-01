@@ -69,7 +69,7 @@ def _resolve_model_id_map(family_slug: str, tags: list[ParsedTag]) -> dict[str, 
     return model_ids
 
 
-def _actionable_review_reasons(
+def _enrichment_backlog_reasons(
     *,
     publisher_id: str,
     publisher_inference: Any,
@@ -79,7 +79,6 @@ def _actionable_review_reasons(
     if publisher_id == "unknown":
         reasons.append("unknown_publisher")
     elif publisher_mapping_needs_review(publisher_inference):
-        # Inferred (non-override) mappings need review; keep separate from unknown.
         reasons.append("publisher_mapping_needs_review")
     if not description:
         reasons.append("missing_family_description")
@@ -87,14 +86,12 @@ def _actionable_review_reasons(
 
 
 def _unknown_field_flags() -> list[str]:
-    # Unknown capability rates belong in coverage summaries, not review flags.
-    # Record-level flags are reserved for actionable field gaps added later.
     return []
 
 
-def _validation_status(actionable_reasons: list[str]) -> str:
-    if actionable_reasons:
-        return "needs_review"
+def _validation_status(_enrichment_reasons: list[str]) -> str:
+    # Publisher and description enrichment are tracked in review_reasons but do not
+    # mark the live structural inventory invalid for promotion.
     return "valid"
 
 
@@ -130,7 +127,7 @@ def build_candidate_catalog(
 
         badge_tokens = family_tokens_from_badges(family.capability_badges)
         family_caps = capabilities_from_tokens(badge_tokens)
-        actionable_reasons = _actionable_review_reasons(
+        enrichment_reasons = _enrichment_backlog_reasons(
             publisher_id=publisher_inference.publisher_id,
             publisher_inference=publisher_inference,
             description=family.description,
@@ -155,7 +152,7 @@ def build_candidate_catalog(
                     source_url=family_source_url,
                     retrieved_at=family_retrieved_at,
                 ),
-                "review_reasons": actionable_reasons,
+                "review_reasons": enrichment_reasons,
                 "unknown_field_flags": unknown_flags,
             }
         )
@@ -190,8 +187,8 @@ def build_candidate_catalog(
                     "default_tag": _default_tag(model_tags),
                     "source_url": family_source_url,
                     "retrieved_at": family_retrieved_at,
-                    "validation_status": _validation_status(actionable_reasons),
-                    "review_reasons": actionable_reasons,
+                    "validation_status": _validation_status(enrichment_reasons),
+                    "review_reasons": enrichment_reasons,
                     "unknown_field_flags": sorted(set(unknown_flags + model_unknown_flags)),
                     "provenance": build_family_provenance(
                         publisher_inference=publisher_inference,
