@@ -43,6 +43,7 @@ from eight_ball.recreate.plan import (
 )
 from eight_ball.recreate.promote import promote_candidate_catalog
 from eight_ball.report.compare import compare_catalogs, write_comparison_report
+from eight_ball.report.reconcile import reconcile_candidate_catalog, write_reconciliation_reports
 from eight_ball.report.summary import coverage_summary, write_reports
 from eight_ball.validate.catalog import ValidationError, validate_catalog
 
@@ -476,6 +477,31 @@ def cmd_all(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_reconcile(args: argparse.Namespace) -> int:
+    manifest_path = Path(args.manifest) if args.manifest else None
+    try:
+        report = reconcile_candidate_catalog(manifest_path=manifest_path)
+    except FileNotFoundError as exc:
+        print(f"Reconcile failed: {exc}", file=sys.stderr)
+        return 1
+    paths = write_reconciliation_reports(report)
+    print(
+        "Reconciliation complete: "
+        f"{report.normalized_family_count} families, "
+        f"{report.model_count} models, "
+        f"{report.tag_count} tags, "
+        f"{report.deployment_count} deployments."
+    )
+    print(
+        f"Alias/digest merges: {report.alias_digest_merge_count}; "
+        f"live absences: {len(report.live_absences)}; "
+        f"source exceptions: {len(report.source_exceptions)}; "
+        f"review queue: {len(report.review_queue)}."
+    )
+    print(f"Report written to {paths['markdown']}")
+    return 0
+
+
 def cmd_export_datasets(args: argparse.Namespace) -> int:
     p2_summary = build_p2_indexes()
     print(
@@ -543,6 +569,17 @@ def build_parser() -> argparse.ArgumentParser:
         help="Explicitly acknowledge canonical families/models/tags absent from candidate.",
     )
     promote.set_defaults(handler=cmd_promote)
+
+    reconcile = subparsers.add_parser(
+        "reconcile",
+        help="Reconcile candidate catalog sizing against legacy baseline and live snapshots.",
+    )
+    reconcile.add_argument(
+        "--manifest",
+        default="",
+        help="Path to collection manifest (defaults to latest candidate manifest).",
+    )
+    reconcile.set_defaults(handler=cmd_reconcile)
 
     export_datasets = subparsers.add_parser(
         "export-datasets",

@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-08-01T12:01:26Z",
+  "dry_run": true,
+  "applied": false,
+  "eligible": false,
+  "candidate_dir": "/workspace/data/candidate/normalized",
+  "target_dir": "/workspace/data/normalized",
+  "candidate_counts": {
+    "publishers": 11,
+    "families": 232,
+    "models": 435,
+    "tags": 7269
+  },
+  "current_counts": {
+    "publishers": 1,
+    "families": 231,
+    "models": 231,
+    "tags": 7246
+  },
+  "candidate_version": "2026.08.01",
+  "archive_path": null,
+  "gates": {
+    "validation": {
+      "valid": true,
+      "error_count": 0,
+      "warning_count": 0,
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "publishers": 11,
+        "families": 232,
+        "models": 435,
+        "tags": 7269,
+        "manual_review": 426
+      },
+      "generation": {
+        "present": false,
+        "deployment_combinations": 0
+      },
+      "indexes": {
+        "present": false
+      }
+    },
+    "review_records": {
+      "families": 226,
+      "models": 426
+    },
+    "comparison": {
+      "legacy_only_families": 2,
+      "legacy_only_models": 204,
+      "legacy_only_tags": 2,
+      "candidate_only_families": 3,
+      "candidate_only_models": 408,
+      "candidate_only_tags": 25
+    },
+    "allow_review_items": false,
+    "allow_removals": false
+  },
+  "blockers": [
+    "candidate would remove canonical records (2 families, 204 models, 2 tags); review the comparison and pass --allow-removals to acknowledge",
+    "candidate has unresolved actionable review records (226 families, 426 models); resolve them or pass --allow-review-items to acknowledge"
+  ],
+  "notes": [
+    "Dry-run blocked. Resolve or explicitly acknowledge every blocker before apply.",
+    "Legacy data/families remains untouched."
+  ]
+}
