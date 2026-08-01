@@ -2,31 +2,32 @@
 
 ## Summary
 - Legacy tags (in scope): 7246
-- Candidate tags (in scope): 7270
-- Shared tag identifiers: 7246
-- Legacy-only tags: 0
-- Candidate-only tags: 24
+- Candidate tags (in scope): 7269
+- Shared tag identifiers: 7244
+- Legacy-only tags: 2
+- Candidate-only tags: 25
 - Legacy families: 231
-- Candidate families: 234
-- Legacy-only families: 0
+- Candidate families: 232
+- Legacy-only families: 2
 - Candidate-only families: 3
 - Legacy models: 231
-- Candidate models: 437
-- Legacy-only models: 202
+- Candidate models: 435
+- Legacy-only models: 204
 - Candidate-only models: 408
 - Families compared: 234
 - Download size mismatches: 11
 - Parameter mismatches: 175
 - Quantization mismatches: 19
 - Context mismatches: 4
-- Capability mismatches: 7246
+- Capability mismatches: 7244
 - Availability mismatches: 6
 - Alias target mismatches: 718
-- Manual review items: 656
+- Manual review items: 652
 - Parse failures: 0
 
 ## Candidate-only tags (sample)
 
+- `deepseek-v4-flash:0731-cloud`
 - `kimi-k3:cloud`
 - `laguna-s-2.1:f16`
 - `laguna-s-2.1:latest`
@@ -51,6 +52,11 @@
 - `ministral-3:8b-instruct-2512-q4_K_M`
 - `ministral-3:8b-instruct-2512-q8_0`
 - `ministral-3:latest`
+
+## Legacy-only tags (sample)
+
+- `kimi-k2.5:cloud`
+- `minimax-m2.5:cloud`
 
 ## Download size mismatches (sample)
 
@@ -118,7 +124,7 @@
 - `aya-expanse:32b-q5_K_S`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
 - `aya-expanse:32b-q6_K`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
 - `aya-expanse:32b-q8_0`: {'text_generation': 'unknown -> true', 'tool_use': 'unknown -> true'}
-- ... and 7196 more (see JSON report)
+- ... and 7194 more (see JSON report)
 
 ## Manual review items (sample)
 
@@ -172,4 +178,4 @@
 - model `deepseek-r1-32b`: publisher_mapping_needs_review
 - model `deepseek-r1-671b`: publisher_mapping_needs_review
 - model `deepseek-r1-70b`: publisher_mapping_needs_review
-- ... and 606 more (see JSON report)
+- ... and 602 more (see JSON report)

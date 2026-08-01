@@ -120,6 +120,24 @@ def test_reconcile_classifies_legacy_only_models_as_regrouping_not_absence(tmp_p
     assert paths["source_exceptions"].exists()
 
 
+def test_reconcile_includes_configured_source_exceptions(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    reports_dir = tmp_path / "reports"
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+    monkeypatch.setattr("eight_ball.report.reconcile.NORMALIZED_DIR", Path("data/normalized"))
+    monkeypatch.setattr("eight_ball.report.reconcile.REPORTS_DIR", reports_dir)
+
+    normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama"])
+    report = reconcile_candidate_catalog(
+        candidate_dir=candidate_dir,
+        manifest_path=FIXTURE_MANIFEST,
+    )
+    slugs = {item["family_slug"] for item in report.source_exceptions}
+    assert "kimi-k2.5" in slugs
+    assert "minimax-m2.5" in slugs
+
+
 def test_reconcile_requires_manifest_or_latest_pointer(tmp_path, monkeypatch):
     candidate_dir = tmp_path / "candidate" / "normalized"
     monkeypatch.setattr("eight_ball.report.reconcile.CANDIDATE_NORMALIZED_DIR", candidate_dir)

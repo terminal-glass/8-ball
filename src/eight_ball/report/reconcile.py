@@ -8,6 +8,7 @@ from eight_ball.collect.manifest import (
     CollectionManifest,
     load_manifest,
     read_verified_snapshot,
+    snapshot_policy,
 )
 from eight_ball.collect.parse_ollama import (
     ParseError,
@@ -286,6 +287,52 @@ def discover_source_exceptions(
     return exceptions
 
 
+def _known_static_parse_failures() -> list[dict[str, Any]]:
+    return list(snapshot_policy().get("known_static_parse_failures", []))
+
+
+def _merge_known_source_exceptions(
+    manifest: CollectionManifest,
+    *,
+    normalized_family_ids: set[str],
+    discovered: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    merged = list(discovered)
+    seen = {item["family_slug"] for item in merged}
+    for entry in _known_static_parse_failures():
+        slug = entry.get("family_slug")
+        if not isinstance(slug, str) or not slug or slug in normalized_family_ids:
+            continue
+        if slug in seen:
+            continue
+        evidence: dict[str, Any] = {"configured_known_failure": True}
+        if entry.get("notes"):
+            evidence["notes"] = entry["notes"]
+        family_entry = manifest.find_entry("family", family_slug=slug)
+        tags_entry = manifest.find_entry("family_tags", family_slug=slug)
+        if family_entry and tags_entry:
+            try:
+                _parse_family_tags_from_manifest(manifest, slug)
+                evidence["unexpected_parse_success"] = True
+            except ParseError as exc:
+                evidence["error"] = str(exc)
+        else:
+            evidence["snapshots_collected"] = False
+            evidence["in_live_index"] = slug in set(_index_family_slugs(manifest))
+        merged.append(
+            {
+                "family_slug": slug,
+                "disposition": "source_unparseable",
+                "reason": entry.get("reason", "static_html_parse_failure"),
+                "evidence": evidence,
+                "recommended_disposition": "parser_update_or_manual_review",
+            }
+        )
+        seen.add(slug)
+    merged.sort(key=lambda item: item["family_slug"])
+    return merged
+
+
 def _collect_alias_digest_merges(
     tags: list[dict[str, Any]],
     manifest: CollectionManifest | None,
@@ -468,9 +515,13 @@ def reconcile_candidate_catalog(
     candidate_tags_by_id = {tag["ollama_identifier"]: tag for tag in tags}
     candidate_tag_ids = set(candidate_tags_by_id)
 
-    source_exceptions = discover_source_exceptions(
+    source_exceptions = _merge_known_source_exceptions(
         manifest,
         normalized_family_ids=normalized_family_ids,
+        discovered=discover_source_exceptions(
+            manifest,
+            normalized_family_ids=normalized_family_ids,
+        ),
     )
     unparseable_families = {item["family_slug"] for item in source_exceptions}
     index_families = set(_index_family_slugs(manifest))

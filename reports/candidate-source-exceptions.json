@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-01T12:00:16Z",
+  "catalog_version": "2026.08.01",
+  "count": 2,
+  "items": [
+    {
+      "family_slug": "kimi-k2.5",
+      "disposition": "source_unparseable",
+      "reason": "static_html_parse_failure",
+      "evidence": {
+        "configured_known_failure": true,
+        "notes": "Ollama tags-page layout produced zero tag records with the current parser.",
+        "snapshots_collected": false,
+        "in_live_index": false
+      },
+      "recommended_disposition": "parser_update_or_manual_review"
+    },
+    {
+      "family_slug": "minimax-m2.5",
+      "disposition": "source_unparseable",
+      "reason": "static_html_parse_failure",
+      "evidence": {
+        "configured_known_failure": true,
+        "notes": "Ollama tags-page layout produced zero tag records with the current parser.",
+        "snapshots_collected": false,
+        "in_live_index": false
+      },
+      "recommended_disposition": "parser_update_or_manual_review"
+    }
+  ]
+}
