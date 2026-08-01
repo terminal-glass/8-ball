@@ -348,7 +348,13 @@ def cmd_report(args: argparse.Namespace) -> int:
 
 def cmd_compare(args: argparse.Namespace) -> int:
     family_slugs = set(_family_slugs_from_args(args)) or None
-    comparison = compare_catalogs(family_filter=family_slugs)
+    parse_failures: list[dict] | None = None
+    meta_path = CANDIDATE_NORMALIZED_DIR / "catalog-meta.json"
+    if meta_path.exists():
+        meta = load_json(meta_path)
+        if meta.get("parse_failures"):
+            parse_failures = meta["parse_failures"]
+    comparison = compare_catalogs(family_filter=family_slugs, parse_failures=parse_failures)
     path = write_comparison_report(comparison)
     print(
         "Comparison complete: "

@@ -12,6 +12,7 @@ from eight_ball.collect.manifest import (
 from eight_ball.collect.parse_ollama import (
     ParsedFamilyPage,
     ParsedTag,
+    ParseError,
     parse_family_page,
     parse_family_tags_page,
 )
@@ -299,6 +300,7 @@ def write_candidate_catalog(catalog: dict[str, Any]) -> Path:
             "catalog_source_id": catalog["catalog_source_id"],
             "source": "ollama_web",
             "candidate": True,
+            "parse_failures": catalog.get("parse_failures", []),
         },
     )
     return CANDIDATE_NORMALIZED_DIR
@@ -314,6 +316,7 @@ def normalize_ollama_snapshots(
     families: list[ParsedFamilyPage] = []
     tags_by_family: dict[str, list[ParsedTag]] = {}
     retrieved_at_by_family: dict[str, dict[str, str]] = {}
+    parse_failures: list[dict[str, Any]] = []
 
     for slug in family_slugs:
         family_html: str
@@ -336,8 +339,21 @@ def normalize_ollama_snapshots(
             family_html = (snapshot_dir / f"{slug}.html").read_text(encoding="utf-8")
             tags_html = (snapshot_dir / f"{slug}-tags.html").read_text(encoding="utf-8")
 
-        families.append(parse_family_page(family_html, slug))
-        tags_by_family[slug] = parse_family_tags_page(tags_html, slug)
+        try:
+            family_page = parse_family_page(family_html, slug)
+            family_tags = parse_family_tags_page(tags_html, slug)
+        except ParseError as exc:
+            parse_failures.append(
+                {
+                    "family_slug": slug,
+                    "error": str(exc),
+                    "source_url": f"https://ollama.com/library/{slug}/tags",
+                }
+            )
+            continue
+
+        families.append(family_page)
+        tags_by_family[slug] = family_tags
         retrieved_at_by_family[slug] = {
             "family": family_retrieved,
             "tags": tags_retrieved,
@@ -349,6 +365,7 @@ def normalize_ollama_snapshots(
         retrieved_at=retrieved_at,
         retrieved_at_by_family=retrieved_at_by_family,
     )
+    catalog["parse_failures"] = parse_failures
     write_candidate_catalog(catalog)
     return catalog
 

@@ -9,7 +9,11 @@ from eight_ball.collect.manifest import (
 )
 from eight_ball.collect.ollama import ResumedSnapshot, _should_skip_live_fetch
 from eight_ball.collect.parse_ollama import ParsedTag, ParseError, parse_library_index
-from eight_ball.normalize.ollama_web import build_candidate_catalog, normalize_ollama_from_manifest
+from eight_ball.normalize.ollama_web import (
+    build_candidate_catalog,
+    normalize_ollama_from_manifest,
+    normalize_ollama_snapshots,
+)
 from eight_ball.normalize.publishers import infer_publisher_id, slug_token_match
 from eight_ball.report.compare import compare_catalogs
 from eight_ball.validate.catalog import ValidationError, validate_catalog
@@ -312,6 +316,30 @@ def test_capability_conflicts_ignore_expected_tag_extensions(tmp_path, monkeypat
     catalog = normalize_ollama_from_manifest(FIXTURE_MANIFEST)
     coverage = coverage_summary(catalog, normalized_dir=candidate_dir)
     assert coverage["capability_conflict_count"] == 0
+
+
+def test_normalize_skips_families_with_unparseable_tags(tmp_path, monkeypatch):
+    candidate_dir = tmp_path / "candidate" / "normalized"
+    snapshots = tmp_path / "snapshots"
+    snapshots.mkdir()
+    monkeypatch.setattr("eight_ball.normalize.ollama_web.CANDIDATE_NORMALIZED_DIR", candidate_dir)
+
+    tinyllama_family = (FIXTURE_SNAPSHOTS / "tinyllama.html").read_text(encoding="utf-8")
+    tinyllama_tags = (FIXTURE_SNAPSHOTS / "tinyllama-tags.html").read_text(encoding="utf-8")
+    (snapshots / "tinyllama.html").write_text(tinyllama_family, encoding="utf-8")
+    (snapshots / "tinyllama-tags.html").write_text(tinyllama_tags, encoding="utf-8")
+    (snapshots / "broken.html").write_text("<html><body>no tags</body></html>", encoding="utf-8")
+    (snapshots / "broken-tags.html").write_text("<html><body>no tags</body></html>", encoding="utf-8")
+
+    catalog = normalize_ollama_snapshots(
+        family_slugs=["tinyllama", "broken"],
+        snapshot_dir=snapshots,
+        retrieved_at="2026-08-01T00:00:00Z",
+    )
+    assert len(catalog["parse_failures"]) == 1
+    assert catalog["parse_failures"][0]["family_slug"] == "broken"
+    assert len(catalog["families"]) == 1
+    assert catalog["families"][0]["id"] == "tinyllama"
 
 
 def test_compare_manual_review_items_are_deduplicated(tmp_path, monkeypatch):
