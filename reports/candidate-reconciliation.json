@@ -4,6 +4,8 @@
   "collection_id": "bab19a56868744a5a39e39ae8eecfa4c",
   "live_counts": {
     "index_families": 232,
+    "snapshot_count": 465,
+    "collected_families": 232,
     "normalized_families": 232,
     "models": 435,
     "tags": 7269,
@@ -5802,6 +5804,11 @@
       "merge_kind": "alias_target"
     }
   ],
+  "collection_stats": {
+    "snapshot_count": 465,
+    "collected_family_count": 232,
+    "index_family_count": 232
+  },
   "legacy_comparison": {
     "legacy_tag_count": 7246,
     "candidate_tag_count": 7269,
@@ -5818,10 +5825,543 @@
       "source_unparseable": 2,
       "ambiguous_review": 0
     },
-    "note": "Legacy-only model IDs are usually digest regrouping, not live removals. See disposition_counts for per-tag classification."
+    "note": "Legacy-only model IDs are usually digest regrouping, not live removals. See disposition_counts and regrouped_items for evidence."
+  },
+  "classified_items": {
+    "live_absent": [],
+    "renamed_aliased_digest_merged": [],
+    "regrouped": [],
+    "source_unparseable": [
+      {
+        "ollama_identifier": "kimi-k2.5:cloud",
+        "disposition": "source_unparseable",
+        "evidence": {
+          "family_slug": "kimi-k2.5"
+        },
+        "recommended_disposition": "parser_update_or_manual_review"
+      },
+      {
+        "ollama_identifier": "minimax-m2.5:cloud",
+        "disposition": "source_unparseable",
+        "evidence": {
+          "family_slug": "minimax-m2.5"
+        },
+        "recommended_disposition": "parser_update_or_manual_review"
+      }
+    ],
+    "ambiguous_review": [],
+    "candidate_only_new_live": [
+      {
+        "ollama_identifier": "deepseek-v4-flash:0731-cloud",
+        "family_slug": "deepseek-v4-flash",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "kimi-k3:cloud",
+        "family_slug": "kimi-k3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-s-2.1:f16",
+        "family_slug": "laguna-s-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-s-2.1:latest",
+        "family_slug": "laguna-s-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-s-2.1:mlx-bf16",
+        "family_slug": "laguna-s-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-s-2.1:mxfp8",
+        "family_slug": "laguna-s-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-s-2.1:nvfp4",
+        "family_slug": "laguna-s-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-s-2.1:q4_K_M",
+        "family_slug": "laguna-s-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-s-2.1:q8_0",
+        "family_slug": "laguna-s-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-xs-2.1:mlx-bf16",
+        "family_slug": "laguna-xs-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-xs-2.1:mxfp8",
+        "family_slug": "laguna-xs-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "laguna-xs-2.1:nvfp4",
+        "family_slug": "laguna-xs-2.1",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:14b",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:14b-instruct-2512-fp16",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:14b-instruct-2512-q4_K_M",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:14b-instruct-2512-q8_0",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:3b",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:3b-instruct-2512-fp16",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:3b-instruct-2512-q4_K_M",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:3b-instruct-2512-q8_0",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:8b",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:8b-instruct-2512-fp16",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:8b-instruct-2512-q4_K_M",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:8b-instruct-2512-q8_0",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      },
+      {
+        "ollama_identifier": "ministral-3:latest",
+        "family_slug": "ministral-3",
+        "disposition": "candidate_only_new_live",
+        "evidence": {
+          "present_in_candidate_catalog": true,
+          "absent_from_legacy_canonical": true
+        },
+        "recommended_disposition": "accept_as_new_live_tag"
+      }
+    ]
   },
   "live_absence_count": 0,
   "live_absences": [],
+  "regrouped_count": 0,
+  "regrouped_items": [],
+  "renamed_or_merged_count": 0,
+  "renamed_or_merged_items": [],
+  "candidate_only_count": 25,
+  "candidate_only_items": [
+    {
+      "ollama_identifier": "deepseek-v4-flash:0731-cloud",
+      "family_slug": "deepseek-v4-flash",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "kimi-k3:cloud",
+      "family_slug": "kimi-k3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-s-2.1:f16",
+      "family_slug": "laguna-s-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-s-2.1:latest",
+      "family_slug": "laguna-s-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-s-2.1:mlx-bf16",
+      "family_slug": "laguna-s-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-s-2.1:mxfp8",
+      "family_slug": "laguna-s-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-s-2.1:nvfp4",
+      "family_slug": "laguna-s-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-s-2.1:q4_K_M",
+      "family_slug": "laguna-s-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-s-2.1:q8_0",
+      "family_slug": "laguna-s-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-xs-2.1:mlx-bf16",
+      "family_slug": "laguna-xs-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-xs-2.1:mxfp8",
+      "family_slug": "laguna-xs-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "laguna-xs-2.1:nvfp4",
+      "family_slug": "laguna-xs-2.1",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:14b",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:14b-instruct-2512-fp16",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:14b-instruct-2512-q4_K_M",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:14b-instruct-2512-q8_0",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:3b",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:3b-instruct-2512-fp16",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:3b-instruct-2512-q4_K_M",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:3b-instruct-2512-q8_0",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:8b",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:8b-instruct-2512-fp16",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:8b-instruct-2512-q4_K_M",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:8b-instruct-2512-q8_0",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    },
+    {
+      "ollama_identifier": "ministral-3:latest",
+      "family_slug": "ministral-3",
+      "disposition": "candidate_only_new_live",
+      "evidence": {
+        "present_in_candidate_catalog": true,
+        "absent_from_legacy_canonical": true
+      },
+      "recommended_disposition": "accept_as_new_live_tag"
+    }
+  ],
   "source_exception_count": 2,
   "source_exceptions": [
     {
@@ -5849,8 +6389,123 @@
       "recommended_disposition": "parser_update_or_manual_review"
     }
   ],
-  "review_queue_count": 0,
-  "review_queue": [],
+  "grouping_integrity": {
+    "valid": true,
+    "total_tags": 7269,
+    "deployment_variant_tags": 6304,
+    "alias_target_tags": 965,
+    "alias_digest_merge_pairs": 965,
+    "missing_alias_targets": [],
+    "note": "Alias and digest merges collapse model grouping only; each non-alias tag remains a distinct deployment variant."
+  },
+  "promotion_review": {
+    "eligible": false,
+    "dry_run_required": true,
+    "blockers": [
+      "candidate would remove canonical records (2 families, 204 models, 2 tags); review the comparison and pass --allow-removals to acknowledge",
+      "candidate has unresolved actionable review records (226 families, 426 models); resolve them or pass --allow-review-items to acknowledge"
+    ],
+    "blocker_interpretations": [
+      {
+        "blocker": "candidate would remove canonical records (2 families, 204 models, 2 tags); review the comparison and pass --allow-removals to acknowledge",
+        "interpretation": "Legacy grouping delta, not evidence of live catalog shrinkage. 202 legacy model IDs map to candidate tags under digest-based grouping; 2 families are source exceptions; 0 tags are true live absences.",
+        "recommended_disposition": "Review candidate-reconciliation.md, then acknowledge with --allow-removals only after confirming no true live absences remain."
+      },
+      {
+        "blocker": "candidate has unresolved actionable review records (226 families, 426 models); resolve them or pass --allow-review-items to acknowledge",
+        "interpretation": "Publisher inference and family metadata review flags on the candidate catalog. These do not indicate missing live tags.",
+        "recommended_disposition": "Resolve high-traffic publisher overrides or acknowledge with --allow-review-items after editorial review."
+      }
+    ],
+    "gates": {
+      "validation": {
+        "valid": true,
+        "error_count": 0,
+        "warning_count": 0,
+        "errors": [],
+        "warnings": [],
+        "counts": {
+          "publishers": 11,
+          "families": 232,
+          "models": 435,
+          "tags": 7269,
+          "manual_review": 426
+        },
+        "generation": {
+          "present": false,
+          "deployment_combinations": 0
+        },
+        "indexes": {
+          "present": false
+        }
+      },
+      "review_records": {
+        "families": 226,
+        "models": 426
+      },
+      "comparison": {
+        "legacy_only_families": 2,
+        "legacy_only_models": 204,
+        "legacy_only_tags": 2,
+        "candidate_only_families": 3,
+        "candidate_only_models": 408,
+        "candidate_only_tags": 25
+      },
+      "allow_review_items": false,
+      "allow_removals": false
+    },
+    "decision_summary": "Promotion remains blocked pending editorial review. The candidate catalog reflects current live Ollama metadata size (232 families, 435 models, 7269 tags). Legacy July canonical is continuity baseline only."
+  },
+  "review_queue_count": 3,
+  "review_queue": [
+    {
+      "kind": "source_exception",
+      "id": "kimi-k2.5",
+      "disposition": "source_unparseable",
+      "reason": "static_html_parse_failure",
+      "evidence": {
+        "configured_known_failure": true,
+        "notes": "Ollama tags-page layout produced zero tag records with the current parser.",
+        "snapshots_collected": false,
+        "in_live_index": false
+      },
+      "recommended_disposition": "parser_update_or_manual_review"
+    },
+    {
+      "kind": "source_exception",
+      "id": "minimax-m2.5",
+      "disposition": "source_unparseable",
+      "reason": "static_html_parse_failure",
+      "evidence": {
+        "configured_known_failure": true,
+        "notes": "Ollama tags-page layout produced zero tag records with the current parser.",
+        "snapshots_collected": false,
+        "in_live_index": false
+      },
+      "recommended_disposition": "parser_update_or_manual_review"
+    },
+    {
+      "kind": "publisher_mapping",
+      "id": "publisher_mapping_batch",
+      "disposition": "human_editorial_review",
+      "evidence": {
+        "family_count": 226,
+        "sample_families": [
+          "alfred",
+          "all-minilm",
+          "athene-v2",
+          "aya",
+          "aya-expanse",
+          "bakllava",
+          "bespoke-minicheck",
+          "bge-large",
+          "bge-m3",
+          "codebooga"
+        ]
+      },
+      "recommended_disposition": "review config/publishers.yaml overrides before promotion; does not block accepting live tag inventory"
+    }
+  ],
   "mapping": {
     "collection_id": "bab19a56868744a5a39e39ae8eecfa4c",
     "catalog_version": "2026.08.01",

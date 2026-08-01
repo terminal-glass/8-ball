@@ -1,0 +1,58 @@
+{
+  "eligible": false,
+  "dry_run_required": true,
+  "blockers": [
+    "candidate would remove canonical records (2 families, 204 models, 2 tags); review the comparison and pass --allow-removals to acknowledge",
+    "candidate has unresolved actionable review records (226 families, 426 models); resolve them or pass --allow-review-items to acknowledge"
+  ],
+  "blocker_interpretations": [
+    {
+      "blocker": "candidate would remove canonical records (2 families, 204 models, 2 tags); review the comparison and pass --allow-removals to acknowledge",
+      "interpretation": "Legacy grouping delta, not evidence of live catalog shrinkage. 202 legacy model IDs map to candidate tags under digest-based grouping; 2 families are source exceptions; 0 tags are true live absences.",
+      "recommended_disposition": "Review candidate-reconciliation.md, then acknowledge with --allow-removals only after confirming no true live absences remain."
+    },
+    {
+      "blocker": "candidate has unresolved actionable review records (226 families, 426 models); resolve them or pass --allow-review-items to acknowledge",
+      "interpretation": "Publisher inference and family metadata review flags on the candidate catalog. These do not indicate missing live tags.",
+      "recommended_disposition": "Resolve high-traffic publisher overrides or acknowledge with --allow-review-items after editorial review."
+    }
+  ],
+  "gates": {
+    "validation": {
+      "valid": true,
+      "error_count": 0,
+      "warning_count": 0,
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "publishers": 11,
+        "families": 232,
+        "models": 435,
+        "tags": 7269,
+        "manual_review": 426
+      },
+      "generation": {
+        "present": false,
+        "deployment_combinations": 0
+      },
+      "indexes": {
+        "present": false
+      }
+    },
+    "review_records": {
+      "families": 226,
+      "models": 426
+    },
+    "comparison": {
+      "legacy_only_families": 2,
+      "legacy_only_models": 204,
+      "legacy_only_tags": 2,
+      "candidate_only_families": 3,
+      "candidate_only_models": 408,
+      "candidate_only_tags": 25
+    },
+    "allow_review_items": false,
+    "allow_removals": false
+  },
+  "decision_summary": "Promotion remains blocked pending editorial review. The candidate catalog reflects current live Ollama metadata size (232 families, 435 models, 7269 tags). Legacy July canonical is continuity baseline only."
+}
