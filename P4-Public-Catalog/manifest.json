@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "generator_version": "1.0.0",
+  "generator_command": "eight-ball publish-catalog",
+  "generated_at": "2026-08-02T01:33:18Z",
+  "canonical_catalog_version": "2026.08.01",
+  "promotion_receipt": "reports/catalog-promotion-receipt.md",
+  "collection_date": "2026-08-01",
+  "collection_id": "bab19a56868744a5a39e39ae8eecfa4c",
+  "collection_manifest": "tests/fixtures/manifests/candidate-2026-08-01.json",
+  "catalog_source_id": "ollama-library",
+  "source_provenance": {
+    "normalized_dir": "data/normalized",
+    "source_commit": "ea23840d1855642c3b3a715d18bbdb9b41d423a3",
+    "source_files": {
+      "publishers.json": {
+        "path": "data/normalized/publishers.json",
+        "sha256": "3ae69ab64dda0fa9315bedb0de2f15364f713b6a5885515ea4c50ffe5601da94",
+        "bytes": 1823
+      },
+      "families.json": {
+        "path": "data/normalized/families.json",
+        "sha256": "5de61b5ac42de917d8349be962c83394f6a47a2c8ca8f62b28a86d68c6709d5b",
+        "bytes": 413447
+      },
+      "models.json": {
+        "path": "data/normalized/models.json",
+        "sha256": "e6526f49768dc3e5689569cf25ac0fad784bc6f86c32f35ed5efb151be76eb25",
+        "bytes": 813099
+      },
+      "tags.json": {
+        "path": "data/normalized/tags.json",
+        "sha256": "666a2d59da9f022e10c4517fdd6157fd5603ffc16642d19825107f2b10bd8401",
+        "bytes": 24469403
+      },
+      "capabilities.json": {
+        "path": "data/normalized/capabilities.json",
+        "sha256": "751edec3909939f3e4e72a241f1a189984dc954a8fd1f15a3763442b8b38cec5",
+        "bytes": 1350
+      },
+      "catalog-meta.json": {
+        "path": "data/normalized/catalog-meta.json",
+        "sha256": "ae87daa2bde9d5b87fa97cff5b7677087759ee16f9c353f4a455c01e22a9f29a",
+        "bytes": 1367
+      }
+    }
+  },
+  "counts": {
+    "families": 234,
+    "models": 437,
+    "deployment_variants": 7271,
+    "publishers": 12,
+    "capabilities": 11,
+    "seo_eligible_family_pages": 232,
+    "seo_eligible_model_pages": 435,
+    "non_indexable_source_exception_families": 2,
+    "deployment_variant_pages": 0
+  },
+  "indexes": {
+    "families": "index/families.json",
+    "models": "index/models.json"
+  },
+  "classification_summary": {
+    "local_private_suitable_models": 423,
+    "cloud_jet_suitable_models": 31,
+    "capability_filter_coverage": {
+      "chat": 0,
+      "text_generation": 232,
+      "coding": 0,
+      "reasoning": 37,
+      "vision": 34,
+      "embeddings": 12,
+      "tool_use": 87,
+      "structured_output": 0,
+      "multilingual": 0,
+      "audio": 0,
+      "cloud": 17
+    },
+    "size_bucket_coverage": {
+      "micro": 25,
+      "small": 118,
+      "medium": 105,
+      "large": 59,
+      "xlarge": 36
+    },
+    "size_bucket_coverage_unknown": 229,
+    "models_with_unknown_parameter_count": 245
+  }
+}
