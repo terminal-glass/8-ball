@@ -35,6 +35,10 @@ from eight_ball.paths import (
     SAMPLE_FAMILIES,
     SNAPSHOTS_DIR,
 )
+from eight_ball.publish.public_catalog import (
+    build_public_catalog,
+    write_public_catalog,
+)
 from eight_ball.recreate.plan import (
     build_recreate_plan,
     discover_family_slugs_from_index,
@@ -483,6 +487,25 @@ def cmd_all(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_publish_catalog(_args: argparse.Namespace) -> int:
+    catalog = build_public_catalog()
+    paths = write_public_catalog(catalog)
+    counts = catalog["manifest"]["counts"]
+    print(
+        f"Public catalog published: {counts['families']} families, "
+        f"{counts['models']} models, {counts['deployment_variants']} deployment variants."
+    )
+    print(
+        f"SEO-eligible pages: {counts['seo_eligible_family_pages']} families, "
+        f"{counts['seo_eligible_model_pages']} models; "
+        f"non-indexable source exceptions: "
+        f"{counts['non_indexable_source_exception_families']}."
+    )
+    print(f"Manifest: {paths['manifest']}")
+    print(f"Report: {paths['report']}")
+    return 0
+
+
 def cmd_reconcile(args: argparse.Namespace) -> int:
     manifest_path = Path(args.manifest) if args.manifest else None
     try:
@@ -594,6 +617,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Rebuild committed P2 provider indexes and the P3 catalog export.",
     )
     export_datasets.set_defaults(handler=cmd_export_datasets)
+
+    publish_catalog = subparsers.add_parser(
+        "publish-catalog",
+        help="Build the P4 public catalog projection from canonical data/normalized/.",
+    )
+    publish_catalog.set_defaults(handler=cmd_publish_catalog)
     return parser
 
 

@@ -19,6 +19,7 @@ MANIFESTS_DIR = DATA_DIR / "manifests"
 GENERATED_DIR = DATA_DIR / "generated"
 REPORTS_DIR = REPO_ROOT / "reports"
 INDEXES_DIR = REPO_ROOT / "indexes"
+P4_PUBLIC_CATALOG_DIR = REPO_ROOT / "P4-Public-Catalog"
 FIXTURES_DIR = REPO_ROOT / "tests" / "fixtures"
 
 SAMPLE_FAMILIES = (

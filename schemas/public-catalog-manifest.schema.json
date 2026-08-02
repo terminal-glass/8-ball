@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/public-catalog-manifest.schema.json",
+  "title": "PublicCatalogManifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generator_version",
+    "generator_command",
+    "generated_at",
+    "canonical_catalog_version",
+    "collection_date",
+    "source_provenance",
+    "counts",
+    "indexes"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "generator_version": { "type": "string" },
+    "generator_command": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "canonical_catalog_version": { "type": "string" },
+    "promotion_receipt": { "type": "string" },
+    "collection_date": { "type": "string" },
+    "collection_id": { "type": "string" },
+    "collection_manifest": { "type": "string" },
+    "catalog_source_id": { "type": "string" },
+    "source_provenance": {
+      "type": "object",
+      "required": ["normalized_dir", "source_files"],
+      "properties": {
+        "normalized_dir": { "type": "string" },
+        "source_commit": { "type": ["string", "null"] },
+        "source_files": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "families",
+        "models",
+        "deployment_variants",
+        "seo_eligible_family_pages",
+        "seo_eligible_model_pages",
+        "non_indexable_source_exception_families"
+      ],
+      "properties": {
+        "families": { "type": "integer", "minimum": 0 },
+        "models": { "type": "integer", "minimum": 0 },
+        "deployment_variants": { "type": "integer", "minimum": 0 },
+        "publishers": { "type": "integer", "minimum": 0 },
+        "capabilities": { "type": "integer", "minimum": 0 },
+        "seo_eligible_family_pages": { "type": "integer", "minimum": 0 },
+        "seo_eligible_model_pages": { "type": "integer", "minimum": 0 },
+        "non_indexable_source_exception_families": { "type": "integer", "minimum": 0 },
+        "deployment_variant_pages": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "indexes": {
+      "type": "object",
+      "required": ["families", "models"],
+      "properties": {
+        "families": { "type": "string" },
+        "models": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "classification_summary": { "type": "object" }
+  },
+  "additionalProperties": false
+}
