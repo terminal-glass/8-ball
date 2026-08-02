@@ -135,7 +135,8 @@ disk, provider, or model-family sizing rules.
 
 ## Related documentation
 
-- `AGENTS/data-science/CursorFileC1-environment-artifacts.md` — full C1 specification
-- `AGENTS/data-science/README.md` — C1/C2/C3 planning brief index
+- `AGENTS/CursorFileC1-environment-artifacts.md` — full C1 specification
+- `AGENTS/CursorFileC2-environment-artifact-sequencing.md` — C2 sequencing brief
+- `AGENTS/CursorFileC3-environment-gates-testing-plan.md` — C3 gates plan
 - `environment.profile.example.env` — example variable contract
 - `generated/README.md` — machine-consumed export location

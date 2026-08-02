@@ -178,7 +178,7 @@ Work in terminal-glass/8-ball.
 
 Implement C2: environment artifact sequencing for steps 1-3 only.
 
-Read AGENTS/data-science/CursorFileC1-environment-artifacts.md first and
+Read AGENTS/CursorFileC1-environment-artifacts.md first and
 preserve its loader contract.
 
 This is metadata/catalog work only. Do not edit installer scripts in this repo.
