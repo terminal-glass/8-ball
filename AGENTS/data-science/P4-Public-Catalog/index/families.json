@@ -227,7 +227,7 @@
   },
   {
     "id": "aya",
-    "name": "References",
+    "name": "aya",
     "aliases": [],
     "description": "Aya 23, released by Cohere, is a new family of state-of-the-art, multilingual models that support 23 languages. Aya 23, released by Cohere, is a new family of state-of-the-art, multilingual models that support 23 languages. Cancel",
     "catalog_source_id": "ollama-library",
@@ -780,7 +780,7 @@
   },
   {
     "id": "codegeex4",
-    "name": "References",
+    "name": "codegeex4",
     "aliases": [],
     "description": "codegeex4 673.4K Downloads Updated 2 years ago A versatile model for AI software development scenarios, including code completion. A versatile model for AI software development scenarios, including code completion. Cancel 9b CLI cURL Python JavaScript Documentation Documentation ollama run codegeex4 curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"codegeex4\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'codegeex4' ",
     "catalog_source_id": "ollama-library",

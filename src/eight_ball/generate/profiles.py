@@ -11,6 +11,10 @@ from eight_ball.paths import (
     REPO_ROOT,
 )
 from eight_ball.provenance import utc_now_iso
+from eight_ball.publish.display_names import (
+    resolve_projection_family_display_name,
+    resolve_projection_model_display_name,
+)
 
 PROFILE_SCHEMA_VERSION = 1
 PROFILE_GENERATOR_COMMAND = "eight-ball generate-profiles"
@@ -115,6 +119,7 @@ def _variant_identity(variant: dict[str, Any]) -> dict[str, Any]:
 
 
 def _family_markdown(family: dict[str, Any], *, catalog_version: str) -> str:
+    display_name = resolve_projection_family_display_name(family)
     installable = _installable_flag(family)
     installable_text = (
         "no (stale source exception retained)"
@@ -122,7 +127,7 @@ def _family_markdown(family: dict[str, Any], *, catalog_version: str) -> str:
         else "pending C3 qualification gates"
     )
     lines = [
-        f"# {family.get('name') or family['id']}",
+        f"# {display_name}",
         "",
         f"- **Family ID:** `{family['id']}`",
         f"- **Catalog version:** {catalog_version}",
@@ -148,10 +153,11 @@ def _family_markdown(family: dict[str, Any], *, catalog_version: str) -> str:
 
 
 def _family_metadata(family: dict[str, Any], *, catalog_version: str) -> dict[str, Any]:
+    display_name = resolve_projection_family_display_name(family)
     metadata = {
         "schema_version": PROFILE_SCHEMA_VERSION,
         "family_id": family["id"],
-        "display_name": family.get("name") or family["id"],
+        "display_name": display_name,
         "catalog_version": catalog_version,
         "source_exception": _is_source_exception(family),
         "installable": _installable_flag(family),
@@ -167,7 +173,16 @@ def _family_metadata(family: dict[str, Any], *, catalog_version: str) -> dict[st
     return metadata
 
 
-def _model_markdown(model: dict[str, Any], *, catalog_version: str) -> str:
+def _model_markdown(
+    model: dict[str, Any],
+    *,
+    catalog_version: str,
+    family_display_name: str,
+) -> str:
+    display_name = resolve_projection_model_display_name(
+        model,
+        family_display_name=family_display_name,
+    )
     installable = _installable_flag(model)
     installable_text = (
         "no (stale source exception retained)"
@@ -175,7 +190,7 @@ def _model_markdown(model: dict[str, Any], *, catalog_version: str) -> str:
         else "pending C3 qualification gates"
     )
     lines = [
-        f"# {model.get('display_name') or model['id']}",
+        f"# {display_name}",
         "",
         f"- **Model ID:** `{model['id']}`",
         f"- **Family ID:** `{model['family_id']}`",
@@ -208,12 +223,21 @@ def _model_markdown(model: dict[str, Any], *, catalog_version: str) -> str:
     return "\n".join(lines) + "\n"
 
 
-def _model_metadata(model: dict[str, Any], *, catalog_version: str) -> dict[str, Any]:
+def _model_metadata(
+    model: dict[str, Any],
+    *,
+    catalog_version: str,
+    family_display_name: str,
+) -> dict[str, Any]:
+    display_name = resolve_projection_model_display_name(
+        model,
+        family_display_name=family_display_name,
+    )
     metadata = {
         "schema_version": PROFILE_SCHEMA_VERSION,
         "model_id": model["id"],
         "family_id": model["family_id"],
-        "display_name": model.get("display_name") or model["id"],
+        "display_name": display_name,
         "ollama_name": model.get("ollama_name"),
         "catalog_version": catalog_version,
         "source_exception": _is_source_exception(model),
@@ -359,7 +383,10 @@ def generate_profile_artifacts(
                 shutil.rmtree(family_dir)
 
     family_index: list[dict[str, Any]] = []
+    family_display_names: dict[str, str] = {}
     for family in sorted(families, key=lambda item: item["id"]):
+        family_display_name = resolve_projection_family_display_name(family)
+        family_display_names[family["id"]] = family_display_name
         family_dir = families_dir / family["id"]
         family_dir.mkdir(parents=True, exist_ok=True)
         (family_dir / "family.md").write_text(
@@ -370,7 +397,7 @@ def generate_profile_artifacts(
         family_index.append(
             {
                 "family_id": family["id"],
-                "display_name": family.get("name") or family["id"],
+                "display_name": family_display_name,
                 "installable": _installable_flag(family),
                 "source_exception": _is_source_exception(family),
                 "model_ids": list(family.get("model_ids") or []),
@@ -380,18 +407,34 @@ def generate_profile_artifacts(
 
     model_index: list[dict[str, Any]] = []
     for model in sorted(models, key=lambda item: (item["family_id"], item["id"])):
+        family_display_name = family_display_names[model["family_id"]]
+        model_display_name = resolve_projection_model_display_name(
+            model,
+            family_display_name=family_display_name,
+        )
         model_dir = models_dir / model["family_id"] / model["id"]
         model_dir.mkdir(parents=True, exist_ok=True)
         (model_dir / "model.md").write_text(
-            _model_markdown(model, catalog_version=catalog_version),
+            _model_markdown(
+                model,
+                catalog_version=catalog_version,
+                family_display_name=family_display_name,
+            ),
             encoding="utf-8",
         )
-        write_json(model_dir / "metadata.json", _model_metadata(model, catalog_version=catalog_version))
+        write_json(
+            model_dir / "metadata.json",
+            _model_metadata(
+                model,
+                catalog_version=catalog_version,
+                family_display_name=family_display_name,
+            ),
+        )
         model_index.append(
             {
                 "model_id": model["id"],
                 "family_id": model["family_id"],
-                "display_name": model.get("display_name") or model["id"],
+                "display_name": model_display_name,
                 "installable": _installable_flag(model),
                 "source_exception": _is_source_exception(model),
                 "default_tag": model.get("default_tag"),

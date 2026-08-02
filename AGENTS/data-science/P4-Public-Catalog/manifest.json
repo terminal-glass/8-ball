@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "generator_version": "1.0.0",
   "generator_command": "eight-ball publish-catalog",
-  "generated_at": "2026-08-02T01:33:18Z",
+  "generated_at": "2026-08-02T22:56:02Z",
   "canonical_catalog_version": "2026.08.01",
   "promotion_receipt": "reports/catalog-promotion-receipt.md",
   "collection_date": "2026-08-01",
@@ -11,7 +11,7 @@
   "catalog_source_id": "ollama-library",
   "source_provenance": {
     "normalized_dir": "data/normalized",
-    "source_commit": "ea23840d1855642c3b3a715d18bbdb9b41d423a3",
+    "source_commit": "6369ba7d148f0c314d5267785d9a1d02e76948fb",
     "source_files": {
       "publishers.json": {
         "path": "data/normalized/publishers.json",

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "family_id": "aya",
-  "display_name": "References",
+  "display_name": "aya",
   "catalog_version": "2026.08.01",
   "source_exception": false,
   "installable": null,
