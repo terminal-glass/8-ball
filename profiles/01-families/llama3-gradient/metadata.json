@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "family_id": "llama3-gradient",
+  "display_name": "llama3-gradient",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/llama3-gradient",
+  "retrieved_at": "2026-08-01T11:55:17Z",
+  "model_ids": [
+    "llama3-gradient-1048k",
+    "llama3-gradient-70b",
+    "llama3-gradient-8b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

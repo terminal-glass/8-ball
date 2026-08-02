@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "family_id": "dolphin-mixtral",
+  "display_name": "dolphin-mixtral",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/dolphin-mixtral",
+  "retrieved_at": "2026-08-01T11:53:03Z",
+  "model_ids": [
+    "dolphin-mixtral"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

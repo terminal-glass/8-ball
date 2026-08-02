@@ -45,14 +45,14 @@ repository they are **placeholders only** — C2 and C3 populate them later.
 
 | Directory | Step | Purpose | Status in this repo |
 | --- | ---: | --- | --- |
-| `01-families/` | 1 | Model family identity and eligibility metadata | Scaffold only (C2) |
-| `02-models/` | 2 | Canonical model identity, aliases, and variant lists | Scaffold only (C2) |
-| `03-deployment-types/` | 3 | Deployment lane definitions (bare metal, providers, Jet, Mac, Windows) | Scaffold only (C2) |
+| `01-families/` | 1 | Model family identity and eligibility metadata | Generated from P4 public catalog (C2) |
+| `02-models/` | 2 | Canonical model identity, aliases, and variant lists | Generated from P4 public catalog (C2) |
+| `03-deployment-types/` | 3 | Deployment lane definitions (bare metal, providers, Jet, Mac, Windows) | C2 lane docs + `generated/deployment-types.json` |
 | `04-hard-disk/` | 4 | Hard-disk qualification gates | Scaffold only (C3) |
 | `05-ram/` | 5 | RAM qualification gates | Scaffold only (C3) |
 | `06-cpu/` | 6 | CPU qualification gates | Scaffold only (C3) |
 | `07-gpu/` | 7 | GPU/VRAM qualification gates | Scaffold only (C3) |
-| `generated/` | — | Machine-consumed JSON and shell-safe `.env` exports | See `generated/README.md` |
+| `generated/` | — | Machine-consumed JSON and shell-safe `.env` exports | C2 identity indexes; C3 sizing exports later |
 
 Use `.md` files for human-readable source notes inside the numbered folders.
 Use generated `.json` and `.env` files under `generated/` for anything `8.2`,

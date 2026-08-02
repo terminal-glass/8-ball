@@ -15,6 +15,7 @@ from eight_ball.collect.ollama import collect_families, collect_ollama_library
 from eight_ball.config import load_json, write_json
 from eight_ball.export.installer_datasets import build_p2_indexes, export_p3_catalog
 from eight_ball.generate.outputs import generate_outputs
+from eight_ball.generate.profiles import generate_profile_artifacts
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
     normalize_ollama_from_manifest,
@@ -533,6 +534,24 @@ def cmd_reconcile(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_generate_profiles(_args: argparse.Namespace) -> int:
+    summary = generate_profile_artifacts()
+    counts = summary["counts"]
+    print(
+        "Profile artifacts generated: "
+        f"{counts['families']} families, "
+        f"{counts['models']} models, "
+        f"{counts['deployment_variants']} deployment variants."
+    )
+    print(
+        f"Source exceptions: {counts['source_exception_families']} families, "
+        f"{counts['source_exception_models']} models marked not installable."
+    )
+    for path in summary["generated_files"]:
+        print(f"  - {path}")
+    return 0
+
+
 def cmd_export_datasets(args: argparse.Namespace) -> int:
     p2_summary = build_p2_indexes()
     print(
@@ -623,6 +642,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Build the P4 public catalog projection from canonical data/normalized/.",
     )
     publish_catalog.set_defaults(handler=cmd_publish_catalog)
+
+    generate_profiles = subparsers.add_parser(
+        "generate-profiles",
+        help="Generate C2 profile artifacts (families, models, deployment types) from P4 projection.",
+    )
+    generate_profiles.set_defaults(handler=cmd_generate_profiles)
     return parser
 
 

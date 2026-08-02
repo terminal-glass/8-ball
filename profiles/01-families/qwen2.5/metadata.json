@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "family_id": "qwen2.5",
+  "display_name": "qwen2.5",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/qwen2.5",
+  "retrieved_at": "2026-08-01T11:58:17Z",
+  "model_ids": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen2.5-14b",
+    "qwen2.5-32b",
+    "qwen2.5-3b",
+    "qwen2.5-72b",
+    "qwen2.5-7b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

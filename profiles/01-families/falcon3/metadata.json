@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "family_id": "falcon3",
+  "display_name": "Key Features",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/falcon3",
+  "retrieved_at": "2026-08-01T11:53:28Z",
+  "model_ids": [
+    "falcon3-10b",
+    "falcon3-1b",
+    "falcon3-3b",
+    "falcon3-7b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

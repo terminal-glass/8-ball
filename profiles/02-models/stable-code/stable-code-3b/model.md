@@ -1,0 +1,51 @@
+# stable-code
+
+- **Model ID:** `stable-code-3b`
+- **Family ID:** `stable-code`
+- **Ollama name:** stable-code-3b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** stable-code:3b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/stable-code
+- **Retrieved at:** 2026-08-01T11:59:21Z
+
+## Deployment variants (identity only)
+
+- `stable-code:3b` (tag `3b`, availability `local`)
+- `stable-code:3b-code` (tag `3b-code`, availability `local`)
+- `stable-code:3b-code-fp16` (tag `3b-code-fp16`, availability `local`)
+- `stable-code:3b-code-q2_K` (tag `3b-code-q2_K`, availability `local`)
+- `stable-code:3b-code-q3_K_L` (tag `3b-code-q3_K_L`, availability `local`)
+- `stable-code:3b-code-q3_K_M` (tag `3b-code-q3_K_M`, availability `local`)
+- `stable-code:3b-code-q3_K_S` (tag `3b-code-q3_K_S`, availability `local`)
+- `stable-code:3b-code-q4_0` (tag `3b-code-q4_0`, availability `local`)
+- `stable-code:3b-code-q4_1` (tag `3b-code-q4_1`, availability `local`)
+- `stable-code:3b-code-q4_K_M` (tag `3b-code-q4_K_M`, availability `local`)
+- `stable-code:3b-code-q4_K_S` (tag `3b-code-q4_K_S`, availability `local`)
+- `stable-code:3b-code-q5_0` (tag `3b-code-q5_0`, availability `local`)
+- `stable-code:3b-code-q5_1` (tag `3b-code-q5_1`, availability `local`)
+- `stable-code:3b-code-q5_K_M` (tag `3b-code-q5_K_M`, availability `local`)
+- `stable-code:3b-code-q5_K_S` (tag `3b-code-q5_K_S`, availability `local`)
+- `stable-code:3b-code-q6_K` (tag `3b-code-q6_K`, availability `local`)
+- `stable-code:3b-code-q8_0` (tag `3b-code-q8_0`, availability `local`)
+- `stable-code:3b-instruct` (tag `3b-instruct`, availability `local`)
+- `stable-code:3b-instruct-fp16` (tag `3b-instruct-fp16`, availability `local`)
+- `stable-code:3b-instruct-q2_K` (tag `3b-instruct-q2_K`, availability `local`)
+- `stable-code:3b-instruct-q3_K_L` (tag `3b-instruct-q3_K_L`, availability `local`)
+- `stable-code:3b-instruct-q3_K_M` (tag `3b-instruct-q3_K_M`, availability `local`)
+- `stable-code:3b-instruct-q3_K_S` (tag `3b-instruct-q3_K_S`, availability `local`)
+- `stable-code:3b-instruct-q4_0` (tag `3b-instruct-q4_0`, availability `local`)
+- `stable-code:3b-instruct-q4_1` (tag `3b-instruct-q4_1`, availability `local`)
+- `stable-code:3b-instruct-q4_K_M` (tag `3b-instruct-q4_K_M`, availability `local`)
+- `stable-code:3b-instruct-q4_K_S` (tag `3b-instruct-q4_K_S`, availability `local`)
+- `stable-code:3b-instruct-q5_0` (tag `3b-instruct-q5_0`, availability `local`)
+- `stable-code:3b-instruct-q5_1` (tag `3b-instruct-q5_1`, availability `local`)
+- `stable-code:3b-instruct-q5_K_M` (tag `3b-instruct-q5_K_M`, availability `local`)
+- `stable-code:3b-instruct-q5_K_S` (tag `3b-instruct-q5_K_S`, availability `local`)
+- `stable-code:3b-instruct-q6_K` (tag `3b-instruct-q6_K`, availability `local`)
+- `stable-code:3b-instruct-q8_0` (tag `3b-instruct-q8_0`, availability `local`)
+- `stable-code:code` (tag `code`, availability `local`)
+- `stable-code:instruct` (tag `instruct`, availability `local`)
+- `stable-code:latest` (tag `latest`, availability `local`)

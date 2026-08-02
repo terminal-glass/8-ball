@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "model_id": "nemotron-3-ultra",
+  "family_id": "nemotron-3-ultra",
+  "display_name": "nemotron-3-ultra",
+  "ollama_name": "nemotron-3-ultra",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "availability": "cloud",
+  "default_tag": "nemotron-3-ultra:cloud",
+  "source_url": "https://ollama.com/library/nemotron-3-ultra",
+  "retrieved_at": "2026-08-01T11:56:51Z",
+  "deployment_variant_count": 1,
+  "deployment_variants": [
+    {
+      "ollama_identifier": "nemotron-3-ultra:cloud",
+      "tag": "cloud",
+      "parameter_count": null,
+      "parameter_unit": null,
+      "quantization": null,
+      "architecture": null,
+      "context_window_tokens": 256000,
+      "download_size_bytes": null,
+      "download_size_text": null,
+      "availability": "cloud_only",
+      "pull_command": "ollama pull nemotron-3-ultra:cloud",
+      "run_command": "ollama run nemotron-3-ultra:cloud",
+      "alias_target": null,
+      "source_url": "https://ollama.com/library/nemotron-3-ultra/tags",
+      "retrieved_at": "2026-08-01T11:56:52Z"
+    }
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

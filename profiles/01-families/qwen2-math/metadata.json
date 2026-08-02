@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "family_id": "qwen2-math",
+  "display_name": "qwen2-math",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/qwen2-math",
+  "retrieved_at": "2026-08-01T11:58:15Z",
+  "model_ids": [
+    "qwen2-math-1.5b",
+    "qwen2-math-72b",
+    "qwen2-math-7b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

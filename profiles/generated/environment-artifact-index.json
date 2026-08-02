@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "generator_version": "1.0.0",
+  "generator_command": "eight-ball generate-profiles",
+  "generated_at": "2026-08-02T22:33:24Z",
+  "catalog_version": "2026.08.01",
+  "catalog_projection": {
+    "manifest_path": "AGENTS/data-science/P4-Public-Catalog/manifest.json",
+    "families_index_path": "AGENTS/data-science/P4-Public-Catalog/index/families.json",
+    "models_index_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json"
+  },
+  "counts": {
+    "families": 234,
+    "models": 437,
+    "deployment_variants": 7271,
+    "source_exception_families": 2,
+    "source_exception_models": 2
+  },
+  "steps_completed": [
+    "family",
+    "model",
+    "deployment_type"
+  ],
+  "steps_deferred": [
+    "hard_disk",
+    "ram",
+    "cpu",
+    "gpu"
+  ],
+  "artifacts": {
+    "families_dir": "profiles/01-families",
+    "models_dir": "profiles/02-models",
+    "deployment_types_dir": "profiles/03-deployment-types",
+    "generated_files": [
+      "profiles/generated/family-model-index.json",
+      "profiles/generated/deployment-types.json",
+      "profiles/generated/environment-artifact-index.json"
+    ]
+  },
+  "deployment_type_ids": [
+    "canary",
+    "bare-metal",
+    "aws-lightsail",
+    "digitalocean-droplets",
+    "jet",
+    "mac",
+    "windows"
+  ]
+}

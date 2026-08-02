@@ -1,0 +1,75 @@
+# yi
+
+- **Model ID:** `yi-34b`
+- **Family ID:** `yi`
+- **Ollama name:** yi-34b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** yi:34b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/yi
+- **Retrieved at:** 2026-08-01T12:00:10Z
+
+## Deployment variants (identity only)
+
+- `yi:34b` (tag `34b`, availability `local`)
+- `yi:34b-chat` (tag `34b-chat`, availability `local`)
+- `yi:34b-chat-fp16` (tag `34b-chat-fp16`, availability `local`)
+- `yi:34b-chat-q2_K` (tag `34b-chat-q2_K`, availability `local`)
+- `yi:34b-chat-q3_K_L` (tag `34b-chat-q3_K_L`, availability `local`)
+- `yi:34b-chat-q3_K_M` (tag `34b-chat-q3_K_M`, availability `local`)
+- `yi:34b-chat-q3_K_S` (tag `34b-chat-q3_K_S`, availability `local`)
+- `yi:34b-chat-q4_0` (tag `34b-chat-q4_0`, availability `local`)
+- `yi:34b-chat-q4_1` (tag `34b-chat-q4_1`, availability `local`)
+- `yi:34b-chat-q4_K_M` (tag `34b-chat-q4_K_M`, availability `local`)
+- `yi:34b-chat-q4_K_S` (tag `34b-chat-q4_K_S`, availability `local`)
+- `yi:34b-chat-q5_0` (tag `34b-chat-q5_0`, availability `local`)
+- `yi:34b-chat-q5_1` (tag `34b-chat-q5_1`, availability `local`)
+- `yi:34b-chat-q5_K_M` (tag `34b-chat-q5_K_M`, availability `local`)
+- `yi:34b-chat-q5_K_S` (tag `34b-chat-q5_K_S`, availability `local`)
+- `yi:34b-chat-q6_K` (tag `34b-chat-q6_K`, availability `local`)
+- `yi:34b-chat-q8_0` (tag `34b-chat-q8_0`, availability `local`)
+- `yi:34b-chat-v1.5-fp16` (tag `34b-chat-v1.5-fp16`, availability `local`)
+- `yi:34b-chat-v1.5-q2_K` (tag `34b-chat-v1.5-q2_K`, availability `local`)
+- `yi:34b-chat-v1.5-q3_K_L` (tag `34b-chat-v1.5-q3_K_L`, availability `local`)
+- `yi:34b-chat-v1.5-q3_K_M` (tag `34b-chat-v1.5-q3_K_M`, availability `local`)
+- `yi:34b-chat-v1.5-q3_K_S` (tag `34b-chat-v1.5-q3_K_S`, availability `local`)
+- `yi:34b-chat-v1.5-q4_0` (tag `34b-chat-v1.5-q4_0`, availability `local`)
+- `yi:34b-chat-v1.5-q4_1` (tag `34b-chat-v1.5-q4_1`, availability `local`)
+- `yi:34b-chat-v1.5-q4_K_M` (tag `34b-chat-v1.5-q4_K_M`, availability `local`)
+- `yi:34b-chat-v1.5-q4_K_S` (tag `34b-chat-v1.5-q4_K_S`, availability `local`)
+- `yi:34b-chat-v1.5-q5_0` (tag `34b-chat-v1.5-q5_0`, availability `local`)
+- `yi:34b-chat-v1.5-q5_1` (tag `34b-chat-v1.5-q5_1`, availability `local`)
+- `yi:34b-chat-v1.5-q5_K_M` (tag `34b-chat-v1.5-q5_K_M`, availability `local`)
+- `yi:34b-chat-v1.5-q5_K_S` (tag `34b-chat-v1.5-q5_K_S`, availability `local`)
+- `yi:34b-chat-v1.5-q6_K` (tag `34b-chat-v1.5-q6_K`, availability `local`)
+- `yi:34b-chat-v1.5-q8_0` (tag `34b-chat-v1.5-q8_0`, availability `local`)
+- `yi:34b-q2_K` (tag `34b-q2_K`, availability `local`)
+- `yi:34b-q3_K_L` (tag `34b-q3_K_L`, availability `local`)
+- `yi:34b-q3_K_M` (tag `34b-q3_K_M`, availability `local`)
+- `yi:34b-q3_K_S` (tag `34b-q3_K_S`, availability `local`)
+- `yi:34b-q4_0` (tag `34b-q4_0`, availability `local`)
+- `yi:34b-q4_1` (tag `34b-q4_1`, availability `local`)
+- `yi:34b-q4_K_M` (tag `34b-q4_K_M`, availability `local`)
+- `yi:34b-q4_K_S` (tag `34b-q4_K_S`, availability `local`)
+- `yi:34b-q5_0` (tag `34b-q5_0`, availability `local`)
+- `yi:34b-q5_1` (tag `34b-q5_1`, availability `local`)
+- `yi:34b-q5_K_S` (tag `34b-q5_K_S`, availability `local`)
+- `yi:34b-q6_K` (tag `34b-q6_K`, availability `local`)
+- `yi:34b-v1.5` (tag `34b-v1.5`, availability `local`)
+- `yi:34b-v1.5-fp16` (tag `34b-v1.5-fp16`, availability `local`)
+- `yi:34b-v1.5-q2_K` (tag `34b-v1.5-q2_K`, availability `local`)
+- `yi:34b-v1.5-q3_K_L` (tag `34b-v1.5-q3_K_L`, availability `local`)
+- `yi:34b-v1.5-q3_K_M` (tag `34b-v1.5-q3_K_M`, availability `local`)
+- `yi:34b-v1.5-q3_K_S` (tag `34b-v1.5-q3_K_S`, availability `local`)
+- `yi:34b-v1.5-q4_0` (tag `34b-v1.5-q4_0`, availability `local`)
+- `yi:34b-v1.5-q4_1` (tag `34b-v1.5-q4_1`, availability `local`)
+- `yi:34b-v1.5-q4_K_M` (tag `34b-v1.5-q4_K_M`, availability `local`)
+- `yi:34b-v1.5-q4_K_S` (tag `34b-v1.5-q4_K_S`, availability `local`)
+- `yi:34b-v1.5-q5_0` (tag `34b-v1.5-q5_0`, availability `local`)
+- `yi:34b-v1.5-q5_1` (tag `34b-v1.5-q5_1`, availability `local`)
+- `yi:34b-v1.5-q5_K_M` (tag `34b-v1.5-q5_K_M`, availability `local`)
+- `yi:34b-v1.5-q5_K_S` (tag `34b-v1.5-q5_K_S`, availability `local`)
+- `yi:34b-v1.5-q6_K` (tag `34b-v1.5-q6_K`, availability `local`)
+- `yi:34b-v1.5-q8_0` (tag `34b-v1.5-q8_0`, availability `local`)

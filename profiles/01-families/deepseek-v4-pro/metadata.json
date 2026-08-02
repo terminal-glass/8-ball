@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "family_id": "deepseek-v4-pro",
+  "display_name": "deepseek-v4-pro",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/deepseek-v4-pro",
+  "retrieved_at": "2026-08-01T11:52:49Z",
+  "model_ids": [
+    "deepseek-v4-pro"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

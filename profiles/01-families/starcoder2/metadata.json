@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "family_id": "starcoder2",
+  "display_name": "starcoder2",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/starcoder2",
+  "retrieved_at": "2026-08-01T11:59:31Z",
+  "model_ids": [
+    "starcoder2-15b",
+    "starcoder2-3b",
+    "starcoder2-7b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

@@ -1,0 +1,51 @@
+# tinyllama
+
+- **Model ID:** `tinyllama-1.1b`
+- **Family ID:** `tinyllama`
+- **Ollama name:** tinyllama-1.1b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** tinyllama:1.1b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/tinyllama
+- **Retrieved at:** 2026-08-01T11:59:38Z
+
+## Deployment variants (identity only)
+
+- `tinyllama:1.1b` (tag `1.1b`, availability `local`)
+- `tinyllama:1.1b-chat` (tag `1.1b-chat`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-fp16` (tag `1.1b-chat-v0.6-fp16`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q2_K` (tag `1.1b-chat-v0.6-q2_K`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q3_K_L` (tag `1.1b-chat-v0.6-q3_K_L`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q3_K_M` (tag `1.1b-chat-v0.6-q3_K_M`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q3_K_S` (tag `1.1b-chat-v0.6-q3_K_S`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q4_0` (tag `1.1b-chat-v0.6-q4_0`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q4_1` (tag `1.1b-chat-v0.6-q4_1`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q4_K_M` (tag `1.1b-chat-v0.6-q4_K_M`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q4_K_S` (tag `1.1b-chat-v0.6-q4_K_S`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q5_0` (tag `1.1b-chat-v0.6-q5_0`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q5_1` (tag `1.1b-chat-v0.6-q5_1`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q5_K_M` (tag `1.1b-chat-v0.6-q5_K_M`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q5_K_S` (tag `1.1b-chat-v0.6-q5_K_S`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q6_K` (tag `1.1b-chat-v0.6-q6_K`, availability `local`)
+- `tinyllama:1.1b-chat-v0.6-q8_0` (tag `1.1b-chat-v0.6-q8_0`, availability `local`)
+- `tinyllama:1.1b-chat-v1-fp16` (tag `1.1b-chat-v1-fp16`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q2_K` (tag `1.1b-chat-v1-q2_K`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q3_K_L` (tag `1.1b-chat-v1-q3_K_L`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q3_K_M` (tag `1.1b-chat-v1-q3_K_M`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q3_K_S` (tag `1.1b-chat-v1-q3_K_S`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q4_0` (tag `1.1b-chat-v1-q4_0`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q4_1` (tag `1.1b-chat-v1-q4_1`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q4_K_M` (tag `1.1b-chat-v1-q4_K_M`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q4_K_S` (tag `1.1b-chat-v1-q4_K_S`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q5_0` (tag `1.1b-chat-v1-q5_0`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q5_1` (tag `1.1b-chat-v1-q5_1`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q5_K_M` (tag `1.1b-chat-v1-q5_K_M`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q5_K_S` (tag `1.1b-chat-v1-q5_K_S`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q6_K` (tag `1.1b-chat-v1-q6_K`, availability `local`)
+- `tinyllama:1.1b-chat-v1-q8_0` (tag `1.1b-chat-v1-q8_0`, availability `local`)
+- `tinyllama:chat` (tag `chat`, availability `local`)
+- `tinyllama:latest` (tag `latest`, availability `local`)
+- `tinyllama:v0.6` (tag `v0.6`, availability `local`)
+- `tinyllama:v1` (tag `v1`, availability `local`)

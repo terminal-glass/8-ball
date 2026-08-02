@@ -1,0 +1,65 @@
+# neural-chat
+
+- **Model ID:** `neural-chat-7b`
+- **Family ID:** `neural-chat`
+- **Ollama name:** neural-chat-7b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** neural-chat:7b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/neural-chat
+- **Retrieved at:** 2026-08-01T11:57:00Z
+
+## Deployment variants (identity only)
+
+- `neural-chat:7b` (tag `7b`, availability `local`)
+- `neural-chat:7b-v3.1` (tag `7b-v3.1`, availability `local`)
+- `neural-chat:7b-v3.1-fp16` (tag `7b-v3.1-fp16`, availability `local`)
+- `neural-chat:7b-v3.1-q2_K` (tag `7b-v3.1-q2_K`, availability `local`)
+- `neural-chat:7b-v3.1-q3_K_L` (tag `7b-v3.1-q3_K_L`, availability `local`)
+- `neural-chat:7b-v3.1-q3_K_M` (tag `7b-v3.1-q3_K_M`, availability `local`)
+- `neural-chat:7b-v3.1-q3_K_S` (tag `7b-v3.1-q3_K_S`, availability `local`)
+- `neural-chat:7b-v3.1-q4_0` (tag `7b-v3.1-q4_0`, availability `local`)
+- `neural-chat:7b-v3.1-q4_1` (tag `7b-v3.1-q4_1`, availability `local`)
+- `neural-chat:7b-v3.1-q4_K_M` (tag `7b-v3.1-q4_K_M`, availability `local`)
+- `neural-chat:7b-v3.1-q4_K_S` (tag `7b-v3.1-q4_K_S`, availability `local`)
+- `neural-chat:7b-v3.1-q5_0` (tag `7b-v3.1-q5_0`, availability `local`)
+- `neural-chat:7b-v3.1-q5_1` (tag `7b-v3.1-q5_1`, availability `local`)
+- `neural-chat:7b-v3.1-q5_K_M` (tag `7b-v3.1-q5_K_M`, availability `local`)
+- `neural-chat:7b-v3.1-q5_K_S` (tag `7b-v3.1-q5_K_S`, availability `local`)
+- `neural-chat:7b-v3.1-q6_K` (tag `7b-v3.1-q6_K`, availability `local`)
+- `neural-chat:7b-v3.1-q8_0` (tag `7b-v3.1-q8_0`, availability `local`)
+- `neural-chat:7b-v3.2` (tag `7b-v3.2`, availability `local`)
+- `neural-chat:7b-v3.2-fp16` (tag `7b-v3.2-fp16`, availability `local`)
+- `neural-chat:7b-v3.2-q2_K` (tag `7b-v3.2-q2_K`, availability `local`)
+- `neural-chat:7b-v3.2-q3_K_L` (tag `7b-v3.2-q3_K_L`, availability `local`)
+- `neural-chat:7b-v3.2-q3_K_M` (tag `7b-v3.2-q3_K_M`, availability `local`)
+- `neural-chat:7b-v3.2-q3_K_S` (tag `7b-v3.2-q3_K_S`, availability `local`)
+- `neural-chat:7b-v3.2-q4_0` (tag `7b-v3.2-q4_0`, availability `local`)
+- `neural-chat:7b-v3.2-q4_1` (tag `7b-v3.2-q4_1`, availability `local`)
+- `neural-chat:7b-v3.2-q4_K_M` (tag `7b-v3.2-q4_K_M`, availability `local`)
+- `neural-chat:7b-v3.2-q4_K_S` (tag `7b-v3.2-q4_K_S`, availability `local`)
+- `neural-chat:7b-v3.2-q5_0` (tag `7b-v3.2-q5_0`, availability `local`)
+- `neural-chat:7b-v3.2-q5_1` (tag `7b-v3.2-q5_1`, availability `local`)
+- `neural-chat:7b-v3.2-q5_K_M` (tag `7b-v3.2-q5_K_M`, availability `local`)
+- `neural-chat:7b-v3.2-q5_K_S` (tag `7b-v3.2-q5_K_S`, availability `local`)
+- `neural-chat:7b-v3.2-q6_K` (tag `7b-v3.2-q6_K`, availability `local`)
+- `neural-chat:7b-v3.2-q8_0` (tag `7b-v3.2-q8_0`, availability `local`)
+- `neural-chat:7b-v3.3` (tag `7b-v3.3`, availability `local`)
+- `neural-chat:7b-v3.3-fp16` (tag `7b-v3.3-fp16`, availability `local`)
+- `neural-chat:7b-v3.3-q2_K` (tag `7b-v3.3-q2_K`, availability `local`)
+- `neural-chat:7b-v3.3-q3_K_L` (tag `7b-v3.3-q3_K_L`, availability `local`)
+- `neural-chat:7b-v3.3-q3_K_M` (tag `7b-v3.3-q3_K_M`, availability `local`)
+- `neural-chat:7b-v3.3-q3_K_S` (tag `7b-v3.3-q3_K_S`, availability `local`)
+- `neural-chat:7b-v3.3-q4_0` (tag `7b-v3.3-q4_0`, availability `local`)
+- `neural-chat:7b-v3.3-q4_1` (tag `7b-v3.3-q4_1`, availability `local`)
+- `neural-chat:7b-v3.3-q4_K_M` (tag `7b-v3.3-q4_K_M`, availability `local`)
+- `neural-chat:7b-v3.3-q4_K_S` (tag `7b-v3.3-q4_K_S`, availability `local`)
+- `neural-chat:7b-v3.3-q5_0` (tag `7b-v3.3-q5_0`, availability `local`)
+- `neural-chat:7b-v3.3-q5_1` (tag `7b-v3.3-q5_1`, availability `local`)
+- `neural-chat:7b-v3.3-q5_K_M` (tag `7b-v3.3-q5_K_M`, availability `local`)
+- `neural-chat:7b-v3.3-q5_K_S` (tag `7b-v3.3-q5_K_S`, availability `local`)
+- `neural-chat:7b-v3.3-q6_K` (tag `7b-v3.3-q6_K`, availability `local`)
+- `neural-chat:7b-v3.3-q8_0` (tag `7b-v3.3-q8_0`, availability `local`)
+- `neural-chat:latest` (tag `latest`, availability `local`)

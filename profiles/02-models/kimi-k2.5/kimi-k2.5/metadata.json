@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "model_id": "kimi-k2.5",
+  "family_id": "kimi-k2.5",
+  "display_name": "kimi-k2.5",
+  "ollama_name": "kimi-k2.5",
+  "catalog_version": "2026.08.01",
+  "source_exception": true,
+  "installable": false,
+  "source_status": "stale_source_exception",
+  "availability": "cloud",
+  "default_tag": "kimi-k2.5:cloud",
+  "source_url": "https://ollama.com/library/kimi-k2.5",
+  "retrieved_at": "2026-07-16T05:12:39Z",
+  "deployment_variant_count": 1,
+  "deployment_variants": [
+    {
+      "ollama_identifier": "kimi-k2.5:cloud",
+      "tag": "cloud",
+      "parameter_count": null,
+      "parameter_unit": null,
+      "quantization": null,
+      "architecture": null,
+      "context_window_tokens": 256000,
+      "download_size_bytes": null,
+      "download_size_text": null,
+      "availability": "cloud_only",
+      "pull_command": "ollama pull kimi-k2.5:cloud",
+      "run_command": "ollama run kimi-k2.5:cloud",
+      "alias_target": null,
+      "source_url": "https://ollama.com/library/kimi-k2.5:cloud",
+      "retrieved_at": "2026-07-16T05:07:45Z"
+    }
+  ],
+  "notes": [
+    "Retained from prior canonical catalog because the current static HTML parser cannot normalize this family's live tags. This is a stale source exception, not evidence of live removal."
+  ],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

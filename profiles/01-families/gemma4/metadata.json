@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "family_id": "gemma4",
+  "display_name": "gemma4",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/gemma4",
+  "retrieved_at": "2026-08-01T11:53:46Z",
+  "model_ids": [
+    "gemma4",
+    "gemma4-12b",
+    "gemma4-26b",
+    "gemma4-31b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "model_id": "mistral-large-3-675b",
+  "family_id": "mistral-large-3",
+  "display_name": "mistral-large-3",
+  "ollama_name": "mistral-large-3-675b",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "availability": "cloud",
+  "default_tag": "mistral-large-3:675b-cloud",
+  "source_url": "https://ollama.com/library/mistral-large-3",
+  "retrieved_at": "2026-08-01T11:56:19Z",
+  "deployment_variant_count": 1,
+  "deployment_variants": [
+    {
+      "ollama_identifier": "mistral-large-3:675b-cloud",
+      "tag": "675b-cloud",
+      "parameter_count": 675000000000,
+      "parameter_unit": "675b",
+      "quantization": null,
+      "architecture": null,
+      "context_window_tokens": 256000,
+      "download_size_bytes": null,
+      "download_size_text": null,
+      "availability": "cloud_only",
+      "pull_command": "ollama pull mistral-large-3:675b-cloud",
+      "run_command": "ollama run mistral-large-3:675b-cloud",
+      "alias_target": null,
+      "source_url": "https://ollama.com/library/mistral-large-3/tags",
+      "retrieved_at": "2026-08-01T11:56:20Z"
+    }
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

@@ -1,0 +1,64 @@
+# codellama
+
+- **Model ID:** `codellama-70b`
+- **Family ID:** `codellama`
+- **Ollama name:** codellama-70b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** codellama:70b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/codellama
+- **Retrieved at:** 2026-08-01T11:51:54Z
+
+## Deployment variants (identity only)
+
+- `codellama:70b` (tag `70b`, availability `local`)
+- `codellama:70b-code` (tag `70b-code`, availability `local`)
+- `codellama:70b-code-fp16` (tag `70b-code-fp16`, availability `local`)
+- `codellama:70b-code-q2_K` (tag `70b-code-q2_K`, availability `local`)
+- `codellama:70b-code-q3_K_L` (tag `70b-code-q3_K_L`, availability `local`)
+- `codellama:70b-code-q3_K_M` (tag `70b-code-q3_K_M`, availability `local`)
+- `codellama:70b-code-q3_K_S` (tag `70b-code-q3_K_S`, availability `local`)
+- `codellama:70b-code-q4_0` (tag `70b-code-q4_0`, availability `local`)
+- `codellama:70b-code-q4_1` (tag `70b-code-q4_1`, availability `local`)
+- `codellama:70b-code-q4_K_M` (tag `70b-code-q4_K_M`, availability `local`)
+- `codellama:70b-code-q4_K_S` (tag `70b-code-q4_K_S`, availability `local`)
+- `codellama:70b-code-q5_0` (tag `70b-code-q5_0`, availability `local`)
+- `codellama:70b-code-q5_1` (tag `70b-code-q5_1`, availability `local`)
+- `codellama:70b-code-q5_K_M` (tag `70b-code-q5_K_M`, availability `local`)
+- `codellama:70b-code-q5_K_S` (tag `70b-code-q5_K_S`, availability `local`)
+- `codellama:70b-code-q6_K` (tag `70b-code-q6_K`, availability `local`)
+- `codellama:70b-code-q8_0` (tag `70b-code-q8_0`, availability `local`)
+- `codellama:70b-instruct` (tag `70b-instruct`, availability `local`)
+- `codellama:70b-instruct-fp16` (tag `70b-instruct-fp16`, availability `local`)
+- `codellama:70b-instruct-q2_K` (tag `70b-instruct-q2_K`, availability `local`)
+- `codellama:70b-instruct-q3_K_L` (tag `70b-instruct-q3_K_L`, availability `local`)
+- `codellama:70b-instruct-q3_K_M` (tag `70b-instruct-q3_K_M`, availability `local`)
+- `codellama:70b-instruct-q3_K_S` (tag `70b-instruct-q3_K_S`, availability `local`)
+- `codellama:70b-instruct-q4_0` (tag `70b-instruct-q4_0`, availability `local`)
+- `codellama:70b-instruct-q4_1` (tag `70b-instruct-q4_1`, availability `local`)
+- `codellama:70b-instruct-q4_K_M` (tag `70b-instruct-q4_K_M`, availability `local`)
+- `codellama:70b-instruct-q4_K_S` (tag `70b-instruct-q4_K_S`, availability `local`)
+- `codellama:70b-instruct-q5_0` (tag `70b-instruct-q5_0`, availability `local`)
+- `codellama:70b-instruct-q5_1` (tag `70b-instruct-q5_1`, availability `local`)
+- `codellama:70b-instruct-q5_K_M` (tag `70b-instruct-q5_K_M`, availability `local`)
+- `codellama:70b-instruct-q5_K_S` (tag `70b-instruct-q5_K_S`, availability `local`)
+- `codellama:70b-instruct-q6_K` (tag `70b-instruct-q6_K`, availability `local`)
+- `codellama:70b-instruct-q8_0` (tag `70b-instruct-q8_0`, availability `local`)
+- `codellama:70b-python` (tag `70b-python`, availability `local`)
+- `codellama:70b-python-fp16` (tag `70b-python-fp16`, availability `local`)
+- `codellama:70b-python-q2_K` (tag `70b-python-q2_K`, availability `local`)
+- `codellama:70b-python-q3_K_L` (tag `70b-python-q3_K_L`, availability `local`)
+- `codellama:70b-python-q3_K_M` (tag `70b-python-q3_K_M`, availability `local`)
+- `codellama:70b-python-q3_K_S` (tag `70b-python-q3_K_S`, availability `local`)
+- `codellama:70b-python-q4_0` (tag `70b-python-q4_0`, availability `local`)
+- `codellama:70b-python-q4_1` (tag `70b-python-q4_1`, availability `local`)
+- `codellama:70b-python-q4_K_M` (tag `70b-python-q4_K_M`, availability `local`)
+- `codellama:70b-python-q4_K_S` (tag `70b-python-q4_K_S`, availability `local`)
+- `codellama:70b-python-q5_0` (tag `70b-python-q5_0`, availability `local`)
+- `codellama:70b-python-q5_1` (tag `70b-python-q5_1`, availability `local`)
+- `codellama:70b-python-q5_K_M` (tag `70b-python-q5_K_M`, availability `local`)
+- `codellama:70b-python-q5_K_S` (tag `70b-python-q5_K_S`, availability `local`)
+- `codellama:70b-python-q6_K` (tag `70b-python-q6_K`, availability `local`)
+- `codellama:70b-python-q8_0` (tag `70b-python-q8_0`, availability `local`)

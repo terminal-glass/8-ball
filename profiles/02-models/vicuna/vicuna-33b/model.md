@@ -1,0 +1,31 @@
+# vicuna
+
+- **Model ID:** `vicuna-33b`
+- **Family ID:** `vicuna`
+- **Ollama name:** vicuna-33b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** vicuna:33b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/vicuna
+- **Retrieved at:** 2026-08-01T11:59:44Z
+
+## Deployment variants (identity only)
+
+- `vicuna:33b` (tag `33b`, availability `local`)
+- `vicuna:33b-fp16` (tag `33b-fp16`, availability `local`)
+- `vicuna:33b-q2_K` (tag `33b-q2_K`, availability `local`)
+- `vicuna:33b-q3_K_L` (tag `33b-q3_K_L`, availability `local`)
+- `vicuna:33b-q3_K_M` (tag `33b-q3_K_M`, availability `local`)
+- `vicuna:33b-q3_K_S` (tag `33b-q3_K_S`, availability `local`)
+- `vicuna:33b-q4_0` (tag `33b-q4_0`, availability `local`)
+- `vicuna:33b-q4_1` (tag `33b-q4_1`, availability `local`)
+- `vicuna:33b-q4_K_M` (tag `33b-q4_K_M`, availability `local`)
+- `vicuna:33b-q4_K_S` (tag `33b-q4_K_S`, availability `local`)
+- `vicuna:33b-q5_0` (tag `33b-q5_0`, availability `local`)
+- `vicuna:33b-q5_1` (tag `33b-q5_1`, availability `local`)
+- `vicuna:33b-q5_K_M` (tag `33b-q5_K_M`, availability `local`)
+- `vicuna:33b-q5_K_S` (tag `33b-q5_K_S`, availability `local`)
+- `vicuna:33b-q6_K` (tag `33b-q6_K`, availability `local`)
+- `vicuna:33b-q8_0` (tag `33b-q8_0`, availability `local`)
