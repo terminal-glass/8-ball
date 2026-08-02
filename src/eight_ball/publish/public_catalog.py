@@ -459,12 +459,12 @@ def _publishing_report_lines(manifest: dict[str, Any]) -> list[str]:
         [
             "",
             "## Artifacts",
-            "- `P4-Public-Catalog/manifest.json`",
-            "- `P4-Public-Catalog/index/families.json`",
-            "- `P4-Public-Catalog/index/models.json`",
+            "- `AGENTS/data-science/P4-Public-Catalog/manifest.json`",
+            "- `AGENTS/data-science/P4-Public-Catalog/index/families.json`",
+            "- `AGENTS/data-science/P4-Public-Catalog/index/models.json`",
             "- `schemas/public-catalog-manifest.schema.json`",
-            "- `P4-Public-Catalog/CONSUMPTION.md`",
-            "- `P4-Public-Catalog/CLASSIFICATIONS.md`",
+            "- `AGENTS/data-science/P4-Public-Catalog/CONSUMPTION.md`",
+            "- `AGENTS/data-science/P4-Public-Catalog/CLASSIFICATIONS.md`",
             "",
         ]
     )

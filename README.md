@@ -168,9 +168,9 @@ consume. These are metadata only; installer scripts are never generated here.
 
 | Folder | Contents |
 | --- | --- |
-| `P1-Estimator/` | Provider hardware specs, NoCloudGPT planning templates, overhead reserves, workload profiles |
-| `P2-Provider-Datasets/` | Provider plan metadata plus committed indexes (`indexes/`) |
-| `P3-Ollama-Metadata-Catalog/` | Catalog provenance and compact installer-consumable indexes, including `indexes/model-selection.json` (per-hardware-profile local model candidates with estimated RAM/VRAM) |
+| `AGENTS/data-science/P1-Estimator/` | Provider hardware specs, NoCloudGPT planning templates, overhead reserves, workload profiles |
+| `AGENTS/data-science/P2-Provider-Datasets/` | Provider plan metadata plus committed indexes (`indexes/`) |
+| `AGENTS/data-science/P3-Ollama-Metadata-Catalog/` | Catalog provenance and compact installer-consumable indexes, including `indexes/model-selection.json` (per-hardware-profile local model candidates with estimated RAM/VRAM) |
 
 Rebuild the committed P2/P3 exports after catalog or dataset changes:
 

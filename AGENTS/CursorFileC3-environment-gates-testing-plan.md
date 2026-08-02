@@ -115,8 +115,8 @@ Plan C3 for 8-BALL environment gates in terminal-glass/8-ball, covering:
 7. GPU/VRAM requirement
 
 Read these files first:
-- AGENTS/data-science/CursorFileC1-environment-artifacts.md
-- AGENTS/data-science/CursorFileC2-environment-artifact-sequencing.md
+- AGENTS/CursorFileC1-environment-artifacts.md
+- AGENTS/CursorFileC2-environment-artifact-sequencing.md
 
 Do not guess sizing.
 Do not edit installer scripts in this repository.
