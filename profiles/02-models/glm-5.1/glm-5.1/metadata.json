@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "model_id": "glm-5.1",
+  "family_id": "glm-5.1",
+  "display_name": "glm-5.1",
+  "ollama_name": "glm-5.1",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "availability": "cloud",
+  "default_tag": "glm-5.1:cloud",
+  "source_url": "https://ollama.com/library/glm-5.1",
+  "retrieved_at": "2026-08-01T11:53:51Z",
+  "deployment_variant_count": 1,
+  "deployment_variants": [
+    {
+      "ollama_identifier": "glm-5.1:cloud",
+      "tag": "cloud",
+      "parameter_count": null,
+      "parameter_unit": null,
+      "quantization": null,
+      "architecture": null,
+      "context_window_tokens": 198000,
+      "download_size_bytes": null,
+      "download_size_text": null,
+      "availability": "cloud_only",
+      "pull_command": "ollama pull glm-5.1:cloud",
+      "run_command": "ollama run glm-5.1:cloud",
+      "alias_target": null,
+      "source_url": "https://ollama.com/library/glm-5.1/tags",
+      "retrieved_at": "2026-08-01T11:53:52Z"
+    }
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

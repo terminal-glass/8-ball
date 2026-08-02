@@ -1,0 +1,77 @@
+# qwen
+
+- **Model ID:** `qwen-72b`
+- **Family ID:** `qwen`
+- **Ollama name:** qwen-72b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** qwen:72b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/qwen
+- **Retrieved at:** 2026-08-01T11:58:10Z
+
+## Deployment variants (identity only)
+
+- `qwen:72b` (tag `72b`, availability `local`)
+- `qwen:72b-chat` (tag `72b-chat`, availability `local`)
+- `qwen:72b-chat-fp16` (tag `72b-chat-fp16`, availability `local`)
+- `qwen:72b-chat-q2_K` (tag `72b-chat-q2_K`, availability `local`)
+- `qwen:72b-chat-q3_K_L` (tag `72b-chat-q3_K_L`, availability `local`)
+- `qwen:72b-chat-q3_K_M` (tag `72b-chat-q3_K_M`, availability `local`)
+- `qwen:72b-chat-q3_K_S` (tag `72b-chat-q3_K_S`, availability `local`)
+- `qwen:72b-chat-q4_0` (tag `72b-chat-q4_0`, availability `local`)
+- `qwen:72b-chat-q4_1` (tag `72b-chat-q4_1`, availability `local`)
+- `qwen:72b-chat-q4_K_M` (tag `72b-chat-q4_K_M`, availability `local`)
+- `qwen:72b-chat-q4_K_S` (tag `72b-chat-q4_K_S`, availability `local`)
+- `qwen:72b-chat-q5_0` (tag `72b-chat-q5_0`, availability `local`)
+- `qwen:72b-chat-q5_1` (tag `72b-chat-q5_1`, availability `local`)
+- `qwen:72b-chat-q5_K_M` (tag `72b-chat-q5_K_M`, availability `local`)
+- `qwen:72b-chat-q5_K_S` (tag `72b-chat-q5_K_S`, availability `local`)
+- `qwen:72b-chat-q6_K` (tag `72b-chat-q6_K`, availability `local`)
+- `qwen:72b-chat-q8_0` (tag `72b-chat-q8_0`, availability `local`)
+- `qwen:72b-chat-v1.5-fp16` (tag `72b-chat-v1.5-fp16`, availability `local`)
+- `qwen:72b-chat-v1.5-q2_K` (tag `72b-chat-v1.5-q2_K`, availability `local`)
+- `qwen:72b-chat-v1.5-q3_K_L` (tag `72b-chat-v1.5-q3_K_L`, availability `local`)
+- `qwen:72b-chat-v1.5-q3_K_M` (tag `72b-chat-v1.5-q3_K_M`, availability `local`)
+- `qwen:72b-chat-v1.5-q3_K_S` (tag `72b-chat-v1.5-q3_K_S`, availability `local`)
+- `qwen:72b-chat-v1.5-q4_0` (tag `72b-chat-v1.5-q4_0`, availability `local`)
+- `qwen:72b-chat-v1.5-q4_1` (tag `72b-chat-v1.5-q4_1`, availability `local`)
+- `qwen:72b-chat-v1.5-q4_K_M` (tag `72b-chat-v1.5-q4_K_M`, availability `local`)
+- `qwen:72b-chat-v1.5-q4_K_S` (tag `72b-chat-v1.5-q4_K_S`, availability `local`)
+- `qwen:72b-chat-v1.5-q5_0` (tag `72b-chat-v1.5-q5_0`, availability `local`)
+- `qwen:72b-chat-v1.5-q5_1` (tag `72b-chat-v1.5-q5_1`, availability `local`)
+- `qwen:72b-chat-v1.5-q5_K_M` (tag `72b-chat-v1.5-q5_K_M`, availability `local`)
+- `qwen:72b-chat-v1.5-q5_K_S` (tag `72b-chat-v1.5-q5_K_S`, availability `local`)
+- `qwen:72b-chat-v1.5-q6_K` (tag `72b-chat-v1.5-q6_K`, availability `local`)
+- `qwen:72b-chat-v1.5-q8_0` (tag `72b-chat-v1.5-q8_0`, availability `local`)
+- `qwen:72b-text-fp16` (tag `72b-text-fp16`, availability `local`)
+- `qwen:72b-text-q2_K` (tag `72b-text-q2_K`, availability `local`)
+- `qwen:72b-text-q3_K_L` (tag `72b-text-q3_K_L`, availability `local`)
+- `qwen:72b-text-q3_K_M` (tag `72b-text-q3_K_M`, availability `local`)
+- `qwen:72b-text-q3_K_S` (tag `72b-text-q3_K_S`, availability `local`)
+- `qwen:72b-text-q4_0` (tag `72b-text-q4_0`, availability `local`)
+- `qwen:72b-text-q4_1` (tag `72b-text-q4_1`, availability `local`)
+- `qwen:72b-text-q4_K_M` (tag `72b-text-q4_K_M`, availability `local`)
+- `qwen:72b-text-q4_K_S` (tag `72b-text-q4_K_S`, availability `local`)
+- `qwen:72b-text-q5_0` (tag `72b-text-q5_0`, availability `local`)
+- `qwen:72b-text-q5_1` (tag `72b-text-q5_1`, availability `local`)
+- `qwen:72b-text-q5_K_M` (tag `72b-text-q5_K_M`, availability `local`)
+- `qwen:72b-text-q5_K_S` (tag `72b-text-q5_K_S`, availability `local`)
+- `qwen:72b-text-q6_K` (tag `72b-text-q6_K`, availability `local`)
+- `qwen:72b-text-q8_0` (tag `72b-text-q8_0`, availability `local`)
+- `qwen:72b-text-v1.5-fp16` (tag `72b-text-v1.5-fp16`, availability `local`)
+- `qwen:72b-text-v1.5-q2_K` (tag `72b-text-v1.5-q2_K`, availability `local`)
+- `qwen:72b-text-v1.5-q3_K_L` (tag `72b-text-v1.5-q3_K_L`, availability `local`)
+- `qwen:72b-text-v1.5-q3_K_M` (tag `72b-text-v1.5-q3_K_M`, availability `local`)
+- `qwen:72b-text-v1.5-q3_K_S` (tag `72b-text-v1.5-q3_K_S`, availability `local`)
+- `qwen:72b-text-v1.5-q4_0` (tag `72b-text-v1.5-q4_0`, availability `local`)
+- `qwen:72b-text-v1.5-q4_1` (tag `72b-text-v1.5-q4_1`, availability `local`)
+- `qwen:72b-text-v1.5-q4_K_M` (tag `72b-text-v1.5-q4_K_M`, availability `local`)
+- `qwen:72b-text-v1.5-q4_K_S` (tag `72b-text-v1.5-q4_K_S`, availability `local`)
+- `qwen:72b-text-v1.5-q5_0` (tag `72b-text-v1.5-q5_0`, availability `local`)
+- `qwen:72b-text-v1.5-q5_1` (tag `72b-text-v1.5-q5_1`, availability `local`)
+- `qwen:72b-text-v1.5-q5_K_M` (tag `72b-text-v1.5-q5_K_M`, availability `local`)
+- `qwen:72b-text-v1.5-q5_K_S` (tag `72b-text-v1.5-q5_K_S`, availability `local`)
+- `qwen:72b-text-v1.5-q6_K` (tag `72b-text-v1.5-q6_K`, availability `local`)
+- `qwen:72b-text-v1.5-q8_0` (tag `72b-text-v1.5-q8_0`, availability `local`)

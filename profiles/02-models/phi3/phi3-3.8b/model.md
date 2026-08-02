@@ -1,0 +1,52 @@
+# phi3
+
+- **Model ID:** `phi3-3.8b`
+- **Family ID:** `phi3`
+- **Ollama name:** phi3-3.8b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** phi3:3.8b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/phi3
+- **Retrieved at:** 2026-08-01T11:57:54Z
+
+## Deployment variants (identity only)
+
+- `phi3:3.8b` (tag `3.8b`, availability `local`)
+- `phi3:3.8b-instruct` (tag `3.8b-instruct`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-fp16` (tag `3.8b-mini-128k-instruct-fp16`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q2_K` (tag `3.8b-mini-128k-instruct-q2_K`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q3_K_L` (tag `3.8b-mini-128k-instruct-q3_K_L`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q3_K_M` (tag `3.8b-mini-128k-instruct-q3_K_M`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q3_K_S` (tag `3.8b-mini-128k-instruct-q3_K_S`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q4_0` (tag `3.8b-mini-128k-instruct-q4_0`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q4_1` (tag `3.8b-mini-128k-instruct-q4_1`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q4_K_M` (tag `3.8b-mini-128k-instruct-q4_K_M`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q4_K_S` (tag `3.8b-mini-128k-instruct-q4_K_S`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q5_0` (tag `3.8b-mini-128k-instruct-q5_0`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q5_1` (tag `3.8b-mini-128k-instruct-q5_1`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q5_K_M` (tag `3.8b-mini-128k-instruct-q5_K_M`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q5_K_S` (tag `3.8b-mini-128k-instruct-q5_K_S`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q6_K` (tag `3.8b-mini-128k-instruct-q6_K`, availability `local`)
+- `phi3:3.8b-mini-128k-instruct-q8_0` (tag `3.8b-mini-128k-instruct-q8_0`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-fp16` (tag `3.8b-mini-4k-instruct-fp16`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q2_K` (tag `3.8b-mini-4k-instruct-q2_K`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q3_K_L` (tag `3.8b-mini-4k-instruct-q3_K_L`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q3_K_M` (tag `3.8b-mini-4k-instruct-q3_K_M`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q3_K_S` (tag `3.8b-mini-4k-instruct-q3_K_S`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q4_0` (tag `3.8b-mini-4k-instruct-q4_0`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q4_1` (tag `3.8b-mini-4k-instruct-q4_1`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q4_K_M` (tag `3.8b-mini-4k-instruct-q4_K_M`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q4_K_S` (tag `3.8b-mini-4k-instruct-q4_K_S`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q5_0` (tag `3.8b-mini-4k-instruct-q5_0`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q5_1` (tag `3.8b-mini-4k-instruct-q5_1`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q5_K_M` (tag `3.8b-mini-4k-instruct-q5_K_M`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q5_K_S` (tag `3.8b-mini-4k-instruct-q5_K_S`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q6_K` (tag `3.8b-mini-4k-instruct-q6_K`, availability `local`)
+- `phi3:3.8b-mini-4k-instruct-q8_0` (tag `3.8b-mini-4k-instruct-q8_0`, availability `local`)
+- `phi3:instruct` (tag `instruct`, availability `local`)
+- `phi3:latest` (tag `latest`, availability `local`)
+- `phi3:mini` (tag `mini`, availability `local`)
+- `phi3:mini-128k` (tag `mini-128k`, availability `local`)
+- `phi3:mini-4k` (tag `mini-4k`, availability `local`)

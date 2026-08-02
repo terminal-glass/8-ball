@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "model_id": "minimax-m2.7",
+  "family_id": "minimax-m2.7",
+  "display_name": "minimax-m2.7",
+  "ollama_name": "minimax-m2.7",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "availability": "cloud",
+  "default_tag": "minimax-m2.7:cloud",
+  "source_url": "https://ollama.com/library/minimax-m2.7",
+  "retrieved_at": "2026-08-01T11:56:07Z",
+  "deployment_variant_count": 1,
+  "deployment_variants": [
+    {
+      "ollama_identifier": "minimax-m2.7:cloud",
+      "tag": "cloud",
+      "parameter_count": null,
+      "parameter_unit": null,
+      "quantization": null,
+      "architecture": null,
+      "context_window_tokens": 200000,
+      "download_size_bytes": null,
+      "download_size_text": null,
+      "availability": "cloud_only",
+      "pull_command": "ollama pull minimax-m2.7:cloud",
+      "run_command": "ollama run minimax-m2.7:cloud",
+      "alias_target": null,
+      "source_url": "https://ollama.com/library/minimax-m2.7/tags",
+      "retrieved_at": "2026-08-01T11:56:09Z"
+    }
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

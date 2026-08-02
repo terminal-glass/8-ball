@@ -1,0 +1,66 @@
+# stablelm2
+
+- **Model ID:** `stablelm2-1.6b`
+- **Family ID:** `stablelm2`
+- **Ollama name:** stablelm2-1.6b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** stablelm2:1.6b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/stablelm2
+- **Retrieved at:** 2026-08-01T11:59:26Z
+
+## Deployment variants (identity only)
+
+- `stablelm2:1.6b` (tag `1.6b`, availability `local`)
+- `stablelm2:1.6b-chat` (tag `1.6b-chat`, availability `local`)
+- `stablelm2:1.6b-chat-fp16` (tag `1.6b-chat-fp16`, availability `local`)
+- `stablelm2:1.6b-chat-q2_K` (tag `1.6b-chat-q2_K`, availability `local`)
+- `stablelm2:1.6b-chat-q3_K_L` (tag `1.6b-chat-q3_K_L`, availability `local`)
+- `stablelm2:1.6b-chat-q3_K_M` (tag `1.6b-chat-q3_K_M`, availability `local`)
+- `stablelm2:1.6b-chat-q3_K_S` (tag `1.6b-chat-q3_K_S`, availability `local`)
+- `stablelm2:1.6b-chat-q4_0` (tag `1.6b-chat-q4_0`, availability `local`)
+- `stablelm2:1.6b-chat-q4_1` (tag `1.6b-chat-q4_1`, availability `local`)
+- `stablelm2:1.6b-chat-q4_K_M` (tag `1.6b-chat-q4_K_M`, availability `local`)
+- `stablelm2:1.6b-chat-q4_K_S` (tag `1.6b-chat-q4_K_S`, availability `local`)
+- `stablelm2:1.6b-chat-q5_0` (tag `1.6b-chat-q5_0`, availability `local`)
+- `stablelm2:1.6b-chat-q5_1` (tag `1.6b-chat-q5_1`, availability `local`)
+- `stablelm2:1.6b-chat-q5_K_M` (tag `1.6b-chat-q5_K_M`, availability `local`)
+- `stablelm2:1.6b-chat-q5_K_S` (tag `1.6b-chat-q5_K_S`, availability `local`)
+- `stablelm2:1.6b-chat-q6_K` (tag `1.6b-chat-q6_K`, availability `local`)
+- `stablelm2:1.6b-chat-q8_0` (tag `1.6b-chat-q8_0`, availability `local`)
+- `stablelm2:1.6b-fp16` (tag `1.6b-fp16`, availability `local`)
+- `stablelm2:1.6b-q2_K` (tag `1.6b-q2_K`, availability `local`)
+- `stablelm2:1.6b-q3_K_L` (tag `1.6b-q3_K_L`, availability `local`)
+- `stablelm2:1.6b-q3_K_M` (tag `1.6b-q3_K_M`, availability `local`)
+- `stablelm2:1.6b-q3_K_S` (tag `1.6b-q3_K_S`, availability `local`)
+- `stablelm2:1.6b-q4_0` (tag `1.6b-q4_0`, availability `local`)
+- `stablelm2:1.6b-q4_1` (tag `1.6b-q4_1`, availability `local`)
+- `stablelm2:1.6b-q4_K_M` (tag `1.6b-q4_K_M`, availability `local`)
+- `stablelm2:1.6b-q4_K_S` (tag `1.6b-q4_K_S`, availability `local`)
+- `stablelm2:1.6b-q5_0` (tag `1.6b-q5_0`, availability `local`)
+- `stablelm2:1.6b-q5_1` (tag `1.6b-q5_1`, availability `local`)
+- `stablelm2:1.6b-q5_K_M` (tag `1.6b-q5_K_M`, availability `local`)
+- `stablelm2:1.6b-q5_K_S` (tag `1.6b-q5_K_S`, availability `local`)
+- `stablelm2:1.6b-q6_K` (tag `1.6b-q6_K`, availability `local`)
+- `stablelm2:1.6b-q8_0` (tag `1.6b-q8_0`, availability `local`)
+- `stablelm2:1.6b-zephyr` (tag `1.6b-zephyr`, availability `local`)
+- `stablelm2:1.6b-zephyr-fp16` (tag `1.6b-zephyr-fp16`, availability `local`)
+- `stablelm2:1.6b-zephyr-q2_K` (tag `1.6b-zephyr-q2_K`, availability `local`)
+- `stablelm2:1.6b-zephyr-q3_K_L` (tag `1.6b-zephyr-q3_K_L`, availability `local`)
+- `stablelm2:1.6b-zephyr-q3_K_M` (tag `1.6b-zephyr-q3_K_M`, availability `local`)
+- `stablelm2:1.6b-zephyr-q3_K_S` (tag `1.6b-zephyr-q3_K_S`, availability `local`)
+- `stablelm2:1.6b-zephyr-q4_0` (tag `1.6b-zephyr-q4_0`, availability `local`)
+- `stablelm2:1.6b-zephyr-q4_1` (tag `1.6b-zephyr-q4_1`, availability `local`)
+- `stablelm2:1.6b-zephyr-q4_K_M` (tag `1.6b-zephyr-q4_K_M`, availability `local`)
+- `stablelm2:1.6b-zephyr-q4_K_S` (tag `1.6b-zephyr-q4_K_S`, availability `local`)
+- `stablelm2:1.6b-zephyr-q5_0` (tag `1.6b-zephyr-q5_0`, availability `local`)
+- `stablelm2:1.6b-zephyr-q5_1` (tag `1.6b-zephyr-q5_1`, availability `local`)
+- `stablelm2:1.6b-zephyr-q5_K_M` (tag `1.6b-zephyr-q5_K_M`, availability `local`)
+- `stablelm2:1.6b-zephyr-q5_K_S` (tag `1.6b-zephyr-q5_K_S`, availability `local`)
+- `stablelm2:1.6b-zephyr-q6_K` (tag `1.6b-zephyr-q6_K`, availability `local`)
+- `stablelm2:1.6b-zephyr-q8_0` (tag `1.6b-zephyr-q8_0`, availability `local`)
+- `stablelm2:chat` (tag `chat`, availability `local`)
+- `stablelm2:latest` (tag `latest`, availability `local`)
+- `stablelm2:zephyr` (tag `zephyr`, availability `local`)

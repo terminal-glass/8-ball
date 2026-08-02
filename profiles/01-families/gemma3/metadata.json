@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "family_id": "gemma3",
+  "display_name": "gemma3",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/gemma3",
+  "retrieved_at": "2026-08-01T11:53:41Z",
+  "model_ids": [
+    "gemma3-12b",
+    "gemma3-1b",
+    "gemma3-270m",
+    "gemma3-27b",
+    "gemma3-4b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

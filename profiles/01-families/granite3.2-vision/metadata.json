@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "family_id": "granite3.2-vision",
+  "display_name": "granite3.2-vision",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/granite3.2-vision",
+  "retrieved_at": "2026-08-01T11:54:25Z",
+  "model_ids": [
+    "granite3.2-vision-2b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

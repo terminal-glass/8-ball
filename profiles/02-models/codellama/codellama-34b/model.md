@@ -1,0 +1,63 @@
+# codellama
+
+- **Model ID:** `codellama-34b`
+- **Family ID:** `codellama`
+- **Ollama name:** codellama-34b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** codellama:34b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/codellama
+- **Retrieved at:** 2026-08-01T11:51:54Z
+
+## Deployment variants (identity only)
+
+- `codellama:34b` (tag `34b`, availability `local`)
+- `codellama:34b-code` (tag `34b-code`, availability `local`)
+- `codellama:34b-code-q2_K` (tag `34b-code-q2_K`, availability `local`)
+- `codellama:34b-code-q3_K_L` (tag `34b-code-q3_K_L`, availability `local`)
+- `codellama:34b-code-q3_K_M` (tag `34b-code-q3_K_M`, availability `local`)
+- `codellama:34b-code-q3_K_S` (tag `34b-code-q3_K_S`, availability `local`)
+- `codellama:34b-code-q4_0` (tag `34b-code-q4_0`, availability `local`)
+- `codellama:34b-code-q4_1` (tag `34b-code-q4_1`, availability `local`)
+- `codellama:34b-code-q4_K_M` (tag `34b-code-q4_K_M`, availability `local`)
+- `codellama:34b-code-q4_K_S` (tag `34b-code-q4_K_S`, availability `local`)
+- `codellama:34b-code-q5_0` (tag `34b-code-q5_0`, availability `local`)
+- `codellama:34b-code-q5_1` (tag `34b-code-q5_1`, availability `local`)
+- `codellama:34b-code-q5_K_M` (tag `34b-code-q5_K_M`, availability `local`)
+- `codellama:34b-code-q5_K_S` (tag `34b-code-q5_K_S`, availability `local`)
+- `codellama:34b-code-q6_K` (tag `34b-code-q6_K`, availability `local`)
+- `codellama:34b-code-q8_0` (tag `34b-code-q8_0`, availability `local`)
+- `codellama:34b-instruct` (tag `34b-instruct`, availability `local`)
+- `codellama:34b-instruct-fp16` (tag `34b-instruct-fp16`, availability `local`)
+- `codellama:34b-instruct-q2_K` (tag `34b-instruct-q2_K`, availability `local`)
+- `codellama:34b-instruct-q3_K_L` (tag `34b-instruct-q3_K_L`, availability `local`)
+- `codellama:34b-instruct-q3_K_M` (tag `34b-instruct-q3_K_M`, availability `local`)
+- `codellama:34b-instruct-q3_K_S` (tag `34b-instruct-q3_K_S`, availability `local`)
+- `codellama:34b-instruct-q4_0` (tag `34b-instruct-q4_0`, availability `local`)
+- `codellama:34b-instruct-q4_1` (tag `34b-instruct-q4_1`, availability `local`)
+- `codellama:34b-instruct-q4_K_M` (tag `34b-instruct-q4_K_M`, availability `local`)
+- `codellama:34b-instruct-q4_K_S` (tag `34b-instruct-q4_K_S`, availability `local`)
+- `codellama:34b-instruct-q5_0` (tag `34b-instruct-q5_0`, availability `local`)
+- `codellama:34b-instruct-q5_1` (tag `34b-instruct-q5_1`, availability `local`)
+- `codellama:34b-instruct-q5_K_M` (tag `34b-instruct-q5_K_M`, availability `local`)
+- `codellama:34b-instruct-q5_K_S` (tag `34b-instruct-q5_K_S`, availability `local`)
+- `codellama:34b-instruct-q6_K` (tag `34b-instruct-q6_K`, availability `local`)
+- `codellama:34b-instruct-q8_0` (tag `34b-instruct-q8_0`, availability `local`)
+- `codellama:34b-python` (tag `34b-python`, availability `local`)
+- `codellama:34b-python-fp16` (tag `34b-python-fp16`, availability `local`)
+- `codellama:34b-python-q2_K` (tag `34b-python-q2_K`, availability `local`)
+- `codellama:34b-python-q3_K_L` (tag `34b-python-q3_K_L`, availability `local`)
+- `codellama:34b-python-q3_K_M` (tag `34b-python-q3_K_M`, availability `local`)
+- `codellama:34b-python-q3_K_S` (tag `34b-python-q3_K_S`, availability `local`)
+- `codellama:34b-python-q4_0` (tag `34b-python-q4_0`, availability `local`)
+- `codellama:34b-python-q4_1` (tag `34b-python-q4_1`, availability `local`)
+- `codellama:34b-python-q4_K_M` (tag `34b-python-q4_K_M`, availability `local`)
+- `codellama:34b-python-q4_K_S` (tag `34b-python-q4_K_S`, availability `local`)
+- `codellama:34b-python-q5_0` (tag `34b-python-q5_0`, availability `local`)
+- `codellama:34b-python-q5_1` (tag `34b-python-q5_1`, availability `local`)
+- `codellama:34b-python-q5_K_M` (tag `34b-python-q5_K_M`, availability `local`)
+- `codellama:34b-python-q5_K_S` (tag `34b-python-q5_K_S`, availability `local`)
+- `codellama:34b-python-q6_K` (tag `34b-python-q6_K`, availability `local`)
+- `codellama:34b-python-q8_0` (tag `34b-python-q8_0`, availability `local`)

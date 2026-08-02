@@ -1,0 +1,63 @@
+# vicuna
+
+- **Model ID:** `vicuna-7b`
+- **Family ID:** `vicuna`
+- **Ollama name:** vicuna-7b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** vicuna:7b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/vicuna
+- **Retrieved at:** 2026-08-01T11:59:44Z
+
+## Deployment variants (identity only)
+
+- `vicuna:7b` (tag `7b`, availability `local`)
+- `vicuna:7b-16k` (tag `7b-16k`, availability `local`)
+- `vicuna:7b-fp16` (tag `7b-fp16`, availability `local`)
+- `vicuna:7b-q2_K` (tag `7b-q2_K`, availability `local`)
+- `vicuna:7b-q3_K_L` (tag `7b-q3_K_L`, availability `local`)
+- `vicuna:7b-q3_K_M` (tag `7b-q3_K_M`, availability `local`)
+- `vicuna:7b-q3_K_S` (tag `7b-q3_K_S`, availability `local`)
+- `vicuna:7b-q4_0` (tag `7b-q4_0`, availability `local`)
+- `vicuna:7b-q4_1` (tag `7b-q4_1`, availability `local`)
+- `vicuna:7b-q4_K_M` (tag `7b-q4_K_M`, availability `local`)
+- `vicuna:7b-q4_K_S` (tag `7b-q4_K_S`, availability `local`)
+- `vicuna:7b-q5_0` (tag `7b-q5_0`, availability `local`)
+- `vicuna:7b-q5_1` (tag `7b-q5_1`, availability `local`)
+- `vicuna:7b-q5_K_M` (tag `7b-q5_K_M`, availability `local`)
+- `vicuna:7b-q5_K_S` (tag `7b-q5_K_S`, availability `local`)
+- `vicuna:7b-q6_K` (tag `7b-q6_K`, availability `local`)
+- `vicuna:7b-q8_0` (tag `7b-q8_0`, availability `local`)
+- `vicuna:7b-v1.5-16k-fp16` (tag `7b-v1.5-16k-fp16`, availability `local`)
+- `vicuna:7b-v1.5-16k-q2_K` (tag `7b-v1.5-16k-q2_K`, availability `local`)
+- `vicuna:7b-v1.5-16k-q3_K_L` (tag `7b-v1.5-16k-q3_K_L`, availability `local`)
+- `vicuna:7b-v1.5-16k-q3_K_M` (tag `7b-v1.5-16k-q3_K_M`, availability `local`)
+- `vicuna:7b-v1.5-16k-q3_K_S` (tag `7b-v1.5-16k-q3_K_S`, availability `local`)
+- `vicuna:7b-v1.5-16k-q4_0` (tag `7b-v1.5-16k-q4_0`, availability `local`)
+- `vicuna:7b-v1.5-16k-q4_1` (tag `7b-v1.5-16k-q4_1`, availability `local`)
+- `vicuna:7b-v1.5-16k-q4_K_M` (tag `7b-v1.5-16k-q4_K_M`, availability `local`)
+- `vicuna:7b-v1.5-16k-q4_K_S` (tag `7b-v1.5-16k-q4_K_S`, availability `local`)
+- `vicuna:7b-v1.5-16k-q5_0` (tag `7b-v1.5-16k-q5_0`, availability `local`)
+- `vicuna:7b-v1.5-16k-q5_1` (tag `7b-v1.5-16k-q5_1`, availability `local`)
+- `vicuna:7b-v1.5-16k-q5_K_M` (tag `7b-v1.5-16k-q5_K_M`, availability `local`)
+- `vicuna:7b-v1.5-16k-q5_K_S` (tag `7b-v1.5-16k-q5_K_S`, availability `local`)
+- `vicuna:7b-v1.5-16k-q6_K` (tag `7b-v1.5-16k-q6_K`, availability `local`)
+- `vicuna:7b-v1.5-16k-q8_0` (tag `7b-v1.5-16k-q8_0`, availability `local`)
+- `vicuna:7b-v1.5-fp16` (tag `7b-v1.5-fp16`, availability `local`)
+- `vicuna:7b-v1.5-q2_K` (tag `7b-v1.5-q2_K`, availability `local`)
+- `vicuna:7b-v1.5-q3_K_L` (tag `7b-v1.5-q3_K_L`, availability `local`)
+- `vicuna:7b-v1.5-q3_K_M` (tag `7b-v1.5-q3_K_M`, availability `local`)
+- `vicuna:7b-v1.5-q3_K_S` (tag `7b-v1.5-q3_K_S`, availability `local`)
+- `vicuna:7b-v1.5-q4_0` (tag `7b-v1.5-q4_0`, availability `local`)
+- `vicuna:7b-v1.5-q4_1` (tag `7b-v1.5-q4_1`, availability `local`)
+- `vicuna:7b-v1.5-q4_K_M` (tag `7b-v1.5-q4_K_M`, availability `local`)
+- `vicuna:7b-v1.5-q4_K_S` (tag `7b-v1.5-q4_K_S`, availability `local`)
+- `vicuna:7b-v1.5-q5_0` (tag `7b-v1.5-q5_0`, availability `local`)
+- `vicuna:7b-v1.5-q5_1` (tag `7b-v1.5-q5_1`, availability `local`)
+- `vicuna:7b-v1.5-q5_K_M` (tag `7b-v1.5-q5_K_M`, availability `local`)
+- `vicuna:7b-v1.5-q5_K_S` (tag `7b-v1.5-q5_K_S`, availability `local`)
+- `vicuna:7b-v1.5-q6_K` (tag `7b-v1.5-q6_K`, availability `local`)
+- `vicuna:7b-v1.5-q8_0` (tag `7b-v1.5-q8_0`, availability `local`)
+- `vicuna:latest` (tag `latest`, availability `local`)

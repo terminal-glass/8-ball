@@ -1,0 +1,64 @@
+# samantha-mistral
+
+- **Model ID:** `samantha-mistral-7b`
+- **Family ID:** `samantha-mistral`
+- **Ollama name:** samantha-mistral-7b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** samantha-mistral:7b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/samantha-mistral
+- **Retrieved at:** 2026-08-01T11:58:56Z
+
+## Deployment variants (identity only)
+
+- `samantha-mistral:7b` (tag `7b`, availability `local`)
+- `samantha-mistral:7b-instruct-fp16` (tag `7b-instruct-fp16`, availability `local`)
+- `samantha-mistral:7b-instruct-q2_K` (tag `7b-instruct-q2_K`, availability `local`)
+- `samantha-mistral:7b-instruct-q3_K_L` (tag `7b-instruct-q3_K_L`, availability `local`)
+- `samantha-mistral:7b-instruct-q3_K_M` (tag `7b-instruct-q3_K_M`, availability `local`)
+- `samantha-mistral:7b-instruct-q3_K_S` (tag `7b-instruct-q3_K_S`, availability `local`)
+- `samantha-mistral:7b-instruct-q4_0` (tag `7b-instruct-q4_0`, availability `local`)
+- `samantha-mistral:7b-instruct-q4_1` (tag `7b-instruct-q4_1`, availability `local`)
+- `samantha-mistral:7b-instruct-q4_K_M` (tag `7b-instruct-q4_K_M`, availability `local`)
+- `samantha-mistral:7b-instruct-q4_K_S` (tag `7b-instruct-q4_K_S`, availability `local`)
+- `samantha-mistral:7b-instruct-q5_0` (tag `7b-instruct-q5_0`, availability `local`)
+- `samantha-mistral:7b-instruct-q5_1` (tag `7b-instruct-q5_1`, availability `local`)
+- `samantha-mistral:7b-instruct-q5_K_M` (tag `7b-instruct-q5_K_M`, availability `local`)
+- `samantha-mistral:7b-instruct-q5_K_S` (tag `7b-instruct-q5_K_S`, availability `local`)
+- `samantha-mistral:7b-instruct-q6_K` (tag `7b-instruct-q6_K`, availability `local`)
+- `samantha-mistral:7b-instruct-q8_0` (tag `7b-instruct-q8_0`, availability `local`)
+- `samantha-mistral:7b-text` (tag `7b-text`, availability `local`)
+- `samantha-mistral:7b-text-fp16` (tag `7b-text-fp16`, availability `local`)
+- `samantha-mistral:7b-text-q2_K` (tag `7b-text-q2_K`, availability `local`)
+- `samantha-mistral:7b-text-q3_K_L` (tag `7b-text-q3_K_L`, availability `local`)
+- `samantha-mistral:7b-text-q3_K_M` (tag `7b-text-q3_K_M`, availability `local`)
+- `samantha-mistral:7b-text-q3_K_S` (tag `7b-text-q3_K_S`, availability `local`)
+- `samantha-mistral:7b-text-q4_0` (tag `7b-text-q4_0`, availability `local`)
+- `samantha-mistral:7b-text-q4_1` (tag `7b-text-q4_1`, availability `local`)
+- `samantha-mistral:7b-text-q4_K_M` (tag `7b-text-q4_K_M`, availability `local`)
+- `samantha-mistral:7b-text-q4_K_S` (tag `7b-text-q4_K_S`, availability `local`)
+- `samantha-mistral:7b-text-q5_0` (tag `7b-text-q5_0`, availability `local`)
+- `samantha-mistral:7b-text-q5_1` (tag `7b-text-q5_1`, availability `local`)
+- `samantha-mistral:7b-text-q5_K_M` (tag `7b-text-q5_K_M`, availability `local`)
+- `samantha-mistral:7b-text-q5_K_S` (tag `7b-text-q5_K_S`, availability `local`)
+- `samantha-mistral:7b-text-q6_K` (tag `7b-text-q6_K`, availability `local`)
+- `samantha-mistral:7b-text-q8_0` (tag `7b-text-q8_0`, availability `local`)
+- `samantha-mistral:7b-v1.2-text` (tag `7b-v1.2-text`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-fp16` (tag `7b-v1.2-text-fp16`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q2_K` (tag `7b-v1.2-text-q2_K`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q3_K_L` (tag `7b-v1.2-text-q3_K_L`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q3_K_M` (tag `7b-v1.2-text-q3_K_M`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q3_K_S` (tag `7b-v1.2-text-q3_K_S`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q4_0` (tag `7b-v1.2-text-q4_0`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q4_1` (tag `7b-v1.2-text-q4_1`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q4_K_M` (tag `7b-v1.2-text-q4_K_M`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q4_K_S` (tag `7b-v1.2-text-q4_K_S`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q5_0` (tag `7b-v1.2-text-q5_0`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q5_1` (tag `7b-v1.2-text-q5_1`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q5_K_M` (tag `7b-v1.2-text-q5_K_M`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q5_K_S` (tag `7b-v1.2-text-q5_K_S`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q6_K` (tag `7b-v1.2-text-q6_K`, availability `local`)
+- `samantha-mistral:7b-v1.2-text-q8_0` (tag `7b-v1.2-text-q8_0`, availability `local`)
+- `samantha-mistral:latest` (tag `latest`, availability `local`)

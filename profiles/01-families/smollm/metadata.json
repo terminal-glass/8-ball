@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "family_id": "smollm",
+  "display_name": "smollm",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/smollm",
+  "retrieved_at": "2026-08-01T11:59:03Z",
+  "model_ids": [
+    "smollm-1.7b",
+    "smollm-135m",
+    "smollm-360m"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

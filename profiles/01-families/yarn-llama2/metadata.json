@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "family_id": "yarn-llama2",
+  "display_name": "yarn-llama2",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/yarn-llama2",
+  "retrieved_at": "2026-08-01T12:00:05Z",
+  "model_ids": [
+    "yarn-llama2-13b",
+    "yarn-llama2-7b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

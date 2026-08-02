@@ -1,0 +1,62 @@
+# granite-code
+
+- **Model ID:** `granite-code-20b`
+- **Family ID:** `granite-code`
+- **Ollama name:** granite-code-20b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** granite-code:20b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/granite-code
+- **Retrieved at:** 2026-08-01T11:54:06Z
+
+## Deployment variants (identity only)
+
+- `granite-code:20b` (tag `20b`, availability `local`)
+- `granite-code:20b-base` (tag `20b-base`, availability `local`)
+- `granite-code:20b-base-fp16` (tag `20b-base-fp16`, availability `local`)
+- `granite-code:20b-base-q2_K` (tag `20b-base-q2_K`, availability `local`)
+- `granite-code:20b-base-q3_K_L` (tag `20b-base-q3_K_L`, availability `local`)
+- `granite-code:20b-base-q3_K_M` (tag `20b-base-q3_K_M`, availability `local`)
+- `granite-code:20b-base-q3_K_S` (tag `20b-base-q3_K_S`, availability `local`)
+- `granite-code:20b-base-q4_0` (tag `20b-base-q4_0`, availability `local`)
+- `granite-code:20b-base-q4_1` (tag `20b-base-q4_1`, availability `local`)
+- `granite-code:20b-base-q4_K_M` (tag `20b-base-q4_K_M`, availability `local`)
+- `granite-code:20b-base-q4_K_S` (tag `20b-base-q4_K_S`, availability `local`)
+- `granite-code:20b-base-q5_0` (tag `20b-base-q5_0`, availability `local`)
+- `granite-code:20b-base-q5_1` (tag `20b-base-q5_1`, availability `local`)
+- `granite-code:20b-base-q5_K_M` (tag `20b-base-q5_K_M`, availability `local`)
+- `granite-code:20b-base-q5_K_S` (tag `20b-base-q5_K_S`, availability `local`)
+- `granite-code:20b-base-q6_K` (tag `20b-base-q6_K`, availability `local`)
+- `granite-code:20b-base-q8_0` (tag `20b-base-q8_0`, availability `local`)
+- `granite-code:20b-instruct` (tag `20b-instruct`, availability `local`)
+- `granite-code:20b-instruct-8k-fp16` (tag `20b-instruct-8k-fp16`, availability `local`)
+- `granite-code:20b-instruct-8k-q2_K` (tag `20b-instruct-8k-q2_K`, availability `local`)
+- `granite-code:20b-instruct-8k-q3_K_L` (tag `20b-instruct-8k-q3_K_L`, availability `local`)
+- `granite-code:20b-instruct-8k-q3_K_M` (tag `20b-instruct-8k-q3_K_M`, availability `local`)
+- `granite-code:20b-instruct-8k-q3_K_S` (tag `20b-instruct-8k-q3_K_S`, availability `local`)
+- `granite-code:20b-instruct-8k-q4_0` (tag `20b-instruct-8k-q4_0`, availability `local`)
+- `granite-code:20b-instruct-8k-q4_1` (tag `20b-instruct-8k-q4_1`, availability `local`)
+- `granite-code:20b-instruct-8k-q4_K_M` (tag `20b-instruct-8k-q4_K_M`, availability `local`)
+- `granite-code:20b-instruct-8k-q4_K_S` (tag `20b-instruct-8k-q4_K_S`, availability `local`)
+- `granite-code:20b-instruct-8k-q5_0` (tag `20b-instruct-8k-q5_0`, availability `local`)
+- `granite-code:20b-instruct-8k-q5_1` (tag `20b-instruct-8k-q5_1`, availability `local`)
+- `granite-code:20b-instruct-8k-q5_K_M` (tag `20b-instruct-8k-q5_K_M`, availability `local`)
+- `granite-code:20b-instruct-8k-q5_K_S` (tag `20b-instruct-8k-q5_K_S`, availability `local`)
+- `granite-code:20b-instruct-8k-q6_K` (tag `20b-instruct-8k-q6_K`, availability `local`)
+- `granite-code:20b-instruct-8k-q8_0` (tag `20b-instruct-8k-q8_0`, availability `local`)
+- `granite-code:20b-instruct-q2_K` (tag `20b-instruct-q2_K`, availability `local`)
+- `granite-code:20b-instruct-q3_K_L` (tag `20b-instruct-q3_K_L`, availability `local`)
+- `granite-code:20b-instruct-q3_K_M` (tag `20b-instruct-q3_K_M`, availability `local`)
+- `granite-code:20b-instruct-q3_K_S` (tag `20b-instruct-q3_K_S`, availability `local`)
+- `granite-code:20b-instruct-q4_0` (tag `20b-instruct-q4_0`, availability `local`)
+- `granite-code:20b-instruct-q4_1` (tag `20b-instruct-q4_1`, availability `local`)
+- `granite-code:20b-instruct-q4_K_M` (tag `20b-instruct-q4_K_M`, availability `local`)
+- `granite-code:20b-instruct-q4_K_S` (tag `20b-instruct-q4_K_S`, availability `local`)
+- `granite-code:20b-instruct-q5_0` (tag `20b-instruct-q5_0`, availability `local`)
+- `granite-code:20b-instruct-q5_1` (tag `20b-instruct-q5_1`, availability `local`)
+- `granite-code:20b-instruct-q5_K_M` (tag `20b-instruct-q5_K_M`, availability `local`)
+- `granite-code:20b-instruct-q5_K_S` (tag `20b-instruct-q5_K_S`, availability `local`)
+- `granite-code:20b-instruct-q6_K` (tag `20b-instruct-q6_K`, availability `local`)
+- `granite-code:20b-instruct-q8_0` (tag `20b-instruct-q8_0`, availability `local`)

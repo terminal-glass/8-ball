@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "family_id": "shieldgemma",
+  "display_name": "shieldgemma",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "source_url": "https://ollama.com/library/shieldgemma",
+  "retrieved_at": "2026-08-01T11:58:59Z",
+  "model_ids": [
+    "shieldgemma-27b",
+    "shieldgemma-2b",
+    "shieldgemma-9b"
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}

@@ -1,0 +1,62 @@
+# orca-mini
+
+- **Model ID:** `orca-mini-13b`
+- **Family ID:** `orca-mini`
+- **Ollama name:** orca-mini-13b
+- **Catalog version:** 2026.08.01
+- **Availability:** local
+- **Default tag:** orca-mini:13b
+- **Source status:** live
+- **Installable:** pending C3 qualification gates
+- **Source URL:** https://ollama.com/library/orca-mini
+- **Retrieved at:** 2026-08-01T11:57:43Z
+
+## Deployment variants (identity only)
+
+- `orca-mini:13b` (tag `13b`, availability `local`)
+- `orca-mini:13b-fp16` (tag `13b-fp16`, availability `local`)
+- `orca-mini:13b-q2_K` (tag `13b-q2_K`, availability `local`)
+- `orca-mini:13b-q3_K_L` (tag `13b-q3_K_L`, availability `local`)
+- `orca-mini:13b-q3_K_M` (tag `13b-q3_K_M`, availability `local`)
+- `orca-mini:13b-q3_K_S` (tag `13b-q3_K_S`, availability `local`)
+- `orca-mini:13b-q4_0` (tag `13b-q4_0`, availability `local`)
+- `orca-mini:13b-q4_1` (tag `13b-q4_1`, availability `local`)
+- `orca-mini:13b-q4_K_M` (tag `13b-q4_K_M`, availability `local`)
+- `orca-mini:13b-q4_K_S` (tag `13b-q4_K_S`, availability `local`)
+- `orca-mini:13b-q5_0` (tag `13b-q5_0`, availability `local`)
+- `orca-mini:13b-q5_1` (tag `13b-q5_1`, availability `local`)
+- `orca-mini:13b-q5_K_M` (tag `13b-q5_K_M`, availability `local`)
+- `orca-mini:13b-q5_K_S` (tag `13b-q5_K_S`, availability `local`)
+- `orca-mini:13b-q6_K` (tag `13b-q6_K`, availability `local`)
+- `orca-mini:13b-q8_0` (tag `13b-q8_0`, availability `local`)
+- `orca-mini:13b-v2-fp16` (tag `13b-v2-fp16`, availability `local`)
+- `orca-mini:13b-v2-q2_K` (tag `13b-v2-q2_K`, availability `local`)
+- `orca-mini:13b-v2-q3_K_L` (tag `13b-v2-q3_K_L`, availability `local`)
+- `orca-mini:13b-v2-q3_K_M` (tag `13b-v2-q3_K_M`, availability `local`)
+- `orca-mini:13b-v2-q3_K_S` (tag `13b-v2-q3_K_S`, availability `local`)
+- `orca-mini:13b-v2-q4_0` (tag `13b-v2-q4_0`, availability `local`)
+- `orca-mini:13b-v2-q4_1` (tag `13b-v2-q4_1`, availability `local`)
+- `orca-mini:13b-v2-q4_K_M` (tag `13b-v2-q4_K_M`, availability `local`)
+- `orca-mini:13b-v2-q4_K_S` (tag `13b-v2-q4_K_S`, availability `local`)
+- `orca-mini:13b-v2-q5_0` (tag `13b-v2-q5_0`, availability `local`)
+- `orca-mini:13b-v2-q5_1` (tag `13b-v2-q5_1`, availability `local`)
+- `orca-mini:13b-v2-q5_K_M` (tag `13b-v2-q5_K_M`, availability `local`)
+- `orca-mini:13b-v2-q5_K_S` (tag `13b-v2-q5_K_S`, availability `local`)
+- `orca-mini:13b-v2-q6_K` (tag `13b-v2-q6_K`, availability `local`)
+- `orca-mini:13b-v2-q8_0` (tag `13b-v2-q8_0`, availability `local`)
+- `orca-mini:13b-v3` (tag `13b-v3`, availability `local`)
+- `orca-mini:13b-v3-fp16` (tag `13b-v3-fp16`, availability `local`)
+- `orca-mini:13b-v3-q2_K` (tag `13b-v3-q2_K`, availability `local`)
+- `orca-mini:13b-v3-q3_K_L` (tag `13b-v3-q3_K_L`, availability `local`)
+- `orca-mini:13b-v3-q3_K_M` (tag `13b-v3-q3_K_M`, availability `local`)
+- `orca-mini:13b-v3-q3_K_S` (tag `13b-v3-q3_K_S`, availability `local`)
+- `orca-mini:13b-v3-q4_0` (tag `13b-v3-q4_0`, availability `local`)
+- `orca-mini:13b-v3-q4_1` (tag `13b-v3-q4_1`, availability `local`)
+- `orca-mini:13b-v3-q4_K_M` (tag `13b-v3-q4_K_M`, availability `local`)
+- `orca-mini:13b-v3-q4_K_S` (tag `13b-v3-q4_K_S`, availability `local`)
+- `orca-mini:13b-v3-q5_0` (tag `13b-v3-q5_0`, availability `local`)
+- `orca-mini:13b-v3-q5_1` (tag `13b-v3-q5_1`, availability `local`)
+- `orca-mini:13b-v3-q5_K_M` (tag `13b-v3-q5_K_M`, availability `local`)
+- `orca-mini:13b-v3-q5_K_S` (tag `13b-v3-q5_K_S`, availability `local`)
+- `orca-mini:13b-v3-q6_K` (tag `13b-v3-q6_K`, availability `local`)
+- `orca-mini:13b-v3-q8_0` (tag `13b-v3-q8_0`, availability `local`)

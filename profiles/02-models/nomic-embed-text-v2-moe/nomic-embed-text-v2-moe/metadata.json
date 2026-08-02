@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "model_id": "nomic-embed-text-v2-moe",
+  "family_id": "nomic-embed-text-v2-moe",
+  "display_name": "nomic-embed-text-v2-moe",
+  "ollama_name": "nomic-embed-text-v2-moe",
+  "catalog_version": "2026.08.01",
+  "source_exception": false,
+  "installable": null,
+  "source_status": "live",
+  "availability": "local",
+  "default_tag": "nomic-embed-text-v2-moe:latest",
+  "source_url": "https://ollama.com/library/nomic-embed-text-v2-moe",
+  "retrieved_at": "2026-08-01T11:57:07Z",
+  "deployment_variant_count": 1,
+  "deployment_variants": [
+    {
+      "ollama_identifier": "nomic-embed-text-v2-moe:latest",
+      "tag": "latest",
+      "parameter_count": null,
+      "parameter_unit": null,
+      "quantization": null,
+      "architecture": null,
+      "context_window_tokens": null,
+      "download_size_bytes": 958000000,
+      "download_size_text": "958MB",
+      "availability": "local",
+      "pull_command": "ollama pull nomic-embed-text-v2-moe:latest",
+      "run_command": "ollama run nomic-embed-text-v2-moe:latest",
+      "alias_target": null,
+      "source_url": "https://ollama.com/library/nomic-embed-text-v2-moe/tags",
+      "retrieved_at": "2026-08-01T11:57:08Z"
+    }
+  ],
+  "notes": [],
+  "openwebui_docker_family": null,
+  "openwebui_docker_model": null,
+  "docker_profile_hint": null,
+  "docker_image_channel": null,
+  "docker_compose_profile": null,
+  "records_core_release_key": null
+}
