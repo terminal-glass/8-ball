@@ -102,8 +102,9 @@ def test_reconcile_classifies_legacy_only_models_as_regrouping_not_absence(tmp_p
 
     normalize_ollama_from_manifest(FIXTURE_MANIFEST, family_slugs=["tinyllama"])
     legacy_dir.mkdir(parents=True)
+    legacy_source = Path("data/history/2026.07.16")
     for name in ("families.json", "models.json", "tags.json", "catalog-meta.json"):
-        source = Path("data/normalized") / name
+        source = legacy_source / name
         target = legacy_dir / name
         target.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
 

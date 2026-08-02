@@ -310,14 +310,16 @@ def test_promote_restores_canonical_if_atomic_swap_fails(tmp_path, monkeypatch):
     _write_catalog(candidate, candidate=True)
     _write_catalog(target, candidate=False)
     _allow_tmp_promote_target(monkeypatch)
-    original_rename = Path.rename
+    import shutil
 
-    def fail_stage_rename(path: Path, target_path: Path):
-        if path.name.startswith(".normalized-stage-"):
+    original_move = shutil.move
+
+    def fail_stage_move(src: str, dst: str):
+        if Path(src).name.startswith(".normalized-stage-"):
             raise OSError("simulated swap failure")
-        return original_rename(path, target_path)
+        return original_move(src, dst)
 
-    monkeypatch.setattr(Path, "rename", fail_stage_rename)
+    monkeypatch.setattr("eight_ball.recreate.promote.shutil.move", fail_stage_move)
     with pytest.raises(OSError, match="simulated swap failure"):
         promote_candidate_catalog(
             candidate_dir=candidate,

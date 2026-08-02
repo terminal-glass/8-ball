@@ -409,12 +409,12 @@ def _replace_normalized_catalog(*, staged_dir: Path, target_dir: Path) -> None:
     moved_current = False
     try:
         if target_dir.exists():
-            target_dir.rename(rollback)
+            shutil.move(str(target_dir), str(rollback))
             moved_current = True
-        staged_dir.rename(target_dir)
+        shutil.move(str(staged_dir), str(target_dir))
     except Exception:
         if moved_current and rollback.exists() and not target_dir.exists():
-            rollback.rename(target_dir)
+            shutil.move(str(rollback), str(target_dir))
         raise
     finally:
         if staged_dir.exists():

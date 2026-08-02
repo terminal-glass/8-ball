@@ -1,10 +1,98 @@
 [
   {
+    "id": "alibaba-qwen",
+    "display_name": "Alibaba / Qwen",
+    "aliases": [
+      "qwen",
+      "alibaba"
+    ],
+    "official_url": "https://qwenlm.github.io/"
+  },
+  {
+    "id": "deepseek",
+    "display_name": "DeepSeek",
+    "aliases": [
+      "deepseek ai"
+    ],
+    "official_url": "https://www.deepseek.com/"
+  },
+  {
+    "id": "google",
+    "display_name": "Google",
+    "aliases": [
+      "google deepmind",
+      "gemma"
+    ],
+    "official_url": "https://ai.google/"
+  },
+  {
+    "id": "ibm",
+    "display_name": "IBM",
+    "aliases": [
+      "granite"
+    ],
+    "official_url": "https://www.ibm.com/granite"
+  },
+  {
+    "id": "llava-project",
+    "display_name": "LLaVA",
+    "aliases": [
+      "llava"
+    ],
+    "official_url": "https://llava-vl.github.io/"
+  },
+  {
+    "id": "meta",
+    "display_name": "Meta",
+    "aliases": [
+      "meta ai",
+      "meta-llama"
+    ],
+    "official_url": "https://ai.meta.com/"
+  },
+  {
+    "id": "microsoft",
+    "display_name": "Microsoft",
+    "aliases": [
+      "phi"
+    ],
+    "official_url": "https://www.microsoft.com/"
+  },
+  {
+    "id": "mistral-ai",
+    "display_name": "Mistral AI",
+    "aliases": [
+      "mistral",
+      "mixtral"
+    ],
+    "official_url": "https://mistral.ai/"
+  },
+  {
+    "id": "nomic-ai",
+    "display_name": "Nomic",
+    "aliases": [
+      "nomic ai"
+    ],
+    "official_url": "https://www.nomic.ai/"
+  },
+  {
     "id": "ollama-library",
     "display_name": "Ollama Library",
     "aliases": [
       "ollama"
     ],
     "official_url": "https://ollama.com/library"
+  },
+  {
+    "id": "tinyllama",
+    "display_name": "TinyLlama",
+    "aliases": [],
+    "official_url": "https://github.com/jzhang38/TinyLlama"
+  },
+  {
+    "id": "unknown",
+    "display_name": "Unknown",
+    "aliases": [],
+    "official_url": null
   }
 ]
