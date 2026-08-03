@@ -54,6 +54,10 @@ def deployment_types_config() -> dict[str, Any]:
     return load_yaml(CONFIG_DIR / "deployment_types.yaml")
 
 
+def agents_csv_namespaces_config() -> dict[str, Any]:
+    return load_yaml(CONFIG_DIR / "agents_csv_namespaces.yaml")
+
+
 def deployment_type_ids() -> list[str]:
     rows = deployment_types_config().get("deployment_types", [])
     return [str(row["deployment_type_id"]) for row in rows]
