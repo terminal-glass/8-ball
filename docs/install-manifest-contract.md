@@ -114,12 +114,51 @@ data/generated/pages/models/qwen3/4/info.json
 
 1. Detect hardware (RAM, CPU threads, disk, GPU, VRAM).
 2. Convert hardware facts into deployment type number `3` through `7`.
-3. Resolve requested `model_id` or model alias.
+3. Resolve requested `model_id`, `model_slug`, or `ollama_identifier`.
 4. Read `data/generated/pages/install-manifest.json`.
 5. Select `manifest.models[model_id].deployments[deployment_type_id]`.
-6. If unavailable, fall back to the next smaller or suitable deployment type or tag.
+6. If unavailable or unsuitable (`insufficient_memory`), fall back only through
+   manifest-approved options:
+   - same model, lower deployment type ids down to `3`;
+   - then smaller suitable models at the requested deployment type (same family first).
 7. Pull and run the selected `ollama_identifier`.
-8. Log both selected model and deployment type.
+8. Log model id, deployment type, sizing facts, and any fallback reason.
+
+Reference resolver (used by tests and `eight-ball resolve-manifest`):
+
+- `src/eight_ball/manifest_resolve.py`
+
+### Example: `qwen3-0-6b` deployment type `3`
+
+Model slug `qwen3-0-6b` maps to manifest model id `qwen3-0.6b`:
+
+```text
+manifest.models["qwen3-0.6b"].deployments["3"]
+```
+
+Resolved values:
+
+| Field | Value |
+| --- | --- |
+| `ollama_identifier` | `qwen3:0.6b` |
+| `selected_tag_id` | `qwen3__0.6b` |
+| `assessment` | `full_gpu_fit` |
+| `installed_storage_bytes_estimated` | `564840000` |
+| `min_system_ram_gb_estimated` | `2.56` |
+| `recommended_system_ram_gb_estimated` | `3.07` |
+| `min_vram_gb_estimated` | `0.58` |
+| `recommended_vram_gb_estimated` | `2.56` |
+| `pull_command` | `ollama pull qwen3:0.6b` |
+| `run_command` | `ollama run qwen3:0.6b` |
+
+CLI check:
+
+```bash
+eight-ball resolve-manifest --model qwen3-0-6b --deployment-type 3
+```
+
+`8.2` must log the sizing facts above and must not invent fallback models or tags
+outside the install manifest.
 
 ## Related documentation
 

@@ -16,6 +16,12 @@ from eight_ball.config import load_json, write_json
 from eight_ball.export.installer_datasets import build_p2_indexes, export_p3_catalog
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.generate.pages import validate_generated_pages
+from eight_ball.manifest_resolve import (
+    format_sizing_log_lines,
+    load_install_manifest,
+    resolve_manifest_selection,
+    sizing_log_record,
+)
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
     normalize_ollama_from_manifest,
@@ -27,6 +33,7 @@ from eight_ball.paths import (
     CANDIDATE_NORMALIZED_DIR,
     FIXTURES_DIR,
     GENERATED_DIR,
+    GENERATED_INSTALL_MANIFEST_PATH,
     INDEXES_DIR,
     LEGACY_FAMILIES_DIR,
     NORMALIZED_DIR,
@@ -381,6 +388,39 @@ def cmd_validate_pages(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_resolve_manifest(args: argparse.Namespace) -> int:
+    manifest_path = Path(args.manifest) if args.manifest else GENERATED_INSTALL_MANIFEST_PATH
+    if not manifest_path.is_file():
+        print(f"Install manifest not found: {manifest_path}", file=sys.stderr)
+        return 1
+    try:
+        manifest = load_install_manifest(manifest_path)
+        selection = resolve_manifest_selection(
+            manifest,
+            model_ref=args.model,
+            deployment_type_id=args.deployment_type,
+        )
+    except ValueError as exc:
+        print(f"Manifest resolve failed: {exc}", file=sys.stderr)
+        return 1
+    if selection is None:
+        print(
+            f"No manifest-approved deployment for model={args.model!r} "
+            f"deployment_type={args.deployment_type!r}",
+            file=sys.stderr,
+        )
+        return 1
+
+    if args.json:
+        import json
+
+        print(json.dumps(sizing_log_record(selection), indent=2, ensure_ascii=False))
+    else:
+        for line in format_sizing_log_lines(selection):
+            print(line)
+    return 0
+
+
 def cmd_report(args: argparse.Namespace) -> int:
     normalized_dir, _, _ = _catalog_paths(args)
     report_name = "candidate-catalog-report.md" if args.candidate or args.source == "ollama" else "catalog-report.md"
@@ -671,6 +711,32 @@ def build_parser() -> argparse.ArgumentParser:
     )
     _add_common_args(validate_pages)
     validate_pages.set_defaults(handler=cmd_validate_pages)
+
+    resolve_manifest = subparsers.add_parser(
+        "resolve-manifest",
+        help="Resolve install-manifest model + deployment type selection for 8.2.",
+    )
+    resolve_manifest.add_argument(
+        "--model",
+        required=True,
+        help="Model id, model slug, or ollama identifier (e.g. qwen3-0-6b).",
+    )
+    resolve_manifest.add_argument(
+        "--deployment-type",
+        required=True,
+        help="Deployment type id (3, 4, 5, 6, or 7).",
+    )
+    resolve_manifest.add_argument(
+        "--manifest",
+        default="",
+        help="Path to install-manifest.json (defaults to data/generated/pages/install-manifest.json).",
+    )
+    resolve_manifest.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit machine-readable sizing JSON instead of log lines.",
+    )
+    resolve_manifest.set_defaults(handler=cmd_resolve_manifest)
     return parser
 
 
