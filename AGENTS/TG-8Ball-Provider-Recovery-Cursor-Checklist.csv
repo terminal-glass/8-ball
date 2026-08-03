@@ -1,0 +1,8 @@
+Step,Instruction,Acceptance Test
+1,Import P2 provider datasets from the exact ycgpt-lightsail branch and paths.,Provider count equals 56; Lightsail equals 25; DigitalOcean equals 31.
+2,Preserve source status: provider-published specs are not measured model pass/fail benchmarks.,Schema has source_status/provenance fields and tests reject invented measured labels.
+3,Import P1 NoCloudGPT overhead and CPU/GPU templates.,Usable RAM/disk calculations subtract appliance overhead.
+4,Import P4 workload profiles.,Eight workload profiles appear in generated provider/workload compatibility output.
+5,Treat P5 measured compatibility as not ready unless a separate measured source is recovered.,P5_READY remains false or unknown; no model is marked measured-compatible without evidence.
+6,Regenerate C5 pages and install manifest with provider compatibility fields.,"Manifest entries include provider templates/droplets, source paths, and uncertainty status."
+7,"Only after that, wire 8.2 to the enriched manifest.","8.2 selection uses manifest provider compatibility, not loose folder names or guesses."

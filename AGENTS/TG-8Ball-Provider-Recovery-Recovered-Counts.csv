@@ -1,0 +1,12 @@
+Metric,Value,Source
+Lightsail records,25,P2 validation report
+Lightsail general-purpose records,11,Lightsail provider JSON fetched sample
+DigitalOcean records,31,P2 validation report
+Total provider records,56,P2 provider-summary.json
+DigitalOcean families,5,providers.json/basic/cpu/general/memory/storage
+P4 workload profiles,8,P4 workloads.json and gate report
+NoCloudGPT CPU-only templates,6,P1 NC/cpu-only-templates.json
+NoCloudGPT GPU templates,4,P1 NC/gpu-templates.json
+Old ycgpt-8.sh families,232,ycgpt-8.sh generation report
+Old ycgpt-8.sh variants,7259,ycgpt-8.sh generation report
+Old ycgpt-8.sh local variants,7242,ycgpt-8.sh generation report
