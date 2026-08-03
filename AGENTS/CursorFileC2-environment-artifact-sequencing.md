@@ -220,3 +220,16 @@ Report:
 
 Do not start C3 until C2 is reviewed and approved.
 ```
+
+## C5 page tree (supersedes installer consumption of `02-models`)
+
+C2 `profiles/02-models/` remains a legacy documentation scaffold in this repository.
+The C5 generator produces installer-facing metadata pages under:
+
+```text
+data/generated/pages/models/<model-slug>/<3-7>/
+```
+
+Do not generate `data/generated/pages/02-models/`. Deployment type folders are
+numbered `3` through `7` per `config/deployment_types.yaml`. `8.2` reads
+`data/generated/pages/install-manifest.json` — see `docs/install-manifest-contract.md`.

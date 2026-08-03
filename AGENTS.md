@@ -33,6 +33,7 @@ Keep these directories distinguishable:
 | `data/candidate/` | Candidate normalized catalogs from live collection | Do not commit |
 | `data/normalized/` | Normalized source-derived entities | Commit |
 | `data/generated/` | Reproducible generated recommendations, exports, and indexes | Do not commit |
+| `data/generated/pages/` | C5 generated metadata page tree (families, deployment-types, models) | Do not commit |
 | `reports/` | Human-readable reports; machine summaries are reproducible | Commit markdown optionally; JSON reports are reproducible |
 | `indexes/` | Generated metadata indexes derived from normalized records | Do not commit |
 | `tests/fixtures/` | Offline fixtures for tests | Commit |
@@ -245,3 +246,25 @@ Routine wrappers must not reinstall the package automatically.
 - Capabilities inherit from family badges and refine at model and tag levels from `input_capabilities`.
 - Tag provenance records observed, derived, and unknown confidence for download size, parameters, context, quantization, availability, and capabilities.
 - Coverage and comparison reports include publisher counts, capability coverage, provenance confidence, and deduplicated review items.
+
+### Generated page tree (C5)
+
+The C5 page generator produces metadata-only folders under `data/generated/pages/`:
+
+```text
+data/generated/pages/
+  families/<family-slug>/
+  deployment-types/<3-7>/
+  models/<model-slug>/<3-7>/
+  install-manifest.json
+```
+
+Rules:
+
+- Use `data/generated/pages/models/`, not `02-models` or `2-models`.
+- Deployment type folder names are exactly `3`, `4`, `5`, `6`, `7` (defined in `config/deployment_types.yaml`).
+- Generated pages are metadata only — no model weights, Ollama blobs, binaries, or installer payloads.
+- `8.2` must read `data/generated/pages/install-manifest.json`, not scrape Markdown or guess from folder names.
+- Legacy `profiles/02-models/` is a C2 documentation scaffold only; it is not the C5 installer page tree.
+
+See `docs/install-manifest-contract.md` and `AGENTS/cursorFileC5-profile-folder-structure.md`.

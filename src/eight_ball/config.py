@@ -50,6 +50,15 @@ def deployment_tiers_config() -> dict[str, Any]:
     return load_yaml(CONFIG_DIR / "deployment_tiers.yaml")
 
 
+def deployment_types_config() -> dict[str, Any]:
+    return load_yaml(CONFIG_DIR / "deployment_types.yaml")
+
+
+def deployment_type_ids() -> list[str]:
+    rows = deployment_types_config().get("deployment_types", [])
+    return [str(row["deployment_type_id"]) for row in rows]
+
+
 def repo_relative(path: Path) -> str:
     try:
         return str(path.relative_to(REPO_ROOT))

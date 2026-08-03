@@ -1,0 +1,126 @@
+# Canonical numeric deployment type contract for C5 generated pages and 8.2 manifest lookup.
+# IDs "3" through "7" are stable installer-facing identifiers. They align with the
+# environment-artifact decision chain (C2 step 3, C3 gates 4–7).
+deployment_types:
+  - deployment_type_id: "3"
+    slug: "3"
+    display_name: Deployment Lane
+    description: >
+      Deployment lane selection gate. Maps detected provider or platform facts to a
+      deployment lane before sizing gates run.
+    hardware_profile_ids:
+      - cpu-small
+      - desktop-standard
+      - server-high-mem
+      - gpu-entry
+      - gpu-midrange
+      - gpu-high-mem
+      - multi-gpu
+      - cloud-only
+    runtime_policy_ids:
+      - interactive
+      - long_context
+      - batch
+    minimum_ram_gb: null
+    recommended_ram_gb: null
+    minimum_vram_gb: null
+    recommended_vram_gb: null
+    disk_estimate_gb: null
+    cpu_suitability: not_applicable
+    gpu_suitability: not_applicable
+
+  - deployment_type_id: "4"
+    slug: "4"
+    display_name: Hard Disk Gate
+    description: >
+      Hard-disk qualification gate. Filters variants when free disk space is below
+      the installed storage estimate plus safety margin.
+    hardware_profile_ids:
+      - cpu-small
+      - desktop-standard
+      - server-high-mem
+      - gpu-entry
+      - gpu-midrange
+      - gpu-high-mem
+      - multi-gpu
+    runtime_policy_ids:
+      - interactive
+      - batch
+    minimum_ram_gb: null
+    recommended_ram_gb: null
+    minimum_vram_gb: null
+    recommended_vram_gb: null
+    disk_estimate_gb: 8
+    cpu_suitability: not_applicable
+    gpu_suitability: not_applicable
+
+  - deployment_type_id: "5"
+    slug: "5"
+    display_name: RAM Gate
+    description: >
+      RAM qualification gate. Filters variants based on estimated system RAM
+      requirements versus measured available RAM.
+    hardware_profile_ids:
+      - cpu-small
+      - desktop-standard
+      - server-high-mem
+      - gpu-entry
+      - gpu-midrange
+      - gpu-high-mem
+      - multi-gpu
+    runtime_policy_ids:
+      - interactive
+      - long_context
+      - batch
+    minimum_ram_gb: 8
+    recommended_ram_gb: 16
+    minimum_vram_gb: null
+    recommended_vram_gb: null
+    disk_estimate_gb: null
+    cpu_suitability: not_applicable
+    gpu_suitability: not_applicable
+
+  - deployment_type_id: "6"
+    slug: "6"
+    display_name: CPU Gate
+    description: >
+      CPU qualification gate. Filters variants based on CPU thread count and
+      CPU-only practical assessment.
+    hardware_profile_ids:
+      - cpu-small
+      - desktop-standard
+      - server-high-mem
+    runtime_policy_ids:
+      - interactive
+      - long_context
+      - batch
+    minimum_ram_gb: null
+    recommended_ram_gb: null
+    minimum_vram_gb: null
+    recommended_vram_gb: null
+    disk_estimate_gb: null
+    cpu_suitability: practical_for_cpu_inference
+    gpu_suitability: not_applicable
+
+  - deployment_type_id: "7"
+    slug: "7"
+    display_name: GPU Gate
+    description: >
+      GPU/VRAM qualification gate. Filters variants based on discrete GPU
+      availability and estimated VRAM requirements.
+    hardware_profile_ids:
+      - gpu-entry
+      - gpu-midrange
+      - gpu-high-mem
+      - multi-gpu
+    runtime_policy_ids:
+      - interactive
+      - long_context
+      - batch
+    minimum_ram_gb: null
+    recommended_ram_gb: null
+    minimum_vram_gb: 8
+    recommended_vram_gb: 16
+    disk_estimate_gb: null
+    cpu_suitability: not_applicable
+    gpu_suitability: preferred_or_required

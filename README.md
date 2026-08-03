@@ -38,6 +38,7 @@ data/families/          Legacy per-family source observations (preserved)
 data/overrides/         Reviewed manual metadata overrides
 data/normalized/        Normalized source-derived entities (committed)
 data/generated/         Reproducible generated output (not committed)
+data/generated/pages/   C5 metadata page tree (families/, deployment-types/, models/)
 data/snapshots/         Cached sanitized snapshots (not committed)
 reports/                Human-readable reports and reproducible JSON summaries
 indexes/                Generated metadata indexes (not committed)
@@ -185,6 +186,9 @@ Observed values come directly from cited public sources. Derived values are calc
 ## Agent guidance
 
 See `AGENTS.md` and `AGENTS/cursorFileA0.md` for repository boundaries and prohibited actions.
+
+For C5 generated pages and the `8.2` install manifest contract, see
+`docs/install-manifest-contract.md` and `config/deployment_types.yaml`.
 
 ## Validation
 
