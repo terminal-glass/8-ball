@@ -15,6 +15,7 @@ from eight_ball.collect.ollama import collect_families, collect_ollama_library
 from eight_ball.config import load_json, write_json
 from eight_ball.export.installer_datasets import build_p2_indexes, export_p3_catalog
 from eight_ball.generate.outputs import generate_outputs
+from eight_ball.generate.pages import validate_generated_pages
 from eight_ball.generate.profiles import generate_profile_artifacts
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
@@ -337,7 +338,47 @@ def cmd_generate(args: argparse.Namespace) -> int:
         generated_dir=generated_dir,
         indexes_dir=indexes_dir,
     )
+    pages = summary.get("pages", {})
     print(f"Generated {summary['deployment_combinations']} deployment combinations for {summary['tags']} tags.")
+    if pages:
+        print(
+            "Generated pages: "
+            f"{pages.get('family_pages', 0)} families, "
+            f"{pages.get('deployment_type_pages', 0)} deployment types, "
+            f"{pages.get('model_pages', 0)} models, "
+            f"{pages.get('model_deployment_pages', 0)} model deployments."
+        )
+        print(
+            "Install manifest: "
+            f"{pages.get('install_manifest_models', 0)} models, "
+            f"{pages.get('install_manifest_deployments', 0)} deployments."
+        )
+    return 0
+
+
+def cmd_validate_pages(args: argparse.Namespace) -> int:
+    _, generated_dir, _ = _catalog_paths(args)
+    pages_root = generated_dir / "pages"
+    report = validate_generated_pages(pages_root)
+    print(
+        "Page validation: "
+        f"{report['family_pages']} family folders, "
+        f"{report['deployment_type_pages']} deployment type folders, "
+        f"{report['model_pages']} model folders, "
+        f"{report['model_deployment_pages']} numbered model deployment folders."
+    )
+    print(
+        "Install manifest: "
+        f"{report['install_manifest_models']} models, "
+        f"{report['install_manifest_deployments']} deployments."
+    )
+    print(f"02-models under generated pages exists: {report['forbidden_02_models_exists']}")
+    if not report["valid"]:
+        print("Page validation failed:", file=sys.stderr)
+        for error in report["errors"]:
+            print(f"  - {error}", file=sys.stderr)
+        return 1
+    print("Page validation passed.")
     return 0
 
 
@@ -648,6 +689,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Generate C2 profile artifacts (families, models, deployment types) from P4 projection.",
     )
     generate_profiles.set_defaults(handler=cmd_generate_profiles)
+
+    validate_pages = subparsers.add_parser(
+        "validate-pages",
+        help="Validate the generated metadata page tree under data/generated/pages/.",
+    )
+    _add_common_args(validate_pages)
+    validate_pages.set_defaults(handler=cmd_validate_pages)
     return parser
 
 
