@@ -1,0 +1,22 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "everythinglm",
+  "family_slug": "everythinglm",
+  "publisher_id": "unknown",
+  "name": "everythinglm",
+  "description": "everythinglm 552.9K Downloads Updated 2 years ago Uncensored Llama2 based model with support for a 16K context window. Uncensored Llama2 based model with support for a 16K context window. Cancel 13b CLI cURL Python JavaScript Documentation Documentation ollama run everythinglm curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"everythinglm\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'everythinglm' ,\n    messages=[{",
+  "source_url": "https://ollama.com/library/everythinglm",
+  "retrieved_at": "2026-08-01T11:53:16Z",
+  "model_count": 1,
+  "tag_count": 18,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 19
+  }
+}

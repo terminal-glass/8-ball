@@ -1,0 +1,38 @@
+{
+  "schema_version": "c5.deployment-type-page.v1",
+  "deployment_type_id": "5",
+  "display_name": "RAM Gate",
+  "description": "RAM qualification gate. Filters variants based on estimated system RAM requirements versus measured available RAM.\n",
+  "hardware_profile_ids": [
+    "cpu-small",
+    "desktop-standard",
+    "server-high-mem",
+    "gpu-entry",
+    "gpu-midrange",
+    "gpu-high-mem",
+    "multi-gpu"
+  ],
+  "runtime_policy_ids": [
+    "interactive",
+    "long_context",
+    "batch"
+  ],
+  "minimum_ram_gb": 8,
+  "recommended_ram_gb": 16,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "disk_estimate_gb": null,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "compatible_model_count": 370,
+  "constrained_model_count": 51,
+  "unsuitable_model_count": 16,
+  "assessment_breakdown": {
+    "cloud_only": 14,
+    "cpu_only_practical": 13,
+    "full_gpu_fit": 357,
+    "insufficient_memory": 16,
+    "partial_gpu_offload": 27,
+    "runs_with_constraints": 10
+  }
+}

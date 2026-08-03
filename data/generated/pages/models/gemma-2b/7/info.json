@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gemma-2b",
+  "model_slug": "gemma-2b",
+  "model_display_name": "Reference",
+  "family_id": "gemma",
+  "family_slug": "gemma",
+  "tag_id": "gemma__2b",
+  "ollama_identifier": "gemma:2b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 1700000000,
+  "installed_storage_bytes_estimated": 1836000000,
+  "min_system_ram_gb_estimated": 4.62,
+  "recommended_system_ram_gb_estimated": 5.54,
+  "min_vram_gb_estimated": 1.87,
+  "recommended_vram_gb_estimated": 4.62,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gemma:2b",
+  "run_command": "ollama run gemma:2b",
+  "source_url": "https://ollama.com/library/gemma/tags",
+  "retrieved_at": "2026-08-01T11:53:38Z"
+}

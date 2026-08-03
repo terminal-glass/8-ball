@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "falcon3-7b",
+  "model_slug": "falcon3-7b",
+  "model_display_name": "Key Features",
+  "family_id": "falcon3",
+  "family_slug": "falcon3",
+  "tag_id": "falcon3__7b",
+  "ollama_identifier": "falcon3:7b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 4600000000,
+  "installed_storage_bytes_estimated": 4968000000,
+  "min_system_ram_gb_estimated": 10.56,
+  "recommended_system_ram_gb_estimated": 12.67,
+  "min_vram_gb_estimated": 5.06,
+  "recommended_vram_gb_estimated": 10.56,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull falcon3:7b",
+  "run_command": "ollama run falcon3:7b",
+  "source_url": "https://ollama.com/library/falcon3/tags",
+  "retrieved_at": "2026-08-01T11:53:29Z"
+}

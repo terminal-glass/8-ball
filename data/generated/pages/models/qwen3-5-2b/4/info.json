@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen3.5-2b",
+  "model_slug": "qwen3-5-2b",
+  "model_display_name": "qwen3.5",
+  "family_id": "qwen3.5",
+  "family_slug": "qwen3-5",
+  "tag_id": "qwen3.5__2b",
+  "ollama_identifier": "qwen3.5:2b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "both",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 2700000000,
+  "installed_storage_bytes_estimated": 2916000000,
+  "min_system_ram_gb_estimated": 5.72,
+  "recommended_system_ram_gb_estimated": 6.86,
+  "min_vram_gb_estimated": 2.97,
+  "recommended_vram_gb_estimated": 5.72,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull qwen3.5:2b",
+  "run_command": "ollama run qwen3.5:2b",
+  "source_url": "https://ollama.com/library/qwen3.5/tags",
+  "retrieved_at": "2026-08-01T11:58:39Z"
+}

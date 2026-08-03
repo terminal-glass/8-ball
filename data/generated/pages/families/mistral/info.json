@@ -1,0 +1,23 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "mistral",
+  "family_slug": "mistral",
+  "publisher_id": "mistral-ai",
+  "name": "mistral",
+  "description": "mistral 31.5M Downloads Updated 1 year ago The 7B model released by Mistral AI, updated to version 0.3. The 7B model released by Mistral AI, updated to version 0.3. Cancel tools 7b CLI cURL Python JavaScript Documentation Documentation ollama run mistral curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"mistral\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'mistral' ,\n    messages=[{ 'role' : 'user' , 'content' : 'H",
+  "source_url": "https://ollama.com/library/mistral",
+  "retrieved_at": "2026-08-01T11:56:14Z",
+  "model_count": 1,
+  "tag_count": 84,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 85,
+    "tool_use": 85
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "aya",
+  "family_slug": "aya",
+  "publisher_id": "unknown",
+  "name": "References",
+  "description": "Aya 23, released by Cohere, is a new family of state-of-the-art, multilingual models that support 23 languages. Aya 23, released by Cohere, is a new family of state-of-the-art, multilingual models that support 23 languages. Cancel",
+  "source_url": "https://ollama.com/library/aya",
+  "retrieved_at": "2026-08-01T11:51:34Z",
+  "model_count": 2,
+  "tag_count": 33,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 35
+  }
+}

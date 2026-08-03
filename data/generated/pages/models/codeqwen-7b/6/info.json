@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "codeqwen-7b",
+  "model_slug": "codeqwen-7b",
+  "model_display_name": "codeqwen",
+  "family_id": "codeqwen",
+  "family_slug": "codeqwen",
+  "tag_id": "codeqwen__7b",
+  "ollama_identifier": "codeqwen:7b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "desktop-standard",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 4200000000,
+  "installed_storage_bytes_estimated": 4536000000,
+  "min_system_ram_gb_estimated": 10.12,
+  "recommended_system_ram_gb_estimated": 12.14,
+  "min_vram_gb_estimated": 4.62,
+  "recommended_vram_gb_estimated": 10.12,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull codeqwen:7b",
+  "run_command": "ollama run codeqwen:7b",
+  "source_url": "https://ollama.com/library/codeqwen/tags",
+  "retrieved_at": "2026-08-01T11:51:58Z"
+}

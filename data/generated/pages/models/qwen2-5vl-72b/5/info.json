@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen2.5vl-72b",
+  "model_slug": "qwen2-5vl-72b",
+  "model_display_name": "qwen2.5vl",
+  "family_id": "qwen2.5vl",
+  "family_slug": "qwen2-5vl",
+  "tag_id": "qwen2.5vl__72b",
+  "ollama_identifier": "qwen2.5vl:72b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 49000000000,
+  "installed_storage_bytes_estimated": 52920000000,
+  "min_system_ram_gb_estimated": 78.77,
+  "recommended_system_ram_gb_estimated": 94.53,
+  "min_vram_gb_estimated": 56.35,
+  "recommended_vram_gb_estimated": 78.77,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull qwen2.5vl:72b",
+  "run_command": "ollama run qwen2.5vl:72b",
+  "source_url": "https://ollama.com/library/qwen2.5vl/tags",
+  "retrieved_at": "2026-08-01T11:58:23Z"
+}

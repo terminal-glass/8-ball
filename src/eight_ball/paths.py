@@ -27,12 +27,6 @@ INDEXES_DIR = REPO_ROOT / "indexes"
 DATA_SCIENCE_DIR = REPO_ROOT / "AGENTS" / "data-science"
 P4_PUBLIC_CATALOG_DIR = DATA_SCIENCE_DIR / "P4-Public-Catalog"
 PROFILES_DIR = REPO_ROOT / "profiles"
-# Legacy C2 profile scaffold (documentation/templates). C5 installer pages use
-# GENERATED_PAGES_* under data/generated/pages/ — never profiles/02-models.
-PROFILES_FAMILIES_DIR = PROFILES_DIR / "01-families"
-PROFILES_MODELS_DIR = PROFILES_DIR / "02-models"
-PROFILES_DEPLOYMENT_TYPES_DIR = PROFILES_DIR / "03-deployment-types"
-PROFILES_GENERATED_DIR = PROFILES_DIR / "generated"
 FIXTURES_DIR = REPO_ROOT / "tests" / "fixtures"
 
 SAMPLE_FAMILIES = (

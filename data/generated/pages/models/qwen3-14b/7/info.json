@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen3-14b",
+  "model_slug": "qwen3-14b",
+  "model_display_name": "qwen3",
+  "family_id": "qwen3",
+  "family_slug": "qwen3",
+  "tag_id": "qwen3__14b",
+  "ollama_identifier": "qwen3:14b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 9300000000,
+  "installed_storage_bytes_estimated": 10044000000,
+  "min_system_ram_gb_estimated": 19.58,
+  "recommended_system_ram_gb_estimated": 23.5,
+  "min_vram_gb_estimated": 10.23,
+  "recommended_vram_gb_estimated": 19.58,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull qwen3:14b",
+  "run_command": "ollama run qwen3:14b",
+  "source_url": "https://ollama.com/library/qwen3/tags",
+  "retrieved_at": "2026-08-01T11:58:25Z"
+}

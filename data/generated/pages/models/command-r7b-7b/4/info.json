@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "command-r7b-7b",
+  "model_slug": "command-r7b-7b",
+  "model_display_name": "command-r7b",
+  "family_id": "command-r7b",
+  "family_slug": "command-r7b",
+  "tag_id": "command-r7b__7b",
+  "ollama_identifier": "command-r7b:7b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 5100000000,
+  "installed_storage_bytes_estimated": 5508000000,
+  "min_system_ram_gb_estimated": 11.11,
+  "recommended_system_ram_gb_estimated": 13.33,
+  "min_vram_gb_estimated": 5.61,
+  "recommended_vram_gb_estimated": 11.11,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull command-r7b:7b",
+  "run_command": "ollama run command-r7b:7b",
+  "source_url": "https://ollama.com/library/command-r7b/tags",
+  "retrieved_at": "2026-08-01T11:52:16Z"
+}

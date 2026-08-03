@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gpt-oss-120b",
+  "model_slug": "gpt-oss-120b",
+  "model_display_name": "gpt-oss",
+  "family_id": "gpt-oss",
+  "family_slug": "gpt-oss",
+  "tag_id": "gpt-oss__20b-cloud",
+  "ollama_identifier": "gpt-oss:20b-cloud",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "both",
+  "assessment": "runs_with_constraints",
+  "reason_codes": [
+    "fits_system_ram",
+    "limited_vram"
+  ],
+  "explanation": "May run with constraints using CPU RAM and limited VRAM.",
+  "download_size_bytes": 65000000000,
+  "installed_storage_bytes_estimated": 70200000000,
+  "min_system_ram_gb_estimated": 84.15,
+  "recommended_system_ram_gb_estimated": 100.98,
+  "min_vram_gb_estimated": 71.5,
+  "recommended_vram_gb_estimated": 84.15,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gpt-oss:20b-cloud",
+  "run_command": "ollama run gpt-oss:20b-cloud",
+  "source_url": "https://ollama.com/library/gpt-oss/tags",
+  "retrieved_at": "2026-08-01T11:54:03Z"
+}

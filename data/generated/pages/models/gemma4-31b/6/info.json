@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gemma4-31b",
+  "model_slug": "gemma4-31b",
+  "model_display_name": "gemma4",
+  "family_id": "gemma4",
+  "family_slug": "gemma4",
+  "tag_id": "gemma4__31b-cloud",
+  "ollama_identifier": "gemma4:31b-cloud",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "both",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 19000000000,
+  "installed_storage_bytes_estimated": 20520000000,
+  "min_system_ram_gb_estimated": 39.6,
+  "recommended_system_ram_gb_estimated": 47.52,
+  "min_vram_gb_estimated": 20.9,
+  "recommended_vram_gb_estimated": 39.6,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gemma4:31b-cloud",
+  "run_command": "ollama run gemma4:31b-cloud",
+  "source_url": "https://ollama.com/library/gemma4/tags",
+  "retrieved_at": "2026-08-01T11:53:47Z"
+}

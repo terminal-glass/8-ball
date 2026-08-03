@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "smollm2-360m",
+  "model_slug": "smollm2-360m",
+  "model_display_name": "smollm2",
+  "family_id": "smollm2",
+  "family_slug": "smollm2",
+  "tag_id": "smollm2__360m",
+  "ollama_identifier": "smollm2:360m",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 726000000,
+  "installed_storage_bytes_estimated": 784080000,
+  "min_system_ram_gb_estimated": 2.65,
+  "recommended_system_ram_gb_estimated": 3.18,
+  "min_vram_gb_estimated": 0.8,
+  "recommended_vram_gb_estimated": 2.65,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull smollm2:360m",
+  "run_command": "ollama run smollm2:360m",
+  "source_url": "https://ollama.com/library/smollm2/tags",
+  "retrieved_at": "2026-08-01T11:59:07Z"
+}

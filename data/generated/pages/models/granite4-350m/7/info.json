@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "granite4-350m",
+  "model_slug": "granite4-350m",
+  "model_display_name": "granite4",
+  "family_id": "granite4",
+  "family_slug": "granite4",
+  "tag_id": "granite4__350m",
+  "ollama_identifier": "granite4:350m",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 708000000,
+  "installed_storage_bytes_estimated": 764640000,
+  "min_system_ram_gb_estimated": 2.62,
+  "recommended_system_ram_gb_estimated": 3.15,
+  "min_vram_gb_estimated": 0.78,
+  "recommended_vram_gb_estimated": 2.62,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull granite4:350m",
+  "run_command": "ollama run granite4:350m",
+  "source_url": "https://ollama.com/library/granite4/tags",
+  "retrieved_at": "2026-08-01T11:54:30Z"
+}

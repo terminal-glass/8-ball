@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "llama4-17b",
+  "model_slug": "llama4-17b",
+  "model_display_name": "llama4",
+  "family_id": "llama4",
+  "family_slug": "llama4",
+  "tag_id": "llama4__16x17b",
+  "ollama_identifier": "llama4:16x17b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 67000000000,
+  "installed_storage_bytes_estimated": 72360000000,
+  "min_system_ram_gb_estimated": 75.35,
+  "recommended_system_ram_gb_estimated": 90.42,
+  "min_vram_gb_estimated": 73.7,
+  "recommended_vram_gb_estimated": 75.35,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull llama4:16x17b",
+  "run_command": "ollama run llama4:16x17b",
+  "source_url": "https://ollama.com/library/llama4/tags",
+  "retrieved_at": "2026-08-01T11:55:32Z"
+}

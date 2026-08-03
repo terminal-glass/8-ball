@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gemma3-270m",
+  "model_slug": "gemma3-270m",
+  "model_display_name": "gemma3",
+  "family_id": "gemma3",
+  "family_slug": "gemma3",
+  "tag_id": "gemma3__270m",
+  "ollama_identifier": "gemma3:270m",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 292000000,
+  "installed_storage_bytes_estimated": 315360000,
+  "min_system_ram_gb_estimated": 2.12,
+  "recommended_system_ram_gb_estimated": 2.54,
+  "min_vram_gb_estimated": 0.32,
+  "recommended_vram_gb_estimated": 2.12,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gemma3:270m",
+  "run_command": "ollama run gemma3:270m",
+  "source_url": "https://ollama.com/library/gemma3/tags",
+  "retrieved_at": "2026-08-01T11:53:43Z"
+}

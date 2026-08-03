@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen3-coder-next",
+  "model_slug": "qwen3-coder-next",
+  "model_display_name": "qwen3-coder-next",
+  "family_id": "qwen3-coder-next",
+  "family_slug": "qwen3-coder-next",
+  "tag_id": "qwen3-coder-next__latest",
+  "ollama_identifier": "qwen3-coder-next:latest",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 52000000000,
+  "installed_storage_bytes_estimated": 56160000000,
+  "min_system_ram_gb_estimated": 58.85,
+  "recommended_system_ram_gb_estimated": 70.62,
+  "min_vram_gb_estimated": 57.2,
+  "recommended_vram_gb_estimated": 58.85,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull qwen3-coder-next:latest",
+  "run_command": "ollama run qwen3-coder-next:latest",
+  "source_url": "https://ollama.com/library/qwen3-coder-next/tags",
+  "retrieved_at": "2026-08-01T11:58:30Z"
+}

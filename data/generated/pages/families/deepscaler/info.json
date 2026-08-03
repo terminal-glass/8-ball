@@ -1,0 +1,22 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "deepscaler",
+  "family_slug": "deepscaler",
+  "publisher_id": "unknown",
+  "name": "DeepScaleR",
+  "description": "deepscaler 1.3M Downloads Updated 1 year ago A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses the performance of OpenAI’s o1-preview with just 1.5B parameters on popular math evaluations. A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses the performance of OpenAI’s o1-preview with just 1.5B parameters on popular math evaluations. Cancel 1.5b CLI cURL Python JavaScript Documentation Documentation ollama run deepscaler curl http://localhost:11434/api/chat",
+  "source_url": "https://ollama.com/library/deepscaler",
+  "retrieved_at": "2026-08-01T11:52:24Z",
+  "model_count": 1,
+  "tag_count": 5,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 6
+  }
+}

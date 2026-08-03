@@ -1,0 +1,25 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "nemotron3",
+  "family_slug": "nemotron3",
+  "publisher_id": "unknown",
+  "name": "nemotron3",
+  "description": "nemotron3 626.6K Downloads Updated 3 months ago NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that unifies video, audio, image, and text understanding to support enterprise-grade Q&A, summarization, transcription, and document intelligence workflows. NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that unifies video, audio, image, and text understanding to support enterprise-grade Q&A, summarization, transcription, and document intelligence workflows. Cancel v",
+  "source_url": "https://ollama.com/library/nemotron3",
+  "retrieved_at": "2026-08-01T11:56:57Z",
+  "model_count": 1,
+  "tag_count": 4,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "reasoning": 5,
+    "text_generation": 5,
+    "tool_use": 5,
+    "vision": 5
+  }
+}

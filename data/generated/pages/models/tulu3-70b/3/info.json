@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "tulu3-70b",
+  "model_slug": "tulu3-70b",
+  "model_display_name": "tulu3",
+  "family_id": "tulu3",
+  "family_slug": "tulu3",
+  "tag_id": "tulu3__70b",
+  "ollama_identifier": "tulu3:70b",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 43000000000,
+  "installed_storage_bytes_estimated": 46440000000,
+  "min_system_ram_gb_estimated": 71.3,
+  "recommended_system_ram_gb_estimated": 85.56,
+  "min_vram_gb_estimated": 49.45,
+  "recommended_vram_gb_estimated": 71.3,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull tulu3:70b",
+  "run_command": "ollama run tulu3:70b",
+  "source_url": "https://ollama.com/library/tulu3/tags",
+  "retrieved_at": "2026-08-01T11:59:43Z"
+}

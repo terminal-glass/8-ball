@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "deepseek-coder-1.3b",
+  "model_slug": "deepseek-coder-1-3b",
+  "model_display_name": "deepseek-coder",
+  "family_id": "deepseek-coder",
+  "family_slug": "deepseek-coder",
+  "tag_id": "deepseek-coder__1.3b",
+  "ollama_identifier": "deepseek-coder:1.3b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 776000000,
+  "installed_storage_bytes_estimated": 838080000,
+  "min_system_ram_gb_estimated": 3.22,
+  "recommended_system_ram_gb_estimated": 3.86,
+  "min_vram_gb_estimated": 0.85,
+  "recommended_vram_gb_estimated": 3.22,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull deepseek-coder:1.3b",
+  "run_command": "ollama run deepseek-coder:1.3b",
+  "source_url": "https://ollama.com/library/deepseek-coder/tags",
+  "retrieved_at": "2026-08-01T11:52:28Z"
+}

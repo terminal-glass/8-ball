@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "all-minilm-33m",
+  "model_slug": "all-minilm-33m",
+  "model_display_name": "all-minilm",
+  "family_id": "all-minilm",
+  "family_slug": "all-minilm",
+  "tag_id": "all-minilm__33m",
+  "ollama_identifier": "all-minilm:33m",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 67000000,
+  "installed_storage_bytes_estimated": 72360000,
+  "min_system_ram_gb_estimated": 1.74,
+  "recommended_system_ram_gb_estimated": 2.09,
+  "min_vram_gb_estimated": 0.07,
+  "recommended_vram_gb_estimated": 1.74,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull all-minilm:33m",
+  "run_command": "ollama run all-minilm:33m",
+  "source_url": "https://ollama.com/library/all-minilm/tags",
+  "retrieved_at": "2026-08-01T11:51:30Z"
+}

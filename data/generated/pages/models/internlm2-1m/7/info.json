@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "internlm2-1m",
+  "model_slug": "internlm2-1m",
+  "model_display_name": "internlm2",
+  "family_id": "internlm2",
+  "family_slug": "internlm2",
+  "tag_id": "internlm2__1m",
+  "ollama_identifier": "internlm2:1m",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 4500000000,
+  "installed_storage_bytes_estimated": 4860000000,
+  "min_system_ram_gb_estimated": 6.6,
+  "recommended_system_ram_gb_estimated": 7.92,
+  "min_vram_gb_estimated": 4.95,
+  "recommended_vram_gb_estimated": 6.6,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull internlm2:1m",
+  "run_command": "ollama run internlm2:1m",
+  "source_url": "https://ollama.com/library/internlm2/tags",
+  "retrieved_at": "2026-08-01T11:54:40Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "sailor2-20b",
+  "model_slug": "sailor2-20b",
+  "model_display_name": "sailor2",
+  "family_id": "sailor2",
+  "family_slug": "sailor2",
+  "tag_id": "sailor2__20b",
+  "ollama_identifier": "sailor2:20b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 12000000000,
+  "installed_storage_bytes_estimated": 12960000000,
+  "min_system_ram_gb_estimated": 25.85,
+  "recommended_system_ram_gb_estimated": 31.02,
+  "min_vram_gb_estimated": 13.2,
+  "recommended_vram_gb_estimated": 25.85,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull sailor2:20b",
+  "run_command": "ollama run sailor2:20b",
+  "source_url": "https://ollama.com/library/sailor2/tags",
+  "retrieved_at": "2026-08-01T11:58:55Z"
+}

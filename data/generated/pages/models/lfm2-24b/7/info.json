@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "lfm2-24b",
+  "model_slug": "lfm2-24b",
+  "model_display_name": "lfm2",
+  "family_id": "lfm2",
+  "family_slug": "lfm2",
+  "tag_id": "lfm2__24b",
+  "ollama_identifier": "lfm2:24b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 14000000000,
+  "installed_storage_bytes_estimated": 15120000000,
+  "min_system_ram_gb_estimated": 30.25,
+  "recommended_system_ram_gb_estimated": 36.3,
+  "min_vram_gb_estimated": 15.4,
+  "recommended_vram_gb_estimated": 30.25,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull lfm2:24b",
+  "run_command": "ollama run lfm2:24b",
+  "source_url": "https://ollama.com/library/lfm2/tags",
+  "retrieved_at": "2026-08-01T11:54:55Z"
+}

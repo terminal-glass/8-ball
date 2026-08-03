@@ -221,10 +221,10 @@ Report:
 Do not start C3 until C2 is reviewed and approved.
 ```
 
-## C5 page tree (supersedes installer consumption of `02-models`)
+## C5 page tree (canonical generated output)
 
-C2 `profiles/02-models/` remains a legacy documentation scaffold in this repository.
-The C5 generator produces installer-facing metadata pages under:
+C2 `profiles/01-families/`, `profiles/02-models/`, and `profiles/03-deployment-types/`
+were removed after C5. Installer-facing metadata pages are committed under:
 
 ```text
 data/generated/pages/models/<model-slug>/<3-7>/

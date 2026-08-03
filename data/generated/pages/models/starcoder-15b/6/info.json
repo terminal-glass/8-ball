@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "starcoder-15b",
+  "model_slug": "starcoder-15b",
+  "model_display_name": "starcoder",
+  "family_id": "starcoder",
+  "family_slug": "starcoder",
+  "tag_id": "starcoder__15b",
+  "ollama_identifier": "starcoder:15b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 9000000000,
+  "installed_storage_bytes_estimated": 9720000000,
+  "min_system_ram_gb_estimated": 19.8,
+  "recommended_system_ram_gb_estimated": 23.76,
+  "min_vram_gb_estimated": 9.9,
+  "recommended_vram_gb_estimated": 19.8,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull starcoder:15b",
+  "run_command": "ollama run starcoder:15b",
+  "source_url": "https://ollama.com/library/starcoder/tags",
+  "retrieved_at": "2026-08-01T11:59:30Z"
+}

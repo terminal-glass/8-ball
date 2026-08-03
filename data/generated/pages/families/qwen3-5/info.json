@@ -1,0 +1,26 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "qwen3.5",
+  "family_slug": "qwen3-5",
+  "publisher_id": "alibaba-qwen",
+  "name": "qwen3.5",
+  "description": "qwen3.5 16.7M Downloads Updated 2 months ago Qwen 3.5 is a family of open-source multimodal models that delivers exceptional utility and performance. Qwen 3.5 is a family of open-source multimodal models that delivers exceptional utility and performance. Cancel vision tools thinking cloud 0.8b 2b 4b 9b 27b 35b 122b CLI cURL Python JavaScript Documentation Documentation ollama run qwen3.5 curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"qwen3.5\",\n    \"messages\": [{\"role\": \"user\", \"con",
+  "source_url": "https://ollama.com/library/qwen3.5",
+  "retrieved_at": "2026-08-01T11:58:38Z",
+  "model_count": 8,
+  "tag_count": 64,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "cloud": 72,
+    "reasoning": 72,
+    "text_generation": 72,
+    "tool_use": 72,
+    "vision": 72
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "phi4-mini-reasoning-3.8b",
+  "model_slug": "phi4-mini-reasoning-3-8b",
+  "model_display_name": "phi4-mini-reasoning",
+  "family_id": "phi4-mini-reasoning",
+  "family_slug": "phi4-mini-reasoning",
+  "tag_id": "phi4-mini-reasoning__3.8b",
+  "ollama_identifier": "phi4-mini-reasoning:3.8b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 3200000000,
+  "installed_storage_bytes_estimated": 3456000000,
+  "min_system_ram_gb_estimated": 7.26,
+  "recommended_system_ram_gb_estimated": 8.71,
+  "min_vram_gb_estimated": 3.52,
+  "recommended_vram_gb_estimated": 7.26,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull phi4-mini-reasoning:3.8b",
+  "run_command": "ollama run phi4-mini-reasoning:3.8b",
+  "source_url": "https://ollama.com/library/phi4-mini-reasoning/tags",
+  "retrieved_at": "2026-08-01T11:58:04Z"
+}

@@ -27,7 +27,6 @@ AGENT_DOC_PATHS = (
 
 # Paths excluded from "no 02-models under generated pages" scans.
 GENERATED_PAGES_BAD_REFERENCE_EXCLUDES = (
-    "profiles/",
     "tests/test_c2_profiles.py",
     "src/eight_ball/generate/profiles.py",
     "AGENTS/CursorFileC2-environment-artifact-sequencing.md",

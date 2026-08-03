@@ -2,13 +2,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from eight_ball.config import load_json, write_json
 from eight_ball.generate.deployments import generate_deployments
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.generate.pages import generate_pages, validate_generated_pages
-from eight_ball.paths import GENERATED_PAGES_DIR, NORMALIZED_DIR, REPO_ROOT
+from eight_ball.paths import GENERATED_PAGES_DIR, NORMALIZED_DIR
 
 
 def _write_minimal_catalog(root: Path) -> None:
@@ -171,10 +169,9 @@ def test_generate_outputs_builds_full_page_tree(tmp_path: Path, monkeypatch) -> 
     assert not (generated / "pages" / "02-models").exists()
 
 
-def test_full_catalog_page_tree_when_generated() -> None:
-    if not (REPO_ROOT / "data" / "generated" / "pages" / "install-manifest.json").exists():
-        pytest.skip("Run eight-ball generate to build the full page tree first")
+def test_full_catalog_page_tree_is_committed() -> None:
     pages = GENERATED_PAGES_DIR
+    assert (pages / "install-manifest.json").is_file(), "Committed page tree missing; run eight-ball generate"
     families = load_json(NORMALIZED_DIR / "families.json")
     models = load_json(NORMALIZED_DIR / "models.json")
     report = validate_generated_pages(pages)

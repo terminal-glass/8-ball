@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "goliath-120b",
+  "model_slug": "goliath-120b",
+  "model_display_name": "goliath",
+  "family_id": "goliath",
+  "family_slug": "goliath",
+  "tag_id": "goliath__latest",
+  "ollama_identifier": "goliath:latest",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 66000000000,
+  "installed_storage_bytes_estimated": 71280000000,
+  "min_system_ram_gb_estimated": 74.25,
+  "recommended_system_ram_gb_estimated": 89.1,
+  "min_vram_gb_estimated": 72.6,
+  "recommended_vram_gb_estimated": 74.25,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull goliath:latest",
+  "run_command": "ollama run goliath:latest",
+  "source_url": "https://ollama.com/library/goliath/tags",
+  "retrieved_at": "2026-08-01T11:54:01Z"
+}

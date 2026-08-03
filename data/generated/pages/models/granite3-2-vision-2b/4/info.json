@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "granite3.2-vision-2b",
+  "model_slug": "granite3-2-vision-2b",
+  "model_display_name": "granite3.2-vision",
+  "family_id": "granite3.2-vision",
+  "family_slug": "granite3-2-vision",
+  "tag_id": "granite3.2-vision__2b",
+  "ollama_identifier": "granite3.2-vision:2b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 2400000000,
+  "installed_storage_bytes_estimated": 2592000000,
+  "min_system_ram_gb_estimated": 5.39,
+  "recommended_system_ram_gb_estimated": 6.47,
+  "min_vram_gb_estimated": 2.64,
+  "recommended_vram_gb_estimated": 5.39,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull granite3.2-vision:2b",
+  "run_command": "ollama run granite3.2-vision:2b",
+  "source_url": "https://ollama.com/library/granite3.2-vision/tags",
+  "retrieved_at": "2026-08-01T11:54:26Z"
+}

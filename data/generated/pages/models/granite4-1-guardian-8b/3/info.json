@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "granite4.1-guardian-8b",
+  "model_slug": "granite4-1-guardian-8b",
+  "model_display_name": "Granite Guardian 4.1",
+  "family_id": "granite4.1-guardian",
+  "family_slug": "granite4-1-guardian",
+  "tag_id": "granite4.1-guardian__8b",
+  "ollama_identifier": "granite4.1-guardian:8b",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 6900000000,
+  "installed_storage_bytes_estimated": 7452000000,
+  "min_system_ram_gb_estimated": 13.64,
+  "recommended_system_ram_gb_estimated": 16.37,
+  "min_vram_gb_estimated": 7.59,
+  "recommended_vram_gb_estimated": 13.64,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull granite4.1-guardian:8b",
+  "run_command": "ollama run granite4.1-guardian:8b",
+  "source_url": "https://ollama.com/library/granite4.1-guardian/tags",
+  "retrieved_at": "2026-08-01T11:54:35Z"
+}

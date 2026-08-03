@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen2.5-1.5b",
+  "model_slug": "qwen2-5-1-5b",
+  "model_display_name": "qwen2.5",
+  "family_id": "qwen2.5",
+  "family_slug": "qwen2-5",
+  "tag_id": "qwen2.5__1.5b",
+  "ollama_identifier": "qwen2.5:1.5b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 986000000,
+  "installed_storage_bytes_estimated": 1064880000,
+  "min_system_ram_gb_estimated": 3.56,
+  "recommended_system_ram_gb_estimated": 4.27,
+  "min_vram_gb_estimated": 1.08,
+  "recommended_vram_gb_estimated": 3.56,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull qwen2.5:1.5b",
+  "run_command": "ollama run qwen2.5:1.5b",
+  "source_url": "https://ollama.com/library/qwen2.5/tags",
+  "retrieved_at": "2026-08-01T11:58:18Z"
+}

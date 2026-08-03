@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "tinyllama-1.1b",
+  "model_slug": "tinyllama-1-1b",
+  "model_display_name": "tinyllama",
+  "family_id": "tinyllama",
+  "family_slug": "tinyllama",
+  "tag_id": "tinyllama__1.1b",
+  "ollama_identifier": "tinyllama:1.1b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 638000000,
+  "installed_storage_bytes_estimated": 689040000,
+  "min_system_ram_gb_estimated": 2.96,
+  "recommended_system_ram_gb_estimated": 3.55,
+  "min_vram_gb_estimated": 0.7,
+  "recommended_vram_gb_estimated": 2.96,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull tinyllama:1.1b",
+  "run_command": "ollama run tinyllama:1.1b",
+  "source_url": "https://ollama.com/library/tinyllama/tags",
+  "retrieved_at": "2026-08-01T11:59:39Z"
+}

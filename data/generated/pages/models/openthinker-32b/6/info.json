@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "openthinker-32b",
+  "model_slug": "openthinker-32b",
+  "model_display_name": "openthinker",
+  "family_id": "openthinker",
+  "family_slug": "openthinker",
+  "tag_id": "openthinker__32b",
+  "ollama_identifier": "openthinker:32b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 20000000000,
+  "installed_storage_bytes_estimated": 21600000000,
+  "min_system_ram_gb_estimated": 41.25,
+  "recommended_system_ram_gb_estimated": 49.5,
+  "min_vram_gb_estimated": 22.0,
+  "recommended_vram_gb_estimated": 41.25,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull openthinker:32b",
+  "run_command": "ollama run openthinker:32b",
+  "source_url": "https://ollama.com/library/openthinker/tags",
+  "retrieved_at": "2026-08-01T11:57:42Z"
+}

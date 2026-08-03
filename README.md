@@ -37,8 +37,8 @@ src/eight_ball/         Collection, normalization, validation, estimation, gener
 data/families/          Legacy per-family source observations (preserved)
 data/overrides/         Reviewed manual metadata overrides
 data/normalized/        Normalized source-derived entities (committed)
-data/generated/         Reproducible generated output (not committed)
-data/generated/pages/   C5 metadata page tree (families/, deployment-types/, models/)
+data/generated/         Flat generated JSON (not committed; regenerate with eight-ball generate)
+data/generated/pages/   C5 metadata page tree (committed; regenerate with eight-ball generate)
 data/snapshots/         Cached sanitized snapshots (not committed)
 reports/                Human-readable reports and reproducible JSON summaries
 indexes/                Generated metadata indexes (not committed)

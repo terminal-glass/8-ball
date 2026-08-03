@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "exaone-deep-7.8b",
+  "model_slug": "exaone-deep-7-8b",
+  "model_display_name": "exaone-deep",
+  "family_id": "exaone-deep",
+  "family_slug": "exaone-deep",
+  "tag_id": "exaone-deep__7.8b",
+  "ollama_identifier": "exaone-deep:7.8b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "desktop-standard",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 4800000000,
+  "installed_storage_bytes_estimated": 5184000000,
+  "min_system_ram_gb_estimated": 11.22,
+  "recommended_system_ram_gb_estimated": 13.46,
+  "min_vram_gb_estimated": 5.28,
+  "recommended_vram_gb_estimated": 11.22,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull exaone-deep:7.8b",
+  "run_command": "ollama run exaone-deep:7.8b",
+  "source_url": "https://ollama.com/library/exaone-deep/tags",
+  "retrieved_at": "2026-08-01T11:53:20Z"
+}

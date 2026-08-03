@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "nemotron3-33b",
+  "model_slug": "nemotron3-33b",
+  "model_display_name": "nemotron3",
+  "family_id": "nemotron3",
+  "family_slug": "nemotron3",
+  "tag_id": "nemotron3__33b",
+  "ollama_identifier": "nemotron3:33b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 28000000000,
+  "installed_storage_bytes_estimated": 30240000000,
+  "min_system_ram_gb_estimated": 50.6,
+  "recommended_system_ram_gb_estimated": 60.72,
+  "min_vram_gb_estimated": 30.8,
+  "recommended_vram_gb_estimated": 50.6,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull nemotron3:33b",
+  "run_command": "ollama run nemotron3:33b",
+  "source_url": "https://ollama.com/library/nemotron3/tags",
+  "retrieved_at": "2026-08-01T11:56:59Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen3.5-397b",
+  "model_slug": "qwen3-5-397b",
+  "model_display_name": "qwen3.5",
+  "family_id": "qwen3.5",
+  "family_slug": "qwen3-5",
+  "tag_id": "qwen3.5__cloud",
+  "ollama_identifier": "qwen3.5:cloud",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "both",
+  "assessment": "runs_with_constraints",
+  "reason_codes": [
+    "fits_system_ram",
+    "limited_vram"
+  ],
+  "explanation": "May run with constraints using CPU RAM and limited VRAM.",
+  "download_size_bytes": 81000000000,
+  "installed_storage_bytes_estimated": 87480000000,
+  "min_system_ram_gb_estimated": 90.75,
+  "recommended_system_ram_gb_estimated": 108.9,
+  "min_vram_gb_estimated": 89.1,
+  "recommended_vram_gb_estimated": 90.75,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull qwen3.5:cloud",
+  "run_command": "ollama run qwen3.5:cloud",
+  "source_url": "https://ollama.com/library/qwen3.5/tags",
+  "retrieved_at": "2026-08-01T11:58:39Z"
+}

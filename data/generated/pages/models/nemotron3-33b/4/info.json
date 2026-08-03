@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "nemotron3-33b",
+  "model_slug": "nemotron3-33b",
+  "model_display_name": "nemotron3",
+  "family_id": "nemotron3",
+  "family_slug": "nemotron3",
+  "tag_id": "nemotron3__33b",
+  "ollama_identifier": "nemotron3:33b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 28000000000,
+  "installed_storage_bytes_estimated": 30240000000,
+  "min_system_ram_gb_estimated": 43.41,
+  "recommended_system_ram_gb_estimated": 52.09,
+  "min_vram_gb_estimated": 32.2,
+  "recommended_vram_gb_estimated": 43.41,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull nemotron3:33b",
+  "run_command": "ollama run nemotron3:33b",
+  "source_url": "https://ollama.com/library/nemotron3/tags",
+  "retrieved_at": "2026-08-01T11:56:59Z"
+}

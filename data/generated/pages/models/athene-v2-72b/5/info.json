@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "athene-v2-72b",
+  "model_slug": "athene-v2-72b",
+  "model_display_name": "Athene-V2",
+  "family_id": "athene-v2",
+  "family_slug": "athene-v2",
+  "tag_id": "athene-v2__72b",
+  "ollama_identifier": "athene-v2:72b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 47000000000,
+  "installed_storage_bytes_estimated": 50760000000,
+  "min_system_ram_gb_estimated": 76.47,
+  "recommended_system_ram_gb_estimated": 91.77,
+  "min_vram_gb_estimated": 54.05,
+  "recommended_vram_gb_estimated": 76.47,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull athene-v2:72b",
+  "run_command": "ollama run athene-v2:72b",
+  "source_url": "https://ollama.com/library/athene-v2/tags",
+  "retrieved_at": "2026-08-01T11:51:33Z"
+}

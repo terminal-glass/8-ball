@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "deepseek-v2-16b",
+  "model_slug": "deepseek-v2-16b",
+  "model_display_name": "deepseek-v2",
+  "family_id": "deepseek-v2",
+  "family_slug": "deepseek-v2",
+  "tag_id": "deepseek-v2__16b",
+  "ollama_identifier": "deepseek-v2:16b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 8900000000,
+  "installed_storage_bytes_estimated": 9612000000,
+  "min_system_ram_gb_estimated": 20.24,
+  "recommended_system_ram_gb_estimated": 24.29,
+  "min_vram_gb_estimated": 9.79,
+  "recommended_vram_gb_estimated": 20.24,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull deepseek-v2:16b",
+  "run_command": "ollama run deepseek-v2:16b",
+  "source_url": "https://ollama.com/library/deepseek-v2/tags",
+  "retrieved_at": "2026-08-01T11:52:39Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "opencoder-1.5b",
+  "model_slug": "opencoder-1-5b",
+  "model_display_name": "opencoder",
+  "family_id": "opencoder",
+  "family_slug": "opencoder",
+  "tag_id": "opencoder__1.5b",
+  "ollama_identifier": "opencoder:1.5b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 1400000000,
+  "installed_storage_bytes_estimated": 1512000000,
+  "min_system_ram_gb_estimated": 4.02,
+  "recommended_system_ram_gb_estimated": 4.82,
+  "min_vram_gb_estimated": 1.54,
+  "recommended_vram_gb_estimated": 4.02,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull opencoder:1.5b",
+  "run_command": "ollama run opencoder:1.5b",
+  "source_url": "https://ollama.com/library/opencoder/tags",
+  "retrieved_at": "2026-08-01T11:57:37Z"
+}

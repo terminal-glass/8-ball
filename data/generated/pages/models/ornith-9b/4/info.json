@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "ornith-9b",
+  "model_slug": "ornith-9b",
+  "model_display_name": "ornith",
+  "family_id": "ornith",
+  "family_slug": "ornith",
+  "tag_id": "ornith__9b",
+  "ollama_identifier": "ornith:9b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 5600000000,
+  "installed_storage_bytes_estimated": 6048000000,
+  "min_system_ram_gb_estimated": 12.76,
+  "recommended_system_ram_gb_estimated": 15.31,
+  "min_vram_gb_estimated": 6.16,
+  "recommended_vram_gb_estimated": 12.76,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull ornith:9b",
+  "run_command": "ollama run ornith:9b",
+  "source_url": "https://ollama.com/library/ornith/tags",
+  "retrieved_at": "2026-08-01T11:57:49Z"
+}

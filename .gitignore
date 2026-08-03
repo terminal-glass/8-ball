@@ -15,7 +15,9 @@ venv/
 .DS_Store
 
 # Reproducible generated output (regenerate with eight-ball generate)
-data/generated/
+data/generated/*
+!data/generated/pages/
+!data/generated/pages/**
 /indexes/
 
 # Ephemeral collection caches

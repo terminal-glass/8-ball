@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "reader-lm-1.5b",
+  "model_slug": "reader-lm-1-5b",
+  "model_display_name": "reader-lm",
+  "family_id": "reader-lm",
+  "family_slug": "reader-lm",
+  "tag_id": "reader-lm__1.5b",
+  "ollama_identifier": "reader-lm:1.5b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 935000000,
+  "installed_storage_bytes_estimated": 1009800000,
+  "min_system_ram_gb_estimated": 3.5,
+  "recommended_system_ram_gb_estimated": 4.2,
+  "min_vram_gb_estimated": 1.03,
+  "recommended_vram_gb_estimated": 3.5,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull reader-lm:1.5b",
+  "run_command": "ollama run reader-lm:1.5b",
+  "source_url": "https://ollama.com/library/reader-lm/tags",
+  "retrieved_at": "2026-08-01T11:58:48Z"
+}

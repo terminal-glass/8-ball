@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen2.5-coder-0.5b",
+  "model_slug": "qwen2-5-coder-0-5b",
+  "model_display_name": "qwen2.5-coder",
+  "family_id": "qwen2.5-coder",
+  "family_slug": "qwen2-5-coder",
+  "tag_id": "qwen2.5-coder__0.5b",
+  "ollama_identifier": "qwen2.5-coder:0.5b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 398000000,
+  "installed_storage_bytes_estimated": 429840000,
+  "min_system_ram_gb_estimated": 2.36,
+  "recommended_system_ram_gb_estimated": 2.84,
+  "min_vram_gb_estimated": 0.44,
+  "recommended_vram_gb_estimated": 2.36,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull qwen2.5-coder:0.5b",
+  "run_command": "ollama run qwen2.5-coder:0.5b",
+  "source_url": "https://ollama.com/library/qwen2.5-coder/tags",
+  "retrieved_at": "2026-08-01T11:58:21Z"
+}

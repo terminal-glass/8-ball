@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "phi4-mini-3.8b",
+  "model_slug": "phi4-mini-3-8b",
+  "model_display_name": "phi4-mini",
+  "family_id": "phi4-mini",
+  "family_slug": "phi4-mini",
+  "tag_id": "phi4-mini__3.8b",
+  "ollama_identifier": "phi4-mini:3.8b",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 2500000000,
+  "installed_storage_bytes_estimated": 2700000000,
+  "min_system_ram_gb_estimated": 6.49,
+  "recommended_system_ram_gb_estimated": 7.79,
+  "min_vram_gb_estimated": 2.75,
+  "recommended_vram_gb_estimated": 6.49,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull phi4-mini:3.8b",
+  "run_command": "ollama run phi4-mini:3.8b",
+  "source_url": "https://ollama.com/library/phi4-mini/tags",
+  "retrieved_at": "2026-08-01T11:58:02Z"
+}

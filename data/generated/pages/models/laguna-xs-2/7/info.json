@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "laguna-xs.2",
+  "model_slug": "laguna-xs-2",
+  "model_display_name": "laguna-xs.2",
+  "family_id": "laguna-xs.2",
+  "family_slug": "laguna-xs-2",
+  "tag_id": "laguna-xs.2__latest",
+  "ollama_identifier": "laguna-xs.2:latest",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 23000000000,
+  "installed_storage_bytes_estimated": 24840000000,
+  "min_system_ram_gb_estimated": 26.95,
+  "recommended_system_ram_gb_estimated": 32.34,
+  "min_vram_gb_estimated": 25.3,
+  "recommended_vram_gb_estimated": 26.95,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull laguna-xs.2:latest",
+  "run_command": "ollama run laguna-xs.2:latest",
+  "source_url": "https://ollama.com/library/laguna-xs.2/tags",
+  "retrieved_at": "2026-08-01T11:54:53Z"
+}

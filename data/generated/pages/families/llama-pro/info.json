@@ -1,0 +1,22 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "llama-pro",
+  "family_slug": "llama-pro",
+  "publisher_id": "unknown",
+  "name": "llama-pro",
+  "description": "llama-pro 886.4K Downloads Updated 2 years ago An expansion of Llama 2 that specializes in integrating both general language understanding and domain-specific knowledge, particularly in programming and mathematics. An expansion of Llama 2 that specializes in integrating both general language understanding and domain-specific knowledge, particularly in programming and mathematics. Cancel CLI cURL Python JavaScript Documentation Documentation ollama run llama-pro curl http://localhost:11434/api/ch",
+  "source_url": "https://ollama.com/library/llama-pro",
+  "retrieved_at": "2026-08-01T11:55:03Z",
+  "model_count": 1,
+  "tag_count": 33,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 34
+  }
+}

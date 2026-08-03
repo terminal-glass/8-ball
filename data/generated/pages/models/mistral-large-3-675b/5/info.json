@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "mistral-large-3-675b",
+  "model_slug": "mistral-large-3-675b",
+  "model_display_name": "mistral-large-3",
+  "family_id": "mistral-large-3",
+  "family_slug": "mistral-large-3",
+  "tag_id": "mistral-large-3__675b-cloud",
+  "ollama_identifier": "mistral-large-3:675b-cloud",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "cloud_only",
+  "assessment": "cloud_only",
+  "reason_codes": [
+    "cloud_model",
+    "local_profile_unsuitable"
+  ],
+  "explanation": "Model is cloud-hosted; local hardware profile is not applicable for weights.",
+  "download_size_bytes": null,
+  "installed_storage_bytes_estimated": 400950000000,
+  "min_system_ram_gb_estimated": 0.0,
+  "recommended_system_ram_gb_estimated": 0.0,
+  "min_vram_gb_estimated": 0.0,
+  "recommended_vram_gb_estimated": 0.0,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull mistral-large-3:675b-cloud",
+  "run_command": "ollama run mistral-large-3:675b-cloud",
+  "source_url": "https://ollama.com/library/mistral-large-3/tags",
+  "retrieved_at": "2026-08-01T11:56:20Z"
+}

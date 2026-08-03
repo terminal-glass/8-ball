@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gemma3n",
+  "model_slug": "gemma3n",
+  "model_display_name": "gemma3n",
+  "family_id": "gemma3n",
+  "family_slug": "gemma3n",
+  "tag_id": "gemma3n__e4b",
+  "ollama_identifier": "gemma3n:e4b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "desktop-standard",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 7500000000,
+  "installed_storage_bytes_estimated": 8100000000,
+  "min_system_ram_gb_estimated": 9.9,
+  "recommended_system_ram_gb_estimated": 11.88,
+  "min_vram_gb_estimated": 8.25,
+  "recommended_vram_gb_estimated": 9.9,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gemma3n:e4b",
+  "run_command": "ollama run gemma3n:e4b",
+  "source_url": "https://ollama.com/library/gemma3n/tags",
+  "retrieved_at": "2026-08-01T11:53:45Z"
+}

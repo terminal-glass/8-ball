@@ -1,0 +1,48 @@
+{
+  "schema_version": "c5.model-page.v1",
+  "model_id": "starcoder2-3b",
+  "model_slug": "starcoder2-3b",
+  "family_id": "starcoder2",
+  "family_slug": "starcoder2",
+  "display_name": "starcoder2",
+  "default_tag": "starcoder2:3b",
+  "default_tag_id": "starcoder2__3b",
+  "availability": "local",
+  "deployments": {
+    "3": {
+      "deployment_type_id": "3",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "starcoder2:3b",
+      "helper_path": "data/generated/pages/models/starcoder2-3b/3/info.json"
+    },
+    "4": {
+      "deployment_type_id": "4",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "starcoder2:3b",
+      "helper_path": "data/generated/pages/models/starcoder2-3b/4/info.json"
+    },
+    "5": {
+      "deployment_type_id": "5",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "starcoder2:3b",
+      "helper_path": "data/generated/pages/models/starcoder2-3b/5/info.json"
+    },
+    "6": {
+      "deployment_type_id": "6",
+      "available": true,
+      "assessment": "cpu_only_practical",
+      "ollama_identifier": "starcoder2:3b",
+      "helper_path": "data/generated/pages/models/starcoder2-3b/6/info.json"
+    },
+    "7": {
+      "deployment_type_id": "7",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "starcoder2:3b",
+      "helper_path": "data/generated/pages/models/starcoder2-3b/7/info.json"
+    }
+  }
+}

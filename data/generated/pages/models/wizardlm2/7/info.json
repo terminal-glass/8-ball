@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "wizardlm2",
+  "model_slug": "wizardlm2",
+  "model_display_name": "wizardlm2",
+  "family_id": "wizardlm2",
+  "family_slug": "wizardlm2",
+  "tag_id": "wizardlm2__8x22b-q2_K",
+  "ollama_identifier": "wizardlm2:8x22b-q2_K",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 52000000000,
+  "installed_storage_bytes_estimated": 56160000000,
+  "min_system_ram_gb_estimated": 58.85,
+  "recommended_system_ram_gb_estimated": 70.62,
+  "min_vram_gb_estimated": 57.2,
+  "recommended_vram_gb_estimated": 58.85,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull wizardlm2:8x22b-q2_K",
+  "run_command": "ollama run wizardlm2:8x22b-q2_K",
+  "source_url": "https://ollama.com/library/wizardlm2/tags",
+  "retrieved_at": "2026-08-01T12:00:02Z"
+}

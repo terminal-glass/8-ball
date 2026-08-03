@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "cogito-14b",
+  "model_slug": "cogito-14b",
+  "model_display_name": "cogito",
+  "family_id": "cogito",
+  "family_slug": "cogito",
+  "tag_id": "cogito__14b",
+  "ollama_identifier": "cogito:14b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 9000000000,
+  "installed_storage_bytes_estimated": 9720000000,
+  "min_system_ram_gb_estimated": 19.25,
+  "recommended_system_ram_gb_estimated": 23.1,
+  "min_vram_gb_estimated": 9.9,
+  "recommended_vram_gb_estimated": 19.25,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull cogito:14b",
+  "run_command": "ollama run cogito:14b",
+  "source_url": "https://ollama.com/library/cogito/tags",
+  "retrieved_at": "2026-08-01T11:52:05Z"
+}

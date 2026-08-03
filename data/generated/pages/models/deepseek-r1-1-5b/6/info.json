@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "deepseek-r1-1.5b",
+  "model_slug": "deepseek-r1-1-5b",
+  "model_display_name": "deepseek-r1",
+  "family_id": "deepseek-r1",
+  "family_slug": "deepseek-r1",
+  "tag_id": "deepseek-r1__1.5b",
+  "ollama_identifier": "deepseek-r1:1.5b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 1100000000,
+  "installed_storage_bytes_estimated": 1188000000,
+  "min_system_ram_gb_estimated": 3.69,
+  "recommended_system_ram_gb_estimated": 4.42,
+  "min_vram_gb_estimated": 1.21,
+  "recommended_vram_gb_estimated": 3.69,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull deepseek-r1:1.5b",
+  "run_command": "ollama run deepseek-r1:1.5b",
+  "source_url": "https://ollama.com/library/deepseek-r1/tags",
+  "retrieved_at": "2026-08-01T11:52:37Z"
+}

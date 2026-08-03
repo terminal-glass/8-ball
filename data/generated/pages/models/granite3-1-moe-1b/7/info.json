@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "granite3.1-moe-1b",
+  "model_slug": "granite3-1-moe-1b",
+  "model_display_name": "granite3.1-moe",
+  "family_id": "granite3.1-moe",
+  "family_slug": "granite3-1-moe",
+  "tag_id": "granite3.1-moe__1b",
+  "ollama_identifier": "granite3.1-moe:1b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 1400000000,
+  "installed_storage_bytes_estimated": 1512000000,
+  "min_system_ram_gb_estimated": 3.74,
+  "recommended_system_ram_gb_estimated": 4.49,
+  "min_vram_gb_estimated": 1.54,
+  "recommended_vram_gb_estimated": 3.74,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull granite3.1-moe:1b",
+  "run_command": "ollama run granite3.1-moe:1b",
+  "source_url": "https://ollama.com/library/granite3.1-moe/tags",
+  "retrieved_at": "2026-08-01T11:54:21Z"
+}

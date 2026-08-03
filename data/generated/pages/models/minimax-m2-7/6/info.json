@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "minimax-m2.7",
+  "model_slug": "minimax-m2-7",
+  "model_display_name": "minimax-m2.7",
+  "family_id": "minimax-m2.7",
+  "family_slug": "minimax-m2-7",
+  "tag_id": "minimax-m2.7__cloud",
+  "ollama_identifier": "minimax-m2.7:cloud",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "cloud_only",
+  "assessment": "cloud_only",
+  "reason_codes": [
+    "cloud_model",
+    "local_profile_unsuitable"
+  ],
+  "explanation": "Model is cloud-hosted; local hardware profile is not applicable for weights.",
+  "download_size_bytes": null,
+  "installed_storage_bytes_estimated": null,
+  "min_system_ram_gb_estimated": null,
+  "recommended_system_ram_gb_estimated": null,
+  "min_vram_gb_estimated": null,
+  "recommended_vram_gb_estimated": null,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull minimax-m2.7:cloud",
+  "run_command": "ollama run minimax-m2.7:cloud",
+  "source_url": "https://ollama.com/library/minimax-m2.7/tags",
+  "retrieved_at": "2026-08-01T11:56:09Z"
+}

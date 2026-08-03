@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "nemotron-cascade-2-30b",
+  "model_slug": "nemotron-cascade-2-30b",
+  "model_display_name": "nemotron-cascade-2",
+  "family_id": "nemotron-cascade-2",
+  "family_slug": "nemotron-cascade-2",
+  "tag_id": "nemotron-cascade-2__30b",
+  "ollama_identifier": "nemotron-cascade-2:30b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 24000000000,
+  "installed_storage_bytes_estimated": 25920000000,
+  "min_system_ram_gb_estimated": 44.55,
+  "recommended_system_ram_gb_estimated": 53.46,
+  "min_vram_gb_estimated": 26.4,
+  "recommended_vram_gb_estimated": 44.55,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull nemotron-cascade-2:30b",
+  "run_command": "ollama run nemotron-cascade-2:30b",
+  "source_url": "https://ollama.com/library/nemotron-cascade-2/tags",
+  "retrieved_at": "2026-08-01T11:56:54Z"
+}

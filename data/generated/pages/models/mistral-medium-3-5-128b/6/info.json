@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "mistral-medium-3.5-128b",
+  "model_slug": "mistral-medium-3-5-128b",
+  "model_display_name": "Mistral Medium 3.5",
+  "family_id": "mistral-medium-3.5",
+  "family_slug": "mistral-medium-3-5",
+  "tag_id": "mistral-medium-3.5__128b",
+  "ollama_identifier": "mistral-medium-3.5:128b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 80000000000,
+  "installed_storage_bytes_estimated": 86400000000,
+  "min_system_ram_gb_estimated": 160.05,
+  "recommended_system_ram_gb_estimated": 192.06,
+  "min_vram_gb_estimated": 88.0,
+  "recommended_vram_gb_estimated": 160.05,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull mistral-medium-3.5:128b",
+  "run_command": "ollama run mistral-medium-3.5:128b",
+  "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+  "retrieved_at": "2026-08-01T11:56:22Z"
+}

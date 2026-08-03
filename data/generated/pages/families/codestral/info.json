@@ -1,0 +1,22 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "codestral",
+  "family_slug": "codestral",
+  "publisher_id": "mistral-ai",
+  "name": "Codestral",
+  "description": "codestral 1.3M Downloads Updated 1 year ago Codestral is Mistral AI’s first-ever code model designed for code generation tasks. Codestral is Mistral AI’s first-ever code model designed for code generation tasks. Cancel 22b CLI cURL Python JavaScript Documentation Documentation ollama run codestral curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"codestral\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'codestral' ,\n",
+  "source_url": "https://ollama.com/library/codestral",
+  "retrieved_at": "2026-08-01T11:51:59Z",
+  "model_count": 1,
+  "tag_count": 17,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 18
+  }
+}

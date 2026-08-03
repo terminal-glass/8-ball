@@ -1,0 +1,48 @@
+{
+  "schema_version": "c5.model-page.v1",
+  "model_id": "nemotron-3-ultra",
+  "model_slug": "nemotron-3-ultra",
+  "family_id": "nemotron-3-ultra",
+  "family_slug": "nemotron-3-ultra",
+  "display_name": "nemotron-3-ultra",
+  "default_tag": "nemotron-3-ultra:cloud",
+  "default_tag_id": "nemotron-3-ultra__cloud",
+  "availability": "cloud",
+  "deployments": {
+    "3": {
+      "deployment_type_id": "3",
+      "available": true,
+      "assessment": "recommended",
+      "ollama_identifier": "nemotron-3-ultra:cloud",
+      "helper_path": "data/generated/pages/models/nemotron-3-ultra/3/info.json"
+    },
+    "4": {
+      "deployment_type_id": "4",
+      "available": true,
+      "assessment": "cloud_only",
+      "ollama_identifier": "nemotron-3-ultra:cloud",
+      "helper_path": "data/generated/pages/models/nemotron-3-ultra/4/info.json"
+    },
+    "5": {
+      "deployment_type_id": "5",
+      "available": true,
+      "assessment": "cloud_only",
+      "ollama_identifier": "nemotron-3-ultra:cloud",
+      "helper_path": "data/generated/pages/models/nemotron-3-ultra/5/info.json"
+    },
+    "6": {
+      "deployment_type_id": "6",
+      "available": true,
+      "assessment": "cloud_only",
+      "ollama_identifier": "nemotron-3-ultra:cloud",
+      "helper_path": "data/generated/pages/models/nemotron-3-ultra/6/info.json"
+    },
+    "7": {
+      "deployment_type_id": "7",
+      "available": true,
+      "assessment": "cloud_only",
+      "ollama_identifier": "nemotron-3-ultra:cloud",
+      "helper_path": "data/generated/pages/models/nemotron-3-ultra/7/info.json"
+    }
+  }
+}

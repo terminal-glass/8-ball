@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "stablelm2-12b",
+  "model_slug": "stablelm2-12b",
+  "model_display_name": "stablelm2",
+  "family_id": "stablelm2",
+  "family_slug": "stablelm2",
+  "tag_id": "stablelm2__12b",
+  "ollama_identifier": "stablelm2:12b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 7000000000,
+  "installed_storage_bytes_estimated": 7560000000,
+  "min_system_ram_gb_estimated": 15.95,
+  "recommended_system_ram_gb_estimated": 19.14,
+  "min_vram_gb_estimated": 7.7,
+  "recommended_vram_gb_estimated": 15.95,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull stablelm2:12b",
+  "run_command": "ollama run stablelm2:12b",
+  "source_url": "https://ollama.com/library/stablelm2/tags",
+  "retrieved_at": "2026-08-01T11:59:27Z"
+}

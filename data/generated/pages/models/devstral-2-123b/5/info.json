@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "devstral-2-123b",
+  "model_slug": "devstral-2-123b",
+  "model_display_name": "Devstral 2",
+  "family_id": "devstral-2",
+  "family_slug": "devstral-2",
+  "tag_id": "devstral-2__latest",
+  "ollama_identifier": "devstral-2:latest",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "runs_with_constraints",
+  "reason_codes": [
+    "fits_system_ram",
+    "limited_vram"
+  ],
+  "explanation": "May run with constraints using CPU RAM and limited VRAM.",
+  "download_size_bytes": 75000000000,
+  "installed_storage_bytes_estimated": 81000000000,
+  "min_system_ram_gb_estimated": 84.15,
+  "recommended_system_ram_gb_estimated": 100.98,
+  "min_vram_gb_estimated": 82.5,
+  "recommended_vram_gb_estimated": 84.15,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull devstral-2:latest",
+  "run_command": "ollama run devstral-2:latest",
+  "source_url": "https://ollama.com/library/devstral-2/tags",
+  "retrieved_at": "2026-08-01T11:52:55Z"
+}

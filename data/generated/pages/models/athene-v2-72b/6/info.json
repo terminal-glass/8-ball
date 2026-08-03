@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "athene-v2-72b",
+  "model_slug": "athene-v2-72b",
+  "model_display_name": "Athene-V2",
+  "family_id": "athene-v2",
+  "family_slug": "athene-v2",
+  "tag_id": "athene-v2__72b",
+  "ollama_identifier": "athene-v2:72b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 47000000000,
+  "installed_storage_bytes_estimated": 50760000000,
+  "min_system_ram_gb_estimated": 92.95,
+  "recommended_system_ram_gb_estimated": 111.54,
+  "min_vram_gb_estimated": 51.7,
+  "recommended_vram_gb_estimated": 92.95,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull athene-v2:72b",
+  "run_command": "ollama run athene-v2:72b",
+  "source_url": "https://ollama.com/library/athene-v2/tags",
+  "retrieved_at": "2026-08-01T11:51:33Z"
+}

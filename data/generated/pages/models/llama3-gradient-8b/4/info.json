@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "llama3-gradient-8b",
+  "model_slug": "llama3-gradient-8b",
+  "model_display_name": "llama3-gradient",
+  "family_id": "llama3-gradient",
+  "family_slug": "llama3-gradient",
+  "tag_id": "llama3-gradient__8b-instruct-1048k-fp16",
+  "ollama_identifier": "llama3-gradient:8b-instruct-1048k-fp16",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 16000000000,
+  "installed_storage_bytes_estimated": 17280000000,
+  "min_system_ram_gb_estimated": 23.65,
+  "recommended_system_ram_gb_estimated": 28.38,
+  "min_vram_gb_estimated": 17.6,
+  "recommended_vram_gb_estimated": 23.65,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull llama3-gradient:8b-instruct-1048k-fp16",
+  "run_command": "ollama run llama3-gradient:8b-instruct-1048k-fp16",
+  "source_url": "https://ollama.com/library/llama3-gradient/tags",
+  "retrieved_at": "2026-08-01T11:55:18Z"
+}

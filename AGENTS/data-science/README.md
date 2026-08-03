@@ -11,8 +11,9 @@ It is **not** for Cursor agent handoff briefs. Those live directly under
 - [`../CursorFileC2-environment-artifact-sequencing.md`](../CursorFileC2-environment-artifact-sequencing.md)
 - [`../CursorFileC3-environment-gates-testing-plan.md`](../CursorFileC3-environment-gates-testing-plan.md)
 
-The runtime profile artifact scaffold lives separately under
-[`../../profiles/`](../../profiles/README.md).
+The runtime profile contract is documented under
+[`../../profiles/`](../../profiles/README.md). Canonical generated model pages
+live under `data/generated/pages/` (see `docs/install-manifest-contract.md`).
 
 ## P1–P7 layout
 

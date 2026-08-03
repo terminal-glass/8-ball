@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "nous-hermes-70b",
+  "model_slug": "nous-hermes-70b",
+  "model_display_name": "nous-hermes",
+  "family_id": "nous-hermes",
+  "family_slug": "nous-hermes",
+  "tag_id": "nous-hermes__70b-llama2-fp16",
+  "ollama_identifier": "nous-hermes:70b-llama2-fp16",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 138000000000,
+  "installed_storage_bytes_estimated": 149040000000,
+  "min_system_ram_gb_estimated": 191.95,
+  "recommended_system_ram_gb_estimated": 230.34,
+  "min_vram_gb_estimated": 151.8,
+  "recommended_vram_gb_estimated": 191.95,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull nous-hermes:70b-llama2-fp16",
+  "run_command": "ollama run nous-hermes:70b-llama2-fp16",
+  "source_url": "https://ollama.com/library/nous-hermes/tags",
+  "retrieved_at": "2026-08-01T11:57:17Z"
+}

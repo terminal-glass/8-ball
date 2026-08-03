@@ -1,0 +1,21 @@
+# deepseek-r1 — Deployment Type 5
+
+- Ollama identifier: `deepseek-r1:70b`
+- Assessment: partial_gpu_offload
+- Hardware profile: multi-gpu
+- Runtime policy: interactive
+
+## Sizing
+
+- Installed storage (bytes est.): 46440000000
+- Min system RAM (GB est.): 71.3
+- Recommended system RAM (GB est.): 85.56
+- Min VRAM (GB est.): 49.45
+- Recommended VRAM (GB est.): 71.3
+- CPU suitability: not_applicable
+- GPU suitability: not_applicable
+
+Model may run with partial GPU offload and CPU assistance.
+
+- Pull: `ollama pull deepseek-r1:70b`
+- Run: `ollama run deepseek-r1:70b`

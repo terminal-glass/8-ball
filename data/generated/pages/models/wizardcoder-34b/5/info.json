@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "wizardcoder-34b",
+  "model_slug": "wizardcoder-34b",
+  "model_display_name": "wizardcoder",
+  "family_id": "wizardcoder",
+  "family_slug": "wizardcoder",
+  "tag_id": "wizardcoder__34b-python",
+  "ollama_identifier": "wizardcoder:34b-python",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 19000000000,
+  "installed_storage_bytes_estimated": 20520000000,
+  "min_system_ram_gb_estimated": 41.25,
+  "recommended_system_ram_gb_estimated": 49.5,
+  "min_vram_gb_estimated": 20.9,
+  "recommended_vram_gb_estimated": 41.25,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull wizardcoder:34b-python",
+  "run_command": "ollama run wizardcoder:34b-python",
+  "source_url": "https://ollama.com/library/wizardcoder/tags",
+  "retrieved_at": "2026-08-01T11:59:55Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "granite4-7b",
+  "model_slug": "granite4-7b",
+  "model_display_name": "granite4",
+  "family_id": "granite4",
+  "family_slug": "granite4",
+  "tag_id": "granite4__7b-a1b-h",
+  "ollama_identifier": "granite4:7b-a1b-h",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "desktop-standard",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 4200000000,
+  "installed_storage_bytes_estimated": 4536000000,
+  "min_system_ram_gb_estimated": 10.12,
+  "recommended_system_ram_gb_estimated": 12.14,
+  "min_vram_gb_estimated": 4.62,
+  "recommended_vram_gb_estimated": 10.12,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull granite4:7b-a1b-h",
+  "run_command": "ollama run granite4:7b-a1b-h",
+  "source_url": "https://ollama.com/library/granite4/tags",
+  "retrieved_at": "2026-08-01T11:54:30Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "glm-5.1",
+  "model_slug": "glm-5-1",
+  "model_display_name": "glm-5.1",
+  "family_id": "glm-5.1",
+  "family_slug": "glm-5-1",
+  "tag_id": "glm-5.1__cloud",
+  "ollama_identifier": "glm-5.1:cloud",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "cloud-only",
+  "runtime_policy_id": "batch",
+  "availability": "cloud_only",
+  "assessment": "recommended",
+  "reason_codes": [
+    "cloud_model",
+    "cloud_profile"
+  ],
+  "explanation": "Cloud-hosted model accessed from a cloud-capable client profile.",
+  "download_size_bytes": null,
+  "installed_storage_bytes_estimated": null,
+  "min_system_ram_gb_estimated": null,
+  "recommended_system_ram_gb_estimated": null,
+  "min_vram_gb_estimated": null,
+  "recommended_vram_gb_estimated": null,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull glm-5.1:cloud",
+  "run_command": "ollama run glm-5.1:cloud",
+  "source_url": "https://ollama.com/library/glm-5.1/tags",
+  "retrieved_at": "2026-08-01T11:53:52Z"
+}

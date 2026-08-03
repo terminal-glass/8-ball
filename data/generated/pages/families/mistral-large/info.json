@@ -1,0 +1,23 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "mistral-large",
+  "family_slug": "mistral-large",
+  "publisher_id": "mistral-ai",
+  "name": "mistral-large",
+  "description": "mistral-large 1.3M Downloads Updated 1 year ago Mistral Large 2 is Mistral's new flagship model that is significantly more capable in code generation, mathematics, and reasoning with 128k context window and support for dozens of languages. Mistral Large 2 is Mistral's new flagship model that is significantly more capable in code generation, mathematics, and reasoning with 128k context window and support for dozens of languages. Cancel tools 123b CLI cURL Python JavaScript Documentation Documenta",
+  "source_url": "https://ollama.com/library/mistral-large",
+  "retrieved_at": "2026-08-01T11:56:17Z",
+  "model_count": 1,
+  "tag_count": 32,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 33,
+    "tool_use": 33
+  }
+}

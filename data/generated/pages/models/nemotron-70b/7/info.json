@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "nemotron-70b",
+  "model_slug": "nemotron-70b",
+  "model_display_name": "nemotron",
+  "family_id": "nemotron",
+  "family_slug": "nemotron",
+  "tag_id": "nemotron__70b",
+  "ollama_identifier": "nemotron:70b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 43000000000,
+  "installed_storage_bytes_estimated": 46440000000,
+  "min_system_ram_gb_estimated": 71.3,
+  "recommended_system_ram_gb_estimated": 85.56,
+  "min_vram_gb_estimated": 49.45,
+  "recommended_vram_gb_estimated": 71.3,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull nemotron:70b",
+  "run_command": "ollama run nemotron:70b",
+  "source_url": "https://ollama.com/library/nemotron/tags",
+  "retrieved_at": "2026-08-01T11:56:45Z"
+}

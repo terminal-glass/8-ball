@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "nous-hermes2-10.7b",
+  "model_slug": "nous-hermes2-10-7b",
+  "model_display_name": "nous-hermes2",
+  "family_id": "nous-hermes2",
+  "family_slug": "nous-hermes2",
+  "tag_id": "nous-hermes2__10.7b",
+  "ollama_identifier": "nous-hermes2:10.7b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "desktop-standard",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 6100000000,
+  "installed_storage_bytes_estimated": 6588000000,
+  "min_system_ram_gb_estimated": 11.82,
+  "recommended_system_ram_gb_estimated": 14.18,
+  "min_vram_gb_estimated": 7.01,
+  "recommended_vram_gb_estimated": 11.82,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull nous-hermes2:10.7b",
+  "run_command": "ollama run nous-hermes2:10.7b",
+  "source_url": "https://ollama.com/library/nous-hermes2/tags",
+  "retrieved_at": "2026-08-01T11:57:19Z"
+}

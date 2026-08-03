@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "codeup-13b",
+  "model_slug": "codeup-13b",
+  "model_display_name": "codeup",
+  "family_id": "codeup",
+  "family_slug": "codeup",
+  "tag_id": "codeup__13b",
+  "ollama_identifier": "codeup:13b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 7400000000,
+  "installed_storage_bytes_estimated": 7992000000,
+  "min_system_ram_gb_estimated": 16.94,
+  "recommended_system_ram_gb_estimated": 20.33,
+  "min_vram_gb_estimated": 8.14,
+  "recommended_vram_gb_estimated": 16.94,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull codeup:13b",
+  "run_command": "ollama run codeup:13b",
+  "source_url": "https://ollama.com/library/codeup/tags",
+  "retrieved_at": "2026-08-01T11:52:03Z"
+}

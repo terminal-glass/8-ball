@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "zephyr-141b",
+  "model_slug": "zephyr-141b",
+  "model_display_name": "zephyr",
+  "family_id": "zephyr",
+  "family_slug": "zephyr",
+  "tag_id": "zephyr__141b",
+  "ollama_identifier": "zephyr:141b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 80000000000,
+  "installed_storage_bytes_estimated": 86400000000,
+  "min_system_ram_gb_estimated": 167.2,
+  "recommended_system_ram_gb_estimated": 200.64,
+  "min_vram_gb_estimated": 88.0,
+  "recommended_vram_gb_estimated": 167.2,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull zephyr:141b",
+  "run_command": "ollama run zephyr:141b",
+  "source_url": "https://ollama.com/library/zephyr/tags",
+  "retrieved_at": "2026-08-01T12:00:16Z"
+}
