@@ -8,6 +8,7 @@ from eight_ball.config import load_json, write_json
 from eight_ball.estimate.hardware import estimate_installed_storage_bytes
 from eight_ball.generate.deployments import generate_deployments
 from eight_ball.generate.indexes import build_indexes
+from eight_ball.generate.pages import generate_pages
 from eight_ball.paths import GENERATED_DIR, INDEXES_DIR, NORMALIZED_DIR
 
 
@@ -39,10 +40,20 @@ def generate_outputs(
         },
         indexes_dir=indexes_dir,
     )
+    families = load_json(normalized_dir / "families.json")
+    models = load_json(normalized_dir / "models.json")
+    page_summary = generate_pages(
+        families=families,
+        models=models,
+        tags=tags,
+        deployments=deployments,
+        output_root=generated_dir / "pages",
+    )
     return {
         "tags": len(tags),
         "deployment_combinations": len(deployments),
         "indexes": index_summary,
+        "pages": page_summary,
     }
 
 
