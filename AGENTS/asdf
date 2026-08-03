@@ -1,0 +1,509 @@
+C5 Scope: 8-BALL Deployment Identity and Generated Page Tree
+
+Purpose
+
+This C5 work exists because 8-BALL will fail if the installer cannot reliably identify both:
+
+1. the selected model, and
+2. the deployment type/profile that model belongs to.
+
+The repo must stop treating generated catalog output as only flat JSON files. The data pipeline must generate a complete folder/page tree that 8.2 and later installer helpers can target deterministically.
+
+This is a generator task, not a manual folder task. The correct result is hundreds or thousands of generated metadata folders, created from the normalized catalog and deployment recommendation data every time the generator runs.
+
+Non-Negotiable Rules
+
+• Do not create or use 02-models.
+• Do not create top-level numbered model folders.
+• Do not manually create a few example folders and stop.
+• Do not store model weights, Ollama blobs, binaries, or installer payloads in the generated models/ tree.
+• Do not remove the existing flat generated JSON/CSV outputs.
+• Do not let 8.2 guess deployment type from loose text.
+• Do not let 8.2 guess model identity from folder names alone.
+• Do not report success unless tests and output counts prove the full tree was generated.
+
+Existing Repo Context
+
+Current generation flow:
+
+• src/eight_ball/generate/outputs.py
+• src/eight_ball/generate/deployments.py
+• config/hardware_profiles.yaml
+• config/deployment_tiers.yaml
+• data/generated/*.json
+• data/normalized/*.json
+
+Current issue:
+
+• Flat generated files exist.
+• Deployment recommendation rows exist or are generated.
+• The required page/folder tree is missing.
+• The local generated deployment_recommendations.json may be stale or malformed in some checkouts, so C5 must validate generated JSON before page generation is trusted.
+
+Required Output Root
+
+Generate all page folders under:
+
+```text
+data/generated/pages/
+```
+
+The required tree is:
+
+```text
+data/generated/pages/
+  families/
+    <family-slug>/
+      info.json
+      README.md
+
+  deployment-types/
+    <deployment-type-number>/
+      info.json
+      README.md
+
+  models/
+    <model-slug>/
+      model.json
+      README.md
+      3/
+        info.json
+        README.md
+      4/
+        info.json
+        README.md
+      5/
+        info.json
+        README.md
+      6/
+        info.json
+        README.md
+      7/
+        info.json
+        README.md
+```
+
+The model path must be exactly:
+
+```text
+data/generated/pages/models/<model-slug>/<deployment-type-number>/
+```
+
+Valid deployment type folder names are:
+
+```text
+3
+4
+5
+6
+7
+```
+
+No other numbered deployment folders should be created unless a later documented C-stage expands the contract.
+
+Deployment Type Contract
+
+C5 must add a canonical deployment type mapping file. Recommended path:
+
+```text
+config/deployment_types.yaml
+```
+
+It must define deployment type numbers 3 through 7 and map them to the underlying hardware profiles/runtime policies that produce recommendations.
+
+Minimum required fields for each deployment type:
+
+```yaml
+deployment_types:
+  - id: "3"
+    slug: "3"
+    display_name: "Deployment Type 3"
+    hardware_profile_ids: []
+    runtime_policy_ids: []
+    installer_target: "3"
+    description: ""
+    minimum_disk_gb: null
+    minimum_ram_gb: null
+    recommended_ram_gb: null
+    minimum_cpu_threads: null
+    gpu_required: false
+    minimum_vram_gb: null
+    recommended_vram_gb: null
+```
+
+If the exact business names for deployment types 3 through 7 are not already documented in the repo, do not invent marketing copy. Use conservative internal display names and preserve the numeric IDs as the source of truth.
+
+The generated model deployment folder must carry both:
+
+• deployment_type_id, one of "3", "4", "5", "6", "7"
+• model_id, matching the normalized model row
+
+This is the 8.2 safety rail. The installer should be able to read one machine file and know:
+
+• which model was selected
+• which deployment type folder applies
+• what hardware limits apply
+• what Ollama command to run
+• whether the model is local, cloud-only, or unsuitable
+
+Required Machine Manifest for 8.2
+
+C5 must generate an installer-oriented manifest:
+
+```text
+data/generated/pages/install-manifest.json
+```
+
+This manifest is the stable lookup table for 8.2.
+
+Minimum structure:
+
+```json
+{
+  "schema_version": "c5.install-manifest.v1",
+  "generated_at": "ISO-8601 timestamp",
+  "deployment_types": {
+    "3": {
+      "deployment_type_id": "3",
+      "display_name": "Deployment Type 3",
+      "hardware_profile_ids": [],
+      "runtime_policy_ids": [],
+      "minimum_disk_gb": null,
+      "minimum_ram_gb": null,
+      "recommended_ram_gb": null,
+      "minimum_cpu_threads": null,
+      "gpu_required": false,
+      "minimum_vram_gb": null,
+      "recommended_vram_gb": null
+    }
+  },
+  "models": {
+    "<model-id>": {
+      "model_id": "<model-id>",
+      "model_slug": "<model-slug>",
+      "family_id": "<family-id>",
+      "default_tag_id": "<tag-id-or-null>",
+      "deployments": {
+        "3": {
+          "deployment_type_id": "3",
+          "selected_tag_id": "<tag-id>",
+          "ollama_identifier": "model:tag",
+          "assessment": "cpu_only_practical",
+          "installed_storage_bytes_estimated": 0,
+          "min_system_ram_gb_estimated": 0,
+          "recommended_system_ram_gb_estimated": 0,
+          "min_vram_gb_estimated": 0,
+          "recommended_vram_gb_estimated": 0,
+          "pull_command": "ollama pull model:tag",
+          "run_command": "ollama run model:tag",
+          "helper_path": "data/generated/pages/models/<model-slug>/3/info.json"
+        }
+      }
+    }
+  }
+}
+```
+
+8.2 must target this manifest, not scrape README text.
+
+Required info.json Fields
+
+Each model deployment folder must include:
+
+```json
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "",
+  "model_slug": "",
+  "model_display_name": "",
+  "family_id": "",
+  "family_slug": "",
+  "tag_id": "",
+  "ollama_identifier": "",
+  "deployment_type_id": "",
+  "hardware_profile_id": "",
+  "runtime_policy_id": "",
+  "availability": "local",
+  "assessment": "",
+  "reason_codes": [],
+  "explanation": "",
+  "download_size_bytes": null,
+  "installed_storage_bytes_estimated": null,
+  "min_system_ram_gb_estimated": null,
+  "recommended_system_ram_gb_estimated": null,
+  "min_vram_gb_estimated": null,
+  "recommended_vram_gb_estimated": null,
+  "cpu_suitability": "",
+  "gpu_suitability": "",
+  "pull_command": null,
+  "run_command": null,
+  "source_url": null,
+  "retrieved_at": null
+}
+```
+
+Each family info.json must include:
+
+• schema_version
+• family_id
+• family_slug
+• publisher_id
+• name
+• description
+• source_url
+• retrieved_at
+• model count
+• tag count
+• deployment type coverage counts
+• capability summary
+
+Each deployment type info.json must include:
+
+• schema_version
+• deployment_type_id
+• display_name
+• hardware profile IDs
+• runtime policy IDs
+• disk/RAM/CPU/GPU/VRAM limits
+• total compatible model count
+• total constrained model count
+• total unsuitable model count
+• assessment breakdown
+
+Required README Pages
+
+Every generated folder must also include a simple README.md.
+
+Family README must include:
+
+• title
+• family description
+• model count
+• tag count
+• capability summary
+• deployment coverage summary
+
+Deployment type README must include:
+
+• title
+• intended hardware class
+• disk/RAM/CPU/GPU/VRAM summary
+• assessment breakdown
+• compatible model count
+
+Model README must include:
+
+• model title
+• family
+• default tag
+• availability
+• deployment type table for 3 through 7
+
+Model deployment README must include:
+
+• model title
+• deployment type number
+• selected tag / Ollama identifier
+• hardware sizing table
+• assessment and explanation
+• pull/run commands when available
+
+Generator Implementation
+
+Add a dedicated module:
+
+```text
+src/eight_ball/generate/pages.py
+```
+
+Wire it into:
+
+```text
+src/eight_ball/generate/outputs.py
+```
+
+Recommended public function:
+
+```python
+def generate_pages(
+    *,
+    families: list[dict],
+    models: list[dict],
+    tags: list[dict],
+    deployments: list[dict],
+    output_root: Path,
+) -> dict[str, int]:
+    ...
+```
+
+The returned summary must include:
+
+• family_pages
+• deployment_type_pages
+• model_pages
+• model_deployment_pages
+• install_manifest_models
+• install_manifest_deployments
+
+generate_outputs() must include those counts in its returned summary and CLI printout.
+
+Model-to-Deployment Selection Rules
+
+For each model and deployment type number 3 through 7, select the best matching tag/recommendation row.
+
+Selection must be deterministic.
+
+Recommended ranking:
+
+1. Prefer assessments in this order:
+  • recommended
+  • full_gpu_fit
+  • cpu_only_practical
+  • partial_gpu_offload
+  • runs_with_constraints
+  • cloud_only
+  • unknown
+  • insufficient_memory
+2. Prefer the model default tag when tied.
+3. Prefer smaller installed storage when tied.
+4. Prefer stable lexical tag_id when still tied.
+
+If a model has no valid row for a deployment type, do not silently omit the deployment type from the model README table. Mark it as unavailable in model.json and the README table. Only create the numbered folder when there is a selected row with enough identity to produce a truthful info.json.
+
+Slug Rules
+
+Slugs must be stable and filesystem-safe:
+
+• lowercase
+• spaces become -
+• /, :, and unsafe punctuation become -
+• collapse repeated dashes
+• trim leading/trailing dashes
+• never produce an empty slug
+
+If two source records would produce the same slug, append a stable short hash or source ID suffix.
+
+Validation Requirements
+
+Add tests. Do not rely only on manual inspection.
+
+Required tests:
+
+• 02-models is not generated anywhere under data/generated/pages.
+• data/generated/pages/models/ exists.
+• data/generated/pages/families/ exists.
+• data/generated/pages/deployment-types/ exists.
+• data/generated/pages/install-manifest.json exists.
+• At least one known fixture model receives a numbered deployment folder.
+• Generated model deployment info.json contains model identity fields.
+• Generated model deployment info.json contains deployment identity fields.
+• Generated model deployment info.json contains disk/RAM/CPU/GPU/VRAM fields.
+• Family info.json contains model count and tag count.
+• Deployment type info.json contains hardware limits and assessment breakdown.
+• Generated JSON files parse cleanly.
+• The generator processes all fixture input rows, not just one example.
+
+Recommended test file:
+
+```text
+tests/test_generate_pages.py
+```
+
+Validation Command
+
+Add either a CLI subcommand or script that validates the generated page tree.
+
+Recommended CLI:
+
+```text
+eight-ball validate-pages
+```
+
+Minimum checks:
+
+• generated pages root exists
+• 02-models does not exist
+• family page count > 0
+• deployment type page count is exactly 5
+• model page count > 0
+• numbered model deployment page count > 0
+• install manifest exists
+• install manifest parses
+• every manifest model deployment points to an existing info.json
+• every deployment type ID is one of 3, 4, 5, 6, 7
+
+8.2 Installer Contract
+
+After C5, 8.2 should use the generated manifest as the source of truth.
+
+The installer selection flow should be:
+
+1. Detect hardware.
+2. Convert hardware into deployment type number 3 through 7.
+3. Resolve requested model ID or model alias.
+4. Read data/generated/pages/install-manifest.json.
+5. Select manifest.models[model_id].deployments[deployment_type_id].
+6. If unavailable, fall back to the next smaller/suitable deployment type or tag.
+7. Pull/run the selected ollama_identifier.
+8. Log both selected model and deployment type.
+
+8.2 must record:
+
+• detected CPU threads
+• detected RAM
+• detected GPU name, if any
+• detected VRAM, if any
+• selected deployment type ID
+• selected model ID
+• selected tag ID
+• selected Ollama identifier
+• fallback reason, if fallback occurred
+
+Completion Proof Required From Cursor
+
+Cursor must report the following, with actual numbers:
+
+• family folders generated
+• deployment type folders generated
+• model folders generated
+• numbered model deployment folders generated
+• install manifest model count
+• install manifest deployment count
+• confirmation that 02-models does not exist
+• test command run
+• test result
+• files changed
+
+Cursor must not answer with only a summary of intended work. The work is not complete until the generator exists, tests pass, and the output counts prove the repo generated the full tree.
+
+Suggested Cursor Task Prompt
+
+```text
+Read C5-8BALL-Deployment-Identity-and-Pages-Scope.md completely before editing.
+
+Implement C5 exactly:
+
+- Add `config/deployment_types.yaml` for numeric deployment types `3` through `7`.
+- Add `src/eight_ball/generate/pages.py`.
+- Wire page generation into `src/eight_ball/generate/outputs.py`.
+- Generate `data/generated/pages/families/...`.
+- Generate `data/generated/pages/deployment-types/...`.
+- Generate `data/generated/pages/models/<model-slug>/<3-7>/...`.
+- Generate `data/generated/pages/install-manifest.json`.
+- Add tests in `tests/test_generate_pages.py`.
+- Add page validation, preferably `eight-ball validate-pages`.
+- Preserve the existing flat generated outputs.
+- Do not create or use `02-models`.
+
+Run the full test suite and provide output counts:
+
+- family folders
+- deployment type folders
+- model folders
+- numbered model deployment folders
+- manifest model count
+- manifest deployment count
+- confirmation that `02-models` does not exist
+
+Do not stop after examples. This must generate from the full catalog/recommendation data.
+```
