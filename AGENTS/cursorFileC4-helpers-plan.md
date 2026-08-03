@@ -351,4 +351,4 @@ Do not add the paid upgrade path.
 
 Do not touch Passport, RecordsCore, S3, Stripe, or 9.sh in this task.
 
-Make the public repo boringly reliable, fun to use, and easy to support. as
+Make the public repo boringly reliable, fun to use, and easy to support.

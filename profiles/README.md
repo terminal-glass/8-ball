@@ -40,14 +40,26 @@ See `environment.profile.example.env` for the documented variable contract.
 
 ## Decision-sequence directories
 
-The numbered folders describe the future installer decision sequence. In this
-repository they are **placeholders only** — C2 and C3 populate them later.
+The numbered folders under `profiles/` describe the **legacy C2** installer decision
+sequence scaffold. They are documentation/templates in this repository.
+
+**C5 installer pages** are generated separately under `data/generated/pages/`:
+
+```text
+data/generated/pages/families/
+data/generated/pages/deployment-types/<3-7>/
+data/generated/pages/models/<model-slug>/<3-7>/
+data/generated/pages/install-manifest.json
+```
+
+Do not create or reference `data/generated/pages/02-models/`. Use `models/` only.
+Deployment type folders are numbered `3` through `7` per `config/deployment_types.yaml`.
 
 | Directory | Step | Purpose | Status in this repo |
 | --- | ---: | --- | --- |
-| `01-families/` | 1 | Model family identity and eligibility metadata | Generated from P4 public catalog (C2) |
-| `02-models/` | 2 | Canonical model identity, aliases, and variant lists | Generated from P4 public catalog (C2) |
-| `03-deployment-types/` | 3 | Deployment lane definitions (bare metal, providers, Jet, Mac, Windows) | C2 lane docs + `generated/deployment-types.json` |
+| `01-families/` | 1 | Model family identity and eligibility metadata | Legacy C2 scaffold (generated from P4 public catalog) |
+| `02-models/` | 2 | Canonical model identity, aliases, and variant lists | Legacy C2 scaffold only — **not** the C5 page tree |
+| `03-deployment-types/` | 3 | Deployment lane definitions (bare metal, providers, Jet, Mac, Windows) | Legacy C2 lane docs + `generated/deployment-types.json` |
 | `04-hard-disk/` | 4 | Hard-disk qualification gates | Scaffold only (C3) |
 | `05-ram/` | 5 | RAM qualification gates | Scaffold only (C3) |
 | `06-cpu/` | 6 | CPU qualification gates | Scaffold only (C3) |
@@ -71,6 +83,11 @@ profile directory in this order:
 3. `NCGPT_PROFILE_DIR`, if already exported in the environment
 4. `PROFILE_DIR` or `EIGHTBALL_PROFILE_DIR` loaded from `/opt/philosopher/instance.env`
 5. Default: `/opt/philosopher/profiles`
+
+For model and deployment selection, `8.2` must read
+`data/generated/pages/install-manifest.json` from the catalog checkout (see
+`docs/install-manifest-contract.md`). It must not scrape Markdown README files
+or guess identity from folder names.
 
 If no profile artifacts exist, `8.2` should fall back to the legacy behavior of
 sourcing `/opt/philosopher/instance.env` only.
@@ -138,5 +155,7 @@ disk, provider, or model-family sizing rules.
 - `AGENTS/CursorFileC1-environment-artifacts.md` — full C1 specification
 - `AGENTS/CursorFileC2-environment-artifact-sequencing.md` — C2 sequencing brief
 - `AGENTS/CursorFileC3-environment-gates-testing-plan.md` — C3 gates plan
+- `AGENTS/cursorFileC5-profile-folder-structure.md` — C5 generated page tree
+- `docs/install-manifest-contract.md` — 8.2 manifest lookup contract
 - `environment.profile.example.env` — example variable contract
 - `generated/README.md` — machine-consumed export location
