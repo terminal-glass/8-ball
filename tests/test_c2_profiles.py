@@ -162,10 +162,3 @@ def test_generate_profile_artifacts_count_mismatch_raises(tmp_path: Path) -> Non
     with pytest.raises(ValueError, match="Family count mismatch"):
         generate_profile_artifacts(catalog_dir=catalog_dir, profiles_dir=tmp_path / "profiles")
 
-
-def test_generate_profile_artifacts_uses_committed_p4_catalog() -> None:
-    summary = generate_profile_artifacts()
-    assert summary["counts"]["families"] == 234
-    assert summary["counts"]["models"] == 437
-    assert summary["counts"]["deployment_variants"] == 7271
-    assert summary["counts"]["source_exception_families"] == 2

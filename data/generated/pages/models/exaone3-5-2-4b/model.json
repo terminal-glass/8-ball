@@ -1,0 +1,48 @@
+{
+  "schema_version": "c5.model-page.v1",
+  "model_id": "exaone3.5-2.4b",
+  "model_slug": "exaone3-5-2-4b",
+  "family_id": "exaone3.5",
+  "family_slug": "exaone3-5",
+  "display_name": "exaone3.5",
+  "default_tag": "exaone3.5:2.4b",
+  "default_tag_id": "exaone3.5__2.4b",
+  "availability": "local",
+  "deployments": {
+    "3": {
+      "deployment_type_id": "3",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "exaone3.5:2.4b",
+      "helper_path": "data/generated/pages/models/exaone3-5-2-4b/3/info.json"
+    },
+    "4": {
+      "deployment_type_id": "4",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "exaone3.5:2.4b",
+      "helper_path": "data/generated/pages/models/exaone3-5-2-4b/4/info.json"
+    },
+    "5": {
+      "deployment_type_id": "5",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "exaone3.5:2.4b",
+      "helper_path": "data/generated/pages/models/exaone3-5-2-4b/5/info.json"
+    },
+    "6": {
+      "deployment_type_id": "6",
+      "available": true,
+      "assessment": "cpu_only_practical",
+      "ollama_identifier": "exaone3.5:2.4b",
+      "helper_path": "data/generated/pages/models/exaone3-5-2-4b/6/info.json"
+    },
+    "7": {
+      "deployment_type_id": "7",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "exaone3.5:2.4b",
+      "helper_path": "data/generated/pages/models/exaone3-5-2-4b/7/info.json"
+    }
+  }
+}

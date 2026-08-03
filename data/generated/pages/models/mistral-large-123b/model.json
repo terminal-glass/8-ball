@@ -1,0 +1,48 @@
+{
+  "schema_version": "c5.model-page.v1",
+  "model_id": "mistral-large-123b",
+  "model_slug": "mistral-large-123b",
+  "family_id": "mistral-large",
+  "family_slug": "mistral-large",
+  "display_name": "mistral-large",
+  "default_tag": "mistral-large:123b",
+  "default_tag_id": "mistral-large__123b",
+  "availability": "local",
+  "deployments": {
+    "3": {
+      "deployment_type_id": "3",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "mistral-large:123b-instruct-2407-q2_K",
+      "helper_path": "data/generated/pages/models/mistral-large-123b/3/info.json"
+    },
+    "4": {
+      "deployment_type_id": "4",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "mistral-large:123b-instruct-2407-q2_K",
+      "helper_path": "data/generated/pages/models/mistral-large-123b/4/info.json"
+    },
+    "5": {
+      "deployment_type_id": "5",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "mistral-large:123b-instruct-2407-q2_K",
+      "helper_path": "data/generated/pages/models/mistral-large-123b/5/info.json"
+    },
+    "6": {
+      "deployment_type_id": "6",
+      "available": true,
+      "assessment": "insufficient_memory",
+      "ollama_identifier": "mistral-large:123b",
+      "helper_path": "data/generated/pages/models/mistral-large-123b/6/info.json"
+    },
+    "7": {
+      "deployment_type_id": "7",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "mistral-large:123b-instruct-2407-q2_K",
+      "helper_path": "data/generated/pages/models/mistral-large-123b/7/info.json"
+    }
+  }
+}

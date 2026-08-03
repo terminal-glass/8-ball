@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "mistral-large-123b",
+  "model_slug": "mistral-large-123b",
+  "model_display_name": "mistral-large",
+  "family_id": "mistral-large",
+  "family_slug": "mistral-large",
+  "tag_id": "mistral-large__123b",
+  "ollama_identifier": "mistral-large:123b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 73000000000,
+  "installed_storage_bytes_estimated": 78840000000,
+  "min_system_ram_gb_estimated": 149.6,
+  "recommended_system_ram_gb_estimated": 179.52,
+  "min_vram_gb_estimated": 80.3,
+  "recommended_vram_gb_estimated": 149.6,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull mistral-large:123b",
+  "run_command": "ollama run mistral-large:123b",
+  "source_url": "https://ollama.com/library/mistral-large/tags",
+  "retrieved_at": "2026-08-01T11:56:18Z"
+}

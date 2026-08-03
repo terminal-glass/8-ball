@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gpt-oss-safeguard-20b",
+  "model_slug": "gpt-oss-safeguard-20b",
+  "model_display_name": "gpt-oss-safeguard",
+  "family_id": "gpt-oss-safeguard",
+  "family_slug": "gpt-oss-safeguard",
+  "tag_id": "gpt-oss-safeguard__20b",
+  "ollama_identifier": "gpt-oss-safeguard:20b",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 14000000000,
+  "installed_storage_bytes_estimated": 15120000000,
+  "min_system_ram_gb_estimated": 23.57,
+  "recommended_system_ram_gb_estimated": 28.29,
+  "min_vram_gb_estimated": 16.1,
+  "recommended_vram_gb_estimated": 23.57,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gpt-oss-safeguard:20b",
+  "run_command": "ollama run gpt-oss-safeguard:20b",
+  "source_url": "https://ollama.com/library/gpt-oss-safeguard/tags",
+  "retrieved_at": "2026-08-01T11:54:05Z"
+}

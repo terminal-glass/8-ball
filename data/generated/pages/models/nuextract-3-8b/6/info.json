@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "nuextract-3.8b",
+  "model_slug": "nuextract-3-8b",
+  "model_display_name": "nuextract",
+  "family_id": "nuextract",
+  "family_slug": "nuextract",
+  "tag_id": "nuextract__3.8b",
+  "ollama_identifier": "nuextract:3.8b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 2200000000,
+  "installed_storage_bytes_estimated": 2376000000,
+  "min_system_ram_gb_estimated": 6.16,
+  "recommended_system_ram_gb_estimated": 7.39,
+  "min_vram_gb_estimated": 2.42,
+  "recommended_vram_gb_estimated": 6.16,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull nuextract:3.8b",
+  "run_command": "ollama run nuextract:3.8b",
+  "source_url": "https://ollama.com/library/nuextract/tags",
+  "retrieved_at": "2026-08-01T11:57:24Z"
+}

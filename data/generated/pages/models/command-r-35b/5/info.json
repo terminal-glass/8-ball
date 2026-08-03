@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "command-r-35b",
+  "model_slug": "command-r-35b",
+  "model_display_name": "command-r",
+  "family_id": "command-r",
+  "family_slug": "command-r",
+  "tag_id": "command-r__35b",
+  "ollama_identifier": "command-r:35b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 19000000000,
+  "installed_storage_bytes_estimated": 20520000000,
+  "min_system_ram_gb_estimated": 41.8,
+  "recommended_system_ram_gb_estimated": 50.16,
+  "min_vram_gb_estimated": 20.9,
+  "recommended_vram_gb_estimated": 41.8,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull command-r:35b",
+  "run_command": "ollama run command-r:35b",
+  "source_url": "https://ollama.com/library/command-r/tags",
+  "retrieved_at": "2026-08-01T11:52:12Z"
+}

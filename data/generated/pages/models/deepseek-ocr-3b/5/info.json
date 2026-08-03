@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "deepseek-ocr-3b",
+  "model_slug": "deepseek-ocr-3b",
+  "model_display_name": "deepseek-ocr",
+  "family_id": "deepseek-ocr",
+  "family_slug": "deepseek-ocr",
+  "tag_id": "deepseek-ocr__3b",
+  "ollama_identifier": "deepseek-ocr:3b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 6700000000,
+  "installed_storage_bytes_estimated": 7236000000,
+  "min_system_ram_gb_estimated": 10.67,
+  "recommended_system_ram_gb_estimated": 12.8,
+  "min_vram_gb_estimated": 7.37,
+  "recommended_vram_gb_estimated": 10.67,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull deepseek-ocr:3b",
+  "run_command": "ollama run deepseek-ocr:3b",
+  "source_url": "https://ollama.com/library/deepseek-ocr/tags",
+  "retrieved_at": "2026-08-01T11:52:34Z"
+}

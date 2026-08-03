@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "medgemma-4b",
+  "model_slug": "medgemma-4b",
+  "model_display_name": "medgemma",
+  "family_id": "medgemma",
+  "family_slug": "medgemma",
+  "tag_id": "medgemma__4b",
+  "ollama_identifier": "medgemma:4b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 3300000000,
+  "installed_storage_bytes_estimated": 3564000000,
+  "min_system_ram_gb_estimated": 6.67,
+  "recommended_system_ram_gb_estimated": 8.0,
+  "min_vram_gb_estimated": 3.79,
+  "recommended_vram_gb_estimated": 6.67,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull medgemma:4b",
+  "run_command": "ollama run medgemma:4b",
+  "source_url": "https://ollama.com/library/medgemma/tags",
+  "retrieved_at": "2026-08-01T11:55:50Z"
+}

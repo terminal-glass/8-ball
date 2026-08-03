@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "command-a-111b",
+  "model_slug": "command-a-111b",
+  "model_display_name": "command-a",
+  "family_id": "command-a",
+  "family_slug": "command-a",
+  "tag_id": "command-a__111b",
+  "ollama_identifier": "command-a:111b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 67000000000,
+  "installed_storage_bytes_estimated": 72360000000,
+  "min_system_ram_gb_estimated": 136.4,
+  "recommended_system_ram_gb_estimated": 163.68,
+  "min_vram_gb_estimated": 73.7,
+  "recommended_vram_gb_estimated": 136.4,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull command-a:111b",
+  "run_command": "ollama run command-a:111b",
+  "source_url": "https://ollama.com/library/command-a/tags",
+  "retrieved_at": "2026-08-01T11:52:09Z"
+}

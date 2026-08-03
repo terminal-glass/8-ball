@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "codellama-13b",
+  "model_slug": "codellama-13b",
+  "model_display_name": "codellama",
+  "family_id": "codellama",
+  "family_slug": "codellama",
+  "tag_id": "codellama__13b",
+  "ollama_identifier": "codellama:13b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 7400000000,
+  "installed_storage_bytes_estimated": 7992000000,
+  "min_system_ram_gb_estimated": 16.94,
+  "recommended_system_ram_gb_estimated": 20.33,
+  "min_vram_gb_estimated": 8.14,
+  "recommended_vram_gb_estimated": 16.94,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull codellama:13b",
+  "run_command": "ollama run codellama:13b",
+  "source_url": "https://ollama.com/library/codellama/tags",
+  "retrieved_at": "2026-08-01T11:51:56Z"
+}

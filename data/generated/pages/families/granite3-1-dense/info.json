@@ -1,0 +1,23 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "granite3.1-dense",
+  "family_slug": "granite3-1-dense",
+  "publisher_id": "ibm",
+  "name": "granite3.1-dense",
+  "description": "granite3.1-dense 999.3K Downloads Updated 1 year ago The IBM Granite 2B and 8B models are text-only dense LLMs trained on over 12 trillion tokens of data, demonstrated significant improvements over their predecessors in performance and speed in IBM’s initial testing. The IBM Granite 2B and 8B models are text-only dense LLMs trained on over 12 trillion tokens of data, demonstrated significant improvements over their predecessors in performance and speed in IBM’s initial testing. Cancel tools 2b 8",
+  "source_url": "https://ollama.com/library/granite3.1-dense",
+  "retrieved_at": "2026-08-01T11:54:18Z",
+  "model_count": 2,
+  "tag_count": 33,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 35,
+    "tool_use": 35
+  }
+}

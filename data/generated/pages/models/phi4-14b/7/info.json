@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "phi4-14b",
+  "model_slug": "phi4-14b",
+  "model_display_name": "phi4",
+  "family_id": "phi4",
+  "family_slug": "phi4",
+  "tag_id": "phi4__14b",
+  "ollama_identifier": "phi4:14b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 9100000000,
+  "installed_storage_bytes_estimated": 9828000000,
+  "min_system_ram_gb_estimated": 19.36,
+  "recommended_system_ram_gb_estimated": 23.23,
+  "min_vram_gb_estimated": 10.01,
+  "recommended_vram_gb_estimated": 19.36,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull phi4:14b",
+  "run_command": "ollama run phi4:14b",
+  "source_url": "https://ollama.com/library/phi4/tags",
+  "retrieved_at": "2026-08-01T11:58:00Z"
+}

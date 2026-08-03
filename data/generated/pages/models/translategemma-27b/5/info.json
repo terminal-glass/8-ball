@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "translategemma-27b",
+  "model_slug": "translategemma-27b",
+  "model_display_name": "translategemma",
+  "family_id": "translategemma",
+  "family_slug": "translategemma",
+  "tag_id": "translategemma__27b",
+  "ollama_identifier": "translategemma:27b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 17000000000,
+  "installed_storage_bytes_estimated": 18360000000,
+  "min_system_ram_gb_estimated": 35.2,
+  "recommended_system_ram_gb_estimated": 42.24,
+  "min_vram_gb_estimated": 18.7,
+  "recommended_vram_gb_estimated": 35.2,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull translategemma:27b",
+  "run_command": "ollama run translategemma:27b",
+  "source_url": "https://ollama.com/library/translategemma/tags",
+  "retrieved_at": "2026-08-01T11:59:41Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "llama3.1-405b",
+  "model_slug": "llama3-1-405b",
+  "model_display_name": "llama3.1",
+  "family_id": "llama3.1",
+  "family_slug": "llama3-1",
+  "tag_id": "llama3.1__405b",
+  "ollama_identifier": "llama3.1:405b",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "cloud-only",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "local_model",
+    "cloud_only_profile"
+  ],
+  "explanation": "Local model cannot run on a cloud-only access profile.",
+  "download_size_bytes": 243000000000,
+  "installed_storage_bytes_estimated": 262440000000,
+  "min_system_ram_gb_estimated": 491.7,
+  "recommended_system_ram_gb_estimated": 590.04,
+  "min_vram_gb_estimated": 267.3,
+  "recommended_vram_gb_estimated": 491.7,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull llama3.1:405b",
+  "run_command": "ollama run llama3.1:405b",
+  "source_url": "https://ollama.com/library/llama3.1/tags",
+  "retrieved_at": "2026-08-01T11:55:23Z"
+}

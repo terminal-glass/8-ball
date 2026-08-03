@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "deepseek-llm-67b",
+  "model_slug": "deepseek-llm-67b",
+  "model_display_name": "deepseek-llm",
+  "family_id": "deepseek-llm",
+  "family_slug": "deepseek-llm",
+  "tag_id": "deepseek-llm__67b",
+  "ollama_identifier": "deepseek-llm:67b",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 38000000000,
+  "installed_storage_bytes_estimated": 41040000000,
+  "min_system_ram_gb_estimated": 64.69,
+  "recommended_system_ram_gb_estimated": 77.62,
+  "min_vram_gb_estimated": 43.7,
+  "recommended_vram_gb_estimated": 64.69,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull deepseek-llm:67b",
+  "run_command": "ollama run deepseek-llm:67b",
+  "source_url": "https://ollama.com/library/deepseek-llm/tags",
+  "retrieved_at": "2026-08-01T11:52:32Z"
+}

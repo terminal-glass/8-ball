@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "mistral-7b",
+  "model_slug": "mistral-7b",
+  "model_display_name": "mistral",
+  "family_id": "mistral",
+  "family_slug": "mistral",
+  "tag_id": "mistral__7b",
+  "ollama_identifier": "mistral:7b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 4400000000,
+  "installed_storage_bytes_estimated": 4752000000,
+  "min_system_ram_gb_estimated": 10.34,
+  "recommended_system_ram_gb_estimated": 12.41,
+  "min_vram_gb_estimated": 4.84,
+  "recommended_vram_gb_estimated": 10.34,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull mistral:7b",
+  "run_command": "ollama run mistral:7b",
+  "source_url": "https://ollama.com/library/mistral/tags",
+  "retrieved_at": "2026-08-01T11:56:15Z"
+}

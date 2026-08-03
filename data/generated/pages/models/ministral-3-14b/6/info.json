@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "ministral-3-14b",
+  "model_slug": "ministral-3-14b",
+  "model_display_name": "ministral-3",
+  "family_id": "ministral-3",
+  "family_slug": "ministral-3",
+  "tag_id": "ministral-3__14b",
+  "ollama_identifier": "ministral-3:14b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 9100000000,
+  "installed_storage_bytes_estimated": 9828000000,
+  "min_system_ram_gb_estimated": 19.36,
+  "recommended_system_ram_gb_estimated": 23.23,
+  "min_vram_gb_estimated": 10.01,
+  "recommended_vram_gb_estimated": 19.36,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull ministral-3:14b",
+  "run_command": "ollama run ministral-3:14b",
+  "source_url": "https://ollama.com/library/ministral-3/tags",
+  "retrieved_at": "2026-08-01T11:56:13Z"
+}

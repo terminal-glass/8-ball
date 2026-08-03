@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "zephyr-141b",
+  "model_slug": "zephyr-141b",
+  "model_display_name": "zephyr",
+  "family_id": "zephyr",
+  "family_slug": "zephyr",
+  "tag_id": "zephyr__141b-v0.1-q2_K",
+  "ollama_identifier": "zephyr:141b-v0.1-q2_K",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "runs_with_constraints",
+  "reason_codes": [
+    "fits_system_ram",
+    "limited_vram"
+  ],
+  "explanation": "May run with constraints using CPU RAM and limited VRAM.",
+  "download_size_bytes": 52000000000,
+  "installed_storage_bytes_estimated": 56160000000,
+  "min_system_ram_gb_estimated": 102.06,
+  "recommended_system_ram_gb_estimated": 122.47,
+  "min_vram_gb_estimated": 59.8,
+  "recommended_vram_gb_estimated": 102.06,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull zephyr:141b-v0.1-q2_K",
+  "run_command": "ollama run zephyr:141b-v0.1-q2_K",
+  "source_url": "https://ollama.com/library/zephyr/tags",
+  "retrieved_at": "2026-08-01T12:00:16Z"
+}

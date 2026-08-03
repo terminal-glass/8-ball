@@ -1,0 +1,22 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "yi-coder",
+  "family_slug": "yi-coder",
+  "publisher_id": "unknown",
+  "name": "yi-coder",
+  "description": "Yi-Coder is a series of open-source code language models that delivers state-of-the-art coding performance with fewer than 10 billion parameters. Yi-Coder is a series of open-source code language models that delivers state-of-the-art coding performance with fewer than 10 billion parameters. Cancel",
+  "source_url": "https://ollama.com/library/yi-coder",
+  "retrieved_at": "2026-08-01T12:00:12Z",
+  "model_count": 2,
+  "tag_count": 67,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 69
+  }
+}

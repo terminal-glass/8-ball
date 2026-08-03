@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "stablelm-zephyr-3b",
+  "model_slug": "stablelm-zephyr-3b",
+  "model_display_name": "stablelm-zephyr",
+  "family_id": "stablelm-zephyr",
+  "family_slug": "stablelm-zephyr",
+  "tag_id": "stablelm-zephyr__3b",
+  "ollama_identifier": "stablelm-zephyr:3b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 1600000000,
+  "installed_storage_bytes_estimated": 1728000000,
+  "min_system_ram_gb_estimated": 5.06,
+  "recommended_system_ram_gb_estimated": 6.07,
+  "min_vram_gb_estimated": 1.76,
+  "recommended_vram_gb_estimated": 5.06,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull stablelm-zephyr:3b",
+  "run_command": "ollama run stablelm-zephyr:3b",
+  "source_url": "https://ollama.com/library/stablelm-zephyr/tags",
+  "retrieved_at": "2026-08-01T11:59:25Z"
+}

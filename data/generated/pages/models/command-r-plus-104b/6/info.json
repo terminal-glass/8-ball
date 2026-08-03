@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "command-r-plus-104b",
+  "model_slug": "command-r-plus-104b",
+  "model_display_name": "command-r-plus",
+  "family_id": "command-r-plus",
+  "family_slug": "command-r-plus",
+  "tag_id": "command-r-plus__104b",
+  "ollama_identifier": "command-r-plus:104b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 59000000000,
+  "installed_storage_bytes_estimated": 63720000000,
+  "min_system_ram_gb_estimated": 123.75,
+  "recommended_system_ram_gb_estimated": 148.5,
+  "min_vram_gb_estimated": 64.9,
+  "recommended_vram_gb_estimated": 123.75,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull command-r-plus:104b",
+  "run_command": "ollama run command-r-plus:104b",
+  "source_url": "https://ollama.com/library/command-r-plus/tags",
+  "retrieved_at": "2026-08-01T11:52:14Z"
+}

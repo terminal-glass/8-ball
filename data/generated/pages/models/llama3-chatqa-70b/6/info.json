@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "llama3-chatqa-70b",
+  "model_slug": "llama3-chatqa-70b",
+  "model_display_name": "llama3-chatqa",
+  "family_id": "llama3-chatqa",
+  "family_slug": "llama3-chatqa",
+  "tag_id": "llama3-chatqa__70b-v1.5-q2_K",
+  "ollama_identifier": "llama3-chatqa:70b-v1.5-q2_K",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 26000000000,
+  "installed_storage_bytes_estimated": 28080000000,
+  "min_system_ram_gb_estimated": 51.75,
+  "recommended_system_ram_gb_estimated": 62.1,
+  "min_vram_gb_estimated": 29.9,
+  "recommended_vram_gb_estimated": 51.75,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull llama3-chatqa:70b-v1.5-q2_K",
+  "run_command": "ollama run llama3-chatqa:70b-v1.5-q2_K",
+  "source_url": "https://ollama.com/library/llama3-chatqa/tags",
+  "retrieved_at": "2026-08-01T11:55:16Z"
+}

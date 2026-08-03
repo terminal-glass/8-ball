@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "xwinlm-70b",
+  "model_slug": "xwinlm-70b",
+  "model_display_name": "xwinlm",
+  "family_id": "xwinlm",
+  "family_slug": "xwinlm",
+  "tag_id": "xwinlm__70b-v0.1",
+  "ollama_identifier": "xwinlm:70b-v0.1",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 39000000000,
+  "installed_storage_bytes_estimated": 42120000000,
+  "min_system_ram_gb_estimated": 66.7,
+  "recommended_system_ram_gb_estimated": 80.04,
+  "min_vram_gb_estimated": 44.85,
+  "recommended_vram_gb_estimated": 66.7,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull xwinlm:70b-v0.1",
+  "run_command": "ollama run xwinlm:70b-v0.1",
+  "source_url": "https://ollama.com/library/xwinlm/tags",
+  "retrieved_at": "2026-08-01T12:00:04Z"
+}

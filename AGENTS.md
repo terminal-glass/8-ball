@@ -33,7 +33,7 @@ Keep these directories distinguishable:
 | `data/candidate/` | Candidate normalized catalogs from live collection | Do not commit |
 | `data/normalized/` | Normalized source-derived entities | Commit |
 | `data/generated/` | Reproducible generated recommendations, exports, and indexes | Do not commit |
-| `data/generated/pages/` | C5 generated metadata page tree (families, deployment-types, models) | Do not commit |
+| `data/generated/pages/` | C5 generated metadata page tree (families, deployment-types, models) | Commit when regenerated |
 | `reports/` | Human-readable reports; machine summaries are reproducible | Commit markdown optionally; JSON reports are reproducible |
 | `indexes/` | Generated metadata indexes derived from normalized records | Do not commit |
 | `tests/fixtures/` | Offline fixtures for tests | Commit |
@@ -41,8 +41,8 @@ Keep these directories distinguishable:
 **Source versus generated**
 
 - Treat `data/families/` and `data/normalized/` as source-derived data, not generated recommendations.
-- Treat `data/generated/`, `indexes/`, `data/candidate/`, and reproducible JSON under `reports/` as generated output.
-- Never edit generated files by hand. Regenerate them with `eight-ball generate` or `eight-ball all`.
+- Treat `data/generated/` (except `data/generated/pages/`), `indexes/`, `data/candidate/`, and reproducible JSON under `reports/` as generated output.
+- Commit `data/generated/pages/` after intentional regeneration; never edit those files by hand.
 - Do not treat generated deployment counts or recommendations as manually maintained truth.
 
 ---
@@ -265,6 +265,5 @@ Rules:
 - Deployment type folder names are exactly `3`, `4`, `5`, `6`, `7` (defined in `config/deployment_types.yaml`).
 - Generated pages are metadata only — no model weights, Ollama blobs, binaries, or installer payloads.
 - `8.2` must read `data/generated/pages/install-manifest.json`, not scrape Markdown or guess from folder names.
-- Legacy `profiles/02-models/` is a C2 documentation scaffold only; it is not the C5 installer page tree.
 
 See `docs/install-manifest-contract.md` and `AGENTS/cursorFileC5-profile-folder-structure.md`.

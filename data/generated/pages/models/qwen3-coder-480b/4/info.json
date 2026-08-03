@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen3-coder-480b",
+  "model_slug": "qwen3-coder-480b",
+  "model_display_name": "qwen3-coder",
+  "family_id": "qwen3-coder",
+  "family_slug": "qwen3-coder",
+  "tag_id": "qwen3-coder__480b",
+  "ollama_identifier": "qwen3-coder:480b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 290000000000,
+  "installed_storage_bytes_estimated": 313200000000,
+  "min_system_ram_gb_estimated": 584.65,
+  "recommended_system_ram_gb_estimated": 701.58,
+  "min_vram_gb_estimated": 319.0,
+  "recommended_vram_gb_estimated": 584.65,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull qwen3-coder:480b",
+  "run_command": "ollama run qwen3-coder:480b",
+  "source_url": "https://ollama.com/library/qwen3-coder/tags",
+  "retrieved_at": "2026-08-01T11:58:28Z"
+}

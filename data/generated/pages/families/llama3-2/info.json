@@ -1,0 +1,23 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "llama3.2",
+  "family_slug": "llama3-2",
+  "publisher_id": "meta",
+  "name": "llama3.2",
+  "description": "llama3.2 78.6M Downloads Updated 1 year ago Meta's Llama 3.2 goes small with 1B and 3B models. Meta's Llama 3.2 goes small with 1B and 3B models. Cancel tools 1b 3b CLI cURL Python JavaScript Documentation Documentation ollama run llama3.2 curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"llama3.2\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'llama3.2' ,\n    messages=[{ 'role' : 'user' , 'content' : 'Hello!' }],\n) ",
+  "source_url": "https://ollama.com/library/llama3.2",
+  "retrieved_at": "2026-08-01T11:55:24Z",
+  "model_count": 2,
+  "tag_count": 63,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 65,
+    "tool_use": 65
+  }
+}

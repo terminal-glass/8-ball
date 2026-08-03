@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "neural-chat-7b",
+  "model_slug": "neural-chat-7b",
+  "model_display_name": "neural-chat",
+  "family_id": "neural-chat",
+  "family_slug": "neural-chat",
+  "tag_id": "neural-chat__7b",
+  "ollama_identifier": "neural-chat:7b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 4100000000,
+  "installed_storage_bytes_estimated": 4428000000,
+  "min_system_ram_gb_estimated": 10.01,
+  "recommended_system_ram_gb_estimated": 12.01,
+  "min_vram_gb_estimated": 4.51,
+  "recommended_vram_gb_estimated": 10.01,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull neural-chat:7b",
+  "run_command": "ollama run neural-chat:7b",
+  "source_url": "https://ollama.com/library/neural-chat/tags",
+  "retrieved_at": "2026-08-01T11:57:01Z"
+}

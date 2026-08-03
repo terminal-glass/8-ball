@@ -1,0 +1,48 @@
+{
+  "schema_version": "c5.model-page.v1",
+  "model_id": "qwen2.5-1.5b",
+  "model_slug": "qwen2-5-1-5b",
+  "family_id": "qwen2.5",
+  "family_slug": "qwen2-5",
+  "display_name": "qwen2.5",
+  "default_tag": "qwen2.5:1.5b",
+  "default_tag_id": "qwen2.5__1.5b",
+  "availability": "local",
+  "deployments": {
+    "3": {
+      "deployment_type_id": "3",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "qwen2.5:1.5b",
+      "helper_path": "data/generated/pages/models/qwen2-5-1-5b/3/info.json"
+    },
+    "4": {
+      "deployment_type_id": "4",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "qwen2.5:1.5b",
+      "helper_path": "data/generated/pages/models/qwen2-5-1-5b/4/info.json"
+    },
+    "5": {
+      "deployment_type_id": "5",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "qwen2.5:1.5b",
+      "helper_path": "data/generated/pages/models/qwen2-5-1-5b/5/info.json"
+    },
+    "6": {
+      "deployment_type_id": "6",
+      "available": true,
+      "assessment": "cpu_only_practical",
+      "ollama_identifier": "qwen2.5:1.5b",
+      "helper_path": "data/generated/pages/models/qwen2-5-1-5b/6/info.json"
+    },
+    "7": {
+      "deployment_type_id": "7",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "qwen2.5:1.5b",
+      "helper_path": "data/generated/pages/models/qwen2-5-1-5b/7/info.json"
+    }
+  }
+}

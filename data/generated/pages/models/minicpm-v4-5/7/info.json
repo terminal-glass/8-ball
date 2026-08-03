@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "minicpm-v4.5",
+  "model_slug": "minicpm-v4-5",
+  "model_display_name": "A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video Understanding on Your Phone",
+  "family_id": "minicpm-v4.5",
+  "family_slug": "minicpm-v4-5",
+  "tag_id": "minicpm-v4.5__f16",
+  "ollama_identifier": "minicpm-v4.5:f16",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 17000000000,
+  "installed_storage_bytes_estimated": 18360000000,
+  "min_system_ram_gb_estimated": 20.35,
+  "recommended_system_ram_gb_estimated": 24.42,
+  "min_vram_gb_estimated": 18.7,
+  "recommended_vram_gb_estimated": 20.35,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull minicpm-v4.5:f16",
+  "run_command": "ollama run minicpm-v4.5:f16",
+  "source_url": "https://ollama.com/library/minicpm-v4.5/tags",
+  "retrieved_at": "2026-08-01T11:56:04Z"
+}

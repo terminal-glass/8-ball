@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen-110b",
+  "model_slug": "qwen-110b",
+  "model_display_name": "qwen",
+  "family_id": "qwen",
+  "family_slug": "qwen",
+  "tag_id": "qwen__110b",
+  "ollama_identifier": "qwen:110b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 63000000000,
+  "installed_storage_bytes_estimated": 68040000000,
+  "min_system_ram_gb_estimated": 131.45,
+  "recommended_system_ram_gb_estimated": 157.74,
+  "min_vram_gb_estimated": 69.3,
+  "recommended_vram_gb_estimated": 131.45,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull qwen:110b",
+  "run_command": "ollama run qwen:110b",
+  "source_url": "https://ollama.com/library/qwen/tags",
+  "retrieved_at": "2026-08-01T11:58:11Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gemini-3-flash-preview",
+  "model_slug": "gemini-3-flash-preview",
+  "model_display_name": "gemini-3-flash-preview",
+  "family_id": "gemini-3-flash-preview",
+  "family_slug": "gemini-3-flash-preview",
+  "tag_id": "gemini-3-flash-preview__latest",
+  "ollama_identifier": "gemini-3-flash-preview:latest",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "cloud_only",
+  "assessment": "cloud_only",
+  "reason_codes": [
+    "cloud_model",
+    "local_profile_unsuitable"
+  ],
+  "explanation": "Model is cloud-hosted; local hardware profile is not applicable for weights.",
+  "download_size_bytes": null,
+  "installed_storage_bytes_estimated": null,
+  "min_system_ram_gb_estimated": null,
+  "recommended_system_ram_gb_estimated": null,
+  "min_vram_gb_estimated": null,
+  "recommended_vram_gb_estimated": null,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gemini-3-flash-preview:latest",
+  "run_command": "ollama run gemini-3-flash-preview:latest",
+  "source_url": "https://ollama.com/library/gemini-3-flash-preview/tags",
+  "retrieved_at": "2026-08-01T11:53:36Z"
+}

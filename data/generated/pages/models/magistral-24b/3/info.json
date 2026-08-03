@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "magistral-24b",
+  "model_slug": "magistral-24b",
+  "model_display_name": "magistral",
+  "family_id": "magistral",
+  "family_slug": "magistral",
+  "tag_id": "magistral__24b",
+  "ollama_identifier": "magistral:24b",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 14000000000,
+  "installed_storage_bytes_estimated": 15120000000,
+  "min_system_ram_gb_estimated": 30.25,
+  "recommended_system_ram_gb_estimated": 36.3,
+  "min_vram_gb_estimated": 15.4,
+  "recommended_vram_gb_estimated": 30.25,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull magistral:24b",
+  "run_command": "ollama run magistral:24b",
+  "source_url": "https://ollama.com/library/magistral/tags",
+  "retrieved_at": "2026-08-01T11:55:43Z"
+}

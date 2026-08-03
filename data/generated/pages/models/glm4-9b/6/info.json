@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "glm4-9b",
+  "model_slug": "glm4-9b",
+  "model_display_name": "glm4",
+  "family_id": "glm4",
+  "family_slug": "glm4",
+  "tag_id": "glm4__9b",
+  "ollama_identifier": "glm4:9b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "desktop-standard",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 5500000000,
+  "installed_storage_bytes_estimated": 5940000000,
+  "min_system_ram_gb_estimated": 12.65,
+  "recommended_system_ram_gb_estimated": 15.18,
+  "min_vram_gb_estimated": 6.05,
+  "recommended_vram_gb_estimated": 12.65,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull glm4:9b",
+  "run_command": "ollama run glm4:9b",
+  "source_url": "https://ollama.com/library/glm4/tags",
+  "retrieved_at": "2026-08-01T11:53:58Z"
+}

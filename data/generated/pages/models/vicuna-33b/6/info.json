@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "vicuna-33b",
+  "model_slug": "vicuna-33b",
+  "model_display_name": "vicuna",
+  "family_id": "vicuna",
+  "family_slug": "vicuna",
+  "tag_id": "vicuna__33b",
+  "ollama_identifier": "vicuna:33b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 18000000000,
+  "installed_storage_bytes_estimated": 19440000000,
+  "min_system_ram_gb_estimated": 39.6,
+  "recommended_system_ram_gb_estimated": 47.52,
+  "min_vram_gb_estimated": 19.8,
+  "recommended_vram_gb_estimated": 39.6,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull vicuna:33b",
+  "run_command": "ollama run vicuna:33b",
+  "source_url": "https://ollama.com/library/vicuna/tags",
+  "retrieved_at": "2026-08-01T11:59:46Z"
+}

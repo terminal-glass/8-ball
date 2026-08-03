@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "tulu3-70b",
+  "model_slug": "tulu3-70b",
+  "model_display_name": "tulu3",
+  "family_id": "tulu3",
+  "family_slug": "tulu3",
+  "tag_id": "tulu3__70b",
+  "ollama_identifier": "tulu3:70b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 43000000000,
+  "installed_storage_bytes_estimated": 46440000000,
+  "min_system_ram_gb_estimated": 87.45,
+  "recommended_system_ram_gb_estimated": 104.94,
+  "min_vram_gb_estimated": 47.3,
+  "recommended_vram_gb_estimated": 87.45,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull tulu3:70b",
+  "run_command": "ollama run tulu3:70b",
+  "source_url": "https://ollama.com/library/tulu3/tags",
+  "retrieved_at": "2026-08-01T11:59:43Z"
+}

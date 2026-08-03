@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "mistral-large-123b",
+  "model_slug": "mistral-large-123b",
+  "model_display_name": "mistral-large",
+  "family_id": "mistral-large",
+  "family_slug": "mistral-large",
+  "tag_id": "mistral-large__123b-instruct-2407-q2_K",
+  "ollama_identifier": "mistral-large:123b-instruct-2407-q2_K",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "runs_with_constraints",
+  "reason_codes": [
+    "fits_system_ram",
+    "limited_vram"
+  ],
+  "explanation": "May run with constraints using CPU RAM and limited VRAM.",
+  "download_size_bytes": 45000000000,
+  "installed_storage_bytes_estimated": 48600000000,
+  "min_system_ram_gb_estimated": 88.84,
+  "recommended_system_ram_gb_estimated": 106.6,
+  "min_vram_gb_estimated": 51.75,
+  "recommended_vram_gb_estimated": 88.84,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull mistral-large:123b-instruct-2407-q2_K",
+  "run_command": "ollama run mistral-large:123b-instruct-2407-q2_K",
+  "source_url": "https://ollama.com/library/mistral-large/tags",
+  "retrieved_at": "2026-08-01T11:56:18Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "minicpm-v4.5",
+  "family_slug": "minicpm-v4-5",
+  "publisher_id": "unknown",
+  "name": "A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video Understanding on Your Phone",
+  "description": "minicpm-v4.5 19.8K Downloads Updated 2 months ago A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video Understanding on Your Phone A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video Understanding on Your Phone Cancel vision 8b CLI cURL Python JavaScript Documentation Documentation ollama run minicpm-v4.5 curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"minicpm-v4.5\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat",
+  "source_url": "https://ollama.com/library/minicpm-v4.5",
+  "retrieved_at": "2026-08-01T11:56:03Z",
+  "model_count": 2,
+  "tag_count": 13,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 15,
+    "vision": 15
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "phi4",
+  "family_slug": "phi4",
+  "publisher_id": "microsoft",
+  "name": "phi4",
+  "description": "CLI cURL Python JavaScript Documentation Documentation ollama run phi4 curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"phi4\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'phi4' ,\n    messages=[{ 'role' : 'user' , 'content' : 'Hello!' }],\n) print (response.message.content) import ollama from 'ollama' const response = await ollama.chat({\n  model: 'phi4' ,\n  messages: [{role: 'user' , content: 'Hello!' }],\n})\nconsole",
+  "source_url": "https://ollama.com/library/phi4",
+  "retrieved_at": "2026-08-01T11:57:59Z",
+  "model_count": 1,
+  "tag_count": 5,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "text_generation": 6
+  }
+}

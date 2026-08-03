@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "laguna-s-2.1",
+  "model_slug": "laguna-s-2-1",
+  "model_display_name": "Laguna S 2.1",
+  "family_id": "laguna-s-2.1",
+  "family_slug": "laguna-s-2-1",
+  "tag_id": "laguna-s-2.1__latest",
+  "ollama_identifier": "laguna-s-2.1:latest",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 96000000000,
+  "installed_storage_bytes_estimated": 103680000000,
+  "min_system_ram_gb_estimated": 107.25,
+  "recommended_system_ram_gb_estimated": 128.7,
+  "min_vram_gb_estimated": 105.6,
+  "recommended_vram_gb_estimated": 107.25,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull laguna-s-2.1:latest",
+  "run_command": "ollama run laguna-s-2.1:latest",
+  "source_url": "https://ollama.com/library/laguna-s-2.1/tags",
+  "retrieved_at": "2026-08-01T11:54:48Z"
+}

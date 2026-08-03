@@ -1,0 +1,48 @@
+{
+  "schema_version": "c5.model-page.v1",
+  "model_id": "devstral-2-123b",
+  "model_slug": "devstral-2-123b",
+  "family_id": "devstral-2",
+  "family_slug": "devstral-2",
+  "display_name": "Devstral 2",
+  "default_tag": "devstral-2:123b",
+  "default_tag_id": "devstral-2__123b",
+  "availability": "local",
+  "deployments": {
+    "3": {
+      "deployment_type_id": "3",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "devstral-2:latest",
+      "helper_path": "data/generated/pages/models/devstral-2-123b/3/info.json"
+    },
+    "4": {
+      "deployment_type_id": "4",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "devstral-2:latest",
+      "helper_path": "data/generated/pages/models/devstral-2-123b/4/info.json"
+    },
+    "5": {
+      "deployment_type_id": "5",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "devstral-2:latest",
+      "helper_path": "data/generated/pages/models/devstral-2-123b/5/info.json"
+    },
+    "6": {
+      "deployment_type_id": "6",
+      "available": true,
+      "assessment": "insufficient_memory",
+      "ollama_identifier": "devstral-2:123b",
+      "helper_path": "data/generated/pages/models/devstral-2-123b/6/info.json"
+    },
+    "7": {
+      "deployment_type_id": "7",
+      "available": true,
+      "assessment": "runs_with_constraints",
+      "ollama_identifier": "devstral-2:latest",
+      "helper_path": "data/generated/pages/models/devstral-2-123b/7/info.json"
+    }
+  }
+}

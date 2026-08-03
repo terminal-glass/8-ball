@@ -1,0 +1,48 @@
+{
+  "schema_version": "c5.model-page.v1",
+  "model_id": "openhermes-7b",
+  "model_slug": "openhermes-7b",
+  "family_id": "openhermes",
+  "family_slug": "openhermes",
+  "display_name": "openhermes",
+  "default_tag": "openhermes:latest",
+  "default_tag_id": "openhermes__latest",
+  "availability": "local",
+  "deployments": {
+    "3": {
+      "deployment_type_id": "3",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "openhermes:latest",
+      "helper_path": "data/generated/pages/models/openhermes-7b/3/info.json"
+    },
+    "4": {
+      "deployment_type_id": "4",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "openhermes:latest",
+      "helper_path": "data/generated/pages/models/openhermes-7b/4/info.json"
+    },
+    "5": {
+      "deployment_type_id": "5",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "openhermes:latest",
+      "helper_path": "data/generated/pages/models/openhermes-7b/5/info.json"
+    },
+    "6": {
+      "deployment_type_id": "6",
+      "available": true,
+      "assessment": "cpu_only_practical",
+      "ollama_identifier": "openhermes:latest",
+      "helper_path": "data/generated/pages/models/openhermes-7b/6/info.json"
+    },
+    "7": {
+      "deployment_type_id": "7",
+      "available": true,
+      "assessment": "full_gpu_fit",
+      "ollama_identifier": "openhermes:latest",
+      "helper_path": "data/generated/pages/models/openhermes-7b/7/info.json"
+    }
+  }
+}

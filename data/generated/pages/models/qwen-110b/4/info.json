@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "qwen-110b",
+  "model_slug": "qwen-110b",
+  "model_display_name": "qwen",
+  "family_id": "qwen",
+  "family_slug": "qwen",
+  "tag_id": "qwen__110b",
+  "ollama_identifier": "qwen:110b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "runs_with_constraints",
+  "reason_codes": [
+    "fits_system_ram",
+    "limited_vram"
+  ],
+  "explanation": "May run with constraints using CPU RAM and limited VRAM.",
+  "download_size_bytes": 63000000000,
+  "installed_storage_bytes_estimated": 68040000000,
+  "min_system_ram_gb_estimated": 105.8,
+  "recommended_system_ram_gb_estimated": 126.96,
+  "min_vram_gb_estimated": 72.45,
+  "recommended_vram_gb_estimated": 105.8,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull qwen:110b",
+  "run_command": "ollama run qwen:110b",
+  "source_url": "https://ollama.com/library/qwen/tags",
+  "retrieved_at": "2026-08-01T11:58:11Z"
+}

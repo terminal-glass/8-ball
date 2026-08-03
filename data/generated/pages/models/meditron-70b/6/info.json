@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "meditron-70b",
+  "model_slug": "meditron-70b",
+  "model_display_name": "meditron",
+  "family_id": "meditron",
+  "family_slug": "meditron",
+  "tag_id": "meditron__70b",
+  "ollama_identifier": "meditron:70b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 39000000000,
+  "installed_storage_bytes_estimated": 42120000000,
+  "min_system_ram_gb_estimated": 83.05,
+  "recommended_system_ram_gb_estimated": 99.66,
+  "min_vram_gb_estimated": 42.9,
+  "recommended_vram_gb_estimated": 83.05,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull meditron:70b",
+  "run_command": "ollama run meditron:70b",
+  "source_url": "https://ollama.com/library/meditron/tags",
+  "retrieved_at": "2026-08-01T11:55:55Z"
+}

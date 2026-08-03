@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "moondream-1.8b",
+  "model_slug": "moondream-1-8b",
+  "model_display_name": "🌔 moondream 2",
+  "family_id": "moondream",
+  "family_slug": "moondream",
+  "tag_id": "moondream__1.8b",
+  "ollama_identifier": "moondream:1.8b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 1700000000,
+  "installed_storage_bytes_estimated": 1836000000,
+  "min_system_ram_gb_estimated": 4.51,
+  "recommended_system_ram_gb_estimated": 5.41,
+  "min_vram_gb_estimated": 1.87,
+  "recommended_vram_gb_estimated": 4.51,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull moondream:1.8b",
+  "run_command": "ollama run moondream:1.8b",
+  "source_url": "https://ollama.com/library/moondream/tags",
+  "retrieved_at": "2026-08-01T11:56:41Z"
+}

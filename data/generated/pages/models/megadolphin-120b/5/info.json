@@ -1,0 +1,32 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "megadolphin-120b",
+  "model_slug": "megadolphin-120b",
+  "model_display_name": "megadolphin",
+  "family_id": "megadolphin",
+  "family_slug": "megadolphin",
+  "tag_id": "megadolphin__latest",
+  "ollama_identifier": "megadolphin:latest",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "partial_gpu_offload",
+  "reason_codes": [
+    "partial_vram_fit"
+  ],
+  "explanation": "Model may run with partial GPU offload and CPU assistance.",
+  "download_size_bytes": 68000000000,
+  "installed_storage_bytes_estimated": 73440000000,
+  "min_system_ram_gb_estimated": 76.45,
+  "recommended_system_ram_gb_estimated": 91.74,
+  "min_vram_gb_estimated": 74.8,
+  "recommended_vram_gb_estimated": 76.45,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull megadolphin:latest",
+  "run_command": "ollama run megadolphin:latest",
+  "source_url": "https://ollama.com/library/megadolphin/tags",
+  "retrieved_at": "2026-08-01T11:55:59Z"
+}

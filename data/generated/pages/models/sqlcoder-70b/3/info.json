@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "sqlcoder-70b",
+  "model_slug": "sqlcoder-70b",
+  "model_display_name": "sqlcoder",
+  "family_id": "sqlcoder",
+  "family_slug": "sqlcoder",
+  "tag_id": "sqlcoder__70b-alpha-q2_K",
+  "ollama_identifier": "sqlcoder:70b-alpha-q2_K",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 25000000000,
+  "installed_storage_bytes_estimated": 27000000000,
+  "min_system_ram_gb_estimated": 50.6,
+  "recommended_system_ram_gb_estimated": 60.72,
+  "min_vram_gb_estimated": 28.75,
+  "recommended_vram_gb_estimated": 50.6,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull sqlcoder:70b-alpha-q2_K",
+  "run_command": "ollama run sqlcoder:70b-alpha-q2_K",
+  "source_url": "https://ollama.com/library/sqlcoder/tags",
+  "retrieved_at": "2026-08-01T11:59:18Z"
+}

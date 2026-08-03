@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "deepseek-v3-671b",
+  "model_slug": "deepseek-v3-671b",
+  "model_display_name": "deepseek-v3",
+  "family_id": "deepseek-v3",
+  "family_slug": "deepseek-v3",
+  "tag_id": "deepseek-v3__671b",
+  "ollama_identifier": "deepseek-v3:671b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 404000000000,
+  "installed_storage_bytes_estimated": 436320000000,
+  "min_system_ram_gb_estimated": 815.1,
+  "recommended_system_ram_gb_estimated": 978.12,
+  "min_vram_gb_estimated": 444.4,
+  "recommended_vram_gb_estimated": 815.1,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull deepseek-v3:671b",
+  "run_command": "ollama run deepseek-v3:671b",
+  "source_url": "https://ollama.com/library/deepseek-v3/tags",
+  "retrieved_at": "2026-08-01T11:52:44Z"
+}

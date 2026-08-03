@@ -1,0 +1,21 @@
+# xwinlm — Deployment Type 7
+
+- Ollama identifier: `xwinlm:70b-v0.1`
+- Assessment: partial_gpu_offload
+- Hardware profile: multi-gpu
+- Runtime policy: interactive
+
+## Sizing
+
+- Installed storage (bytes est.): 42120000000
+- Min system RAM (GB est.): 66.7
+- Recommended system RAM (GB est.): 80.04
+- Min VRAM (GB est.): 44.85
+- Recommended VRAM (GB est.): 66.7
+- CPU suitability: not_applicable
+- GPU suitability: preferred_or_required
+
+Model may run with partial GPU offload and CPU assistance.
+
+- Pull: `ollama pull xwinlm:70b-v0.1`
+- Run: `ollama run xwinlm:70b-v0.1`

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "nomic-embed-text-v2-moe",
+  "family_slug": "nomic-embed-text-v2-moe",
+  "publisher_id": "nomic-ai",
+  "name": "nomic-embed-text-v2-moe",
+  "description": "nomic-embed-text-v2-moe 609.8K Downloads Updated 7 months ago nomic-embed-text-v2-moe is a multilingual MoE text embedding model that excels at multilingual retrieval. nomic-embed-text-v2-moe is a multilingual MoE text embedding model that excels at multilingual retrieval. Cancel embedding CLI cURL Python JavaScript Documentation Documentation ollama pull nomic-embed-text-v2-moe curl http://localhost:11434/api/embed \\\n  -d '{\n    \"model\": \"nomic-embed-text-v2-moe\",\n    \"input\": \"Why is the sky b",
+  "source_url": "https://ollama.com/library/nomic-embed-text-v2-moe",
+  "retrieved_at": "2026-08-01T11:57:07Z",
+  "model_count": 1,
+  "tag_count": 1,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "embeddings": 2,
+    "text_generation": 2
+  }
+}

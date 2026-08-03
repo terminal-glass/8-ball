@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "mistral-small-22b",
+  "model_slug": "mistral-small-22b",
+  "model_display_name": "mistral-small",
+  "family_id": "mistral-small",
+  "family_slug": "mistral-small",
+  "tag_id": "mistral-small__22b",
+  "ollama_identifier": "mistral-small:22b",
+  "deployment_type_id": "5",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 13000000000,
+  "installed_storage_bytes_estimated": 14040000000,
+  "min_system_ram_gb_estimated": 23.0,
+  "recommended_system_ram_gb_estimated": 27.6,
+  "min_vram_gb_estimated": 14.95,
+  "recommended_vram_gb_estimated": 23.0,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull mistral-small:22b",
+  "run_command": "ollama run mistral-small:22b",
+  "source_url": "https://ollama.com/library/mistral-small/tags",
+  "retrieved_at": "2026-08-01T11:56:29Z"
+}

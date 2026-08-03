@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "snowflake-arctic-embed-110m",
+  "model_slug": "snowflake-arctic-embed-110m",
+  "model_display_name": "snowflake-arctic-embed",
+  "family_id": "snowflake-arctic-embed",
+  "family_slug": "snowflake-arctic-embed",
+  "tag_id": "snowflake-arctic-embed__110m",
+  "ollama_identifier": "snowflake-arctic-embed:110m",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 219000000,
+  "installed_storage_bytes_estimated": 236520000,
+  "min_system_ram_gb_estimated": 1.95,
+  "recommended_system_ram_gb_estimated": 2.34,
+  "min_vram_gb_estimated": 0.24,
+  "recommended_vram_gb_estimated": 1.95,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull snowflake-arctic-embed:110m",
+  "run_command": "ollama run snowflake-arctic-embed:110m",
+  "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+  "retrieved_at": "2026-08-01T11:59:09Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "wizardcoder-33b",
+  "model_slug": "wizardcoder-33b",
+  "model_display_name": "wizardcoder",
+  "family_id": "wizardcoder",
+  "family_slug": "wizardcoder",
+  "tag_id": "wizardcoder__33b",
+  "ollama_identifier": "wizardcoder:33b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "server-high-mem",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 19000000000,
+  "installed_storage_bytes_estimated": 20520000000,
+  "min_system_ram_gb_estimated": 40.7,
+  "recommended_system_ram_gb_estimated": 48.84,
+  "min_vram_gb_estimated": 20.9,
+  "recommended_vram_gb_estimated": 40.7,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull wizardcoder:33b",
+  "run_command": "ollama run wizardcoder:33b",
+  "source_url": "https://ollama.com/library/wizardcoder/tags",
+  "retrieved_at": "2026-08-01T11:59:55Z"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "megadolphin-120b",
+  "model_slug": "megadolphin-120b",
+  "model_display_name": "megadolphin",
+  "family_id": "megadolphin",
+  "family_slug": "megadolphin",
+  "tag_id": "megadolphin__120b",
+  "ollama_identifier": "megadolphin:120b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 68000000000,
+  "installed_storage_bytes_estimated": 73440000000,
+  "min_system_ram_gb_estimated": 142.45,
+  "recommended_system_ram_gb_estimated": 170.94,
+  "min_vram_gb_estimated": 74.8,
+  "recommended_vram_gb_estimated": 142.45,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull megadolphin:120b",
+  "run_command": "ollama run megadolphin:120b",
+  "source_url": "https://ollama.com/library/megadolphin/tags",
+  "retrieved_at": "2026-08-01T11:55:59Z"
+}

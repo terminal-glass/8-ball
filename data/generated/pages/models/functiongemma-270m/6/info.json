@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "functiongemma-270m",
+  "model_slug": "functiongemma-270m",
+  "model_display_name": "functiongemma",
+  "family_id": "functiongemma",
+  "family_slug": "functiongemma",
+  "tag_id": "functiongemma__270m",
+  "ollama_identifier": "functiongemma:270m",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 301000000,
+  "installed_storage_bytes_estimated": 325080000,
+  "min_system_ram_gb_estimated": 2.13,
+  "recommended_system_ram_gb_estimated": 2.56,
+  "min_vram_gb_estimated": 0.33,
+  "recommended_vram_gb_estimated": 2.13,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull functiongemma:270m",
+  "run_command": "ollama run functiongemma:270m",
+  "source_url": "https://ollama.com/library/functiongemma/tags",
+  "retrieved_at": "2026-08-01T11:53:33Z"
+}

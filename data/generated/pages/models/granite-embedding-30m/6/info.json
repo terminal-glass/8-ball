@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "granite-embedding-30m",
+  "model_slug": "granite-embedding-30m",
+  "model_display_name": "granite-embedding",
+  "family_id": "granite-embedding",
+  "family_slug": "granite-embedding",
+  "tag_id": "granite-embedding__30m",
+  "ollama_identifier": "granite-embedding:30m",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 63000000,
+  "installed_storage_bytes_estimated": 68040000,
+  "min_system_ram_gb_estimated": 1.74,
+  "recommended_system_ram_gb_estimated": 2.08,
+  "min_vram_gb_estimated": 0.07,
+  "recommended_vram_gb_estimated": 1.74,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull granite-embedding:30m",
+  "run_command": "ollama run granite-embedding:30m",
+  "source_url": "https://ollama.com/library/granite-embedding/tags",
+  "retrieved_at": "2026-08-01T11:54:10Z"
+}

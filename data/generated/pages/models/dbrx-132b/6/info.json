@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "dbrx-132b",
+  "model_slug": "dbrx-132b",
+  "model_display_name": "dbrx",
+  "family_id": "dbrx",
+  "family_slug": "dbrx",
+  "tag_id": "dbrx__132b",
+  "ollama_identifier": "dbrx:132b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 74000000000,
+  "installed_storage_bytes_estimated": 79920000000,
+  "min_system_ram_gb_estimated": 155.65,
+  "recommended_system_ram_gb_estimated": 186.78,
+  "min_vram_gb_estimated": 81.4,
+  "recommended_vram_gb_estimated": 155.65,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull dbrx:132b",
+  "run_command": "ollama run dbrx:132b",
+  "source_url": "https://ollama.com/library/dbrx/tags",
+  "retrieved_at": "2026-08-01T11:52:21Z"
+}

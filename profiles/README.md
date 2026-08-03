@@ -1,15 +1,30 @@
 # 8-BALL Profile Artifact Contract (C1)
 
-This directory is the **repo-side metadata scaffold** for the 8-BALL environment
-profile artifact contract. It documents the future runtime layout that separate
-installer work (`0.sh`, `8.2.sh`, `8.3.sh`) will implement.
+This directory documents the **runtime** environment profile artifact contract for
+separate installer work (`0.sh`, `8.2.sh`, `8.3.sh`). Live installers write
+artifacts under `/opt/philosopher/profiles`.
 
 This repository is **metadata/catalog only**. Files here are documentation and
-templates. Live installers write runtime artifacts under `/opt/philosopher/`.
+templates — not generated model pages.
 
-Do not store secrets in profile artifacts. Passport tokens, license keys, Stripe
-secrets, S3 presigned URLs, database passwords, and customer credentials belong
-in the authenticated installer flow, not in these environment files.
+## Canonical generated pages (C5)
+
+Installer-facing model, family, and deployment metadata pages are generated under:
+
+```text
+data/generated/pages/families/
+data/generated/pages/deployment-types/<3-7>/
+data/generated/pages/models/<model-slug>/<3-7>/
+data/generated/pages/install-manifest.json
+```
+
+Regenerate with `eight-ball generate`. Validate with `eight-ball validate-pages`.
+
+`8.2` must read `data/generated/pages/install-manifest.json` — see
+`docs/install-manifest-contract.md`.
+
+Do not create or reference `data/generated/pages/02-models/`. Deployment type
+folders are numbered `3` through `7` per `config/deployment_types.yaml`.
 
 ## Runtime locations
 
@@ -38,40 +53,16 @@ EIGHTBALL_PROFILE_DIR="/opt/philosopher/profiles"
 
 See `environment.profile.example.env` for the documented variable contract.
 
-## Decision-sequence directories
+## C3 gate scaffolds (future)
 
-The numbered folders under `profiles/` describe the **legacy C2** installer decision
-sequence scaffold. They are documentation/templates in this repository.
+Empty placeholders for future sizing-gate work:
 
-**C5 installer pages** are generated separately under `data/generated/pages/`:
-
-```text
-data/generated/pages/families/
-data/generated/pages/deployment-types/<3-7>/
-data/generated/pages/models/<model-slug>/<3-7>/
-data/generated/pages/install-manifest.json
-```
-
-Do not create or reference `data/generated/pages/02-models/`. Use `models/` only.
-Deployment type folders are numbered `3` through `7` per `config/deployment_types.yaml`.
-
-| Directory | Step | Purpose | Status in this repo |
-| --- | ---: | --- | --- |
-| `01-families/` | 1 | Model family identity and eligibility metadata | Legacy C2 scaffold (generated from P4 public catalog) |
-| `02-models/` | 2 | Canonical model identity, aliases, and variant lists | Legacy C2 scaffold only — **not** the C5 page tree |
-| `03-deployment-types/` | 3 | Deployment lane definitions (bare metal, providers, Jet, Mac, Windows) | Legacy C2 lane docs + `generated/deployment-types.json` |
-| `04-hard-disk/` | 4 | Hard-disk qualification gates | Scaffold only (C3) |
-| `05-ram/` | 5 | RAM qualification gates | Scaffold only (C3) |
-| `06-cpu/` | 6 | CPU qualification gates | Scaffold only (C3) |
-| `07-gpu/` | 7 | GPU/VRAM qualification gates | Scaffold only (C3) |
-| `generated/` | — | Machine-consumed JSON and shell-safe `.env` exports | C2 identity indexes; C3 sizing exports later |
-
-Use `.md` files for human-readable source notes inside the numbered folders.
-Use generated `.json` and `.env` files under `generated/` for anything `8.2`,
-`8.3`, the website selector, or future Docker routing will consume.
-
-Do not make Bash parse Markdown. Installers should consume generated JSON or
-`.env` artifacts.
+| Directory | Step | Purpose |
+| --- | ---: | --- |
+| `04-hard-disk/` | 4 | Hard-disk qualification gates |
+| `05-ram/` | 5 | RAM qualification gates |
+| `06-cpu/` | 6 | CPU qualification gates |
+| `07-gpu/` | 7 | GPU/VRAM qualification gates |
 
 ## Future 8.2 profile directory precedence
 
@@ -84,19 +75,10 @@ profile directory in this order:
 4. `PROFILE_DIR` or `EIGHTBALL_PROFILE_DIR` loaded from `/opt/philosopher/instance.env`
 5. Default: `/opt/philosopher/profiles`
 
-For model and deployment selection, `8.2` must read
-`data/generated/pages/install-manifest.json` from the catalog checkout (see
-`docs/install-manifest-contract.md`). It must not scrape Markdown README files
-or guess identity from folder names.
-
-If no profile artifacts exist, `8.2` should fall back to the legacy behavior of
-sourcing `/opt/philosopher/instance.env` only.
-
 ## Future 8.2 load order
 
 After resolving `EIGHTBALL_PROFILE_DIR`, `8.2` should load existing artifacts
-in this order when present. Later files may override earlier defaults; `8.2`
-should log every file it loads.
+in this order when present:
 
 ```bash
 /opt/philosopher/instance.env
@@ -107,55 +89,26 @@ ${EIGHTBALL_PROFILE_DIR}/30-catalog.env
 ${EIGHTBALL_PROFILE_DIR}/40-selection.env
 ```
 
-`8.2` does not load `50-recommendation.env` or `90-result.env` as inputs — it
-writes them.
-
 ## Runtime artifact files
-
-Deterministic file names allow Linux, Mac, Windows, WSL, AWS Lightsail,
-DigitalOcean, and bare-metal adapters to write the same contract.
 
 | File | Writer | Purpose |
 | --- | --- | --- |
 | `00-instance.env` | `0.sh` or platform importer | Normalized install root, host, network, and URL facts |
-| `10-platform.env` | `8.2` or importer | OS, provider, instance class, architecture, virtualization/container facts |
-| `20-hardware.env` | `8.2` or importer | Measured RAM, CPU threads, disk, GPU, VRAM, and hardware notes |
-| `30-catalog.env` | Catalog pinning step | Catalog version, projection version, sizing-manifest version, and source paths |
-| `40-selection.env` | Website/auth installer or operator | Requested family, model, variant, and deployment mode |
-| `50-recommendation.env` | `8.2` | Recommended install target, fallback target, and reason codes |
+| `10-platform.env` | `8.2` or importer | OS, provider, instance class, architecture facts |
+| `20-hardware.env` | `8.2` or importer | Measured RAM, CPU, disk, GPU, VRAM |
+| `30-catalog.env` | Catalog pinning step | Catalog version and source paths |
+| `40-selection.env` | Website/auth installer | Requested family, model, variant, deployment mode |
+| `50-recommendation.env` | `8.2` | Recommended install target and reason codes |
 | `90-result.env` | `8.2` | Final result that `8.3` displays |
-
-All files must be shell-safe `KEY="value"` environment files.
-
-## Future 8.2 output files
-
-`8.2` is expected to:
-
-1. Resolve the profile directory (precedence above).
-2. Load existing input artifacts (load order above).
-3. Measure missing hardware facts and write `${EIGHTBALL_PROFILE_DIR}/20-hardware.env`.
-4. Use a future sizing manifest to write:
-   - `${EIGHTBALL_PROFILE_DIR}/50-recommendation.env`
-   - `${EIGHTBALL_PROFILE_DIR}/90-result.env`
-
-`8.3` should prefer `${EIGHTBALL_PROFILE_DIR}/90-result.env`, then fall back to
-`/opt/philosopher/8ball-result.txt` for compatibility. `8.3` displays the
-install decision; it does not recalculate sizing.
 
 ## Design rule
 
-Do not make `8.2` guess model or instance sizing.
-
-`8.2` may measure hardware, load known profile facts, and select from a sizing
-manifest once that manifest exists. It must not invent unsupported RAM, CPU, GPU,
-disk, provider, or model-family sizing rules.
+Do not make `8.2` guess model or instance sizing. Use
+`data/generated/pages/install-manifest.json` as the machine source of truth.
 
 ## Related documentation
 
 - `AGENTS/CursorFileC1-environment-artifacts.md` — full C1 specification
-- `AGENTS/CursorFileC2-environment-artifact-sequencing.md` — C2 sequencing brief
-- `AGENTS/CursorFileC3-environment-gates-testing-plan.md` — C3 gates plan
 - `AGENTS/cursorFileC5-profile-folder-structure.md` — C5 generated page tree
 - `docs/install-manifest-contract.md` — 8.2 manifest lookup contract
 - `environment.profile.example.env` — example variable contract
-- `generated/README.md` — machine-consumed export location

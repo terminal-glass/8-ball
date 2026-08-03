@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "meditron-7b",
+  "model_slug": "meditron-7b",
+  "model_display_name": "meditron",
+  "family_id": "meditron",
+  "family_slug": "meditron",
+  "tag_id": "meditron__7b",
+  "ollama_identifier": "meditron:7b",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "desktop-standard",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "cpu_only_practical",
+  "reason_codes": [
+    "fits_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory fits CPU-only system RAM with constraints.",
+  "download_size_bytes": 3800000000,
+  "installed_storage_bytes_estimated": 4104000000,
+  "min_system_ram_gb_estimated": 9.68,
+  "recommended_system_ram_gb_estimated": 11.62,
+  "min_vram_gb_estimated": 4.18,
+  "recommended_vram_gb_estimated": 9.68,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull meditron:7b",
+  "run_command": "ollama run meditron:7b",
+  "source_url": "https://ollama.com/library/meditron/tags",
+  "retrieved_at": "2026-08-01T11:55:55Z"
+}

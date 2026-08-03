@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "gpt-oss-120b",
+  "model_slug": "gpt-oss-120b",
+  "model_display_name": "gpt-oss",
+  "family_id": "gpt-oss",
+  "family_slug": "gpt-oss",
+  "tag_id": "gpt-oss__120b-cloud",
+  "ollama_identifier": "gpt-oss:120b-cloud",
+  "deployment_type_id": "6",
+  "hardware_profile_id": "cpu-small",
+  "runtime_policy_id": "batch",
+  "availability": "both",
+  "assessment": "insufficient_memory",
+  "reason_codes": [
+    "exceeds_system_ram",
+    "cpu_profile"
+  ],
+  "explanation": "Estimated memory exceeds CPU-only system RAM.",
+  "download_size_bytes": 65000000000,
+  "installed_storage_bytes_estimated": 70200000000,
+  "min_system_ram_gb_estimated": 139.15,
+  "recommended_system_ram_gb_estimated": 166.98,
+  "min_vram_gb_estimated": 71.5,
+  "recommended_vram_gb_estimated": 139.15,
+  "cpu_suitability": "practical_for_cpu_inference",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull gpt-oss:120b-cloud",
+  "run_command": "ollama run gpt-oss:120b-cloud",
+  "source_url": "https://ollama.com/library/gpt-oss/tags",
+  "retrieved_at": "2026-08-01T11:54:03Z"
+}

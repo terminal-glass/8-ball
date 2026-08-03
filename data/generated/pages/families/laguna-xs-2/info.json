@@ -1,0 +1,24 @@
+{
+  "schema_version": "c5.family-page.v1",
+  "family_id": "laguna-xs.2",
+  "family_slug": "laguna-xs-2",
+  "publisher_id": "unknown",
+  "name": "laguna-xs.2",
+  "description": "laguna-xs.2 23.2K Downloads Updated 6 days ago Laguna XS.2 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work on a local machine. Laguna XS.2 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work on a local machine. Cancel tools thinking CLI cURL Python JavaScript Documentation Documentation ollama run laguna-xs.2 curl http:/",
+  "source_url": "https://ollama.com/library/laguna-xs.2",
+  "retrieved_at": "2026-08-01T11:54:52Z",
+  "model_count": 1,
+  "tag_count": 7,
+  "deployment_type_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "capability_summary": {
+    "reasoning": 8,
+    "text_generation": 8,
+    "tool_use": 8
+  }
+}

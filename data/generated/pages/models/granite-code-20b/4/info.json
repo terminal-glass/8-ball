@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "granite-code-20b",
+  "model_slug": "granite-code-20b",
+  "model_display_name": "granite-code",
+  "family_id": "granite-code",
+  "family_slug": "granite-code",
+  "tag_id": "granite-code__20b",
+  "ollama_identifier": "granite-code:20b",
+  "deployment_type_id": "4",
+  "hardware_profile_id": "gpu-high-mem",
+  "runtime_policy_id": "interactive",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 12000000000,
+  "installed_storage_bytes_estimated": 12960000000,
+  "min_system_ram_gb_estimated": 21.27,
+  "recommended_system_ram_gb_estimated": 25.53,
+  "min_vram_gb_estimated": 13.8,
+  "recommended_vram_gb_estimated": 21.27,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": 8,
+  "pull_command": "ollama pull granite-code:20b",
+  "run_command": "ollama run granite-code:20b",
+  "source_url": "https://ollama.com/library/granite-code/tags",
+  "retrieved_at": "2026-08-01T11:54:08Z"
+}

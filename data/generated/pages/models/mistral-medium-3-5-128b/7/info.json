@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "mistral-medium-3.5-128b",
+  "model_slug": "mistral-medium-3-5-128b",
+  "model_display_name": "Mistral Medium 3.5",
+  "family_id": "mistral-medium-3.5",
+  "family_slug": "mistral-medium-3-5",
+  "tag_id": "mistral-medium-3.5__latest",
+  "ollama_identifier": "mistral-medium-3.5:latest",
+  "deployment_type_id": "7",
+  "hardware_profile_id": "multi-gpu",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "runs_with_constraints",
+  "reason_codes": [
+    "fits_system_ram",
+    "limited_vram"
+  ],
+  "explanation": "May run with constraints using CPU RAM and limited VRAM.",
+  "download_size_bytes": 80000000000,
+  "installed_storage_bytes_estimated": 86400000000,
+  "min_system_ram_gb_estimated": 89.65,
+  "recommended_system_ram_gb_estimated": 107.58,
+  "min_vram_gb_estimated": 88.0,
+  "recommended_vram_gb_estimated": 89.65,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "preferred_or_required",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull mistral-medium-3.5:latest",
+  "run_command": "ollama run mistral-medium-3.5:latest",
+  "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+  "retrieved_at": "2026-08-01T11:56:22Z"
+}

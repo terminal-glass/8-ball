@@ -1,0 +1,33 @@
+{
+  "schema_version": "c5.model-deployment-page.v1",
+  "model_id": "phi3-3.8b",
+  "model_slug": "phi3-3-8b",
+  "model_display_name": "phi3",
+  "family_id": "phi3",
+  "family_slug": "phi3",
+  "tag_id": "phi3__3.8b",
+  "ollama_identifier": "phi3:3.8b",
+  "deployment_type_id": "3",
+  "hardware_profile_id": "gpu-entry",
+  "runtime_policy_id": "batch",
+  "availability": "local",
+  "assessment": "full_gpu_fit",
+  "reason_codes": [
+    "fits_vram",
+    "fits_system_ram"
+  ],
+  "explanation": "Estimated model and runtime memory fit available VRAM and system RAM.",
+  "download_size_bytes": 2200000000,
+  "installed_storage_bytes_estimated": 2376000000,
+  "min_system_ram_gb_estimated": 6.16,
+  "recommended_system_ram_gb_estimated": 7.39,
+  "min_vram_gb_estimated": 2.42,
+  "recommended_vram_gb_estimated": 6.16,
+  "cpu_suitability": "not_applicable",
+  "gpu_suitability": "not_applicable",
+  "disk_estimate_gb": null,
+  "pull_command": "ollama pull phi3:3.8b",
+  "run_command": "ollama run phi3:3.8b",
+  "source_url": "https://ollama.com/library/phi3/tags",
+  "retrieved_at": "2026-08-01T11:57:55Z"
+}
