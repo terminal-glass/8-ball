@@ -1,0 +1,10 @@
+step,instruction,acceptance_test
+1,Import all new GPU CSVs from AGENTS without modifying the existing provider and laptop CSV files.,All filenames remain under AGENTS/ and parse as UTF-8 CSV with stable headers.
+2,Create accelerator classes separate from deployment type IDs 3-7.,Manifest can carry both deployment_type_id and accelerator_class_id.
+3,Import AWS Lightsail for Research GPU plans with unknown GPU model/VRAM.,No AWS row is labeled CUDA-compatible before runtime GPU detection.
+4,Import DigitalOcean NVIDIA GPU Droplets as CUDA candidates and AMD rows as ROCm candidates.,NVIDIA and AMD rows are not mixed; official provider slugs remain unresolved unless verified.
+5,Preserve current DigitalOcean pricing provenance and the July/August price conflict note.,Current price source is the page effective 2026-08-01; older docs values are not silently substituted.
+6,Import the brain1 RTX 3060 row as measured host inventory only.,ollama_inference_verified remains false and deployment_type_id remains unassigned until missing host facts/tests exist.
+7,Add runtime GPU detection requirements to the future 8.2 manifest contract.,NVIDIA uses nvidia-smi; AMD uses rocminfo/rocm-smi; unknown GPU falls back to CPU sizing.
+8,Require an Ollama model smoke test and ollama ps processor evidence before promoting a GPU profile to measured-compatible.,Provider specs alone cannot create a measured compatibility label.
+9,Regenerate provider/deployment pages only after import validation passes.,"Pages expose accelerator class, GPU count, per-device VRAM, provenance, and fallback class."

@@ -1,0 +1,7 @@
+metric,value,status,source
+Accelerator classes,7,internal + official support rules,TG-8Ball-Accelerator-Classes.csv
+CUDA server assumption profiles,7,internal assumptions,TG-8Ball-CUDA-Server-Assumptions.csv
+AWS Lightsail for Research GPU plans,3,provider-published hardware plans,AWS hardware plan docs
+DigitalOcean NVIDIA GPU rows,5,provider-published current pricing page,DigitalOcean GPU pricing
+DigitalOcean AMD GPU rows,2,provider-published current pricing page,DigitalOcean GPU pricing
+Measured local GPU host rows,1,measured inventory only,uploaded ncgpt-1-log.txt
