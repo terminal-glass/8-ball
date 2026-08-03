@@ -1,4 +1,4 @@
-# References
+# aya-8b
 
 - **Model ID:** `aya-8b`
 - **Family ID:** `aya`

@@ -19,6 +19,10 @@ from eight_ball.publish.classification import (
     SIZE_BUCKETS,
     SOURCE_EXCEPTION_EXPLANATION,
 )
+from eight_ball.publish.display_names import (
+    resolve_family_display_name,
+    resolve_model_display_name,
+)
 
 P4_DIR = P4_PUBLIC_CATALOG_DIR
 NORMALIZED_FILES = (
@@ -273,10 +277,11 @@ def build_public_catalog(
             else:
                 classification_summary["size_bucket_coverage"][bucket] += 1
 
+        family_display_name = resolve_family_display_name(family)
         family_projections.append(
             {
                 "id": family["id"],
-                "name": family.get("name"),
+                "name": family_display_name,
                 "aliases": family.get("aliases") or [],
                 "description": family.get("description"),
                 "catalog_source_id": family.get("catalog_source_id"),
@@ -324,7 +329,10 @@ def build_public_catalog(
                     "id": model["id"],
                     "family_id": model["family_id"],
                     "ollama_name": model.get("ollama_name"),
-                    "display_name": model.get("display_name"),
+                    "display_name": resolve_model_display_name(
+                        model,
+                        family_display_name=family_display_name,
+                    ),
                     "description": model.get("description"),
                     "availability": model.get("availability"),
                     "default_tag": model.get("default_tag"),

@@ -2,7 +2,7 @@
 
 - Schema version: `1.0.0`
 - Generator: `eight-ball publish-catalog` v1.0.0
-- Generated at: 2026-08-02T01:33:18Z
+- Generated at: 2026-08-02T22:56:02Z
 - Canonical catalog version: `2026.08.01`
 - Collection date: `2026-08-01`
 - Promotion receipt: `reports/catalog-promotion-receipt.md`
@@ -40,9 +40,9 @@
 - `unknown`: 229
 
 ## Artifacts
-- `P4-Public-Catalog/manifest.json`
-- `P4-Public-Catalog/index/families.json`
-- `P4-Public-Catalog/index/models.json`
+- `AGENTS/data-science/P4-Public-Catalog/manifest.json`
+- `AGENTS/data-science/P4-Public-Catalog/index/families.json`
+- `AGENTS/data-science/P4-Public-Catalog/index/models.json`
 - `schemas/public-catalog-manifest.schema.json`
-- `P4-Public-Catalog/CONSUMPTION.md`
-- `P4-Public-Catalog/CLASSIFICATIONS.md`
+- `AGENTS/data-science/P4-Public-Catalog/CONSUMPTION.md`
+- `AGENTS/data-science/P4-Public-Catalog/CLASSIFICATIONS.md`

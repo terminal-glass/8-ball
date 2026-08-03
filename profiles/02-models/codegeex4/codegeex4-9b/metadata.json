@@ -2,7 +2,7 @@
   "schema_version": 1,
   "model_id": "codegeex4-9b",
   "family_id": "codegeex4",
-  "display_name": "References",
+  "display_name": "codegeex4-9b",
   "ollama_name": "codegeex4-9b",
   "catalog_version": "2026.08.01",
   "source_exception": false,

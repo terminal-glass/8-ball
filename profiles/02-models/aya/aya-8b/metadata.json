@@ -2,7 +2,7 @@
   "schema_version": 1,
   "model_id": "aya-8b",
   "family_id": "aya",
-  "display_name": "References",
+  "display_name": "aya-8b",
   "ollama_name": "aya-8b",
   "catalog_version": "2026.08.01",
   "source_exception": false,
