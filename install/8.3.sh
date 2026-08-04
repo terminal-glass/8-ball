@@ -4,7 +4,6 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
-RESULT_FILE="${PHILOSOPHER_ROOT}/8ball-result.txt"
 MOTD_TEMPLATE="${SCRIPT_DIR}/assets/first-MOTD.txt"
 MOTD_TARGET="/etc/update-motd.d/99-8ball-trial"
 
