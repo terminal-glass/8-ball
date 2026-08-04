@@ -29,5 +29,36 @@
   "pull_command": "ollama pull dolphin3:8b",
   "run_command": "ollama run dolphin3:8b",
   "source_url": "https://ollama.com/library/dolphin3/tags",
-  "retrieved_at": "2026-08-01T11:53:08Z"
+  "retrieved_at": "2026-08-01T11:53:08Z",
+  "hardware_enrichment": {
+    "compatible_provider_instance_ids": [
+      "provider_instance:AWS|Lightsail for Research|gpu-xl"
+    ],
+    "compatible_assumed_profile_ids": [
+      "assumed_profile:cuda_entry_8gb",
+      "assumed_profile:mac_pro_apple_silicon_18_24gb",
+      "assumed_profile:windows_cpu_32gb",
+      "assumed_profile:windows_nvidia_16gb_vram_6_8gb"
+    ],
+    "compatible_measured_host_ids": [
+      "measured_host:local-brain1-rtx3060-12gb"
+    ],
+    "accelerator_class_ids": [
+      "nvidia_cuda",
+      "unknown_gpu"
+    ],
+    "cpu_only_suitable": false,
+    "cuda_suitable": true,
+    "rocm_suitable": false,
+    "apple_metal_suitable": false,
+    "measured_host_evidence": [
+      {
+        "host_profile_id": "local-brain1-rtx3060-12gb",
+        "provenance_status": "measured_host_inventory",
+        "ollama_inference_verified": false
+      }
+    ],
+    "provenance_status": "derived_from_c6_import",
+    "hardware_data_version": "2026-08-04T07:40:36Z"
+  }
 }

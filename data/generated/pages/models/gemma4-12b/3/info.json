@@ -29,5 +29,74 @@
   "pull_command": "ollama pull gemma4:12b",
   "run_command": "ollama run gemma4:12b",
   "source_url": "https://ollama.com/library/gemma4/tags",
-  "retrieved_at": "2026-08-01T11:53:47Z"
+  "retrieved_at": "2026-08-01T11:53:47Z",
+  "hardware_enrichment": {
+    "compatible_provider_instance_ids": [
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|12xlarge_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|16xlarge_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|2xlarge_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|4xlarge_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|8xlarge_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|co_large_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|large_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|medium_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|micro_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|mo_large_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|nano_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|small_3_0",
+      "provider_instance:AWS|Lightsail Linux/Unix public IPv4|xlarge_3_0",
+      "provider_instance:digitalocean|Basic|s-1vcpu-1gb",
+      "provider_instance:digitalocean|Basic|s-1vcpu-2gb",
+      "provider_instance:digitalocean|Basic|s-2vcpu-2gb",
+      "provider_instance:digitalocean|Basic|s-2vcpu-4gb",
+      "provider_instance:digitalocean|Basic|s-4vcpu-8gb",
+      "provider_instance:digitalocean|Basic|s-8vcpu-16gb",
+      "provider_instance:digitalocean|Basic|s-8vcpu-32gb",
+      "provider_instance:digitalocean|CPU Optimized|c-16vcpu-32gb",
+      "provider_instance:digitalocean|CPU Optimized|c-2vcpu-4gb",
+      "provider_instance:digitalocean|CPU Optimized|c-32vcpu-64gb",
+      "provider_instance:digitalocean|CPU Optimized|c-48vcpu-96gb",
+      "provider_instance:digitalocean|CPU Optimized|c-4vcpu-8gb",
+      "provider_instance:digitalocean|CPU Optimized|c-8vcpu-16gb",
+      "provider_instance:digitalocean|General Purpose|g-16vcpu-64gb",
+      "provider_instance:digitalocean|General Purpose|g-2vcpu-8gb",
+      "provider_instance:digitalocean|General Purpose|g-32vcpu-128gb",
+      "provider_instance:digitalocean|General Purpose|g-40vcpu-160gb",
+      "provider_instance:digitalocean|General Purpose|g-4vcpu-16gb",
+      "provider_instance:digitalocean|General Purpose|g-8vcpu-32gb",
+      "provider_instance:digitalocean|Memory Optimized|m-16vcpu-128gb",
+      "provider_instance:digitalocean|Memory Optimized|m-2vcpu-16gb",
+      "provider_instance:digitalocean|Memory Optimized|m-32vcpu-256gb",
+      "provider_instance:digitalocean|Memory Optimized|m-4vcpu-32gb",
+      "provider_instance:digitalocean|Memory Optimized|m-8vcpu-64gb",
+      "provider_instance:digitalocean|Storage Optimized|so-16vcpu-128gb",
+      "provider_instance:digitalocean|Storage Optimized|so-2vcpu-16gb",
+      "provider_instance:digitalocean|Storage Optimized|so-32vcpu-256gb",
+      "provider_instance:digitalocean|Storage Optimized|so-4vcpu-32gb",
+      "provider_instance:digitalocean|Storage Optimized|so-8vcpu-64gb"
+    ],
+    "compatible_assumed_profile_ids": [
+      "assumed_profile:mac_air_apple_silicon_8gb",
+      "assumed_profile:windows_cpu_8gb"
+    ],
+    "compatible_measured_host_ids": [
+      "measured_host:local-brain1-rtx3060-12gb"
+    ],
+    "accelerator_class_ids": [
+      "none_cpu_only"
+    ],
+    "cpu_only_suitable": true,
+    "cuda_suitable": false,
+    "rocm_suitable": false,
+    "apple_metal_suitable": false,
+    "measured_host_evidence": [
+      {
+        "host_profile_id": "local-brain1-rtx3060-12gb",
+        "provenance_status": "measured_host_inventory",
+        "ollama_inference_verified": false
+      }
+    ],
+    "provenance_status": "derived_from_c6_import",
+    "hardware_data_version": "2026-08-04T07:40:36Z"
+  }
 }

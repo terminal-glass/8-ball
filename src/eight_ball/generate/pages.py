@@ -7,8 +7,13 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+from eight_ball.agents_csv.enrichment import (
+    compact_hardware_catalog,
+    enrich_deployment_hardware,
+    load_canonical_hardware,
+)
 from eight_ball.config import deployment_types_config, repo_relative, write_json
-from eight_ball.paths import GENERATED_PAGES_DIR, GENERATED_PAGES_MODELS_DIR
+from eight_ball.paths import GENERATED_PAGES_DIR, GENERATED_PAGES_MODELS_DIR, NORMALIZED_DIR
 from eight_ball.provenance import utc_now_iso
 
 FAMILY_PAGE_SCHEMA = "c5.family-page.v1"
@@ -134,9 +139,10 @@ def _build_model_deployment_info(
     tag: dict[str, Any],
     deployment: dict[str, Any],
     deployment_type: dict[str, Any],
+    hardware_enrichment: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     deployment_type_id = deployment_type["deployment_type_id"]
-    return {
+    payload = {
         "schema_version": MODEL_DEPLOYMENT_PAGE_SCHEMA,
         "model_id": model["id"],
         "model_slug": model_slug,
@@ -168,6 +174,9 @@ def _build_model_deployment_info(
         "source_url": tag.get("source_url"),
         "retrieved_at": tag.get("retrieved_at"),
     }
+    if hardware_enrichment:
+        payload["hardware_enrichment"] = hardware_enrichment
+    return payload
 
 
 def _build_manifest_deployment(
@@ -179,9 +188,10 @@ def _build_manifest_deployment(
     tag: dict[str, Any],
     deployment: dict[str, Any],
     deployment_type: dict[str, Any],
+    hardware_enrichment: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     deployment_type_id = deployment_type["deployment_type_id"]
-    return {
+    payload = {
         "model_id": model["id"],
         "model_slug": model_slug,
         "family_id": family["id"],
@@ -209,6 +219,9 @@ def _build_manifest_deployment(
         "run_command": tag.get("run_command"),
         "helper_path": _deployment_helper_path(model_slug, deployment_type_id),
     }
+    if hardware_enrichment:
+        payload["hardware_enrichment"] = hardware_enrichment
+    return payload
 
 
 def _family_readme(family: dict[str, Any], *, model_count: int, tag_count: int, summary: dict[str, int]) -> str:
@@ -334,6 +347,14 @@ def generate_pages(
     output_root.mkdir(parents=True, exist_ok=True)
 
     deployment_types = deployment_types_config().get("deployment_types", [])
+    canonical_hardware = load_canonical_hardware()
+    hardware_catalog = compact_hardware_catalog(canonical_hardware)
+    import_meta_path = NORMALIZED_DIR / "hardware-import-meta.json"
+    hardware_data_version = None
+    if import_meta_path.is_file():
+        from eight_ball.config import load_json
+
+        hardware_data_version = load_json(import_meta_path).get("generated_at")
     families_by_id = {family["id"]: family for family in families}
     tags_by_id = {tag["id"]: tag for tag in tags}
     tags_by_model_id: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -444,6 +465,13 @@ def generate_pages(
                 deployment_summaries[deployment_type_id] = None
                 continue
             tag, deployment = selected
+            hardware_enrichment = enrich_deployment_hardware(
+                deployment_type_id=deployment_type_id,
+                hardware_profile_id=deployment["hardware_profile_id"],
+                hardware=canonical_hardware,
+            )
+            if hardware_data_version:
+                hardware_enrichment["hardware_data_version"] = hardware_data_version
             info = _build_model_deployment_info(
                 model=model,
                 family=family,
@@ -452,6 +480,7 @@ def generate_pages(
                 tag=tag,
                 deployment=deployment,
                 deployment_type=deployment_type,
+                hardware_enrichment=hardware_enrichment,
             )
             manifest_deployment = _build_manifest_deployment(
                 model=model,
@@ -461,6 +490,7 @@ def generate_pages(
                 tag=tag,
                 deployment=deployment,
                 deployment_type=deployment_type,
+                hardware_enrichment=hardware_enrichment,
             )
             deployment_summaries[deployment_type_id] = manifest_deployment
             manifest_entry["deployments"][deployment_type_id] = manifest_deployment
@@ -571,6 +601,8 @@ def generate_pages(
         {
             "schema_version": INSTALL_MANIFEST_SCHEMA,
             "generated_at": utc_now_iso(),
+            "hardware_data_version": hardware_data_version,
+            "hardware_catalog": hardware_catalog,
             "deployment_types": manifest_deployment_types,
             "models": manifest_models,
         },

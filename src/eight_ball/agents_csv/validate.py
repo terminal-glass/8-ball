@@ -97,7 +97,7 @@ def _collect_occurrences(
     for source in sources:
         try:
             rows = load_source_rows(source, repo_root=repo_root)
-        except (FileNotFoundError, ValueError) as exc:
+        except (FileNotFoundError, ValueError, TypeError) as exc:
             errors.append(f"{source.path}: {exc}")
             continue
 
@@ -286,7 +286,7 @@ def validate_agents_csv_collection(
         try:
             rows = load_source_rows(source, repo_root=repo_root)
             report.source_counts[source.id] = len(rows)
-        except (FileNotFoundError, ValueError):
+        except (FileNotFoundError, ValueError, TypeError):
             report.source_counts[source.id] = 0
 
     grouped_rows: dict[str, int] = defaultdict(int)
