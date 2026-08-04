@@ -4,6 +4,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from eight_ball.agents_csv.validate import AgentsCsvValidationError, validate_agents_csv_collection
 from eight_ball.collect.manifest import (
     begin_collection,
     load_collection_state,
@@ -50,7 +51,6 @@ from eight_ball.recreate.promote import promote_candidate_catalog
 from eight_ball.report.compare import compare_catalogs, write_comparison_report
 from eight_ball.report.reconcile import reconcile_candidate_catalog, write_reconciliation_reports
 from eight_ball.report.summary import coverage_summary, write_reports
-from eight_ball.agents_csv.validate import AgentsCsvValidationError, validate_agents_csv_collection
 from eight_ball.validate.catalog import ValidationError, validate_catalog
 
 

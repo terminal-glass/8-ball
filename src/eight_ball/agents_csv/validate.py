@@ -11,7 +11,7 @@ from eight_ball.agents_csv.keys import (
     relationship_overlap_key,
 )
 from eight_ball.agents_csv.loader import LoadedRow, load_source_rows
-from eight_ball.agents_csv.registry import SourceSpec, load_registry, precedence_rank, source_specs
+from eight_ball.agents_csv.registry import SourceSpec, precedence_rank, source_specs
 from eight_ball.paths import REPO_ROOT
 
 
@@ -62,7 +62,7 @@ def _control_reference_tokens(row: LoadedRow) -> set[str]:
         text = str(value).strip()
         if not text:
             continue
-        if text.endswith(".csv") or text.endswith(".json") or text.endswith(".yaml"):
+        if text.endswith((".csv", ".json", ".yaml")):
             tokens.add(text)
         for part in text.replace(",", " ").split():
             part = part.strip()
@@ -262,7 +262,6 @@ def validate_agents_csv_collection(
     repo_root: Path = REPO_ROOT,
     sources: list[SourceSpec] | None = None,
 ) -> ValidationReport:
-    config = load_registry()
     selected_sources = sources or source_specs()
     report = ValidationReport(ok=True)
 

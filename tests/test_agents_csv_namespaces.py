@@ -3,8 +3,6 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-import pytest
-
 from eight_ball.agents_csv.keys import (
     host_profile_key,
     profile_key,

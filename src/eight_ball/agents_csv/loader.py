@@ -38,11 +38,11 @@ def _load_csv_rows(path: Path, source: SourceSpec) -> list[LoadedRow]:
 def _load_json_array_rows(path: Path, source: SourceSpec) -> list[LoadedRow]:
     payload = load_json(path)
     if not isinstance(payload, list):
-        raise ValueError(f"{path} must contain a JSON array")
+        raise TypeError(f"{path} must contain a JSON array")
     rows: list[LoadedRow] = []
     for index, record in enumerate(payload, start=1):
         if not isinstance(record, dict):
-            raise ValueError(f"{path} row {index} must be an object")
+            raise TypeError(f"{path} row {index} must be an object")
         rows.append(LoadedRow(source=source, row_number=index, record=record))
     return rows
 

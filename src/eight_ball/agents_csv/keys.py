@@ -115,7 +115,7 @@ def record_dedup_key(record: dict[str, Any], source: SourceSpec) -> str:
 
 def provenance_status(record: dict[str, Any], source: SourceSpec) -> str | None:
     for field in namespace_provenance_fields(source.namespace):
-        if field in record and record[field]:
+        if record.get(field):
             return str(record[field])
     return None
 
