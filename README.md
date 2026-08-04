@@ -13,11 +13,13 @@
 - Provenance/confidence metadata (`observed`, `derived`, `estimated`, `manual`, `unknown`)
 - Configurable hardware estimates and generated deployment recommendations
 - Validation and coverage reports
+- Public free/trial installer scripts under `install/` (see `install/README.md`)
 
 ## What this repository does not contain
 
 - Model weights, GGUF files, layers, or blobs
-- Installer scripts, Passport integration, or fulfillment logic
+- Paid installer packaging, Passport activation, Stripe, or license fulfillment
+- Private S3 release bundles, RecordsCore, or customer-specific install logic
 - Live crawling in CI (tests use offline fixtures)
 
 ## Authoritative sources
@@ -43,6 +45,7 @@ data/snapshots/         Cached sanitized snapshots (not committed)
 reports/                Human-readable reports and reproducible JSON summaries
 indexes/                Generated metadata indexes (not committed)
 scripts/                Shell wrappers around the CLI
+install/                Public free/trial installer scripts (see install/README.md)
 tests/fixtures/         Offline sample fixtures
 ```
 

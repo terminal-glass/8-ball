@@ -6,7 +6,12 @@ This repository is the public **8-BALL** Ollama model-intelligence and data-scie
 
 It collects, normalizes, validates, and reports on **public model metadata only**. It may estimate hardware compatibility and generate deployment recommendations from observed or configured inputs.
 
-It supports separate future installer-authoring work but must never contain installer, licensing, customer-record, Passport, RecordsCore, or production deployment infrastructure.
+It supports separate future installer-authoring work but must never contain paid
+installer packaging, licensing, customer-record, Passport, RecordsCore, or production
+deployment infrastructure.
+
+Public **free/trial** installer scripts for end users and fork-friendly developers live
+under `install/`. See `install/README.md` for the public/private boundary.
 
 The full project requirements are defined in:
 
