@@ -4,6 +4,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from eight_ball.agents_csv.validate import AgentsCsvValidationError, validate_agents_csv_collection
 from eight_ball.collect.manifest import (
     begin_collection,
     load_collection_state,
@@ -355,6 +356,29 @@ def cmd_generate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_validate_agents_csv(args: argparse.Namespace) -> int:
+    try:
+        report = validate_agents_csv_collection()
+    except AgentsCsvValidationError as exc:
+        for error in exc.errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        return 1
+
+    print("AGENTS CSV namespace validation")
+    print(f"  namespaces: {report.namespace_counts}")
+    print(f"  sources: {report.source_counts}")
+    print(f"  duplicate_keys: {len(report.duplicate_keys)}")
+    print(f"  intentional_overlaps: {len(report.intentional_overlaps)}")
+    for warning in report.warnings:
+        print(f"WARNING: {warning}")
+    if not report.ok:
+        for error in report.errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        return 1
+    print("AGENTS CSV namespace validation passed.")
+    return 0
+
+
 def cmd_validate_pages(args: argparse.Namespace) -> int:
     _, generated_dir, _ = _catalog_paths(args)
     pages_root = generated_dir / "pages"
@@ -671,6 +695,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     _add_common_args(validate_pages)
     validate_pages.set_defaults(handler=cmd_validate_pages)
+
+    validate_agents_csv = subparsers.add_parser(
+        "validate-agents-csv",
+        help="Validate AGENTS CSV namespaces, dedup keys, and provenance boundaries.",
+    )
+    validate_agents_csv.set_defaults(handler=cmd_validate_agents_csv)
     return parser
 
 

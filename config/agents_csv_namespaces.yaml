@@ -1,0 +1,226 @@
+# Table-specific namespaces and deduplication keys for AGENTS hardware/provider CSV
+# collection. Each source file maps to exactly one namespace. Data namespaces keep
+# separate tables; control_and_provenance sources are never merged into data tables.
+#
+# Stable composite keys (never use deployment_type_id, menu_label, provider name,
+# GPU model, or display_name alone as a unique key):
+#   provider_instance_data: provider + product_line + plan_id
+#   assumed_hardware_profiles: profile_id
+#   measured_hardware_inventory: host_profile_id
+#   classification_data: accelerator_class_id | deployment_type_id
+
+forbidden_standalone_keys:
+  - deployment_type_id
+  - menu_label
+  - provider
+  - gpu_model
+  - display_name
+
+precedence:
+  measured_host_inventory: 50
+  provider_published: 40
+  provider_published_hardware_plan: 40
+  provider_published_current_pricing_page: 40
+  validated_internal_planning: 30
+  internal_classification: 30
+  official_runtime_support_rule: 30
+  official_experimental_support_rule: 30
+  assumed_client_class: 20
+  internal_assumption_class: 20
+  unknown: 10
+  unknown_until_runtime_detection: 10
+
+namespaces:
+  provider_instance_data:
+    description: >
+      Provider-published instance plans: ordinary Lightsail CPU bundles,
+      DigitalOcean CPU droplets, Lightsail for Research GPU plans, and
+      DigitalOcean GPU droplets.
+    dedup_key:
+      kind: provider_composite
+      fields: [provider, product_line, plan_id]
+    provenance_fields: [source_status, provenance_status]
+    importable: true
+
+  assumed_hardware_profiles:
+    description: >
+      Client and server planning assumptions: Mac laptops, Windows laptops,
+      and generic CUDA server assumption bands.
+    dedup_key:
+      kind: single_field
+      field: profile_id
+    provenance_fields: [provenance_status]
+    importable: true
+
+  measured_hardware_inventory:
+    description: Measured GPU hosts such as brain1 with runtime inventory facts.
+    dedup_key:
+      kind: single_field
+      field: host_profile_id
+    provenance_fields: [provenance_status]
+    importable: true
+
+  classification_data:
+    description: Accelerator classes and deployment type definitions.
+    dedup_key:
+      kind: classification
+      accelerator_field: accelerator_class_id
+      deployment_field: deployment_type_id
+    provenance_fields: [provenance_status]
+    importable: true
+
+  control_and_provenance:
+    description: >
+      Source inventories, recovered counts, and Cursor checklists. These files
+      document provenance and workflow steps; they must not be concatenated into
+      data tables or re-import rows that already exist in data namespaces.
+    dedup_key:
+      kind: control_row
+      fields: [source_file, row_number]
+    importable: false
+
+sources:
+  # --- provider_instance_data (CSV) ---
+  - id: aws-lightsail-research-gpu-plans
+    path: AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv
+    namespace: provider_instance_data
+    format: csv
+    provider_field: provider
+    product_line_field: product_line
+    plan_id_field: provider_plan_id
+
+  - id: digitalocean-gpu-droplets-nvidia
+    path: AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv
+    namespace: provider_instance_data
+    format: csv
+    provider_field: provider
+    product_line_field: product_line
+    plan_id_field: internal_plan_id
+
+  - id: digitalocean-gpu-droplets-amd
+    path: AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-AMD.csv
+    namespace: provider_instance_data
+    format: csv
+    provider_field: provider
+    product_line_field: product_line
+    plan_id_field: internal_plan_id
+
+  # --- provider_instance_data (P2 JSON, CPU bundles / droplets) ---
+  - id: lightsail-linux-ipv4-bundles
+    path: AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json
+    namespace: provider_instance_data
+    format: json_array
+    provider_value: AWS
+    product_line_value: Lightsail Linux/Unix public IPv4
+    plan_id_field: bundle_id
+
+  - id: digitalocean-basic
+    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/basic.json
+    namespace: provider_instance_data
+    format: json_array
+    provider_field: provider
+    product_line_field: family
+    plan_id_field: plan_slug
+
+  - id: digitalocean-cpu-optimized
+    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/cpu-optimized.json
+    namespace: provider_instance_data
+    format: json_array
+    provider_field: provider
+    product_line_field: family
+    plan_id_field: plan_slug
+
+  - id: digitalocean-general-purpose
+    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json
+    namespace: provider_instance_data
+    format: json_array
+    provider_field: provider
+    product_line_field: family
+    plan_id_field: plan_slug
+
+  - id: digitalocean-memory-optimized
+    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/memory-optimized.json
+    namespace: provider_instance_data
+    format: json_array
+    provider_field: provider
+    product_line_field: family
+    plan_id_field: plan_slug
+
+  - id: digitalocean-storage-optimized
+    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/storage-optimized.json
+    namespace: provider_instance_data
+    format: json_array
+    provider_field: provider
+    product_line_field: family
+    plan_id_field: plan_slug
+
+  # --- assumed_hardware_profiles ---
+  - id: client-hardware-assumptions
+    path: AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv
+    namespace: assumed_hardware_profiles
+    format: csv
+    profile_id_field: profile_id
+
+  - id: cuda-server-assumptions
+    path: AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv
+    namespace: assumed_hardware_profiles
+    format: csv
+    profile_id_field: profile_id
+
+  # --- measured_hardware_inventory ---
+  - id: measured-gpu-hosts
+    path: AGENTS/TG-8Ball-Measured-GPU-Hosts.csv
+    namespace: measured_hardware_inventory
+    format: csv
+    host_profile_id_field: host_profile_id
+
+  # --- classification_data ---
+  - id: accelerator-classes
+    path: AGENTS/TG-8Ball-Accelerator-Classes.csv
+    namespace: classification_data
+    format: csv
+    classification_kind: accelerator
+    accelerator_class_id_field: accelerator_class_id
+
+  - id: deployment-types
+    path: config/deployment_types.yaml
+    namespace: classification_data
+    format: deployment_types_yaml
+    classification_kind: deployment
+
+  # --- control_and_provenance ---
+  - id: gpu-source-inventory
+    path: AGENTS/TG-8Ball-GPU-Source-Inventory.csv
+    namespace: control_and_provenance
+    format: csv
+    control_kind: source_inventory
+
+  - id: gpu-recovered-counts
+    path: AGENTS/TG-8Ball-GPU-Recovered-Counts.csv
+    namespace: control_and_provenance
+    format: csv
+    control_kind: recovered_counts
+
+  - id: gpu-cursor-checklist
+    path: AGENTS/TG-8Ball-GPU-Cursor-Checklist.csv
+    namespace: control_and_provenance
+    format: csv
+    control_kind: cursor_checklist
+
+  - id: provider-recovery-source-inventory
+    path: AGENTS/TG-8Ball-Provider-Recovery-Source-Inventory.csv
+    namespace: control_and_provenance
+    format: csv
+    control_kind: source_inventory
+
+  - id: provider-recovery-recovered-counts
+    path: AGENTS/TG-8Ball-Provider-Recovery-Recovered-Counts.csv
+    namespace: control_and_provenance
+    format: csv
+    control_kind: recovered_counts
+
+  - id: provider-recovery-cursor-checklist
+    path: AGENTS/TG-8Ball-Provider-Recovery-Cursor-Checklist.csv
+    namespace: control_and_provenance
+    format: csv
+    control_kind: cursor_checklist
