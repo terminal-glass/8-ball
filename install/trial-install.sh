@@ -102,7 +102,11 @@ run_step() {
   local label="$1"
   shift
   log "${label}"
-  "$@" >>"${LOG_FILE}" 2>&1
+  if ! "$@" >>"${LOG_FILE}" 2>&1; then
+    echo "Step failed: ${label}" >&2
+    tail -n 30 "${LOG_FILE}" >&2 || true
+    exit 1
+  fi
 }
 
 main() {

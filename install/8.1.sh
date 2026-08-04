@@ -37,7 +37,7 @@ install_packages() {
   log "Installing minimal prerequisites"
   export DEBIAN_FRONTEND=noninteractive
   apt-get update -qq
-  apt-get install -y --no-install-recommends ca-certificates curl python3
+  apt-get install -y --no-install-recommends ca-certificates curl python3 zstd
 }
 
 ensure_philosopher_root() {
@@ -52,21 +52,43 @@ install_ollama_if_missing() {
     return 0
   fi
   log "Installing Ollama"
-  curl -fsSL https://ollama.com/install.sh | sh
+  if ! curl -fsSL https://ollama.com/install.sh | sh; then
+    echo "Ollama installation failed." >&2
+    exit 1
+  fi
+  if ! command -v ollama >/dev/null 2>&1; then
+    echo "Ollama install script finished but ollama was not found in PATH." >&2
+    exit 1
+  fi
 }
 
 start_ollama() {
-  if command -v systemctl >/dev/null 2>&1; then
-    systemctl enable ollama >/dev/null 2>&1 || true
-    systemctl restart ollama
-  else
-    log "systemd unavailable; assuming Ollama is already running"
+  if curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then
+    log "Ollama API already responding on ${OLLAMA_API}"
+    return 0
   fi
+
+  if command -v systemctl >/dev/null 2>&1 && [[ -d /run/systemd/system ]]; then
+    systemctl enable ollama >/dev/null 2>&1 || true
+    if systemctl restart ollama; then
+      return 0
+    fi
+    log "systemctl restart ollama failed; trying ollama serve"
+  else
+    log "systemd unavailable; starting ollama serve in background"
+  fi
+
+  if pgrep -x ollama >/dev/null 2>&1; then
+    return 0
+  fi
+
+  nohup ollama serve >>"${LOG_FILE}" 2>&1 &
+  sleep 2
 }
 
 wait_for_ollama() {
   local attempt
-  for attempt in $(seq 1 30); do
+  for _ in $(seq 1 30); do
     if curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then
       log "Ollama API is responding on ${OLLAMA_API}"
       return 0

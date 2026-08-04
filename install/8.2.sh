@@ -145,9 +145,17 @@ PY
 test_model() {
   local model="$1"
   ollama pull "${model}"
-  if ollama run "${model}" "Reply with exactly: 8-BALL READY" | grep -qi "8-BALL READY"; then
+  local response
+  response="$(
+    curl -fsS "${OLLAMA_API}/api/generate" \
+      -H 'Content-Type: application/json' \
+      -d "{\"model\":\"${model}\",\"prompt\":\"Reply with only: 8-BALL READY\",\"stream\":false}" \
+      | python3 -c 'import json,sys; print(json.load(sys.stdin).get("response",""))'
+  )"
+  if grep -qi "8-BALL READY" <<<"${response}"; then
     return 0
   fi
+  log "Model response did not contain expected token: ${response}"
   return 1
 }
 
