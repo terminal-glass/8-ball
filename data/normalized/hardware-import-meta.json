@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-04T07:40:36Z",
+  "content_fingerprint": "60b941561713912b2b0f310c4bd9f1bb9fe1cb40193473f8afe306ac8a2982ce",
+  "counts_by_namespace": {
+    "provider_instance_data": 52,
+    "assumed_hardware_profiles": 17,
+    "measured_hardware_inventory": 1,
+    "classification_data": 12
+  },
+  "provider_cpu_count": 42,
+  "provider_gpu_count": 10,
+  "intentional_overlap_count": 5,
+  "true_duplicate_key_count": 0
+}

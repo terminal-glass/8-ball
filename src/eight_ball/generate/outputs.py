@@ -4,6 +4,7 @@ import csv
 from pathlib import Path
 from typing import Any
 
+from eight_ball.agents_csv.import_collection import HardwareImportError, import_hardware_collection
 from eight_ball.config import load_json, write_json
 from eight_ball.estimate.hardware import estimate_installed_storage_bytes
 from eight_ball.generate.deployments import generate_deployments
@@ -17,7 +18,15 @@ def generate_outputs(
     normalized_dir: Path = NORMALIZED_DIR,
     generated_dir: Path = GENERATED_DIR,
     indexes_dir: Path = INDEXES_DIR,
+    skip_hardware_import: bool = False,
 ) -> dict[str, Any]:
+    if not skip_hardware_import:
+        hardware_report = import_hardware_collection(
+            normalized_dir=normalized_dir,
+            write_outputs=True,
+        )
+        if not hardware_report.ok:
+            raise HardwareImportError(hardware_report.errors)
     tags = load_json(normalized_dir / "tags.json")
     for tag in tags:
         tag["installed_storage_bytes_estimated"] = estimate_installed_storage_bytes(tag)

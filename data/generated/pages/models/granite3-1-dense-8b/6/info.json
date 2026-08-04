@@ -29,5 +29,37 @@
   "pull_command": "ollama pull granite3.1-dense:8b",
   "run_command": "ollama run granite3.1-dense:8b",
   "source_url": "https://ollama.com/library/granite3.1-dense/tags",
-  "retrieved_at": "2026-08-01T11:54:19Z"
+  "retrieved_at": "2026-08-01T11:54:19Z",
+  "hardware_enrichment": {
+    "compatible_provider_instance_ids": [
+      "provider_instance:AWS|Lightsail for Research|gpu-2xl",
+      "provider_instance:DigitalOcean|GPU Droplets|do-gpu-rtx-4000-ada-1x"
+    ],
+    "compatible_assumed_profile_ids": [
+      "assumed_profile:cuda_large_20_24gb",
+      "assumed_profile:cuda_mid_12_16gb",
+      "assumed_profile:mac_pro_apple_silicon_32_36gb",
+      "assumed_profile:windows_nvidia_32_64gb_vram_12_16gb"
+    ],
+    "compatible_measured_host_ids": [
+      "measured_host:local-brain1-rtx3060-12gb"
+    ],
+    "accelerator_class_ids": [
+      "nvidia_cuda",
+      "unknown_gpu"
+    ],
+    "cpu_only_suitable": true,
+    "cuda_suitable": true,
+    "rocm_suitable": false,
+    "apple_metal_suitable": false,
+    "measured_host_evidence": [
+      {
+        "host_profile_id": "local-brain1-rtx3060-12gb",
+        "provenance_status": "measured_host_inventory",
+        "ollama_inference_verified": false
+      }
+    ],
+    "provenance_status": "derived_from_c6_import",
+    "hardware_data_version": "2026-08-04T07:40:36Z"
+  }
 }

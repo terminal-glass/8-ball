@@ -28,5 +28,29 @@
   "pull_command": "ollama pull wizardlm2:8x22b-q2_K",
   "run_command": "ollama run wizardlm2:8x22b-q2_K",
   "source_url": "https://ollama.com/library/wizardlm2/tags",
-  "retrieved_at": "2026-08-01T12:00:02Z"
+  "retrieved_at": "2026-08-01T12:00:02Z",
+  "hardware_enrichment": {
+    "compatible_provider_instance_ids": [],
+    "compatible_assumed_profile_ids": [
+      "assumed_profile:mac_air_apple_silicon_16gb",
+      "assumed_profile:windows_cpu_16gb"
+    ],
+    "compatible_measured_host_ids": [
+      "measured_host:local-brain1-rtx3060-12gb"
+    ],
+    "accelerator_class_ids": [],
+    "cpu_only_suitable": false,
+    "cuda_suitable": false,
+    "rocm_suitable": false,
+    "apple_metal_suitable": false,
+    "measured_host_evidence": [
+      {
+        "host_profile_id": "local-brain1-rtx3060-12gb",
+        "provenance_status": "measured_host_inventory",
+        "ollama_inference_verified": false
+      }
+    ],
+    "provenance_status": "derived_from_c6_import",
+    "hardware_data_version": "2026-08-04T07:40:36Z"
+  }
 }

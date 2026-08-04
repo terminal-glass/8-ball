@@ -29,5 +29,45 @@
   "pull_command": "ollama pull tulu3:8b",
   "run_command": "ollama run tulu3:8b",
   "source_url": "https://ollama.com/library/tulu3/tags",
-  "retrieved_at": "2026-08-01T11:59:43Z"
+  "retrieved_at": "2026-08-01T11:59:43Z",
+  "hardware_enrichment": {
+    "compatible_provider_instance_ids": [
+      "provider_instance:AWS|Lightsail for Research|gpu-4xl",
+      "provider_instance:DigitalOcean|GPU Droplets|do-gpu-h100-1x-8x",
+      "provider_instance:DigitalOcean|GPU Droplets|do-gpu-h200-1x-8x",
+      "provider_instance:DigitalOcean|GPU Droplets|do-gpu-l40s-1x",
+      "provider_instance:DigitalOcean|GPU Droplets|do-gpu-mi300x-1x-8x",
+      "provider_instance:DigitalOcean|GPU Droplets|do-gpu-mi325x-1x-8x",
+      "provider_instance:DigitalOcean|GPU Droplets|do-gpu-rtx-6000-ada-1x"
+    ],
+    "compatible_assumed_profile_ids": [
+      "assumed_profile:cuda_datacenter_141gb",
+      "assumed_profile:cuda_datacenter_80gb",
+      "assumed_profile:cuda_high_48gb",
+      "assumed_profile:cuda_multi_gpu",
+      "assumed_profile:mac_pro_apple_silicon_64gb"
+    ],
+    "compatible_measured_host_ids": [
+      "measured_host:local-brain1-rtx3060-12gb"
+    ],
+    "accelerator_class_ids": [
+      "amd_rocm",
+      "nvidia_cuda",
+      "nvidia_cuda_multi_gpu",
+      "unknown_gpu"
+    ],
+    "cpu_only_suitable": false,
+    "cuda_suitable": true,
+    "rocm_suitable": true,
+    "apple_metal_suitable": false,
+    "measured_host_evidence": [
+      {
+        "host_profile_id": "local-brain1-rtx3060-12gb",
+        "provenance_status": "measured_host_inventory",
+        "ollama_inference_verified": false
+      }
+    ],
+    "provenance_status": "derived_from_c6_import",
+    "hardware_data_version": "2026-08-04T07:40:36Z"
+  }
 }

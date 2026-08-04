@@ -4,6 +4,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from eight_ball.agents_csv.import_collection import HardwareImportError, import_hardware_collection
 from eight_ball.agents_csv.validate import AgentsCsvValidationError, validate_agents_csv_collection
 from eight_ball.collect.manifest import (
     begin_collection,
@@ -356,6 +357,33 @@ def cmd_generate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_import_agents_csv(args: argparse.Namespace) -> int:
+    try:
+        report = import_hardware_collection(write_outputs=True)
+    except HardwareImportError as exc:
+        for error in exc.errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        return 1
+
+    print("C6 hardware data import")
+    print(f"  counts_by_namespace: {report.counts_by_namespace}")
+    print(f"  provider_cpu_count: {report.provider_cpu_count}")
+    print(f"  provider_gpu_count: {report.provider_gpu_count}")
+    print(f"  assumed_profile_count: {report.assumed_profile_count}")
+    print(f"  measured_host_count: {report.measured_host_count}")
+    print(f"  accelerator_class_count: {report.accelerator_class_count}")
+    print(f"  true_duplicate_keys: {len(report.true_duplicate_keys)}")
+    print(f"  intentional_overlaps: {len(report.intentional_overlaps)}")
+    for warning in report.warnings:
+        print(f"WARNING: {warning}")
+    if not report.ok:
+        for error in report.errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        return 1
+    print("C6 hardware data import passed.")
+    return 0
+
+
 def cmd_validate_agents_csv(args: argparse.Namespace) -> int:
     try:
         report = validate_agents_csv_collection()
@@ -695,6 +723,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     _add_common_args(validate_pages)
     validate_pages.set_defaults(handler=cmd_validate_pages)
+
+    import_agents_csv = subparsers.add_parser(
+        "import-agents-csv",
+        help="Import, classify, deduplicate, and publish canonical C6 hardware data.",
+    )
+    import_agents_csv.set_defaults(handler=cmd_import_agents_csv)
 
     validate_agents_csv = subparsers.add_parser(
         "validate-agents-csv",

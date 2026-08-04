@@ -1,0 +1,72 @@
+[
+  {
+    "id": "deployment_type:3",
+    "record_type": "deployment_type",
+    "deployment_type_id": "3",
+    "display_name": "Deployment Lane",
+    "description": "Deployment lane selection gate. Maps detected provider or platform facts to a deployment lane before sizing gates run.",
+    "provenance_status": "internal_classification",
+    "source_reference": "config/deployment_types.yaml",
+    "validation_status": "imported",
+    "notes": null,
+    "source_file": "config/deployment_types.yaml",
+    "source_id": "deployment-types",
+    "source_row": 1
+  },
+  {
+    "id": "deployment_type:4",
+    "record_type": "deployment_type",
+    "deployment_type_id": "4",
+    "display_name": "Hard Disk Gate",
+    "description": "Hard-disk qualification gate. Filters variants when free disk space is below the installed storage estimate plus safety margin.",
+    "provenance_status": "internal_classification",
+    "source_reference": "config/deployment_types.yaml",
+    "validation_status": "imported",
+    "notes": null,
+    "source_file": "config/deployment_types.yaml",
+    "source_id": "deployment-types",
+    "source_row": 2
+  },
+  {
+    "id": "deployment_type:5",
+    "record_type": "deployment_type",
+    "deployment_type_id": "5",
+    "display_name": "RAM Gate",
+    "description": "RAM qualification gate. Filters variants based on estimated system RAM requirements versus measured available RAM.",
+    "provenance_status": "internal_classification",
+    "source_reference": "config/deployment_types.yaml",
+    "validation_status": "imported",
+    "notes": null,
+    "source_file": "config/deployment_types.yaml",
+    "source_id": "deployment-types",
+    "source_row": 3
+  },
+  {
+    "id": "deployment_type:6",
+    "record_type": "deployment_type",
+    "deployment_type_id": "6",
+    "display_name": "CPU Gate",
+    "description": "CPU qualification gate. Filters variants based on CPU thread count and CPU-only practical assessment.",
+    "provenance_status": "internal_classification",
+    "source_reference": "config/deployment_types.yaml",
+    "validation_status": "imported",
+    "notes": null,
+    "source_file": "config/deployment_types.yaml",
+    "source_id": "deployment-types",
+    "source_row": 4
+  },
+  {
+    "id": "deployment_type:7",
+    "record_type": "deployment_type",
+    "deployment_type_id": "7",
+    "display_name": "GPU Gate",
+    "description": "GPU/VRAM qualification gate. Filters variants based on discrete GPU availability and estimated VRAM requirements.",
+    "provenance_status": "internal_classification",
+    "source_reference": "config/deployment_types.yaml",
+    "validation_status": "imported",
+    "notes": null,
+    "source_file": "config/deployment_types.yaml",
+    "source_id": "deployment-types",
+    "source_row": 5
+  }
+]

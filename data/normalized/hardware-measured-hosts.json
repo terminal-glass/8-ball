@@ -1,0 +1,33 @@
+[
+  {
+    "id": "measured_host:local-brain1-rtx3060-12gb",
+    "record_type": "measured_hardware_host",
+    "host_profile_id": "local-brain1-rtx3060-12gb",
+    "host_name": "brain1",
+    "environment_type": "local Linux virtualization/GPU host",
+    "os_family": "Ubuntu 22.04.5 LTS",
+    "architecture": "x86_64",
+    "cpu_count": null,
+    "system_ram_gb": null,
+    "storage_gb": 397.83,
+    "gpu_vendor": "NVIDIA",
+    "gpu_model": "GeForce RTX 3060",
+    "gpu_count": 1,
+    "vram_gb_per_gpu": 12.0,
+    "total_vram_gb": 12.0,
+    "accelerator_class_id": "nvidia_cuda",
+    "cuda_available": true,
+    "rocm_available": false,
+    "apple_metal_available": false,
+    "deployment_type_id": null,
+    "provenance_status": "measured_host_inventory",
+    "ollama_inference_verified": false,
+    "source_reference": "uploaded file ncgpt-1-log.txt",
+    "measured_at_utc": "2025-11-27T08:09:54Z",
+    "validation_status": "imported",
+    "notes": "nvidia-smi measurement is proven. This does not prove the guest VM had GPU access or that any Ollama model passed.",
+    "source_file": "AGENTS/TG-8Ball-Measured-GPU-Hosts.csv",
+    "source_id": "measured-gpu-hosts",
+    "source_row": 2
+  }
+]
