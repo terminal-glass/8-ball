@@ -46,10 +46,7 @@ mkdir -p "$PROFILES_DIR"
 created=0
 for slug in "${MODEL_SLUGS[@]}"; do
   model_dir="$PROFILES_DIR/$slug"
-  if [[ ! -d "$model_dir" ]]; then
-    echo "Missing model folder: $model_dir" >&2
-    exit 1
-  fi
+  mkdir -p "$model_dir"
   for lane in "${PLATFORM_LANES[@]}"; do
     mkdir -p "$model_dir/$lane"
     created=$((created + 1))
