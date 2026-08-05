@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+2b,granite3.2-vision:2b,../sizes/2b.json,not_listed_in_agents_selection
+2b-fp16,granite3.2-vision:2b-fp16,../sizes/2b-fp16.json,not_listed_in_agents_selection
+2b-q4_k_m,granite3.2-vision:2b-q4_K_M,../sizes/2b-q4_k_m.json,not_listed_in_agents_selection
+2b-q8_0,granite3.2-vision:2b-q8_0,../sizes/2b-q8_0.json,not_listed_in_agents_selection
+latest,granite3.2-vision:latest,../sizes/latest.json,not_listed_in_agents_selection

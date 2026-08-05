@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+34b,codebooga:34b,sizes/34b.json
+34b-v0-1-fp16,codebooga:34b-v0.1-fp16,sizes/34b-v0-1-fp16.json
+34b-v0-1-q2_k,codebooga:34b-v0.1-q2_K,sizes/34b-v0-1-q2_k.json
+34b-v0-1-q3_k_l,codebooga:34b-v0.1-q3_K_L,sizes/34b-v0-1-q3_k_l.json
+34b-v0-1-q3_k_m,codebooga:34b-v0.1-q3_K_M,sizes/34b-v0-1-q3_k_m.json
+34b-v0-1-q3_k_s,codebooga:34b-v0.1-q3_K_S,sizes/34b-v0-1-q3_k_s.json
+34b-v0-1-q4_0,codebooga:34b-v0.1-q4_0,sizes/34b-v0-1-q4_0.json
+34b-v0-1-q4_1,codebooga:34b-v0.1-q4_1,sizes/34b-v0-1-q4_1.json
+34b-v0-1-q4_k_m,codebooga:34b-v0.1-q4_K_M,sizes/34b-v0-1-q4_k_m.json
+34b-v0-1-q5_0,codebooga:34b-v0.1-q5_0,sizes/34b-v0-1-q5_0.json
+34b-v0-1-q5_1,codebooga:34b-v0.1-q5_1,sizes/34b-v0-1-q5_1.json
+34b-v0-1-q5_k_m,codebooga:34b-v0.1-q5_K_M,sizes/34b-v0-1-q5_k_m.json
+34b-v0-1-q5_k_s,codebooga:34b-v0.1-q5_K_S,sizes/34b-v0-1-q5_k_s.json
+34b-v0-1-q6_k,codebooga:34b-v0.1-q6_K,sizes/34b-v0-1-q6_k.json
+34b-v0-1-q8_0,codebooga:34b-v0.1-q8_0,sizes/34b-v0-1-q8_0.json
+latest,codebooga:latest,sizes/latest.json

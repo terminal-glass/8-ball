@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+1-5b,opencoder:1.5b,sizes/1-5b.json
+1-5b-instruct-fp16,opencoder:1.5b-instruct-fp16,sizes/1-5b-instruct-fp16.json
+1-5b-instruct-q4_k_m,opencoder:1.5b-instruct-q4_K_M,sizes/1-5b-instruct-q4_k_m.json
+1-5b-instruct-q8_0,opencoder:1.5b-instruct-q8_0,sizes/1-5b-instruct-q8_0.json

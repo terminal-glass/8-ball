@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "cogito-2.1-671b",
+  "model_slug": "cogito-2-1-671b",
+  "family_id": "cogito-2.1",
+  "display_name": "cogito-2.1",
+  "default_tag": "cogito-2.1:671b",
+  "size_count": 5,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

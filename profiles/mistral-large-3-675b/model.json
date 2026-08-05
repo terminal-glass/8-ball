@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "mistral-large-3-675b",
+  "model_slug": "mistral-large-3-675b",
+  "family_id": "mistral-large-3",
+  "display_name": "mistral-large-3",
+  "default_tag": "mistral-large-3:675b-cloud",
+  "size_count": 1,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:25Z"
+}

@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+8b,sailor2:8b,sizes/8b.json
+8b-chat-fp16,sailor2:8b-chat-fp16,sizes/8b-chat-fp16.json
+8b-chat-q4_k_m,sailor2:8b-chat-q4_K_M,sizes/8b-chat-q4_k_m.json
+8b-chat-q8_0,sailor2:8b-chat-q8_0,sizes/8b-chat-q8_0.json
+latest,sailor2:latest,sizes/latest.json

@@ -1,0 +1,92 @@
+{
+  "model_id": "alfred-40b",
+  "model_slug": "alfred-40b",
+  "size_slug": "40b-1023-q5_1",
+  "ollama_ref": "alfred:40b-1023-q5_1",
+  "parameter_size": "40b",
+  "quantization": "q5_1",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 29.802,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=alfred-40b;variant_index=5;tag=40b-1023-q5_1",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 32000000000,
+    "download_size_provenance": {
+      "value": 32000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/alfred/tags",
+      "retrieved_at": "2026-08-01T11:51:28Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "32GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/alfred/tags",
+        "retrieved_at": "2026-08-01T11:51:28Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 32000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/alfred/tags",
+        "retrieved_at": "2026-08-01T11:51:28Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 40000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/alfred/tags",
+        "retrieved_at": "2026-08-01T11:51:28Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 2000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/alfred/tags",
+        "retrieved_at": "2026-08-01T11:51:28Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q5_1",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/alfred/tags",
+        "retrieved_at": "2026-08-01T11:51:28Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/alfred/tags",
+        "retrieved_at": "2026-08-01T11:51:28Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/alfred/tags",
+        "retrieved_at": "2026-08-01T11:51:28Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

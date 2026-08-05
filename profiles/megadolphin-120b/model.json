@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "megadolphin-120b",
+  "model_slug": "megadolphin-120b",
+  "family_id": "megadolphin",
+  "display_name": "megadolphin",
+  "default_tag": "megadolphin:120b",
+  "size_count": 19,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:23Z"
+}

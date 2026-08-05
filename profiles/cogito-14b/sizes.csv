@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+14b,cogito:14b,sizes/14b.json
+14b-v1-preview-qwen-fp16,cogito:14b-v1-preview-qwen-fp16,sizes/14b-v1-preview-qwen-fp16.json
+14b-v1-preview-qwen-q4_k_m,cogito:14b-v1-preview-qwen-q4_K_M,sizes/14b-v1-preview-qwen-q4_k_m.json
+14b-v1-preview-qwen-q8_0,cogito:14b-v1-preview-qwen-q8_0,sizes/14b-v1-preview-qwen-q8_0.json

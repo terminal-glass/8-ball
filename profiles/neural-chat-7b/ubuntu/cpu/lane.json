@@ -1,0 +1,12 @@
+{
+  "schema_version": "profiles.lane.v1",
+  "model_slug": "neural-chat-7b",
+  "target_lane": "ubuntu/cpu",
+  "install_path": "install/ubuntu",
+  "hardware_profile_ids": [
+    "cpu-small",
+    "desktop-standard"
+  ],
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:27Z"
+}

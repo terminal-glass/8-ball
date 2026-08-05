@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "deepseek-ocr-3b",
+  "model_slug": "deepseek-ocr-3b",
+  "family_id": "deepseek-ocr",
+  "display_name": "deepseek-ocr",
+  "default_tag": "deepseek-ocr:3b",
+  "size_count": 3,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

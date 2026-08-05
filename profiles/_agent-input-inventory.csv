@@ -1,0 +1,91 @@
+source_path,source_type,parse_status,row_count,recognized_model_rows,recognized_size_rows,recognized_platform_rows,recognized_hardware_fields,notes
+AGENTS/CursorFileC0-8-BALL-CATALOG-DEVELOPMENT-BRIEF.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/CursorFileC1-environment-artifacts.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/CursorFileC2-environment-artifact-sequencing.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/CursorFileC3-environment-gates-testing-plan.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv,csv,parsed,3,0,0,3,3,
+AGENTS/TG-8Ball-Accelerator-Classes.csv,csv,parsed,7,0,0,0,0,
+AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv,csv,parsed,7,0,0,7,7,
+AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv,csv,parsed,10,0,0,10,10,
+AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-AMD.csv,csv,parsed,2,0,0,2,0,
+AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv,csv,parsed,5,0,0,5,0,
+AGENTS/TG-8Ball-GPU-Cursor-Checklist.csv,csv,parsed,9,0,0,0,0,
+AGENTS/TG-8Ball-GPU-Recovered-Counts.csv,csv,parsed,6,0,0,0,0,
+AGENTS/TG-8Ball-GPU-Source-Inventory.csv,csv,parsed,5,0,0,0,0,
+AGENTS/TG-8Ball-Measured-GPU-Hosts.csv,csv,parsed,1,0,0,1,0,
+AGENTS/TG-8Ball-Provider-Recovery-Cursor-Checklist.csv,csv,parsed,7,0,0,0,0,
+AGENTS/TG-8Ball-Provider-Recovery-Inventory.xlsx,xlsx,skipped,0,0,0,0,0,unsupported extension
+AGENTS/TG-8Ball-Provider-Recovery-Recovered-Counts.csv,csv,parsed,11,0,0,0,0,
+AGENTS/TG-8Ball-Provider-Recovery-Source-Inventory.csv,csv,parsed,15,0,0,0,0,
+AGENTS/cursorC10-glass-ball-execute.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/cursorC9.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/cursorFileA0.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/cursorFileC4-helpers-plan.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/cursorFileC5-profile-folder-structure.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/cursorFileC6.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/cursorFileC7-profile-model-tree.md,md,skipped_cursor_prompt,0,0,0,0,0,cursor prompt or roadmap; not parsed as model data
+AGENTS/data-science/P1-Estimator/README.md,md,inspected_markdown,0,0,0,0,0,markdown contains table-like model/hardware content; not row-parsed
+AGENTS/data-science/P1-Estimator/data/DO/droplets.json,json,parsed,31,0,0,0,0,
+AGENTS/data-science/P1-Estimator/data/LS/lightsail-linux-ipv4.json,json,parsed,25,0,0,0,0,
+AGENTS/data-science/P1-Estimator/data/NC/cpu-only-templates.json,json,parsed,6,0,0,0,0,
+AGENTS/data-science/P1-Estimator/data/NC/gpu-templates.json,json,parsed,4,0,0,0,0,
+AGENTS/data-science/P1-Estimator/data/NC/overhead-reserves.json,json,parsed,12,0,0,0,0,
+AGENTS/data-science/P1-Estimator/data/NC/workload-profiles.json,json,parsed,7,0,0,0,0,
+AGENTS/data-science/P1-Estimator/data/catalog.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P1-Estimator/data/schema.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P1-Estimator/docs/.gitkeep,unknown,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P1-Estimator/scripts/.gitkeep,unknown,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P1-Estimator/tests/.gitkeep,unknown,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P2-Provider-Datasets/.gitkeep,unknown,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P2-Provider-Datasets/README.md,md,skipped_markdown,0,0,0,0,0,markdown without parseable model table rows
+AGENTS/data-science/P2-Provider-Datasets/indexes/plans.json,json,parsed,42,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/indexes/provider-summary.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/indexes/providers.json,json,parsed,3,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/common/metadata.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/basic.json,json,parsed,7,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/cpu-optimized.json,json,parsed,6,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json,json,parsed,6,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/memory-optimized.json,json,parsed,5,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/storage-optimized.json,json,parsed,5,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json,json,parsed,13,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/nocloudgpt/appliance-overhead.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/providers/nocloudgpt/deployment-templates.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/reports/generation-report.md,md,skipped_markdown,0,0,0,0,0,markdown without parseable model table rows
+AGENTS/data-science/P2-Provider-Datasets/reports/unresolved-provider-fields.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/reports/validation-report.md,md,skipped_markdown,0,0,0,0,0,markdown without parseable model table rows
+AGENTS/data-science/P2-Provider-Datasets/schemas/appliance-overhead.schema.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/schemas/deployment-templates.schema.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/schemas/provider-indexes.schema.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/schemas/provider-plans.schema.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P2-Provider-Datasets/tests/__pycache__/test_p2_datasets.cpython-312-pytest-8.4.2.pyc,pyc,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P2-Provider-Datasets/tests/test_p2_datasets.py,py,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P3-Ollama-Metadata-Catalog/PROVENANCE.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P3-Ollama-Metadata-Catalog/README.md,md,inspected_markdown,0,0,0,0,0,markdown contains table-like model/hardware content; not row-parsed
+AGENTS/data-science/P3-Ollama-Metadata-Catalog/VALIDATION-REPORT.md,md,inspected_markdown,0,0,0,0,0,markdown contains table-like model/hardware content; not row-parsed
+AGENTS/data-science/P3-Ollama-Metadata-Catalog/indexes/catalog-summary.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P3-Ollama-Metadata-Catalog/indexes/model-selection.json,json,parsed,1,0,200,8,0,
+AGENTS/data-science/P3-Ollama-Metadata-Catalog/reports/ycgpt-8sh-import-failure.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P3-Ollama-Metadata-Catalog/reports/ycgpt-8sh-import-failure.md,md,skipped_markdown,0,0,0,0,0,markdown without parseable model table rows
+AGENTS/data-science/P4-Public-Catalog/CLASSIFICATIONS.md,md,inspected_markdown,0,0,0,0,0,markdown contains table-like model/hardware content; not row-parsed
+AGENTS/data-science/P4-Public-Catalog/CONSUMPTION.md,md,inspected_markdown,0,0,0,0,0,markdown contains table-like model/hardware content; not row-parsed
+AGENTS/data-science/P4-Public-Catalog/README.md,md,inspected_markdown,0,0,0,0,0,markdown contains table-like model/hardware content; not row-parsed
+AGENTS/data-science/P4-Public-Catalog/index/families.json,json,parsed,234,0,0,0,0,
+AGENTS/data-science/P4-Public-Catalog/index/models.json,json,parsed,437,437,7271,0,0,
+AGENTS/data-science/P4-Public-Catalog/manifest.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/README.md,md,skipped_markdown,0,0,0,0,0,markdown without parseable model table rows
+AGENTS/data-science/P4-Workload-Profiles/data/agents-automation.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/coding-assistant.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/documents-rag.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/heavy-ai-research.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/multi-user-office.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/personal-chat.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/small-business.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/vision-documents.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/data/workloads.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/schemas/workload-profile.schema.json,json,parsed,1,0,0,0,0,
+AGENTS/data-science/P4-Workload-Profiles/scripts/validate-workloads.py,py,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P4-Workload-Profiles/tests/test_workload_profiles.py,py,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P5-Compatibility-Estimator/.gitkeep,unknown,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P6-Validation-and-Testing/.gitkeep,unknown,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/P7-Installer-Authoring-Preparation/.gitkeep,unknown,skipped,0,0,0,0,0,unsupported extension
+AGENTS/data-science/README.md,md,inspected_markdown,0,0,0,0,0,markdown contains table-like model/hardware content; not row-parsed

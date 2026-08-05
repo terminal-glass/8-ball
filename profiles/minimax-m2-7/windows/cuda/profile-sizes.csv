@@ -1,0 +1,2 @@
+size_slug,ollama_ref,size_file,fit_status
+cloud,minimax-m2.7:cloud,../sizes/cloud.json,not_listed_in_agents_selection

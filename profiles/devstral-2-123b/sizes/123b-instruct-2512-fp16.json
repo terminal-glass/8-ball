@@ -1,0 +1,92 @@
+{
+  "model_id": "devstral-2-123b",
+  "model_slug": "devstral-2-123b",
+  "size_slug": "123b-instruct-2512-fp16",
+  "ollama_ref": "devstral-2:123b-instruct-2512-fp16",
+  "parameter_size": "123b",
+  "quantization": "fp16",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 232.831,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=devstral-2-123b;variant_index=2;tag=123b-instruct-2512-fp16",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 250000000000,
+    "download_size_provenance": {
+      "value": 250000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/devstral-2/tags",
+      "retrieved_at": "2026-08-01T11:52:55Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "250GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 250000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 123000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 256000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "fp16",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

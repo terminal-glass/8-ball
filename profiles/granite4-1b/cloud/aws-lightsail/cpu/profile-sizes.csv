@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+1b,granite4:1b,../sizes/1b.json,not_listed_in_agents_selection
+1b-bf16,granite4:1b-bf16,../sizes/1b-bf16.json,not_listed_in_agents_selection
+1b-h,granite4:1b-h,../sizes/1b-h.json,not_listed_in_agents_selection
+1b-h-q8_0,granite4:1b-h-q8_0,../sizes/1b-h-q8_0.json,not_listed_in_agents_selection

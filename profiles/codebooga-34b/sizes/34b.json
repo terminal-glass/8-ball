@@ -1,0 +1,95 @@
+{
+  "model_id": "codebooga-34b",
+  "model_slug": "codebooga-34b",
+  "size_slug": "34b",
+  "ollama_ref": "codebooga:34b",
+  "parameter_size": "34b",
+  "quantization": null,
+  "minimum_ram_gb": 33.35,
+  "recommended_ram_gb": 40.02,
+  "minimum_vram_gb": 21.85,
+  "recommended_vram_gb": 21.85,
+  "minimum_disk_free_gb": 17.695,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=codebooga-34b;variant_index=1;tag=34b;p3_profiles=gpu-high-mem",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 19000000000,
+    "download_size_provenance": {
+      "value": 19000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/codebooga/tags",
+      "retrieved_at": "2026-08-01T11:51:49Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "19GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/codebooga/tags",
+        "retrieved_at": "2026-08-01T11:51:49Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 19000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/codebooga/tags",
+        "retrieved_at": "2026-08-01T11:51:49Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 34000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/codebooga/tags",
+        "retrieved_at": "2026-08-01T11:51:49Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 16000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/codebooga/tags",
+        "retrieved_at": "2026-08-01T11:51:49Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/codebooga/tags",
+        "retrieved_at": "2026-08-01T11:51:49Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/codebooga/tags",
+        "retrieved_at": "2026-08-01T11:51:49Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    },
+    "p3_selection_profiles": [
+      "gpu-high-mem"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "llama2-chinese-7b",
+  "model_slug": "llama2-chinese-7b",
+  "family_id": "llama2-chinese",
+  "display_name": "llama2-chinese",
+  "default_tag": "llama2-chinese:7b",
+  "size_count": 18,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:18Z"
+}

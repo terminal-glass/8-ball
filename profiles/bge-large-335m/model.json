@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "bge-large-335m",
+  "model_slug": "bge-large-335m",
+  "family_id": "bge-large",
+  "display_name": "bge-large",
+  "default_tag": "bge-large:335m",
+  "size_count": 3,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:09Z"
+}

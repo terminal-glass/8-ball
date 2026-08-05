@@ -1,0 +1,92 @@
+{
+  "model_id": "sqlcoder-15b",
+  "model_slug": "sqlcoder-15b",
+  "size_slug": "15b-q4_0",
+  "ollama_ref": "sqlcoder:15b-q4_0",
+  "parameter_size": "15b",
+  "quantization": "q4_0",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 8.382,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=sqlcoder-15b;variant_index=7;tag=15b-q4_0",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 9000000000,
+    "download_size_provenance": {
+      "value": 9000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/sqlcoder/tags",
+      "retrieved_at": "2026-08-01T11:59:18Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "9.0GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/sqlcoder/tags",
+        "retrieved_at": "2026-08-01T11:59:18Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 9000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/sqlcoder/tags",
+        "retrieved_at": "2026-08-01T11:59:18Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 15000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/sqlcoder/tags",
+        "retrieved_at": "2026-08-01T11:59:18Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 8000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/sqlcoder/tags",
+        "retrieved_at": "2026-08-01T11:59:18Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q4_0",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/sqlcoder/tags",
+        "retrieved_at": "2026-08-01T11:59:18Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/sqlcoder/tags",
+        "retrieved_at": "2026-08-01T11:59:18Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/sqlcoder/tags",
+        "retrieved_at": "2026-08-01T11:59:18Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+300m,embeddinggemma:300m,../sizes/300m.json,not_listed_in_agents_selection
+300m-bf16,embeddinggemma:300m-bf16,../sizes/300m-bf16.json,not_listed_in_agents_selection
+300m-qat-q4_0,embeddinggemma:300m-qat-q4_0,../sizes/300m-qat-q4_0.json,not_listed_in_agents_selection
+300m-qat-q8_0,embeddinggemma:300m-qat-q8_0,../sizes/300m-qat-q8_0.json,not_listed_in_agents_selection
+latest,embeddinggemma:latest,../sizes/latest.json,not_listed_in_agents_selection

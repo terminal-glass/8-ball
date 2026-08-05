@@ -1,0 +1,13 @@
+{
+  "schema_version": "profiles.lane.v1",
+  "model_slug": "wizardcoder-13b",
+  "target_lane": "cloud/digitalocean/gpu-droplet",
+  "install_path": "install/cloud/digitalocean-droplet",
+  "hardware_profile_ids": [
+    "gpu-entry",
+    "gpu-midrange",
+    "gpu-high-mem"
+  ],
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:41:06Z"
+}

@@ -1,0 +1,92 @@
+{
+  "model_id": "wizard-vicuna-uncensored-30b",
+  "model_slug": "wizard-vicuna-uncensored-30b",
+  "size_slug": "30b-q3_k_l",
+  "ollama_ref": "wizard-vicuna-uncensored:30b-q3_K_L",
+  "parameter_size": "30b",
+  "quantization": "q3_K_L",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 15.832,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=wizard-vicuna-uncensored-30b;variant_index=4;tag=30b-q3_K_L",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 17000000000,
+    "download_size_provenance": {
+      "value": 17000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+      "retrieved_at": "2026-08-01T11:59:52Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "17GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+        "retrieved_at": "2026-08-01T11:59:52Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 17000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+        "retrieved_at": "2026-08-01T11:59:52Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 30000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+        "retrieved_at": "2026-08-01T11:59:52Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 2000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+        "retrieved_at": "2026-08-01T11:59:52Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q3_K_L",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+        "retrieved_at": "2026-08-01T11:59:52Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+        "retrieved_at": "2026-08-01T11:59:52Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+        "retrieved_at": "2026-08-01T11:59:52Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

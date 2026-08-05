@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "xwinlm-70b",
+  "model_slug": "xwinlm-70b",
+  "family_id": "xwinlm",
+  "display_name": "xwinlm",
+  "default_tag": "xwinlm:70b-v0.1",
+  "size_count": 15,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:41:10Z"
+}

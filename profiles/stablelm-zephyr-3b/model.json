@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "stablelm-zephyr-3b",
+  "model_slug": "stablelm-zephyr-3b",
+  "family_id": "stablelm-zephyr",
+  "display_name": "stablelm-zephyr",
+  "default_tag": "stablelm-zephyr:3b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:56Z"
+}

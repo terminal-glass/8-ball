@@ -1,0 +1,15 @@
+size_slug,ollama_ref,size_file,fit_status
+35b,qwen3.5:35b,../sizes/35b.json,not_listed_in_agents_selection
+35b-a3b,qwen3.5:35b-a3b,../sizes/35b-a3b.json,not_listed_in_agents_selection
+35b-a3b-bf16,qwen3.5:35b-a3b-bf16,../sizes/35b-a3b-bf16.json,not_listed_in_agents_selection
+35b-a3b-coding-bf16,qwen3.5:35b-a3b-coding-bf16,../sizes/35b-a3b-coding-bf16.json,not_listed_in_agents_selection
+35b-a3b-coding-mxfp8,qwen3.5:35b-a3b-coding-mxfp8,../sizes/35b-a3b-coding-mxfp8.json,not_listed_in_agents_selection
+35b-a3b-coding-nvfp4,qwen3.5:35b-a3b-coding-nvfp4,../sizes/35b-a3b-coding-nvfp4.json,not_listed_in_agents_selection
+35b-a3b-int4,qwen3.5:35b-a3b-int4,../sizes/35b-a3b-int4.json,not_listed_in_agents_selection
+35b-a3b-int8,qwen3.5:35b-a3b-int8,../sizes/35b-a3b-int8.json,not_listed_in_agents_selection
+35b-a3b-mlx-bf16,qwen3.5:35b-a3b-mlx-bf16,../sizes/35b-a3b-mlx-bf16.json,not_listed_in_agents_selection
+35b-a3b-mxfp8,qwen3.5:35b-a3b-mxfp8,../sizes/35b-a3b-mxfp8.json,not_listed_in_agents_selection
+35b-a3b-nvfp4,qwen3.5:35b-a3b-nvfp4,../sizes/35b-a3b-nvfp4.json,not_listed_in_agents_selection
+35b-a3b-q4_k_m,qwen3.5:35b-a3b-q4_K_M,../sizes/35b-a3b-q4_k_m.json,not_listed_in_agents_selection
+35b-a3b-q8_0,qwen3.5:35b-a3b-q8_0,../sizes/35b-a3b-q8_0.json,not_listed_in_agents_selection
+35b-mlx,qwen3.5:35b-mlx,../sizes/35b-mlx.json,not_listed_in_agents_selection

@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+2-4b,exaone-deep:2.4b,sizes/2-4b.json
+2-4b-fp16,exaone-deep:2.4b-fp16,sizes/2-4b-fp16.json
+2-4b-q4_k_m,exaone-deep:2.4b-q4_K_M,sizes/2-4b-q4_k_m.json
+2-4b-q8_0,exaone-deep:2.4b-q8_0,sizes/2-4b-q8_0.json

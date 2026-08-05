@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "firefunction-v2-70b",
+  "model_slug": "firefunction-v2-70b",
+  "family_id": "firefunction-v2",
+  "display_name": "firefunction-v2",
+  "default_tag": "firefunction-v2:70b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:12Z"
+}

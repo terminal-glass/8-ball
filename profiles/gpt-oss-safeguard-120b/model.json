@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "gpt-oss-safeguard-120b",
+  "model_slug": "gpt-oss-safeguard-120b",
+  "family_id": "gpt-oss-safeguard",
+  "display_name": "gpt-oss-safeguard",
+  "default_tag": "gpt-oss-safeguard:120b",
+  "size_count": 1,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:14Z"
+}

@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+1b,llama-guard3:1b,sizes/1b.json
+1b-fp16,llama-guard3:1b-fp16,sizes/1b-fp16.json
+1b-q2_k,llama-guard3:1b-q2_K,sizes/1b-q2_k.json
+1b-q3_k_l,llama-guard3:1b-q3_K_L,sizes/1b-q3_k_l.json
+1b-q3_k_m,llama-guard3:1b-q3_K_M,sizes/1b-q3_k_m.json
+1b-q3_k_s,llama-guard3:1b-q3_K_S,sizes/1b-q3_k_s.json
+1b-q4_0,llama-guard3:1b-q4_0,sizes/1b-q4_0.json
+1b-q4_1,llama-guard3:1b-q4_1,sizes/1b-q4_1.json
+1b-q4_k_m,llama-guard3:1b-q4_K_M,sizes/1b-q4_k_m.json
+1b-q4_k_s,llama-guard3:1b-q4_K_S,sizes/1b-q4_k_s.json
+1b-q5_0,llama-guard3:1b-q5_0,sizes/1b-q5_0.json
+1b-q5_1,llama-guard3:1b-q5_1,sizes/1b-q5_1.json
+1b-q5_k_m,llama-guard3:1b-q5_K_M,sizes/1b-q5_k_m.json
+1b-q5_k_s,llama-guard3:1b-q5_K_S,sizes/1b-q5_k_s.json
+1b-q6_k,llama-guard3:1b-q6_K,sizes/1b-q6_k.json
+1b-q8_0,llama-guard3:1b-q8_0,sizes/1b-q8_0.json

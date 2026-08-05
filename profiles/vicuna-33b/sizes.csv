@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+33b,vicuna:33b,sizes/33b.json
+33b-fp16,vicuna:33b-fp16,sizes/33b-fp16.json
+33b-q2_k,vicuna:33b-q2_K,sizes/33b-q2_k.json
+33b-q3_k_l,vicuna:33b-q3_K_L,sizes/33b-q3_k_l.json
+33b-q3_k_m,vicuna:33b-q3_K_M,sizes/33b-q3_k_m.json
+33b-q3_k_s,vicuna:33b-q3_K_S,sizes/33b-q3_k_s.json
+33b-q4_0,vicuna:33b-q4_0,sizes/33b-q4_0.json
+33b-q4_1,vicuna:33b-q4_1,sizes/33b-q4_1.json
+33b-q4_k_m,vicuna:33b-q4_K_M,sizes/33b-q4_k_m.json
+33b-q4_k_s,vicuna:33b-q4_K_S,sizes/33b-q4_k_s.json
+33b-q5_0,vicuna:33b-q5_0,sizes/33b-q5_0.json
+33b-q5_1,vicuna:33b-q5_1,sizes/33b-q5_1.json
+33b-q5_k_m,vicuna:33b-q5_K_M,sizes/33b-q5_k_m.json
+33b-q5_k_s,vicuna:33b-q5_K_S,sizes/33b-q5_k_s.json
+33b-q6_k,vicuna:33b-q6_K,sizes/33b-q6_k.json
+33b-q8_0,vicuna:33b-q8_0,sizes/33b-q8_0.json

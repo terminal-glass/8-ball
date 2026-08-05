@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+14b,deepcoder:14b,sizes/14b.json
+14b-preview-fp16,deepcoder:14b-preview-fp16,sizes/14b-preview-fp16.json
+14b-preview-q4_k_m,deepcoder:14b-preview-q4_K_M,sizes/14b-preview-q4_k_m.json
+14b-preview-q8_0,deepcoder:14b-preview-q8_0,sizes/14b-preview-q8_0.json
+latest,deepcoder:latest,sizes/latest.json

@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file
+8b,granite3.3:8b,sizes/8b.json
+latest,granite3.3:latest,sizes/latest.json

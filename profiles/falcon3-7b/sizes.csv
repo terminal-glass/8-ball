@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+7b,falcon3:7b,sizes/7b.json
+7b-instruct-fp16,falcon3:7b-instruct-fp16,sizes/7b-instruct-fp16.json
+7b-instruct-q4_k_m,falcon3:7b-instruct-q4_K_M,sizes/7b-instruct-q4_k_m.json
+7b-instruct-q8_0,falcon3:7b-instruct-q8_0,sizes/7b-instruct-q8_0.json
+latest,falcon3:latest,sizes/latest.json

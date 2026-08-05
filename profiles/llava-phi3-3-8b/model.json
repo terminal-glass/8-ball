@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "llava-phi3-3.8b",
+  "model_slug": "llava-phi3-3-8b",
+  "family_id": "llava-phi3",
+  "display_name": "llava-phi3",
+  "default_tag": "llava-phi3:3.8b",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:22Z"
+}

@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file,fit_status
+120b,gpt-oss:120b,../sizes/120b.json,not_listed_in_agents_selection
+120b-cloud,gpt-oss:120b-cloud,../sizes/120b-cloud.json,not_listed_in_agents_selection
+20b-cloud,gpt-oss:20b-cloud,../sizes/20b-cloud.json,not_listed_in_agents_selection

@@ -1,0 +1,92 @@
+{
+  "model_id": "all-minilm-22m",
+  "model_slug": "all-minilm-22m",
+  "size_slug": "l6-v2",
+  "ollama_ref": "all-minilm:l6-v2",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 0.043,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=all-minilm-22m;variant_index=4;tag=l6-v2",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 46000000,
+    "download_size_provenance": {
+      "value": 46000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/all-minilm/tags",
+      "retrieved_at": "2026-08-01T11:51:30Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "46MB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/all-minilm/tags",
+        "retrieved_at": "2026-08-01T11:51:30Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 46000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/all-minilm/tags",
+        "retrieved_at": "2026-08-01T11:51:30Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "context window not published"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/all-minilm/tags",
+        "retrieved_at": "2026-08-01T11:51:30Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "true",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/all-minilm/tags",
+        "retrieved_at": "2026-08-01T11:51:30Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "model_id": "llama3.1-405b",
+  "model_slug": "llama3-1-405b",
+  "size_slug": "405b-text-q5_1",
+  "ollama_ref": "llama3.1:405b-text-q5_1",
+  "parameter_size": "405b",
+  "quantization": "q5_1",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 284.053,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=llama3.1-405b;variant_index=27;tag=405b-text-q5_1",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 305000000000,
+    "download_size_provenance": {
+      "value": 305000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/llama3.1/tags",
+      "retrieved_at": "2026-08-01T11:55:23Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "305GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/llama3.1/tags",
+        "retrieved_at": "2026-08-01T11:55:23Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 305000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/llama3.1/tags",
+        "retrieved_at": "2026-08-01T11:55:23Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 405000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/llama3.1/tags",
+        "retrieved_at": "2026-08-01T11:55:23Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 128000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/llama3.1/tags",
+        "retrieved_at": "2026-08-01T11:55:23Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q5_1",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/llama3.1/tags",
+        "retrieved_at": "2026-08-01T11:55:23Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/llama3.1/tags",
+        "retrieved_at": "2026-08-01T11:55:23Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/llama3.1/tags",
+        "retrieved_at": "2026-08-01T11:55:23Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

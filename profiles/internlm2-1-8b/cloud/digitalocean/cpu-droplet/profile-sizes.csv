@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file,fit_status
+1-8b,internlm2:1.8b,../sizes/1-8b.json,listed_in_agents_selection
+1-8b-chat-v2-5-fp16,internlm2:1.8b-chat-v2.5-fp16,../sizes/1-8b-chat-v2-5-fp16.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q2_k,internlm2:1.8b-chat-v2.5-q2_K,../sizes/1-8b-chat-v2-5-q2_k.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q3_k_l,internlm2:1.8b-chat-v2.5-q3_K_L,../sizes/1-8b-chat-v2-5-q3_k_l.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q3_k_m,internlm2:1.8b-chat-v2.5-q3_K_M,../sizes/1-8b-chat-v2-5-q3_k_m.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q3_k_s,internlm2:1.8b-chat-v2.5-q3_K_S,../sizes/1-8b-chat-v2-5-q3_k_s.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q4_0,internlm2:1.8b-chat-v2.5-q4_0,../sizes/1-8b-chat-v2-5-q4_0.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q4_1,internlm2:1.8b-chat-v2.5-q4_1,../sizes/1-8b-chat-v2-5-q4_1.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q4_k_m,internlm2:1.8b-chat-v2.5-q4_K_M,../sizes/1-8b-chat-v2-5-q4_k_m.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q4_k_s,internlm2:1.8b-chat-v2.5-q4_K_S,../sizes/1-8b-chat-v2-5-q4_k_s.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q5_0,internlm2:1.8b-chat-v2.5-q5_0,../sizes/1-8b-chat-v2-5-q5_0.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q5_1,internlm2:1.8b-chat-v2.5-q5_1,../sizes/1-8b-chat-v2-5-q5_1.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q5_k_m,internlm2:1.8b-chat-v2.5-q5_K_M,../sizes/1-8b-chat-v2-5-q5_k_m.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q5_k_s,internlm2:1.8b-chat-v2.5-q5_K_S,../sizes/1-8b-chat-v2-5-q5_k_s.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q6_k,internlm2:1.8b-chat-v2.5-q6_K,../sizes/1-8b-chat-v2-5-q6_k.json,not_listed_in_agents_selection
+1-8b-chat-v2-5-q8_0,internlm2:1.8b-chat-v2.5-q8_0,../sizes/1-8b-chat-v2-5-q8_0.json,not_listed_in_agents_selection

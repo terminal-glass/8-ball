@@ -1,0 +1,7 @@
+size_slug,ollama_ref,size_file
+24b,lfm2:24b,sizes/24b.json
+24b-a2b,lfm2:24b-a2b,sizes/24b-a2b.json
+24b-bf16,lfm2:24b-bf16,sizes/24b-bf16.json
+24b-q4_k_m,lfm2:24b-q4_K_M,sizes/24b-q4_k_m.json
+24b-q8_0,lfm2:24b-q8_0,sizes/24b-q8_0.json
+latest,lfm2:latest,sizes/latest.json

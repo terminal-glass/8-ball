@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "nemotron-mini-4b",
+  "model_slug": "nemotron-mini-4b",
+  "family_id": "nemotron-mini",
+  "display_name": "nemotron-mini",
+  "default_tag": "nemotron-mini:4b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:27Z"
+}

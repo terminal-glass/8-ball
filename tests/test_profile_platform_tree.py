@@ -63,6 +63,9 @@ def test_platform_lane_skeleton_for_sample_models(tmp_path: Path) -> None:
     reason="install manifest missing",
 )
 def test_profile_platform_tree_complete_in_working_tree() -> None:
+    if (PROFILES_DIR / "_agent-generation-report.json").is_file():
+        pytest.skip("C10 AGENTS profiles present; lane skeleton-only assertion does not apply")
+
     script = REPO_ROOT / "scripts" / "create-profile-platform-tree.sh"
     subprocess.run(["bash", str(script)], cwd=REPO_ROOT, check=True)
 
@@ -71,15 +74,11 @@ def test_profile_platform_tree_complete_in_working_tree() -> None:
     assert len(model_dirs) == len(expected_slugs)
 
     missing: list[str] = []
-    with_files: list[str] = []
     for model_dir in model_dirs:
         for lane in PLATFORM_LANES:
             lane_path = model_dir / lane
             if not lane_path.is_dir():
                 missing.append(f"{model_dir.name}/{lane}")
-        if any(path.is_file() for path in model_dir.rglob("*")):
-            with_files.append(model_dir.name)
 
     assert not missing, f"Missing platform lanes: {missing[:10]}"
-    assert not with_files, f"Model folders contain files: {with_files[:10]}"
     assert len(model_dirs) * len(PLATFORM_LANES) == 4370

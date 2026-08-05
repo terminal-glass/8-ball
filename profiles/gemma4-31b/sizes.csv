@@ -1,0 +1,13 @@
+size_slug,ollama_ref,size_file
+31b,gemma4:31b,sizes/31b.json
+31b-cloud,gemma4:31b-cloud,sizes/31b-cloud.json
+31b-coding-mtp-bf16,gemma4:31b-coding-mtp-bf16,sizes/31b-coding-mtp-bf16.json
+31b-it-bf16,gemma4:31b-it-bf16,sizes/31b-it-bf16.json
+31b-it-q4_k_m,gemma4:31b-it-q4_K_M,sizes/31b-it-q4_k_m.json
+31b-it-q8_0,gemma4:31b-it-q8_0,sizes/31b-it-q8_0.json
+31b-it-qat,gemma4:31b-it-qat,sizes/31b-it-qat.json
+31b-mlx,gemma4:31b-mlx,sizes/31b-mlx.json
+31b-mlx-bf16,gemma4:31b-mlx-bf16,sizes/31b-mlx-bf16.json
+31b-mxfp8,gemma4:31b-mxfp8,sizes/31b-mxfp8.json
+31b-nvfp4,gemma4:31b-nvfp4,sizes/31b-nvfp4.json
+cloud,gemma4:cloud,sizes/cloud.json

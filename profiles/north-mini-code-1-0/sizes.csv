@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file
+bf16,north-mini-code-1.0:bf16,sizes/bf16.json
+latest,north-mini-code-1.0:latest,sizes/latest.json
+mlx-bf16,north-mini-code-1.0:mlx-bf16,sizes/mlx-bf16.json
+mlx-mxfp8,north-mini-code-1.0:mlx-mxfp8,sizes/mlx-mxfp8.json
+mlx-nvfp4,north-mini-code-1.0:mlx-nvfp4,sizes/mlx-nvfp4.json
+q4_k_m,north-mini-code-1.0:q4_K_M,sizes/q4_k_m.json
+q8_0,north-mini-code-1.0:q8_0,sizes/q8_0.json

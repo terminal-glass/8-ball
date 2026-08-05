@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "deepseek-coder-v2-236b",
+  "model_slug": "deepseek-coder-v2-236b",
+  "family_id": "deepseek-coder-v2",
+  "display_name": "deepseek-coder-v2",
+  "default_tag": "deepseek-coder-v2:236b",
+  "size_count": 31,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

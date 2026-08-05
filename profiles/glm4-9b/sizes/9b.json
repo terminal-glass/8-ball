@@ -1,0 +1,96 @@
+{
+  "model_id": "glm4-9b",
+  "model_slug": "glm4-9b",
+  "size_slug": "9b",
+  "ollama_ref": "glm4:9b",
+  "parameter_size": "9b",
+  "quantization": null,
+  "minimum_ram_gb": 10.64,
+  "recommended_ram_gb": 12.76,
+  "minimum_vram_gb": 6.32,
+  "recommended_vram_gb": 6.32,
+  "minimum_disk_free_gb": 5.122,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=glm4-9b;variant_index=1;tag=9b;p3_profiles=desktop-standard,gpu-entry",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 5500000000,
+    "download_size_provenance": {
+      "value": 5500000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/glm4/tags",
+      "retrieved_at": "2026-08-01T11:53:58Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "5.5GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/glm4/tags",
+        "retrieved_at": "2026-08-01T11:53:58Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 5500000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm4/tags",
+        "retrieved_at": "2026-08-01T11:53:58Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 9000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm4/tags",
+        "retrieved_at": "2026-08-01T11:53:58Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 128000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm4/tags",
+        "retrieved_at": "2026-08-01T11:53:58Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm4/tags",
+        "retrieved_at": "2026-08-01T11:53:58Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm4/tags",
+        "retrieved_at": "2026-08-01T11:53:58Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    },
+    "p3_selection_profiles": [
+      "desktop-standard",
+      "gpu-entry"
+    ]
+  }
+}

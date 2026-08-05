@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+3b,qwen2.5vl:3b,sizes/3b.json
+3b-fp16,qwen2.5vl:3b-fp16,sizes/3b-fp16.json
+3b-q4_k_m,qwen2.5vl:3b-q4_K_M,sizes/3b-q4_k_m.json
+3b-q8_0,qwen2.5vl:3b-q8_0,sizes/3b-q8_0.json

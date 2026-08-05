@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "orca-mini-70b",
+  "model_slug": "orca-mini-70b",
+  "family_id": "orca-mini",
+  "display_name": "orca-mini",
+  "default_tag": "orca-mini:70b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:31Z"
+}

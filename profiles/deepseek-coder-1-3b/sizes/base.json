@@ -1,0 +1,92 @@
+{
+  "model_id": "deepseek-coder-1.3b",
+  "model_slug": "deepseek-coder-1-3b",
+  "size_slug": "base",
+  "ollama_ref": "deepseek-coder:base",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 0.723,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=deepseek-coder-1.3b;variant_index=34;tag=base",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 776000000,
+    "download_size_provenance": {
+      "value": 776000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/deepseek-coder/tags",
+      "retrieved_at": "2026-08-01T11:52:28Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "776MB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/deepseek-coder/tags",
+        "retrieved_at": "2026-08-01T11:52:28Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 776000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/deepseek-coder/tags",
+        "retrieved_at": "2026-08-01T11:52:28Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": 16000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/deepseek-coder/tags",
+        "retrieved_at": "2026-08-01T11:52:28Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/deepseek-coder/tags",
+        "retrieved_at": "2026-08-01T11:52:28Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/deepseek-coder/tags",
+        "retrieved_at": "2026-08-01T11:52:28Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

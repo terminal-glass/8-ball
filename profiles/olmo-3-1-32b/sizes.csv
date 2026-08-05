@@ -1,0 +1,11 @@
+size_slug,ollama_ref,size_file
+32b,olmo-3.1:32b,sizes/32b.json
+32b-instruct,olmo-3.1:32b-instruct,sizes/32b-instruct.json
+32b-instruct-fp16,olmo-3.1:32b-instruct-fp16,sizes/32b-instruct-fp16.json
+32b-instruct-q4_k_m,olmo-3.1:32b-instruct-q4_K_M,sizes/32b-instruct-q4_k_m.json
+32b-instruct-q8_0,olmo-3.1:32b-instruct-q8_0,sizes/32b-instruct-q8_0.json
+32b-think,olmo-3.1:32b-think,sizes/32b-think.json
+32b-think-fp16,olmo-3.1:32b-think-fp16,sizes/32b-think-fp16.json
+32b-think-q4_k_m,olmo-3.1:32b-think-q4_K_M,sizes/32b-think-q4_k_m.json
+32b-think-q8_0,olmo-3.1:32b-think-q8_0,sizes/32b-think-q8_0.json
+latest,olmo-3.1:latest,sizes/latest.json

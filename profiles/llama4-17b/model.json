@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "llama4-17b",
+  "model_slug": "llama4-17b",
+  "family_id": "llama4",
+  "display_name": "llama4",
+  "default_tag": "llama4:16x17b",
+  "size_count": 11,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:21Z"
+}

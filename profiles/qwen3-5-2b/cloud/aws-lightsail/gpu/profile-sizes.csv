@@ -1,0 +1,9 @@
+size_slug,ollama_ref,size_file,fit_status
+2b,qwen3.5:2b,../sizes/2b.json,not_listed_in_agents_selection
+2b-bf16,qwen3.5:2b-bf16,../sizes/2b-bf16.json,not_listed_in_agents_selection
+2b-mlx,qwen3.5:2b-mlx,../sizes/2b-mlx.json,not_listed_in_agents_selection
+2b-mlx-bf16,qwen3.5:2b-mlx-bf16,../sizes/2b-mlx-bf16.json,not_listed_in_agents_selection
+2b-mxfp8,qwen3.5:2b-mxfp8,../sizes/2b-mxfp8.json,not_listed_in_agents_selection
+2b-nvfp4,qwen3.5:2b-nvfp4,../sizes/2b-nvfp4.json,not_listed_in_agents_selection
+2b-q4_k_m,qwen3.5:2b-q4_K_M,../sizes/2b-q4_k_m.json,not_listed_in_agents_selection
+2b-q8_0,qwen3.5:2b-q8_0,../sizes/2b-q8_0.json,not_listed_in_agents_selection

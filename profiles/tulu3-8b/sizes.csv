@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+8b,tulu3:8b,sizes/8b.json
+8b-fp16,tulu3:8b-fp16,sizes/8b-fp16.json
+8b-q4_k_m,tulu3:8b-q4_K_M,sizes/8b-q4_k_m.json
+8b-q8_0,tulu3:8b-q8_0,sizes/8b-q8_0.json
+latest,tulu3:latest,sizes/latest.json

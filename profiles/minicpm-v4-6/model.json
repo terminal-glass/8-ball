@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "minicpm-v4.6",
+  "model_slug": "minicpm-v4-6",
+  "family_id": "minicpm-v4.6",
+  "display_name": "minicpm-v4.6",
+  "default_tag": "minicpm-v4.6:f16",
+  "size_count": 10,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:23Z"
+}

@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+22b,mistral-small:22b,sizes/22b.json
+22b-instruct-2409-fp16,mistral-small:22b-instruct-2409-fp16,sizes/22b-instruct-2409-fp16.json
+22b-instruct-2409-q2_k,mistral-small:22b-instruct-2409-q2_K,sizes/22b-instruct-2409-q2_k.json
+22b-instruct-2409-q3_k_l,mistral-small:22b-instruct-2409-q3_K_L,sizes/22b-instruct-2409-q3_k_l.json
+22b-instruct-2409-q3_k_m,mistral-small:22b-instruct-2409-q3_K_M,sizes/22b-instruct-2409-q3_k_m.json
+22b-instruct-2409-q3_k_s,mistral-small:22b-instruct-2409-q3_K_S,sizes/22b-instruct-2409-q3_k_s.json
+22b-instruct-2409-q4_0,mistral-small:22b-instruct-2409-q4_0,sizes/22b-instruct-2409-q4_0.json
+22b-instruct-2409-q4_1,mistral-small:22b-instruct-2409-q4_1,sizes/22b-instruct-2409-q4_1.json
+22b-instruct-2409-q4_k_m,mistral-small:22b-instruct-2409-q4_K_M,sizes/22b-instruct-2409-q4_k_m.json
+22b-instruct-2409-q4_k_s,mistral-small:22b-instruct-2409-q4_K_S,sizes/22b-instruct-2409-q4_k_s.json
+22b-instruct-2409-q5_0,mistral-small:22b-instruct-2409-q5_0,sizes/22b-instruct-2409-q5_0.json
+22b-instruct-2409-q5_1,mistral-small:22b-instruct-2409-q5_1,sizes/22b-instruct-2409-q5_1.json
+22b-instruct-2409-q5_k_m,mistral-small:22b-instruct-2409-q5_K_M,sizes/22b-instruct-2409-q5_k_m.json
+22b-instruct-2409-q5_k_s,mistral-small:22b-instruct-2409-q5_K_S,sizes/22b-instruct-2409-q5_k_s.json
+22b-instruct-2409-q6_k,mistral-small:22b-instruct-2409-q6_K,sizes/22b-instruct-2409-q6_k.json
+22b-instruct-2409-q8_0,mistral-small:22b-instruct-2409-q8_0,sizes/22b-instruct-2409-q8_0.json

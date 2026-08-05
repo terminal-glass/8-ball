@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+bf16,glm-4.7-flash:bf16,sizes/bf16.json
+latest,glm-4.7-flash:latest,sizes/latest.json
+q4_k_m,glm-4.7-flash:q4_K_M,sizes/q4_k_m.json
+q8_0,glm-4.7-flash:q8_0,sizes/q8_0.json

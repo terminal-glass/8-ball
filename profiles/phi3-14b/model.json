@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "phi3-14b",
+  "model_slug": "phi3-14b",
+  "family_id": "phi3",
+  "display_name": "phi3",
+  "default_tag": "phi3:14b",
+  "size_count": 35,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:33Z"
+}

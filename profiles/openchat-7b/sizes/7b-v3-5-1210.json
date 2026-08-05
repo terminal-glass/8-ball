@@ -1,0 +1,92 @@
+{
+  "model_id": "openchat-7b",
+  "model_slug": "openchat-7b",
+  "size_slug": "7b-v3-5-1210",
+  "ollama_ref": "openchat:7b-v3.5-1210",
+  "parameter_size": "7b",
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 3.818,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=openchat-7b;variant_index=19;tag=7b-v3.5-1210",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 4100000000,
+    "download_size_provenance": {
+      "value": 4100000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/openchat/tags",
+      "retrieved_at": "2026-08-01T11:57:35Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "4.1GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/openchat/tags",
+        "retrieved_at": "2026-08-01T11:57:35Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 4100000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/openchat/tags",
+        "retrieved_at": "2026-08-01T11:57:35Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 7000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/openchat/tags",
+        "retrieved_at": "2026-08-01T11:57:35Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 8000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/openchat/tags",
+        "retrieved_at": "2026-08-01T11:57:35Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/openchat/tags",
+        "retrieved_at": "2026-08-01T11:57:35Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/openchat/tags",
+        "retrieved_at": "2026-08-01T11:57:35Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

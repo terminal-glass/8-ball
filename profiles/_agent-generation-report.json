@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-05T23:47:20Z",
+  "AGENTS files inspected": 90,
+  "AGENTS files parsed": 55,
+  "model count": 437,
+  "distinct model-size count": 7271,
+  "install lane count": 5,
+  "profile lane count": 10,
+  "matrix row count": 72710,
+  "records with unknown limits": 26,
+  "records with conflicts": 0,
+  "records skipped and why": []
+}

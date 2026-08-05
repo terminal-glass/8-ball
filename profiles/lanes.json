@@ -1,0 +1,78 @@
+{
+  "schema_version": "profiles.lanes.v1",
+  "generated_at": "2026-08-05T23:41:17Z",
+  "profile_lanes": [
+    "ubuntu/cpu",
+    "ubuntu/cuda",
+    "mac/apple-silicon",
+    "mac/intel",
+    "windows/cpu",
+    "windows/cuda",
+    "cloud/digitalocean/cpu-droplet",
+    "cloud/digitalocean/gpu-droplet",
+    "cloud/aws-lightsail/cpu",
+    "cloud/aws-lightsail/gpu"
+  ],
+  "install_path_by_lane": {
+    "ubuntu/cpu": "install/ubuntu",
+    "ubuntu/cuda": "install/ubuntu",
+    "mac/apple-silicon": "install/mac",
+    "mac/intel": "install/mac",
+    "windows/cpu": "install/windows",
+    "windows/cuda": "install/windows",
+    "cloud/digitalocean/cpu-droplet": "install/cloud/digitalocean-droplet",
+    "cloud/digitalocean/gpu-droplet": "install/cloud/digitalocean-droplet",
+    "cloud/aws-lightsail/cpu": "install/cloud/aws-lightsail",
+    "cloud/aws-lightsail/gpu": "install/cloud/aws-lightsail"
+  },
+  "hardware_profile_ids_by_lane": {
+    "ubuntu/cpu": [
+      "cpu-small",
+      "desktop-standard"
+    ],
+    "ubuntu/cuda": [
+      "gpu-entry",
+      "gpu-midrange",
+      "gpu-high-mem",
+      "multi-gpu"
+    ],
+    "mac/apple-silicon": [
+      "desktop-standard",
+      "cpu-small"
+    ],
+    "mac/intel": [
+      "cpu-small",
+      "desktop-standard"
+    ],
+    "windows/cpu": [
+      "cpu-small",
+      "desktop-standard"
+    ],
+    "windows/cuda": [
+      "gpu-entry",
+      "gpu-midrange"
+    ],
+    "cloud/digitalocean/cpu-droplet": [
+      "cpu-small",
+      "server-high-mem",
+      "desktop-standard"
+    ],
+    "cloud/digitalocean/gpu-droplet": [
+      "gpu-entry",
+      "gpu-midrange",
+      "gpu-high-mem"
+    ],
+    "cloud/aws-lightsail/cpu": [
+      "cpu-small",
+      "server-high-mem"
+    ],
+    "cloud/aws-lightsail/gpu": [
+      "gpu-entry",
+      "gpu-midrange"
+    ]
+  },
+  "source_paths": [
+    "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+    "AGENTS/data-science/P3-Ollama-Metadata-Catalog/indexes/model-selection.json"
+  ]
+}

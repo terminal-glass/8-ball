@@ -1,0 +1,92 @@
+{
+  "model_id": "granite-code-20b",
+  "model_slug": "granite-code-20b",
+  "size_slug": "20b-base",
+  "ollama_ref": "granite-code:20b-base",
+  "parameter_size": "20b",
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 11.176,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=granite-code-20b;variant_index=2;tag=20b-base",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 12000000000,
+    "download_size_provenance": {
+      "value": 12000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/granite-code/tags",
+      "retrieved_at": "2026-08-01T11:54:08Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "12GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/granite-code/tags",
+        "retrieved_at": "2026-08-01T11:54:08Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 12000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/granite-code/tags",
+        "retrieved_at": "2026-08-01T11:54:08Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 20000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/granite-code/tags",
+        "retrieved_at": "2026-08-01T11:54:08Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 8000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/granite-code/tags",
+        "retrieved_at": "2026-08-01T11:54:08Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/granite-code/tags",
+        "retrieved_at": "2026-08-01T11:54:08Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/granite-code/tags",
+        "retrieved_at": "2026-08-01T11:54:08Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

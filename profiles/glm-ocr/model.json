@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "glm-ocr",
+  "model_slug": "glm-ocr",
+  "family_id": "glm-ocr",
+  "display_name": "glm-ocr",
+  "default_tag": "glm-ocr:latest",
+  "size_count": 3,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:13Z"
+}

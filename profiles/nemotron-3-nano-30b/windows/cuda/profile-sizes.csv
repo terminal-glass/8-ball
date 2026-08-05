@@ -1,0 +1,7 @@
+size_slug,ollama_ref,size_file,fit_status
+30b,nemotron-3-nano:30b,../sizes/30b.json,not_listed_in_agents_selection
+30b-a3b-fp16,nemotron-3-nano:30b-a3b-fp16,../sizes/30b-a3b-fp16.json,not_listed_in_agents_selection
+30b-a3b-q4_k_m,nemotron-3-nano:30b-a3b-q4_K_M,../sizes/30b-a3b-q4_k_m.json,not_listed_in_agents_selection
+30b-a3b-q8_0,nemotron-3-nano:30b-a3b-q8_0,../sizes/30b-a3b-q8_0.json,not_listed_in_agents_selection
+30b-cloud,nemotron-3-nano:30b-cloud,../sizes/30b-cloud.json,not_listed_in_agents_selection
+latest,nemotron-3-nano:latest,../sizes/latest.json,not_listed_in_agents_selection

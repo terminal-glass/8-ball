@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+8b,cogito:8b,../sizes/8b.json,listed_in_agents_selection
+8b-v1-preview-llama-q4_k_m,cogito:8b-v1-preview-llama-q4_K_M,../sizes/8b-v1-preview-llama-q4_k_m.json,not_listed_in_agents_selection
+8b-v1-preview-llama-q8_0,cogito:8b-v1-preview-llama-q8_0,../sizes/8b-v1-preview-llama-q8_0.json,not_listed_in_agents_selection
+latest,cogito:latest,../sizes/latest.json,not_listed_in_agents_selection

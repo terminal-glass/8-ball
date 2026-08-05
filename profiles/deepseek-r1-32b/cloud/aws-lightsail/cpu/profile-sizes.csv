@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+32b,deepseek-r1:32b,../sizes/32b.json,listed_in_agents_selection
+32b-qwen-distill-fp16,deepseek-r1:32b-qwen-distill-fp16,../sizes/32b-qwen-distill-fp16.json,not_listed_in_agents_selection
+32b-qwen-distill-q4_k_m,deepseek-r1:32b-qwen-distill-q4_K_M,../sizes/32b-qwen-distill-q4_k_m.json,not_listed_in_agents_selection
+32b-qwen-distill-q8_0,deepseek-r1:32b-qwen-distill-q8_0,../sizes/32b-qwen-distill-q8_0.json,not_listed_in_agents_selection

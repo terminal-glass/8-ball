@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "command-r-plus-104b",
+  "model_slug": "command-r-plus-104b",
+  "family_id": "command-r-plus",
+  "display_name": "command-r-plus",
+  "default_tag": "command-r-plus:104b",
+  "size_count": 21,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

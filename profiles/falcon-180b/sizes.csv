@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+180b,falcon:180b,sizes/180b.json
+180b-chat,falcon:180b-chat,sizes/180b-chat.json
+180b-chat-q4_0,falcon:180b-chat-q4_0,sizes/180b-chat-q4_0.json
+180b-text,falcon:180b-text,sizes/180b-text.json
+180b-text-q4_0,falcon:180b-text-q4_0,sizes/180b-text-q4_0.json

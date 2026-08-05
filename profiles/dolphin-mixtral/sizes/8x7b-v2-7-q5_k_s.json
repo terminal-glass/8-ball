@@ -1,0 +1,92 @@
+{
+  "model_id": "dolphin-mixtral",
+  "model_slug": "dolphin-mixtral",
+  "size_slug": "8x7b-v2-7-q5_k_s",
+  "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q5_K_S",
+  "parameter_size": null,
+  "quantization": "q5_K_S",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 29.802,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=dolphin-mixtral;variant_index=64;tag=8x7b-v2.7-q5_K_S",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 32000000000,
+    "download_size_provenance": {
+      "value": 32000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+      "retrieved_at": "2026-08-01T11:53:04Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "32GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+        "retrieved_at": "2026-08-01T11:53:04Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 32000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+        "retrieved_at": "2026-08-01T11:53:04Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": 32000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+        "retrieved_at": "2026-08-01T11:53:04Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q5_K_S",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+        "retrieved_at": "2026-08-01T11:53:04Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+        "retrieved_at": "2026-08-01T11:53:04Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+        "retrieved_at": "2026-08-01T11:53:04Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

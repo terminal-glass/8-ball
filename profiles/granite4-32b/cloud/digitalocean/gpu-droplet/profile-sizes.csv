@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file,fit_status
+32b-a9b-h,granite4:32b-a9b-h,../sizes/32b-a9b-h.json,listed_in_agents_selection
+small-h,granite4:small-h,../sizes/small-h.json,not_listed_in_agents_selection

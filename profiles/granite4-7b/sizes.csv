@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file
+7b-a1b-h,granite4:7b-a1b-h,sizes/7b-a1b-h.json
+tiny-h,granite4:tiny-h,sizes/tiny-h.json

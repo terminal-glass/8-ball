@@ -1,0 +1,16 @@
+size_slug,ollama_ref,size_file,fit_status
+40b,falcon:40b,../sizes/40b.json,listed_in_agents_selection
+40b-instruct,falcon:40b-instruct,../sizes/40b-instruct.json,not_listed_in_agents_selection
+40b-instruct-fp16,falcon:40b-instruct-fp16,../sizes/40b-instruct-fp16.json,not_listed_in_agents_selection
+40b-instruct-q4_0,falcon:40b-instruct-q4_0,../sizes/40b-instruct-q4_0.json,not_listed_in_agents_selection
+40b-instruct-q4_1,falcon:40b-instruct-q4_1,../sizes/40b-instruct-q4_1.json,not_listed_in_agents_selection
+40b-instruct-q5_0,falcon:40b-instruct-q5_0,../sizes/40b-instruct-q5_0.json,not_listed_in_agents_selection
+40b-instruct-q5_1,falcon:40b-instruct-q5_1,../sizes/40b-instruct-q5_1.json,not_listed_in_agents_selection
+40b-instruct-q8_0,falcon:40b-instruct-q8_0,../sizes/40b-instruct-q8_0.json,not_listed_in_agents_selection
+40b-text,falcon:40b-text,../sizes/40b-text.json,not_listed_in_agents_selection
+40b-text-fp16,falcon:40b-text-fp16,../sizes/40b-text-fp16.json,not_listed_in_agents_selection
+40b-text-q4_0,falcon:40b-text-q4_0,../sizes/40b-text-q4_0.json,not_listed_in_agents_selection
+40b-text-q4_1,falcon:40b-text-q4_1,../sizes/40b-text-q4_1.json,not_listed_in_agents_selection
+40b-text-q5_0,falcon:40b-text-q5_0,../sizes/40b-text-q5_0.json,not_listed_in_agents_selection
+40b-text-q5_1,falcon:40b-text-q5_1,../sizes/40b-text-q5_1.json,not_listed_in_agents_selection
+40b-text-q8_0,falcon:40b-text-q8_0,../sizes/40b-text-q8_0.json,not_listed_in_agents_selection

@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+70b,r1-1776:70b,sizes/70b.json
+70b-distill-llama-fp16,r1-1776:70b-distill-llama-fp16,sizes/70b-distill-llama-fp16.json
+70b-distill-llama-q4_k_m,r1-1776:70b-distill-llama-q4_K_M,sizes/70b-distill-llama-q4_k_m.json
+70b-distill-llama-q8_0,r1-1776:70b-distill-llama-q8_0,sizes/70b-distill-llama-q8_0.json
+latest,r1-1776:latest,sizes/latest.json

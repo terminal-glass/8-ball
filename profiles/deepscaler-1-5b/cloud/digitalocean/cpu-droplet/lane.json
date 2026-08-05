@@ -1,0 +1,13 @@
+{
+  "schema_version": "profiles.lane.v1",
+  "model_slug": "deepscaler-1-5b",
+  "target_lane": "cloud/digitalocean/cpu-droplet",
+  "install_path": "install/cloud/digitalocean-droplet",
+  "hardware_profile_ids": [
+    "cpu-small",
+    "server-high-mem",
+    "desktop-standard"
+  ],
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

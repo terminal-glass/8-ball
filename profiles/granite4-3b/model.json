@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "granite4-3b",
+  "model_slug": "granite4-3b",
+  "family_id": "granite4",
+  "display_name": "granite4",
+  "default_tag": "granite4:3b",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:16Z"
+}

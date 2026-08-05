@@ -1,0 +1,92 @@
+{
+  "model_id": "gpt-oss-120b",
+  "model_slug": "gpt-oss-120b",
+  "size_slug": "120b",
+  "ollama_ref": "gpt-oss:120b",
+  "parameter_size": "120b",
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 60.536,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=gpt-oss-120b;variant_index=1;tag=120b",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 65000000000,
+    "download_size_provenance": {
+      "value": 65000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/gpt-oss/tags",
+      "retrieved_at": "2026-08-01T11:54:03Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "65GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/gpt-oss/tags",
+        "retrieved_at": "2026-08-01T11:54:03Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 65000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gpt-oss/tags",
+        "retrieved_at": "2026-08-01T11:54:03Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 120000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gpt-oss/tags",
+        "retrieved_at": "2026-08-01T11:54:03Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 128000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gpt-oss/tags",
+        "retrieved_at": "2026-08-01T11:54:03Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "both",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gpt-oss/tags",
+        "retrieved_at": "2026-08-01T11:54:03Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "true",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "true"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gpt-oss/tags",
+        "retrieved_at": "2026-08-01T11:54:03Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

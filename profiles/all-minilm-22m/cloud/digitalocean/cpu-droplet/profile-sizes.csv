@@ -1,0 +1,7 @@
+size_slug,ollama_ref,size_file,fit_status
+22m,all-minilm:22m,../sizes/22m.json,not_listed_in_agents_selection
+22m-l6-v2-fp16,all-minilm:22m-l6-v2-fp16,../sizes/22m-l6-v2-fp16.json,not_listed_in_agents_selection
+l6,all-minilm:l6,../sizes/l6.json,not_listed_in_agents_selection
+l6-v2,all-minilm:l6-v2,../sizes/l6-v2.json,not_listed_in_agents_selection
+latest,all-minilm:latest,../sizes/latest.json,not_listed_in_agents_selection
+v2,all-minilm:v2,../sizes/v2.json,not_listed_in_agents_selection

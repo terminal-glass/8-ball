@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+13b,olmo2:13b,sizes/13b.json
+13b-1124-instruct-fp16,olmo2:13b-1124-instruct-fp16,sizes/13b-1124-instruct-fp16.json
+13b-1124-instruct-q4_k_m,olmo2:13b-1124-instruct-q4_K_M,sizes/13b-1124-instruct-q4_k_m.json
+13b-1124-instruct-q8_0,olmo2:13b-1124-instruct-q8_0,sizes/13b-1124-instruct-q8_0.json

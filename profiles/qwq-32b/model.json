@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "qwq-32b",
+  "model_slug": "qwq-32b",
+  "family_id": "qwq",
+  "display_name": "qwq",
+  "default_tag": "qwq:32b",
+  "size_count": 8,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:49Z"
+}

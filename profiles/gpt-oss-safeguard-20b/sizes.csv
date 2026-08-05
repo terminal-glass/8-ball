@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file
+20b,gpt-oss-safeguard:20b,sizes/20b.json
+latest,gpt-oss-safeguard:latest,sizes/latest.json

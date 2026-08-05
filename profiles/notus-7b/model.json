@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "notus-7b",
+  "model_slug": "notus-7b",
+  "family_id": "notus",
+  "display_name": "notus",
+  "default_tag": "notus:7b",
+  "size_count": 18,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:28Z"
+}

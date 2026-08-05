@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+0-5b,reader-lm:0.5b,sizes/0-5b.json
+0-5b-fp16,reader-lm:0.5b-fp16,sizes/0-5b-fp16.json
+0-5b-q2_k,reader-lm:0.5b-q2_K,sizes/0-5b-q2_k.json
+0-5b-q3_k_l,reader-lm:0.5b-q3_K_L,sizes/0-5b-q3_k_l.json
+0-5b-q3_k_m,reader-lm:0.5b-q3_K_M,sizes/0-5b-q3_k_m.json
+0-5b-q3_k_s,reader-lm:0.5b-q3_K_S,sizes/0-5b-q3_k_s.json
+0-5b-q4_0,reader-lm:0.5b-q4_0,sizes/0-5b-q4_0.json
+0-5b-q4_1,reader-lm:0.5b-q4_1,sizes/0-5b-q4_1.json
+0-5b-q4_k_m,reader-lm:0.5b-q4_K_M,sizes/0-5b-q4_k_m.json
+0-5b-q4_k_s,reader-lm:0.5b-q4_K_S,sizes/0-5b-q4_k_s.json
+0-5b-q5_0,reader-lm:0.5b-q5_0,sizes/0-5b-q5_0.json
+0-5b-q5_1,reader-lm:0.5b-q5_1,sizes/0-5b-q5_1.json
+0-5b-q5_k_m,reader-lm:0.5b-q5_K_M,sizes/0-5b-q5_k_m.json
+0-5b-q5_k_s,reader-lm:0.5b-q5_K_S,sizes/0-5b-q5_k_s.json
+0-5b-q6_k,reader-lm:0.5b-q6_K,sizes/0-5b-q6_k.json
+0-5b-q8_0,reader-lm:0.5b-q8_0,sizes/0-5b-q8_0.json

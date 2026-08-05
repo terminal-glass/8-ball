@@ -1,0 +1,95 @@
+{
+  "model_id": "glm-4.7-flash",
+  "model_slug": "glm-4-7-flash",
+  "size_slug": "latest",
+  "ollama_ref": "glm-4.7-flash:latest",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": 23.57,
+  "recommended_ram_gb": 28.29,
+  "minimum_vram_gb": 21.85,
+  "recommended_vram_gb": 21.85,
+  "minimum_disk_free_gb": 17.695,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=glm-4.7-flash;variant_index=2;tag=latest;p3_profiles=gpu-high-mem",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 19000000000,
+    "download_size_provenance": {
+      "value": 19000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/glm-4.7-flash/tags",
+      "retrieved_at": "2026-08-01T11:53:49Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "19GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/glm-4.7-flash/tags",
+        "retrieved_at": "2026-08-01T11:53:49Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 19000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm-4.7-flash/tags",
+        "retrieved_at": "2026-08-01T11:53:49Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": 198000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm-4.7-flash/tags",
+        "retrieved_at": "2026-08-01T11:53:49Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm-4.7-flash/tags",
+        "retrieved_at": "2026-08-01T11:53:49Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "true",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/glm-4.7-flash/tags",
+        "retrieved_at": "2026-08-01T11:53:49Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    },
+    "p3_selection_profiles": [
+      "gpu-high-mem"
+    ]
+  }
+}

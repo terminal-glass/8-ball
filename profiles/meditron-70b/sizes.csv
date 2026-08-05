@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+70b,meditron:70b,sizes/70b.json
+70b-q4_0,meditron:70b-q4_0,sizes/70b-q4_0.json
+70b-q4_1,meditron:70b-q4_1,sizes/70b-q4_1.json
+70b-q4_k_s,meditron:70b-q4_K_S,sizes/70b-q4_k_s.json
+70b-q5_1,meditron:70b-q5_1,sizes/70b-q5_1.json

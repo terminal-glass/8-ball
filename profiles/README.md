@@ -177,3 +177,17 @@ Do not make `8.2` guess model or instance sizing. Use
 - `AGENTS/cursorFileC5-profile-folder-structure.md` — C5 generated page tree
 - `docs/install-manifest-contract.md` — 8.2 manifest lookup contract
 - `environment.profile.example.env` — example variable contract
+
+## C10 AGENTS-generated profiles (glass ball)
+
+Regenerate the model/size/profile matrix from AGENTS/ data:
+
+```bash
+python3 scripts/generate-profiles-from-agents.py
+python3 scripts/validate-profiles-from-agents.py
+```
+
+Authoritative inputs: `AGENTS/data-science/P4-Public-Catalog/index/models.json`,
+`AGENTS/data-science/P3-Ollama-Metadata-Catalog/indexes/model-selection.json`, and
+classified `AGENTS/TG-8Ball-*.csv` hardware research files.
+

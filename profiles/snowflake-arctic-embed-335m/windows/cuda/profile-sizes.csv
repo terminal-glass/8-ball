@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+335m,snowflake-arctic-embed:335m,../sizes/335m.json,not_listed_in_agents_selection
+335m-l-fp16,snowflake-arctic-embed:335m-l-fp16,../sizes/335m-l-fp16.json,not_listed_in_agents_selection
+l,snowflake-arctic-embed:l,../sizes/l.json,not_listed_in_agents_selection
+latest,snowflake-arctic-embed:latest,../sizes/latest.json,not_listed_in_agents_selection

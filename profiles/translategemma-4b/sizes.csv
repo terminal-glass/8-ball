@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+4b,translategemma:4b,sizes/4b.json
+4b-it-bf16,translategemma:4b-it-bf16,sizes/4b-it-bf16.json
+4b-it-q4_k_m,translategemma:4b-it-q4_K_M,sizes/4b-it-q4_k_m.json
+4b-it-q8_0,translategemma:4b-it-q8_0,sizes/4b-it-q8_0.json
+latest,translategemma:latest,sizes/latest.json

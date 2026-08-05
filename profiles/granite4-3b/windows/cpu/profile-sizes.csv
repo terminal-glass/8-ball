@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+3b,granite4:3b,../sizes/3b.json,not_listed_in_agents_selection
+3b-h,granite4:3b-h,../sizes/3b-h.json,not_listed_in_agents_selection
+micro,granite4:micro,../sizes/micro.json,not_listed_in_agents_selection
+micro-h,granite4:micro-h,../sizes/micro-h.json,not_listed_in_agents_selection

@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file
+0-6b,qwen3-embedding:0.6b,sizes/0-6b.json
+0-6b-fp16,qwen3-embedding:0.6b-fp16,sizes/0-6b-fp16.json
+0-6b-q8_0,qwen3-embedding:0.6b-q8_0,sizes/0-6b-q8_0.json

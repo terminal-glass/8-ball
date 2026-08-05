@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "dolphin-mixtral",
+  "model_slug": "dolphin-mixtral",
+  "family_id": "dolphin-mixtral",
+  "display_name": "dolphin-mixtral",
+  "default_tag": "dolphin-mixtral:8x7b",
+  "size_count": 70,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:11Z"
+}

@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file,fit_status
+3b,deepseek-ocr:3b,../sizes/3b.json,listed_in_agents_selection
+3b-bf16,deepseek-ocr:3b-bf16,../sizes/3b-bf16.json,not_listed_in_agents_selection
+latest,deepseek-ocr:latest,../sizes/latest.json,not_listed_in_agents_selection

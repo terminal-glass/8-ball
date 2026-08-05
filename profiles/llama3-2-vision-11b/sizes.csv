@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+11b,llama3.2-vision:11b,sizes/11b.json
+11b-instruct-fp16,llama3.2-vision:11b-instruct-fp16,sizes/11b-instruct-fp16.json
+11b-instruct-q4_k_m,llama3.2-vision:11b-instruct-q4_K_M,sizes/11b-instruct-q4_k_m.json
+11b-instruct-q8_0,llama3.2-vision:11b-instruct-q8_0,sizes/11b-instruct-q8_0.json
+latest,llama3.2-vision:latest,sizes/latest.json

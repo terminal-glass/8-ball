@@ -1,0 +1,2 @@
+size_slug,ollama_ref,size_file,fit_status
+latest,granite4:latest,../sizes/latest.json,not_listed_in_agents_selection

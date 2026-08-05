@@ -1,0 +1,16 @@
+size_slug,ollama_ref,size_file
+70b-v0-1,xwinlm:70b-v0.1,sizes/70b-v0-1.json
+70b-v0-1-fp16,xwinlm:70b-v0.1-fp16,sizes/70b-v0-1-fp16.json
+70b-v0-1-q2_k,xwinlm:70b-v0.1-q2_K,sizes/70b-v0-1-q2_k.json
+70b-v0-1-q3_k_l,xwinlm:70b-v0.1-q3_K_L,sizes/70b-v0-1-q3_k_l.json
+70b-v0-1-q3_k_m,xwinlm:70b-v0.1-q3_K_M,sizes/70b-v0-1-q3_k_m.json
+70b-v0-1-q3_k_s,xwinlm:70b-v0.1-q3_K_S,sizes/70b-v0-1-q3_k_s.json
+70b-v0-1-q4_0,xwinlm:70b-v0.1-q4_0,sizes/70b-v0-1-q4_0.json
+70b-v0-1-q4_1,xwinlm:70b-v0.1-q4_1,sizes/70b-v0-1-q4_1.json
+70b-v0-1-q4_k_m,xwinlm:70b-v0.1-q4_K_M,sizes/70b-v0-1-q4_k_m.json
+70b-v0-1-q4_k_s,xwinlm:70b-v0.1-q4_K_S,sizes/70b-v0-1-q4_k_s.json
+70b-v0-1-q5_0,xwinlm:70b-v0.1-q5_0,sizes/70b-v0-1-q5_0.json
+70b-v0-1-q5_1,xwinlm:70b-v0.1-q5_1,sizes/70b-v0-1-q5_1.json
+70b-v0-1-q5_k_s,xwinlm:70b-v0.1-q5_K_S,sizes/70b-v0-1-q5_k_s.json
+70b-v0-1-q6_k,xwinlm:70b-v0.1-q6_K,sizes/70b-v0-1-q6_k.json
+70b-v0-1-q8_0,xwinlm:70b-v0.1-q8_0,sizes/70b-v0-1-q8_0.json

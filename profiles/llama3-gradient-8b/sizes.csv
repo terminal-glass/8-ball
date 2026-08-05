@@ -1,0 +1,15 @@
+size_slug,ollama_ref,size_file
+8b-instruct-1048k-fp16,llama3-gradient:8b-instruct-1048k-fp16,sizes/8b-instruct-1048k-fp16.json
+8b-instruct-1048k-q2_k,llama3-gradient:8b-instruct-1048k-q2_K,sizes/8b-instruct-1048k-q2_k.json
+8b-instruct-1048k-q3_k_l,llama3-gradient:8b-instruct-1048k-q3_K_L,sizes/8b-instruct-1048k-q3_k_l.json
+8b-instruct-1048k-q3_k_m,llama3-gradient:8b-instruct-1048k-q3_K_M,sizes/8b-instruct-1048k-q3_k_m.json
+8b-instruct-1048k-q3_k_s,llama3-gradient:8b-instruct-1048k-q3_K_S,sizes/8b-instruct-1048k-q3_k_s.json
+8b-instruct-1048k-q4_1,llama3-gradient:8b-instruct-1048k-q4_1,sizes/8b-instruct-1048k-q4_1.json
+8b-instruct-1048k-q4_k_m,llama3-gradient:8b-instruct-1048k-q4_K_M,sizes/8b-instruct-1048k-q4_k_m.json
+8b-instruct-1048k-q4_k_s,llama3-gradient:8b-instruct-1048k-q4_K_S,sizes/8b-instruct-1048k-q4_k_s.json
+8b-instruct-1048k-q5_0,llama3-gradient:8b-instruct-1048k-q5_0,sizes/8b-instruct-1048k-q5_0.json
+8b-instruct-1048k-q5_1,llama3-gradient:8b-instruct-1048k-q5_1,sizes/8b-instruct-1048k-q5_1.json
+8b-instruct-1048k-q5_k_m,llama3-gradient:8b-instruct-1048k-q5_K_M,sizes/8b-instruct-1048k-q5_k_m.json
+8b-instruct-1048k-q5_k_s,llama3-gradient:8b-instruct-1048k-q5_K_S,sizes/8b-instruct-1048k-q5_k_s.json
+8b-instruct-1048k-q6_k,llama3-gradient:8b-instruct-1048k-q6_K,sizes/8b-instruct-1048k-q6_k.json
+8b-instruct-1048k-q8_0,llama3-gradient:8b-instruct-1048k-q8_0,sizes/8b-instruct-1048k-q8_0.json

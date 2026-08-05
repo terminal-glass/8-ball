@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+33m,all-minilm:33m,../sizes/33m.json,not_listed_in_agents_selection
+33m-l12-v2-fp16,all-minilm:33m-l12-v2-fp16,../sizes/33m-l12-v2-fp16.json,not_listed_in_agents_selection
+l12,all-minilm:l12,../sizes/l12.json,not_listed_in_agents_selection
+l12-v2,all-minilm:l12-v2,../sizes/l12-v2.json,not_listed_in_agents_selection

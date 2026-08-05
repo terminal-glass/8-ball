@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "dolphin-llama3-70b",
+  "model_slug": "dolphin-llama3-70b",
+  "family_id": "dolphin-llama3",
+  "display_name": "🐬 Dolphin 2.9 Llama 3",
+  "default_tag": "dolphin-llama3:70b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:11Z"
+}

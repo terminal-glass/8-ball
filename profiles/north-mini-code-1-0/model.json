@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "north-mini-code-1.0",
+  "model_slug": "north-mini-code-1-0",
+  "family_id": "north-mini-code-1.0",
+  "display_name": "north-mini-code-1.0",
+  "default_tag": "north-mini-code-1.0:latest",
+  "size_count": 7,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:28Z"
+}

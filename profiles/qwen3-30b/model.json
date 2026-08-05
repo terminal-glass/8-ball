@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "qwen3-30b",
+  "model_slug": "qwen3-30b",
+  "family_id": "qwen3",
+  "display_name": "qwen3",
+  "default_tag": "qwen3:30b",
+  "size_count": 13,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:46Z"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "command-a-111b",
+  "model_slug": "command-a-111b",
+  "family_id": "command-a",
+  "display_name": "command-a",
+  "default_tag": "command-a:111b",
+  "size_count": 5,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

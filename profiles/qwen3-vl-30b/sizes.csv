@@ -1,0 +1,11 @@
+size_slug,ollama_ref,size_file
+30b,qwen3-vl:30b,sizes/30b.json
+30b-a3b,qwen3-vl:30b-a3b,sizes/30b-a3b.json
+30b-a3b-instruct,qwen3-vl:30b-a3b-instruct,sizes/30b-a3b-instruct.json
+30b-a3b-instruct-bf16,qwen3-vl:30b-a3b-instruct-bf16,sizes/30b-a3b-instruct-bf16.json
+30b-a3b-instruct-q4_k_m,qwen3-vl:30b-a3b-instruct-q4_K_M,sizes/30b-a3b-instruct-q4_k_m.json
+30b-a3b-instruct-q8_0,qwen3-vl:30b-a3b-instruct-q8_0,sizes/30b-a3b-instruct-q8_0.json
+30b-a3b-thinking,qwen3-vl:30b-a3b-thinking,sizes/30b-a3b-thinking.json
+30b-a3b-thinking-bf16,qwen3-vl:30b-a3b-thinking-bf16,sizes/30b-a3b-thinking-bf16.json
+30b-a3b-thinking-q4_k_m,qwen3-vl:30b-a3b-thinking-q4_K_M,sizes/30b-a3b-thinking-q4_k_m.json
+30b-a3b-thinking-q8_0,qwen3-vl:30b-a3b-thinking-q8_0,sizes/30b-a3b-thinking-q8_0.json

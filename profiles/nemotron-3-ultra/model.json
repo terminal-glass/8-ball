@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "nemotron-3-ultra",
+  "model_slug": "nemotron-3-ultra",
+  "family_id": "nemotron-3-ultra",
+  "display_name": "nemotron-3-ultra",
+  "default_tag": "nemotron-3-ultra:cloud",
+  "size_count": 1,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:27Z"
+}

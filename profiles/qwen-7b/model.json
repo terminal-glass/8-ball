@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "qwen-7b",
+  "model_slug": "qwen-7b",
+  "family_id": "qwen",
+  "display_name": "qwen",
+  "default_tag": "qwen:7b",
+  "size_count": 63,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:38Z"
+}

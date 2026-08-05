@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "r1-1776-671b",
+  "model_slug": "r1-1776-671b",
+  "family_id": "r1-1776",
+  "display_name": "r1-1776",
+  "default_tag": "r1-1776:671b-fp16",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:49Z"
+}

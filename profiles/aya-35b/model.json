@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "aya-35b",
+  "model_slug": "aya-35b",
+  "family_id": "aya",
+  "display_name": "aya-35b",
+  "default_tag": "aya:35b",
+  "size_count": 16,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:09Z"
+}

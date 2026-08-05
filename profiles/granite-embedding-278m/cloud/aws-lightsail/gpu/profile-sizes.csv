@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file,fit_status
+278m,granite-embedding:278m,../sizes/278m.json,not_listed_in_agents_selection
+278m-fp16,granite-embedding:278m-fp16,../sizes/278m-fp16.json,not_listed_in_agents_selection

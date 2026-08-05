@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+270m,gemma3:270m,../sizes/270m.json,not_listed_in_agents_selection
+270m-it-bf16,gemma3:270m-it-bf16,../sizes/270m-it-bf16.json,not_listed_in_agents_selection
+270m-it-fp16,gemma3:270m-it-fp16,../sizes/270m-it-fp16.json,not_listed_in_agents_selection
+270m-it-q8_0,gemma3:270m-it-q8_0,../sizes/270m-it-q8_0.json,not_listed_in_agents_selection
+270m-it-qat,gemma3:270m-it-qat,../sizes/270m-it-qat.json,not_listed_in_agents_selection

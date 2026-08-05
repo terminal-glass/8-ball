@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+34b,nous-hermes2:34b,sizes/34b.json
+34b-yi-fp16,nous-hermes2:34b-yi-fp16,sizes/34b-yi-fp16.json
+34b-yi-q2_k,nous-hermes2:34b-yi-q2_K,sizes/34b-yi-q2_k.json
+34b-yi-q3_k_l,nous-hermes2:34b-yi-q3_K_L,sizes/34b-yi-q3_k_l.json
+34b-yi-q3_k_m,nous-hermes2:34b-yi-q3_K_M,sizes/34b-yi-q3_k_m.json
+34b-yi-q3_k_s,nous-hermes2:34b-yi-q3_K_S,sizes/34b-yi-q3_k_s.json
+34b-yi-q4_0,nous-hermes2:34b-yi-q4_0,sizes/34b-yi-q4_0.json
+34b-yi-q4_1,nous-hermes2:34b-yi-q4_1,sizes/34b-yi-q4_1.json
+34b-yi-q4_k_m,nous-hermes2:34b-yi-q4_K_M,sizes/34b-yi-q4_k_m.json
+34b-yi-q4_k_s,nous-hermes2:34b-yi-q4_K_S,sizes/34b-yi-q4_k_s.json
+34b-yi-q5_0,nous-hermes2:34b-yi-q5_0,sizes/34b-yi-q5_0.json
+34b-yi-q5_1,nous-hermes2:34b-yi-q5_1,sizes/34b-yi-q5_1.json
+34b-yi-q5_k_m,nous-hermes2:34b-yi-q5_K_M,sizes/34b-yi-q5_k_m.json
+34b-yi-q5_k_s,nous-hermes2:34b-yi-q5_K_S,sizes/34b-yi-q5_k_s.json
+34b-yi-q6_k,nous-hermes2:34b-yi-q6_K,sizes/34b-yi-q6_k.json
+34b-yi-q8_0,nous-hermes2:34b-yi-q8_0,sizes/34b-yi-q8_0.json

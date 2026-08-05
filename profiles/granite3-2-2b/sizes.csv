@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+2b,granite3.2:2b,sizes/2b.json
+2b-instruct-fp16,granite3.2:2b-instruct-fp16,sizes/2b-instruct-fp16.json
+2b-instruct-q4_k_m,granite3.2:2b-instruct-q4_K_M,sizes/2b-instruct-q4_k_m.json
+2b-instruct-q8_0,granite3.2:2b-instruct-q8_0,sizes/2b-instruct-q8_0.json

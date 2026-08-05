@@ -1,0 +1,92 @@
+{
+  "model_id": "smollm2-360m",
+  "model_slug": "smollm2-360m",
+  "size_slug": "360m-instruct-q6_k",
+  "ollama_ref": "smollm2:360m-instruct-q6_K",
+  "parameter_size": "360m",
+  "quantization": "q6_K",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 0.342,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=smollm2-360m;variant_index=15;tag=360m-instruct-q6_K",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 367000000,
+    "download_size_provenance": {
+      "value": 367000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/smollm2/tags",
+      "retrieved_at": "2026-08-01T11:59:07Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "367MB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/smollm2/tags",
+        "retrieved_at": "2026-08-01T11:59:07Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 367000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/smollm2/tags",
+        "retrieved_at": "2026-08-01T11:59:07Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 360000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/smollm2/tags",
+        "retrieved_at": "2026-08-01T11:59:07Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 8000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/smollm2/tags",
+        "retrieved_at": "2026-08-01T11:59:07Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q6_K",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/smollm2/tags",
+        "retrieved_at": "2026-08-01T11:59:07Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/smollm2/tags",
+        "retrieved_at": "2026-08-01T11:59:07Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/smollm2/tags",
+        "retrieved_at": "2026-08-01T11:59:07Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

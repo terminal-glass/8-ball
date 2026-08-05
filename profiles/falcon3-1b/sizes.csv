@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+1b,falcon3:1b,sizes/1b.json
+1b-instruct-fp16,falcon3:1b-instruct-fp16,sizes/1b-instruct-fp16.json
+1b-instruct-q4_k_m,falcon3:1b-instruct-q4_K_M,sizes/1b-instruct-q4_k_m.json
+1b-instruct-q8_0,falcon3:1b-instruct-q8_0,sizes/1b-instruct-q8_0.json

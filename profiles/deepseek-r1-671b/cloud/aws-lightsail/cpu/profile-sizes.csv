@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file,fit_status
+671b,deepseek-r1:671b,../sizes/671b.json,not_listed_in_agents_selection
+671b-0528-fp16,deepseek-r1:671b-0528-fp16,../sizes/671b-0528-fp16.json,not_listed_in_agents_selection
+671b-0528-q4_k_m,deepseek-r1:671b-0528-q4_K_M,../sizes/671b-0528-q4_k_m.json,not_listed_in_agents_selection
+671b-0528-q8_0,deepseek-r1:671b-0528-q8_0,../sizes/671b-0528-q8_0.json,not_listed_in_agents_selection
+671b-fp16,deepseek-r1:671b-fp16,../sizes/671b-fp16.json,not_listed_in_agents_selection
+671b-q4_k_m,deepseek-r1:671b-q4_K_M,../sizes/671b-q4_k_m.json,not_listed_in_agents_selection
+671b-q8_0,deepseek-r1:671b-q8_0,../sizes/671b-q8_0.json,not_listed_in_agents_selection

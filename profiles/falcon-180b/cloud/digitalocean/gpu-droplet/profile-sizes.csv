@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+180b,falcon:180b,../sizes/180b.json,not_listed_in_agents_selection
+180b-chat,falcon:180b-chat,../sizes/180b-chat.json,not_listed_in_agents_selection
+180b-chat-q4_0,falcon:180b-chat-q4_0,../sizes/180b-chat-q4_0.json,not_listed_in_agents_selection
+180b-text,falcon:180b-text,../sizes/180b-text.json,not_listed_in_agents_selection
+180b-text-q4_0,falcon:180b-text-q4_0,../sizes/180b-text-q4_0.json,not_listed_in_agents_selection

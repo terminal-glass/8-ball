@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+270m,gemma3:270m,sizes/270m.json
+270m-it-bf16,gemma3:270m-it-bf16,sizes/270m-it-bf16.json
+270m-it-fp16,gemma3:270m-it-fp16,sizes/270m-it-fp16.json
+270m-it-q8_0,gemma3:270m-it-q8_0,sizes/270m-it-q8_0.json
+270m-it-qat,gemma3:270m-it-qat,sizes/270m-it-qat.json

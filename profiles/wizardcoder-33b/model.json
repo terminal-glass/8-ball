@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "wizardcoder-33b",
+  "model_slug": "wizardcoder-33b",
+  "family_id": "wizardcoder",
+  "display_name": "wizardcoder",
+  "default_tag": "wizardcoder:33b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:41:07Z"
+}

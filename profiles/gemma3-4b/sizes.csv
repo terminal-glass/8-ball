@@ -1,0 +1,7 @@
+size_slug,ollama_ref,size_file
+4b,gemma3:4b,sizes/4b.json
+4b-it-fp16,gemma3:4b-it-fp16,sizes/4b-it-fp16.json
+4b-it-q4_k_m,gemma3:4b-it-q4_K_M,sizes/4b-it-q4_k_m.json
+4b-it-q8_0,gemma3:4b-it-q8_0,sizes/4b-it-q8_0.json
+4b-it-qat,gemma3:4b-it-qat,sizes/4b-it-qat.json
+latest,gemma3:latest,sizes/latest.json

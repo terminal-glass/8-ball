@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "nomic-embed-text-137m",
+  "model_slug": "nomic-embed-text-137m",
+  "family_id": "nomic-embed-text",
+  "display_name": "nomic-embed-text",
+  "default_tag": "nomic-embed-text:latest",
+  "size_count": 3,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:28Z"
+}

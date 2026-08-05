@@ -1,0 +1,96 @@
+{
+  "model_id": "cogito-32b",
+  "model_slug": "cogito-32b",
+  "size_slug": "32b",
+  "ollama_ref": "cogito:32b",
+  "parameter_size": "32b",
+  "quantization": null,
+  "minimum_ram_gb": 33.92,
+  "recommended_ram_gb": 40.71,
+  "minimum_vram_gb": 23.0,
+  "recommended_vram_gb": 23.0,
+  "minimum_disk_free_gb": 18.626,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=cogito-32b;variant_index=1;tag=32b;p3_profiles=gpu-high-mem,server-high-mem",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 20000000000,
+    "download_size_provenance": {
+      "value": 20000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/cogito/tags",
+      "retrieved_at": "2026-08-01T11:52:05Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "20GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/cogito/tags",
+        "retrieved_at": "2026-08-01T11:52:05Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 20000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/cogito/tags",
+        "retrieved_at": "2026-08-01T11:52:05Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 32000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/cogito/tags",
+        "retrieved_at": "2026-08-01T11:52:05Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 128000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/cogito/tags",
+        "retrieved_at": "2026-08-01T11:52:05Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/cogito/tags",
+        "retrieved_at": "2026-08-01T11:52:05Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/cogito/tags",
+        "retrieved_at": "2026-08-01T11:52:05Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    },
+    "p3_selection_profiles": [
+      "server-high-mem",
+      "gpu-high-mem"
+    ]
+  }
+}

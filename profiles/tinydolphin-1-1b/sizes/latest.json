@@ -1,0 +1,92 @@
+{
+  "model_id": "tinydolphin-1.1b",
+  "model_slug": "tinydolphin-1-1b",
+  "size_slug": "latest",
+  "ollama_ref": "tinydolphin:latest",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 0.593,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=tinydolphin-1.1b;variant_index=17;tag=latest",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 637000000,
+    "download_size_provenance": {
+      "value": 637000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/tinydolphin/tags",
+      "retrieved_at": "2026-08-01T11:59:36Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "637MB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/tinydolphin/tags",
+        "retrieved_at": "2026-08-01T11:59:36Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 637000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/tinydolphin/tags",
+        "retrieved_at": "2026-08-01T11:59:36Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": 4000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/tinydolphin/tags",
+        "retrieved_at": "2026-08-01T11:59:36Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/tinydolphin/tags",
+        "retrieved_at": "2026-08-01T11:59:36Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/tinydolphin/tags",
+        "retrieved_at": "2026-08-01T11:59:36Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file,fit_status
+122b,qwen3.5:122b,../sizes/122b.json,not_listed_in_agents_selection
+122b-a10b,qwen3.5:122b-a10b,../sizes/122b-a10b.json,not_listed_in_agents_selection
+122b-a10b-q4_k_m,qwen3.5:122b-a10b-q4_K_M,../sizes/122b-a10b-q4_k_m.json,not_listed_in_agents_selection

@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file,fit_status
+1m,internlm2:1m,../sizes/1m.json,not_listed_in_agents_selection
+7b-chat-1m-v2-5-q4_0,internlm2:7b-chat-1m-v2.5-q4_0,../sizes/7b-chat-1m-v2-5-q4_0.json,not_listed_in_agents_selection

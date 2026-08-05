@@ -1,0 +1,12 @@
+{
+  "schema_version": "profiles.lane.v1",
+  "model_slug": "deepseek-r1-1-5b",
+  "target_lane": "cloud/aws-lightsail/cpu",
+  "install_path": "install/cloud/aws-lightsail",
+  "hardware_profile_ids": [
+    "cpu-small",
+    "server-high-mem"
+  ],
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

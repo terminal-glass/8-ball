@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+9b,ornith:9b,sizes/9b.json
+9b-bf16,ornith:9b-bf16,sizes/9b-bf16.json
+9b-q4_k_m,ornith:9b-q4_K_M,sizes/9b-q4_k_m.json
+9b-q8_0,ornith:9b-q8_0,sizes/9b-q8_0.json
+latest,ornith:latest,sizes/latest.json

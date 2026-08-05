@@ -1,0 +1,39 @@
+{
+  "model_id": "kimi-k2.5",
+  "model_slug": "kimi-k2-5",
+  "size_slug": "cloud",
+  "ollama_ref": "kimi-k2.5:cloud",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": null,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=kimi-k2.5;variant_index=1;tag=cloud",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": null,
+    "download_size_provenance": null,
+    "variant_provenance": {
+      "download_size_bytes": {
+        "value": null,
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/kimi-k2.5:cloud",
+        "retrieved_at": "2026-07-16T05:07:45Z",
+        "notes": null
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      }
+    }
+  }
+}

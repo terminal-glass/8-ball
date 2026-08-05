@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "bespoke-minicheck-7b",
+  "model_slug": "bespoke-minicheck-7b",
+  "family_id": "bespoke-minicheck",
+  "display_name": "bespoke-minicheck",
+  "default_tag": "bespoke-minicheck:7b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:09Z"
+}

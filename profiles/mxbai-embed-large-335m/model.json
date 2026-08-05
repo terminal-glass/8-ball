@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "mxbai-embed-large-335m",
+  "model_slug": "mxbai-embed-large-335m",
+  "family_id": "mxbai-embed-large",
+  "display_name": "mxbai-embed-large",
+  "default_tag": "mxbai-embed-large:335m",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:26Z"
+}

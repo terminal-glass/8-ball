@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "nemotron3-33b",
+  "model_slug": "nemotron3-33b",
+  "family_id": "nemotron3",
+  "display_name": "nemotron3",
+  "default_tag": "nemotron3:33b",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:27Z"
+}

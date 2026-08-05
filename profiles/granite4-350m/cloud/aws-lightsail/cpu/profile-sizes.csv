@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+350m,granite4:350m,../sizes/350m.json,not_listed_in_agents_selection
+350m-bf16,granite4:350m-bf16,../sizes/350m-bf16.json,not_listed_in_agents_selection
+350m-h,granite4:350m-h,../sizes/350m-h.json,not_listed_in_agents_selection
+350m-h-q8_0,granite4:350m-h-q8_0,../sizes/350m-h-q8_0.json,not_listed_in_agents_selection

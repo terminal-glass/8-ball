@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "gemini-3-flash-preview",
+  "model_slug": "gemini-3-flash-preview",
+  "family_id": "gemini-3-flash-preview",
+  "display_name": "gemini-3-flash-preview",
+  "default_tag": "gemini-3-flash-preview:latest",
+  "size_count": 1,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:12Z"
+}

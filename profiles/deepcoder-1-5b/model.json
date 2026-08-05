@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "deepcoder-1.5b",
+  "model_slug": "deepcoder-1-5b",
+  "family_id": "deepcoder",
+  "display_name": "deepcoder",
+  "default_tag": "deepcoder:1.5b",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

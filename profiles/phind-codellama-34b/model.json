@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "phind-codellama-34b",
+  "model_slug": "phind-codellama-34b",
+  "family_id": "phind-codellama",
+  "display_name": "phind-codellama",
+  "default_tag": "phind-codellama:34b",
+  "size_count": 49,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:34Z"
+}

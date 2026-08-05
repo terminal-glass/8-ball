@@ -1,0 +1,92 @@
+{
+  "model_id": "qwen3-embedding-8b",
+  "model_slug": "qwen3-embedding-8b",
+  "size_slug": "latest",
+  "ollama_ref": "qwen3-embedding:latest",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 4.377,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=qwen3-embedding-8b;variant_index=5;tag=latest",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 4700000000,
+    "download_size_provenance": {
+      "value": 4700000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/qwen3-embedding/tags",
+      "retrieved_at": "2026-08-01T11:58:32Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "4.7GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/qwen3-embedding/tags",
+        "retrieved_at": "2026-08-01T11:58:32Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 4700000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen3-embedding/tags",
+        "retrieved_at": "2026-08-01T11:58:32Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": 40000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen3-embedding/tags",
+        "retrieved_at": "2026-08-01T11:58:32Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen3-embedding/tags",
+        "retrieved_at": "2026-08-01T11:58:32Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "true",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen3-embedding/tags",
+        "retrieved_at": "2026-08-01T11:58:32Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

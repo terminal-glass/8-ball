@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "llama2-13b",
+  "model_slug": "llama2-13b",
+  "family_id": "llama2",
+  "display_name": "llama2",
+  "default_tag": "llama2:13b",
+  "size_count": 33,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:18Z"
+}

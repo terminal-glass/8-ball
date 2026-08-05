@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+32b,exaone3.5:32b,sizes/32b.json
+32b-instruct-fp16,exaone3.5:32b-instruct-fp16,sizes/32b-instruct-fp16.json
+32b-instruct-q4_k_m,exaone3.5:32b-instruct-q4_K_M,sizes/32b-instruct-q4_k_m.json
+32b-instruct-q8_0,exaone3.5:32b-instruct-q8_0,sizes/32b-instruct-q8_0.json

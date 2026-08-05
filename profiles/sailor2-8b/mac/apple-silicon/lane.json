@@ -1,0 +1,12 @@
+{
+  "schema_version": "profiles.lane.v1",
+  "model_slug": "sailor2-8b",
+  "target_lane": "mac/apple-silicon",
+  "install_path": "install/mac",
+  "hardware_profile_ids": [
+    "desktop-standard",
+    "cpu-small"
+  ],
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:50Z"
+}

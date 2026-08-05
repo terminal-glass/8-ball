@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file,fit_status
+70b,wizard-math:70b,../sizes/70b.json,listed_in_agents_selection
+70b-fp16,wizard-math:70b-fp16,../sizes/70b-fp16.json,not_listed_in_agents_selection
+70b-q2_k,wizard-math:70b-q2_K,../sizes/70b-q2_k.json,not_listed_in_agents_selection
+70b-q3_k_l,wizard-math:70b-q3_K_L,../sizes/70b-q3_k_l.json,not_listed_in_agents_selection
+70b-q3_k_m,wizard-math:70b-q3_K_M,../sizes/70b-q3_k_m.json,not_listed_in_agents_selection
+70b-q3_k_s,wizard-math:70b-q3_K_S,../sizes/70b-q3_k_s.json,not_listed_in_agents_selection
+70b-q4_0,wizard-math:70b-q4_0,../sizes/70b-q4_0.json,not_listed_in_agents_selection
+70b-q4_1,wizard-math:70b-q4_1,../sizes/70b-q4_1.json,not_listed_in_agents_selection
+70b-q4_k_m,wizard-math:70b-q4_K_M,../sizes/70b-q4_k_m.json,not_listed_in_agents_selection
+70b-q4_k_s,wizard-math:70b-q4_K_S,../sizes/70b-q4_k_s.json,not_listed_in_agents_selection
+70b-q5_0,wizard-math:70b-q5_0,../sizes/70b-q5_0.json,not_listed_in_agents_selection
+70b-q5_1,wizard-math:70b-q5_1,../sizes/70b-q5_1.json,not_listed_in_agents_selection
+70b-q5_k_m,wizard-math:70b-q5_K_M,../sizes/70b-q5_k_m.json,not_listed_in_agents_selection
+70b-q5_k_s,wizard-math:70b-q5_K_S,../sizes/70b-q5_k_s.json,not_listed_in_agents_selection
+70b-q6_k,wizard-math:70b-q6_K,../sizes/70b-q6_k.json,not_listed_in_agents_selection
+70b-q8_0,wizard-math:70b-q8_0,../sizes/70b-q8_0.json,not_listed_in_agents_selection

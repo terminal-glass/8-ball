@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+3b,smallthinker:3b,sizes/3b.json
+3b-preview-fp16,smallthinker:3b-preview-fp16,sizes/3b-preview-fp16.json
+3b-preview-q4_k_m,smallthinker:3b-preview-q4_K_M,sizes/3b-preview-q4_k_m.json
+3b-preview-q8_0,smallthinker:3b-preview-q8_0,sizes/3b-preview-q8_0.json
+latest,smallthinker:latest,sizes/latest.json

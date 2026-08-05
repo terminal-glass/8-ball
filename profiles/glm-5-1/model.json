@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "glm-5.1",
+  "model_slug": "glm-5-1",
+  "family_id": "glm-5.1",
+  "display_name": "glm-5.1",
+  "default_tag": "glm-5.1:cloud",
+  "size_count": 1,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:13Z"
+}

@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file
+12b,gemma4:12b,sizes/12b.json
+12b-it-bf16,gemma4:12b-it-bf16,sizes/12b-it-bf16.json
+12b-it-q4_k_m,gemma4:12b-it-q4_K_M,sizes/12b-it-q4_k_m.json
+12b-it-q8_0,gemma4:12b-it-q8_0,sizes/12b-it-q8_0.json
+12b-it-qat,gemma4:12b-it-qat,sizes/12b-it-qat.json
+12b-mlx,gemma4:12b-mlx,sizes/12b-mlx.json
+12b-mlx-bf16,gemma4:12b-mlx-bf16,sizes/12b-mlx-bf16.json
+12b-mxfp8,gemma4:12b-mxfp8,sizes/12b-mxfp8.json
+12b-nvfp4,gemma4:12b-nvfp4,sizes/12b-nvfp4.json

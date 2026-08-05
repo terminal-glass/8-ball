@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "openthinker-32b",
+  "model_slug": "openthinker-32b",
+  "family_id": "openthinker",
+  "display_name": "openthinker",
+  "default_tag": "openthinker:32b",
+  "size_count": 7,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:31Z"
+}

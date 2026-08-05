@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+35b,aya:35b,sizes/35b.json
+35b-23,aya:35b-23,sizes/35b-23.json
+35b-23-q2_k,aya:35b-23-q2_K,sizes/35b-23-q2_k.json
+35b-23-q3_k_l,aya:35b-23-q3_K_L,sizes/35b-23-q3_k_l.json
+35b-23-q3_k_m,aya:35b-23-q3_K_M,sizes/35b-23-q3_k_m.json
+35b-23-q3_k_s,aya:35b-23-q3_K_S,sizes/35b-23-q3_k_s.json
+35b-23-q4_0,aya:35b-23-q4_0,sizes/35b-23-q4_0.json
+35b-23-q4_1,aya:35b-23-q4_1,sizes/35b-23-q4_1.json
+35b-23-q4_k_m,aya:35b-23-q4_K_M,sizes/35b-23-q4_k_m.json
+35b-23-q4_k_s,aya:35b-23-q4_K_S,sizes/35b-23-q4_k_s.json
+35b-23-q5_0,aya:35b-23-q5_0,sizes/35b-23-q5_0.json
+35b-23-q5_1,aya:35b-23-q5_1,sizes/35b-23-q5_1.json
+35b-23-q5_k_m,aya:35b-23-q5_K_M,sizes/35b-23-q5_k_m.json
+35b-23-q5_k_s,aya:35b-23-q5_K_S,sizes/35b-23-q5_k_s.json
+35b-23-q6_k,aya:35b-23-q6_K,sizes/35b-23-q6_k.json
+35b-23-q8_0,aya:35b-23-q8_0,sizes/35b-23-q8_0.json

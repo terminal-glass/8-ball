@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "wizard-math-70b",
+  "model_slug": "wizard-math-70b",
+  "family_id": "wizard-math",
+  "display_name": "wizard-math",
+  "default_tag": "wizard-math:70b",
+  "size_count": 16,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:41:04Z"
+}

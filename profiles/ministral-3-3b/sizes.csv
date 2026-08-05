@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+3b,ministral-3:3b,sizes/3b.json
+3b-instruct-2512-fp16,ministral-3:3b-instruct-2512-fp16,sizes/3b-instruct-2512-fp16.json
+3b-instruct-2512-q4_k_m,ministral-3:3b-instruct-2512-q4_K_M,sizes/3b-instruct-2512-q4_k_m.json
+3b-instruct-2512-q8_0,ministral-3:3b-instruct-2512-q8_0,sizes/3b-instruct-2512-q8_0.json

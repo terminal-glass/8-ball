@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "translategemma-27b",
+  "model_slug": "translategemma-27b",
+  "family_id": "translategemma",
+  "display_name": "translategemma",
+  "default_tag": "translategemma:27b",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:41:02Z"
+}

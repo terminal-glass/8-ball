@@ -1,0 +1,9 @@
+size_slug,ollama_ref,size_file
+3b,orca-mini:3b,sizes/3b.json
+3b-fp16,orca-mini:3b-fp16,sizes/3b-fp16.json
+3b-q4_0,orca-mini:3b-q4_0,sizes/3b-q4_0.json
+3b-q4_1,orca-mini:3b-q4_1,sizes/3b-q4_1.json
+3b-q5_0,orca-mini:3b-q5_0,sizes/3b-q5_0.json
+3b-q5_1,orca-mini:3b-q5_1,sizes/3b-q5_1.json
+3b-q8_0,orca-mini:3b-q8_0,sizes/3b-q8_0.json
+latest,orca-mini:latest,sizes/latest.json

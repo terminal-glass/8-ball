@@ -1,0 +1,92 @@
+{
+  "model_id": "functiongemma-270m",
+  "model_slug": "functiongemma-270m",
+  "size_slug": "270m-it-q8_0",
+  "ollama_ref": "functiongemma:270m-it-q8_0",
+  "parameter_size": "270m",
+  "quantization": "q8_0",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 0.28,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=functiongemma-270m;variant_index=3;tag=270m-it-q8_0",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 301000000,
+    "download_size_provenance": {
+      "value": 301000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/functiongemma/tags",
+      "retrieved_at": "2026-08-01T11:53:33Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "301MB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/functiongemma/tags",
+        "retrieved_at": "2026-08-01T11:53:33Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 301000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/functiongemma/tags",
+        "retrieved_at": "2026-08-01T11:53:33Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 270000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/functiongemma/tags",
+        "retrieved_at": "2026-08-01T11:53:33Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 32000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/functiongemma/tags",
+        "retrieved_at": "2026-08-01T11:53:33Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q8_0",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/functiongemma/tags",
+        "retrieved_at": "2026-08-01T11:53:33Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/functiongemma/tags",
+        "retrieved_at": "2026-08-01T11:53:33Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/functiongemma/tags",
+        "retrieved_at": "2026-08-01T11:53:33Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

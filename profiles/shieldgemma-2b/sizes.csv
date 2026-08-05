@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+2b,shieldgemma:2b,sizes/2b.json
+2b-fp16,shieldgemma:2b-fp16,sizes/2b-fp16.json
+2b-q2_k,shieldgemma:2b-q2_K,sizes/2b-q2_k.json
+2b-q3_k_l,shieldgemma:2b-q3_K_L,sizes/2b-q3_k_l.json
+2b-q3_k_m,shieldgemma:2b-q3_K_M,sizes/2b-q3_k_m.json
+2b-q3_k_s,shieldgemma:2b-q3_K_S,sizes/2b-q3_k_s.json
+2b-q4_0,shieldgemma:2b-q4_0,sizes/2b-q4_0.json
+2b-q4_1,shieldgemma:2b-q4_1,sizes/2b-q4_1.json
+2b-q4_k_m,shieldgemma:2b-q4_K_M,sizes/2b-q4_k_m.json
+2b-q4_k_s,shieldgemma:2b-q4_K_S,sizes/2b-q4_k_s.json
+2b-q5_0,shieldgemma:2b-q5_0,sizes/2b-q5_0.json
+2b-q5_1,shieldgemma:2b-q5_1,sizes/2b-q5_1.json
+2b-q5_k_m,shieldgemma:2b-q5_K_M,sizes/2b-q5_k_m.json
+2b-q5_k_s,shieldgemma:2b-q5_K_S,sizes/2b-q5_k_s.json
+2b-q6_k,shieldgemma:2b-q6_K,sizes/2b-q6_k.json
+2b-q8_0,shieldgemma:2b-q8_0,sizes/2b-q8_0.json

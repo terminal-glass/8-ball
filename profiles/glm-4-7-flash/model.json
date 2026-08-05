@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "glm-4.7-flash",
+  "model_slug": "glm-4-7-flash",
+  "family_id": "glm-4.7-flash",
+  "display_name": "glm-4.7-flash",
+  "default_tag": "glm-4.7-flash:latest",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:13Z"
+}

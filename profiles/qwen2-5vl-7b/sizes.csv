@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+7b,qwen2.5vl:7b,sizes/7b.json
+7b-fp16,qwen2.5vl:7b-fp16,sizes/7b-fp16.json
+7b-q4_k_m,qwen2.5vl:7b-q4_K_M,sizes/7b-q4_k_m.json
+7b-q8_0,qwen2.5vl:7b-q8_0,sizes/7b-q8_0.json
+latest,qwen2.5vl:latest,sizes/latest.json

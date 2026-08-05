@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "falcon-180b",
+  "model_slug": "falcon-180b",
+  "family_id": "falcon",
+  "display_name": "falcon",
+  "default_tag": "falcon:180b",
+  "size_count": 5,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:12Z"
+}

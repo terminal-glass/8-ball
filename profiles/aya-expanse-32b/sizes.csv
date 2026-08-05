@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+32b,aya-expanse:32b,sizes/32b.json
+32b-fp16,aya-expanse:32b-fp16,sizes/32b-fp16.json
+32b-q2_k,aya-expanse:32b-q2_K,sizes/32b-q2_k.json
+32b-q3_k_l,aya-expanse:32b-q3_K_L,sizes/32b-q3_k_l.json
+32b-q3_k_m,aya-expanse:32b-q3_K_M,sizes/32b-q3_k_m.json
+32b-q3_k_s,aya-expanse:32b-q3_K_S,sizes/32b-q3_k_s.json
+32b-q4_0,aya-expanse:32b-q4_0,sizes/32b-q4_0.json
+32b-q4_1,aya-expanse:32b-q4_1,sizes/32b-q4_1.json
+32b-q4_k_m,aya-expanse:32b-q4_K_M,sizes/32b-q4_k_m.json
+32b-q4_k_s,aya-expanse:32b-q4_K_S,sizes/32b-q4_k_s.json
+32b-q5_0,aya-expanse:32b-q5_0,sizes/32b-q5_0.json
+32b-q5_1,aya-expanse:32b-q5_1,sizes/32b-q5_1.json
+32b-q5_k_m,aya-expanse:32b-q5_K_M,sizes/32b-q5_k_m.json
+32b-q5_k_s,aya-expanse:32b-q5_K_S,sizes/32b-q5_k_s.json
+32b-q6_k,aya-expanse:32b-q6_K,sizes/32b-q6_k.json
+32b-q8_0,aya-expanse:32b-q8_0,sizes/32b-q8_0.json

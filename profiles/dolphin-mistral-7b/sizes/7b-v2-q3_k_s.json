@@ -1,0 +1,92 @@
+{
+  "model_id": "dolphin-mistral-7b",
+  "model_slug": "dolphin-mistral-7b",
+  "size_slug": "7b-v2-q3_k_s",
+  "ollama_ref": "dolphin-mistral:7b-v2-q3_K_S",
+  "parameter_size": "7b",
+  "quantization": "q3_K_S",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 2.98,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=dolphin-mistral-7b;variant_index=7;tag=7b-v2-q3_K_S",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 3200000000,
+    "download_size_provenance": {
+      "value": 3200000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+      "retrieved_at": "2026-08-01T11:53:02Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "3.2GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+        "retrieved_at": "2026-08-01T11:53:02Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 3200000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+        "retrieved_at": "2026-08-01T11:53:02Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 7000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+        "retrieved_at": "2026-08-01T11:53:02Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 32000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+        "retrieved_at": "2026-08-01T11:53:02Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q3_K_S",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+        "retrieved_at": "2026-08-01T11:53:02Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+        "retrieved_at": "2026-08-01T11:53:02Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/dolphin-mistral/tags",
+        "retrieved_at": "2026-08-01T11:53:02Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

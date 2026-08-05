@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "command-r7b-arabic-7b",
+  "model_slug": "command-r7b-arabic-7b",
+  "family_id": "command-r7b-arabic",
+  "display_name": "command-r7b-arabic",
+  "default_tag": "command-r7b-arabic:7b",
+  "size_count": 5,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

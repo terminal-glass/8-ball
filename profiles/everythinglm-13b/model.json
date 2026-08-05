@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "everythinglm-13b",
+  "model_slug": "everythinglm-13b",
+  "family_id": "everythinglm",
+  "display_name": "everythinglm",
+  "default_tag": "everythinglm:13b",
+  "size_count": 18,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:12Z"
+}

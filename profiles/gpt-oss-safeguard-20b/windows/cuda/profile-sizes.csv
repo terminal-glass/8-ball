@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file,fit_status
+20b,gpt-oss-safeguard:20b,../sizes/20b.json,not_listed_in_agents_selection
+latest,gpt-oss-safeguard:latest,../sizes/latest.json,not_listed_in_agents_selection

@@ -1,0 +1,92 @@
+{
+  "model_id": "gemma4",
+  "model_slug": "gemma4",
+  "size_slug": "e2b-mlx",
+  "ollama_ref": "gemma4:e2b-mlx",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 6.054,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=gemma4;variant_index=6;tag=e2b-mlx",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 6500000000,
+    "download_size_provenance": {
+      "value": 6500000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/gemma4/tags",
+      "retrieved_at": "2026-08-01T11:53:47Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "6.5GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/gemma4/tags",
+        "retrieved_at": "2026-08-01T11:53:47Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 6500000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gemma4/tags",
+        "retrieved_at": "2026-08-01T11:53:47Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": 128000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gemma4/tags",
+        "retrieved_at": "2026-08-01T11:53:47Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "both",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gemma4/tags",
+        "retrieved_at": "2026-08-01T11:53:47Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "true",
+          "vision": "true",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "true"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gemma4/tags",
+        "retrieved_at": "2026-08-01T11:53:47Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

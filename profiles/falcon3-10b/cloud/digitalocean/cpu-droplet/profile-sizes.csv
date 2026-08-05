@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+10b,falcon3:10b,../sizes/10b.json,not_listed_in_agents_selection
+10b-instruct-fp16,falcon3:10b-instruct-fp16,../sizes/10b-instruct-fp16.json,not_listed_in_agents_selection
+10b-instruct-q4_k_m,falcon3:10b-instruct-q4_K_M,../sizes/10b-instruct-q4_k_m.json,not_listed_in_agents_selection
+10b-instruct-q8_0,falcon3:10b-instruct-q8_0,../sizes/10b-instruct-q8_0.json,not_listed_in_agents_selection

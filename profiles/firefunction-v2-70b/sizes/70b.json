@@ -1,0 +1,95 @@
+{
+  "model_id": "firefunction-v2-70b",
+  "model_slug": "firefunction-v2-70b",
+  "size_slug": "70b",
+  "ollama_ref": "firefunction-v2:70b",
+  "parameter_size": "70b",
+  "quantization": null,
+  "minimum_ram_gb": 67.85,
+  "recommended_ram_gb": 81.42,
+  "minimum_vram_gb": 46.0,
+  "recommended_vram_gb": 46.0,
+  "minimum_disk_free_gb": 37.253,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=firefunction-v2-70b;variant_index=1;tag=70b;p3_profiles=multi-gpu",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 40000000000,
+    "download_size_provenance": {
+      "value": 40000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/firefunction-v2/tags",
+      "retrieved_at": "2026-08-01T11:53:31Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "40GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/firefunction-v2/tags",
+        "retrieved_at": "2026-08-01T11:53:31Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 40000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/firefunction-v2/tags",
+        "retrieved_at": "2026-08-01T11:53:31Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 70000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/firefunction-v2/tags",
+        "retrieved_at": "2026-08-01T11:53:31Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 8000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/firefunction-v2/tags",
+        "retrieved_at": "2026-08-01T11:53:31Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/firefunction-v2/tags",
+        "retrieved_at": "2026-08-01T11:53:31Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/firefunction-v2/tags",
+        "retrieved_at": "2026-08-01T11:53:31Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    },
+    "p3_selection_profiles": [
+      "multi-gpu"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "model_id": "mistral-7b",
+  "model_slug": "mistral-7b",
+  "size_slug": "7b-text-v0-2-q5_k_m",
+  "ollama_ref": "mistral:7b-text-v0.2-q5_K_M",
+  "parameter_size": "7b",
+  "quantization": "q5_K_M",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 4.75,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=mistral-7b;variant_index=75;tag=7b-text-v0.2-q5_K_M",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 5100000000,
+    "download_size_provenance": {
+      "value": 5100000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/mistral/tags",
+      "retrieved_at": "2026-08-01T11:56:15Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "5.1GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/mistral/tags",
+        "retrieved_at": "2026-08-01T11:56:15Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 5100000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/mistral/tags",
+        "retrieved_at": "2026-08-01T11:56:15Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 7000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/mistral/tags",
+        "retrieved_at": "2026-08-01T11:56:15Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 16000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/mistral/tags",
+        "retrieved_at": "2026-08-01T11:56:15Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q5_K_M",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/mistral/tags",
+        "retrieved_at": "2026-08-01T11:56:15Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/mistral/tags",
+        "retrieved_at": "2026-08-01T11:56:15Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/mistral/tags",
+        "retrieved_at": "2026-08-01T11:56:15Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

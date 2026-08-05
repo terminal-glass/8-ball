@@ -1,0 +1,3 @@
+size_slug,ollama_ref,size_file
+397b-cloud,qwen3.5:397b-cloud,sizes/397b-cloud.json
+cloud,qwen3.5:cloud,sizes/cloud.json

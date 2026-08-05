@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "minicpm-v4.5",
+  "model_slug": "minicpm-v4-5",
+  "family_id": "minicpm-v4.5",
+  "display_name": "A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video Understanding on Your Phone",
+  "default_tag": "minicpm-v4.5:f16",
+  "size_count": 10,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:23Z"
+}

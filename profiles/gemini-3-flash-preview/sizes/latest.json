@@ -1,0 +1,86 @@
+{
+  "model_id": "gemini-3-flash-preview",
+  "model_slug": "gemini-3-flash-preview",
+  "size_slug": "latest",
+  "ollama_ref": "gemini-3-flash-preview:latest",
+  "parameter_size": null,
+  "quantization": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": null,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=gemini-3-flash-preview;variant_index=1;tag=latest",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": null,
+    "download_size_provenance": null,
+    "variant_provenance": {
+      "download_size_text": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "download size text not published"
+      },
+      "download_size_bytes": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "download size not published"
+      },
+      "parameter_count": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "parameter count not published"
+      },
+      "context_window_tokens": {
+        "value": 1000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gemini-3-flash-preview/tags",
+        "retrieved_at": "2026-08-01T11:53:36Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "cloud_only",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gemini-3-flash-preview/tags",
+        "retrieved_at": "2026-08-01T11:53:36Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "true",
+          "vision": "true",
+          "embeddings": "unknown",
+          "tool_use": "true",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "true"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/gemini-3-flash-preview/tags",
+        "retrieved_at": "2026-08-01T11:53:36Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

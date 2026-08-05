@@ -1,0 +1,95 @@
+{
+  "model_id": "qwen2-math-72b",
+  "model_slug": "qwen2-math-72b",
+  "size_slug": "72b",
+  "ollama_ref": "qwen2-math:72b",
+  "parameter_size": "72b",
+  "quantization": null,
+  "minimum_ram_gb": 69.57,
+  "recommended_ram_gb": 83.49,
+  "minimum_vram_gb": 47.15,
+  "recommended_vram_gb": 47.15,
+  "minimum_disk_free_gb": 38.184,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=qwen2-math-72b;variant_index=1;tag=72b;p3_profiles=multi-gpu",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 41000000000,
+    "download_size_provenance": {
+      "value": 41000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/qwen2-math/tags",
+      "retrieved_at": "2026-08-01T11:58:16Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "41GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/qwen2-math/tags",
+        "retrieved_at": "2026-08-01T11:58:16Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 41000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen2-math/tags",
+        "retrieved_at": "2026-08-01T11:58:16Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 72000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen2-math/tags",
+        "retrieved_at": "2026-08-01T11:58:16Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 4000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen2-math/tags",
+        "retrieved_at": "2026-08-01T11:58:16Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": null,
+        "confidence": "unknown",
+        "source_url": null,
+        "retrieved_at": null,
+        "notes": "quantization not published"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen2-math/tags",
+        "retrieved_at": "2026-08-01T11:58:16Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/qwen2-math/tags",
+        "retrieved_at": "2026-08-01T11:58:16Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    },
+    "p3_selection_profiles": [
+      "multi-gpu"
+    ]
+  }
+}

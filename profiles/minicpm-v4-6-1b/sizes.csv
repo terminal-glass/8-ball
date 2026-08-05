@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file
+1b,minicpm-v4.6:1b,sizes/1b.json
+latest,minicpm-v4.6:latest,sizes/latest.json
+q4_k_m,minicpm-v4.6:q4_K_M,sizes/q4_k_m.json

@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "codegemma-7b",
+  "model_slug": "codegemma-7b",
+  "family_id": "codegemma",
+  "display_name": "codegemma",
+  "default_tag": "codegemma:7b",
+  "size_count": 51,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:09Z"
+}

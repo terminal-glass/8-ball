@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "command-r-35b",
+  "model_slug": "command-r-35b",
+  "family_id": "command-r",
+  "display_name": "command-r",
+  "default_tag": "command-r:35b",
+  "size_count": 32,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:10Z"
+}

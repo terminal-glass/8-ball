@@ -1,0 +1,92 @@
+{
+  "model_id": "wizard-math-70b",
+  "model_slug": "wizard-math-70b",
+  "size_slug": "70b-q3_k_l",
+  "ollama_ref": "wizard-math:70b-q3_K_L",
+  "parameter_size": "70b",
+  "quantization": "q3_K_L",
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": 33.528,
+  "target_lane": null,
+  "fit_status": "agents_catalog_variant",
+  "source_kind": "p4_deployment_variant",
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "source_locator": "model=wizard-math-70b;variant_index=4;tag=70b-q3_K_L",
+  "conflict": false,
+  "provenance": {
+    "download_size_bytes": 36000000000,
+    "download_size_provenance": {
+      "value": 36000000000,
+      "confidence": "derived",
+      "source_url": "https://ollama.com/library/wizard-math/tags",
+      "retrieved_at": "2026-08-01T11:59:48Z",
+      "notes": "derived from published download size text"
+    },
+    "variant_provenance": {
+      "download_size_text": {
+        "value": "36GB",
+        "confidence": "observed",
+        "source_url": "https://ollama.com/library/wizard-math/tags",
+        "retrieved_at": "2026-08-01T11:59:48Z",
+        "notes": null
+      },
+      "download_size_bytes": {
+        "value": 36000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-math/tags",
+        "retrieved_at": "2026-08-01T11:59:48Z",
+        "notes": "derived from published download size text"
+      },
+      "parameter_count": {
+        "value": 70000000000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-math/tags",
+        "retrieved_at": "2026-08-01T11:59:48Z",
+        "notes": "derived from tag suffix parameter label when present"
+      },
+      "context_window_tokens": {
+        "value": 2000,
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-math/tags",
+        "retrieved_at": "2026-08-01T11:59:48Z",
+        "notes": "derived from published context window text"
+      },
+      "quantization": {
+        "value": "q3_K_L",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-math/tags",
+        "retrieved_at": "2026-08-01T11:59:48Z",
+        "notes": "derived from tag suffix when present"
+      },
+      "availability": {
+        "value": "local",
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-math/tags",
+        "retrieved_at": "2026-08-01T11:59:48Z",
+        "notes": "derived from download size and structured cloud badge metadata"
+      },
+      "capabilities": {
+        "value": {
+          "chat": "unknown",
+          "text_generation": "true",
+          "coding": "unknown",
+          "reasoning": "unknown",
+          "vision": "unknown",
+          "embeddings": "unknown",
+          "tool_use": "unknown",
+          "structured_output": "unknown",
+          "multilingual": "unknown",
+          "audio": "unknown",
+          "cloud": "unknown"
+        },
+        "confidence": "derived",
+        "source_url": "https://ollama.com/library/wizard-math/tags",
+        "retrieved_at": "2026-08-01T11:59:48Z",
+        "notes": "derived from family badges plus tag input capabilities"
+      }
+    }
+  }
+}

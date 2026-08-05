@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "athene-v2-72b",
+  "model_slug": "athene-v2-72b",
+  "family_id": "athene-v2",
+  "display_name": "Athene-V2",
+  "default_tag": "athene-v2:72b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:09Z"
+}

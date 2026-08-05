@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+8b,opencoder:8b,sizes/8b.json
+8b-instruct-fp16,opencoder:8b-instruct-fp16,sizes/8b-instruct-fp16.json
+8b-instruct-q4_k_m,opencoder:8b-instruct-q4_K_M,sizes/8b-instruct-q4_k_m.json
+8b-instruct-q8_0,opencoder:8b-instruct-q8_0,sizes/8b-instruct-q8_0.json
+latest,opencoder:latest,sizes/latest.json

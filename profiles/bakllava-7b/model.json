@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "bakllava-7b",
+  "model_slug": "bakllava-7b",
+  "family_id": "bakllava",
+  "display_name": "bakllava",
+  "default_tag": "bakllava:7b",
+  "size_count": 17,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:09Z"
+}

@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file
+122b,qwen3.5:122b,sizes/122b.json
+122b-a10b,qwen3.5:122b-a10b,sizes/122b-a10b.json
+122b-a10b-q4_k_m,qwen3.5:122b-a10b-q4_K_M,sizes/122b-a10b-q4_k_m.json

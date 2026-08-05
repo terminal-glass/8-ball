@@ -1,0 +1,15 @@
+size_slug,ollama_ref,size_file
+27b,qwen3.6:27b,sizes/27b.json
+27b-bf16,qwen3.6:27b-bf16,sizes/27b-bf16.json
+27b-coding-bf16,qwen3.6:27b-coding-bf16,sizes/27b-coding-bf16.json
+27b-coding-mxfp8,qwen3.6:27b-coding-mxfp8,sizes/27b-coding-mxfp8.json
+27b-coding-nvfp4,qwen3.6:27b-coding-nvfp4,sizes/27b-coding-nvfp4.json
+27b-mlx,qwen3.6:27b-mlx,sizes/27b-mlx.json
+27b-mlx-bf16,qwen3.6:27b-mlx-bf16,sizes/27b-mlx-bf16.json
+27b-mtp-bf16,qwen3.6:27b-mtp-bf16,sizes/27b-mtp-bf16.json
+27b-mtp-q4_k_m,qwen3.6:27b-mtp-q4_K_M,sizes/27b-mtp-q4_k_m.json
+27b-mtp-q8_0,qwen3.6:27b-mtp-q8_0,sizes/27b-mtp-q8_0.json
+27b-mxfp8,qwen3.6:27b-mxfp8,sizes/27b-mxfp8.json
+27b-nvfp4,qwen3.6:27b-nvfp4,sizes/27b-nvfp4.json
+27b-q4_k_m,qwen3.6:27b-q4_K_M,sizes/27b-q4_k_m.json
+27b-q8_0,qwen3.6:27b-q8_0,sizes/27b-q8_0.json

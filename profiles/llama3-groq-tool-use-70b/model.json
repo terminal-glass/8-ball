@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "llama3-groq-tool-use-70b",
+  "model_slug": "llama3-groq-tool-use-70b",
+  "family_id": "llama3-groq-tool-use",
+  "display_name": "llama3-groq-tool-use",
+  "default_tag": "llama3-groq-tool-use:70b",
+  "size_count": 16,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:20Z"
+}

@@ -1,0 +1,7 @@
+size_slug,ollama_ref,size_file
+141b,zephyr:141b,sizes/141b.json
+141b-v0-1,zephyr:141b-v0.1,sizes/141b-v0-1.json
+141b-v0-1-fp16,zephyr:141b-v0.1-fp16,sizes/141b-v0-1-fp16.json
+141b-v0-1-q2_k,zephyr:141b-v0.1-q2_K,sizes/141b-v0-1-q2_k.json
+141b-v0-1-q4_0,zephyr:141b-v0.1-q4_0,sizes/141b-v0-1-q4_0.json
+141b-v0-1-q8_0,zephyr:141b-v0.1-q8_0,sizes/141b-v0-1-q8_0.json

@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "medgemma-27b",
+  "model_slug": "medgemma-27b",
+  "family_id": "medgemma",
+  "display_name": "medgemma",
+  "default_tag": "medgemma:27b",
+  "size_count": 4,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:22Z"
+}

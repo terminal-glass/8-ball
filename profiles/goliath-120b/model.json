@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "goliath-120b",
+  "model_slug": "goliath-120b",
+  "family_id": "goliath",
+  "display_name": "goliath",
+  "default_tag": "goliath:latest",
+  "size_count": 16,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:14Z"
+}

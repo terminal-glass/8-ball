@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "kimi-k3",
+  "model_slug": "kimi-k3",
+  "family_id": "kimi-k3",
+  "display_name": "kimi-k3",
+  "default_tag": "kimi-k3:cloud",
+  "size_count": 1,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:17Z"
+}

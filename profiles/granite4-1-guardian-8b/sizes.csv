@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file
+8b,granite4.1-guardian:8b,sizes/8b.json
+8b-bf16,granite4.1-guardian:8b-bf16,sizes/8b-bf16.json
+8b-q2_k,granite4.1-guardian:8b-q2_K,sizes/8b-q2_k.json
+8b-q3_k_l,granite4.1-guardian:8b-q3_K_L,sizes/8b-q3_k_l.json
+8b-q3_k_m,granite4.1-guardian:8b-q3_K_M,sizes/8b-q3_k_m.json
+8b-q3_k_s,granite4.1-guardian:8b-q3_K_S,sizes/8b-q3_k_s.json
+8b-q4_0,granite4.1-guardian:8b-q4_0,sizes/8b-q4_0.json
+8b-q4_1,granite4.1-guardian:8b-q4_1,sizes/8b-q4_1.json
+8b-q4_k_m,granite4.1-guardian:8b-q4_K_M,sizes/8b-q4_k_m.json
+8b-q4_k_s,granite4.1-guardian:8b-q4_K_S,sizes/8b-q4_k_s.json
+8b-q5_0,granite4.1-guardian:8b-q5_0,sizes/8b-q5_0.json
+8b-q5_1,granite4.1-guardian:8b-q5_1,sizes/8b-q5_1.json
+8b-q5_k_m,granite4.1-guardian:8b-q5_K_M,sizes/8b-q5_k_m.json
+8b-q5_k_s,granite4.1-guardian:8b-q5_K_S,sizes/8b-q5_k_s.json
+8b-q6_k,granite4.1-guardian:8b-q6_K,sizes/8b-q6_k.json
+8b-q8_0,granite4.1-guardian:8b-q8_0,sizes/8b-q8_0.json

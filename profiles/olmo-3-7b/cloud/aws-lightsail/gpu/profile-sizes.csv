@@ -1,0 +1,11 @@
+size_slug,ollama_ref,size_file,fit_status
+7b,olmo-3:7b,../sizes/7b.json,not_listed_in_agents_selection
+7b-instruct,olmo-3:7b-instruct,../sizes/7b-instruct.json,not_listed_in_agents_selection
+7b-instruct-fp16,olmo-3:7b-instruct-fp16,../sizes/7b-instruct-fp16.json,not_listed_in_agents_selection
+7b-instruct-q4_k_m,olmo-3:7b-instruct-q4_K_M,../sizes/7b-instruct-q4_k_m.json,not_listed_in_agents_selection
+7b-instruct-q8_0,olmo-3:7b-instruct-q8_0,../sizes/7b-instruct-q8_0.json,not_listed_in_agents_selection
+7b-think,olmo-3:7b-think,../sizes/7b-think.json,not_listed_in_agents_selection
+7b-think-fp16,olmo-3:7b-think-fp16,../sizes/7b-think-fp16.json,not_listed_in_agents_selection
+7b-think-q4_k_m,olmo-3:7b-think-q4_K_M,../sizes/7b-think-q4_k_m.json,not_listed_in_agents_selection
+7b-think-q8_0,olmo-3:7b-think-q8_0,../sizes/7b-think-q8_0.json,not_listed_in_agents_selection
+latest,olmo-3:latest,../sizes/latest.json,not_listed_in_agents_selection

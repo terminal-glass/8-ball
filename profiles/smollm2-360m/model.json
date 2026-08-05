@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "smollm2-360m",
+  "model_slug": "smollm2-360m",
+  "family_id": "smollm2",
+  "display_name": "smollm2",
+  "default_tag": "smollm2:360m",
+  "size_count": 16,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:53Z"
+}

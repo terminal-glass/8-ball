@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "starcoder2-7b",
+  "model_slug": "starcoder2-7b",
+  "family_id": "starcoder2",
+  "display_name": "starcoder2",
+  "default_tag": "starcoder2:7b",
+  "size_count": 16,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:41:00Z"
+}

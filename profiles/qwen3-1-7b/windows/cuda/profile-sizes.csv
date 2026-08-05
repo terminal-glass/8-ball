@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+1-7b,qwen3:1.7b,../sizes/1-7b.json,not_listed_in_agents_selection
+1-7b-fp16,qwen3:1.7b-fp16,../sizes/1-7b-fp16.json,not_listed_in_agents_selection
+1-7b-q4_k_m,qwen3:1.7b-q4_K_M,../sizes/1-7b-q4_k_m.json,not_listed_in_agents_selection
+1-7b-q8_0,qwen3:1.7b-q8_0,../sizes/1-7b-q8_0.json,not_listed_in_agents_selection

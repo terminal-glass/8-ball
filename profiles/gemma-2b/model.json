@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "gemma-2b",
+  "model_slug": "gemma-2b",
+  "family_id": "gemma",
+  "display_name": "Reference",
+  "default_tag": "gemma:2b",
+  "size_count": 49,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:12Z"
+}

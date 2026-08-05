@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "moondream-1.8b",
+  "model_slug": "moondream-1-8b",
+  "family_id": "moondream",
+  "display_name": "🌔 moondream 2",
+  "default_tag": "moondream:1.8b",
+  "size_count": 18,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:26Z"
+}

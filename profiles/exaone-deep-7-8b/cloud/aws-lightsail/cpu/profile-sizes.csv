@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+7-8b,exaone-deep:7.8b,../sizes/7-8b.json,not_listed_in_agents_selection
+7-8b-fp16,exaone-deep:7.8b-fp16,../sizes/7-8b-fp16.json,not_listed_in_agents_selection
+7-8b-q4_k_m,exaone-deep:7.8b-q4_K_M,../sizes/7-8b-q4_k_m.json,not_listed_in_agents_selection
+7-8b-q8_0,exaone-deep:7.8b-q8_0,../sizes/7-8b-q8_0.json,not_listed_in_agents_selection
+latest,exaone-deep:latest,../sizes/latest.json,not_listed_in_agents_selection

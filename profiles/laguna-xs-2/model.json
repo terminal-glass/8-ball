@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "laguna-xs.2",
+  "model_slug": "laguna-xs-2",
+  "family_id": "laguna-xs.2",
+  "display_name": "laguna-xs.2",
+  "default_tag": "laguna-xs.2:latest",
+  "size_count": 7,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:17Z"
+}

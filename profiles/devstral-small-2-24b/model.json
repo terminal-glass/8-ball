@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "devstral-small-2-24b",
+  "model_slug": "devstral-small-2-24b",
+  "family_id": "devstral-small-2",
+  "display_name": "Devstral Small 2",
+  "default_tag": "devstral-small-2:24b",
+  "size_count": 6,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:11Z"
+}

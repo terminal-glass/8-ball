@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+70b,tulu3:70b,sizes/70b.json
+70b-fp16,tulu3:70b-fp16,sizes/70b-fp16.json
+70b-q4_k_m,tulu3:70b-q4_K_M,sizes/70b-q4_k_m.json
+70b-q8_0,tulu3:70b-q8_0,sizes/70b-q8_0.json

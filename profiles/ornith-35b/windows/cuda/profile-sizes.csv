@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+35b,ornith:35b,../sizes/35b.json,not_listed_in_agents_selection
+35b-bf16,ornith:35b-bf16,../sizes/35b-bf16.json,not_listed_in_agents_selection
+35b-q4_k_m,ornith:35b-q4_K_M,../sizes/35b-q4_k_m.json,not_listed_in_agents_selection
+35b-q8_0,ornith:35b-q8_0,../sizes/35b-q8_0.json,not_listed_in_agents_selection

@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file,fit_status
+135m,smollm2:135m,../sizes/135m.json,not_listed_in_agents_selection
+135m-instruct-fp16,smollm2:135m-instruct-fp16,../sizes/135m-instruct-fp16.json,not_listed_in_agents_selection
+135m-instruct-q2_k,smollm2:135m-instruct-q2_K,../sizes/135m-instruct-q2_k.json,not_listed_in_agents_selection
+135m-instruct-q3_k_l,smollm2:135m-instruct-q3_K_L,../sizes/135m-instruct-q3_k_l.json,not_listed_in_agents_selection
+135m-instruct-q3_k_m,smollm2:135m-instruct-q3_K_M,../sizes/135m-instruct-q3_k_m.json,not_listed_in_agents_selection
+135m-instruct-q3_k_s,smollm2:135m-instruct-q3_K_S,../sizes/135m-instruct-q3_k_s.json,not_listed_in_agents_selection
+135m-instruct-q4_0,smollm2:135m-instruct-q4_0,../sizes/135m-instruct-q4_0.json,not_listed_in_agents_selection
+135m-instruct-q4_1,smollm2:135m-instruct-q4_1,../sizes/135m-instruct-q4_1.json,not_listed_in_agents_selection
+135m-instruct-q4_k_m,smollm2:135m-instruct-q4_K_M,../sizes/135m-instruct-q4_k_m.json,not_listed_in_agents_selection
+135m-instruct-q4_k_s,smollm2:135m-instruct-q4_K_S,../sizes/135m-instruct-q4_k_s.json,not_listed_in_agents_selection
+135m-instruct-q5_0,smollm2:135m-instruct-q5_0,../sizes/135m-instruct-q5_0.json,not_listed_in_agents_selection
+135m-instruct-q5_1,smollm2:135m-instruct-q5_1,../sizes/135m-instruct-q5_1.json,not_listed_in_agents_selection
+135m-instruct-q5_k_m,smollm2:135m-instruct-q5_K_M,../sizes/135m-instruct-q5_k_m.json,not_listed_in_agents_selection
+135m-instruct-q5_k_s,smollm2:135m-instruct-q5_K_S,../sizes/135m-instruct-q5_k_s.json,not_listed_in_agents_selection
+135m-instruct-q6_k,smollm2:135m-instruct-q6_K,../sizes/135m-instruct-q6_k.json,not_listed_in_agents_selection
+135m-instruct-q8_0,smollm2:135m-instruct-q8_0,../sizes/135m-instruct-q8_0.json,not_listed_in_agents_selection

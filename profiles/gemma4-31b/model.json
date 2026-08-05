@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "gemma4-31b",
+  "model_slug": "gemma4-31b",
+  "family_id": "gemma4",
+  "display_name": "gemma4",
+  "default_tag": "gemma4:31b-cloud",
+  "size_count": 12,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:13Z"
+}

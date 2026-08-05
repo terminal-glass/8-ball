@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+1048k,llama3-gradient:1048k,sizes/1048k.json
+8b,llama3-gradient:8b,sizes/8b.json
+8b-instruct-1048k-q4_0,llama3-gradient:8b-instruct-1048k-q4_0,sizes/8b-instruct-1048k-q4_0.json
+instruct,llama3-gradient:instruct,sizes/instruct.json
+latest,llama3-gradient:latest,sizes/latest.json

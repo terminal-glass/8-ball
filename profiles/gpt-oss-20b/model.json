@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "gpt-oss-20b",
+  "model_slug": "gpt-oss-20b",
+  "family_id": "gpt-oss",
+  "display_name": "gpt-oss",
+  "default_tag": "gpt-oss:20b",
+  "size_count": 2,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:40:14Z"
+}

@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+671b,deepseek-v3:671b,sizes/671b.json
+671b-fp16,deepseek-v3:671b-fp16,sizes/671b-fp16.json
+671b-q4_k_m,deepseek-v3:671b-q4_K_M,sizes/671b-q4_k_m.json
+671b-q8_0,deepseek-v3:671b-q8_0,sizes/671b-q8_0.json
+latest,deepseek-v3:latest,sizes/latest.json

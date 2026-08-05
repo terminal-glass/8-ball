@@ -1,0 +1,11 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_id": "wizardlm-13b",
+  "model_slug": "wizardlm-13b",
+  "family_id": "wizardlm",
+  "display_name": "wizardlm",
+  "default_tag": "wizardlm:13b-fp16",
+  "size_count": 30,
+  "source_path": "AGENTS/data-science/P4-Public-Catalog/index/models.json",
+  "generated_at": "2026-08-05T23:41:07Z"
+}

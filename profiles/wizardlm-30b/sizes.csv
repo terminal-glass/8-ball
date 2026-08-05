@@ -1,0 +1,16 @@
+size_slug,ollama_ref,size_file
+30b-fp16,wizardlm:30b-fp16,sizes/30b-fp16.json
+30b-q2_k,wizardlm:30b-q2_K,sizes/30b-q2_k.json
+30b-q3_k_l,wizardlm:30b-q3_K_L,sizes/30b-q3_k_l.json
+30b-q3_k_m,wizardlm:30b-q3_K_M,sizes/30b-q3_k_m.json
+30b-q3_k_s,wizardlm:30b-q3_K_S,sizes/30b-q3_k_s.json
+30b-q4_0,wizardlm:30b-q4_0,sizes/30b-q4_0.json
+30b-q4_1,wizardlm:30b-q4_1,sizes/30b-q4_1.json
+30b-q4_k_m,wizardlm:30b-q4_K_M,sizes/30b-q4_k_m.json
+30b-q4_k_s,wizardlm:30b-q4_K_S,sizes/30b-q4_k_s.json
+30b-q5_0,wizardlm:30b-q5_0,sizes/30b-q5_0.json
+30b-q5_1,wizardlm:30b-q5_1,sizes/30b-q5_1.json
+30b-q5_k_m,wizardlm:30b-q5_K_M,sizes/30b-q5_k_m.json
+30b-q5_k_s,wizardlm:30b-q5_K_S,sizes/30b-q5_k_s.json
+30b-q6_k,wizardlm:30b-q6_K,sizes/30b-q6_k.json
+30b-q8_0,wizardlm:30b-q8_0,sizes/30b-q8_0.json
