@@ -4,8 +4,42 @@ This directory documents the **runtime** environment profile artifact contract f
 separate installer work (`0.sh`, `8.2.sh`, `8.3.sh`). Live installers write
 artifacts under `/opt/philosopher/profiles`.
 
-This repository is **metadata/catalog only**. Files here are documentation and
-templates — not generated model pages.
+This repository is **metadata/catalog only**. Files here include documentation,
+templates, and **repo-root profile exports** derived from canonical C5 generated
+pages.
+
+## Repo-root profile exports
+
+Public, machine-readable profile trees are generated at the repository root under
+`profiles/` from the canonical C5 page tree only:
+
+```text
+profiles/manifest.json
+profiles/index.csv
+profiles/families/<family-slug>/profile.json
+profiles/models/<model-slug>/model.json
+profiles/models/<model-slug>/<3-7>/profile.json
+profiles/deployment-classes/<3-7>/profile.json
+profiles/provider-assumptions/          # labeled planning assumptions only
+```
+
+Regenerate with:
+
+```bash
+eight-ball generate-root-profiles
+```
+
+Primary source (required):
+
+- `data/generated/pages/install-manifest.json`
+- `data/generated/pages/**`
+
+Secondary reference (assumptions only, labeled `provenance_status: assumption`):
+
+- `data/normalized/hardware-assumed-profiles.json` (imported from AGENTS CSV research)
+
+Do not build `profiles/` by crawling unrelated repository files. Do not treat
+`CursorFile*.md` agent briefs as profile data.
 
 ## Canonical generated pages (C5)
 

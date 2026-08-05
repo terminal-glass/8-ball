@@ -1,0 +1,45 @@
+{
+  "schema_version": "profiles.deployment-class.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/deployment-types/3/info.json",
+  "source_schema_version": "c5.deployment-type-page.v1",
+  "profile": {
+    "schema_version": "c5.deployment-type-page.v1",
+    "deployment_type_id": "3",
+    "display_name": "Deployment Lane",
+    "description": "Deployment lane selection gate. Maps detected provider or platform facts to a deployment lane before sizing gates run.\n",
+    "hardware_profile_ids": [
+      "cpu-small",
+      "desktop-standard",
+      "server-high-mem",
+      "gpu-entry",
+      "gpu-midrange",
+      "gpu-high-mem",
+      "multi-gpu",
+      "cloud-only"
+    ],
+    "runtime_policy_ids": [
+      "interactive",
+      "long_context",
+      "batch"
+    ],
+    "minimum_ram_gb": null,
+    "recommended_ram_gb": null,
+    "minimum_vram_gb": null,
+    "recommended_vram_gb": null,
+    "disk_estimate_gb": null,
+    "cpu_suitability": "not_applicable",
+    "gpu_suitability": "not_applicable",
+    "compatible_model_count": 384,
+    "constrained_model_count": 37,
+    "unsuitable_model_count": 16,
+    "assessment_breakdown": {
+      "cpu_only_practical": 13,
+      "full_gpu_fit": 357,
+      "insufficient_memory": 16,
+      "partial_gpu_offload": 27,
+      "recommended": 14,
+      "runs_with_constraints": 10
+    }
+  }
+}

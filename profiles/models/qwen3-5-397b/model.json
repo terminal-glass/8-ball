@@ -1,0 +1,54 @@
+{
+  "schema_version": "profiles.model.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/models/qwen3-5-397b/model.json",
+  "source_schema_version": "c5.model-page.v1",
+  "profile": {
+    "schema_version": "c5.model-page.v1",
+    "model_id": "qwen3.5-397b",
+    "model_slug": "qwen3-5-397b",
+    "family_id": "qwen3.5",
+    "family_slug": "qwen3-5",
+    "display_name": "qwen3.5",
+    "default_tag": "qwen3.5:397b-cloud",
+    "default_tag_id": "qwen3.5__397b-cloud",
+    "availability": "both",
+    "deployments": {
+      "3": {
+        "deployment_type_id": "3",
+        "available": true,
+        "assessment": "runs_with_constraints",
+        "ollama_identifier": "qwen3.5:cloud",
+        "helper_path": "data/generated/pages/models/qwen3-5-397b/3/info.json"
+      },
+      "4": {
+        "deployment_type_id": "4",
+        "available": true,
+        "assessment": "runs_with_constraints",
+        "ollama_identifier": "qwen3.5:cloud",
+        "helper_path": "data/generated/pages/models/qwen3-5-397b/4/info.json"
+      },
+      "5": {
+        "deployment_type_id": "5",
+        "available": true,
+        "assessment": "runs_with_constraints",
+        "ollama_identifier": "qwen3.5:cloud",
+        "helper_path": "data/generated/pages/models/qwen3-5-397b/5/info.json"
+      },
+      "6": {
+        "deployment_type_id": "6",
+        "available": true,
+        "assessment": "insufficient_memory",
+        "ollama_identifier": "qwen3.5:397b-cloud",
+        "helper_path": "data/generated/pages/models/qwen3-5-397b/6/info.json"
+      },
+      "7": {
+        "deployment_type_id": "7",
+        "available": true,
+        "assessment": "runs_with_constraints",
+        "ollama_identifier": "qwen3.5:cloud",
+        "helper_path": "data/generated/pages/models/qwen3-5-397b/7/info.json"
+      }
+    }
+  }
+}

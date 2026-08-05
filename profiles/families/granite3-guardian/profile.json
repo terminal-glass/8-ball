@@ -1,0 +1,28 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/granite3-guardian/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "granite3-guardian",
+    "family_slug": "granite3-guardian",
+    "publisher_id": "ibm",
+    "name": "granite3-guardian",
+    "description": "granite3-guardian 327.6K Downloads Updated 1 year ago The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks in prompts and/or responses. The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks in prompts and/or responses. Cancel 2b 8b CLI cURL Python JavaScript Documentation Documentation ollama run granite3-guardian curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"granite3-guardian\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }'",
+    "source_url": "https://ollama.com/library/granite3-guardian",
+    "retrieved_at": "2026-08-01T11:54:13Z",
+    "model_count": 2,
+    "tag_count": 10,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 12
+    }
+  }
+}

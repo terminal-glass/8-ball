@@ -1,0 +1,28 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/yarn-llama2/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "yarn-llama2",
+    "family_slug": "yarn-llama2",
+    "publisher_id": "unknown",
+    "name": "yarn-llama2",
+    "description": "yarn-llama2 942.9K Downloads Updated 2 years ago An extension of Llama 2 that supports a context of up to 128k tokens. An extension of Llama 2 that supports a context of up to 128k tokens. Cancel 7b 13b CLI cURL Python JavaScript Documentation Documentation ollama run yarn-llama2 curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"yarn-llama2\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'yarn-llama2' ,\n    messages=[",
+    "source_url": "https://ollama.com/library/yarn-llama2",
+    "retrieved_at": "2026-08-01T12:00:05Z",
+    "model_count": 2,
+    "tag_count": 67,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 69
+    }
+  }
+}

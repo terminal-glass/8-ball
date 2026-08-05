@@ -1,0 +1,28 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/dolphin-phi/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "dolphin-phi",
+    "family_slug": "dolphin-phi",
+    "publisher_id": "unknown",
+    "name": "dolphin-phi",
+    "description": "dolphin-phi 1.6M Downloads Updated 2 years ago 2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language model by Microsoft Research. 2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language model by Microsoft Research. Cancel 2.7b CLI cURL Python JavaScript Documentation Documentation ollama run dolphin-phi curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"dolphin-phi\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import ch",
+    "source_url": "https://ollama.com/library/dolphin-phi",
+    "retrieved_at": "2026-08-01T11:53:05Z",
+    "model_count": 1,
+    "tag_count": 15,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 16
+    }
+  }
+}

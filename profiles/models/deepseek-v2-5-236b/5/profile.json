@@ -1,0 +1,70 @@
+{
+  "schema_version": "profiles.model-deployment.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/models/deepseek-v2-5-236b/5/info.json",
+  "source_schema_version": "c5.model-deployment-page.v1",
+  "profile": {
+    "schema_version": "c5.model-deployment-page.v1",
+    "model_id": "deepseek-v2.5-236b",
+    "model_slug": "deepseek-v2-5-236b",
+    "model_display_name": "deepseek-v2.5",
+    "family_id": "deepseek-v2.5",
+    "family_slug": "deepseek-v2-5",
+    "tag_id": "deepseek-v2.5__236b",
+    "ollama_identifier": "deepseek-v2.5:236b",
+    "deployment_type_id": "5",
+    "hardware_profile_id": "cpu-small",
+    "runtime_policy_id": "batch",
+    "availability": "local",
+    "assessment": "insufficient_memory",
+    "reason_codes": [
+      "exceeds_system_ram",
+      "cpu_profile"
+    ],
+    "explanation": "Estimated memory exceeds CPU-only system RAM.",
+    "download_size_bytes": 133000000000,
+    "installed_storage_bytes_estimated": 143640000000,
+    "min_system_ram_gb_estimated": 277.75,
+    "recommended_system_ram_gb_estimated": 333.3,
+    "min_vram_gb_estimated": 146.3,
+    "recommended_vram_gb_estimated": 277.75,
+    "cpu_suitability": "not_applicable",
+    "gpu_suitability": "not_applicable",
+    "disk_estimate_gb": null,
+    "pull_command": "ollama pull deepseek-v2.5:236b",
+    "run_command": "ollama run deepseek-v2.5:236b",
+    "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+    "retrieved_at": "2026-08-01T11:52:41Z",
+    "hardware_enrichment": {
+      "compatible_provider_instance_ids": [
+        "provider_instance:AWS|Lightsail for Research|gpu-xl"
+      ],
+      "compatible_assumed_profile_ids": [
+        "assumed_profile:cuda_entry_8gb",
+        "assumed_profile:mac_pro_apple_silicon_18_24gb",
+        "assumed_profile:windows_cpu_32gb",
+        "assumed_profile:windows_nvidia_16gb_vram_6_8gb"
+      ],
+      "compatible_measured_host_ids": [
+        "measured_host:local-brain1-rtx3060-12gb"
+      ],
+      "accelerator_class_ids": [
+        "nvidia_cuda",
+        "unknown_gpu"
+      ],
+      "cpu_only_suitable": true,
+      "cuda_suitable": true,
+      "rocm_suitable": false,
+      "apple_metal_suitable": false,
+      "measured_host_evidence": [
+        {
+          "host_profile_id": "local-brain1-rtx3060-12gb",
+          "provenance_status": "measured_host_inventory",
+          "ollama_inference_verified": false
+        }
+      ],
+      "provenance_status": "derived_from_c6_import",
+      "hardware_data_version": "2026-08-04T07:40:36Z"
+    }
+  }
+}

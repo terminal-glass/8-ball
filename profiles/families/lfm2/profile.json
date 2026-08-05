@@ -1,0 +1,29 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/lfm2/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "lfm2",
+    "family_slug": "lfm2",
+    "publisher_id": "unknown",
+    "name": "lfm2",
+    "description": "LFM2 is a family of hybrid models designed for on-device deployment. LFM2-24B-A2B is the largest model in the family, scaling the architecture to 24 billion parameters while keeping inference efficient. LFM2 is a family of hybrid models designed for on-device deployment. LFM2-24B-A2B is the largest model in the family, scaling the architecture to 24 billion parameters while keeping inference efficient. Cancel",
+    "source_url": "https://ollama.com/library/lfm2",
+    "retrieved_at": "2026-08-01T11:54:54Z",
+    "model_count": 1,
+    "tag_count": 6,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 7,
+      "tool_use": 7
+    }
+  }
+}

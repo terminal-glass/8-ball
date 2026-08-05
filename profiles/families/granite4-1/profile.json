@@ -1,0 +1,29 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/granite4-1/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "granite4.1",
+    "family_slug": "granite4-1",
+    "publisher_id": "ibm",
+    "name": "granite4.1",
+    "description": "granite4.1 297.5K Downloads Updated 2 months ago IBM Granite Models are a family of enterprise-ready, open foundation models that support multilingual capabilities, coding, retrieval-augmented generation (RAG), tool use, and structured JSON output. Released under Apache 2.0 license. IBM Granite Models are a family of enterprise-ready, open foundation models that support multilingual capabilities, coding, retrieval-augmented generation (RAG), tool use, and structured JSON output. Released under A",
+    "source_url": "https://ollama.com/library/granite4.1",
+    "retrieved_at": "2026-08-01T11:54:32Z",
+    "model_count": 3,
+    "tag_count": 48,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 51,
+      "tool_use": 51
+    }
+  }
+}

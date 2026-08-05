@@ -1,0 +1,54 @@
+{
+  "schema_version": "profiles.model.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/models/deepcoder-14b/model.json",
+  "source_schema_version": "c5.model-page.v1",
+  "profile": {
+    "schema_version": "c5.model-page.v1",
+    "model_id": "deepcoder-14b",
+    "model_slug": "deepcoder-14b",
+    "family_id": "deepcoder",
+    "family_slug": "deepcoder",
+    "display_name": "deepcoder",
+    "default_tag": "deepcoder:14b",
+    "default_tag_id": "deepcoder__14b",
+    "availability": "local",
+    "deployments": {
+      "3": {
+        "deployment_type_id": "3",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "deepcoder:14b",
+        "helper_path": "data/generated/pages/models/deepcoder-14b/3/info.json"
+      },
+      "4": {
+        "deployment_type_id": "4",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "deepcoder:14b",
+        "helper_path": "data/generated/pages/models/deepcoder-14b/4/info.json"
+      },
+      "5": {
+        "deployment_type_id": "5",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "deepcoder:14b",
+        "helper_path": "data/generated/pages/models/deepcoder-14b/5/info.json"
+      },
+      "6": {
+        "deployment_type_id": "6",
+        "available": true,
+        "assessment": "cpu_only_practical",
+        "ollama_identifier": "deepcoder:14b",
+        "helper_path": "data/generated/pages/models/deepcoder-14b/6/info.json"
+      },
+      "7": {
+        "deployment_type_id": "7",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "deepcoder:14b",
+        "helper_path": "data/generated/pages/models/deepcoder-14b/7/info.json"
+      }
+    }
+  }
+}
