@@ -10,8 +10,39 @@ pages.
 
 ## Repo-root profile exports
 
-Public, machine-readable profile trees are generated at the repository root under
-`profiles/` from the canonical C5 page tree only:
+Each canonical model has a root folder:
+
+```text
+profiles/<model-slug>/
+```
+
+C7.1 adds the platform/hardware lane skeleton under every model folder (folders
+only; C8 will populate step files):
+
+```text
+profiles/<model-slug>/ubuntu/cpu/
+profiles/<model-slug>/ubuntu/cuda/
+profiles/<model-slug>/mac/apple-silicon/
+profiles/<model-slug>/mac/intel/
+profiles/<model-slug>/windows/cpu/
+profiles/<model-slug>/windows/cuda/
+profiles/<model-slug>/cloud/digitalocean/cpu-droplet/
+profiles/<model-slug>/cloud/digitalocean/gpu-droplet/
+profiles/<model-slug>/cloud/aws-lightsail/cpu/
+profiles/<model-slug>/cloud/aws-lightsail/gpu/
+```
+
+Create or refresh the lane skeleton with:
+
+```bash
+bash scripts/create-profile-platform-tree.sh
+```
+
+`8.2` will detect platform/hardware, select the matching profile branch, and run
+that branch's steps 3–7 from the populated lane files (C8).
+
+Public, machine-readable profile exports are also generated at the repository root
+under `profiles/` from the canonical C5 page tree:
 
 ```text
 profiles/manifest.json
