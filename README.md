@@ -45,7 +45,7 @@ data/snapshots/         Cached sanitized snapshots (not committed)
 reports/                Human-readable reports and reproducible JSON summaries
 indexes/                Generated metadata indexes (not committed)
 scripts/                Shell wrappers around the CLI
-install/                Public free/trial installer scripts (see install/README.md)
+install/                Public free/trial installer scripts by profile (see install/README.md)
 tests/fixtures/         Offline sample fixtures
 ```
 

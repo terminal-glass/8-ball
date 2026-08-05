@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # 8.1 — public 8-BALL foundation: Ollama install and local API verification.
+# Install profile: ubuntu
 set -euo pipefail
 
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
@@ -87,7 +88,6 @@ start_ollama() {
 }
 
 wait_for_ollama() {
-  local attempt
   for _ in $(seq 1 30); do
     if curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then
       log "Ollama API is responding on ${OLLAMA_API}"

@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # 8.2 — public 8-BALL model selection using install-manifest.json.
+# Install profile: ubuntu
 set -euo pipefail
 
+EIGHTBALL_INSTALL_PROFILE="ubuntu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+REPO_ROOT=""
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 RESULT_FILE="${PHILOSOPHER_ROOT}/8ball-result.txt"
-MANIFEST="${EIGHTBALL_MANIFEST:-${REPO_ROOT}/data/generated/pages/install-manifest.json}"
+MANIFEST="${EIGHTBALL_MANIFEST:-}"
 REQUESTED_MODEL=""
 OLLAMA_API="${OLLAMA_API:-http://127.0.0.1:11434}"
 
@@ -21,6 +23,22 @@ EOF
 
 log() {
   printf '[8.2] %s\n' "$*"
+}
+
+resolve_repo_root() {
+  local dir="${SCRIPT_DIR}"
+  while [[ "${dir}" != "/" ]]; do
+    if [[ -f "${dir}/data/generated/pages/install-manifest.json" ]]; then
+      REPO_ROOT="${dir}"
+      return 0
+    fi
+    dir="$(dirname "${dir}")"
+  done
+  cat >&2 <<EOF
+Could not locate 8-ball repository root from ${SCRIPT_DIR}.
+Clone the full repository or set EIGHTBALL_MANIFEST to install-manifest.json.
+EOF
+  exit 1
 }
 
 parse_args() {
@@ -48,6 +66,10 @@ parse_args() {
 }
 
 require_manifest() {
+  if [[ -z "${MANIFEST}" ]]; then
+    resolve_repo_root
+    MANIFEST="${REPO_ROOT}/data/generated/pages/install-manifest.json"
+  fi
   if [[ ! -f "${MANIFEST}" ]]; then
     cat >&2 <<EOF
 Missing catalog manifest: ${MANIFEST}
@@ -165,6 +187,7 @@ write_result() {
   cat >"${RESULT_FILE}" <<EOF
 Model: ${model}
 Profile: ${model//[:\/]/-}
+Install profile: ${EIGHTBALL_INSTALL_PROFILE}
 Tier: ${tier}
 Model test: ${test_status}
 Jets status: READY_AFTER_SIGNIN

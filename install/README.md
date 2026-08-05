@@ -1,18 +1,31 @@
 # Public 8-BALL trial installers
 
-These are the **public, free/trial** Terminal.Glass 8-BALL installer scripts. They are
-intended for technical users who want to try local AI on their own Ubuntu/Debian host or
-fork the flow for experimentation.
+These are the **public, free/trial** Terminal.Glass 8-BALL installer scripts. Each
+profile directory contains a self-contained copy of the same script set so platform-
+specific and GPU-optimized flows can diverge later without cross-contamination.
 
-## What lives here
+## Profile directories
 
-| Path | Role |
+| Path | Intended target |
 | --- | --- |
-| `trial-install.sh` | Public entrypoint (`8.1` → `8.2` → `8.3`) |
-| `8.1.sh` | Foundation: packages, Ollama install, local API check |
-| `8.2.sh` | Model selection and inference test using the catalog manifest |
-| `8.3.sh` | Login MOTD and simple helper commands |
-| `assets/first-MOTD.txt` | MOTD template installed by `8.3.sh` |
+| `install/ubuntu/` | Ubuntu/Debian Linux (validated trial path) |
+| `install/mac/` | macOS (placeholder copy for future profile work) |
+| `install/windows/` | Windows / WSL (placeholder copy for future profile work) |
+| `install/cloud/aws-lightsail/` | AWS Lightsail instances |
+| `install/cloud/digitalocean-droplet/` | DigitalOcean droplets |
+
+Each profile folder contains:
+
+```text
+trial-install.sh
+8.1.sh
+8.2.sh
+8.3.sh
+assets/first-MOTD.txt
+```
+
+Scripts are duplicated per profile today. Customize a profile by editing only that
+folder's copies.
 
 ## Catalog source of truth
 
@@ -22,22 +35,20 @@ Model and deployment metadata comes from the committed catalog manifest:
 data/generated/pages/install-manifest.json
 ```
 
-`8.2.sh` reads that file. It does **not** scrape Markdown README files or guess model
-identity from folder names. See `docs/install-manifest-contract.md` for the lookup
-contract:
-
-```text
-manifest.models[model_id].deployments[deployment_type_id]
-```
-
-When you clone or fork this repository, the default manifest path is resolved relative
-to the repo root. Override with:
+`8.2.sh` walks up from its profile directory to locate the repository root and reads
+that manifest. Override explicitly when needed:
 
 ```bash
 export EIGHTBALL_MANIFEST=/path/to/install-manifest.json
 ```
 
-Regenerate the manifest after catalog changes:
+See `docs/install-manifest-contract.md` for the lookup contract:
+
+```text
+manifest.models[model_id].deployments[deployment_type_id]
+```
+
+Regenerate after catalog changes:
 
 ```bash
 python3 -m eight_ball generate
@@ -45,15 +56,10 @@ python3 -m eight_ball generate
 
 ## Public / fork-friendly scope
 
-This directory is deliberately small and self-contained:
-
 - No Passport, Stripe, S3, or license-activation logic
 - No private OpenWebUI or commercial Ollama deployment bundles
 - No customer records, fulfillment, or paid entitlement checks
 - No secrets or live commercial license endpoints
-
-A fork should be able to understand the trial flow by reading these scripts and the
-manifest contract alone.
 
 ## What stays in the private installer repository
 
@@ -66,7 +72,14 @@ Paid and commercial install work remains **outside** this public catalog repo:
 - Commercial OpenWebUI / Ollama deployment assets
 - RecordsCore, Stripe, and license-specific automation
 
-## Quick start (full repo checkout)
+## Quick start (Ubuntu)
+
+```bash
+cd install/ubuntu
+sudo ./trial-install.sh
+```
+
+Backward-compatible wrapper:
 
 ```bash
 cd install
@@ -78,14 +91,14 @@ Optional flags:
 ```bash
 sudo ./trial-install.sh --model qwen3:0.6b
 sudo ./trial-install.sh --no-motd
-sudo ./trial-install.sh --manifest ../data/generated/pages/install-manifest.json
+sudo ./trial-install.sh --manifest ../../data/generated/pages/install-manifest.json
 ```
 
 ## Validation
 
 ```bash
-bash -n install/*.sh
-shellcheck install/*.sh   # when shellcheck is available
+bash -n install/*/*.sh install/cloud/*/*.sh install/trial-install.sh
+shellcheck install/ubuntu/*.sh   # when shellcheck is available
 ```
 
 ## Support contact (public trial only)
