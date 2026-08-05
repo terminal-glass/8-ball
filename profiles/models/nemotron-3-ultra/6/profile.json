@@ -1,0 +1,71 @@
+{
+  "schema_version": "profiles.model-deployment.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/models/nemotron-3-ultra/6/info.json",
+  "source_schema_version": "c5.model-deployment-page.v1",
+  "profile": {
+    "schema_version": "c5.model-deployment-page.v1",
+    "model_id": "nemotron-3-ultra",
+    "model_slug": "nemotron-3-ultra",
+    "model_display_name": "nemotron-3-ultra",
+    "family_id": "nemotron-3-ultra",
+    "family_slug": "nemotron-3-ultra",
+    "tag_id": "nemotron-3-ultra__cloud",
+    "ollama_identifier": "nemotron-3-ultra:cloud",
+    "deployment_type_id": "6",
+    "hardware_profile_id": "cpu-small",
+    "runtime_policy_id": "batch",
+    "availability": "cloud_only",
+    "assessment": "cloud_only",
+    "reason_codes": [
+      "cloud_model",
+      "local_profile_unsuitable"
+    ],
+    "explanation": "Model is cloud-hosted; local hardware profile is not applicable for weights.",
+    "download_size_bytes": null,
+    "installed_storage_bytes_estimated": null,
+    "min_system_ram_gb_estimated": null,
+    "recommended_system_ram_gb_estimated": null,
+    "min_vram_gb_estimated": null,
+    "recommended_vram_gb_estimated": null,
+    "cpu_suitability": "practical_for_cpu_inference",
+    "gpu_suitability": "not_applicable",
+    "disk_estimate_gb": null,
+    "pull_command": "ollama pull nemotron-3-ultra:cloud",
+    "run_command": "ollama run nemotron-3-ultra:cloud",
+    "source_url": "https://ollama.com/library/nemotron-3-ultra/tags",
+    "retrieved_at": "2026-08-01T11:56:52Z",
+    "hardware_enrichment": {
+      "compatible_provider_instance_ids": [
+        "provider_instance:AWS|Lightsail for Research|gpu-2xl",
+        "provider_instance:DigitalOcean|GPU Droplets|do-gpu-rtx-4000-ada-1x"
+      ],
+      "compatible_assumed_profile_ids": [
+        "assumed_profile:cuda_large_20_24gb",
+        "assumed_profile:cuda_mid_12_16gb",
+        "assumed_profile:mac_pro_apple_silicon_32_36gb",
+        "assumed_profile:windows_nvidia_32_64gb_vram_12_16gb"
+      ],
+      "compatible_measured_host_ids": [
+        "measured_host:local-brain1-rtx3060-12gb"
+      ],
+      "accelerator_class_ids": [
+        "nvidia_cuda",
+        "unknown_gpu"
+      ],
+      "cpu_only_suitable": true,
+      "cuda_suitable": true,
+      "rocm_suitable": false,
+      "apple_metal_suitable": false,
+      "measured_host_evidence": [
+        {
+          "host_profile_id": "local-brain1-rtx3060-12gb",
+          "provenance_status": "measured_host_inventory",
+          "ollama_inference_verified": false
+        }
+      ],
+      "provenance_status": "derived_from_c6_import",
+      "hardware_data_version": "2026-08-04T07:40:36Z"
+    }
+  }
+}

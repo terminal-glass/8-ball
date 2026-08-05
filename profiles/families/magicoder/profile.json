@@ -1,0 +1,28 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/magicoder/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "magicoder",
+    "family_slug": "magicoder",
+    "publisher_id": "unknown",
+    "name": "🎩",
+    "description": "magicoder 542.3K Downloads Updated 2 years ago 🎩 Magicoder is a family of 7B parameter models trained on 75K synthetic instruction data using OSS-Instruct, a novel approach to enlightening LLMs with open-source code snippets. 🎩 Magicoder is a family of 7B parameter models trained on 75K synthetic instruction data using OSS-Instruct, a novel approach to enlightening LLMs with open-source code snippets. Cancel 7b CLI cURL Python JavaScript Documentation Documentation ollama run magicoder curl http",
+    "source_url": "https://ollama.com/library/magicoder",
+    "retrieved_at": "2026-08-01T11:55:40Z",
+    "model_count": 1,
+    "tag_count": 18,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 19
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "profiles.model.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/models/llama4-17b/model.json",
+  "source_schema_version": "c5.model-page.v1",
+  "profile": {
+    "schema_version": "c5.model-page.v1",
+    "model_id": "llama4-17b",
+    "model_slug": "llama4-17b",
+    "family_id": "llama4",
+    "family_slug": "llama4",
+    "display_name": "llama4",
+    "default_tag": "llama4:16x17b",
+    "default_tag_id": "llama4__16x17b",
+    "availability": "local",
+    "deployments": {
+      "3": {
+        "deployment_type_id": "3",
+        "available": true,
+        "assessment": "partial_gpu_offload",
+        "ollama_identifier": "llama4:16x17b",
+        "helper_path": "data/generated/pages/models/llama4-17b/3/info.json"
+      },
+      "4": {
+        "deployment_type_id": "4",
+        "available": true,
+        "assessment": "partial_gpu_offload",
+        "ollama_identifier": "llama4:16x17b",
+        "helper_path": "data/generated/pages/models/llama4-17b/4/info.json"
+      },
+      "5": {
+        "deployment_type_id": "5",
+        "available": true,
+        "assessment": "partial_gpu_offload",
+        "ollama_identifier": "llama4:16x17b",
+        "helper_path": "data/generated/pages/models/llama4-17b/5/info.json"
+      },
+      "6": {
+        "deployment_type_id": "6",
+        "available": true,
+        "assessment": "insufficient_memory",
+        "ollama_identifier": "llama4:16x17b",
+        "helper_path": "data/generated/pages/models/llama4-17b/6/info.json"
+      },
+      "7": {
+        "deployment_type_id": "7",
+        "available": true,
+        "assessment": "partial_gpu_offload",
+        "ollama_identifier": "llama4:16x17b",
+        "helper_path": "data/generated/pages/models/llama4-17b/7/info.json"
+      }
+    }
+  }
+}

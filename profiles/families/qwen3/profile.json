@@ -1,0 +1,30 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/qwen3/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "qwen3",
+    "family_slug": "qwen3",
+    "publisher_id": "alibaba-qwen",
+    "name": "qwen3",
+    "description": "Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models. Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models. Cancel",
+    "source_url": "https://ollama.com/library/qwen3",
+    "retrieved_at": "2026-08-01T11:58:24Z",
+    "model_count": 8,
+    "tag_count": 58,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "reasoning": 66,
+      "text_generation": 66,
+      "tool_use": 66
+    }
+  }
+}

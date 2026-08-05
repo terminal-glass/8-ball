@@ -1,0 +1,28 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/stablelm2/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "stablelm2",
+    "family_slug": "stablelm2",
+    "publisher_id": "unknown",
+    "name": "stablelm2",
+    "description": "stablelm2 1M Downloads Updated 2 years ago Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model trained on multilingual data in English, Spanish, German, Italian, French, Portuguese, and Dutch. Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model trained on multilingual data in English, Spanish, German, Italian, French, Portuguese, and Dutch. Cancel 1.6b 12b CLI cURL Python JavaScript Documentation Documentation ollama run stablelm2 curl http://localhost:114",
+    "source_url": "https://ollama.com/library/stablelm2",
+    "retrieved_at": "2026-08-01T11:59:26Z",
+    "model_count": 2,
+    "tag_count": 84,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 86
+    }
+  }
+}

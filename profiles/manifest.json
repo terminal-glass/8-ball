@@ -1,0 +1,37 @@
+{
+  "schema_version": "profiles.manifest.v1",
+  "generated_at": "2026-08-05T01:22:40Z",
+  "generator": {
+    "command": "eight-ball generate-root-profiles",
+    "version": "1.0.0"
+  },
+  "primary_source": {
+    "install_manifest_path": "data/generated/pages/install-manifest.json",
+    "install_manifest_schema": "c5.install-manifest.v1",
+    "install_manifest_generated_at": "2026-08-04T07:42:21Z",
+    "pages_root": "data/generated/pages"
+  },
+  "lookup_contract": "manifest.models[model_id].deployments[deployment_class_id]",
+  "deployment_class_ids": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "counts": {
+    "families": 234,
+    "models": 437,
+    "deployment_classes": 5,
+    "model_deployments": 2185,
+    "provider_assumptions": 17,
+    "index_rows": 2878
+  },
+  "paths": {
+    "index_csv": "profiles/index.csv",
+    "families": "profiles/families/",
+    "models": "profiles/models/",
+    "deployment_classes": "profiles/deployment-classes/",
+    "provider_assumptions": "profiles/provider-assumptions/"
+  }
+}

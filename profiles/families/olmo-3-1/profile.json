@@ -1,0 +1,30 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/olmo-3-1/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "olmo-3.1",
+    "family_slug": "olmo-3-1",
+    "publisher_id": "unknown",
+    "name": "olmo-3.1",
+    "description": "olmo-3.1 282.7K Downloads Updated 7 months ago Olmo is a series of Open language models designed to enable the science of language models. These models are pre-trained on the Dolma 3 dataset and post-trained on the Dolci datasets. Olmo is a series of Open language models designed to enable the science of language models. These models are pre-trained on the Dolma 3 dataset and post-trained on the Dolci datasets. Cancel tools thinking 32b CLI cURL Python JavaScript Documentation Documentation olla",
+    "source_url": "https://ollama.com/library/olmo-3.1",
+    "retrieved_at": "2026-08-01T11:57:27Z",
+    "model_count": 1,
+    "tag_count": 10,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "reasoning": 11,
+      "text_generation": 11,
+      "tool_use": 11
+    }
+  }
+}

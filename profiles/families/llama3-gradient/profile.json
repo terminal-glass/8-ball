@@ -1,0 +1,28 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/llama3-gradient/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "llama3-gradient",
+    "family_slug": "llama3-gradient",
+    "publisher_id": "unknown",
+    "name": "llama3-gradient",
+    "description": "llama3-gradient 977.4K Downloads Updated 2 years ago This model extends LLama-3 8B's context length from 8k to over 1m tokens. This model extends LLama-3 8B's context length from 8k to over 1m tokens. Cancel 8b 70b CLI cURL Python JavaScript Documentation Documentation ollama run llama3-gradient curl http://localhost:11434/api/chat \\\n  -d '{\n    \"model\": \"llama3-gradient\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n  }' from ollama import chat\n\nresponse = chat(\n    model= 'llama3-gr",
+    "source_url": "https://ollama.com/library/llama3-gradient",
+    "retrieved_at": "2026-08-01T11:55:17Z",
+    "model_count": 3,
+    "tag_count": 35,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 38
+    }
+  }
+}

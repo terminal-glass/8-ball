@@ -1,0 +1,54 @@
+{
+  "schema_version": "profiles.model.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/models/all-minilm-22m/model.json",
+  "source_schema_version": "c5.model-page.v1",
+  "profile": {
+    "schema_version": "c5.model-page.v1",
+    "model_id": "all-minilm-22m",
+    "model_slug": "all-minilm-22m",
+    "family_id": "all-minilm",
+    "family_slug": "all-minilm",
+    "display_name": "all-minilm",
+    "default_tag": "all-minilm:22m",
+    "default_tag_id": "all-minilm__22m",
+    "availability": "local",
+    "deployments": {
+      "3": {
+        "deployment_type_id": "3",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "all-minilm:22m",
+        "helper_path": "data/generated/pages/models/all-minilm-22m/3/info.json"
+      },
+      "4": {
+        "deployment_type_id": "4",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "all-minilm:22m",
+        "helper_path": "data/generated/pages/models/all-minilm-22m/4/info.json"
+      },
+      "5": {
+        "deployment_type_id": "5",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "all-minilm:22m",
+        "helper_path": "data/generated/pages/models/all-minilm-22m/5/info.json"
+      },
+      "6": {
+        "deployment_type_id": "6",
+        "available": true,
+        "assessment": "cpu_only_practical",
+        "ollama_identifier": "all-minilm:22m",
+        "helper_path": "data/generated/pages/models/all-minilm-22m/6/info.json"
+      },
+      "7": {
+        "deployment_type_id": "7",
+        "available": true,
+        "assessment": "full_gpu_fit",
+        "ollama_identifier": "all-minilm:22m",
+        "helper_path": "data/generated/pages/models/all-minilm-22m/7/info.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/nemotron-3-super/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "nemotron-3-super",
+    "family_slug": "nemotron-3-super",
+    "publisher_id": "unknown",
+    "name": "nemotron-3-super",
+    "description": "nemotron-3-super 2.9M Downloads Updated 4 months ago NVIDIA Nemotron 3 Super is a 120B open MoE model activating just 12B parameters to deliver maximum compute efficiency and accuracy for complex multi-agent applications. NVIDIA Nemotron 3 Super is a 120B open MoE model activating just 12B parameters to deliver maximum compute efficiency and accuracy for complex multi-agent applications. Cancel tools thinking cloud 120b CLI cURL Python JavaScript Documentation Documentation ollama run nemotron-3",
+    "source_url": "https://ollama.com/library/nemotron-3-super",
+    "retrieved_at": "2026-08-01T11:56:48Z",
+    "model_count": 1,
+    "tag_count": 7,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "cloud": 8,
+      "reasoning": 8,
+      "text_generation": 8,
+      "tool_use": 8
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "profiles.deployment-class.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/deployment-types/6/info.json",
+  "source_schema_version": "c5.deployment-type-page.v1",
+  "profile": {
+    "schema_version": "c5.deployment-type-page.v1",
+    "deployment_type_id": "6",
+    "display_name": "CPU Gate",
+    "description": "CPU qualification gate. Filters variants based on CPU thread count and CPU-only practical assessment.\n",
+    "hardware_profile_ids": [
+      "cpu-small",
+      "desktop-standard",
+      "server-high-mem"
+    ],
+    "runtime_policy_ids": [
+      "interactive",
+      "long_context",
+      "batch"
+    ],
+    "minimum_ram_gb": null,
+    "recommended_ram_gb": null,
+    "minimum_vram_gb": null,
+    "recommended_vram_gb": null,
+    "disk_estimate_gb": null,
+    "cpu_suitability": "practical_for_cpu_inference",
+    "gpu_suitability": "not_applicable",
+    "compatible_model_count": 370,
+    "constrained_model_count": 14,
+    "unsuitable_model_count": 53,
+    "assessment_breakdown": {
+      "cloud_only": 14,
+      "cpu_only_practical": 370,
+      "insufficient_memory": 53
+    }
+  }
+}

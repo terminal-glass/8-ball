@@ -1,0 +1,28 @@
+{
+  "schema_version": "profiles.family.v1",
+  "provenance_status": "derived_from_c5_pages",
+  "source_path": "data/generated/pages/families/exaone3-5/info.json",
+  "source_schema_version": "c5.family-page.v1",
+  "profile": {
+    "schema_version": "c5.family-page.v1",
+    "family_id": "exaone3.5",
+    "family_slug": "exaone3-5",
+    "publisher_id": "unknown",
+    "name": "exaone3.5",
+    "description": "exaone3.5 536.1K Downloads Updated 1 year ago EXAONE 3.5 is a collection of instruction-tuned bilingual (English and Korean) generative models ranging from 2.4B to 32B parameters, developed and released by LG AI Research. EXAONE 3.5 is a collection of instruction-tuned bilingual (English and Korean) generative models ranging from 2.4B to 32B parameters, developed and released by LG AI Research. Cancel 2.4b 7.8b 32b CLI cURL Python JavaScript Documentation Documentation ollama run exaone3.5 curl ",
+    "source_url": "https://ollama.com/library/exaone3.5",
+    "retrieved_at": "2026-08-01T11:53:21Z",
+    "model_count": 3,
+    "tag_count": 13,
+    "deployment_type_ids": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "capability_summary": {
+      "text_generation": 16
+    }
+  }
+}
