@@ -40,6 +40,7 @@ Keep these directories distinguishable:
 | `data/generated/` | Reproducible generated recommendations, exports, and indexes | Do not commit |
 | `data/generated/pages/` | C5 generated metadata page tree (families, deployment-types, models) | Commit when regenerated |
 | `reports/` | Human-readable reports; machine summaries are reproducible | Commit markdown optionally; JSON reports are reproducible |
+| `install/` | Public free/trial installer scripts (`trial-install.sh`, `8.1`–`8.3`) | Commit |
 | `indexes/` | Generated metadata indexes derived from normalized records | Do not commit |
 | `tests/fixtures/` | Offline fixtures for tests | Commit |
 
@@ -105,7 +106,8 @@ Agents must not:
 - mirror model binaries;
 - package model weights;
 - store Ollama model directories;
-- generate `8.sh` or other installer scripts;
+- generate `8.sh` or other **paid** installer scripts;
+- add Passport, Stripe, S3 release bundles, or license fulfillment logic to this repo;
 - modify deployment repositories;
 - modify Passport or RecordsCore;
 - upload artifacts to S3;
