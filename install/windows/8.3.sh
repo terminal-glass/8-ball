@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # 8.3 — public 8-BALL login MOTD and remember helper (no network calls on login).
+# Install profile: windows
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
