@@ -59,7 +59,7 @@ def load_csv_rows(path: Path) -> list[dict[str, str]]:
 
 
 def load_digitalocean_gpu_plans(repo_root: Path = REPO_ROOT) -> list[dict[str, Any]]:
-    csv_path = repo_root / "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv"
+    csv_path = repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv"
     if not csv_path.is_file():
         return []
     plans: list[dict[str, Any]] = []
@@ -99,8 +99,8 @@ def smallest_digitalocean_gpu_plan(plans: list[dict[str, Any]]) -> dict[str, Any
 
 
 def load_aws_lightsail_gpu_plans(repo_root: Path = REPO_ROOT) -> list[dict[str, Any]]:
-    research_path = repo_root / "AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv"
-    provisional_path = repo_root / "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+    research_path = repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv"
+    provisional_path = repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
     research_by_plan: dict[str, dict[str, str]] = {}
     if research_path.is_file():
         for row in load_csv_rows(research_path):

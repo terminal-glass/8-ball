@@ -52,7 +52,7 @@ profiles/provider-assumptions/cloud-aws-lightsail-gpu.json
 
 1. `AGENTS/data-science/ollama-mapping/` does not exist. Normalized catalog input used instead.
 
-2. AWS Lightsail GPU VRAM/CUDA/Ollama GPU support remain **unknown** until runtime probe upgrades `AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv` — see `C10.1-1-executable-install-matrix/DATA-GAP.md`.
+2. AWS Lightsail GPU VRAM/CUDA/Ollama GPU support remain **unknown** until runtime probe upgrades `AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv` — see `C10.1-1-executable-install-matrix/DATA-GAP.md`.
 
 3. Per-tag RAM/VRAM for non-default tags uses `estimated` values derived from `download_size_bytes` when manifest deployment estimates are absent.
 

@@ -89,11 +89,11 @@ P4 only describes static workload assumptions for Glass Agent and automation-sty
 Run the offline validator:
 
 ```bash
-python3 AGENTS/data-science/P4-Workload-Profiles/scripts/validate-workloads.py
+python3 AGENTS/data-science/ollama-mapping/P4-Workload-Profiles/scripts/validate-workloads.py
 ```
 
 If `pytest` is available, run:
 
 ```bash
-pytest -q AGENTS/data-science/P4-Workload-Profiles/tests
+pytest -q AGENTS/data-science/ollama-mapping/P4-Workload-Profiles/tests
 ```

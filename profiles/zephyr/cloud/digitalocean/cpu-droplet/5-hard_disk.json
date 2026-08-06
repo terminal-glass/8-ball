@@ -5,7 +5,7 @@
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
   "generated_at": "2026-08-06T02:17:56Z",
   "provenance": {
-    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
   },
   "applicable": true,

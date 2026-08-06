@@ -40,9 +40,9 @@
 - `unknown`: 229
 
 ## Artifacts
-- `AGENTS/data-science/P4-Public-Catalog/manifest.json`
-- `AGENTS/data-science/P4-Public-Catalog/index/families.json`
-- `AGENTS/data-science/P4-Public-Catalog/index/models.json`
+- `AGENTS/data-science/ollama-mapping/P4-Public-Catalog/manifest.json`
+- `AGENTS/data-science/ollama-mapping/P4-Public-Catalog/index/families.json`
+- `AGENTS/data-science/ollama-mapping/P4-Public-Catalog/index/models.json`
 - `schemas/public-catalog-manifest.schema.json`
-- `AGENTS/data-science/P4-Public-Catalog/CONSUMPTION.md`
-- `AGENTS/data-science/P4-Public-Catalog/CLASSIFICATIONS.md`
+- `AGENTS/data-science/ollama-mapping/P4-Public-Catalog/CONSUMPTION.md`
+- `AGENTS/data-science/ollama-mapping/P4-Public-Catalog/CLASSIFICATIONS.md`

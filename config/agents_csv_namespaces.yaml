@@ -82,7 +82,7 @@ namespaces:
 sources:
   # --- provider_instance_data (CSV) ---
   - id: aws-lightsail-research-gpu-plans
-    path: AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv
     namespace: provider_instance_data
     format: csv
     provider_field: provider
@@ -90,7 +90,7 @@ sources:
     plan_id_field: provider_plan_id
 
   - id: digitalocean-gpu-droplets-nvidia
-    path: AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv
     namespace: provider_instance_data
     format: csv
     provider_field: provider
@@ -98,7 +98,7 @@ sources:
     plan_id_field: internal_plan_id
 
   - id: digitalocean-gpu-droplets-amd
-    path: AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-AMD.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-AMD.csv
     namespace: provider_instance_data
     format: csv
     provider_field: provider
@@ -107,7 +107,7 @@ sources:
 
   # --- provider_instance_data (P2 JSON, CPU bundles / droplets) ---
   - id: lightsail-linux-ipv4-bundles
-    path: AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json
+    path: AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json
     namespace: provider_instance_data
     format: json_array
     provider_value: AWS
@@ -115,7 +115,7 @@ sources:
     plan_id_field: bundle_id
 
   - id: digitalocean-basic
-    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/basic.json
+    path: AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/basic.json
     namespace: provider_instance_data
     format: json_array
     provider_field: provider
@@ -123,7 +123,7 @@ sources:
     plan_id_field: plan_slug
 
   - id: digitalocean-cpu-optimized
-    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/cpu-optimized.json
+    path: AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/cpu-optimized.json
     namespace: provider_instance_data
     format: json_array
     provider_field: provider
@@ -131,7 +131,7 @@ sources:
     plan_id_field: plan_slug
 
   - id: digitalocean-general-purpose
-    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json
+    path: AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json
     namespace: provider_instance_data
     format: json_array
     provider_field: provider
@@ -139,7 +139,7 @@ sources:
     plan_id_field: plan_slug
 
   - id: digitalocean-memory-optimized
-    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/memory-optimized.json
+    path: AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/memory-optimized.json
     namespace: provider_instance_data
     format: json_array
     provider_field: provider
@@ -147,7 +147,7 @@ sources:
     plan_id_field: plan_slug
 
   - id: digitalocean-storage-optimized
-    path: AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/storage-optimized.json
+    path: AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/storage-optimized.json
     namespace: provider_instance_data
     format: json_array
     provider_field: provider
@@ -156,27 +156,27 @@ sources:
 
   # --- assumed_hardware_profiles ---
   - id: client-hardware-assumptions
-    path: AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv
     namespace: assumed_hardware_profiles
     format: csv
     profile_id_field: profile_id
 
   - id: cuda-server-assumptions
-    path: AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv
     namespace: assumed_hardware_profiles
     format: csv
     profile_id_field: profile_id
 
   # --- measured_hardware_inventory ---
   - id: measured-gpu-hosts
-    path: AGENTS/TG-8Ball-Measured-GPU-Hosts.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-Measured-GPU-Hosts.csv
     namespace: measured_hardware_inventory
     format: csv
     host_profile_id_field: host_profile_id
 
   # --- classification_data ---
   - id: accelerator-classes
-    path: AGENTS/TG-8Ball-Accelerator-Classes.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv
     namespace: classification_data
     format: csv
     classification_kind: accelerator
@@ -190,43 +190,43 @@ sources:
 
   # --- control_and_provenance ---
   - id: gpu-source-inventory
-    path: AGENTS/TG-8Ball-GPU-Source-Inventory.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-GPU-Source-Inventory.csv
     namespace: control_and_provenance
     format: csv
     control_kind: source_inventory
 
   - id: gpu-recovered-counts
-    path: AGENTS/TG-8Ball-GPU-Recovered-Counts.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-GPU-Recovered-Counts.csv
     namespace: control_and_provenance
     format: csv
     control_kind: recovered_counts
 
   - id: gpu-cursor-checklist
-    path: AGENTS/TG-8Ball-GPU-Cursor-Checklist.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-GPU-Cursor-Checklist.csv
     namespace: control_and_provenance
     format: csv
     control_kind: cursor_checklist
 
   - id: provider-recovery-source-inventory
-    path: AGENTS/TG-8Ball-Provider-Recovery-Source-Inventory.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-Provider-Recovery-Source-Inventory.csv
     namespace: control_and_provenance
     format: csv
     control_kind: source_inventory
 
   - id: provider-recovery-recovered-counts
-    path: AGENTS/TG-8Ball-Provider-Recovery-Recovered-Counts.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-Provider-Recovery-Recovered-Counts.csv
     namespace: control_and_provenance
     format: csv
     control_kind: recovered_counts
 
   - id: provider-recovery-cursor-checklist
-    path: AGENTS/TG-8Ball-Provider-Recovery-Cursor-Checklist.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-Provider-Recovery-Cursor-Checklist.csv
     namespace: control_and_provenance
     format: csv
     control_kind: cursor_checklist
 
   - id: aws-lightsail-gpu-provisional-behavior
-    path: AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv
+    path: AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv
     namespace: control_and_provenance
     format: csv
     control_kind: provisional_behavior

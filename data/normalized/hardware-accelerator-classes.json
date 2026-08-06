@@ -15,7 +15,7 @@
     "source_reference": "https://docs.ollama.com/gpu",
     "validation_status": "imported",
     "notes": "Do not label AMD hardware CUDA. Keep ROCm separate from NVIDIA.",
-    "source_file": "AGENTS/TG-8Ball-Accelerator-Classes.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv",
     "source_id": "accelerator-classes",
     "source_row": 5
   },
@@ -35,7 +35,7 @@
     "source_reference": "https://docs.ollama.com/gpu",
     "validation_status": "imported",
     "notes": "Already represented in the laptop assumptions file; included here for class completeness.",
-    "source_file": "AGENTS/TG-8Ball-Accelerator-Classes.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv",
     "source_id": "accelerator-classes",
     "source_row": 6
   },
@@ -55,7 +55,7 @@
     "source_reference": "https://docs.ollama.com/faq",
     "validation_status": "imported",
     "notes": "Default when no usable accelerator is detected.",
-    "source_file": "AGENTS/TG-8Ball-Accelerator-Classes.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv",
     "source_id": "accelerator-classes",
     "source_row": 2
   },
@@ -75,7 +75,7 @@
     "source_reference": "https://docs.ollama.com/gpu",
     "validation_status": "imported",
     "notes": "Runtime detection remains mandatory; provider label alone is not proof that Ollama can use the GPU.",
-    "source_file": "AGENTS/TG-8Ball-Accelerator-Classes.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv",
     "source_id": "accelerator-classes",
     "source_row": 3
   },
@@ -95,7 +95,7 @@
     "source_reference": "https://docs.ollama.com/gpu",
     "validation_status": "imported",
     "notes": "Do not collapse per-device VRAM into one value; preserve GPU count and each device capacity.",
-    "source_file": "AGENTS/TG-8Ball-Accelerator-Classes.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv",
     "source_id": "accelerator-classes",
     "source_row": 4
   },
@@ -115,7 +115,7 @@
     "source_reference": null,
     "validation_status": "imported",
     "notes": "Required for AWS Lightsail for Research GPU plans because the plan table does not disclose GPU model or VRAM.",
-    "source_file": "AGENTS/TG-8Ball-Accelerator-Classes.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv",
     "source_id": "accelerator-classes",
     "source_row": 8
   },
@@ -135,7 +135,7 @@
     "source_reference": "https://docs.ollama.com/gpu",
     "validation_status": "imported",
     "notes": "Use only after explicit Vulkan detection and inference validation.",
-    "source_file": "AGENTS/TG-8Ball-Accelerator-Classes.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv",
     "source_id": "accelerator-classes",
     "source_row": 7
   }

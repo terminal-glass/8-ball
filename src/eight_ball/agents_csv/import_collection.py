@@ -71,7 +71,9 @@ class ImportReport:
 
 
 def discover_agents_csv_files(*, repo_root: Path = REPO_ROOT) -> list[Path]:
-    return sorted((repo_root / "AGENTS").glob("TG-8Ball-*.csv"))
+    return sorted(
+        (repo_root / "AGENTS" / "data-science" / "profile-mapping").glob("TG-8Ball-*.csv")
+    )
 
 
 def _classification_label(namespace: str, *, classification_kind: str | None = None) -> str:
@@ -599,9 +601,9 @@ def import_hardware_collection(
     )
     report.provider_cpu_count = len(provider_instances) - report.provider_gpu_count
 
-    gpu_counts = _parse_recovered_counts(repo_root / "AGENTS/TG-8Ball-GPU-Recovered-Counts.csv")
+    gpu_counts = _parse_recovered_counts(repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-GPU-Recovered-Counts.csv")
     provider_counts = _parse_recovered_counts(
-        repo_root / "AGENTS/TG-8Ball-Provider-Recovery-Recovered-Counts.csv"
+        repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-Provider-Recovery-Recovered-Counts.csv"
     )
     contract_checks = [
         (

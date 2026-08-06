@@ -9,7 +9,7 @@ P4 public catalog projection without coupling to internal normalized entity file
 eight-ball publish-catalog
 ```
 
-Output root: `AGENTS/data-science/P4-Public-Catalog/`
+Output root: `AGENTS/data-science/ollama-mapping/P4-Public-Catalog/`
 
 ## Read order
 

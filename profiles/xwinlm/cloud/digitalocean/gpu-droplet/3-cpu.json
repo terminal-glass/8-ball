@@ -5,7 +5,7 @@
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
   "generated_at": "2026-08-06T02:17:56Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
   },
   "applicable": true,

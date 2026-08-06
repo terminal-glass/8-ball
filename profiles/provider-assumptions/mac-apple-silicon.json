@@ -19,13 +19,13 @@
     "total_vram_gb": null,
     "cuda_available": false,
     "apple_metal_available": null,
-    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
   "fallback_profile_id": "mac_air_apple_silicon_8gb",
   "assumed_profile_id": "mac_air_apple_silicon_16gb",
   "source_paths": [
-    "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv"
+    "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv"
   ],
   "generated_at": "2026-08-06T02:17:54Z",
   "installer_reference": "install/mac/apple-silicon/trial-install.sh",
