@@ -3,10 +3,10 @@
   "model_slug": "olmo-3",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T05:53:10Z",
+  "generated_at": "2026-08-06T06:40:20Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
-    "provenance_status": "provisional"
+    "provenance_status": "provisional_hypothesis"
   },
   "applicable": false,
   "fallback_lane": "cloud/aws-lightsail/cpu",
