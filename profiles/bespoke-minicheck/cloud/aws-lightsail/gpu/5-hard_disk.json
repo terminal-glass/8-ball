@@ -3,10 +3,10 @@
   "model_slug": "bespoke-minicheck",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T06:40:18Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
-    "provenance_status": "provisional"
+    "provenance_status": "provisional_hypothesis"
   },
   "applicable": true,
   "minimum_free_disk_gb": 50.0,
