@@ -1,0 +1,44 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "functiongemma",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "270m",
+      "ollama_ref": "functiongemma:270m",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "270m-it-fp16",
+      "ollama_ref": "functiongemma:270m-it-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "270m-it-q80",
+      "ollama_ref": "functiongemma:270m-it-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "functiongemma:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

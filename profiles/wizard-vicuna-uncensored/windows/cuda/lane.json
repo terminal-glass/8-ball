@@ -1,0 +1,314 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "wizard-vicuna-uncensored",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T02:17:56Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "30b",
+      "ollama_ref": "wizard-vicuna-uncensored:30b",
+      "fits": false,
+      "reason": "requires 31.05 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-fp16",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-fp16",
+      "fits": false,
+      "reason": "requires 85.1 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q2-k",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q2_K",
+      "fits": false,
+      "reason": "requires 26.45 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q3-k-l",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q3_K_L",
+      "fits": false,
+      "reason": "requires 29.9 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q3-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q3_K_M",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q3-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q3_K_S",
+      "fits": false,
+      "reason": "requires 26.45 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q4-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q4_K_M",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q4-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q4_K_S",
+      "fits": false,
+      "reason": "requires 31.05 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q40",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q4_0",
+      "fits": false,
+      "reason": "requires 31.05 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q41",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q4_1",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q5-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q5_K_M",
+      "fits": false,
+      "reason": "requires 36.8 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q5-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q5_K_S",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q50",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q5_0",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q51",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q5_1",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q6-k",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q6_K",
+      "fits": false,
+      "reason": "requires 41.4 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "30b-q80",
+      "ollama_ref": "wizard-vicuna-uncensored:30b-q8_0",
+      "fits": false,
+      "reason": "requires 50.6 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "13b",
+      "ollama_ref": "wizard-vicuna-uncensored:13b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-fp16",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-fp16",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "13b-q2-k",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q3-k-l",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q3-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q3-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q4-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q4-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q40",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q41",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q5-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q5-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q50",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q51",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q6-k",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q80",
+      "ollama_ref": "wizard-vicuna-uncensored:13b-q8_0",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "wizard-vicuna-uncensored:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q2-k",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-l",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q40",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q41",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-m",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-s",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q50",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q51",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q6-k",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "wizard-vicuna-uncensored:7b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "wizard-vicuna-uncensored:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

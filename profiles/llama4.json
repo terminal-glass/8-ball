@@ -1,0 +1,232 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "llama4",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "128x17b",
+      "ollama_ref": "llama4:128x17b",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 245000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 283.47,
+        "recommended_system_ram_gb": 340.17,
+        "min_vram_gb": 281.75,
+        "recommended_vram_gb": 283.47,
+        "min_disk_gb": 299.0
+      }
+    },
+    {
+      "size_slug": "16x17b",
+      "ollama_ref": "llama4:16x17b",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 67000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 78.77,
+        "recommended_system_ram_gb": 94.53,
+        "min_vram_gb": 77.05,
+        "recommended_vram_gb": 78.77,
+        "min_disk_gb": 85.4
+      }
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-fp16",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-fp16",
+      "parameter_count": 17000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 803000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 930.06,
+        "recommended_system_ram_gb": 1116.07,
+        "min_vram_gb": 923.45,
+        "recommended_vram_gb": 930.06,
+        "min_disk_gb": 968.6
+      }
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q4_K_M",
+      "parameter_count": 17000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 245000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 288.36,
+        "recommended_system_ram_gb": 346.03,
+        "min_vram_gb": 281.75,
+        "recommended_vram_gb": 288.36,
+        "min_disk_gb": 299.0
+      }
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q80",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q8_0",
+      "parameter_count": 17000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 428000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 498.81,
+        "recommended_system_ram_gb": 598.57,
+        "min_vram_gb": 492.2,
+        "recommended_vram_gb": 498.81,
+        "min_disk_gb": 518.6
+      }
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-fp16",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-fp16",
+      "parameter_count": 17000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 217000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 256.16,
+        "recommended_system_ram_gb": 307.39,
+        "min_vram_gb": 249.55,
+        "recommended_vram_gb": 256.16,
+        "min_disk_gb": 265.4
+      }
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q4_K_M",
+      "parameter_count": 17000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 67000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 83.66,
+        "recommended_system_ram_gb": 100.39,
+        "min_vram_gb": 77.05,
+        "recommended_vram_gb": 83.66,
+        "min_disk_gb": 85.4
+      }
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q80",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q8_0",
+      "parameter_count": 17000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 117000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 141.16,
+        "recommended_system_ram_gb": 169.39,
+        "min_vram_gb": 134.55,
+        "recommended_vram_gb": 141.16,
+        "min_disk_gb": 145.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama4:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 67000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 78.77,
+        "recommended_system_ram_gb": 94.53,
+        "min_vram_gb": 77.05,
+        "recommended_vram_gb": 78.77,
+        "min_disk_gb": 85.4
+      }
+    },
+    {
+      "size_slug": "maverick",
+      "ollama_ref": "llama4:maverick",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 245000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 283.47,
+        "recommended_system_ram_gb": 340.17,
+        "min_vram_gb": 281.75,
+        "recommended_vram_gb": 283.47,
+        "min_disk_gb": 299.0
+      }
+    },
+    {
+      "size_slug": "scout",
+      "ollama_ref": "llama4:scout",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 67000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama4/tags",
+        "retrieved_at": "2026-08-01T11:55:32Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 78.77,
+        "recommended_system_ram_gb": 94.53,
+        "min_vram_gb": 77.05,
+        "recommended_vram_gb": 78.77,
+        "min_disk_gb": 85.4
+      }
+    }
+  ],
+  "promoted_size_slug": "128x17b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

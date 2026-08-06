@@ -1,0 +1,50 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "command-r7b-arabic",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "command-r7b-arabic:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b022025-fp16",
+      "ollama_ref": "command-r7b-arabic:7b-02-2025-fp16",
+      "fits": false,
+      "reason": "requires 18.4 GB VRAM; lane provides 16.0 GB"
+    },
+    {
+      "size_slug": "7b022025-q4-k-m",
+      "ollama_ref": "command-r7b-arabic:7b-02-2025-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b022025-q80",
+      "ollama_ref": "command-r7b-arabic:7b-02-2025-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "command-r7b-arabic:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

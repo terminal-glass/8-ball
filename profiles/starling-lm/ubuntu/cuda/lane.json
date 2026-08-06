@@ -1,0 +1,236 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "starling-lm",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "starling-lm:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha",
+      "ollama_ref": "starling-lm:7b-alpha",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-fp16",
+      "ollama_ref": "starling-lm:7b-alpha-fp16",
+      "fits": false,
+      "reason": "requires 16.1 GB VRAM; lane provides 16.0 GB"
+    },
+    {
+      "size_slug": "7b-alpha-q2-k",
+      "ollama_ref": "starling-lm:7b-alpha-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q3-k-l",
+      "ollama_ref": "starling-lm:7b-alpha-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q3-k-m",
+      "ollama_ref": "starling-lm:7b-alpha-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q3-k-s",
+      "ollama_ref": "starling-lm:7b-alpha-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q4-k-m",
+      "ollama_ref": "starling-lm:7b-alpha-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q4-k-s",
+      "ollama_ref": "starling-lm:7b-alpha-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q40",
+      "ollama_ref": "starling-lm:7b-alpha-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q41",
+      "ollama_ref": "starling-lm:7b-alpha-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q5-k-m",
+      "ollama_ref": "starling-lm:7b-alpha-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q5-k-s",
+      "ollama_ref": "starling-lm:7b-alpha-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q50",
+      "ollama_ref": "starling-lm:7b-alpha-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q51",
+      "ollama_ref": "starling-lm:7b-alpha-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q6-k",
+      "ollama_ref": "starling-lm:7b-alpha-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-alpha-q80",
+      "ollama_ref": "starling-lm:7b-alpha-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta",
+      "ollama_ref": "starling-lm:7b-beta",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-fp16",
+      "ollama_ref": "starling-lm:7b-beta-fp16",
+      "fits": false,
+      "reason": "requires 16.1 GB VRAM; lane provides 16.0 GB"
+    },
+    {
+      "size_slug": "7b-beta-q2-k",
+      "ollama_ref": "starling-lm:7b-beta-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q3-k-l",
+      "ollama_ref": "starling-lm:7b-beta-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q3-k-m",
+      "ollama_ref": "starling-lm:7b-beta-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q3-k-s",
+      "ollama_ref": "starling-lm:7b-beta-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q4-k-m",
+      "ollama_ref": "starling-lm:7b-beta-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q4-k-s",
+      "ollama_ref": "starling-lm:7b-beta-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q40",
+      "ollama_ref": "starling-lm:7b-beta-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q41",
+      "ollama_ref": "starling-lm:7b-beta-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q5-k-m",
+      "ollama_ref": "starling-lm:7b-beta-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q5-k-s",
+      "ollama_ref": "starling-lm:7b-beta-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q50",
+      "ollama_ref": "starling-lm:7b-beta-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q51",
+      "ollama_ref": "starling-lm:7b-beta-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q6-k",
+      "ollama_ref": "starling-lm:7b-beta-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-beta-q80",
+      "ollama_ref": "starling-lm:7b-beta-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "alpha",
+      "ollama_ref": "starling-lm:alpha",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "beta",
+      "ollama_ref": "starling-lm:beta",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "starling-lm:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

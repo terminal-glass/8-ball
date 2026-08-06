@@ -1,0 +1,62 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "dbrx",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "132b",
+      "ollama_ref": "dbrx:132b",
+      "fits": false,
+      "reason": "requires 124.77 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-fp16",
+      "ollama_ref": "dbrx:132b-instruct-fp16",
+      "fits": false,
+      "reason": "requires 342.12 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-q2-k",
+      "ollama_ref": "dbrx:132b-instruct-q2_K",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-q40",
+      "ollama_ref": "dbrx:132b-instruct-q4_0",
+      "fits": false,
+      "reason": "requires 124.77 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-q80",
+      "ollama_ref": "dbrx:132b-instruct-q8_0",
+      "fits": false,
+      "reason": "requires 200.67 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "dbrx:instruct",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "dbrx:latest",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

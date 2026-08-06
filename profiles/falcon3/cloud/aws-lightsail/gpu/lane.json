@@ -1,0 +1,122 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "falcon3",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "10b",
+      "ollama_ref": "falcon3:10b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10b-instruct-fp16",
+      "ollama_ref": "falcon3:10b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10b-instruct-q4-k-m",
+      "ollama_ref": "falcon3:10b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10b-instruct-q80",
+      "ollama_ref": "falcon3:10b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "falcon3:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-instruct-fp16",
+      "ollama_ref": "falcon3:7b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-instruct-q4-k-m",
+      "ollama_ref": "falcon3:7b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-instruct-q80",
+      "ollama_ref": "falcon3:7b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "falcon3:3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-fp16",
+      "ollama_ref": "falcon3:3b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q4-k-m",
+      "ollama_ref": "falcon3:3b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q80",
+      "ollama_ref": "falcon3:3b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1b",
+      "ollama_ref": "falcon3:1b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1b-instruct-fp16",
+      "ollama_ref": "falcon3:1b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1b-instruct-q4-k-m",
+      "ollama_ref": "falcon3:1b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1b-instruct-q80",
+      "ollama_ref": "falcon3:1b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "falcon3:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

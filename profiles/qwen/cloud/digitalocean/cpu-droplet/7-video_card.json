@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": false,
+  "cuda_available": false,
+  "apple_metal_available": false,
+  "total_vram_gb": null,
+  "reason": "DigitalOcean CPU droplet lane; no GPU assumed."
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "translategemma",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "27b",
+      "ollama_ref": "translategemma:27b",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "27b-it-bf16",
+      "ollama_ref": "translategemma:27b-it-bf16",
+      "fits": false,
+      "reason": "requires 72.74 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "27b-it-q4-k-m",
+      "ollama_ref": "translategemma:27b-it-q4_K_M",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "27b-it-q80",
+      "ollama_ref": "translategemma:27b-it-q8_0",
+      "fits": false,
+      "reason": "requires 43.99 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "12b",
+      "ollama_ref": "translategemma:12b",
+      "fits": false,
+      "reason": "requires 14.49 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "12b-it-bf16",
+      "ollama_ref": "translategemma:12b-it-bf16",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "12b-it-q4-k-m",
+      "ollama_ref": "translategemma:12b-it-q4_K_M",
+      "fits": false,
+      "reason": "requires 14.49 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "12b-it-q80",
+      "ollama_ref": "translategemma:12b-it-q8_0",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "translategemma:4b",
+      "fits": false,
+      "reason": "requires 6.67 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "4b-it-bf16",
+      "ollama_ref": "translategemma:4b-it-bf16",
+      "fits": false,
+      "reason": "requires 12.76 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "4b-it-q4-k-m",
+      "ollama_ref": "translategemma:4b-it-q4_K_M",
+      "fits": false,
+      "reason": "requires 6.67 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "4b-it-q80",
+      "ollama_ref": "translategemma:4b-it-q8_0",
+      "fits": false,
+      "reason": "requires 8.51 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "translategemma:latest",
+      "fits": false,
+      "reason": "requires 5.52 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

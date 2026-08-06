@@ -1,0 +1,56 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "devstral-small-2",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "24b",
+      "ollama_ref": "devstral-small-2:24b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "24b-cloud",
+      "ollama_ref": "devstral-small-2:24b-cloud",
+      "fits": false,
+      "reason": "requires 62.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "24b-instruct2512-fp16",
+      "ollama_ref": "devstral-small-2:24b-instruct-2512-fp16",
+      "fits": false,
+      "reason": "requires 62.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "24b-instruct2512-q4-k-m",
+      "ollama_ref": "devstral-small-2:24b-instruct-2512-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "24b-instruct2512-q80",
+      "ollama_ref": "devstral-small-2:24b-instruct-2512-q8_0",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "devstral-small-2:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

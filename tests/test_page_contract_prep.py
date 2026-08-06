@@ -21,7 +21,7 @@ EXPECTED_DEPLOYMENT_TYPE_IDS = ("3", "4", "5", "6", "7")
 AGENT_DOC_PATHS = (
     REPO_ROOT / "AGENTS.md",
     REPO_ROOT / "docs" / "install-manifest-contract.md",
-    REPO_ROOT / "AGENTS" / "cursorFileC5-profile-folder-structure.md",
+    REPO_ROOT / "AGENTS" / "history" / "cursorFileC5-profile-folder-structure.md",
     REPO_ROOT / "profiles" / "README.md",
 )
 
@@ -29,7 +29,7 @@ AGENT_DOC_PATHS = (
 GENERATED_PAGES_BAD_REFERENCE_EXCLUDES = (
     "tests/test_c2_profiles.py",
     "src/eight_ball/generate/profiles.py",
-    "AGENTS/CursorFileC2-environment-artifact-sequencing.md",
+    "AGENTS/history/",
 )
 
 
@@ -117,6 +117,8 @@ def test_no_agent_docs_instruct_generating_02_models_under_generated_pages() -> 
             rel = path.relative_to(REPO_ROOT).as_posix()
             if any(rel.startswith(prefix) or rel == prefix for prefix in GENERATED_PAGES_BAD_REFERENCE_EXCLUDES):
                 continue
+            if "/history/" in rel:
+                continue
             text = path.read_text(encoding="utf-8", errors="replace")
             for pattern in bad_patterns:
                 if pattern.search(text):
@@ -125,8 +127,8 @@ def test_no_agent_docs_instruct_generating_02_models_under_generated_pages() -> 
 
 
 def test_c5_doc_forbids_02_models_page_tree() -> None:
-    c5 = (REPO_ROOT / "AGENTS" / "cursorFileC5-profile-folder-structure.md").read_text(
-        encoding="utf-8"
-    )
+    c5 = (
+        REPO_ROOT / "AGENTS" / "history" / "cursorFileC5-profile-folder-structure.md"
+    ).read_text(encoding="utf-8")
     assert "Do not create or use 02-models" in c5
     assert "data/generated/pages/models/" in c5

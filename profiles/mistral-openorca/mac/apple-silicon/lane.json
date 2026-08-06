@@ -1,0 +1,122 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "mistral-openorca",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "mistral-openorca:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "mistral-openorca:7b-fp16",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "7b-q2-k",
+      "ollama_ref": "mistral-openorca:7b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-l",
+      "ollama_ref": "mistral-openorca:7b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-m",
+      "ollama_ref": "mistral-openorca:7b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-s",
+      "ollama_ref": "mistral-openorca:7b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "mistral-openorca:7b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-s",
+      "ollama_ref": "mistral-openorca:7b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q40",
+      "ollama_ref": "mistral-openorca:7b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q41",
+      "ollama_ref": "mistral-openorca:7b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-m",
+      "ollama_ref": "mistral-openorca:7b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-s",
+      "ollama_ref": "mistral-openorca:7b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q50",
+      "ollama_ref": "mistral-openorca:7b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q51",
+      "ollama_ref": "mistral-openorca:7b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q6-k",
+      "ollama_ref": "mistral-openorca:7b-q6_K",
+      "fits": false,
+      "reason": "requires 10.52 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "mistral-openorca:7b-q8_0",
+      "fits": false,
+      "reason": "requires 12.59 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "mistral-openorca:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "moondream",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cpu",
+  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "1.8b",
+      "ollama_ref": "moondream:1.8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-fp16",
+      "ollama_ref": "moondream:1.8b-v2-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q2-k",
+      "ollama_ref": "moondream:1.8b-v2-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q3-k-l",
+      "ollama_ref": "moondream:1.8b-v2-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q3-k-m",
+      "ollama_ref": "moondream:1.8b-v2-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q3-k-s",
+      "ollama_ref": "moondream:1.8b-v2-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q4-k-m",
+      "ollama_ref": "moondream:1.8b-v2-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q4-k-s",
+      "ollama_ref": "moondream:1.8b-v2-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q40",
+      "ollama_ref": "moondream:1.8b-v2-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q41",
+      "ollama_ref": "moondream:1.8b-v2-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q5-k-m",
+      "ollama_ref": "moondream:1.8b-v2-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q5-k-s",
+      "ollama_ref": "moondream:1.8b-v2-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q50",
+      "ollama_ref": "moondream:1.8b-v2-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q51",
+      "ollama_ref": "moondream:1.8b-v2-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q6-k",
+      "ollama_ref": "moondream:1.8b-v2-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-v2-q80",
+      "ollama_ref": "moondream:1.8b-v2-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "moondream:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "v2",
+      "ollama_ref": "moondream:v2",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

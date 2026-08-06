@@ -1,0 +1,25 @@
+{
+  "valid": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
+  "counts": {
+    "publishers": 12,
+    "families": 234,
+    "models": 437,
+    "tags": 7271,
+    "manual_review": 428
+  },
+  "generation": {
+    "present": true,
+    "deployment_combinations": 174504
+  },
+  "indexes": {
+    "present": true,
+    "families_indexed": 234,
+    "models_indexed": 437,
+    "local_tags": 7256,
+    "cloud_tags": 149
+  }
+}

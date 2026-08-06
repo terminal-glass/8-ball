@@ -1,0 +1,33 @@
+{
+  "schema_version": "c10.provider-assumption.v1",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "platform": "cloud",
+  "provider": "aws-lightsail",
+  "architecture": "x86_64",
+  "gpu_lane": false,
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "hardware": {
+    "cpu_cores": null,
+    "system_ram_gb": 4,
+    "usable_model_ram_gb": 2.4,
+    "minimum_free_disk_gb": null,
+    "total_vram_gb": null,
+    "cuda_available": false,
+    "apple_metal_available": false,
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "fallback_profile_id": null,
+  "assumed_profile_id": null,
+  "source_paths": [
+    "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json"
+  ],
+  "generated_at": "2026-08-06T02:17:54Z",
+  "installer_reference": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+  "profiles_reference": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json"
+}

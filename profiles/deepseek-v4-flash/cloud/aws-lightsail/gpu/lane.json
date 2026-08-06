@@ -1,0 +1,32 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepseek-v4-flash",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "0731-cloud",
+      "ollama_ref": "deepseek-v4-flash:0731-cloud",
+      "fits": false,
+      "reason": "insufficient source measurements to confirm fit"
+    },
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "deepseek-v4-flash:cloud",
+      "fits": false,
+      "reason": "insufficient source measurements to confirm fit"
+    }
+  ]
+}

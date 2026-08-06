@@ -1,0 +1,14 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nemotron-3-ultra",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "fallback_lane": "windows/cpu",
+  "reason": "CPU-only fallback when GPU path is unavailable or lane is CPU-first."
+}

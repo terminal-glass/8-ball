@@ -1,0 +1,608 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llava",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "34b",
+      "ollama_ref": "llava:34b",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6",
+      "ollama_ref": "llava:34b-v1.6",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-fp16",
+      "ollama_ref": "llava:34b-v1.6-fp16",
+      "fits": false,
+      "reason": "requires 90.85 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q2-k",
+      "ollama_ref": "llava:34b-v1.6-q2_K",
+      "fits": false,
+      "reason": "requires 27.6 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q3-k-l",
+      "ollama_ref": "llava:34b-v1.6-q3_K_L",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q3-k-m",
+      "ollama_ref": "llava:34b-v1.6-q3_K_M",
+      "fits": false,
+      "reason": "requires 31.05 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q3-k-s",
+      "ollama_ref": "llava:34b-v1.6-q3_K_S",
+      "fits": false,
+      "reason": "requires 29.9 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q4-k-m",
+      "ollama_ref": "llava:34b-v1.6-q4_K_M",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q4-k-s",
+      "ollama_ref": "llava:34b-v1.6-q4_K_S",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q40",
+      "ollama_ref": "llava:34b-v1.6-q4_0",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q41",
+      "ollama_ref": "llava:34b-v1.6-q4_1",
+      "fits": false,
+      "reason": "requires 36.8 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q5-k-m",
+      "ollama_ref": "llava:34b-v1.6-q5_K_M",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q5-k-s",
+      "ollama_ref": "llava:34b-v1.6-q5_K_S",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q50",
+      "ollama_ref": "llava:34b-v1.6-q5_0",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q51",
+      "ollama_ref": "llava:34b-v1.6-q5_1",
+      "fits": false,
+      "reason": "requires 42.55 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q6-k",
+      "ollama_ref": "llava:34b-v1.6-q6_K",
+      "fits": false,
+      "reason": "requires 44.85 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "34b-v1.6-q80",
+      "ollama_ref": "llava:34b-v1.6-q8_0",
+      "fits": false,
+      "reason": "requires 54.05 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b",
+      "ollama_ref": "llava:13b",
+      "fits": false,
+      "reason": "requires 14.66 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-fp16",
+      "ollama_ref": "llava:13b-v1.5-fp16",
+      "fits": false,
+      "reason": "requires 36.51 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q2-k",
+      "ollama_ref": "llava:13b-v1.5-q2_K",
+      "fits": false,
+      "reason": "requires 12.48 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q3-k-l",
+      "ollama_ref": "llava:13b-v1.5-q3_K_L",
+      "fits": false,
+      "reason": "requires 14.2 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q3-k-m",
+      "ollama_ref": "llava:13b-v1.5-q3_K_M",
+      "fits": false,
+      "reason": "requires 13.51 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q3-k-s",
+      "ollama_ref": "llava:13b-v1.5-q3_K_S",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q4-k-m",
+      "ollama_ref": "llava:13b-v1.5-q4_K_M",
+      "fits": false,
+      "reason": "requires 15.24 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q4-k-s",
+      "ollama_ref": "llava:13b-v1.5-q4_K_S",
+      "fits": false,
+      "reason": "requires 14.78 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q40",
+      "ollama_ref": "llava:13b-v1.5-q4_0",
+      "fits": false,
+      "reason": "requires 14.66 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q41",
+      "ollama_ref": "llava:13b-v1.5-q4_1",
+      "fits": false,
+      "reason": "requires 15.58 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q5-k-m",
+      "ollama_ref": "llava:13b-v1.5-q5_K_M",
+      "fits": false,
+      "reason": "requires 16.85 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q5-k-s",
+      "ollama_ref": "llava:13b-v1.5-q5_K_S",
+      "fits": false,
+      "reason": "requires 16.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q50",
+      "ollama_ref": "llava:13b-v1.5-q5_0",
+      "fits": false,
+      "reason": "requires 16.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q51",
+      "ollama_ref": "llava:13b-v1.5-q5_1",
+      "fits": false,
+      "reason": "requires 16.96 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q6-k",
+      "ollama_ref": "llava:13b-v1.5-q6_K",
+      "fits": false,
+      "reason": "requires 18.11 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.5-q80",
+      "ollama_ref": "llava:13b-v1.5-q8_0",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6",
+      "ollama_ref": "llava:13b-v1.6",
+      "fits": false,
+      "reason": "requires 14.66 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-fp16",
+      "ollama_ref": "llava:13b-v1.6-vicuna-fp16",
+      "fits": false,
+      "reason": "requires 36.51 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q2-k",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q2_K",
+      "fits": false,
+      "reason": "requires 11.79 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q3-k-l",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q3_K_L",
+      "fits": false,
+      "reason": "requires 14.2 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q3-k-m",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q3_K_M",
+      "fits": false,
+      "reason": "requires 13.51 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q3-k-s",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q3_K_S",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q4-k-m",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q4_K_M",
+      "fits": false,
+      "reason": "requires 15.24 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q4-k-s",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q4_K_S",
+      "fits": false,
+      "reason": "requires 14.78 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q40",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q4_0",
+      "fits": false,
+      "reason": "requires 14.66 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q41",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q4_1",
+      "fits": false,
+      "reason": "requires 15.58 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q5-k-m",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q5_K_M",
+      "fits": false,
+      "reason": "requires 16.85 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q5-k-s",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q5_K_S",
+      "fits": false,
+      "reason": "requires 16.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q50",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q5_0",
+      "fits": false,
+      "reason": "requires 16.5 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q51",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q5_1",
+      "fits": false,
+      "reason": "requires 16.96 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q6-k",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q6_K",
+      "fits": false,
+      "reason": "requires 18.11 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "13b-v1.6-vicuna-q80",
+      "ollama_ref": "llava:13b-v1.6-vicuna-q8_0",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "llava:7b",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-fp16",
+      "ollama_ref": "llava:7b-v1.5-fp16",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q2-k",
+      "ollama_ref": "llava:7b-v1.5-q2_K",
+      "fits": false,
+      "reason": "requires 7.76 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q3-k-l",
+      "ollama_ref": "llava:7b-v1.5-q3_K_L",
+      "fits": false,
+      "reason": "requires 8.57 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q3-k-m",
+      "ollama_ref": "llava:7b-v1.5-q3_K_M",
+      "fits": false,
+      "reason": "requires 8.22 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q3-k-s",
+      "ollama_ref": "llava:7b-v1.5-q3_K_S",
+      "fits": false,
+      "reason": "requires 7.88 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q4-k-m",
+      "ollama_ref": "llava:7b-v1.5-q4_K_M",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q4-k-s",
+      "ollama_ref": "llava:7b-v1.5-q4_K_S",
+      "fits": false,
+      "reason": "requires 8.91 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q40",
+      "ollama_ref": "llava:7b-v1.5-q4_0",
+      "fits": false,
+      "reason": "requires 8.91 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q41",
+      "ollama_ref": "llava:7b-v1.5-q4_1",
+      "fits": false,
+      "reason": "requires 9.37 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q5-k-m",
+      "ollama_ref": "llava:7b-v1.5-q5_K_M",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q5-k-s",
+      "ollama_ref": "llava:7b-v1.5-q5_K_S",
+      "fits": false,
+      "reason": "requires 9.83 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q50",
+      "ollama_ref": "llava:7b-v1.5-q5_0",
+      "fits": false,
+      "reason": "requires 9.83 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q51",
+      "ollama_ref": "llava:7b-v1.5-q5_1",
+      "fits": false,
+      "reason": "requires 10.29 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q6-k",
+      "ollama_ref": "llava:7b-v1.5-q6_K",
+      "fits": false,
+      "reason": "requires 10.87 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.5-q80",
+      "ollama_ref": "llava:7b-v1.5-q8_0",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6",
+      "ollama_ref": "llava:7b-v1.6",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-fp16",
+      "ollama_ref": "llava:7b-v1.6-mistral-fp16",
+      "fits": false,
+      "reason": "requires 20.99 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q2-k",
+      "ollama_ref": "llava:7b-v1.6-mistral-q2_K",
+      "fits": false,
+      "reason": "requires 7.53 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q3-k-l",
+      "ollama_ref": "llava:7b-v1.6-mistral-q3_K_L",
+      "fits": false,
+      "reason": "requires 8.8 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q3-k-m",
+      "ollama_ref": "llava:7b-v1.6-mistral-q3_K_M",
+      "fits": false,
+      "reason": "requires 8.45 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q3-k-s",
+      "ollama_ref": "llava:7b-v1.6-mistral-q3_K_S",
+      "fits": false,
+      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q4-k-m",
+      "ollama_ref": "llava:7b-v1.6-mistral-q4_K_M",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q4-k-s",
+      "ollama_ref": "llava:7b-v1.6-mistral-q4_K_S",
+      "fits": false,
+      "reason": "requires 9.26 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q40",
+      "ollama_ref": "llava:7b-v1.6-mistral-q4_0",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q41",
+      "ollama_ref": "llava:7b-v1.6-mistral-q4_1",
+      "fits": false,
+      "reason": "requires 9.72 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q5-k-m",
+      "ollama_ref": "llava:7b-v1.6-mistral-q5_K_M",
+      "fits": false,
+      "reason": "requires 10.41 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q5-k-s",
+      "ollama_ref": "llava:7b-v1.6-mistral-q5_K_S",
+      "fits": false,
+      "reason": "requires 10.18 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q50",
+      "ollama_ref": "llava:7b-v1.6-mistral-q5_0",
+      "fits": false,
+      "reason": "requires 10.18 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q51",
+      "ollama_ref": "llava:7b-v1.6-mistral-q5_1",
+      "fits": false,
+      "reason": "requires 10.75 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q6-k",
+      "ollama_ref": "llava:7b-v1.6-mistral-q6_K",
+      "fits": false,
+      "reason": "requires 11.33 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-mistral-q80",
+      "ollama_ref": "llava:7b-v1.6-mistral-q8_0",
+      "fits": false,
+      "reason": "requires 13.28 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-fp16",
+      "ollama_ref": "llava:7b-v1.6-vicuna-fp16",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q2-k",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q2_K",
+      "fits": false,
+      "reason": "requires 7.42 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q3-k-l",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q3_K_L",
+      "fits": false,
+      "reason": "requires 8.57 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q3-k-m",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q3_K_M",
+      "fits": false,
+      "reason": "requires 8.22 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q3-k-s",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q3_K_S",
+      "fits": false,
+      "reason": "requires 7.88 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q4-k-m",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q4_K_M",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q4-k-s",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q4_K_S",
+      "fits": false,
+      "reason": "requires 8.91 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q40",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q4_0",
+      "fits": false,
+      "reason": "requires 8.91 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q41",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q4_1",
+      "fits": false,
+      "reason": "requires 9.37 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q5-k-m",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q5_K_M",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q5-k-s",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q5_K_S",
+      "fits": false,
+      "reason": "requires 9.83 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q50",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q5_0",
+      "fits": false,
+      "reason": "requires 9.83 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q51",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q5_1",
+      "fits": false,
+      "reason": "requires 10.29 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q6-k",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q6_K",
+      "fits": false,
+      "reason": "requires 10.87 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-v1.6-vicuna-q80",
+      "ollama_ref": "llava:7b-v1.6-vicuna-q8_0",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llava:latest",
+      "fits": false,
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "v1.6",
+      "ollama_ref": "llava:v1.6",
+      "fits": false,
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

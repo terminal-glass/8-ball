@@ -1,0 +1,499 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "xwinlm",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T02:17:56Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cpu",
+  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "70b-v0.1",
+      "ollama_ref": "xwinlm:70b-v0.1",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-fp16",
+      "ollama_ref": "xwinlm:70b-v0.1-fp16",
+      "fits": false,
+      "reason": "requires 180.55 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q2-k",
+      "ollama_ref": "xwinlm:70b-v0.1-q2_K",
+      "fits": false,
+      "reason": "requires 55.2 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q3-k-l",
+      "ollama_ref": "xwinlm:70b-v0.1-q3_K_L",
+      "fits": false,
+      "reason": "requires 63.25 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q3-k-m",
+      "ollama_ref": "xwinlm:70b-v0.1-q3_K_M",
+      "fits": false,
+      "reason": "requires 59.8 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q3-k-s",
+      "ollama_ref": "xwinlm:70b-v0.1-q3_K_S",
+      "fits": false,
+      "reason": "requires 56.35 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q4-k-m",
+      "ollama_ref": "xwinlm:70b-v0.1-q4_K_M",
+      "fits": false,
+      "reason": "requires 69.0 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q4-k-s",
+      "ollama_ref": "xwinlm:70b-v0.1-q4_K_S",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q40",
+      "ollama_ref": "xwinlm:70b-v0.1-q4_0",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q41",
+      "ollama_ref": "xwinlm:70b-v0.1-q4_1",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q5-k-s",
+      "ollama_ref": "xwinlm:70b-v0.1-q5_K_S",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q50",
+      "ollama_ref": "xwinlm:70b-v0.1-q5_0",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q51",
+      "ollama_ref": "xwinlm:70b-v0.1-q5_1",
+      "fits": false,
+      "reason": "requires 81.65 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q6-k",
+      "ollama_ref": "xwinlm:70b-v0.1-q6_K",
+      "fits": false,
+      "reason": "requires 87.4 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "70b-v0.1-q80",
+      "ollama_ref": "xwinlm:70b-v0.1-q8_0",
+      "fits": false,
+      "reason": "requires 105.8 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b",
+      "ollama_ref": "xwinlm:13b",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1",
+      "ollama_ref": "xwinlm:13b-v0.1",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-fp16",
+      "ollama_ref": "xwinlm:13b-v0.1-fp16",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q2-k",
+      "ollama_ref": "xwinlm:13b-v0.1-q2_K",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q3-k-l",
+      "ollama_ref": "xwinlm:13b-v0.1-q3_K_L",
+      "fits": false,
+      "reason": "requires 13.4 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q3-k-m",
+      "ollama_ref": "xwinlm:13b-v0.1-q3_K_M",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q3-k-s",
+      "ollama_ref": "xwinlm:13b-v0.1-q3_K_S",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q4-k-m",
+      "ollama_ref": "xwinlm:13b-v0.1-q4_K_M",
+      "fits": false,
+      "reason": "requires 14.55 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q4-k-s",
+      "ollama_ref": "xwinlm:13b-v0.1-q4_K_S",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q40",
+      "ollama_ref": "xwinlm:13b-v0.1-q4_0",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q41",
+      "ollama_ref": "xwinlm:13b-v0.1-q4_1",
+      "fits": false,
+      "reason": "requires 14.89 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q5-k-m",
+      "ollama_ref": "xwinlm:13b-v0.1-q5_K_M",
+      "fits": false,
+      "reason": "requires 16.04 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q5-k-s",
+      "ollama_ref": "xwinlm:13b-v0.1-q5_K_S",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q50",
+      "ollama_ref": "xwinlm:13b-v0.1-q5_0",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q51",
+      "ollama_ref": "xwinlm:13b-v0.1-q5_1",
+      "fits": false,
+      "reason": "requires 16.73 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q6-k",
+      "ollama_ref": "xwinlm:13b-v0.1-q6_K",
+      "fits": false,
+      "reason": "requires 18.11 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.1-q80",
+      "ollama_ref": "xwinlm:13b-v0.1-q8_0",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2",
+      "ollama_ref": "xwinlm:13b-v0.2",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-fp16",
+      "ollama_ref": "xwinlm:13b-v0.2-fp16",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q2-k",
+      "ollama_ref": "xwinlm:13b-v0.2-q2_K",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q3-k-l",
+      "ollama_ref": "xwinlm:13b-v0.2-q3_K_L",
+      "fits": false,
+      "reason": "requires 13.4 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q3-k-m",
+      "ollama_ref": "xwinlm:13b-v0.2-q3_K_M",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q3-k-s",
+      "ollama_ref": "xwinlm:13b-v0.2-q3_K_S",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q4-k-m",
+      "ollama_ref": "xwinlm:13b-v0.2-q4_K_M",
+      "fits": false,
+      "reason": "requires 14.55 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q4-k-s",
+      "ollama_ref": "xwinlm:13b-v0.2-q4_K_S",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q40",
+      "ollama_ref": "xwinlm:13b-v0.2-q4_0",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q41",
+      "ollama_ref": "xwinlm:13b-v0.2-q4_1",
+      "fits": false,
+      "reason": "requires 14.89 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q5-k-m",
+      "ollama_ref": "xwinlm:13b-v0.2-q5_K_M",
+      "fits": false,
+      "reason": "requires 16.04 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q5-k-s",
+      "ollama_ref": "xwinlm:13b-v0.2-q5_K_S",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q50",
+      "ollama_ref": "xwinlm:13b-v0.2-q5_0",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q51",
+      "ollama_ref": "xwinlm:13b-v0.2-q5_1",
+      "fits": false,
+      "reason": "requires 16.73 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q6-k",
+      "ollama_ref": "xwinlm:13b-v0.2-q6_K",
+      "fits": false,
+      "reason": "requires 18.11 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "13b-v0.2-q80",
+      "ollama_ref": "xwinlm:13b-v0.2-q8_0",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "xwinlm:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1",
+      "ollama_ref": "xwinlm:7b-v0.1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-fp16",
+      "ollama_ref": "xwinlm:7b-v0.1-fp16",
+      "fits": false,
+      "reason": "requires 18.69 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.1-q2-k",
+      "ollama_ref": "xwinlm:7b-v0.1-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q3-k-l",
+      "ollama_ref": "xwinlm:7b-v0.1-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q3-k-m",
+      "ollama_ref": "xwinlm:7b-v0.1-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q3-k-s",
+      "ollama_ref": "xwinlm:7b-v0.1-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q4-k-m",
+      "ollama_ref": "xwinlm:7b-v0.1-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q4-k-s",
+      "ollama_ref": "xwinlm:7b-v0.1-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q40",
+      "ollama_ref": "xwinlm:7b-v0.1-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q41",
+      "ollama_ref": "xwinlm:7b-v0.1-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.1-q5-k-m",
+      "ollama_ref": "xwinlm:7b-v0.1-q5_K_M",
+      "fits": false,
+      "reason": "requires 9.26 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.1-q5-k-s",
+      "ollama_ref": "xwinlm:7b-v0.1-q5_K_S",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.1-q50",
+      "ollama_ref": "xwinlm:7b-v0.1-q5_0",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.1-q51",
+      "ollama_ref": "xwinlm:7b-v0.1-q5_1",
+      "fits": false,
+      "reason": "requires 9.6 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.1-q6-k",
+      "ollama_ref": "xwinlm:7b-v0.1-q6_K",
+      "fits": false,
+      "reason": "requires 10.06 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.1-q80",
+      "ollama_ref": "xwinlm:7b-v0.1-q8_0",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.2",
+      "ollama_ref": "xwinlm:7b-v0.2",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-fp16",
+      "ollama_ref": "xwinlm:7b-v0.2-fp16",
+      "fits": false,
+      "reason": "requires 18.69 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.2-q2-k",
+      "ollama_ref": "xwinlm:7b-v0.2-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-q3-k-l",
+      "ollama_ref": "xwinlm:7b-v0.2-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-q3-k-s",
+      "ollama_ref": "xwinlm:7b-v0.2-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-q4-k-m",
+      "ollama_ref": "xwinlm:7b-v0.2-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-q4-k-s",
+      "ollama_ref": "xwinlm:7b-v0.2-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-q40",
+      "ollama_ref": "xwinlm:7b-v0.2-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-q41",
+      "ollama_ref": "xwinlm:7b-v0.2-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v0.2-q5-k-m",
+      "ollama_ref": "xwinlm:7b-v0.2-q5_K_M",
+      "fits": false,
+      "reason": "requires 9.26 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.2-q5-k-s",
+      "ollama_ref": "xwinlm:7b-v0.2-q5_K_S",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.2-q50",
+      "ollama_ref": "xwinlm:7b-v0.2-q5_0",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.2-q6-k",
+      "ollama_ref": "xwinlm:7b-v0.2-q6_K",
+      "fits": false,
+      "reason": "requires 10.06 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "7b-v0.2-q80",
+      "ollama_ref": "xwinlm:7b-v0.2-q8_0",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 9.0 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "xwinlm:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

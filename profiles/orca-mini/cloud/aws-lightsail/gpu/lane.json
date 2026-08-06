@@ -1,0 +1,734 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "orca-mini",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "70b",
+      "ollama_ref": "orca-mini:70b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3",
+      "ollama_ref": "orca-mini:70b-v3",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-fp16",
+      "ollama_ref": "orca-mini:70b-v3-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q2-k",
+      "ollama_ref": "orca-mini:70b-v3-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q3-k-l",
+      "ollama_ref": "orca-mini:70b-v3-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q3-k-m",
+      "ollama_ref": "orca-mini:70b-v3-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q3-k-s",
+      "ollama_ref": "orca-mini:70b-v3-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q4-k-m",
+      "ollama_ref": "orca-mini:70b-v3-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q4-k-s",
+      "ollama_ref": "orca-mini:70b-v3-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q40",
+      "ollama_ref": "orca-mini:70b-v3-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q41",
+      "ollama_ref": "orca-mini:70b-v3-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q5-k-m",
+      "ollama_ref": "orca-mini:70b-v3-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q5-k-s",
+      "ollama_ref": "orca-mini:70b-v3-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q50",
+      "ollama_ref": "orca-mini:70b-v3-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q51",
+      "ollama_ref": "orca-mini:70b-v3-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q6-k",
+      "ollama_ref": "orca-mini:70b-v3-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v3-q80",
+      "ollama_ref": "orca-mini:70b-v3-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b",
+      "ollama_ref": "orca-mini:13b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-fp16",
+      "ollama_ref": "orca-mini:13b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q2-k",
+      "ollama_ref": "orca-mini:13b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q3-k-l",
+      "ollama_ref": "orca-mini:13b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q3-k-m",
+      "ollama_ref": "orca-mini:13b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q3-k-s",
+      "ollama_ref": "orca-mini:13b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q4-k-m",
+      "ollama_ref": "orca-mini:13b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q4-k-s",
+      "ollama_ref": "orca-mini:13b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q40",
+      "ollama_ref": "orca-mini:13b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q41",
+      "ollama_ref": "orca-mini:13b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q5-k-m",
+      "ollama_ref": "orca-mini:13b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q5-k-s",
+      "ollama_ref": "orca-mini:13b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q50",
+      "ollama_ref": "orca-mini:13b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q51",
+      "ollama_ref": "orca-mini:13b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q6-k",
+      "ollama_ref": "orca-mini:13b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-q80",
+      "ollama_ref": "orca-mini:13b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-fp16",
+      "ollama_ref": "orca-mini:13b-v2-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q2-k",
+      "ollama_ref": "orca-mini:13b-v2-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q3-k-l",
+      "ollama_ref": "orca-mini:13b-v2-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q3-k-m",
+      "ollama_ref": "orca-mini:13b-v2-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q3-k-s",
+      "ollama_ref": "orca-mini:13b-v2-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q4-k-m",
+      "ollama_ref": "orca-mini:13b-v2-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q4-k-s",
+      "ollama_ref": "orca-mini:13b-v2-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q40",
+      "ollama_ref": "orca-mini:13b-v2-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q41",
+      "ollama_ref": "orca-mini:13b-v2-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q5-k-m",
+      "ollama_ref": "orca-mini:13b-v2-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q5-k-s",
+      "ollama_ref": "orca-mini:13b-v2-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q50",
+      "ollama_ref": "orca-mini:13b-v2-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q51",
+      "ollama_ref": "orca-mini:13b-v2-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q6-k",
+      "ollama_ref": "orca-mini:13b-v2-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v2-q80",
+      "ollama_ref": "orca-mini:13b-v2-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3",
+      "ollama_ref": "orca-mini:13b-v3",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-fp16",
+      "ollama_ref": "orca-mini:13b-v3-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q2-k",
+      "ollama_ref": "orca-mini:13b-v3-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q3-k-l",
+      "ollama_ref": "orca-mini:13b-v3-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q3-k-m",
+      "ollama_ref": "orca-mini:13b-v3-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q3-k-s",
+      "ollama_ref": "orca-mini:13b-v3-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q4-k-m",
+      "ollama_ref": "orca-mini:13b-v3-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q4-k-s",
+      "ollama_ref": "orca-mini:13b-v3-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q40",
+      "ollama_ref": "orca-mini:13b-v3-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q41",
+      "ollama_ref": "orca-mini:13b-v3-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q5-k-m",
+      "ollama_ref": "orca-mini:13b-v3-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q5-k-s",
+      "ollama_ref": "orca-mini:13b-v3-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q50",
+      "ollama_ref": "orca-mini:13b-v3-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q51",
+      "ollama_ref": "orca-mini:13b-v3-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q6-k",
+      "ollama_ref": "orca-mini:13b-v3-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-v3-q80",
+      "ollama_ref": "orca-mini:13b-v3-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "orca-mini:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "orca-mini:7b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q2-k",
+      "ollama_ref": "orca-mini:7b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-l",
+      "ollama_ref": "orca-mini:7b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-m",
+      "ollama_ref": "orca-mini:7b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-s",
+      "ollama_ref": "orca-mini:7b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "orca-mini:7b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-s",
+      "ollama_ref": "orca-mini:7b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q40",
+      "ollama_ref": "orca-mini:7b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q41",
+      "ollama_ref": "orca-mini:7b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-m",
+      "ollama_ref": "orca-mini:7b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-s",
+      "ollama_ref": "orca-mini:7b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q50",
+      "ollama_ref": "orca-mini:7b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q51",
+      "ollama_ref": "orca-mini:7b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q6-k",
+      "ollama_ref": "orca-mini:7b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "orca-mini:7b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-fp16",
+      "ollama_ref": "orca-mini:7b-v2-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q2-k",
+      "ollama_ref": "orca-mini:7b-v2-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q3-k-l",
+      "ollama_ref": "orca-mini:7b-v2-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q3-k-m",
+      "ollama_ref": "orca-mini:7b-v2-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q3-k-s",
+      "ollama_ref": "orca-mini:7b-v2-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q4-k-m",
+      "ollama_ref": "orca-mini:7b-v2-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q4-k-s",
+      "ollama_ref": "orca-mini:7b-v2-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q40",
+      "ollama_ref": "orca-mini:7b-v2-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q41",
+      "ollama_ref": "orca-mini:7b-v2-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q5-k-m",
+      "ollama_ref": "orca-mini:7b-v2-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q5-k-s",
+      "ollama_ref": "orca-mini:7b-v2-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q50",
+      "ollama_ref": "orca-mini:7b-v2-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q51",
+      "ollama_ref": "orca-mini:7b-v2-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q6-k",
+      "ollama_ref": "orca-mini:7b-v2-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q80",
+      "ollama_ref": "orca-mini:7b-v2-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3",
+      "ollama_ref": "orca-mini:7b-v3",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-fp16",
+      "ollama_ref": "orca-mini:7b-v3-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q2-k",
+      "ollama_ref": "orca-mini:7b-v3-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q3-k-l",
+      "ollama_ref": "orca-mini:7b-v3-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q3-k-m",
+      "ollama_ref": "orca-mini:7b-v3-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q3-k-s",
+      "ollama_ref": "orca-mini:7b-v3-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q4-k-m",
+      "ollama_ref": "orca-mini:7b-v3-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q4-k-s",
+      "ollama_ref": "orca-mini:7b-v3-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q40",
+      "ollama_ref": "orca-mini:7b-v3-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q41",
+      "ollama_ref": "orca-mini:7b-v3-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q5-k-m",
+      "ollama_ref": "orca-mini:7b-v3-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q5-k-s",
+      "ollama_ref": "orca-mini:7b-v3-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q50",
+      "ollama_ref": "orca-mini:7b-v3-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q51",
+      "ollama_ref": "orca-mini:7b-v3-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q6-k",
+      "ollama_ref": "orca-mini:7b-v3-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v3-q80",
+      "ollama_ref": "orca-mini:7b-v3-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "orca-mini:3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-fp16",
+      "ollama_ref": "orca-mini:3b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q40",
+      "ollama_ref": "orca-mini:3b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q41",
+      "ollama_ref": "orca-mini:3b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q50",
+      "ollama_ref": "orca-mini:3b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q51",
+      "ollama_ref": "orca-mini:3b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q80",
+      "ollama_ref": "orca-mini:3b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "orca-mini:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

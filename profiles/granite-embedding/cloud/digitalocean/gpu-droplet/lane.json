@@ -1,0 +1,56 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "granite-embedding",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "278m",
+      "ollama_ref": "granite-embedding:278m",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "278m-fp16",
+      "ollama_ref": "granite-embedding:278m-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30m",
+      "ollama_ref": "granite-embedding:30m",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30m-en",
+      "ollama_ref": "granite-embedding:30m-en",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30m-en-fp16",
+      "ollama_ref": "granite-embedding:30m-en-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite-embedding:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

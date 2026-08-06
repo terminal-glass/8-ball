@@ -1,0 +1,1272 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "nous-hermes",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "70b-llama2-fp16",
+      "ollama_ref": "nous-hermes:70b-llama2-fp16",
+      "parameter_count": 70000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 138000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 180.55,
+        "recommended_system_ram_gb": 216.66,
+        "min_vram_gb": 158.7,
+        "recommended_vram_gb": 180.55,
+        "min_disk_gb": 170.6
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q2-k",
+      "ollama_ref": "nous-hermes:70b-llama2-q2_K",
+      "parameter_count": 70000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 29000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 55.2,
+        "recommended_system_ram_gb": 66.24,
+        "min_vram_gb": 33.35,
+        "recommended_vram_gb": 55.2,
+        "min_disk_gb": 39.8
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q3-k-l",
+      "ollama_ref": "nous-hermes:70b-llama2-q3_K_L",
+      "parameter_count": 70000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 36000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 63.25,
+        "recommended_system_ram_gb": 75.9,
+        "min_vram_gb": 41.4,
+        "recommended_vram_gb": 63.25,
+        "min_disk_gb": 48.2
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q3-k-m",
+      "ollama_ref": "nous-hermes:70b-llama2-q3_K_M",
+      "parameter_count": 70000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 33000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 59.8,
+        "recommended_system_ram_gb": 71.76,
+        "min_vram_gb": 37.95,
+        "recommended_vram_gb": 59.8,
+        "min_disk_gb": 44.6
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q3-k-s",
+      "ollama_ref": "nous-hermes:70b-llama2-q3_K_S",
+      "parameter_count": 70000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 30000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 56.35,
+        "recommended_system_ram_gb": 67.62,
+        "min_vram_gb": 34.5,
+        "recommended_vram_gb": 56.35,
+        "min_disk_gb": 41.0
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q4-k-m",
+      "ollama_ref": "nous-hermes:70b-llama2-q4_K_M",
+      "parameter_count": 70000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 41000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 69.0,
+        "recommended_system_ram_gb": 82.8,
+        "min_vram_gb": 47.15,
+        "recommended_vram_gb": 69.0,
+        "min_disk_gb": 54.2
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q4-k-s",
+      "ollama_ref": "nous-hermes:70b-llama2-q4_K_S",
+      "parameter_count": 70000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 39000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 66.7,
+        "recommended_system_ram_gb": 80.04,
+        "min_vram_gb": 44.85,
+        "recommended_vram_gb": 66.7,
+        "min_disk_gb": 51.8
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q40",
+      "ollama_ref": "nous-hermes:70b-llama2-q4_0",
+      "parameter_count": 70000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 39000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 66.7,
+        "recommended_system_ram_gb": 80.04,
+        "min_vram_gb": 44.85,
+        "recommended_vram_gb": 66.7,
+        "min_disk_gb": 51.8
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q41",
+      "ollama_ref": "nous-hermes:70b-llama2-q4_1",
+      "parameter_count": 70000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 43000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 71.3,
+        "recommended_system_ram_gb": 85.56,
+        "min_vram_gb": 49.45,
+        "recommended_vram_gb": 71.3,
+        "min_disk_gb": 56.6
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q5-k-m",
+      "ollama_ref": "nous-hermes:70b-llama2-q5_K_M",
+      "parameter_count": 70000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 49000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 78.2,
+        "recommended_system_ram_gb": 93.84,
+        "min_vram_gb": 56.35,
+        "recommended_vram_gb": 78.2,
+        "min_disk_gb": 63.8
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q50",
+      "ollama_ref": "nous-hermes:70b-llama2-q5_0",
+      "parameter_count": 70000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 47000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 75.9,
+        "recommended_system_ram_gb": 91.08,
+        "min_vram_gb": 54.05,
+        "recommended_vram_gb": 75.9,
+        "min_disk_gb": 61.4
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q51",
+      "ollama_ref": "nous-hermes:70b-llama2-q5_1",
+      "parameter_count": 70000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 52000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 81.65,
+        "recommended_system_ram_gb": 97.98,
+        "min_vram_gb": 59.8,
+        "recommended_vram_gb": 81.65,
+        "min_disk_gb": 67.4
+      }
+    },
+    {
+      "size_slug": "70b-llama2-q6-k",
+      "ollama_ref": "nous-hermes:70b-llama2-q6_K",
+      "parameter_count": 70000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 57000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 87.4,
+        "recommended_system_ram_gb": 104.88,
+        "min_vram_gb": 65.55,
+        "recommended_vram_gb": 87.4,
+        "min_disk_gb": 73.4
+      }
+    },
+    {
+      "size_slug": "13b",
+      "ollama_ref": "nous-hermes:13b",
+      "parameter_count": 13000000000,
+      "quantization": null,
+      "download_size_bytes": 7400000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-fp16",
+      "ollama_ref": "nous-hermes:13b-fp16",
+      "parameter_count": 13000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 26000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 35.36,
+        "recommended_system_ram_gb": 42.43,
+        "min_vram_gb": 29.9,
+        "recommended_vram_gb": 35.36,
+        "min_disk_gb": 36.2
+      }
+    },
+    {
+      "size_slug": "13b-llama2",
+      "ollama_ref": "nous-hermes:13b-llama2",
+      "parameter_count": 13000000000,
+      "quantization": null,
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-llama2-fp16",
+      "ollama_ref": "nous-hermes:13b-llama2-fp16",
+      "parameter_count": 13000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 26000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 35.36,
+        "recommended_system_ram_gb": 42.43,
+        "min_vram_gb": 29.9,
+        "recommended_vram_gb": 35.36,
+        "min_disk_gb": 36.2
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q2-k",
+      "ollama_ref": "nous-hermes:13b-llama2-q2_K",
+      "parameter_count": 13000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.67,
+        "recommended_system_ram_gb": 14.01,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 11.67,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q3-k-l",
+      "ollama_ref": "nous-hermes:13b-llama2-q3_K_L",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 6900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.4,
+        "recommended_system_ram_gb": 16.08,
+        "min_vram_gb": 7.93,
+        "recommended_vram_gb": 13.4,
+        "min_disk_gb": 13.28
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q3-k-m",
+      "ollama_ref": "nous-hermes:13b-llama2-q3_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 6300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.71,
+        "recommended_system_ram_gb": 15.25,
+        "min_vram_gb": 7.24,
+        "recommended_vram_gb": 12.71,
+        "min_disk_gb": 12.56
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q3-k-s",
+      "ollama_ref": "nous-hermes:13b-llama2-q3_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 5700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.02,
+        "recommended_system_ram_gb": 14.42,
+        "min_vram_gb": 6.55,
+        "recommended_vram_gb": 12.02,
+        "min_disk_gb": 11.84
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q4-k-m",
+      "ollama_ref": "nous-hermes:13b-llama2-q4_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 7900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.55,
+        "recommended_system_ram_gb": 17.46,
+        "min_vram_gb": 9.08,
+        "recommended_vram_gb": 14.55,
+        "min_disk_gb": 14.48
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q4-k-s",
+      "ollama_ref": "nous-hermes:13b-llama2-q4_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q40",
+      "ollama_ref": "nous-hermes:13b-llama2-q4_0",
+      "parameter_count": 13000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q41",
+      "ollama_ref": "nous-hermes:13b-llama2-q4_1",
+      "parameter_count": 13000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 8200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.89,
+        "recommended_system_ram_gb": 17.87,
+        "min_vram_gb": 9.43,
+        "recommended_vram_gb": 14.89,
+        "min_disk_gb": 14.84
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q5-k-m",
+      "ollama_ref": "nous-hermes:13b-llama2-q5_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 9200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 16.04,
+        "recommended_system_ram_gb": 19.25,
+        "min_vram_gb": 10.58,
+        "recommended_vram_gb": 16.04,
+        "min_disk_gb": 16.04
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q5-k-s",
+      "ollama_ref": "nous-hermes:13b-llama2-q5_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 9000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.81,
+        "recommended_system_ram_gb": 18.97,
+        "min_vram_gb": 10.35,
+        "recommended_vram_gb": 15.81,
+        "min_disk_gb": 15.8
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q50",
+      "ollama_ref": "nous-hermes:13b-llama2-q5_0",
+      "parameter_count": 13000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 9000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.81,
+        "recommended_system_ram_gb": 18.97,
+        "min_vram_gb": 10.35,
+        "recommended_vram_gb": 15.81,
+        "min_disk_gb": 15.8
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q51",
+      "ollama_ref": "nous-hermes:13b-llama2-q5_1",
+      "parameter_count": 13000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 9800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 16.73,
+        "recommended_system_ram_gb": 20.08,
+        "min_vram_gb": 11.27,
+        "recommended_vram_gb": 16.73,
+        "min_disk_gb": 16.76
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q6-k",
+      "ollama_ref": "nous-hermes:13b-llama2-q6_K",
+      "parameter_count": 13000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.11,
+        "recommended_system_ram_gb": 21.73,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 18.11,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "13b-llama2-q80",
+      "ollama_ref": "nous-hermes:13b-llama2-q8_0",
+      "parameter_count": 13000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 21.56,
+        "recommended_system_ram_gb": 25.88,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 21.56,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "13b-q2-k",
+      "ollama_ref": "nous-hermes:13b-q2_K",
+      "parameter_count": 13000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.67,
+        "recommended_system_ram_gb": 14.01,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 11.67,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "13b-q3-k-l",
+      "ollama_ref": "nous-hermes:13b-q3_K_L",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 6900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.4,
+        "recommended_system_ram_gb": 16.08,
+        "min_vram_gb": 7.93,
+        "recommended_vram_gb": 13.4,
+        "min_disk_gb": 13.28
+      }
+    },
+    {
+      "size_slug": "13b-q3-k-m",
+      "ollama_ref": "nous-hermes:13b-q3_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 6300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.71,
+        "recommended_system_ram_gb": 15.25,
+        "min_vram_gb": 7.24,
+        "recommended_vram_gb": 12.71,
+        "min_disk_gb": 12.56
+      }
+    },
+    {
+      "size_slug": "13b-q3-k-s",
+      "ollama_ref": "nous-hermes:13b-q3_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 5700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.02,
+        "recommended_system_ram_gb": 14.42,
+        "min_vram_gb": 6.55,
+        "recommended_vram_gb": 12.02,
+        "min_disk_gb": 11.84
+      }
+    },
+    {
+      "size_slug": "13b-q4-k-m",
+      "ollama_ref": "nous-hermes:13b-q4_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 7900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.55,
+        "recommended_system_ram_gb": 17.46,
+        "min_vram_gb": 9.08,
+        "recommended_vram_gb": 14.55,
+        "min_disk_gb": 14.48
+      }
+    },
+    {
+      "size_slug": "13b-q4-k-s",
+      "ollama_ref": "nous-hermes:13b-q4_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-q40",
+      "ollama_ref": "nous-hermes:13b-q4_0",
+      "parameter_count": 13000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-q41",
+      "ollama_ref": "nous-hermes:13b-q4_1",
+      "parameter_count": 13000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 8200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.89,
+        "recommended_system_ram_gb": 17.87,
+        "min_vram_gb": 9.43,
+        "recommended_vram_gb": 14.89,
+        "min_disk_gb": 14.84
+      }
+    },
+    {
+      "size_slug": "13b-q5-k-m",
+      "ollama_ref": "nous-hermes:13b-q5_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 9200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 16.04,
+        "recommended_system_ram_gb": 19.25,
+        "min_vram_gb": 10.58,
+        "recommended_vram_gb": 16.04,
+        "min_disk_gb": 16.04
+      }
+    },
+    {
+      "size_slug": "13b-q5-k-s",
+      "ollama_ref": "nous-hermes:13b-q5_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 9000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.81,
+        "recommended_system_ram_gb": 18.97,
+        "min_vram_gb": 10.35,
+        "recommended_vram_gb": 15.81,
+        "min_disk_gb": 15.8
+      }
+    },
+    {
+      "size_slug": "13b-q50",
+      "ollama_ref": "nous-hermes:13b-q5_0",
+      "parameter_count": 13000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 9000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.81,
+        "recommended_system_ram_gb": 18.97,
+        "min_vram_gb": 10.35,
+        "recommended_vram_gb": 15.81,
+        "min_disk_gb": 15.8
+      }
+    },
+    {
+      "size_slug": "13b-q51",
+      "ollama_ref": "nous-hermes:13b-q5_1",
+      "parameter_count": 13000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 9800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 16.73,
+        "recommended_system_ram_gb": 20.08,
+        "min_vram_gb": 11.27,
+        "recommended_vram_gb": 16.73,
+        "min_disk_gb": 16.76
+      }
+    },
+    {
+      "size_slug": "13b-q6-k",
+      "ollama_ref": "nous-hermes:13b-q6_K",
+      "parameter_count": 13000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.11,
+        "recommended_system_ram_gb": 21.73,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 18.11,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "13b-q80",
+      "ollama_ref": "nous-hermes:13b-q8_0",
+      "parameter_count": 13000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 21.56,
+        "recommended_system_ram_gb": 25.88,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 21.56,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "nous-hermes:7b",
+      "parameter_count": 7000000000,
+      "quantization": null,
+      "download_size_bytes": 3800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.11,
+        "recommended_system_ram_gb": 9.73,
+        "min_vram_gb": 4.37,
+        "recommended_vram_gb": 8.11,
+        "min_disk_gb": 9.56
+      }
+    },
+    {
+      "size_slug": "7b-llama2",
+      "ollama_ref": "nous-hermes:7b-llama2",
+      "parameter_count": 7000000000,
+      "quantization": null,
+      "download_size_bytes": 3800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.11,
+        "recommended_system_ram_gb": 9.73,
+        "min_vram_gb": 4.37,
+        "recommended_vram_gb": 8.11,
+        "min_disk_gb": 9.56
+      }
+    },
+    {
+      "size_slug": "7b-llama2-fp16",
+      "ollama_ref": "nous-hermes:7b-llama2-fp16",
+      "parameter_count": 7000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 13000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.69,
+        "recommended_system_ram_gb": 22.43,
+        "min_vram_gb": 14.95,
+        "recommended_vram_gb": 18.69,
+        "min_disk_gb": 20.6
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q2-k",
+      "ollama_ref": "nous-hermes:7b-llama2-q2_K",
+      "parameter_count": 7000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 2800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.96,
+        "recommended_system_ram_gb": 8.35,
+        "min_vram_gb": 3.22,
+        "recommended_vram_gb": 6.96,
+        "min_disk_gb": 8.36
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q3-k-l",
+      "ollama_ref": "nous-hermes:7b-llama2-q3_K_L",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 3600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.88,
+        "recommended_system_ram_gb": 9.45,
+        "min_vram_gb": 4.14,
+        "recommended_vram_gb": 7.88,
+        "min_disk_gb": 9.32
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q3-k-m",
+      "ollama_ref": "nous-hermes:7b-llama2-q3_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 3300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.53,
+        "recommended_system_ram_gb": 9.04,
+        "min_vram_gb": 3.79,
+        "recommended_vram_gb": 7.53,
+        "min_disk_gb": 8.96
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q3-k-s",
+      "ollama_ref": "nous-hermes:7b-llama2-q3_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 2900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.07,
+        "recommended_system_ram_gb": 8.49,
+        "min_vram_gb": 3.33,
+        "recommended_vram_gb": 7.07,
+        "min_disk_gb": 8.48
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q4-k-m",
+      "ollama_ref": "nous-hermes:7b-llama2-q4_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 4100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.45,
+        "recommended_system_ram_gb": 10.14,
+        "min_vram_gb": 4.71,
+        "recommended_vram_gb": 8.45,
+        "min_disk_gb": 9.92
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q4-k-s",
+      "ollama_ref": "nous-hermes:7b-llama2-q4_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 3900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.22,
+        "recommended_system_ram_gb": 9.87,
+        "min_vram_gb": 4.48,
+        "recommended_vram_gb": 8.22,
+        "min_disk_gb": 9.68
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q40",
+      "ollama_ref": "nous-hermes:7b-llama2-q4_0",
+      "parameter_count": 7000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 3800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.11,
+        "recommended_system_ram_gb": 9.73,
+        "min_vram_gb": 4.37,
+        "recommended_vram_gb": 8.11,
+        "min_disk_gb": 9.56
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q41",
+      "ollama_ref": "nous-hermes:7b-llama2-q4_1",
+      "parameter_count": 7000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 4200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.57,
+        "recommended_system_ram_gb": 10.28,
+        "min_vram_gb": 4.83,
+        "recommended_vram_gb": 8.57,
+        "min_disk_gb": 10.04
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q5-k-m",
+      "ollama_ref": "nous-hermes:7b-llama2-q5_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 4800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.26,
+        "recommended_system_ram_gb": 11.11,
+        "min_vram_gb": 5.52,
+        "recommended_vram_gb": 9.26,
+        "min_disk_gb": 10.76
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q5-k-s",
+      "ollama_ref": "nous-hermes:7b-llama2-q5_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.14,
+        "recommended_system_ram_gb": 10.97,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.14,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q50",
+      "ollama_ref": "nous-hermes:7b-llama2-q5_0",
+      "parameter_count": 7000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.14,
+        "recommended_system_ram_gb": 10.97,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.14,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q51",
+      "ollama_ref": "nous-hermes:7b-llama2-q5_1",
+      "parameter_count": 7000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 5100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.6,
+        "recommended_system_ram_gb": 11.52,
+        "min_vram_gb": 5.86,
+        "recommended_vram_gb": 9.6,
+        "min_disk_gb": 11.12
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q6-k",
+      "ollama_ref": "nous-hermes:7b-llama2-q6_K",
+      "parameter_count": 7000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 5500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.06,
+        "recommended_system_ram_gb": 12.07,
+        "min_vram_gb": 6.32,
+        "recommended_vram_gb": 10.06,
+        "min_disk_gb": 11.6
+      }
+    },
+    {
+      "size_slug": "7b-llama2-q80",
+      "ollama_ref": "nous-hermes:7b-llama2-q8_0",
+      "parameter_count": 7000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 7200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.02,
+        "recommended_system_ram_gb": 14.42,
+        "min_vram_gb": 8.28,
+        "recommended_vram_gb": 12.02,
+        "min_disk_gb": 13.64
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nous-hermes:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 3800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nous-hermes/tags",
+        "retrieved_at": "2026-08-01T11:57:17Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.09,
+        "recommended_system_ram_gb": 7.31,
+        "min_vram_gb": 4.37,
+        "recommended_vram_gb": 6.09,
+        "min_disk_gb": 9.56
+      }
+    }
+  ],
+  "promoted_size_slug": "70b-llama2-fp16",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

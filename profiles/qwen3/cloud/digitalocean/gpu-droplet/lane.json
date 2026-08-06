@@ -1,0 +1,368 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "235b",
+      "ollama_ref": "qwen3:235b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b",
+      "ollama_ref": "qwen3:235b-a22b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-fp16",
+      "ollama_ref": "qwen3:235b-a22b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-instruct2507-q4-k-m",
+      "ollama_ref": "qwen3:235b-a22b-instruct-2507-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-instruct2507-q80",
+      "ollama_ref": "qwen3:235b-a22b-instruct-2507-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-q4-k-m",
+      "ollama_ref": "qwen3:235b-a22b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-q80",
+      "ollama_ref": "qwen3:235b-a22b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-thinking2507-fp16",
+      "ollama_ref": "qwen3:235b-a22b-thinking-2507-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-thinking2507-q4-k-m",
+      "ollama_ref": "qwen3:235b-a22b-thinking-2507-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-a22b-thinking2507-q80",
+      "ollama_ref": "qwen3:235b-a22b-thinking-2507-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-instruct",
+      "ollama_ref": "qwen3:235b-instruct",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "235b-thinking",
+      "ollama_ref": "qwen3:235b-thinking",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b",
+      "ollama_ref": "qwen3:32b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-fp16",
+      "ollama_ref": "qwen3:32b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-q4-k-m",
+      "ollama_ref": "qwen3:32b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-q80",
+      "ollama_ref": "qwen3:32b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b",
+      "ollama_ref": "qwen3:30b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b",
+      "ollama_ref": "qwen3:30b-a3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-fp16",
+      "ollama_ref": "qwen3:30b-a3b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-instruct2507-fp16",
+      "ollama_ref": "qwen3:30b-a3b-instruct-2507-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-instruct2507-q4-k-m",
+      "ollama_ref": "qwen3:30b-a3b-instruct-2507-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-instruct2507-q80",
+      "ollama_ref": "qwen3:30b-a3b-instruct-2507-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-q4-k-m",
+      "ollama_ref": "qwen3:30b-a3b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-q80",
+      "ollama_ref": "qwen3:30b-a3b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-thinking2507-fp16",
+      "ollama_ref": "qwen3:30b-a3b-thinking-2507-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-thinking2507-q4-k-m",
+      "ollama_ref": "qwen3:30b-a3b-thinking-2507-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-a3b-thinking2507-q80",
+      "ollama_ref": "qwen3:30b-a3b-thinking-2507-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-instruct",
+      "ollama_ref": "qwen3:30b-instruct",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "30b-thinking",
+      "ollama_ref": "qwen3:30b-thinking",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b",
+      "ollama_ref": "qwen3:14b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-fp16",
+      "ollama_ref": "qwen3:14b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-q4-k-m",
+      "ollama_ref": "qwen3:14b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-q80",
+      "ollama_ref": "qwen3:14b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "qwen3:8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-fp16",
+      "ollama_ref": "qwen3:8b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-q4-k-m",
+      "ollama_ref": "qwen3:8b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-q80",
+      "ollama_ref": "qwen3:8b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "qwen3:4b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-fp16",
+      "ollama_ref": "qwen3:4b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-instruct",
+      "ollama_ref": "qwen3:4b-instruct",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-instruct2507-fp16",
+      "ollama_ref": "qwen3:4b-instruct-2507-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-instruct2507-q4-k-m",
+      "ollama_ref": "qwen3:4b-instruct-2507-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-instruct2507-q80",
+      "ollama_ref": "qwen3:4b-instruct-2507-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-q4-k-m",
+      "ollama_ref": "qwen3:4b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-q80",
+      "ollama_ref": "qwen3:4b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-thinking",
+      "ollama_ref": "qwen3:4b-thinking",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-thinking2507-fp16",
+      "ollama_ref": "qwen3:4b-thinking-2507-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-thinking2507-q4-k-m",
+      "ollama_ref": "qwen3:4b-thinking-2507-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "4b-thinking2507-q80",
+      "ollama_ref": "qwen3:4b-thinking-2507-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.7b",
+      "ollama_ref": "qwen3:1.7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.7b-fp16",
+      "ollama_ref": "qwen3:1.7b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.7b-q4-k-m",
+      "ollama_ref": "qwen3:1.7b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.7b-q80",
+      "ollama_ref": "qwen3:1.7b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "0.6b",
+      "ollama_ref": "qwen3:0.6b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "0.6b-fp16",
+      "ollama_ref": "qwen3:0.6b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "0.6b-q4-k-m",
+      "ollama_ref": "qwen3:0.6b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "0.6b-q80",
+      "ollama_ref": "qwen3:0.6b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

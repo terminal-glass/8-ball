@@ -1,0 +1,152 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "laguna-xs-2.1",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "bf16",
+      "ollama_ref": "laguna-xs-2.1:bf16",
+      "parameter_count": null,
+      "quantization": "bf16",
+      "download_size_bytes": 67000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/laguna-xs-2.1/tags",
+        "retrieved_at": "2026-08-01T11:54:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 78.77,
+        "recommended_system_ram_gb": 94.53,
+        "min_vram_gb": 77.05,
+        "recommended_vram_gb": 78.77,
+        "min_disk_gb": 85.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "laguna-xs-2.1:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 20000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/laguna-xs-2.1/tags",
+        "retrieved_at": "2026-08-01T11:54:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 24.72,
+        "recommended_system_ram_gb": 29.67,
+        "min_vram_gb": 23.0,
+        "recommended_vram_gb": 24.72,
+        "min_disk_gb": 29.0
+      }
+    },
+    {
+      "size_slug": "mlx-bf16",
+      "ollama_ref": "laguna-xs-2.1:mlx-bf16",
+      "parameter_count": null,
+      "quantization": "bf16",
+      "download_size_bytes": 67000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/laguna-xs-2.1/tags",
+        "retrieved_at": "2026-08-01T11:54:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 78.77,
+        "recommended_system_ram_gb": 94.53,
+        "min_vram_gb": 77.05,
+        "recommended_vram_gb": 78.77,
+        "min_disk_gb": 85.4
+      }
+    },
+    {
+      "size_slug": "mxfp8",
+      "ollama_ref": "laguna-xs-2.1:mxfp8",
+      "parameter_count": null,
+      "quantization": "mxfp8",
+      "download_size_bytes": 39000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/laguna-xs-2.1/tags",
+        "retrieved_at": "2026-08-01T11:54:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 46.57,
+        "recommended_system_ram_gb": 55.89,
+        "min_vram_gb": 44.85,
+        "recommended_vram_gb": 46.57,
+        "min_disk_gb": 51.8
+      }
+    },
+    {
+      "size_slug": "nvfp4",
+      "ollama_ref": "laguna-xs-2.1:nvfp4",
+      "parameter_count": null,
+      "quantization": "nvfp4",
+      "download_size_bytes": 19000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/laguna-xs-2.1/tags",
+        "retrieved_at": "2026-08-01T11:54:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 23.57,
+        "recommended_system_ram_gb": 28.29,
+        "min_vram_gb": 21.85,
+        "recommended_vram_gb": 23.57,
+        "min_disk_gb": 27.8
+      }
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "laguna-xs-2.1:q4_K_M",
+      "parameter_count": null,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 20000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/laguna-xs-2.1/tags",
+        "retrieved_at": "2026-08-01T11:54:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 24.72,
+        "recommended_system_ram_gb": 29.67,
+        "min_vram_gb": 23.0,
+        "recommended_vram_gb": 24.72,
+        "min_disk_gb": 29.0
+      }
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "laguna-xs-2.1:q8_0",
+      "parameter_count": null,
+      "quantization": "q8_0",
+      "download_size_bytes": 36000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/laguna-xs-2.1/tags",
+        "retrieved_at": "2026-08-01T11:54:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 43.12,
+        "recommended_system_ram_gb": 51.75,
+        "min_vram_gb": 41.4,
+        "recommended_vram_gb": 43.12,
+        "min_disk_gb": 48.2
+      }
+    }
+  ],
+  "promoted_size_slug": "bf16",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

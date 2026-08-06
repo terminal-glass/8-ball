@@ -1,0 +1,50 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "devstral-2",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "123b",
+      "ollama_ref": "devstral-2:123b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "123b-instruct2512-fp16",
+      "ollama_ref": "devstral-2:123b-instruct-2512-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "123b-instruct2512-q4-k-m",
+      "ollama_ref": "devstral-2:123b-instruct-2512-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "123b-instruct2512-q80",
+      "ollama_ref": "devstral-2:123b-instruct-2512-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "devstral-2:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

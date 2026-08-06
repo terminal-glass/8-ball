@@ -1,0 +1,80 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "all-minilm",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "33m",
+      "ollama_ref": "all-minilm:33m",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "33m-l12-v2-fp16",
+      "ollama_ref": "all-minilm:33m-l12-v2-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "22m",
+      "ollama_ref": "all-minilm:22m",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "22m-l6-v2-fp16",
+      "ollama_ref": "all-minilm:22m-l6-v2-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "l12",
+      "ollama_ref": "all-minilm:l12",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "l12-v2",
+      "ollama_ref": "all-minilm:l12-v2",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "l6",
+      "ollama_ref": "all-minilm:l6",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "l6-v2",
+      "ollama_ref": "all-minilm:l6-v2",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "all-minilm:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "v2",
+      "ollama_ref": "all-minilm:v2",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

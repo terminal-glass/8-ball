@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llava-phi3",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": false,
+  "cuda_available": false,
+  "apple_metal_available": null,
+  "total_vram_gb": null,
+  "reason": "Intel Mac lane uses CPU-only fallback; discrete GPU not assumed."
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3-coder",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "480b",
+      "ollama_ref": "qwen3-coder:480b",
+      "fits": false,
+      "reason": "requires 353.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "480b-a35b-fp16",
+      "ollama_ref": "qwen3-coder:480b-a35b-fp16",
+      "fits": false,
+      "reason": "requires 1157.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "480b-a35b-q4-k-m",
+      "ollama_ref": "qwen3-coder:480b-a35b-q4_K_M",
+      "fits": false,
+      "reason": "requires 353.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "480b-a35b-q80",
+      "ollama_ref": "qwen3-coder:480b-a35b-q8_0",
+      "fits": false,
+      "reason": "requires 617.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "30b",
+      "ollama_ref": "qwen3-coder:30b",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "30b-a3b-fp16",
+      "ollama_ref": "qwen3-coder:30b-a3b-fp16",
+      "fits": false,
+      "reason": "requires 78.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "30b-a3b-q4-k-m",
+      "ollama_ref": "qwen3-coder:30b-a3b-q4_K_M",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "30b-a3b-q80",
+      "ollama_ref": "qwen3-coder:30b-a3b-q8_0",
+      "fits": false,
+      "reason": "requires 43.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3-coder:latest",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+    }
+  ]
+}

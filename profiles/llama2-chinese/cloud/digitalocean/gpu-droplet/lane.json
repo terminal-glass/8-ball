@@ -1,0 +1,230 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama2-chinese",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "13b",
+      "ollama_ref": "llama2-chinese:13b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat",
+      "ollama_ref": "llama2-chinese:13b-chat",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-fp16",
+      "ollama_ref": "llama2-chinese:13b-chat-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q2-k",
+      "ollama_ref": "llama2-chinese:13b-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q3-k-l",
+      "ollama_ref": "llama2-chinese:13b-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q3-k-m",
+      "ollama_ref": "llama2-chinese:13b-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q3-k-s",
+      "ollama_ref": "llama2-chinese:13b-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q4-k-m",
+      "ollama_ref": "llama2-chinese:13b-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q4-k-s",
+      "ollama_ref": "llama2-chinese:13b-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q40",
+      "ollama_ref": "llama2-chinese:13b-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q41",
+      "ollama_ref": "llama2-chinese:13b-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q5-k-m",
+      "ollama_ref": "llama2-chinese:13b-chat-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q5-k-s",
+      "ollama_ref": "llama2-chinese:13b-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q50",
+      "ollama_ref": "llama2-chinese:13b-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q51",
+      "ollama_ref": "llama2-chinese:13b-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q6-k",
+      "ollama_ref": "llama2-chinese:13b-chat-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "13b-chat-q80",
+      "ollama_ref": "llama2-chinese:13b-chat-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "llama2-chinese:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat",
+      "ollama_ref": "llama2-chinese:7b-chat",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-fp16",
+      "ollama_ref": "llama2-chinese:7b-chat-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q2-k",
+      "ollama_ref": "llama2-chinese:7b-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q3-k-l",
+      "ollama_ref": "llama2-chinese:7b-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q3-k-m",
+      "ollama_ref": "llama2-chinese:7b-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q3-k-s",
+      "ollama_ref": "llama2-chinese:7b-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q4-k-m",
+      "ollama_ref": "llama2-chinese:7b-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q4-k-s",
+      "ollama_ref": "llama2-chinese:7b-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q40",
+      "ollama_ref": "llama2-chinese:7b-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q41",
+      "ollama_ref": "llama2-chinese:7b-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q5-k-m",
+      "ollama_ref": "llama2-chinese:7b-chat-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q5-k-s",
+      "ollama_ref": "llama2-chinese:7b-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q50",
+      "ollama_ref": "llama2-chinese:7b-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q51",
+      "ollama_ref": "llama2-chinese:7b-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q6-k",
+      "ollama_ref": "llama2-chinese:7b-chat-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q80",
+      "ollama_ref": "llama2-chinese:7b-chat-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama2-chinese:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "sailor2",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "20b",
+      "ollama_ref": "sailor2:20b",
+      "fits": false,
+      "reason": "requires 21.27 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "20b-chat-fp16",
+      "ollama_ref": "sailor2:20b-chat-fp16",
+      "fits": false,
+      "reason": "requires 51.17 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "20b-chat-q4-k-m",
+      "ollama_ref": "sailor2:20b-chat-q4_K_M",
+      "fits": false,
+      "reason": "requires 21.27 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "20b-chat-q80",
+      "ollama_ref": "sailor2:20b-chat-q8_0",
+      "fits": false,
+      "reason": "requires 30.47 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "sailor2:8b",
+      "fits": false,
+      "reason": "requires 10.0 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "8b-chat-fp16",
+      "ollama_ref": "sailor2:8b-chat-fp16",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "8b-chat-q4-k-m",
+      "ollama_ref": "sailor2:8b-chat-q4_K_M",
+      "fits": false,
+      "reason": "requires 10.0 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "8b-chat-q80",
+      "ollama_ref": "sailor2:8b-chat-q8_0",
+      "fits": false,
+      "reason": "requires 14.49 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "1b",
+      "ollama_ref": "sailor2:1b",
+      "fits": false,
+      "reason": "requires 3.28 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "1b-chat-fp16",
+      "ollama_ref": "sailor2:1b-chat-fp16",
+      "fits": false,
+      "reason": "requires 4.31 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "1b-chat-q4-k-m",
+      "ollama_ref": "sailor2:1b-chat-q4_K_M",
+      "fits": false,
+      "reason": "requires 2.86 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "1b-chat-q80",
+      "ollama_ref": "sailor2:1b-chat-q8_0",
+      "fits": false,
+      "reason": "requires 3.28 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "sailor2:latest",
+      "fits": false,
+      "reason": "requires 7.7 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

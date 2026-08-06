@@ -1,0 +1,62 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "laguna-xs-2.1",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "bf16",
+      "ollama_ref": "laguna-xs-2.1:bf16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "laguna-xs-2.1:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "mlx-bf16",
+      "ollama_ref": "laguna-xs-2.1:mlx-bf16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "mxfp8",
+      "ollama_ref": "laguna-xs-2.1:mxfp8",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "nvfp4",
+      "ollama_ref": "laguna-xs-2.1:nvfp4",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "laguna-xs-2.1:q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "laguna-xs-2.1:q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

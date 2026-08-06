@@ -1,0 +1,92 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "llava-phi3",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "llava-phi3:3.8b",
+      "parameter_count": 3800000000,
+      "quantization": null,
+      "download_size_bytes": 2900000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llava-phi3/tags",
+        "retrieved_at": "2026-08-01T11:55:39Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.15,
+        "recommended_system_ram_gb": 7.38,
+        "min_vram_gb": 3.33,
+        "recommended_vram_gb": 6.15,
+        "min_disk_gb": 8.48
+      }
+    },
+    {
+      "size_slug": "3.8b-mini-fp16",
+      "ollama_ref": "llava-phi3:3.8b-mini-fp16",
+      "parameter_count": 3800000000,
+      "quantization": "fp16",
+      "download_size_bytes": 8300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llava-phi3/tags",
+        "retrieved_at": "2026-08-01T11:55:39Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.36,
+        "recommended_system_ram_gb": 14.83,
+        "min_vram_gb": 9.54,
+        "recommended_vram_gb": 12.36,
+        "min_disk_gb": 14.96
+      }
+    },
+    {
+      "size_slug": "3.8b-mini-q40",
+      "ollama_ref": "llava-phi3:3.8b-mini-q4_0",
+      "parameter_count": 3800000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 2900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llava-phi3/tags",
+        "retrieved_at": "2026-08-01T11:55:39Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.15,
+        "recommended_system_ram_gb": 7.38,
+        "min_vram_gb": 3.33,
+        "recommended_vram_gb": 6.15,
+        "min_disk_gb": 8.48
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llava-phi3:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 2900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llava-phi3/tags",
+        "retrieved_at": "2026-08-01T11:55:39Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 5.06,
+        "recommended_system_ram_gb": 6.07,
+        "min_vram_gb": 3.33,
+        "recommended_vram_gb": 5.06,
+        "min_disk_gb": 8.48
+      }
+    }
+  ],
+  "promoted_size_slug": "3.8b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

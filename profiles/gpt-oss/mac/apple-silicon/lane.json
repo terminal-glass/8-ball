@@ -1,0 +1,50 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gpt-oss",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "gpt-oss:120b",
+      "fits": false,
+      "reason": "requires 110.97 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "120b-cloud",
+      "ollama_ref": "gpt-oss:120b-cloud",
+      "fits": false,
+      "reason": "requires 110.97 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "20b",
+      "ollama_ref": "gpt-oss:20b",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "20b-cloud",
+      "ollama_ref": "gpt-oss:20b-cloud",
+      "fits": false,
+      "reason": "requires 82.22 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gpt-oss:latest",
+      "fits": false,
+      "reason": "requires 17.82 GB RAM; lane provides 10.0 GB usable"
+    }
+  ]
+}

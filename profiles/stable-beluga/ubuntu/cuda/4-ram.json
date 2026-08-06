@@ -1,0 +1,15 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "stable-beluga",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 24.0,
+  "usable_model_ram_gb": null,
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

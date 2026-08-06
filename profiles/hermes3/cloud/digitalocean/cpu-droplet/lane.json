@@ -1,0 +1,410 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "hermes3",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "405b",
+      "ollama_ref": "hermes3:405b",
+      "fits": false,
+      "reason": "requires 279.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-fp16",
+      "ollama_ref": "hermes3:405b-llama3.1-fp16",
+      "fits": false,
+      "reason": "requires 979.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q2-k",
+      "ollama_ref": "hermes3:405b-llama3.1-q2_K",
+      "fits": false,
+      "reason": "requires 183.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q3-k-l",
+      "ollama_ref": "hermes3:405b-llama3.1-q3_K_L",
+      "fits": false,
+      "reason": "requires 260.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q3-k-m",
+      "ollama_ref": "hermes3:405b-llama3.1-q3_K_M",
+      "fits": false,
+      "reason": "requires 239.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q3-k-s",
+      "ollama_ref": "hermes3:405b-llama3.1-q3_K_S",
+      "fits": false,
+      "reason": "requires 215.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q4-k-m",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_K_M",
+      "fits": false,
+      "reason": "requires 296.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q4-k-s",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_K_S",
+      "fits": false,
+      "reason": "requires 282.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q40",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_0",
+      "fits": false,
+      "reason": "requires 279.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q41",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_1",
+      "fits": false,
+      "reason": "requires 309.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q5-k-m",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_K_M",
+      "fits": false,
+      "reason": "requires 349.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q5-k-s",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_K_S",
+      "fits": false,
+      "reason": "requires 339.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q50",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_0",
+      "fits": false,
+      "reason": "requires 339.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q51",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_1",
+      "fits": false,
+      "reason": "requires 371.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q6-k",
+      "ollama_ref": "hermes3:405b-llama3.1-q6_K",
+      "fits": false,
+      "reason": "requires 404.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "405b-llama3.1-q80",
+      "ollama_ref": "hermes3:405b-llama3.1-q8_0",
+      "fits": false,
+      "reason": "requires 522.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b",
+      "ollama_ref": "hermes3:70b",
+      "fits": false,
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-fp16",
+      "ollama_ref": "hermes3:70b-llama3.1-fp16",
+      "fits": false,
+      "reason": "requires 174.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q2-k",
+      "ollama_ref": "hermes3:70b-llama3.1-q2_K",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q3-k-l",
+      "ollama_ref": "hermes3:70b-llama3.1-q3_K_L",
+      "fits": false,
+      "reason": "requires 49.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q3-k-m",
+      "ollama_ref": "hermes3:70b-llama3.1-q3_K_M",
+      "fits": false,
+      "reason": "requires 45.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q3-k-s",
+      "ollama_ref": "hermes3:70b-llama3.1-q3_K_S",
+      "fits": false,
+      "reason": "requires 42.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q4-k-m",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_K_M",
+      "fits": false,
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q4-k-s",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_K_S",
+      "fits": false,
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q40",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_0",
+      "fits": false,
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q41",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_1",
+      "fits": false,
+      "reason": "requires 57.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q5-k-m",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_K_M",
+      "fits": false,
+      "reason": "requires 65.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q5-k-s",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_K_S",
+      "fits": false,
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q50",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_0",
+      "fits": false,
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q51",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_1",
+      "fits": false,
+      "reason": "requires 68.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q6-k",
+      "ollama_ref": "hermes3:70b-llama3.1-q6_K",
+      "fits": false,
+      "reason": "requires 74.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "70b-llama3.1-q80",
+      "ollama_ref": "hermes3:70b-llama3.1-q8_0",
+      "fits": false,
+      "reason": "requires 95.0 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "hermes3:8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-fp16",
+      "ollama_ref": "hermes3:8b-llama3.1-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q2-k",
+      "ollama_ref": "hermes3:8b-llama3.1-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q3-k-l",
+      "ollama_ref": "hermes3:8b-llama3.1-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q3-k-m",
+      "ollama_ref": "hermes3:8b-llama3.1-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q3-k-s",
+      "ollama_ref": "hermes3:8b-llama3.1-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q4-k-m",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q4-k-s",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q40",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q41",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q5-k-m",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q5-k-s",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q50",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q51",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q6-k",
+      "ollama_ref": "hermes3:8b-llama3.1-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-llama3.1-q80",
+      "ollama_ref": "hermes3:8b-llama3.1-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "hermes3:3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-fp16",
+      "ollama_ref": "hermes3:3b-llama3.2-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q2-k",
+      "ollama_ref": "hermes3:3b-llama3.2-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q3-k-l",
+      "ollama_ref": "hermes3:3b-llama3.2-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q3-k-m",
+      "ollama_ref": "hermes3:3b-llama3.2-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q3-k-s",
+      "ollama_ref": "hermes3:3b-llama3.2-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q4-k-m",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q4-k-s",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q40",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q41",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q5-k-m",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q5-k-s",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q50",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q51",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q6-k",
+      "ollama_ref": "hermes3:3b-llama3.2-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-llama3.2-q80",
+      "ollama_ref": "hermes3:3b-llama3.2-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "hermes3:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

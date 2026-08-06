@@ -1,0 +1,410 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "internlm2",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "20b",
+      "ollama_ref": "internlm2:20b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-fp16",
+      "ollama_ref": "internlm2:20b-chat-v2.5-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q2-k",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q40",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q41",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q50",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q51",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q6-k",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q80",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "internlm2:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-fp16",
+      "ollama_ref": "internlm2:7b-chat-v2.5-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q2-k",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q40",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q41",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q50",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q51",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q6-k",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q80",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-fp16",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q2-k",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q40",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q41",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q50",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q51",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q6-k",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q80",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b",
+      "ollama_ref": "internlm2:1.8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-fp16",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q2-k",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q40",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q41",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q50",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q51",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q6-k",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q80",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1m",
+      "ollama_ref": "internlm2:1m",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "internlm2:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

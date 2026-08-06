@@ -1,0 +1,14 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "paraphrase-multilingual",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "minimum_free_disk_gb": 80.0,
+  "reason": "Disk headroom sourced from hardware or provider plan assumptions."
+}

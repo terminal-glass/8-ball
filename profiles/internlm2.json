@@ -1,0 +1,1312 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "internlm2",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "20b",
+      "ollama_ref": "internlm2:20b",
+      "parameter_count": 20000000000,
+      "quantization": null,
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 20.12,
+        "recommended_system_ram_gb": 24.15,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 20.12,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-fp16",
+      "ollama_ref": "internlm2:20b-chat-v2.5-fp16",
+      "parameter_count": 20000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 40000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 53.47,
+        "recommended_system_ram_gb": 64.17,
+        "min_vram_gb": 46.0,
+        "recommended_vram_gb": 53.47,
+        "min_disk_gb": 53.0
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q2-k",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q2_K",
+      "parameter_count": 20000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 7500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 16.1,
+        "recommended_system_ram_gb": 19.32,
+        "min_vram_gb": 8.62,
+        "recommended_vram_gb": 16.1,
+        "min_disk_gb": 14.0
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q3_K_L",
+      "parameter_count": 20000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 20.12,
+        "recommended_system_ram_gb": 24.15,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 20.12,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q3_K_M",
+      "parameter_count": 20000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 9700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.63,
+        "recommended_system_ram_gb": 22.36,
+        "min_vram_gb": 11.15,
+        "recommended_vram_gb": 18.63,
+        "min_disk_gb": 16.64
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q3_K_S",
+      "parameter_count": 20000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 8800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 17.59,
+        "recommended_system_ram_gb": 21.11,
+        "min_vram_gb": 10.12,
+        "recommended_vram_gb": 17.59,
+        "min_disk_gb": 15.56
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_K_M",
+      "parameter_count": 20000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 12000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 21.27,
+        "recommended_system_ram_gb": 25.53,
+        "min_vram_gb": 13.8,
+        "recommended_vram_gb": 21.27,
+        "min_disk_gb": 19.4
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_K_S",
+      "parameter_count": 20000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 20.12,
+        "recommended_system_ram_gb": 24.15,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 20.12,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q40",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_0",
+      "parameter_count": 20000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 20.12,
+        "recommended_system_ram_gb": 24.15,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 20.12,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q41",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q4_1",
+      "parameter_count": 20000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 13000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 22.42,
+        "recommended_system_ram_gb": 26.91,
+        "min_vram_gb": 14.95,
+        "recommended_vram_gb": 22.42,
+        "min_disk_gb": 20.6
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_K_M",
+      "parameter_count": 20000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 23.57,
+        "recommended_system_ram_gb": 28.29,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 23.57,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_K_S",
+      "parameter_count": 20000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 23.57,
+        "recommended_system_ram_gb": 28.29,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 23.57,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q50",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_0",
+      "parameter_count": 20000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 23.57,
+        "recommended_system_ram_gb": 28.29,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 23.57,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q51",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q5_1",
+      "parameter_count": 20000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 15000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 24.72,
+        "recommended_system_ram_gb": 29.67,
+        "min_vram_gb": 17.25,
+        "recommended_vram_gb": 24.72,
+        "min_disk_gb": 23.0
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q6-k",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q6_K",
+      "parameter_count": 20000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 16000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 25.87,
+        "recommended_system_ram_gb": 31.05,
+        "min_vram_gb": 18.4,
+        "recommended_vram_gb": 25.87,
+        "min_disk_gb": 24.2
+      }
+    },
+    {
+      "size_slug": "20b-chat-v2.5-q80",
+      "ollama_ref": "internlm2:20b-chat-v2.5-q8_0",
+      "parameter_count": 20000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 21000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 31.62,
+        "recommended_system_ram_gb": 37.95,
+        "min_vram_gb": 24.15,
+        "recommended_vram_gb": 31.62,
+        "min_disk_gb": 30.2
+      }
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "internlm2:7b",
+      "parameter_count": 7000000000,
+      "quantization": null,
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.91,
+        "recommended_system_ram_gb": 10.69,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 8.91,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-fp16",
+      "ollama_ref": "internlm2:7b-chat-v2.5-fp16",
+      "parameter_count": 7000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 15000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 20.99,
+        "recommended_system_ram_gb": 25.18,
+        "min_vram_gb": 17.25,
+        "recommended_vram_gb": 20.99,
+        "min_disk_gb": 23.0
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q2-k",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q2_K",
+      "parameter_count": 7000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 3000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.19,
+        "recommended_system_ram_gb": 8.62,
+        "min_vram_gb": 3.45,
+        "recommended_vram_gb": 7.19,
+        "min_disk_gb": 8.6
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q3_K_L",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 4100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.45,
+        "recommended_system_ram_gb": 10.14,
+        "min_vram_gb": 4.71,
+        "recommended_vram_gb": 8.45,
+        "min_disk_gb": 9.92
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q3_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 3800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.11,
+        "recommended_system_ram_gb": 9.73,
+        "min_vram_gb": 4.37,
+        "recommended_vram_gb": 8.11,
+        "min_disk_gb": 9.56
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q3_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 3500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.76,
+        "recommended_system_ram_gb": 9.31,
+        "min_vram_gb": 4.02,
+        "recommended_vram_gb": 7.76,
+        "min_disk_gb": 9.2
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.14,
+        "recommended_system_ram_gb": 10.97,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.14,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.91,
+        "recommended_system_ram_gb": 10.69,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 8.91,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q40",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_0",
+      "parameter_count": 7000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.91,
+        "recommended_system_ram_gb": 10.69,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 8.91,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q41",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q4_1",
+      "parameter_count": 7000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 4900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.37,
+        "recommended_system_ram_gb": 11.25,
+        "min_vram_gb": 5.63,
+        "recommended_vram_gb": 9.37,
+        "min_disk_gb": 10.88
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 5500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.06,
+        "recommended_system_ram_gb": 12.07,
+        "min_vram_gb": 6.32,
+        "recommended_vram_gb": 10.06,
+        "min_disk_gb": 11.6
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.95,
+        "recommended_system_ram_gb": 11.94,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 9.95,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q50",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_0",
+      "parameter_count": 7000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.95,
+        "recommended_system_ram_gb": 11.94,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 9.95,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q51",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q5_1",
+      "parameter_count": 7000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.41,
+        "recommended_system_ram_gb": 12.49,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 10.41,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q6-k",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q6_K",
+      "parameter_count": 7000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 6400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.1,
+        "recommended_system_ram_gb": 13.32,
+        "min_vram_gb": 7.36,
+        "recommended_vram_gb": 11.1,
+        "min_disk_gb": 12.68
+      }
+    },
+    {
+      "size_slug": "7b-chat-v2.5-q80",
+      "ollama_ref": "internlm2:7b-chat-v2.5-q8_0",
+      "parameter_count": 7000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 8200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.17,
+        "recommended_system_ram_gb": 15.8,
+        "min_vram_gb": 9.43,
+        "recommended_vram_gb": 13.17,
+        "min_disk_gb": 14.84
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-fp16",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-fp16",
+      "parameter_count": 7000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 15000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 20.99,
+        "recommended_system_ram_gb": 25.18,
+        "min_vram_gb": 17.25,
+        "recommended_vram_gb": 20.99,
+        "min_disk_gb": 23.0
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q2-k",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q2_K",
+      "parameter_count": 7000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 3000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.19,
+        "recommended_system_ram_gb": 8.62,
+        "min_vram_gb": 3.45,
+        "recommended_vram_gb": 7.19,
+        "min_disk_gb": 8.6
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q3_K_L",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 4100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.45,
+        "recommended_system_ram_gb": 10.14,
+        "min_vram_gb": 4.71,
+        "recommended_vram_gb": 8.45,
+        "min_disk_gb": 9.92
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q3_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 3800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.11,
+        "recommended_system_ram_gb": 9.73,
+        "min_vram_gb": 4.37,
+        "recommended_vram_gb": 8.11,
+        "min_disk_gb": 9.56
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q3_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 3500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.76,
+        "recommended_system_ram_gb": 9.31,
+        "min_vram_gb": 4.02,
+        "recommended_vram_gb": 7.76,
+        "min_disk_gb": 9.2
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.14,
+        "recommended_system_ram_gb": 10.97,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.14,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.91,
+        "recommended_system_ram_gb": 10.69,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 8.91,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q40",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_0",
+      "parameter_count": 7000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.91,
+        "recommended_system_ram_gb": 10.69,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 8.91,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q41",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q4_1",
+      "parameter_count": 7000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 4900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.37,
+        "recommended_system_ram_gb": 11.25,
+        "min_vram_gb": 5.63,
+        "recommended_vram_gb": 9.37,
+        "min_disk_gb": 10.88
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 5500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.06,
+        "recommended_system_ram_gb": 12.07,
+        "min_vram_gb": 6.32,
+        "recommended_vram_gb": 10.06,
+        "min_disk_gb": 11.6
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_K_S",
+      "parameter_count": 7000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.95,
+        "recommended_system_ram_gb": 11.94,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 9.95,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q50",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_0",
+      "parameter_count": 7000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.95,
+        "recommended_system_ram_gb": 11.94,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 9.95,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q51",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q5_1",
+      "parameter_count": 7000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.41,
+        "recommended_system_ram_gb": 12.49,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 10.41,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q6-k",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q6_K",
+      "parameter_count": 7000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 6400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.1,
+        "recommended_system_ram_gb": 13.32,
+        "min_vram_gb": 7.36,
+        "recommended_vram_gb": 11.1,
+        "min_disk_gb": 12.68
+      }
+    },
+    {
+      "size_slug": "7b-chat1m-v2.5-q80",
+      "ollama_ref": "internlm2:7b-chat-1m-v2.5-q8_0",
+      "parameter_count": 7000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 8200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.17,
+        "recommended_system_ram_gb": 15.8,
+        "min_vram_gb": 9.43,
+        "recommended_vram_gb": 13.17,
+        "min_disk_gb": 14.84
+      }
+    },
+    {
+      "size_slug": "1.8b",
+      "ollama_ref": "internlm2:1.8b",
+      "parameter_count": 1800000000,
+      "quantization": null,
+      "download_size_bytes": 1100000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.51,
+        "recommended_system_ram_gb": 4.21,
+        "min_vram_gb": 1.26,
+        "recommended_vram_gb": 3.51,
+        "min_disk_gb": 6.32
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-fp16",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-fp16",
+      "parameter_count": 1800000000,
+      "quantization": "fp16",
+      "download_size_bytes": 3800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.61,
+        "recommended_system_ram_gb": 7.93,
+        "min_vram_gb": 4.37,
+        "recommended_vram_gb": 6.61,
+        "min_disk_gb": 9.56
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q2-k",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q2_K",
+      "parameter_count": 1800000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 772000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.13,
+        "recommended_system_ram_gb": 3.76,
+        "min_vram_gb": 0.89,
+        "recommended_vram_gb": 3.13,
+        "min_disk_gb": 5.93
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q3-k-l",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q3_K_L",
+      "parameter_count": 1800000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 1000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.39,
+        "recommended_system_ram_gb": 4.07,
+        "min_vram_gb": 1.15,
+        "recommended_vram_gb": 3.39,
+        "min_disk_gb": 6.2
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q3-k-m",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q3_K_M",
+      "parameter_count": 1800000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 964000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.35,
+        "recommended_system_ram_gb": 4.02,
+        "min_vram_gb": 1.11,
+        "recommended_vram_gb": 3.35,
+        "min_disk_gb": 6.16
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q3-k-s",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q3_K_S",
+      "parameter_count": 1800000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 888000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.26,
+        "recommended_system_ram_gb": 3.92,
+        "min_vram_gb": 1.02,
+        "recommended_vram_gb": 3.26,
+        "min_disk_gb": 6.07
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q4-k-m",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_K_M",
+      "parameter_count": 1800000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 1200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.62,
+        "recommended_system_ram_gb": 4.35,
+        "min_vram_gb": 1.38,
+        "recommended_vram_gb": 3.62,
+        "min_disk_gb": 6.44
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q4-k-s",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_K_S",
+      "parameter_count": 1800000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 1100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.51,
+        "recommended_system_ram_gb": 4.21,
+        "min_vram_gb": 1.26,
+        "recommended_vram_gb": 3.51,
+        "min_disk_gb": 6.32
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q40",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_0",
+      "parameter_count": 1800000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 1100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.51,
+        "recommended_system_ram_gb": 4.21,
+        "min_vram_gb": 1.26,
+        "recommended_vram_gb": 3.51,
+        "min_disk_gb": 6.32
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q41",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_1",
+      "parameter_count": 1800000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 1200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.62,
+        "recommended_system_ram_gb": 4.35,
+        "min_vram_gb": 1.38,
+        "recommended_vram_gb": 3.62,
+        "min_disk_gb": 6.44
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q5-k-m",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_K_M",
+      "parameter_count": 1800000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 1400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.85,
+        "recommended_system_ram_gb": 4.62,
+        "min_vram_gb": 1.61,
+        "recommended_vram_gb": 3.85,
+        "min_disk_gb": 6.68
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q5-k-s",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_K_S",
+      "parameter_count": 1800000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 1300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.74,
+        "recommended_system_ram_gb": 4.48,
+        "min_vram_gb": 1.49,
+        "recommended_vram_gb": 3.74,
+        "min_disk_gb": 6.56
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q50",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_0",
+      "parameter_count": 1800000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 1300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.74,
+        "recommended_system_ram_gb": 4.48,
+        "min_vram_gb": 1.49,
+        "recommended_vram_gb": 3.74,
+        "min_disk_gb": 6.56
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q51",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q5_1",
+      "parameter_count": 1800000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 1400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.85,
+        "recommended_system_ram_gb": 4.62,
+        "min_vram_gb": 1.61,
+        "recommended_vram_gb": 3.85,
+        "min_disk_gb": 6.68
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q6-k",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q6_K",
+      "parameter_count": 1800000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 4.08,
+        "recommended_system_ram_gb": 4.9,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 4.08,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "1.8b-chat-v2.5-q80",
+      "ollama_ref": "internlm2:1.8b-chat-v2.5-q8_0",
+      "parameter_count": 1800000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 2000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 4.54,
+        "recommended_system_ram_gb": 5.45,
+        "min_vram_gb": 2.3,
+        "recommended_vram_gb": 4.54,
+        "min_disk_gb": 7.4
+      }
+    },
+    {
+      "size_slug": "1m",
+      "ollama_ref": "internlm2:1m",
+      "parameter_count": 1000000,
+      "quantization": null,
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.9,
+        "recommended_system_ram_gb": 8.28,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 6.9,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "internlm2:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/internlm2/tags",
+        "retrieved_at": "2026-08-01T11:54:40Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.9,
+        "recommended_system_ram_gb": 8.28,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 6.9,
+        "min_disk_gb": 10.4
+      }
+    }
+  ],
+  "promoted_size_slug": "20b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

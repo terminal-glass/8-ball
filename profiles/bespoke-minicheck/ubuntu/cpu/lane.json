@@ -1,0 +1,122 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "bespoke-minicheck",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "bespoke-minicheck:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "bespoke-minicheck:7b-fp16",
+      "fits": false,
+      "reason": "requires 20.99 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "7b-q2-k",
+      "ollama_ref": "bespoke-minicheck:7b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-l",
+      "ollama_ref": "bespoke-minicheck:7b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-m",
+      "ollama_ref": "bespoke-minicheck:7b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q3-k-s",
+      "ollama_ref": "bespoke-minicheck:7b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "bespoke-minicheck:7b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q4-k-s",
+      "ollama_ref": "bespoke-minicheck:7b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q40",
+      "ollama_ref": "bespoke-minicheck:7b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q41",
+      "ollama_ref": "bespoke-minicheck:7b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-m",
+      "ollama_ref": "bespoke-minicheck:7b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q5-k-s",
+      "ollama_ref": "bespoke-minicheck:7b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q50",
+      "ollama_ref": "bespoke-minicheck:7b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q51",
+      "ollama_ref": "bespoke-minicheck:7b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q6-k",
+      "ollama_ref": "bespoke-minicheck:7b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "bespoke-minicheck:7b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "bespoke-minicheck:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

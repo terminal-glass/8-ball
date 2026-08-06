@@ -1,0 +1,74 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepcoder",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "deepcoder:14b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-preview-fp16",
+      "ollama_ref": "deepcoder:14b-preview-fp16",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "14b-preview-q4-k-m",
+      "ollama_ref": "deepcoder:14b-preview-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-preview-q80",
+      "ollama_ref": "deepcoder:14b-preview-q8_0",
+      "fits": false,
+      "reason": "requires 24.15 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "1.5b",
+      "ollama_ref": "deepcoder:1.5b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.5b-preview-fp16",
+      "ollama_ref": "deepcoder:1.5b-preview-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.5b-preview-q4-k-m",
+      "ollama_ref": "deepcoder:1.5b-preview-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.5b-preview-q80",
+      "ollama_ref": "deepcoder:1.5b-preview-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepcoder:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

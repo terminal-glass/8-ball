@@ -1,0 +1,192 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "phi4-reasoning",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi4-reasoning:14b",
+      "parameter_count": 14000000000,
+      "quantization": null,
+      "download_size_bytes": 11000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.4,
+        "recommended_system_ram_gb": 22.08,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 18.4,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "14b-fp16",
+      "ollama_ref": "phi4-reasoning:14b-fp16",
+      "parameter_count": 14000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 29000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 39.1,
+        "recommended_system_ram_gb": 46.92,
+        "min_vram_gb": 33.35,
+        "recommended_vram_gb": 39.1,
+        "min_disk_gb": 39.8
+      }
+    },
+    {
+      "size_slug": "14b-plus-fp16",
+      "ollama_ref": "phi4-reasoning:14b-plus-fp16",
+      "parameter_count": 14000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 29000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 39.1,
+        "recommended_system_ram_gb": 46.92,
+        "min_vram_gb": 33.35,
+        "recommended_vram_gb": 39.1,
+        "min_disk_gb": 39.8
+      }
+    },
+    {
+      "size_slug": "14b-plus-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-plus-q4_K_M",
+      "parameter_count": 14000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.4,
+        "recommended_system_ram_gb": 22.08,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 18.4,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "14b-plus-q80",
+      "ollama_ref": "phi4-reasoning:14b-plus-q8_0",
+      "parameter_count": 14000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 17000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 25.3,
+        "recommended_system_ram_gb": 30.36,
+        "min_vram_gb": 19.55,
+        "recommended_vram_gb": 25.3,
+        "min_disk_gb": 25.4
+      }
+    },
+    {
+      "size_slug": "14b-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-q4_K_M",
+      "parameter_count": 14000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.4,
+        "recommended_system_ram_gb": 22.08,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 18.4,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "14b-q80",
+      "ollama_ref": "phi4-reasoning:14b-q8_0",
+      "parameter_count": 14000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 17000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 25.3,
+        "recommended_system_ram_gb": 30.36,
+        "min_vram_gb": 19.55,
+        "recommended_vram_gb": 25.3,
+        "min_disk_gb": 25.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-reasoning:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.37,
+        "recommended_system_ram_gb": 17.25,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 14.37,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "plus",
+      "ollama_ref": "phi4-reasoning:plus",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+        "retrieved_at": "2026-08-01T11:58:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.37,
+        "recommended_system_ram_gb": 17.25,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 14.37,
+        "min_disk_gb": 18.2
+      }
+    }
+  ],
+  "promoted_size_slug": "14b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

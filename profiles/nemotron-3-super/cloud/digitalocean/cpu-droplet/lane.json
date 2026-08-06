@@ -1,0 +1,62 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nemotron-3-super",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "nemotron-3-super:120b",
+      "fits": false,
+      "reason": "requires 109.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "120b-a12b",
+      "ollama_ref": "nemotron-3-super:120b-a12b",
+      "fits": false,
+      "reason": "requires 109.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "120b-a12b-bf16",
+      "ollama_ref": "nemotron-3-super:120b-a12b-bf16",
+      "fits": false,
+      "reason": "requires 301.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "120b-a12b-q4-k-m",
+      "ollama_ref": "nemotron-3-super:120b-a12b-q4_K_M",
+      "fits": false,
+      "reason": "requires 109.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "120b-a12b-q80",
+      "ollama_ref": "nemotron-3-super:120b-a12b-q8_0",
+      "fits": false,
+      "reason": "requires 163.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "nemotron-3-super:cloud",
+      "fits": false,
+      "reason": "requires 301.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nemotron-3-super:latest",
+      "fits": false,
+      "reason": "requires 109.4 GB disk; lane minimum free disk is 25 GB"
+    }
+  ]
+}

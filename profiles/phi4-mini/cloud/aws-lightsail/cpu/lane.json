@@ -1,0 +1,50 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phi4-mini",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "phi4-mini:3.8b",
+      "fits": false,
+      "reason": "requires 5.69 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "3.8b-fp16",
+      "ollama_ref": "phi4-mini:3.8b-fp16",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "3.8b-q4-k-m",
+      "ollama_ref": "phi4-mini:3.8b-q4_K_M",
+      "fits": false,
+      "reason": "requires 5.69 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "3.8b-q80",
+      "ollama_ref": "phi4-mini:3.8b-q8_0",
+      "fits": false,
+      "reason": "requires 7.53 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-mini:latest",
+      "fits": false,
+      "reason": "requires 4.6 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

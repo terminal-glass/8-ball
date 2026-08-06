@@ -1,0 +1,192 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "nemotron-3-nano",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "30b",
+      "ollama_ref": "nemotron-3-nano:30b",
+      "parameter_count": 30000000000,
+      "quantization": null,
+      "download_size_bytes": 24000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 37.95,
+        "recommended_system_ram_gb": 45.54,
+        "min_vram_gb": 27.6,
+        "recommended_vram_gb": 37.95,
+        "min_disk_gb": 33.8
+      }
+    },
+    {
+      "size_slug": "30b-a3b-fp16",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-fp16",
+      "parameter_count": 30000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 63000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 82.8,
+        "recommended_system_ram_gb": 99.36,
+        "min_vram_gb": 72.45,
+        "recommended_vram_gb": 82.8,
+        "min_disk_gb": 80.6
+      }
+    },
+    {
+      "size_slug": "30b-a3b-q4-k-m",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-q4_K_M",
+      "parameter_count": 30000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 24000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 37.95,
+        "recommended_system_ram_gb": 45.54,
+        "min_vram_gb": 27.6,
+        "recommended_vram_gb": 37.95,
+        "min_disk_gb": 33.8
+      }
+    },
+    {
+      "size_slug": "30b-a3b-q80",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-q8_0",
+      "parameter_count": 30000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 34000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 49.45,
+        "recommended_system_ram_gb": 59.34,
+        "min_vram_gb": 39.1,
+        "recommended_vram_gb": 49.45,
+        "min_disk_gb": 45.8
+      }
+    },
+    {
+      "size_slug": "30b-cloud",
+      "ollama_ref": "nemotron-3-nano:30b-cloud",
+      "parameter_count": 30000000000,
+      "quantization": null,
+      "download_size_bytes": 63000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 82.8,
+        "recommended_system_ram_gb": 99.36,
+        "min_vram_gb": 72.45,
+        "recommended_vram_gb": 82.8,
+        "min_disk_gb": 80.6
+      }
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "nemotron-3-nano:4b",
+      "parameter_count": 4000000000,
+      "quantization": null,
+      "download_size_bytes": 2800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 6.09,
+        "recommended_system_ram_gb": 7.31,
+        "min_vram_gb": 3.22,
+        "recommended_vram_gb": 6.09,
+        "min_disk_gb": 8.36
+      }
+    },
+    {
+      "size_slug": "4b-bf16",
+      "ollama_ref": "nemotron-3-nano:4b-bf16",
+      "parameter_count": 4000000000,
+      "quantization": "bf16",
+      "download_size_bytes": 8000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.07,
+        "recommended_system_ram_gb": 14.49,
+        "min_vram_gb": 9.2,
+        "recommended_vram_gb": 12.07,
+        "min_disk_gb": 14.6
+      }
+    },
+    {
+      "size_slug": "4b-q80",
+      "ollama_ref": "nemotron-3-nano:4b-q8_0",
+      "parameter_count": 4000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 4200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.7,
+        "recommended_system_ram_gb": 9.25,
+        "min_vram_gb": 4.83,
+        "recommended_vram_gb": 7.7,
+        "min_disk_gb": 10.04
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nemotron-3-nano:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 24000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+        "retrieved_at": "2026-08-01T11:56:47Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 29.32,
+        "recommended_system_ram_gb": 35.19,
+        "min_vram_gb": 27.6,
+        "recommended_vram_gb": 29.32,
+        "min_disk_gb": 33.8
+      }
+    }
+  ],
+  "promoted_size_slug": "30b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

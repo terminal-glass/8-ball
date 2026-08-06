@@ -1,0 +1,134 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "megadolphin",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "megadolphin:120b",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2",
+      "ollama_ref": "megadolphin:120b-v2.2",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-fp16",
+      "ollama_ref": "megadolphin:120b-v2.2-fp16",
+      "fits": false,
+      "reason": "requires 313.38 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q2-k",
+      "ollama_ref": "megadolphin:120b-v2.2-q2_K",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-l",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_L",
+      "fits": false,
+      "reason": "requires 108.67 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_M",
+      "fits": false,
+      "reason": "requires 102.92 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_S",
+      "fits": false,
+      "reason": "requires 96.02 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q4-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_K_M",
+      "fits": false,
+      "reason": "requires 119.02 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q4-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_K_S",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q40",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_0",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q41",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_1",
+      "fits": false,
+      "reason": "requires 122.47 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q5-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_K_M",
+      "fits": false,
+      "reason": "requires 133.97 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q5-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_K_S",
+      "fits": false,
+      "reason": "requires 131.67 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q50",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_0",
+      "fits": false,
+      "reason": "requires 131.67 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q51",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_1",
+      "fits": false,
+      "reason": "requires 139.72 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q6-k",
+      "ollama_ref": "megadolphin:120b-v2.2-q6_K",
+      "fits": false,
+      "reason": "requires 150.07 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "120b-v2.2-q80",
+      "ollama_ref": "megadolphin:120b-v2.2-q8_0",
+      "fits": false,
+      "reason": "requires 183.42 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "megadolphin:latest",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "v2.2",
+      "ollama_ref": "megadolphin:v2.2",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

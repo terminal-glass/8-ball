@@ -1,0 +1,49 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phi4-mini-reasoning",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/intel",
+  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "phi4-mini-reasoning:3.8b",
+      "fits": false,
+      "reason": "requires 6.5 GB RAM; lane provides 4.5 GB usable"
+    },
+    {
+      "size_slug": "3.8b-fp16",
+      "ollama_ref": "phi4-mini-reasoning:3.8b-fp16",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 4.5 GB usable"
+    },
+    {
+      "size_slug": "3.8b-q4-k-m",
+      "ollama_ref": "phi4-mini-reasoning:3.8b-q4_K_M",
+      "fits": false,
+      "reason": "requires 6.5 GB RAM; lane provides 4.5 GB usable"
+    },
+    {
+      "size_slug": "3.8b-q80",
+      "ollama_ref": "phi4-mini-reasoning:3.8b-q8_0",
+      "fits": false,
+      "reason": "requires 8.11 GB RAM; lane provides 4.5 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-mini-reasoning:latest",
+      "fits": false,
+      "reason": "requires 5.4 GB RAM; lane provides 4.5 GB usable"
+    }
+  ]
+}

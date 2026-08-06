@@ -1,0 +1,33 @@
+{
+  "schema_version": "c10.provider-assumption.v1",
+  "provider_assumption_id": "windows-cuda",
+  "lane_path": "windows/cuda",
+  "platform": "windows",
+  "provider": null,
+  "architecture": "x86_64",
+  "gpu_lane": true,
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "hardware": {
+    "cpu_cores": 12,
+    "system_ram_gb": 32.0,
+    "usable_model_ram_gb": 20.0,
+    "minimum_free_disk_gb": 80.0,
+    "total_vram_gb": null,
+    "cuda_available": true,
+    "apple_metal_available": null,
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "fallback_profile_id": "windows_nvidia_16gb_vram_6_8gb",
+  "assumed_profile_id": "windows_nvidia_32_64gb_vram_12_16gb",
+  "source_paths": [
+    "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv"
+  ],
+  "generated_at": "2026-08-06T02:17:54Z",
+  "installer_reference": "install/windows/cuda/trial-install.sh",
+  "profiles_reference": "profiles/provider-assumptions/windows-cuda.json"
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "deepseek-v4-flash",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "0731-cloud",
+      "ollama_ref": "deepseek-v4-flash:0731-cloud",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": null,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v4-flash/tags",
+        "retrieved_at": "2026-08-01T11:52:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": null,
+        "recommended_system_ram_gb": null,
+        "min_vram_gb": null,
+        "recommended_vram_gb": null,
+        "min_disk_gb": null
+      }
+    },
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "deepseek-v4-flash:cloud",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": null,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v4-flash/tags",
+        "retrieved_at": "2026-08-01T11:52:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": null,
+        "recommended_system_ram_gb": null,
+        "min_vram_gb": null,
+        "recommended_vram_gb": null,
+        "min_disk_gb": null
+      }
+    }
+  ],
+  "promoted_size_slug": "0731-cloud",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

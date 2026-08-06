@@ -1,0 +1,152 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "nemotron-3-super",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "nemotron-3-super:120b",
+      "parameter_count": 120000000000,
+      "quantization": null,
+      "download_size_bytes": 87000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-super/tags",
+        "retrieved_at": "2026-08-01T11:56:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 136.27,
+        "recommended_system_ram_gb": 163.53,
+        "min_vram_gb": 100.05,
+        "recommended_vram_gb": 136.27,
+        "min_disk_gb": 109.4
+      }
+    },
+    {
+      "size_slug": "120b-a12b",
+      "ollama_ref": "nemotron-3-super:120b-a12b",
+      "parameter_count": 120000000000,
+      "quantization": null,
+      "download_size_bytes": 87000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-super/tags",
+        "retrieved_at": "2026-08-01T11:56:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 136.27,
+        "recommended_system_ram_gb": 163.53,
+        "min_vram_gb": 100.05,
+        "recommended_vram_gb": 136.27,
+        "min_disk_gb": 109.4
+      }
+    },
+    {
+      "size_slug": "120b-a12b-bf16",
+      "ollama_ref": "nemotron-3-super:120b-a12b-bf16",
+      "parameter_count": 120000000000,
+      "quantization": "bf16",
+      "download_size_bytes": 247000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-super/tags",
+        "retrieved_at": "2026-08-01T11:56:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 320.27,
+        "recommended_system_ram_gb": 384.33,
+        "min_vram_gb": 284.05,
+        "recommended_vram_gb": 320.27,
+        "min_disk_gb": 301.4
+      }
+    },
+    {
+      "size_slug": "120b-a12b-q4-k-m",
+      "ollama_ref": "nemotron-3-super:120b-a12b-q4_K_M",
+      "parameter_count": 120000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 87000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-super/tags",
+        "retrieved_at": "2026-08-01T11:56:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 136.27,
+        "recommended_system_ram_gb": 163.53,
+        "min_vram_gb": 100.05,
+        "recommended_vram_gb": 136.27,
+        "min_disk_gb": 109.4
+      }
+    },
+    {
+      "size_slug": "120b-a12b-q80",
+      "ollama_ref": "nemotron-3-super:120b-a12b-q8_0",
+      "parameter_count": 120000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 132000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-super/tags",
+        "retrieved_at": "2026-08-01T11:56:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 188.02,
+        "recommended_system_ram_gb": 225.63,
+        "min_vram_gb": 151.8,
+        "recommended_vram_gb": 188.02,
+        "min_disk_gb": 163.4
+      }
+    },
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "nemotron-3-super:cloud",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 247000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-super/tags",
+        "retrieved_at": "2026-08-01T11:56:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 285.77,
+        "recommended_system_ram_gb": 342.93,
+        "min_vram_gb": 284.05,
+        "recommended_vram_gb": 285.77,
+        "min_disk_gb": 301.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nemotron-3-super:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 87000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/nemotron-3-super/tags",
+        "retrieved_at": "2026-08-01T11:56:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 101.77,
+        "recommended_system_ram_gb": 122.13,
+        "min_vram_gb": 100.05,
+        "recommended_vram_gb": 101.77,
+        "min_disk_gb": 109.4
+      }
+    }
+  ],
+  "promoted_size_slug": "120b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

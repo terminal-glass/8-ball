@@ -1,0 +1,74 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama3.2-vision",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "90b",
+      "ollama_ref": "llama3.2-vision:90b",
+      "fits": false,
+      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "90b-instruct-fp16",
+      "ollama_ref": "llama3.2-vision:90b-instruct-fp16",
+      "fits": false,
+      "reason": "requires 231.15 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "90b-instruct-q4-k-m",
+      "ollama_ref": "llama3.2-vision:90b-instruct-q4_K_M",
+      "fits": false,
+      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "90b-instruct-q80",
+      "ollama_ref": "llama3.2-vision:90b-instruct-q8_0",
+      "fits": false,
+      "reason": "requires 136.85 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "11b",
+      "ollama_ref": "llama3.2-vision:11b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "11b-instruct-fp16",
+      "ollama_ref": "llama3.2-vision:11b-instruct-fp16",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "11b-instruct-q4-k-m",
+      "ollama_ref": "llama3.2-vision:11b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "11b-instruct-q80",
+      "ollama_ref": "llama3.2-vision:11b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama3.2-vision:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

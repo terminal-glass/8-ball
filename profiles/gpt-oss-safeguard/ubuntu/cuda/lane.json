@@ -1,0 +1,38 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gpt-oss-safeguard",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "gpt-oss-safeguard:120b",
+      "fits": false,
+      "reason": "requires 110.97 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "20b",
+      "ollama_ref": "gpt-oss-safeguard:20b",
+      "fits": false,
+      "reason": "requires 16.1 GB VRAM; lane provides 16.0 GB"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gpt-oss-safeguard:latest",
+      "fits": false,
+      "reason": "requires 16.1 GB VRAM; lane provides 16.0 GB"
+    }
+  ]
+}

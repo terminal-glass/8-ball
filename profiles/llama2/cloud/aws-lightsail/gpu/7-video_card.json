@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama2",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "applicable": true,
+  "cuda_available": true,
+  "apple_metal_available": false,
+  "total_vram_gb": null,
+  "reason": "AWS Lightsail GPU instance lane when GPU bundles are available."
+}

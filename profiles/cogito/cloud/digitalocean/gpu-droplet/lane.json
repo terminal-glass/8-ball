@@ -1,0 +1,140 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "cogito",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "70b",
+      "ollama_ref": "cogito:70b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v1-preview-llama-fp16",
+      "ollama_ref": "cogito:70b-v1-preview-llama-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v1-preview-llama-q4-k-m",
+      "ollama_ref": "cogito:70b-v1-preview-llama-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "70b-v1-preview-llama-q80",
+      "ollama_ref": "cogito:70b-v1-preview-llama-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b",
+      "ollama_ref": "cogito:32b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-v1-preview-qwen-fp16",
+      "ollama_ref": "cogito:32b-v1-preview-qwen-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-v1-preview-qwen-q4-k-m",
+      "ollama_ref": "cogito:32b-v1-preview-qwen-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-v1-preview-qwen-q80",
+      "ollama_ref": "cogito:32b-v1-preview-qwen-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b",
+      "ollama_ref": "cogito:14b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-v1-preview-qwen-fp16",
+      "ollama_ref": "cogito:14b-v1-preview-qwen-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-v1-preview-qwen-q4-k-m",
+      "ollama_ref": "cogito:14b-v1-preview-qwen-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-v1-preview-qwen-q80",
+      "ollama_ref": "cogito:14b-v1-preview-qwen-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "cogito:8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-v1-preview-llama-q4-k-m",
+      "ollama_ref": "cogito:8b-v1-preview-llama-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-v1-preview-llama-q80",
+      "ollama_ref": "cogito:8b-v1-preview-llama-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "cogito:3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-v1-preview-llama-fp16",
+      "ollama_ref": "cogito:3b-v1-preview-llama-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-v1-preview-llama-q4-k-m",
+      "ollama_ref": "cogito:3b-v1-preview-llama-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-v1-preview-llama-q80",
+      "ollama_ref": "cogito:3b-v1-preview-llama-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "cogito:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

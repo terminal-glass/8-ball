@@ -1,0 +1,74 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "granite3.2",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "granite3.2:8b",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "8b-instruct-fp16",
+      "ollama_ref": "granite3.2:8b-instruct-fp16",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "8b-instruct-q4-k-m",
+      "ollama_ref": "granite3.2:8b-instruct-q4_K_M",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "8b-instruct-q80",
+      "ollama_ref": "granite3.2:8b-instruct-q8_0",
+      "fits": false,
+      "reason": "requires 14.03 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "granite3.2:2b",
+      "fits": false,
+      "reason": "requires 4.02 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "2b-instruct-fp16",
+      "ollama_ref": "granite3.2:2b-instruct-fp16",
+      "fits": false,
+      "reason": "requires 8.16 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "2b-instruct-q4-k-m",
+      "ollama_ref": "granite3.2:2b-instruct-q4_K_M",
+      "fits": false,
+      "reason": "requires 4.02 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "2b-instruct-q80",
+      "ollama_ref": "granite3.2:2b-instruct-q8_0",
+      "fits": false,
+      "reason": "requires 5.4 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite3.2:latest",
+      "fits": false,
+      "reason": "requires 7.36 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

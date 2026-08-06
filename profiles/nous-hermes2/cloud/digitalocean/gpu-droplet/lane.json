@@ -1,0 +1,218 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nous-hermes2",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "34b",
+      "ollama_ref": "nous-hermes2:34b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-fp16",
+      "ollama_ref": "nous-hermes2:34b-yi-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q2-k",
+      "ollama_ref": "nous-hermes2:34b-yi-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q3-k-l",
+      "ollama_ref": "nous-hermes2:34b-yi-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q3-k-m",
+      "ollama_ref": "nous-hermes2:34b-yi-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q3-k-s",
+      "ollama_ref": "nous-hermes2:34b-yi-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q4-k-m",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q4-k-s",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q40",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q41",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q5-k-m",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q5-k-s",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q50",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q51",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q6-k",
+      "ollama_ref": "nous-hermes2:34b-yi-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "34b-yi-q80",
+      "ollama_ref": "nous-hermes2:34b-yi-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b",
+      "ollama_ref": "nous-hermes2:10.7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-fp16",
+      "ollama_ref": "nous-hermes2:10.7b-solar-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q2-k",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q3-k-l",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q3-k-m",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q3-k-s",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q4-k-m",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q4-k-s",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q40",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q41",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q5-k-m",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q5-k-s",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q50",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q51",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q6-k",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "10.7b-solar-q80",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nous-hermes2:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

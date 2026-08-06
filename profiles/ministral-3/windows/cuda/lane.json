@@ -1,0 +1,98 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "ministral-3",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "ministral-3:14b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-instruct2512-fp16",
+      "ollama_ref": "ministral-3:14b-instruct-2512-fp16",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "14b-instruct2512-q4-k-m",
+      "ollama_ref": "ministral-3:14b-instruct-2512-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "14b-instruct2512-q80",
+      "ollama_ref": "ministral-3:14b-instruct-2512-q8_0",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "ministral-3:8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-instruct2512-fp16",
+      "ollama_ref": "ministral-3:8b-instruct-2512-fp16",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 20.0 GB usable"
+    },
+    {
+      "size_slug": "8b-instruct2512-q4-k-m",
+      "ollama_ref": "ministral-3:8b-instruct-2512-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-instruct2512-q80",
+      "ollama_ref": "ministral-3:8b-instruct-2512-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "ministral-3:3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct2512-fp16",
+      "ollama_ref": "ministral-3:3b-instruct-2512-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct2512-q4-k-m",
+      "ollama_ref": "ministral-3:3b-instruct-2512-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct2512-q80",
+      "ollama_ref": "ministral-3:3b-instruct-2512-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "ministral-3:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

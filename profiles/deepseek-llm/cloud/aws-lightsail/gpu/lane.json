@@ -1,0 +1,404 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepseek-llm",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "67b",
+      "ollama_ref": "deepseek-llm:67b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base",
+      "ollama_ref": "deepseek-llm:67b-base",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-fp16",
+      "ollama_ref": "deepseek-llm:67b-base-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q2-k",
+      "ollama_ref": "deepseek-llm:67b-base-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q3-k-l",
+      "ollama_ref": "deepseek-llm:67b-base-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q3-k-m",
+      "ollama_ref": "deepseek-llm:67b-base-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q3-k-s",
+      "ollama_ref": "deepseek-llm:67b-base-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q4-k-m",
+      "ollama_ref": "deepseek-llm:67b-base-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q4-k-s",
+      "ollama_ref": "deepseek-llm:67b-base-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q40",
+      "ollama_ref": "deepseek-llm:67b-base-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q41",
+      "ollama_ref": "deepseek-llm:67b-base-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q5-k-m",
+      "ollama_ref": "deepseek-llm:67b-base-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q5-k-s",
+      "ollama_ref": "deepseek-llm:67b-base-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q50",
+      "ollama_ref": "deepseek-llm:67b-base-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q51",
+      "ollama_ref": "deepseek-llm:67b-base-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q6-k",
+      "ollama_ref": "deepseek-llm:67b-base-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-base-q80",
+      "ollama_ref": "deepseek-llm:67b-base-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat",
+      "ollama_ref": "deepseek-llm:67b-chat",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-fp16",
+      "ollama_ref": "deepseek-llm:67b-chat-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q2-k",
+      "ollama_ref": "deepseek-llm:67b-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q3-k-l",
+      "ollama_ref": "deepseek-llm:67b-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q3-k-m",
+      "ollama_ref": "deepseek-llm:67b-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q3-k-s",
+      "ollama_ref": "deepseek-llm:67b-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q4-k-m",
+      "ollama_ref": "deepseek-llm:67b-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q4-k-s",
+      "ollama_ref": "deepseek-llm:67b-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q40",
+      "ollama_ref": "deepseek-llm:67b-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q41",
+      "ollama_ref": "deepseek-llm:67b-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q5-k-s",
+      "ollama_ref": "deepseek-llm:67b-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q50",
+      "ollama_ref": "deepseek-llm:67b-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "67b-chat-q51",
+      "ollama_ref": "deepseek-llm:67b-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "deepseek-llm:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base",
+      "ollama_ref": "deepseek-llm:7b-base",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-fp16",
+      "ollama_ref": "deepseek-llm:7b-base-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q2-k",
+      "ollama_ref": "deepseek-llm:7b-base-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q3-k-l",
+      "ollama_ref": "deepseek-llm:7b-base-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q3-k-m",
+      "ollama_ref": "deepseek-llm:7b-base-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q3-k-s",
+      "ollama_ref": "deepseek-llm:7b-base-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q4-k-m",
+      "ollama_ref": "deepseek-llm:7b-base-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q4-k-s",
+      "ollama_ref": "deepseek-llm:7b-base-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q40",
+      "ollama_ref": "deepseek-llm:7b-base-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q41",
+      "ollama_ref": "deepseek-llm:7b-base-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q5-k-m",
+      "ollama_ref": "deepseek-llm:7b-base-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q5-k-s",
+      "ollama_ref": "deepseek-llm:7b-base-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q50",
+      "ollama_ref": "deepseek-llm:7b-base-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q51",
+      "ollama_ref": "deepseek-llm:7b-base-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q6-k",
+      "ollama_ref": "deepseek-llm:7b-base-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-base-q80",
+      "ollama_ref": "deepseek-llm:7b-base-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat",
+      "ollama_ref": "deepseek-llm:7b-chat",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-fp16",
+      "ollama_ref": "deepseek-llm:7b-chat-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q2-k",
+      "ollama_ref": "deepseek-llm:7b-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q3-k-l",
+      "ollama_ref": "deepseek-llm:7b-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q3-k-m",
+      "ollama_ref": "deepseek-llm:7b-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q3-k-s",
+      "ollama_ref": "deepseek-llm:7b-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q4-k-m",
+      "ollama_ref": "deepseek-llm:7b-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q4-k-s",
+      "ollama_ref": "deepseek-llm:7b-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q40",
+      "ollama_ref": "deepseek-llm:7b-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q41",
+      "ollama_ref": "deepseek-llm:7b-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q5-k-m",
+      "ollama_ref": "deepseek-llm:7b-chat-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q5-k-s",
+      "ollama_ref": "deepseek-llm:7b-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q50",
+      "ollama_ref": "deepseek-llm:7b-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q51",
+      "ollama_ref": "deepseek-llm:7b-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q6-k",
+      "ollama_ref": "deepseek-llm:7b-chat-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-chat-q80",
+      "ollama_ref": "deepseek-llm:7b-chat-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-llm:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nemotron-3-nano",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "fallback_lane": "ubuntu/cpu",
+  "reason": "CPU-only fallback when GPU path is unavailable or lane is CPU-first."
+}

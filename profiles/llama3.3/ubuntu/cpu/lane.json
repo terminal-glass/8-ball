@@ -1,0 +1,104 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama3.3",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "70b",
+      "ollama_ref": "llama3.3:70b",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-fp16",
+      "ollama_ref": "llama3.3:70b-instruct-fp16",
+      "fits": false,
+      "reason": "requires 184.0 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q2-k",
+      "ollama_ref": "llama3.3:70b-instruct-q2_K",
+      "fits": false,
+      "reason": "requires 51.75 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-m",
+      "ollama_ref": "llama3.3:70b-instruct-q3_K_M",
+      "fits": false,
+      "reason": "requires 60.95 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-s",
+      "ollama_ref": "llama3.3:70b-instruct-q3_K_S",
+      "fits": false,
+      "reason": "requires 57.5 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q4-k-m",
+      "ollama_ref": "llama3.3:70b-instruct-q4_K_M",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q4-k-s",
+      "ollama_ref": "llama3.3:70b-instruct-q4_K_S",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q40",
+      "ollama_ref": "llama3.3:70b-instruct-q4_0",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q5-k-m",
+      "ollama_ref": "llama3.3:70b-instruct-q5_K_M",
+      "fits": false,
+      "reason": "requires 79.35 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q50",
+      "ollama_ref": "llama3.3:70b-instruct-q5_0",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q51",
+      "ollama_ref": "llama3.3:70b-instruct-q5_1",
+      "fits": false,
+      "reason": "requires 82.8 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q6-k",
+      "ollama_ref": "llama3.3:70b-instruct-q6_K",
+      "fits": false,
+      "reason": "requires 88.55 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "70b-instruct-q80",
+      "ollama_ref": "llama3.3:70b-instruct-q8_0",
+      "fits": false,
+      "reason": "requires 108.1 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama3.3:latest",
+      "fits": false,
+      "reason": "requires 51.17 GB RAM; lane provides 16.0 GB usable"
+    }
+  ]
+}

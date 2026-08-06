@@ -1,0 +1,74 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phi4-reasoning",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi4-reasoning:14b",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "14b-fp16",
+      "ollama_ref": "phi4-reasoning:14b-fp16",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "14b-plus-fp16",
+      "ollama_ref": "phi4-reasoning:14b-plus-fp16",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "14b-plus-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-plus-q4_K_M",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "14b-plus-q80",
+      "ollama_ref": "phi4-reasoning:14b-plus-q8_0",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "14b-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-q4_K_M",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "14b-q80",
+      "ollama_ref": "phi4-reasoning:14b-q8_0",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-reasoning:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "plus",
+      "ollama_ref": "phi4-reasoning:plus",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "devstral-2",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 4,
+  "usable_model_ram_gb": 2.4,
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

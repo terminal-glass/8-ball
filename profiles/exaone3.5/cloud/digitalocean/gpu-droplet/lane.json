@@ -1,0 +1,98 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "exaone3.5",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "exaone3.5:32b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-instruct-fp16",
+      "ollama_ref": "exaone3.5:32b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:32b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "32b-instruct-q80",
+      "ollama_ref": "exaone3.5:32b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7.8b",
+      "ollama_ref": "exaone3.5:7.8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7.8b-instruct-fp16",
+      "ollama_ref": "exaone3.5:7.8b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7.8b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7.8b-instruct-q80",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b",
+      "ollama_ref": "exaone3.5:2.4b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b-instruct-fp16",
+      "ollama_ref": "exaone3.5:2.4b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b-instruct-q80",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "exaone3.5:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

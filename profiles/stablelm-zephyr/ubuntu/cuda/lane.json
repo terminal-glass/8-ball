@@ -1,0 +1,122 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "stablelm-zephyr",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "3b",
+      "ollama_ref": "stablelm-zephyr:3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-fp16",
+      "ollama_ref": "stablelm-zephyr:3b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q2-k",
+      "ollama_ref": "stablelm-zephyr:3b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q3-k-l",
+      "ollama_ref": "stablelm-zephyr:3b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q3-k-m",
+      "ollama_ref": "stablelm-zephyr:3b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q3-k-s",
+      "ollama_ref": "stablelm-zephyr:3b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q4-k-m",
+      "ollama_ref": "stablelm-zephyr:3b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q4-k-s",
+      "ollama_ref": "stablelm-zephyr:3b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q40",
+      "ollama_ref": "stablelm-zephyr:3b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q41",
+      "ollama_ref": "stablelm-zephyr:3b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q5-k-m",
+      "ollama_ref": "stablelm-zephyr:3b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q5-k-s",
+      "ollama_ref": "stablelm-zephyr:3b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q50",
+      "ollama_ref": "stablelm-zephyr:3b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q51",
+      "ollama_ref": "stablelm-zephyr:3b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q6-k",
+      "ollama_ref": "stablelm-zephyr:3b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-q80",
+      "ollama_ref": "stablelm-zephyr:3b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "stablelm-zephyr:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

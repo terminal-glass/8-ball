@@ -1,0 +1,122 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "bespoke-minicheck",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "bespoke-minicheck:7b",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "bespoke-minicheck:7b-fp16",
+      "fits": false,
+      "reason": "requires 20.99 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q2-k",
+      "ollama_ref": "bespoke-minicheck:7b-q2_K",
+      "fits": false,
+      "reason": "requires 7.19 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q3-k-l",
+      "ollama_ref": "bespoke-minicheck:7b-q3_K_L",
+      "fits": false,
+      "reason": "requires 8.45 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q3-k-m",
+      "ollama_ref": "bespoke-minicheck:7b-q3_K_M",
+      "fits": false,
+      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q3-k-s",
+      "ollama_ref": "bespoke-minicheck:7b-q3_K_S",
+      "fits": false,
+      "reason": "requires 7.76 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "bespoke-minicheck:7b-q4_K_M",
+      "fits": false,
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q4-k-s",
+      "ollama_ref": "bespoke-minicheck:7b-q4_K_S",
+      "fits": false,
+      "reason": "requires 8.91 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q40",
+      "ollama_ref": "bespoke-minicheck:7b-q4_0",
+      "fits": false,
+      "reason": "requires 8.91 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q41",
+      "ollama_ref": "bespoke-minicheck:7b-q4_1",
+      "fits": false,
+      "reason": "requires 9.37 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q5-k-m",
+      "ollama_ref": "bespoke-minicheck:7b-q5_K_M",
+      "fits": false,
+      "reason": "requires 10.06 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q5-k-s",
+      "ollama_ref": "bespoke-minicheck:7b-q5_K_S",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q50",
+      "ollama_ref": "bespoke-minicheck:7b-q5_0",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q51",
+      "ollama_ref": "bespoke-minicheck:7b-q5_1",
+      "fits": false,
+      "reason": "requires 10.41 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q6-k",
+      "ollama_ref": "bespoke-minicheck:7b-q6_K",
+      "fits": false,
+      "reason": "requires 11.1 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "bespoke-minicheck:7b-q8_0",
+      "fits": false,
+      "reason": "requires 13.17 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "bespoke-minicheck:latest",
+      "fits": false,
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

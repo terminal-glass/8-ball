@@ -1,0 +1,86 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama4",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "128x17b",
+      "ollama_ref": "llama4:128x17b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16x17b",
+      "ollama_ref": "llama4:16x17b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-fp16",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q80",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-fp16",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q80",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama4:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "maverick",
+      "ollama_ref": "llama4:maverick",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "scout",
+      "ollama_ref": "llama4:scout",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

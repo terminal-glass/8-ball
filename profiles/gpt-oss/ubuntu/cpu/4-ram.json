@@ -1,0 +1,15 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gpt-oss",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": null,
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

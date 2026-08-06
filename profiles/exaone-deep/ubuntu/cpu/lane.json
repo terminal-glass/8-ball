@@ -1,0 +1,98 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "exaone-deep",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "exaone-deep:32b",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "32b-fp16",
+      "ollama_ref": "exaone-deep:32b-fp16",
+      "fits": false,
+      "reason": "requires 84.52 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "32b-q4-k-m",
+      "ollama_ref": "exaone-deep:32b-q4_K_M",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "32b-q80",
+      "ollama_ref": "exaone-deep:32b-q8_0",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "7.8b",
+      "ollama_ref": "exaone-deep:7.8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7.8b-fp16",
+      "ollama_ref": "exaone-deep:7.8b-fp16",
+      "fits": false,
+      "reason": "requires 22.37 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "7.8b-q4-k-m",
+      "ollama_ref": "exaone-deep:7.8b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7.8b-q80",
+      "ollama_ref": "exaone-deep:7.8b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b",
+      "ollama_ref": "exaone-deep:2.4b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b-fp16",
+      "ollama_ref": "exaone-deep:2.4b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b-q4-k-m",
+      "ollama_ref": "exaone-deep:2.4b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2.4b-q80",
+      "ollama_ref": "exaone-deep:2.4b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "exaone-deep:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

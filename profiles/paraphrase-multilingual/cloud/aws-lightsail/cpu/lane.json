@@ -1,0 +1,38 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "paraphrase-multilingual",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "278m",
+      "ollama_ref": "paraphrase-multilingual:278m",
+      "fits": false,
+      "reason": "requires 2.45 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "278m-mpnet-base-v2-fp16",
+      "ollama_ref": "paraphrase-multilingual:278m-mpnet-base-v2-fp16",
+      "fits": false,
+      "reason": "requires 2.45 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "paraphrase-multilingual:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

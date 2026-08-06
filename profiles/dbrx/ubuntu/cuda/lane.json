@@ -1,0 +1,62 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "dbrx",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "132b",
+      "ollama_ref": "dbrx:132b",
+      "fits": false,
+      "reason": "requires 124.77 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-fp16",
+      "ollama_ref": "dbrx:132b-instruct-fp16",
+      "fits": false,
+      "reason": "requires 342.12 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-q2-k",
+      "ollama_ref": "dbrx:132b-instruct-q2_K",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-q40",
+      "ollama_ref": "dbrx:132b-instruct-q4_0",
+      "fits": false,
+      "reason": "requires 124.77 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "132b-instruct-q80",
+      "ollama_ref": "dbrx:132b-instruct-q8_0",
+      "fits": false,
+      "reason": "requires 200.67 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "dbrx:instruct",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "dbrx:latest",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 24.0 GB usable"
+    }
+  ]
+}

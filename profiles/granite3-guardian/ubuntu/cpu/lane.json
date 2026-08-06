@@ -1,0 +1,80 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "granite3-guardian",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "granite3-guardian:8b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-fp16",
+      "ollama_ref": "granite3-guardian:8b-fp16",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "8b-q5-k-m",
+      "ollama_ref": "granite3-guardian:8b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-q5-k-s",
+      "ollama_ref": "granite3-guardian:8b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-q6-k",
+      "ollama_ref": "granite3-guardian:8b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "8b-q80",
+      "ollama_ref": "granite3-guardian:8b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "granite3-guardian:2b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2b-fp16",
+      "ollama_ref": "granite3-guardian:2b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "2b-q80",
+      "ollama_ref": "granite3-guardian:2b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite3-guardian:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

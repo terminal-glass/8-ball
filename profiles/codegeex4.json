@@ -1,0 +1,352 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "codegeex4",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "9b",
+      "ollama_ref": "codegeex4:9b",
+      "parameter_count": 9000000000,
+      "quantization": null,
+      "download_size_bytes": 5500000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.64,
+        "recommended_system_ram_gb": 12.76,
+        "min_vram_gb": 6.32,
+        "recommended_vram_gb": 10.64,
+        "min_disk_gb": 11.6
+      }
+    },
+    {
+      "size_slug": "9b-all-fp16",
+      "ollama_ref": "codegeex4:9b-all-fp16",
+      "parameter_count": 9000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 19000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 26.16,
+        "recommended_system_ram_gb": 31.39,
+        "min_vram_gb": 21.85,
+        "recommended_vram_gb": 26.16,
+        "min_disk_gb": 27.8
+      }
+    },
+    {
+      "size_slug": "9b-all-q2-k",
+      "ollama_ref": "codegeex4:9b-all-q2_K",
+      "parameter_count": 9000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 4000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.91,
+        "recommended_system_ram_gb": 10.69,
+        "min_vram_gb": 4.6,
+        "recommended_vram_gb": 8.91,
+        "min_disk_gb": 9.8
+      }
+    },
+    {
+      "size_slug": "9b-all-q3-k-l",
+      "ollama_ref": "codegeex4:9b-all-q3_K_L",
+      "parameter_count": 9000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 5300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.41,
+        "recommended_system_ram_gb": 12.49,
+        "min_vram_gb": 6.09,
+        "recommended_vram_gb": 10.41,
+        "min_disk_gb": 11.36
+      }
+    },
+    {
+      "size_slug": "9b-all-q3-k-m",
+      "ollama_ref": "codegeex4:9b-all-q3_K_M",
+      "parameter_count": 9000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 5100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.18,
+        "recommended_system_ram_gb": 12.21,
+        "min_vram_gb": 5.86,
+        "recommended_vram_gb": 10.18,
+        "min_disk_gb": 11.12
+      }
+    },
+    {
+      "size_slug": "9b-all-q3-k-s",
+      "ollama_ref": "codegeex4:9b-all-q3_K_S",
+      "parameter_count": 9000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 4600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.6,
+        "recommended_system_ram_gb": 11.52,
+        "min_vram_gb": 5.29,
+        "recommended_vram_gb": 9.6,
+        "min_disk_gb": 10.52
+      }
+    },
+    {
+      "size_slug": "9b-all-q4-k-m",
+      "ollama_ref": "codegeex4:9b-all-q4_K_M",
+      "parameter_count": 9000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 6300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.56,
+        "recommended_system_ram_gb": 13.87,
+        "min_vram_gb": 7.24,
+        "recommended_vram_gb": 11.56,
+        "min_disk_gb": 12.56
+      }
+    },
+    {
+      "size_slug": "9b-all-q4-k-s",
+      "ollama_ref": "codegeex4:9b-all-q4_K_S",
+      "parameter_count": 9000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.98,
+        "recommended_system_ram_gb": 13.18,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 10.98,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "9b-all-q40",
+      "ollama_ref": "codegeex4:9b-all-q4_0",
+      "parameter_count": 9000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 5500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.64,
+        "recommended_system_ram_gb": 12.76,
+        "min_vram_gb": 6.32,
+        "recommended_vram_gb": 10.64,
+        "min_disk_gb": 11.6
+      }
+    },
+    {
+      "size_slug": "9b-all-q41",
+      "ollama_ref": "codegeex4:9b-all-q4_1",
+      "parameter_count": 9000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 6000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.21,
+        "recommended_system_ram_gb": 13.45,
+        "min_vram_gb": 6.9,
+        "recommended_vram_gb": 11.21,
+        "min_disk_gb": 12.2
+      }
+    },
+    {
+      "size_slug": "9b-all-q5-k-m",
+      "ollama_ref": "codegeex4:9b-all-q5_K_M",
+      "parameter_count": 9000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 7100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.48,
+        "recommended_system_ram_gb": 14.97,
+        "min_vram_gb": 8.16,
+        "recommended_vram_gb": 12.48,
+        "min_disk_gb": 13.52
+      }
+    },
+    {
+      "size_slug": "9b-all-q5-k-s",
+      "ollama_ref": "codegeex4:9b-all-q5_K_S",
+      "parameter_count": 9000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 6700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.02,
+        "recommended_system_ram_gb": 14.42,
+        "min_vram_gb": 7.7,
+        "recommended_vram_gb": 12.02,
+        "min_disk_gb": 13.04
+      }
+    },
+    {
+      "size_slug": "9b-all-q50",
+      "ollama_ref": "codegeex4:9b-all-q5_0",
+      "parameter_count": 9000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 6600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.9,
+        "recommended_system_ram_gb": 14.28,
+        "min_vram_gb": 7.59,
+        "recommended_vram_gb": 11.9,
+        "min_disk_gb": 12.92
+      }
+    },
+    {
+      "size_slug": "9b-all-q51",
+      "ollama_ref": "codegeex4:9b-all-q5_1",
+      "parameter_count": 9000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 7100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.48,
+        "recommended_system_ram_gb": 14.97,
+        "min_vram_gb": 8.16,
+        "recommended_vram_gb": 12.48,
+        "min_disk_gb": 13.52
+      }
+    },
+    {
+      "size_slug": "9b-all-q6-k",
+      "ollama_ref": "codegeex4:9b-all-q6_K",
+      "parameter_count": 9000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 8300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.86,
+        "recommended_system_ram_gb": 16.63,
+        "min_vram_gb": 9.54,
+        "recommended_vram_gb": 13.86,
+        "min_disk_gb": 14.96
+      }
+    },
+    {
+      "size_slug": "9b-all-q80",
+      "ollama_ref": "codegeex4:9b-all-q8_0",
+      "parameter_count": 9000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 10000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.81,
+        "recommended_system_ram_gb": 18.97,
+        "min_vram_gb": 11.5,
+        "recommended_vram_gb": 15.81,
+        "min_disk_gb": 17.0
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "codegeex4:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 5500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/codegeex4/tags",
+        "retrieved_at": "2026-08-01T11:51:51Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.05,
+        "recommended_system_ram_gb": 9.66,
+        "min_vram_gb": 6.32,
+        "recommended_vram_gb": 8.05,
+        "min_disk_gb": 11.6
+      }
+    }
+  ],
+  "promoted_size_slug": "9b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

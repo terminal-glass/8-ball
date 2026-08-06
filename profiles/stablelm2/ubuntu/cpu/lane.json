@@ -1,0 +1,524 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "stablelm2",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "12b",
+      "ollama_ref": "stablelm2:12b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat",
+      "ollama_ref": "stablelm2:12b-chat",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-fp16",
+      "ollama_ref": "stablelm2:12b-chat-fp16",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "12b-chat-q2-k",
+      "ollama_ref": "stablelm2:12b-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q3-k-l",
+      "ollama_ref": "stablelm2:12b-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q3-k-m",
+      "ollama_ref": "stablelm2:12b-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q3-k-s",
+      "ollama_ref": "stablelm2:12b-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q4-k-m",
+      "ollama_ref": "stablelm2:12b-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q4-k-s",
+      "ollama_ref": "stablelm2:12b-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q40",
+      "ollama_ref": "stablelm2:12b-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q41",
+      "ollama_ref": "stablelm2:12b-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q5-k-m",
+      "ollama_ref": "stablelm2:12b-chat-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q5-k-s",
+      "ollama_ref": "stablelm2:12b-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q50",
+      "ollama_ref": "stablelm2:12b-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q51",
+      "ollama_ref": "stablelm2:12b-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-chat-q6-k",
+      "ollama_ref": "stablelm2:12b-chat-q6_K",
+      "fits": false,
+      "reason": "requires 16.67 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "12b-chat-q80",
+      "ollama_ref": "stablelm2:12b-chat-q8_0",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "12b-fp16",
+      "ollama_ref": "stablelm2:12b-fp16",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "12b-q2-k",
+      "ollama_ref": "stablelm2:12b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q3-k-l",
+      "ollama_ref": "stablelm2:12b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q3-k-m",
+      "ollama_ref": "stablelm2:12b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q3-k-s",
+      "ollama_ref": "stablelm2:12b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q4-k-m",
+      "ollama_ref": "stablelm2:12b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q4-k-s",
+      "ollama_ref": "stablelm2:12b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q40",
+      "ollama_ref": "stablelm2:12b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q41",
+      "ollama_ref": "stablelm2:12b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q5-k-m",
+      "ollama_ref": "stablelm2:12b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q5-k-s",
+      "ollama_ref": "stablelm2:12b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q50",
+      "ollama_ref": "stablelm2:12b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q51",
+      "ollama_ref": "stablelm2:12b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "12b-q6-k",
+      "ollama_ref": "stablelm2:12b-q6_K",
+      "fits": false,
+      "reason": "requires 16.67 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "12b-q80",
+      "ollama_ref": "stablelm2:12b-q8_0",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 16.0 GB usable"
+    },
+    {
+      "size_slug": "12b-text",
+      "ollama_ref": "stablelm2:12b-text",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b",
+      "ollama_ref": "stablelm2:1.6b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat",
+      "ollama_ref": "stablelm2:1.6b-chat",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-fp16",
+      "ollama_ref": "stablelm2:1.6b-chat-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q2-k",
+      "ollama_ref": "stablelm2:1.6b-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q3-k-l",
+      "ollama_ref": "stablelm2:1.6b-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q3-k-m",
+      "ollama_ref": "stablelm2:1.6b-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q3-k-s",
+      "ollama_ref": "stablelm2:1.6b-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q4-k-m",
+      "ollama_ref": "stablelm2:1.6b-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q4-k-s",
+      "ollama_ref": "stablelm2:1.6b-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q40",
+      "ollama_ref": "stablelm2:1.6b-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q41",
+      "ollama_ref": "stablelm2:1.6b-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q5-k-m",
+      "ollama_ref": "stablelm2:1.6b-chat-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q5-k-s",
+      "ollama_ref": "stablelm2:1.6b-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q50",
+      "ollama_ref": "stablelm2:1.6b-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q51",
+      "ollama_ref": "stablelm2:1.6b-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q6-k",
+      "ollama_ref": "stablelm2:1.6b-chat-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-chat-q80",
+      "ollama_ref": "stablelm2:1.6b-chat-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-fp16",
+      "ollama_ref": "stablelm2:1.6b-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q2-k",
+      "ollama_ref": "stablelm2:1.6b-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q3-k-l",
+      "ollama_ref": "stablelm2:1.6b-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q3-k-m",
+      "ollama_ref": "stablelm2:1.6b-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q3-k-s",
+      "ollama_ref": "stablelm2:1.6b-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q4-k-m",
+      "ollama_ref": "stablelm2:1.6b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q4-k-s",
+      "ollama_ref": "stablelm2:1.6b-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q40",
+      "ollama_ref": "stablelm2:1.6b-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q41",
+      "ollama_ref": "stablelm2:1.6b-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q5-k-m",
+      "ollama_ref": "stablelm2:1.6b-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q5-k-s",
+      "ollama_ref": "stablelm2:1.6b-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q50",
+      "ollama_ref": "stablelm2:1.6b-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q51",
+      "ollama_ref": "stablelm2:1.6b-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q6-k",
+      "ollama_ref": "stablelm2:1.6b-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-q80",
+      "ollama_ref": "stablelm2:1.6b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr",
+      "ollama_ref": "stablelm2:1.6b-zephyr",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-fp16",
+      "ollama_ref": "stablelm2:1.6b-zephyr-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q2-k",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q3-k-l",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q3-k-m",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q3-k-s",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q4-k-m",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q4-k-s",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q40",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q41",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q5-k-m",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q5-k-s",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q50",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q51",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q6-k",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.6b-zephyr-q80",
+      "ollama_ref": "stablelm2:1.6b-zephyr-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "chat",
+      "ollama_ref": "stablelm2:chat",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "stablelm2:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "zephyr",
+      "ollama_ref": "stablelm2:zephyr",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

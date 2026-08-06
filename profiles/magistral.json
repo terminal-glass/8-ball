@@ -1,0 +1,112 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "magistral",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "24b",
+      "ollama_ref": "magistral:24b",
+      "parameter_count": 24000000000,
+      "quantization": null,
+      "download_size_bytes": 14000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/magistral/tags",
+        "retrieved_at": "2026-08-01T11:55:43Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 24.72,
+        "recommended_system_ram_gb": 29.67,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 24.72,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "24b-small2506-fp16",
+      "ollama_ref": "magistral:24b-small-2506-fp16",
+      "parameter_count": 24000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 47000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/magistral/tags",
+        "retrieved_at": "2026-08-01T11:55:43Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 62.67,
+        "recommended_system_ram_gb": 75.21,
+        "min_vram_gb": 54.05,
+        "recommended_vram_gb": 62.67,
+        "min_disk_gb": 61.4
+      }
+    },
+    {
+      "size_slug": "24b-small2506-q4-k-m",
+      "ollama_ref": "magistral:24b-small-2506-q4_K_M",
+      "parameter_count": 24000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/magistral/tags",
+        "retrieved_at": "2026-08-01T11:55:43Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 24.72,
+        "recommended_system_ram_gb": 29.67,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 24.72,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "24b-small2506-q80",
+      "ollama_ref": "magistral:24b-small-2506-q8_0",
+      "parameter_count": 24000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 25000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/magistral/tags",
+        "retrieved_at": "2026-08-01T11:55:43Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 37.38,
+        "recommended_system_ram_gb": 44.85,
+        "min_vram_gb": 28.75,
+        "recommended_vram_gb": 37.38,
+        "min_disk_gb": 35.0
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "magistral:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/magistral/tags",
+        "retrieved_at": "2026-08-01T11:55:43Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 17.82,
+        "recommended_system_ram_gb": 21.39,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 17.82,
+        "min_disk_gb": 21.8
+      }
+    }
+  ],
+  "promoted_size_slug": "24b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepscaler",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": false,
+  "cuda_available": true,
+  "apple_metal_available": false,
+  "total_vram_gb": 8.0,
+  "reason": "CPU-only Ubuntu lane; GPU stage not required for lane selection."
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "yarn-mistral",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T02:17:56Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "minimum_free_disk_gb": 35.0,
+  "reason": "Disk headroom sourced from hardware or provider plan assumptions."
+}

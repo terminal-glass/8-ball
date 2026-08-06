@@ -1,0 +1,224 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepseek-v2",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "236b",
+      "ollama_ref": "deepseek-v2:236b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-fp16",
+      "ollama_ref": "deepseek-v2:236b-chat-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q2-k",
+      "ollama_ref": "deepseek-v2:236b-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q3-k-l",
+      "ollama_ref": "deepseek-v2:236b-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q3-k-m",
+      "ollama_ref": "deepseek-v2:236b-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q3-k-s",
+      "ollama_ref": "deepseek-v2:236b-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q4-k-m",
+      "ollama_ref": "deepseek-v2:236b-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q4-k-s",
+      "ollama_ref": "deepseek-v2:236b-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q40",
+      "ollama_ref": "deepseek-v2:236b-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q41",
+      "ollama_ref": "deepseek-v2:236b-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q5-k-m",
+      "ollama_ref": "deepseek-v2:236b-chat-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q5-k-s",
+      "ollama_ref": "deepseek-v2:236b-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q50",
+      "ollama_ref": "deepseek-v2:236b-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q51",
+      "ollama_ref": "deepseek-v2:236b-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q6-k",
+      "ollama_ref": "deepseek-v2:236b-chat-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "236b-chat-q80",
+      "ollama_ref": "deepseek-v2:236b-chat-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b",
+      "ollama_ref": "deepseek-v2:16b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-fp16",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q2-k",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q3-k-l",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q3-k-m",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q3-k-s",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q4-k-m",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q4-k-s",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q40",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q41",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q5-k-m",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q5-k-s",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q50",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q51",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q6-k",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "16b-lite-chat-q80",
+      "ollama_ref": "deepseek-v2:16b-lite-chat-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-v2:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "lite",
+      "ollama_ref": "deepseek-v2:lite",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

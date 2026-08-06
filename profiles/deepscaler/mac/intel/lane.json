@@ -1,0 +1,49 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepscaler",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/intel",
+  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "1.5b",
+      "ollama_ref": "deepscaler:1.5b",
+      "fits": false,
+      "reason": "requires 6.3 GB RAM; lane provides 4.5 GB usable"
+    },
+    {
+      "size_slug": "1.5b-preview-fp16",
+      "ollama_ref": "deepscaler:1.5b-preview-fp16",
+      "fits": false,
+      "reason": "requires 6.3 GB RAM; lane provides 4.5 GB usable"
+    },
+    {
+      "size_slug": "1.5b-preview-q4-k-m",
+      "ollama_ref": "deepscaler:1.5b-preview-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "1.5b-preview-q80",
+      "ollama_ref": "deepscaler:1.5b-preview-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepscaler:latest",
+      "fits": false,
+      "reason": "requires 5.86 GB RAM; lane provides 4.5 GB usable"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "stable-code",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "3b",
+      "ollama_ref": "stable-code:3b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code",
+      "ollama_ref": "stable-code:3b-code",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-fp16",
+      "ollama_ref": "stable-code:3b-code-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q2-k",
+      "ollama_ref": "stable-code:3b-code-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q3-k-l",
+      "ollama_ref": "stable-code:3b-code-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q3-k-m",
+      "ollama_ref": "stable-code:3b-code-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q3-k-s",
+      "ollama_ref": "stable-code:3b-code-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q4-k-m",
+      "ollama_ref": "stable-code:3b-code-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q4-k-s",
+      "ollama_ref": "stable-code:3b-code-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q40",
+      "ollama_ref": "stable-code:3b-code-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q41",
+      "ollama_ref": "stable-code:3b-code-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q5-k-m",
+      "ollama_ref": "stable-code:3b-code-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q5-k-s",
+      "ollama_ref": "stable-code:3b-code-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q50",
+      "ollama_ref": "stable-code:3b-code-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q51",
+      "ollama_ref": "stable-code:3b-code-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q6-k",
+      "ollama_ref": "stable-code:3b-code-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-code-q80",
+      "ollama_ref": "stable-code:3b-code-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct",
+      "ollama_ref": "stable-code:3b-instruct",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-fp16",
+      "ollama_ref": "stable-code:3b-instruct-fp16",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q2-k",
+      "ollama_ref": "stable-code:3b-instruct-q2_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q3-k-l",
+      "ollama_ref": "stable-code:3b-instruct-q3_K_L",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q3-k-m",
+      "ollama_ref": "stable-code:3b-instruct-q3_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q3-k-s",
+      "ollama_ref": "stable-code:3b-instruct-q3_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q4-k-m",
+      "ollama_ref": "stable-code:3b-instruct-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q4-k-s",
+      "ollama_ref": "stable-code:3b-instruct-q4_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q40",
+      "ollama_ref": "stable-code:3b-instruct-q4_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q41",
+      "ollama_ref": "stable-code:3b-instruct-q4_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q5-k-m",
+      "ollama_ref": "stable-code:3b-instruct-q5_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q5-k-s",
+      "ollama_ref": "stable-code:3b-instruct-q5_K_S",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q50",
+      "ollama_ref": "stable-code:3b-instruct-q5_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q51",
+      "ollama_ref": "stable-code:3b-instruct-q5_1",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q6-k",
+      "ollama_ref": "stable-code:3b-instruct-q6_K",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "3b-instruct-q80",
+      "ollama_ref": "stable-code:3b-instruct-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "code",
+      "ollama_ref": "stable-code:code",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "stable-code:instruct",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "stable-code:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

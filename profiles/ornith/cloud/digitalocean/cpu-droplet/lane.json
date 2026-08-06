@@ -1,0 +1,74 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "ornith",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "35b",
+      "ollama_ref": "ornith:35b",
+      "fits": false,
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "35b-bf16",
+      "ollama_ref": "ornith:35b-bf16",
+      "fits": false,
+      "reason": "requires 87.8 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "35b-q4-k-m",
+      "ollama_ref": "ornith:35b-q4_K_M",
+      "fits": false,
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "35b-q80",
+      "ollama_ref": "ornith:35b-q8_0",
+      "fits": false,
+      "reason": "requires 49.4 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "9b",
+      "ollama_ref": "ornith:9b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "9b-bf16",
+      "ollama_ref": "ornith:9b-bf16",
+      "fits": false,
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB"
+    },
+    {
+      "size_slug": "9b-q4-k-m",
+      "ollama_ref": "ornith:9b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "9b-q80",
+      "ollama_ref": "ornith:9b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "ornith:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

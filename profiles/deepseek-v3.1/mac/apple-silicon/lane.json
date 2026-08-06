@@ -1,0 +1,62 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepseek-v3.1",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "671b",
+      "ollama_ref": "deepseek-v3.1:671b",
+      "fits": false,
+      "reason": "requires 659.24 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "671b-fp16",
+      "ollama_ref": "deepseek-v3.1:671b-fp16",
+      "fits": false,
+      "reason": "requires 1689.64 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "671b-q80",
+      "ollama_ref": "deepseek-v3.1:671b-q8_0",
+      "fits": false,
+      "reason": "requires 1014.59 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "671b-terminus-fp16",
+      "ollama_ref": "deepseek-v3.1:671b-terminus-fp16",
+      "fits": false,
+      "reason": "requires 1689.64 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "671b-terminus-q4-k-m",
+      "ollama_ref": "deepseek-v3.1:671b-terminus-q4_K_M",
+      "fits": false,
+      "reason": "requires 659.24 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "671b-terminus-q80",
+      "ollama_ref": "deepseek-v3.1:671b-terminus-q8_0",
+      "fits": false,
+      "reason": "requires 1014.59 GB RAM; lane provides 10.0 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-v3.1:latest",
+      "fits": false,
+      "reason": "requires 466.32 GB RAM; lane provides 10.0 GB usable"
+    }
+  ]
+}

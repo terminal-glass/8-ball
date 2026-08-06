@@ -1,0 +1,132 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "granite-embedding",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "278m",
+      "ollama_ref": "granite-embedding:278m",
+      "parameter_count": 278000000,
+      "quantization": null,
+      "download_size_bytes": 563000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/granite-embedding/tags",
+        "retrieved_at": "2026-08-01T11:54:10Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.45,
+        "recommended_system_ram_gb": 2.94,
+        "min_vram_gb": 0.65,
+        "recommended_vram_gb": 2.45,
+        "min_disk_gb": 5.68
+      }
+    },
+    {
+      "size_slug": "278m-fp16",
+      "ollama_ref": "granite-embedding:278m-fp16",
+      "parameter_count": 278000000,
+      "quantization": "fp16",
+      "download_size_bytes": 563000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/granite-embedding/tags",
+        "retrieved_at": "2026-08-01T11:54:10Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.45,
+        "recommended_system_ram_gb": 2.94,
+        "min_vram_gb": 0.65,
+        "recommended_vram_gb": 2.45,
+        "min_disk_gb": 5.68
+      }
+    },
+    {
+      "size_slug": "30m",
+      "ollama_ref": "granite-embedding:30m",
+      "parameter_count": 30000000,
+      "quantization": null,
+      "download_size_bytes": 63000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/granite-embedding/tags",
+        "retrieved_at": "2026-08-01T11:54:10Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.81,
+        "recommended_system_ram_gb": 2.17,
+        "min_vram_gb": 0.07,
+        "recommended_vram_gb": 1.81,
+        "min_disk_gb": 5.08
+      }
+    },
+    {
+      "size_slug": "30m-en",
+      "ollama_ref": "granite-embedding:30m-en",
+      "parameter_count": 30000000,
+      "quantization": null,
+      "download_size_bytes": 63000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/granite-embedding/tags",
+        "retrieved_at": "2026-08-01T11:54:10Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.81,
+        "recommended_system_ram_gb": 2.17,
+        "min_vram_gb": 0.07,
+        "recommended_vram_gb": 1.81,
+        "min_disk_gb": 5.08
+      }
+    },
+    {
+      "size_slug": "30m-en-fp16",
+      "ollama_ref": "granite-embedding:30m-en-fp16",
+      "parameter_count": 30000000,
+      "quantization": "fp16",
+      "download_size_bytes": 63000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/granite-embedding/tags",
+        "retrieved_at": "2026-08-01T11:54:10Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.81,
+        "recommended_system_ram_gb": 2.17,
+        "min_vram_gb": 0.07,
+        "recommended_vram_gb": 1.81,
+        "min_disk_gb": 5.08
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite-embedding:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 63000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/granite-embedding/tags",
+        "retrieved_at": "2026-08-01T11:54:10Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.8,
+        "recommended_system_ram_gb": 2.16,
+        "min_vram_gb": 0.07,
+        "recommended_vram_gb": 1.8,
+        "min_disk_gb": 5.08
+      }
+    }
+  ],
+  "promoted_size_slug": "278m",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

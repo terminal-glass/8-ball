@@ -1,0 +1,14 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "dolphincoder",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "applicable": false,
+  "fallback_lane": "cloud/aws-lightsail/cpu",
+  "reason": "CPU-only fallback when GPU path is unavailable or lane is CPU-first."
+}

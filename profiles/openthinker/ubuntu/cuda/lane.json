@@ -1,0 +1,110 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "openthinker",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "openthinker:32b",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "32b-fp16",
+      "ollama_ref": "openthinker:32b-fp16",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "32b-q4-k-m",
+      "ollama_ref": "openthinker:32b-q4_K_M",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "32b-q80",
+      "ollama_ref": "openthinker:32b-q8_0",
+      "fits": false,
+      "reason": "requires 51.17 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "32b-v2-fp16",
+      "ollama_ref": "openthinker:32b-v2-fp16",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "32b-v2-q4-k-m",
+      "ollama_ref": "openthinker:32b-v2-q4_K_M",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "32b-v2-q80",
+      "ollama_ref": "openthinker:32b-v2-q8_0",
+      "fits": false,
+      "reason": "requires 51.17 GB RAM; lane provides 24.0 GB usable"
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "openthinker:7b",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "openthinker:7b-fp16",
+      "fits": false,
+      "reason": "requires 17.25 GB VRAM; lane provides 16.0 GB"
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "openthinker:7b-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "openthinker:7b-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-fp16",
+      "ollama_ref": "openthinker:7b-v2-fp16",
+      "fits": false,
+      "reason": "requires 17.25 GB VRAM; lane provides 16.0 GB"
+    },
+    {
+      "size_slug": "7b-v2-q4-k-m",
+      "ollama_ref": "openthinker:7b-v2-q4_K_M",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "7b-v2-q80",
+      "ollama_ref": "openthinker:7b-v2-q8_0",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "openthinker:latest",
+      "fits": true,
+      "reason": "fits lane hardware assumptions"
+    }
+  ]
+}

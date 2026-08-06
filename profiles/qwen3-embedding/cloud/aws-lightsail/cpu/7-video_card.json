@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3-embedding",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": false,
+  "cuda_available": false,
+  "apple_metal_available": false,
+  "total_vram_gb": null,
+  "reason": "AWS Lightsail CPU instance lane."
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nemotron-3-nano",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "30b",
+      "ollama_ref": "nemotron-3-nano:30b",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "30b-a3b-fp16",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-fp16",
+      "fits": false,
+      "reason": "requires 82.8 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "30b-a3b-q4-k-m",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-q4_K_M",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "30b-a3b-q80",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-q8_0",
+      "fits": false,
+      "reason": "requires 49.45 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "30b-cloud",
+      "ollama_ref": "nemotron-3-nano:30b-cloud",
+      "fits": false,
+      "reason": "requires 82.8 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "nemotron-3-nano:4b",
+      "fits": false,
+      "reason": "requires 6.09 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "4b-bf16",
+      "ollama_ref": "nemotron-3-nano:4b-bf16",
+      "fits": false,
+      "reason": "requires 12.07 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "4b-q80",
+      "ollama_ref": "nemotron-3-nano:4b-q8_0",
+      "fits": false,
+      "reason": "requires 7.7 GB RAM; lane provides 2.4 GB usable"
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nemotron-3-nano:latest",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 2.4 GB usable"
+    }
+  ]
+}

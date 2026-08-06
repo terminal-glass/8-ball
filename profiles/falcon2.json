@@ -1,0 +1,352 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "falcon2",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "11b",
+      "ollama_ref": "falcon2:11b",
+      "parameter_count": 11000000000,
+      "quantization": null,
+      "download_size_bytes": 6400000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.25,
+        "recommended_system_ram_gb": 14.7,
+        "min_vram_gb": 7.36,
+        "recommended_vram_gb": 12.25,
+        "min_disk_gb": 12.68
+      }
+    },
+    {
+      "size_slug": "11b-fp16",
+      "ollama_ref": "falcon2:11b-fp16",
+      "parameter_count": 11000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 22000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 30.19,
+        "recommended_system_ram_gb": 36.22,
+        "min_vram_gb": 25.3,
+        "recommended_vram_gb": 30.19,
+        "min_disk_gb": 31.4
+      }
+    },
+    {
+      "size_slug": "11b-q2-k",
+      "ollama_ref": "falcon2:11b-q2_K",
+      "parameter_count": 11000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 4300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.83,
+        "recommended_system_ram_gb": 11.8,
+        "min_vram_gb": 4.94,
+        "recommended_vram_gb": 9.83,
+        "min_disk_gb": 10.16
+      }
+    },
+    {
+      "size_slug": "11b-q3-k-l",
+      "ollama_ref": "falcon2:11b-q3_K_L",
+      "parameter_count": 11000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.56,
+        "recommended_system_ram_gb": 13.87,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 11.56,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "11b-q3-k-m",
+      "ollama_ref": "falcon2:11b-q3_K_M",
+      "parameter_count": 11000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.1,
+        "recommended_system_ram_gb": 13.32,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 11.1,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "11b-q3-k-s",
+      "ollama_ref": "falcon2:11b-q3_K_S",
+      "parameter_count": 11000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 4900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.52,
+        "recommended_system_ram_gb": 12.63,
+        "min_vram_gb": 5.63,
+        "recommended_vram_gb": 10.52,
+        "min_disk_gb": 10.88
+      }
+    },
+    {
+      "size_slug": "11b-q4-k-m",
+      "ollama_ref": "falcon2:11b-q4_K_M",
+      "parameter_count": 11000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 6800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.71,
+        "recommended_system_ram_gb": 15.25,
+        "min_vram_gb": 7.82,
+        "recommended_vram_gb": 12.71,
+        "min_disk_gb": 13.16
+      }
+    },
+    {
+      "size_slug": "11b-q4-k-s",
+      "ollama_ref": "falcon2:11b-q4_K_S",
+      "parameter_count": 11000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 6400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.25,
+        "recommended_system_ram_gb": 14.7,
+        "min_vram_gb": 7.36,
+        "recommended_vram_gb": 12.25,
+        "min_disk_gb": 12.68
+      }
+    },
+    {
+      "size_slug": "11b-q40",
+      "ollama_ref": "falcon2:11b-q4_0",
+      "parameter_count": 11000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 6400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.25,
+        "recommended_system_ram_gb": 14.7,
+        "min_vram_gb": 7.36,
+        "recommended_vram_gb": 12.25,
+        "min_disk_gb": 12.68
+      }
+    },
+    {
+      "size_slug": "11b-q41",
+      "ollama_ref": "falcon2:11b-q4_1",
+      "parameter_count": 11000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 7100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.05,
+        "recommended_system_ram_gb": 15.66,
+        "min_vram_gb": 8.16,
+        "recommended_vram_gb": 13.05,
+        "min_disk_gb": 13.52
+      }
+    },
+    {
+      "size_slug": "11b-q5-k-m",
+      "ollama_ref": "falcon2:11b-q5_K_M",
+      "parameter_count": 11000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 8200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.32,
+        "recommended_system_ram_gb": 17.18,
+        "min_vram_gb": 9.43,
+        "recommended_vram_gb": 14.32,
+        "min_disk_gb": 14.84
+      }
+    },
+    {
+      "size_slug": "11b-q5-k-s",
+      "ollama_ref": "falcon2:11b-q5_K_S",
+      "parameter_count": 11000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 7700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.74,
+        "recommended_system_ram_gb": 16.49,
+        "min_vram_gb": 8.85,
+        "recommended_vram_gb": 13.74,
+        "min_disk_gb": 14.24
+      }
+    },
+    {
+      "size_slug": "11b-q50",
+      "ollama_ref": "falcon2:11b-q5_0",
+      "parameter_count": 11000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 7700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.74,
+        "recommended_system_ram_gb": 16.49,
+        "min_vram_gb": 8.85,
+        "recommended_vram_gb": 13.74,
+        "min_disk_gb": 14.24
+      }
+    },
+    {
+      "size_slug": "11b-q51",
+      "ollama_ref": "falcon2:11b-q5_1",
+      "parameter_count": 11000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 8400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.55,
+        "recommended_system_ram_gb": 17.46,
+        "min_vram_gb": 9.66,
+        "recommended_vram_gb": 14.55,
+        "min_disk_gb": 15.08
+      }
+    },
+    {
+      "size_slug": "11b-q6-k",
+      "ollama_ref": "falcon2:11b-q6_K",
+      "parameter_count": 11000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 9200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.47,
+        "recommended_system_ram_gb": 18.56,
+        "min_vram_gb": 10.58,
+        "recommended_vram_gb": 15.47,
+        "min_disk_gb": 16.04
+      }
+    },
+    {
+      "size_slug": "11b-q80",
+      "ollama_ref": "falcon2:11b-q8_0",
+      "parameter_count": 11000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 12000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.69,
+        "recommended_system_ram_gb": 22.43,
+        "min_vram_gb": 13.8,
+        "recommended_vram_gb": 18.69,
+        "min_disk_gb": 19.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "falcon2:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 6400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/falcon2/tags",
+        "retrieved_at": "2026-08-01T11:53:27Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.08,
+        "recommended_system_ram_gb": 10.9,
+        "min_vram_gb": 7.36,
+        "recommended_vram_gb": 9.08,
+        "min_disk_gb": 12.68
+      }
+    }
+  ],
+  "promoted_size_slug": "11b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

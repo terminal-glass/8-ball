@@ -1,0 +1,33 @@
+{
+  "schema_version": "c10.provider-assumption.v1",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "platform": "cloud",
+  "provider": "aws-lightsail",
+  "architecture": "x86_64",
+  "gpu_lane": true,
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "hardware": {
+    "cpu_cores": null,
+    "system_ram_gb": null,
+    "usable_model_ram_gb": null,
+    "minimum_free_disk_gb": null,
+    "total_vram_gb": null,
+    "cuda_available": true,
+    "apple_metal_available": false,
+    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
+    "provenance_status": "data_gap"
+  },
+  "fallback_profile_id": null,
+  "assumed_profile_id": null,
+  "source_paths": [
+    "AGENTS/TG-8Ball-GPU-Source-Inventory.csv"
+  ],
+  "generated_at": "2026-08-06T02:17:54Z",
+  "installer_reference": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+  "profiles_reference": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json"
+}

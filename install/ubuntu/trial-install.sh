@@ -9,6 +9,7 @@ PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu}"
 REQUESTED_MODEL=""
+MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 SKIP_MOTD=0
 MANIFEST="${EIGHTBALL_MANIFEST:-}"
 
@@ -46,6 +47,11 @@ parse_args() {
     case "$1" in
       --model)
         REQUESTED_MODEL="$2"
+        shift 2
+        ;;
+      --model-slug)
+        REQUESTED_MODEL=""
+        MODEL_SLUG="$2"
         shift 2
         ;;
       --no-motd)
@@ -130,6 +136,8 @@ main() {
   local -a model_args=()
   if [[ -n "${REQUESTED_MODEL}" ]]; then
     model_args=(--model "${REQUESTED_MODEL}")
+  elif [[ -n "${MODEL_SLUG}" ]]; then
+    model_args=(--model-slug "${MODEL_SLUG}")
   fi
 
   log "[1/4] Loading the public 8-BALL components (profile=${EIGHTBALL_INSTALL_PROFILE})"

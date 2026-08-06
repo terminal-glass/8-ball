@@ -1,0 +1,26 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nemotron-3-ultra",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T02:17:55Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "nemotron-3-ultra:cloud",
+      "fits": false,
+      "reason": "insufficient source measurements to confirm fit"
+    }
+  ]
+}
