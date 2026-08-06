@@ -3,7 +3,7 @@
   "provenance_status": "assumption",
   "data_class": "provider_assumption",
   "source_path": "data/normalized/hardware-assumed-profiles.json",
-  "source_reference": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+  "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
   "assumption": {
     "id": "assumed_profile:cuda_datacenter_141gb",
     "record_type": "assumed_hardware_profile",
@@ -30,10 +30,10 @@
     "deployment_type_id": "7",
     "menu_label": "Happy Nerd Datacenter Plus",
     "provenance_status": "internal_assumption_class",
-    "source_reference": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
     "validation_status": "imported",
     "notes": "Planning assumption aligned with H200 capacity; do not infer throughput or compatibility without testing.",
-    "source_file": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
     "source_id": "cuda-server-assumptions",
     "source_row": 7
   }

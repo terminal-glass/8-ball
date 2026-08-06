@@ -21,7 +21,7 @@
     "gpu_count": null,
     "cuda_available": null,
     "apple_metal_available": false,
-    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis",
     "baseline_plan_id": "GPU XL",
     "selection_policy": "smallest_published_plan_conservative_baseline",
@@ -42,7 +42,7 @@
         "most_probable_runtime_behavior": "Probable GPU device exposed to the guest; NVIDIA/CUDA remains unconfirmed",
         "confidence": "low",
         "verification_commands": "nvidia-smi; lspci; free -h; df -h; ollama run <smoke-test-model>; ollama ps",
-        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+        "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
         "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
       },
       {
@@ -61,7 +61,7 @@
         "most_probable_runtime_behavior": "Probable GPU device exposed to the guest; NVIDIA/CUDA remains unconfirmed",
         "confidence": "low",
         "verification_commands": "nvidia-smi; lspci; free -h; df -h; ollama run <smoke-test-model>; ollama ps",
-        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+        "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
         "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
       },
       {
@@ -80,7 +80,7 @@
         "most_probable_runtime_behavior": "Probable GPU device exposed to the guest; NVIDIA/CUDA remains unconfirmed",
         "confidence": "low",
         "verification_commands": "nvidia-smi; lspci; free -h; df -h; ollama run <smoke-test-model>; ollama ps",
-        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+        "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
         "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
       }
     ],
@@ -89,7 +89,7 @@
   "fallback_profile_id": null,
   "assumed_profile_id": null,
   "source_paths": [
-    "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+    "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
   ],
   "generated_at": "2026-08-06T06:02:36Z",
   "installer_reference": "install/cloud/aws-lightsail/gpu/trial-install.sh",

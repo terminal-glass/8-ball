@@ -19,14 +19,14 @@
     "total_vram_gb": null,
     "cuda_available": false,
     "apple_metal_available": false,
-    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class",
     "vram_gb_per_gpu": null
   },
   "fallback_profile_id": null,
   "assumed_profile_id": "windows_cpu_16gb",
   "source_paths": [
-    "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv"
+    "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv"
   ],
   "generated_at": "2026-08-06T05:53:08Z",
   "installer_reference": "install/ubuntu/cpu/trial-install.sh",

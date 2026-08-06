@@ -206,7 +206,7 @@ def test_aws_provisional_csv_is_registered() -> None:
     from eight_ball.agents_csv.registry import source_specs
 
     paths = {spec.path for spec in source_specs()}
-    assert "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv" in paths
+    assert "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv" in paths
 
 
 def test_trial_install_raw_profiles_base_construction() -> None:

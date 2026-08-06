@@ -19,13 +19,13 @@
     "total_vram_gb": 16.0,
     "cuda_available": true,
     "apple_metal_available": false,
-    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
   },
   "fallback_profile_id": "cuda_entry_8gb",
   "assumed_profile_id": "cuda_mid_12_16gb",
   "source_paths": [
-    "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv"
+    "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv"
   ],
   "generated_at": "2026-08-06T02:17:54Z",
   "installer_reference": "install/ubuntu/cuda/trial-install.sh",

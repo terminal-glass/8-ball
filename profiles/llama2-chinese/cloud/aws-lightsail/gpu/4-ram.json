@@ -5,7 +5,7 @@
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
   "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis"
   },
   "applicable": true,

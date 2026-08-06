@@ -3,7 +3,7 @@
   "provenance_status": "assumption",
   "data_class": "provider_assumption",
   "source_path": "data/normalized/hardware-assumed-profiles.json",
-  "source_reference": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+  "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
   "assumption": {
     "id": "assumed_profile:windows_cpu_32gb",
     "record_type": "assumed_hardware_profile",
@@ -30,10 +30,10 @@
     "deployment_type_id": "5",
     "menu_label": "Happy Nerd Medium",
     "provenance_status": "assumed_client_class",
-    "source_reference": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     "validation_status": "imported",
     "notes": "Assumption band for higher-memory Windows laptops without usable NVIDIA acceleration.",
-    "source_file": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     "source_id": "client-hardware-assumptions",
     "source_row": 9
   }

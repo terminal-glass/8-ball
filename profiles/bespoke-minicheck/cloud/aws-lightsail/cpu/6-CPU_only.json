@@ -5,7 +5,7 @@
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
   "generated_at": "2026-08-06T02:17:54Z",
   "provenance": {
-    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
   },
   "applicable": true,

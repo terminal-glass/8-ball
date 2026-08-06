@@ -15,18 +15,30 @@ The runtime profile contract is documented under
 [`../../profiles/`](../../profiles/README.md). Canonical generated model pages
 live under `data/generated/pages/` (see `docs/install-manifest-contract.md`).
 
-## P1–P7 layout
+## Layout
+
+| Path | Role |
+| --- | --- |
+| `ollama-mapping/` | Ollama catalog and provider workflow artifacts (P1–P7) |
+| `profile-mapping/` | TG-8Ball hardware/profile CSV inputs and C10 generation reports |
+
+## P1–P7 layout (`ollama-mapping/`)
 
 | Folder | Role |
 | --- | --- |
-| `P1-Estimator/` | Static estimator datasets: provider specs, NoCloudGPT templates, overhead reserves |
-| `P2-Provider-Datasets/` | Provider plan metadata and committed indexes |
-| `P3-Ollama-Metadata-Catalog/` | Catalog provenance and compact installer-consumable exports |
-| `P4-Public-Catalog/` | Public catalog publishing outputs |
-| `P4-Workload-Profiles/` | Static workload assumptions for planning |
-| `P5-Compatibility-Estimator/` | Reserved for compatibility estimation work |
-| `P6-Validation-and-Testing/` | Reserved for workflow validation artifacts |
-| `P7-Installer-Authoring-Preparation/` | Reserved for installer-authoring preparation metadata |
+| `ollama-mapping/P1-Estimator/` | Static estimator datasets: provider specs, NoCloudGPT templates, overhead reserves |
+| `ollama-mapping/P2-Provider-Datasets/` | Provider plan metadata and committed indexes |
+| `ollama-mapping/P3-Ollama-Metadata-Catalog/` | Catalog provenance and compact installer-consumable exports |
+| `ollama-mapping/P4-Public-Catalog/` | Public catalog publishing outputs |
+| `ollama-mapping/P4-Workload-Profiles/` | Static workload assumptions for planning |
+| `ollama-mapping/P5-Compatibility-Estimator/` | Reserved for compatibility estimation work |
+| `ollama-mapping/P6-Validation-and-Testing/` | Reserved for workflow validation artifacts |
+| `ollama-mapping/P7-Installer-Authoring-Preparation/` | Reserved for installer-authoring preparation metadata |
+
+## Profile mapping (`profile-mapping/`)
+
+TG-8Ball CSV/XLSX hardware assumption files and C10 profile-generation reports
+live under `profile-mapping/`.
 
 ## Repository boundary
 

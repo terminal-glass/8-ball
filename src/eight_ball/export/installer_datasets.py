@@ -16,12 +16,12 @@ from typing import Any
 
 from eight_ball.config import hardware_profiles_config, load_json, write_json
 from eight_ball.estimate.hardware import estimate_memory_gb
-from eight_ball.paths import DATA_SCIENCE_DIR, NORMALIZED_DIR, REPO_ROOT
+from eight_ball.paths import NORMALIZED_DIR, OLLAMA_MAPPING_DIR, REPO_ROOT
 from eight_ball.provenance import utc_now_iso
 
-P1_DIR = DATA_SCIENCE_DIR / "P1-Estimator"
-P2_DIR = DATA_SCIENCE_DIR / "P2-Provider-Datasets"
-P3_DIR = DATA_SCIENCE_DIR / "P3-Ollama-Metadata-Catalog"
+P1_DIR = OLLAMA_MAPPING_DIR / "P1-Estimator"
+P2_DIR = OLLAMA_MAPPING_DIR / "P2-Provider-Datasets"
+P3_DIR = OLLAMA_MAPPING_DIR / "P3-Ollama-Metadata-Catalog"
 
 NORMALIZED_FILES = (
     "publishers.json",

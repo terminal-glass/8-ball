@@ -2,10 +2,10 @@
 
 Working assumption file:
 
-`AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv`
+`AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv`
 
 This is **control/provenance data**, not verified hardware facts. Published vCPU, RAM, and
-storage values are copied from `AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv`.
+storage values are copied from `AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv`.
 GPU vendor, model, count, VRAM, CUDA, and Ollama GPU support remain **unknown** until a
 real Lightsail GPU probe upgrades the CSV.
 
@@ -39,5 +39,5 @@ Perform a safe Ollama smoke test and record whether GPU offload occurred (for ex
 ## Resolution path
 
 1. Run the runtime probe on a Lightsail for Research GPU instance.
-2. Update `AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv` with measured GPU facts.
+2. Update `AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv` with measured GPU facts.
 3. Regenerate: `python3 scripts/generate-c10-profiles.py`

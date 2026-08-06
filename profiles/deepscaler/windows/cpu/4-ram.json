@@ -5,7 +5,7 @@
   "provider_assumption_id": "windows-cpu",
   "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
   "applicable": true,

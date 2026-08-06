@@ -17,7 +17,7 @@ This directory is the static provider-specification catalog for NoCloudGPT deplo
 Run the offline test suite from the repository root:
 
 ```bash
-python3 AGENTS/data-science/P2-Provider-Datasets/tests/test_p2_datasets.py
+python3 AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/tests/test_p2_datasets.py
 ```
 
 The tests parse every JSON document, validate schema coverage, enforce unique identifiers, validate numeric fields, verify provider identifiers, and check index consistency.

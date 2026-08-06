@@ -4,16 +4,16 @@
     "data/normalized/tags.json",
     "data/normalized/models.json",
     "data/normalized/hardware-assumed-profiles.json",
-    "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
-    "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-    "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
-    "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
-    "AGENTS/data-science/P2-Provider-Datasets/"
+    "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/"
   ],
   "model_count": 234,
   "size_count": 7271,
   "install_lane_count": 10,
   "data_gaps": [
-    "AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/P1-P4 instead."
+    "AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/ollama-mapping/P1-P4 instead."
   ]
 }

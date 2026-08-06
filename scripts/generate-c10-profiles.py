@@ -59,7 +59,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": None,
         "stage7_applicable": False,
         "stage7_reason": "CPU-only Ubuntu lane; GPU stage not required for lane selection.",
-        "source_csv": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
     },
     {
         "lane_path": "ubuntu/cuda",
@@ -75,7 +75,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": "cuda_entry_8gb",
         "stage7_applicable": True,
         "stage7_reason": "CUDA server lane; NVIDIA GPU and driver detection required.",
-        "source_csv": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
     },
     {
         "lane_path": "mac/apple-silicon",
@@ -91,7 +91,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": "mac_air_apple_silicon_8gb",
         "stage7_applicable": True,
         "stage7_reason": "Apple Silicon unified memory; Metal GPU path.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     },
     {
         "lane_path": "mac/intel",
@@ -107,7 +107,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": None,
         "stage7_applicable": False,
         "stage7_reason": "Intel Mac lane uses CPU-only fallback; discrete GPU not assumed.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     },
     {
         "lane_path": "windows/cpu",
@@ -123,7 +123,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": "windows_cpu_8gb",
         "stage7_applicable": False,
         "stage7_reason": "Windows CPU-only lane; no NVIDIA CUDA assumed.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     },
     {
         "lane_path": "windows/cuda",
@@ -139,7 +139,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": "windows_nvidia_16gb_vram_6_8gb",
         "stage7_applicable": True,
         "stage7_reason": "Windows NVIDIA CUDA lane.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     },
     {
         "lane_path": "cloud/digitalocean/cpu-droplet",
@@ -155,7 +155,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": None,
         "stage7_applicable": False,
         "stage7_reason": "DigitalOcean CPU droplet lane; no GPU assumed.",
-        "source_csv": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+        "source_csv": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     },
     {
         "lane_path": "cloud/digitalocean/gpu-droplet",
@@ -171,7 +171,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": None,
         "stage7_applicable": True,
         "stage7_reason": "DigitalOcean GPU droplet lane.",
-        "source_csv": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     },
     {
         "lane_path": "cloud/aws-lightsail/cpu",
@@ -187,7 +187,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": None,
         "stage7_applicable": False,
         "stage7_reason": "AWS Lightsail CPU instance lane.",
-        "source_csv": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+        "source_csv": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     },
     {
         "lane_path": "cloud/aws-lightsail/gpu",
@@ -203,7 +203,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": None,
         "stage7_applicable": True,
         "stage7_reason": "AWS Lightsail GPU instance lane when GPU bundles are available.",
-        "source_csv": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+        "source_csv": "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     },
 ]
 
@@ -296,7 +296,7 @@ def load_hardware_profiles() -> dict[str, dict[str, Any]]:
 
 def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
     defaults: dict[str, dict[str, Any]] = {}
-    do_gp = REPO_ROOT / "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json"
+    do_gp = REPO_ROOT / "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json"
     if do_gp.exists():
         plans = load_json(do_gp)
         if plans:
@@ -308,7 +308,7 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
                 "source_path": str(do_gp.relative_to(REPO_ROOT)),
                 "plans": plans,
             }
-    ls = REPO_ROOT / "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json"
+    ls = REPO_ROOT / "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json"
     if ls.exists():
         plans = load_json(ls)
         medium = next((p for p in plans if p.get("bundle_id") == "medium_3_0"), plans[0] if plans else None)
@@ -621,11 +621,11 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
             "data/normalized/tags.json",
             "data/normalized/models.json",
             "data/normalized/hardware-assumed-profiles.json",
-            "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
-            "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-            "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
-            "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
-            "AGENTS/data-science/P2-Provider-Datasets/",
+            "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+            "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+            "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+            "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+            "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/",
         ],
         "model_count": len(model_pages),
         "size_count": sum(len(p["sizes"]) for p in model_pages.values()),
@@ -643,7 +643,7 @@ def generate() -> dict[str, Any]:
     gaps: list[str] = []
 
     if not (REPO_ROOT / "AGENTS/data-science/ollama-mapping").exists():
-        gaps.append("AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/P1-P4 instead.")
+        gaps.append("AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/ollama-mapping/P1-P4 instead.")
 
     provider_dir = PROFILES_DIR / "provider-assumptions"
     provider_dir.mkdir(parents=True, exist_ok=True)

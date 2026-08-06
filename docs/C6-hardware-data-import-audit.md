@@ -27,26 +27,26 @@ recovered P2 provider JSON sources. It was produced by `eight-ball import-agents
 
 | File | Classification | Imported | Primary key | Rows read | Rows imported |
 | --- | --- | --- | --- | ---: | ---: |
-| `AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv` | provider_instance_data | yes | provider composite | 3 | 3 |
-| `AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv` | provider_instance_data | yes | provider composite | 5 | 5 |
-| `AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-AMD.csv` | provider_instance_data | yes | provider composite | 2 | 2 |
-| `AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json` | provider_instance_data | yes | provider composite | 13 | 13 |
-| `AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/basic.json` | provider_instance_data | yes | provider composite | 7 | 7 |
-| `AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/cpu-optimized.json` | provider_instance_data | yes | provider composite | 6 | 6 |
-| `AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json` | provider_instance_data | yes | provider composite | 6 | 6 |
-| `AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/memory-optimized.json` | provider_instance_data | yes | provider composite | 5 | 5 |
-| `AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/storage-optimized.json` | provider_instance_data | yes | provider composite | 5 | 5 |
-| `AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv` | assumed_hardware_profiles | yes | `profile_id` | 10 | 10 |
-| `AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv` | assumed_hardware_profiles | yes | `profile_id` | 7 | 7 |
-| `AGENTS/TG-8Ball-Measured-GPU-Hosts.csv` | measured_hardware_inventory | yes | `host_profile_id` | 1 | 1 |
-| `AGENTS/TG-8Ball-Accelerator-Classes.csv` | accelerator_classification | yes | `accelerator_class_id` | 7 | 7 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv` | provider_instance_data | yes | provider composite | 3 | 3 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv` | provider_instance_data | yes | provider composite | 5 | 5 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-AMD.csv` | provider_instance_data | yes | provider composite | 2 | 2 |
+| `AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json` | provider_instance_data | yes | provider composite | 13 | 13 |
+| `AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/basic.json` | provider_instance_data | yes | provider composite | 7 | 7 |
+| `AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/cpu-optimized.json` | provider_instance_data | yes | provider composite | 6 | 6 |
+| `AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json` | provider_instance_data | yes | provider composite | 6 | 6 |
+| `AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/memory-optimized.json` | provider_instance_data | yes | provider composite | 5 | 5 |
+| `AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/storage-optimized.json` | provider_instance_data | yes | provider composite | 5 | 5 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv` | assumed_hardware_profiles | yes | `profile_id` | 10 | 10 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv` | assumed_hardware_profiles | yes | `profile_id` | 7 | 7 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-Measured-GPU-Hosts.csv` | measured_hardware_inventory | yes | `host_profile_id` | 1 | 1 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-Accelerator-Classes.csv` | accelerator_classification | yes | `accelerator_class_id` | 7 | 7 |
 | `config/deployment_types.yaml` | accelerator_classification | yes | `deployment_type_id` | 5 | 5 |
-| `AGENTS/TG-8Ball-GPU-Source-Inventory.csv` | control_and_provenance | no | control row | 5 | 0 |
-| `AGENTS/TG-8Ball-GPU-Recovered-Counts.csv` | control_and_provenance | no | control row | 6 | 0 |
-| `AGENTS/TG-8Ball-GPU-Cursor-Checklist.csv` | control_and_provenance | no | control row | 9 | 0 |
-| `AGENTS/TG-8Ball-Provider-Recovery-Source-Inventory.csv` | control_and_provenance | no | control row | 15 | 0 |
-| `AGENTS/TG-8Ball-Provider-Recovery-Recovered-Counts.csv` | control_and_provenance | no | control row | 11 | 0 |
-| `AGENTS/TG-8Ball-Provider-Recovery-Cursor-Checklist.csv` | control_and_provenance | no | control row | 7 | 0 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-GPU-Source-Inventory.csv` | control_and_provenance | no | control row | 5 | 0 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-GPU-Recovered-Counts.csv` | control_and_provenance | no | control row | 6 | 0 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-GPU-Cursor-Checklist.csv` | control_and_provenance | no | control row | 9 | 0 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-Provider-Recovery-Source-Inventory.csv` | control_and_provenance | no | control row | 15 | 0 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-Provider-Recovery-Recovered-Counts.csv` | control_and_provenance | no | control row | 11 | 0 |
+| `AGENTS/data-science/profile-mapping/TG-8Ball-Provider-Recovery-Cursor-Checklist.csv` | control_and_provenance | no | control row | 7 | 0 |
 
 Additional non-CSV control/provenance artifacts (not imported):
 

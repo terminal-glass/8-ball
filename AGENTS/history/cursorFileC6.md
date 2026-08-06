@@ -12,7 +12,7 @@ It does not claim measured model compatibility.
 
 Source Files
 
-Classify the existing AGENTS/TG-8Ball-*.csv files into these namespaces before importing any rows.
+Classify the existing AGENTS/data-science/profile-mapping/TG-8Ball-*.csv files into these namespaces before importing any rows.
 
 1. Provider instance data
 
@@ -188,7 +188,7 @@ Do not remove rows merely because these overlaps exist.
 
 Import Requirements
 
-☐ Discover all AGENTS/TG-8Ball-*.csv files.
+☐ Discover all AGENTS/data-science/profile-mapping/TG-8Ball-*.csv files.
 ☐ Classify every file into exactly one namespace.
 ☐ Reject unknown file types until manually classified.
 ☐ Parse CSV using header names, not column position assumptions.

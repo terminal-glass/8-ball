@@ -168,7 +168,7 @@ def test_generate_root_profiles_includes_labeled_provider_assumptions(
             "profile_id": "test_assumption",
             "display_name": "Test Assumption",
             "provenance_status": "internal_assumption_class",
-            "source_reference": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+            "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
         }
     ]
     normalized.mkdir(parents=True, exist_ok=True)

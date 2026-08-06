@@ -26,7 +26,7 @@
     "measured_at_utc": "2025-11-27T08:09:54Z",
     "validation_status": "imported",
     "notes": "nvidia-smi measurement is proven. This does not prove the guest VM had GPU access or that any Ollama model passed.",
-    "source_file": "AGENTS/TG-8Ball-Measured-GPU-Hosts.csv",
+    "source_file": "AGENTS/data-science/profile-mapping/TG-8Ball-Measured-GPU-Hosts.csv",
     "source_id": "measured-gpu-hosts",
     "source_row": 2
   }
