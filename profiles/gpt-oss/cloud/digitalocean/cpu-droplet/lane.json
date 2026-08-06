@@ -3,7 +3,7 @@
   "model_slug": "gpt-oss",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -19,32 +19,42 @@
     {
       "size_slug": "120b",
       "ollama_ref": "gpt-oss:120b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 83.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 83.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "120b-cloud",
       "ollama_ref": "gpt-oss:120b-cloud",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 83.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 83.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "20b",
       "ollama_ref": "gpt-oss:20b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "20b-cloud",
       "ollama_ref": "gpt-oss:20b-cloud",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 83.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 83.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "gpt-oss:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

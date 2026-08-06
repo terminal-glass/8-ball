@@ -3,7 +3,7 @@
   "model_slug": "ornith",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,56 +19,92 @@
     {
       "size_slug": "35b",
       "ollama_ref": "ornith:35b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.94 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 35.94 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "35b-bf16",
       "ollama_ref": "ornith:35b-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 91.14 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 91.14 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "35b-q4-k-m",
       "ollama_ref": "ornith:35b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.94 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 35.94 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "35b-q80",
       "ollama_ref": "ornith:35b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.34 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 54.34 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "9b",
       "ollama_ref": "ornith:9b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.75 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 10.75 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "9b-bf16",
       "ollama_ref": "ornith:9b-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 25.01 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 25.01 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "9b-q4-k-m",
       "ollama_ref": "ornith:9b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.75 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 10.75 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "9b-q80",
       "ollama_ref": "ornith:9b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.24 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 15.24 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "ornith:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

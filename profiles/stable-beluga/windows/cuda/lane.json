@@ -3,7 +3,7 @@
   "model_slug": "stable-beluga",
   "lane_path": "windows/cuda",
   "provider_assumption_id": "windows-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,296 +19,492 @@
     {
       "size_slug": "70b",
       "ollama_ref": "stable-beluga:70b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 66.7 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 66.7 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-fp16",
       "ollama_ref": "stable-beluga:70b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 180.55 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 180.55 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q2-k",
       "ollama_ref": "stable-beluga:70b-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 55.2 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 55.2 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q3-k-l",
       "ollama_ref": "stable-beluga:70b-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 63.25 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 63.25 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q3-k-m",
       "ollama_ref": "stable-beluga:70b-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 59.8 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 59.8 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q3-k-s",
       "ollama_ref": "stable-beluga:70b-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.35 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 56.35 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q4-k-m",
       "ollama_ref": "stable-beluga:70b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 69.0 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 69.0 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q4-k-s",
       "ollama_ref": "stable-beluga:70b-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 66.7 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 66.7 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q40",
       "ollama_ref": "stable-beluga:70b-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 66.7 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 66.7 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q41",
       "ollama_ref": "stable-beluga:70b-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 71.3 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 71.3 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q5-k-m",
       "ollama_ref": "stable-beluga:70b-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 78.2 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 78.2 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q5-k-s",
       "ollama_ref": "stable-beluga:70b-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 75.9 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 75.9 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q50",
       "ollama_ref": "stable-beluga:70b-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 75.9 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 75.9 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q51",
       "ollama_ref": "stable-beluga:70b-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 81.65 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 81.65 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q6-k",
       "ollama_ref": "stable-beluga:70b-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 87.4 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 87.4 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "70b-q80",
       "ollama_ref": "stable-beluga:70b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 105.8 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 105.8 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b",
       "ollama_ref": "stable-beluga:13b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-fp16",
       "ollama_ref": "stable-beluga:13b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q2-k",
       "ollama_ref": "stable-beluga:13b-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q3-k-l",
       "ollama_ref": "stable-beluga:13b-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q3-k-m",
       "ollama_ref": "stable-beluga:13b-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q3-k-s",
       "ollama_ref": "stable-beluga:13b-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q4-k-m",
       "ollama_ref": "stable-beluga:13b-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q4-k-s",
       "ollama_ref": "stable-beluga:13b-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q40",
       "ollama_ref": "stable-beluga:13b-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q41",
       "ollama_ref": "stable-beluga:13b-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q5-k-m",
       "ollama_ref": "stable-beluga:13b-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q5-k-s",
       "ollama_ref": "stable-beluga:13b-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q50",
       "ollama_ref": "stable-beluga:13b-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q51",
       "ollama_ref": "stable-beluga:13b-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q6-k",
       "ollama_ref": "stable-beluga:13b-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q80",
       "ollama_ref": "stable-beluga:13b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b",
       "ollama_ref": "stable-beluga:7b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-fp16",
       "ollama_ref": "stable-beluga:7b-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q2-k",
       "ollama_ref": "stable-beluga:7b-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q3-k-l",
       "ollama_ref": "stable-beluga:7b-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q3-k-m",
       "ollama_ref": "stable-beluga:7b-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q3-k-s",
       "ollama_ref": "stable-beluga:7b-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q4-k-m",
       "ollama_ref": "stable-beluga:7b-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q4-k-s",
       "ollama_ref": "stable-beluga:7b-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q40",
       "ollama_ref": "stable-beluga:7b-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q41",
       "ollama_ref": "stable-beluga:7b-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q5-k-m",
       "ollama_ref": "stable-beluga:7b-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q5-k-s",
       "ollama_ref": "stable-beluga:7b-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q50",
       "ollama_ref": "stable-beluga:7b-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q51",
       "ollama_ref": "stable-beluga:7b-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q6-k",
       "ollama_ref": "stable-beluga:7b-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q80",
       "ollama_ref": "stable-beluga:7b-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "stable-beluga:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

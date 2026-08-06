@@ -3,7 +3,7 @@
   "model_slug": "yi",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:56Z",
+  "generated_at": "2026-08-06T05:53:11Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,1046 +19,1394 @@
     {
       "size_slug": "34b",
       "ollama_ref": "yi:34b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat",
       "ollama_ref": "yi:34b-chat",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-fp16",
       "ollama_ref": "yi:34b-chat-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q2-k",
       "ollama_ref": "yi:34b-chat-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q3-k-l",
       "ollama_ref": "yi:34b-chat-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q3-k-m",
       "ollama_ref": "yi:34b-chat-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q3-k-s",
       "ollama_ref": "yi:34b-chat-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q4-k-m",
       "ollama_ref": "yi:34b-chat-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q4-k-s",
       "ollama_ref": "yi:34b-chat-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q40",
       "ollama_ref": "yi:34b-chat-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q41",
       "ollama_ref": "yi:34b-chat-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q5-k-m",
       "ollama_ref": "yi:34b-chat-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q5-k-s",
       "ollama_ref": "yi:34b-chat-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q50",
       "ollama_ref": "yi:34b-chat-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q51",
       "ollama_ref": "yi:34b-chat-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q6-k",
       "ollama_ref": "yi:34b-chat-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-q80",
       "ollama_ref": "yi:34b-chat-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.05 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 54.05 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-fp16",
       "ollama_ref": "yi:34b-chat-v1.5-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q2-k",
       "ollama_ref": "yi:34b-chat-v1.5-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 26.45 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 26.45 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q3-k-l",
       "ollama_ref": "yi:34b-chat-v1.5-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q3-k-m",
       "ollama_ref": "yi:34b-chat-v1.5-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q3-k-s",
       "ollama_ref": "yi:34b-chat-v1.5-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q4-k-m",
       "ollama_ref": "yi:34b-chat-v1.5-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q4-k-s",
       "ollama_ref": "yi:34b-chat-v1.5-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q40",
       "ollama_ref": "yi:34b-chat-v1.5-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q41",
       "ollama_ref": "yi:34b-chat-v1.5-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q5-k-m",
       "ollama_ref": "yi:34b-chat-v1.5-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q5-k-s",
       "ollama_ref": "yi:34b-chat-v1.5-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q50",
       "ollama_ref": "yi:34b-chat-v1.5-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q51",
       "ollama_ref": "yi:34b-chat-v1.5-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q6-k",
       "ollama_ref": "yi:34b-chat-v1.5-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-chat-v1.5-q80",
       "ollama_ref": "yi:34b-chat-v1.5-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.05 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 54.05 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q2-k",
       "ollama_ref": "yi:34b-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q3-k-l",
       "ollama_ref": "yi:34b-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q3-k-m",
       "ollama_ref": "yi:34b-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q3-k-s",
       "ollama_ref": "yi:34b-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q4-k-m",
       "ollama_ref": "yi:34b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q4-k-s",
       "ollama_ref": "yi:34b-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q40",
       "ollama_ref": "yi:34b-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q41",
       "ollama_ref": "yi:34b-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q5-k-s",
       "ollama_ref": "yi:34b-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q50",
       "ollama_ref": "yi:34b-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q51",
       "ollama_ref": "yi:34b-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-q6-k",
       "ollama_ref": "yi:34b-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5",
       "ollama_ref": "yi:34b-v1.5",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-fp16",
       "ollama_ref": "yi:34b-v1.5-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 90.85 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q2-k",
       "ollama_ref": "yi:34b-v1.5-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 26.45 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 26.45 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q3-k-l",
       "ollama_ref": "yi:34b-v1.5-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q3-k-m",
       "ollama_ref": "yi:34b-v1.5-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 31.05 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q3-k-s",
       "ollama_ref": "yi:34b-v1.5-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q4-k-m",
       "ollama_ref": "yi:34b-v1.5-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q4-k-s",
       "ollama_ref": "yi:34b-v1.5-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q40",
       "ollama_ref": "yi:34b-v1.5-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q41",
       "ollama_ref": "yi:34b-v1.5-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 36.8 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q5-k-m",
       "ollama_ref": "yi:34b-v1.5-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q5-k-s",
       "ollama_ref": "yi:34b-v1.5-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q50",
       "ollama_ref": "yi:34b-v1.5-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q51",
       "ollama_ref": "yi:34b-v1.5-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 41.4 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q6-k",
       "ollama_ref": "yi:34b-v1.5-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-v1.5-q80",
       "ollama_ref": "yi:34b-v1.5-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.05 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 54.05 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b",
       "ollama_ref": "yi:9b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat",
       "ollama_ref": "yi:9b-chat",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-fp16",
       "ollama_ref": "yi:9b-chat-v1.5-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 25.01 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 25.01 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q2-k",
       "ollama_ref": "yi:9b-chat-v1.5-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q3-k-l",
       "ollama_ref": "yi:9b-chat-v1.5-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q3-k-m",
       "ollama_ref": "yi:9b-chat-v1.5-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q3-k-s",
       "ollama_ref": "yi:9b-chat-v1.5-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q4-k-m",
       "ollama_ref": "yi:9b-chat-v1.5-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q4-k-s",
       "ollama_ref": "yi:9b-chat-v1.5-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q40",
       "ollama_ref": "yi:9b-chat-v1.5-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q41",
       "ollama_ref": "yi:9b-chat-v1.5-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q5-k-m",
       "ollama_ref": "yi:9b-chat-v1.5-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q5-k-s",
       "ollama_ref": "yi:9b-chat-v1.5-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q50",
       "ollama_ref": "yi:9b-chat-v1.5-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q51",
       "ollama_ref": "yi:9b-chat-v1.5-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q6-k",
       "ollama_ref": "yi:9b-chat-v1.5-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-chat-v1.5-q80",
       "ollama_ref": "yi:9b-chat-v1.5-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5",
       "ollama_ref": "yi:9b-v1.5",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-fp16",
       "ollama_ref": "yi:9b-v1.5-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 25.01 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 25.01 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q2-k",
       "ollama_ref": "yi:9b-v1.5-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q3-k-l",
       "ollama_ref": "yi:9b-v1.5-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q3-k-m",
       "ollama_ref": "yi:9b-v1.5-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q3-k-s",
       "ollama_ref": "yi:9b-v1.5-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q4-k-m",
       "ollama_ref": "yi:9b-v1.5-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q4-k-s",
       "ollama_ref": "yi:9b-v1.5-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q40",
       "ollama_ref": "yi:9b-v1.5-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q41",
       "ollama_ref": "yi:9b-v1.5-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q5-k-m",
       "ollama_ref": "yi:9b-v1.5-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q5-k-s",
       "ollama_ref": "yi:9b-v1.5-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q50",
       "ollama_ref": "yi:9b-v1.5-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q51",
       "ollama_ref": "yi:9b-v1.5-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q6-k",
       "ollama_ref": "yi:9b-v1.5-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-v1.5-q80",
       "ollama_ref": "yi:9b-v1.5-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b",
       "ollama_ref": "yi:6b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat",
       "ollama_ref": "yi:6b-chat",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-fp16",
       "ollama_ref": "yi:6b-chat-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q2-k",
       "ollama_ref": "yi:6b-chat-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q3-k-l",
       "ollama_ref": "yi:6b-chat-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q3-k-m",
       "ollama_ref": "yi:6b-chat-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q3-k-s",
       "ollama_ref": "yi:6b-chat-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q4-k-m",
       "ollama_ref": "yi:6b-chat-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q4-k-s",
       "ollama_ref": "yi:6b-chat-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q40",
       "ollama_ref": "yi:6b-chat-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q41",
       "ollama_ref": "yi:6b-chat-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q5-k-m",
       "ollama_ref": "yi:6b-chat-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q5-k-s",
       "ollama_ref": "yi:6b-chat-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q50",
       "ollama_ref": "yi:6b-chat-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q51",
       "ollama_ref": "yi:6b-chat-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q6-k",
       "ollama_ref": "yi:6b-chat-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-q80",
       "ollama_ref": "yi:6b-chat-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-fp16",
       "ollama_ref": "yi:6b-chat-v1.5-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q2-k",
       "ollama_ref": "yi:6b-chat-v1.5-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q3-k-l",
       "ollama_ref": "yi:6b-chat-v1.5-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q3-k-m",
       "ollama_ref": "yi:6b-chat-v1.5-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q3-k-s",
       "ollama_ref": "yi:6b-chat-v1.5-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q4-k-m",
       "ollama_ref": "yi:6b-chat-v1.5-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q4-k-s",
       "ollama_ref": "yi:6b-chat-v1.5-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q40",
       "ollama_ref": "yi:6b-chat-v1.5-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q41",
       "ollama_ref": "yi:6b-chat-v1.5-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q5-k-m",
       "ollama_ref": "yi:6b-chat-v1.5-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q5-k-s",
       "ollama_ref": "yi:6b-chat-v1.5-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q50",
       "ollama_ref": "yi:6b-chat-v1.5-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q51",
       "ollama_ref": "yi:6b-chat-v1.5-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q6-k",
       "ollama_ref": "yi:6b-chat-v1.5-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-chat-v1.5-q80",
       "ollama_ref": "yi:6b-chat-v1.5-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-fp16",
       "ollama_ref": "yi:6b-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q2-k",
       "ollama_ref": "yi:6b-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q3-k-l",
       "ollama_ref": "yi:6b-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q3-k-m",
       "ollama_ref": "yi:6b-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q3-k-s",
       "ollama_ref": "yi:6b-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q4-k-m",
       "ollama_ref": "yi:6b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q4-k-s",
       "ollama_ref": "yi:6b-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q40",
       "ollama_ref": "yi:6b-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q41",
       "ollama_ref": "yi:6b-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q5-k-m",
       "ollama_ref": "yi:6b-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q5-k-s",
       "ollama_ref": "yi:6b-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q50",
       "ollama_ref": "yi:6b-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q51",
       "ollama_ref": "yi:6b-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q6-k",
       "ollama_ref": "yi:6b-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-q80",
       "ollama_ref": "yi:6b-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5",
       "ollama_ref": "yi:6b-v1.5",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-fp16",
       "ollama_ref": "yi:6b-v1.5-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q2-k",
       "ollama_ref": "yi:6b-v1.5-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q3-k-l",
       "ollama_ref": "yi:6b-v1.5-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q3-k-m",
       "ollama_ref": "yi:6b-v1.5-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q3-k-s",
       "ollama_ref": "yi:6b-v1.5-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q4-k-m",
       "ollama_ref": "yi:6b-v1.5-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q4-k-s",
       "ollama_ref": "yi:6b-v1.5-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q40",
       "ollama_ref": "yi:6b-v1.5-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q41",
       "ollama_ref": "yi:6b-v1.5-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q5-k-m",
       "ollama_ref": "yi:6b-v1.5-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q5-k-s",
       "ollama_ref": "yi:6b-v1.5-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q50",
       "ollama_ref": "yi:6b-v1.5-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q51",
       "ollama_ref": "yi:6b-v1.5-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q6-k",
       "ollama_ref": "yi:6b-v1.5-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b-v1.5-q80",
       "ollama_ref": "yi:6b-v1.5-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k",
       "ollama_ref": "yi:6b-200k",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-fp16",
       "ollama_ref": "yi:6b-200k-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q2-k",
       "ollama_ref": "yi:6b-200k-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q3-k-l",
       "ollama_ref": "yi:6b-200k-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q3-k-m",
       "ollama_ref": "yi:6b-200k-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q3-k-s",
       "ollama_ref": "yi:6b-200k-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q4-k-m",
       "ollama_ref": "yi:6b-200k-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q4-k-s",
       "ollama_ref": "yi:6b-200k-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q40",
       "ollama_ref": "yi:6b-200k-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q41",
       "ollama_ref": "yi:6b-200k-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q5-k-m",
       "ollama_ref": "yi:6b-200k-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q5-k-s",
       "ollama_ref": "yi:6b-200k-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q50",
       "ollama_ref": "yi:6b-200k-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q51",
       "ollama_ref": "yi:6b-200k-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q6-k",
       "ollama_ref": "yi:6b-200k-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "6b200k-q80",
       "ollama_ref": "yi:6b-200k-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "yi:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "v1.5",
       "ollama_ref": "yi:v1.5",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

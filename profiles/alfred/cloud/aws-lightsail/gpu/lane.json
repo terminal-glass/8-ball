@@ -3,10 +3,10 @@
   "model_slug": "alfred",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T05:53:08Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-    "provenance_status": "data_gap"
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
   },
   "lane_id": "cloud/aws-lightsail/gpu",
   "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
@@ -19,44 +19,79 @@
     {
       "size_slug": "40b",
       "ollama_ref": "alfred:40b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
     },
     {
       "size_slug": "40b1023-q40",
       "ollama_ref": "alfred:40b-1023-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
     },
     {
       "size_slug": "40b1023-q41",
       "ollama_ref": "alfred:40b-1023-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.12 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
     },
     {
       "size_slug": "40b1023-q50",
       "ollama_ref": "alfred:40b-1023-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 46.57 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
     },
     {
       "size_slug": "40b1023-q51",
       "ollama_ref": "alfred:40b-1023-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
     },
     {
       "size_slug": "40b1023-q80",
       "ollama_ref": "alfred:40b-1023-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "alfred:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
     }
   ]
 }

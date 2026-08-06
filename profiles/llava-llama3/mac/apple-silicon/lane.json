@@ -3,7 +3,7 @@
   "model_slug": "llava-llama3",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,26 +19,42 @@
     {
       "size_slug": "8b",
       "ollama_ref": "llava-llama3:8b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.35 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 10.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "8b-v1.1-fp16",
       "ollama_ref": "llava-llama3:8b-v1.1-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 23.57 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 23.57 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "8b-v1.1-q40",
       "ollama_ref": "llava-llama3:8b-v1.1-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.35 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 10.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "llava-llama3:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

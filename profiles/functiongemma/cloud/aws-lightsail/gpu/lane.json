@@ -3,10 +3,10 @@
   "model_slug": "functiongemma",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-    "provenance_status": "data_gap"
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
   },
   "lane_id": "cloud/aws-lightsail/gpu",
   "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
@@ -19,26 +19,46 @@
     {
       "size_slug": "270m",
       "ollama_ref": "functiongemma:270m",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "270m-it-fp16",
       "ollama_ref": "functiongemma:270m-it-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "270m-it-q80",
       "ollama_ref": "functiongemma:270m-it-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "functiongemma:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

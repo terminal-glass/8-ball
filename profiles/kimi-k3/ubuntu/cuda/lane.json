@@ -3,7 +3,7 @@
   "model_slug": "kimi-k3",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,8 +19,14 @@
     {
       "size_slug": "cloud",
       "ollama_ref": "kimi-k3:cloud",
+      "fit_status": "unknown",
       "fits": false,
-      "reason": "insufficient source measurements to confirm fit"
+      "reason": "missing evidence: model_disk_requirement, model_ram_requirement, model_vram_requirement",
+      "missing_evidence": [
+        "model_disk_requirement",
+        "model_ram_requirement",
+        "model_vram_requirement"
+      ]
     }
   ]
 }

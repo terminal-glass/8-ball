@@ -3,7 +3,7 @@
   "model_slug": "deepseek-v3.1",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,44 +18,58 @@
     {
       "size_slug": "671b",
       "ollama_ref": "deepseek-v3.1:671b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 659.24 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 659.24 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-fp16",
       "ollama_ref": "deepseek-v3.1:671b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 1689.64 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 1689.64 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-q80",
       "ollama_ref": "deepseek-v3.1:671b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 1014.59 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 1014.59 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-terminus-fp16",
       "ollama_ref": "deepseek-v3.1:671b-terminus-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 1689.64 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 1689.64 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-terminus-q4-k-m",
       "ollama_ref": "deepseek-v3.1:671b-terminus-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 659.24 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 659.24 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-terminus-q80",
       "ollama_ref": "deepseek-v3.1:671b-terminus-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 1014.59 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 1014.59 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "deepseek-v3.1:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 466.32 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 466.32 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     }
   ]
 }

@@ -3,10 +3,10 @@
   "model_slug": "devstral",
   "lane_path": "ubuntu/cpu",
   "provider_assumption_id": "ubuntu-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-    "provenance_status": "internal_assumption_class"
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
   },
   "lane_id": "ubuntu/cpu",
   "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
@@ -19,32 +19,42 @@
     {
       "size_slug": "24b",
       "ollama_ref": "devstral:24b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 16.0 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "24b-small2505-fp16",
       "ollama_ref": "devstral:24b-small-2505-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 62.67 GB RAM; lane provides 16.0 GB usable"
+      "reason": "requires 62.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "24b-small2505-q4-k-m",
       "ollama_ref": "devstral:24b-small-2505-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 16.0 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "24b-small2505-q80",
       "ollama_ref": "devstral:24b-small-2505-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 37.38 GB RAM; lane provides 16.0 GB usable"
+      "reason": "requires 37.38 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "devstral:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 17.82 GB RAM; lane provides 16.0 GB usable"
+      "reason": "requires 17.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     }
   ]
 }

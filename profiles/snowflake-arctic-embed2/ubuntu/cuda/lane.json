@@ -3,7 +3,7 @@
   "model_slug": "snowflake-arctic-embed2",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,20 +19,26 @@
     {
       "size_slug": "568m",
       "ollama_ref": "snowflake-arctic-embed2:568m",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "568m-l-fp16",
       "ollama_ref": "snowflake-arctic-embed2:568m-l-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "snowflake-arctic-embed2:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

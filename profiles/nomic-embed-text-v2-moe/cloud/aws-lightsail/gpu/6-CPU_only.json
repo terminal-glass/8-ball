@@ -3,10 +3,10 @@
   "model_slug": "nomic-embed-text-v2-moe",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-    "provenance_status": "data_gap"
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
   },
   "applicable": false,
   "fallback_lane": "cloud/aws-lightsail/cpu",

@@ -3,7 +3,7 @@
   "model_slug": "olmo2",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,56 +18,74 @@
     {
       "size_slug": "13b",
       "ollama_ref": "olmo2:13b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.12 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 15.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b1124-instruct-fp16",
       "ollama_ref": "olmo2:13b-1124-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.51 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 36.51 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b1124-instruct-q4-k-m",
       "ollama_ref": "olmo2:13b-1124-instruct-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.12 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 15.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b1124-instruct-q80",
       "ollama_ref": "olmo2:13b-1124-instruct-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 22.71 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 22.71 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b",
       "ollama_ref": "olmo2:7b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.91 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 8.91 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b1124-instruct-fp16",
       "ollama_ref": "olmo2:7b-1124-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 20.99 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 20.99 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b1124-instruct-q4-k-m",
       "ollama_ref": "olmo2:7b-1124-instruct-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.91 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 8.91 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b1124-instruct-q80",
       "ollama_ref": "olmo2:7b-1124-instruct-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.71 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 12.71 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "olmo2:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.9 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 6.9 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     }
   ]
 }

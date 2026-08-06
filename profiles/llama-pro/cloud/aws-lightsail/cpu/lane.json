@@ -3,7 +3,7 @@
   "model_slug": "llama-pro",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -19,200 +19,266 @@
     {
       "size_slug": "8b-instruct-fp16",
       "ollama_ref": "llama-pro:8b-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q2-k",
       "ollama_ref": "llama-pro:8b-instruct-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.05 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.05 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q3-k-l",
       "ollama_ref": "llama-pro:8b-instruct-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.2 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.2 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q3-k-m",
       "ollama_ref": "llama-pro:8b-instruct-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.74 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.74 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q3-k-s",
       "ollama_ref": "llama-pro:8b-instruct-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.16 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.16 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q4-k-m",
       "ollama_ref": "llama-pro:8b-instruct-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.89 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.89 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q4-k-s",
       "ollama_ref": "llama-pro:8b-instruct-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.54 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.54 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q40",
       "ollama_ref": "llama-pro:8b-instruct-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q41",
       "ollama_ref": "llama-pro:8b-instruct-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.12 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.12 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q5-k-m",
       "ollama_ref": "llama-pro:8b-instruct-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.81 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.81 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q5-k-s",
       "ollama_ref": "llama-pro:8b-instruct-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q50",
       "ollama_ref": "llama-pro:8b-instruct-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q51",
       "ollama_ref": "llama-pro:8b-instruct-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 11.27 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 11.27 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q6-k",
       "ollama_ref": "llama-pro:8b-instruct-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 11.96 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 11.96 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q80",
       "ollama_ref": "llama-pro:8b-instruct-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.26 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 14.26 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-fp16",
       "ollama_ref": "llama-pro:8b-text-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q2-k",
       "ollama_ref": "llama-pro:8b-text-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.05 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.05 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q3-k-l",
       "ollama_ref": "llama-pro:8b-text-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.2 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.2 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q3-k-m",
       "ollama_ref": "llama-pro:8b-text-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.74 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.74 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q3-k-s",
       "ollama_ref": "llama-pro:8b-text-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.16 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.16 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q4-k-m",
       "ollama_ref": "llama-pro:8b-text-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.89 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.89 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q4-k-s",
       "ollama_ref": "llama-pro:8b-text-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.54 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.54 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q40",
       "ollama_ref": "llama-pro:8b-text-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q41",
       "ollama_ref": "llama-pro:8b-text-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.12 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.12 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q5-k-m",
       "ollama_ref": "llama-pro:8b-text-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.81 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.81 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q5-k-s",
       "ollama_ref": "llama-pro:8b-text-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q50",
       "ollama_ref": "llama-pro:8b-text-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q51",
       "ollama_ref": "llama-pro:8b-text-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 11.27 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 11.27 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q6-k",
       "ollama_ref": "llama-pro:8b-text-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 11.96 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 11.96 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-text-q80",
       "ollama_ref": "llama-pro:8b-text-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.26 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 14.26 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "instruct",
       "ollama_ref": "llama-pro:instruct",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "llama-pro:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "text",
       "ollama_ref": "llama-pro:text",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     }
   ]
 }

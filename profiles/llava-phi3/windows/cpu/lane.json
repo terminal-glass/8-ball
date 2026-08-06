@@ -3,7 +3,7 @@
   "model_slug": "llava-phi3",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,26 +18,34 @@
     {
       "size_slug": "3.8b",
       "ollama_ref": "llava-phi3:3.8b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "3.8b-mini-fp16",
       "ollama_ref": "llava-phi3:3.8b-mini-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.36 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 12.36 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "3.8b-mini-q40",
       "ollama_ref": "llava-phi3:3.8b-mini-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "llava-phi3:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

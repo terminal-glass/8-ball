@@ -3,13 +3,13 @@
   "model_slug": "openhermes",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
   },
   "applicable": true,
-  "system_ram_gb": null,
-  "usable_model_ram_gb": null,
+  "system_ram_gb": 32.0,
+  "usable_model_ram_gb": 19.2,
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

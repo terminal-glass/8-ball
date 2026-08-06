@@ -3,7 +3,7 @@
   "model_slug": "codeup",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,116 +18,154 @@
     {
       "size_slug": "13b",
       "ollama_ref": "codeup:13b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2",
       "ollama_ref": "codeup:13b-llama2",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat",
       "ollama_ref": "codeup:13b-llama2-chat",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-fp16",
       "ollama_ref": "codeup:13b-llama2-chat-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.36 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 35.36 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q2-k",
       "ollama_ref": "codeup:13b-llama2-chat-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 11.67 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 11.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q3-k-l",
       "ollama_ref": "codeup:13b-llama2-chat-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.4 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 13.4 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q3-k-m",
       "ollama_ref": "codeup:13b-llama2-chat-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.71 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 12.71 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q3-k-s",
       "ollama_ref": "codeup:13b-llama2-chat-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.02 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 12.02 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q4-k-m",
       "ollama_ref": "codeup:13b-llama2-chat-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.55 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 14.55 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q4-k-s",
       "ollama_ref": "codeup:13b-llama2-chat-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q40",
       "ollama_ref": "codeup:13b-llama2-chat-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q41",
       "ollama_ref": "codeup:13b-llama2-chat-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.89 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 14.89 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q5-k-m",
       "ollama_ref": "codeup:13b-llama2-chat-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.04 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 16.04 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q5-k-s",
       "ollama_ref": "codeup:13b-llama2-chat-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q50",
       "ollama_ref": "codeup:13b-llama2-chat-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 15.81 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q51",
       "ollama_ref": "codeup:13b-llama2-chat-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.73 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 16.73 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q6-k",
       "ollama_ref": "codeup:13b-llama2-chat-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 18.11 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 18.11 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-llama2-chat-q80",
       "ollama_ref": "codeup:13b-llama2-chat-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.56 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 21.56 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "codeup:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.23 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 10.23 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     }
   ]
 }

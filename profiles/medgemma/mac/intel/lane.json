@@ -3,7 +3,7 @@
   "model_slug": "medgemma",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,56 +18,74 @@
     {
       "size_slug": "27b",
       "ollama_ref": "medgemma:27b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.04 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 29.04 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "27b-it-bf16",
       "ollama_ref": "medgemma:27b-it-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 72.74 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 72.74 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "27b-it-q4-k-m",
       "ollama_ref": "medgemma:27b-it-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.04 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 29.04 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "27b-it-q80",
       "ollama_ref": "medgemma:27b-it-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.99 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 43.99 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b",
       "ollama_ref": "medgemma:4b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 6.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b-it-bf16",
       "ollama_ref": "medgemma:4b-it-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.76 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 12.76 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b-it-q4-k-m",
       "ollama_ref": "medgemma:4b-it-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 6.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b-it-q80",
       "ollama_ref": "medgemma:4b-it-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 8.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "medgemma:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 5.52 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 5.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     }
   ]
 }

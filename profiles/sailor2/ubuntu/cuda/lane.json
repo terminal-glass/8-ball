@@ -3,7 +3,7 @@
   "model_slug": "sailor2",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,80 +19,106 @@
     {
       "size_slug": "20b",
       "ollama_ref": "sailor2:20b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "20b-chat-fp16",
       "ollama_ref": "sailor2:20b-chat-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.17 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 51.17 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "20b-chat-q4-k-m",
       "ollama_ref": "sailor2:20b-chat-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "20b-chat-q80",
       "ollama_ref": "sailor2:20b-chat-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 30.47 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 30.47 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b",
       "ollama_ref": "sailor2:8b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-chat-fp16",
       "ollama_ref": "sailor2:8b-chat-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 19.55 GB VRAM; lane provides 16.0 GB"
+      "reason": "requires 19.55 GB VRAM; lane provides 16.0 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-chat-q4-k-m",
       "ollama_ref": "sailor2:8b-chat-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-chat-q80",
       "ollama_ref": "sailor2:8b-chat-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "1b",
       "ollama_ref": "sailor2:1b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "1b-chat-fp16",
       "ollama_ref": "sailor2:1b-chat-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "1b-chat-q4-k-m",
       "ollama_ref": "sailor2:1b-chat-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "1b-chat-q80",
       "ollama_ref": "sailor2:1b-chat-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "sailor2:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

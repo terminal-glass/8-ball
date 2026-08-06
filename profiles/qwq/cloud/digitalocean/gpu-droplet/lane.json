@@ -3,7 +3,7 @@
   "model_slug": "qwq",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
@@ -19,50 +19,66 @@
     {
       "size_slug": "32b",
       "ollama_ref": "qwq:32b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-fp16",
       "ollama_ref": "qwq:32b-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-preview-fp16",
       "ollama_ref": "qwq:32b-preview-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-preview-q4-k-m",
       "ollama_ref": "qwq:32b-preview-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-preview-q80",
       "ollama_ref": "qwq:32b-preview-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 51.17 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-q4-k-m",
       "ollama_ref": "qwq:32b-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-q80",
       "ollama_ref": "qwq:32b-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 51.17 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "qwq:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     }
   ]
 }

@@ -3,7 +3,7 @@
   "model_slug": "llama3.2-vision",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
@@ -19,56 +19,74 @@
     {
       "size_slug": "90b",
       "ollama_ref": "llama3.2-vision:90b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 90.85 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "90b-instruct-fp16",
       "ollama_ref": "llama3.2-vision:90b-instruct-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 231.15 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "90b-instruct-q4-k-m",
       "ollama_ref": "llama3.2-vision:90b-instruct-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 90.85 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "90b-instruct-q80",
       "ollama_ref": "llama3.2-vision:90b-instruct-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 136.85 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "11b",
       "ollama_ref": "llama3.2-vision:11b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "11b-instruct-fp16",
       "ollama_ref": "llama3.2-vision:11b-instruct-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "11b-instruct-q4-k-m",
       "ollama_ref": "llama3.2-vision:11b-instruct-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "11b-instruct-q80",
       "ollama_ref": "llama3.2-vision:11b-instruct-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "llama3.2-vision:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

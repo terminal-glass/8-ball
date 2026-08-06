@@ -3,13 +3,13 @@
   "model_slug": "cogito",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-    "provenance_status": "data_gap"
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
   },
   "applicable": true,
-  "minimum_cpu_cores": null,
-  "recommended_cpu_cores": null,
+  "minimum_cpu_cores": 4,
+  "recommended_cpu_cores": 4,
   "reason": "CPU stage applies to all lanes."
 }

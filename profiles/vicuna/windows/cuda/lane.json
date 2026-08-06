@@ -3,7 +3,7 @@
   "model_slug": "vicuna",
   "lane_path": "windows/cuda",
   "provider_assumption_id": "windows-cuda",
-  "generated_at": "2026-08-06T02:17:56Z",
+  "generated_at": "2026-08-06T05:53:11Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,668 +19,1112 @@
     {
       "size_slug": "33b",
       "ollama_ref": "vicuna:33b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.91 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 31.91 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-fp16",
       "ollama_ref": "vicuna:33b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 85.96 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 85.96 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q2-k",
       "ollama_ref": "vicuna:33b-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.31 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 27.31 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q3-k-l",
       "ollama_ref": "vicuna:33b-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 30.76 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 30.76 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q3-k-m",
       "ollama_ref": "vicuna:33b-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.61 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 29.61 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q3-k-s",
       "ollama_ref": "vicuna:33b-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.31 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 27.31 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q4-k-m",
       "ollama_ref": "vicuna:33b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 34.21 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 34.21 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q4-k-s",
       "ollama_ref": "vicuna:33b-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.91 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 31.91 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q40",
       "ollama_ref": "vicuna:33b-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.91 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 31.91 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q41",
       "ollama_ref": "vicuna:33b-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 34.21 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 34.21 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q5-k-m",
       "ollama_ref": "vicuna:33b-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 37.66 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 37.66 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q5-k-s",
       "ollama_ref": "vicuna:33b-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.51 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 36.51 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q50",
       "ollama_ref": "vicuna:33b-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.51 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 36.51 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q51",
       "ollama_ref": "vicuna:33b-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.81 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 38.81 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q6-k",
       "ollama_ref": "vicuna:33b-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 42.26 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 42.26 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "33b-q80",
       "ollama_ref": "vicuna:33b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.46 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 51.46 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b",
       "ollama_ref": "vicuna:13b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-fp16",
       "ollama_ref": "vicuna:13b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q2-k",
       "ollama_ref": "vicuna:13b-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q3-k-l",
       "ollama_ref": "vicuna:13b-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q3-k-m",
       "ollama_ref": "vicuna:13b-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q3-k-s",
       "ollama_ref": "vicuna:13b-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q4-k-m",
       "ollama_ref": "vicuna:13b-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q4-k-s",
       "ollama_ref": "vicuna:13b-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q40",
       "ollama_ref": "vicuna:13b-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q41",
       "ollama_ref": "vicuna:13b-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q5-k-m",
       "ollama_ref": "vicuna:13b-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q5-k-s",
       "ollama_ref": "vicuna:13b-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q50",
       "ollama_ref": "vicuna:13b-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q51",
       "ollama_ref": "vicuna:13b-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q6-k",
       "ollama_ref": "vicuna:13b-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-q80",
       "ollama_ref": "vicuna:13b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-fp16",
       "ollama_ref": "vicuna:13b-v1.5-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q2-k",
       "ollama_ref": "vicuna:13b-v1.5-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q3-k-l",
       "ollama_ref": "vicuna:13b-v1.5-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q3-k-m",
       "ollama_ref": "vicuna:13b-v1.5-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q3-k-s",
       "ollama_ref": "vicuna:13b-v1.5-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q4-k-m",
       "ollama_ref": "vicuna:13b-v1.5-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q4-k-s",
       "ollama_ref": "vicuna:13b-v1.5-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q40",
       "ollama_ref": "vicuna:13b-v1.5-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q41",
       "ollama_ref": "vicuna:13b-v1.5-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q5-k-m",
       "ollama_ref": "vicuna:13b-v1.5-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q5-k-s",
       "ollama_ref": "vicuna:13b-v1.5-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q50",
       "ollama_ref": "vicuna:13b-v1.5-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q51",
       "ollama_ref": "vicuna:13b-v1.5-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q6-k",
       "ollama_ref": "vicuna:13b-v1.5-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.5-q80",
       "ollama_ref": "vicuna:13b-v1.5-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-fp16",
       "ollama_ref": "vicuna:13b-v1.5-16k-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 35.36 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q2-k",
       "ollama_ref": "vicuna:13b-v1.5-16k-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q3-k-l",
       "ollama_ref": "vicuna:13b-v1.5-16k-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q3-k-m",
       "ollama_ref": "vicuna:13b-v1.5-16k-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q3-k-s",
       "ollama_ref": "vicuna:13b-v1.5-16k-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q4-k-m",
       "ollama_ref": "vicuna:13b-v1.5-16k-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q4-k-s",
       "ollama_ref": "vicuna:13b-v1.5-16k-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q40",
       "ollama_ref": "vicuna:13b-v1.5-16k-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q41",
       "ollama_ref": "vicuna:13b-v1.5-16k-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q5-k-m",
       "ollama_ref": "vicuna:13b-v1.5-16k-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q5-k-s",
       "ollama_ref": "vicuna:13b-v1.5-16k-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q50",
       "ollama_ref": "vicuna:13b-v1.5-16k-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q51",
       "ollama_ref": "vicuna:13b-v1.5-16k-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q6-k",
       "ollama_ref": "vicuna:13b-v1.5-16k-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b-v1.516k-q80",
       "ollama_ref": "vicuna:13b-v1.5-16k-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 21.56 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "13b16k",
       "ollama_ref": "vicuna:13b-16k",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b",
       "ollama_ref": "vicuna:7b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-fp16",
       "ollama_ref": "vicuna:7b-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q2-k",
       "ollama_ref": "vicuna:7b-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q3-k-l",
       "ollama_ref": "vicuna:7b-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q3-k-m",
       "ollama_ref": "vicuna:7b-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q3-k-s",
       "ollama_ref": "vicuna:7b-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q4-k-m",
       "ollama_ref": "vicuna:7b-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q4-k-s",
       "ollama_ref": "vicuna:7b-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q40",
       "ollama_ref": "vicuna:7b-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q41",
       "ollama_ref": "vicuna:7b-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q5-k-m",
       "ollama_ref": "vicuna:7b-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q5-k-s",
       "ollama_ref": "vicuna:7b-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q50",
       "ollama_ref": "vicuna:7b-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q51",
       "ollama_ref": "vicuna:7b-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q6-k",
       "ollama_ref": "vicuna:7b-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-q80",
       "ollama_ref": "vicuna:7b-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-fp16",
       "ollama_ref": "vicuna:7b-v1.5-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q2-k",
       "ollama_ref": "vicuna:7b-v1.5-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q3-k-l",
       "ollama_ref": "vicuna:7b-v1.5-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q3-k-m",
       "ollama_ref": "vicuna:7b-v1.5-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q3-k-s",
       "ollama_ref": "vicuna:7b-v1.5-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q4-k-m",
       "ollama_ref": "vicuna:7b-v1.5-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q4-k-s",
       "ollama_ref": "vicuna:7b-v1.5-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q40",
       "ollama_ref": "vicuna:7b-v1.5-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q41",
       "ollama_ref": "vicuna:7b-v1.5-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q5-k-m",
       "ollama_ref": "vicuna:7b-v1.5-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q5-k-s",
       "ollama_ref": "vicuna:7b-v1.5-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q50",
       "ollama_ref": "vicuna:7b-v1.5-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q51",
       "ollama_ref": "vicuna:7b-v1.5-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q6-k",
       "ollama_ref": "vicuna:7b-v1.5-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.5-q80",
       "ollama_ref": "vicuna:7b-v1.5-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-fp16",
       "ollama_ref": "vicuna:7b-v1.5-16k-fp16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q2-k",
       "ollama_ref": "vicuna:7b-v1.5-16k-q2_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q3-k-l",
       "ollama_ref": "vicuna:7b-v1.5-16k-q3_K_L",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q3-k-m",
       "ollama_ref": "vicuna:7b-v1.5-16k-q3_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q3-k-s",
       "ollama_ref": "vicuna:7b-v1.5-16k-q3_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q4-k-m",
       "ollama_ref": "vicuna:7b-v1.5-16k-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q4-k-s",
       "ollama_ref": "vicuna:7b-v1.5-16k-q4_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q40",
       "ollama_ref": "vicuna:7b-v1.5-16k-q4_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q41",
       "ollama_ref": "vicuna:7b-v1.5-16k-q4_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q5-k-m",
       "ollama_ref": "vicuna:7b-v1.5-16k-q5_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q5-k-s",
       "ollama_ref": "vicuna:7b-v1.5-16k-q5_K_S",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q50",
       "ollama_ref": "vicuna:7b-v1.5-16k-q5_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q51",
       "ollama_ref": "vicuna:7b-v1.5-16k-q5_1",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q6-k",
       "ollama_ref": "vicuna:7b-v1.5-16k-q6_K",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b-v1.516k-q80",
       "ollama_ref": "vicuna:7b-v1.5-16k-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "7b16k",
       "ollama_ref": "vicuna:7b-16k",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "vicuna:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

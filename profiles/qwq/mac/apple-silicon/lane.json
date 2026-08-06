@@ -3,7 +3,7 @@
   "model_slug": "qwq",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,50 +19,82 @@
     {
       "size_slug": "32b",
       "ollama_ref": "qwq:32b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "32b-fp16",
       "ollama_ref": "qwq:32b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 86.82 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 86.82 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "32b-preview-fp16",
       "ollama_ref": "qwq:32b-preview-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 86.82 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 86.82 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "32b-preview-q4-k-m",
       "ollama_ref": "qwq:32b-preview-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "32b-preview-q80",
       "ollama_ref": "qwq:32b-preview-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.17 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 51.17 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "32b-q4-k-m",
       "ollama_ref": "qwq:32b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "32b-q80",
       "ollama_ref": "qwq:32b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.17 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 51.17 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "qwq:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

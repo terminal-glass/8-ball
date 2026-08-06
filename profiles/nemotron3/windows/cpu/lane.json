@@ -3,7 +3,7 @@
   "model_slug": "nemotron3",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,26 +18,34 @@
     {
       "size_slug": "33b",
       "ollama_ref": "nemotron3:33b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.41 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 43.41 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "33b-bf16",
       "ollama_ref": "nemotron3:33b-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 87.11 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 87.11 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "33b-q4-k-m",
       "ollama_ref": "nemotron3:33b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.41 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 43.41 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "33b-q8",
       "ollama_ref": "nemotron3:33b-q8",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 52.61 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 52.61 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     }
   ]
 }

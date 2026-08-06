@@ -224,3 +224,9 @@ sources:
     namespace: control_and_provenance
     format: csv
     control_kind: cursor_checklist
+
+  - id: aws-lightsail-gpu-provisional-behavior
+    path: AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv
+    namespace: control_and_provenance
+    format: csv
+    control_kind: provisional_behavior

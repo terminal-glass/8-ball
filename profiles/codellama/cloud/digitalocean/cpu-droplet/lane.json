@@ -3,7 +3,7 @@
   "model_slug": "codellama",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -19,1196 +19,1594 @@
     {
       "size_slug": "70b",
       "ollama_ref": "codellama:70b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code",
       "ollama_ref": "codellama:70b-code",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-fp16",
       "ollama_ref": "codellama:70b-code-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q2-k",
       "ollama_ref": "codellama:70b-code-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q3-k-l",
       "ollama_ref": "codellama:70b-code-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q3-k-m",
       "ollama_ref": "codellama:70b-code-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q3-k-s",
       "ollama_ref": "codellama:70b-code-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q4-k-m",
       "ollama_ref": "codellama:70b-code-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q4-k-s",
       "ollama_ref": "codellama:70b-code-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q40",
       "ollama_ref": "codellama:70b-code-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q41",
       "ollama_ref": "codellama:70b-code-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q5-k-m",
       "ollama_ref": "codellama:70b-code-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q5-k-s",
       "ollama_ref": "codellama:70b-code-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q50",
       "ollama_ref": "codellama:70b-code-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q51",
       "ollama_ref": "codellama:70b-code-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q6-k",
       "ollama_ref": "codellama:70b-code-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-code-q80",
       "ollama_ref": "codellama:70b-code-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct",
       "ollama_ref": "codellama:70b-instruct",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-fp16",
       "ollama_ref": "codellama:70b-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q2-k",
       "ollama_ref": "codellama:70b-instruct-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q3-k-l",
       "ollama_ref": "codellama:70b-instruct-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q3-k-m",
       "ollama_ref": "codellama:70b-instruct-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q3-k-s",
       "ollama_ref": "codellama:70b-instruct-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q4-k-m",
       "ollama_ref": "codellama:70b-instruct-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q4-k-s",
       "ollama_ref": "codellama:70b-instruct-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q40",
       "ollama_ref": "codellama:70b-instruct-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q41",
       "ollama_ref": "codellama:70b-instruct-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q5-k-m",
       "ollama_ref": "codellama:70b-instruct-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q5-k-s",
       "ollama_ref": "codellama:70b-instruct-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q50",
       "ollama_ref": "codellama:70b-instruct-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q51",
       "ollama_ref": "codellama:70b-instruct-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q6-k",
       "ollama_ref": "codellama:70b-instruct-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q80",
       "ollama_ref": "codellama:70b-instruct-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python",
       "ollama_ref": "codellama:70b-python",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-fp16",
       "ollama_ref": "codellama:70b-python-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q2-k",
       "ollama_ref": "codellama:70b-python-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q3-k-l",
       "ollama_ref": "codellama:70b-python-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q3-k-m",
       "ollama_ref": "codellama:70b-python-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q3-k-s",
       "ollama_ref": "codellama:70b-python-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q4-k-m",
       "ollama_ref": "codellama:70b-python-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q4-k-s",
       "ollama_ref": "codellama:70b-python-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q40",
       "ollama_ref": "codellama:70b-python-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q41",
       "ollama_ref": "codellama:70b-python-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q5-k-m",
       "ollama_ref": "codellama:70b-python-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q5-k-s",
       "ollama_ref": "codellama:70b-python-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q50",
       "ollama_ref": "codellama:70b-python-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q51",
       "ollama_ref": "codellama:70b-python-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q6-k",
       "ollama_ref": "codellama:70b-python-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-python-q80",
       "ollama_ref": "codellama:70b-python-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b",
       "ollama_ref": "codellama:34b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code",
       "ollama_ref": "codellama:34b-code",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q2-k",
       "ollama_ref": "codellama:34b-code-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q3-k-l",
       "ollama_ref": "codellama:34b-code-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q3-k-m",
       "ollama_ref": "codellama:34b-code-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q3-k-s",
       "ollama_ref": "codellama:34b-code-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q4-k-m",
       "ollama_ref": "codellama:34b-code-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q4-k-s",
       "ollama_ref": "codellama:34b-code-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q40",
       "ollama_ref": "codellama:34b-code-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q41",
       "ollama_ref": "codellama:34b-code-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q5-k-m",
       "ollama_ref": "codellama:34b-code-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q5-k-s",
       "ollama_ref": "codellama:34b-code-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q50",
       "ollama_ref": "codellama:34b-code-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q51",
       "ollama_ref": "codellama:34b-code-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q6-k",
       "ollama_ref": "codellama:34b-code-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-code-q80",
       "ollama_ref": "codellama:34b-code-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct",
       "ollama_ref": "codellama:34b-instruct",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-fp16",
       "ollama_ref": "codellama:34b-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q2-k",
       "ollama_ref": "codellama:34b-instruct-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q3-k-l",
       "ollama_ref": "codellama:34b-instruct-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q3-k-m",
       "ollama_ref": "codellama:34b-instruct-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q3-k-s",
       "ollama_ref": "codellama:34b-instruct-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q4-k-m",
       "ollama_ref": "codellama:34b-instruct-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q4-k-s",
       "ollama_ref": "codellama:34b-instruct-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q40",
       "ollama_ref": "codellama:34b-instruct-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q41",
       "ollama_ref": "codellama:34b-instruct-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q5-k-m",
       "ollama_ref": "codellama:34b-instruct-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q5-k-s",
       "ollama_ref": "codellama:34b-instruct-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q50",
       "ollama_ref": "codellama:34b-instruct-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q51",
       "ollama_ref": "codellama:34b-instruct-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q6-k",
       "ollama_ref": "codellama:34b-instruct-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-instruct-q80",
       "ollama_ref": "codellama:34b-instruct-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python",
       "ollama_ref": "codellama:34b-python",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-fp16",
       "ollama_ref": "codellama:34b-python-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q2-k",
       "ollama_ref": "codellama:34b-python-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q3-k-l",
       "ollama_ref": "codellama:34b-python-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q3-k-m",
       "ollama_ref": "codellama:34b-python-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q3-k-s",
       "ollama_ref": "codellama:34b-python-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q4-k-m",
       "ollama_ref": "codellama:34b-python-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q4-k-s",
       "ollama_ref": "codellama:34b-python-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q40",
       "ollama_ref": "codellama:34b-python-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q41",
       "ollama_ref": "codellama:34b-python-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q5-k-m",
       "ollama_ref": "codellama:34b-python-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q5-k-s",
       "ollama_ref": "codellama:34b-python-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q50",
       "ollama_ref": "codellama:34b-python-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q51",
       "ollama_ref": "codellama:34b-python-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q6-k",
       "ollama_ref": "codellama:34b-python-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "34b-python-q80",
       "ollama_ref": "codellama:34b-python-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b",
       "ollama_ref": "codellama:13b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code",
       "ollama_ref": "codellama:13b-code",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-fp16",
       "ollama_ref": "codellama:13b-code-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q2-k",
       "ollama_ref": "codellama:13b-code-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q3-k-l",
       "ollama_ref": "codellama:13b-code-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q3-k-m",
       "ollama_ref": "codellama:13b-code-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q3-k-s",
       "ollama_ref": "codellama:13b-code-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q4-k-m",
       "ollama_ref": "codellama:13b-code-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q4-k-s",
       "ollama_ref": "codellama:13b-code-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q40",
       "ollama_ref": "codellama:13b-code-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q41",
       "ollama_ref": "codellama:13b-code-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q5-k-m",
       "ollama_ref": "codellama:13b-code-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q5-k-s",
       "ollama_ref": "codellama:13b-code-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q50",
       "ollama_ref": "codellama:13b-code-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q51",
       "ollama_ref": "codellama:13b-code-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q6-k",
       "ollama_ref": "codellama:13b-code-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-code-q80",
       "ollama_ref": "codellama:13b-code-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct",
       "ollama_ref": "codellama:13b-instruct",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-fp16",
       "ollama_ref": "codellama:13b-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q2-k",
       "ollama_ref": "codellama:13b-instruct-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q3-k-l",
       "ollama_ref": "codellama:13b-instruct-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q3-k-m",
       "ollama_ref": "codellama:13b-instruct-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q3-k-s",
       "ollama_ref": "codellama:13b-instruct-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q4-k-m",
       "ollama_ref": "codellama:13b-instruct-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q4-k-s",
       "ollama_ref": "codellama:13b-instruct-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q40",
       "ollama_ref": "codellama:13b-instruct-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q41",
       "ollama_ref": "codellama:13b-instruct-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q5-k-m",
       "ollama_ref": "codellama:13b-instruct-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q5-k-s",
       "ollama_ref": "codellama:13b-instruct-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q50",
       "ollama_ref": "codellama:13b-instruct-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q51",
       "ollama_ref": "codellama:13b-instruct-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q6-k",
       "ollama_ref": "codellama:13b-instruct-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-instruct-q80",
       "ollama_ref": "codellama:13b-instruct-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python",
       "ollama_ref": "codellama:13b-python",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-fp16",
       "ollama_ref": "codellama:13b-python-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q2-k",
       "ollama_ref": "codellama:13b-python-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q3-k-l",
       "ollama_ref": "codellama:13b-python-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q3-k-m",
       "ollama_ref": "codellama:13b-python-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q3-k-s",
       "ollama_ref": "codellama:13b-python-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q4-k-m",
       "ollama_ref": "codellama:13b-python-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q4-k-s",
       "ollama_ref": "codellama:13b-python-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q40",
       "ollama_ref": "codellama:13b-python-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q41",
       "ollama_ref": "codellama:13b-python-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q5-k-m",
       "ollama_ref": "codellama:13b-python-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q5-k-s",
       "ollama_ref": "codellama:13b-python-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q50",
       "ollama_ref": "codellama:13b-python-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q51",
       "ollama_ref": "codellama:13b-python-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q6-k",
       "ollama_ref": "codellama:13b-python-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-python-q80",
       "ollama_ref": "codellama:13b-python-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b",
       "ollama_ref": "codellama:7b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code",
       "ollama_ref": "codellama:7b-code",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-fp16",
       "ollama_ref": "codellama:7b-code-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q2-k",
       "ollama_ref": "codellama:7b-code-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q3-k-l",
       "ollama_ref": "codellama:7b-code-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q3-k-m",
       "ollama_ref": "codellama:7b-code-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q3-k-s",
       "ollama_ref": "codellama:7b-code-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q4-k-m",
       "ollama_ref": "codellama:7b-code-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q4-k-s",
       "ollama_ref": "codellama:7b-code-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q40",
       "ollama_ref": "codellama:7b-code-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q41",
       "ollama_ref": "codellama:7b-code-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q5-k-m",
       "ollama_ref": "codellama:7b-code-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q5-k-s",
       "ollama_ref": "codellama:7b-code-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q50",
       "ollama_ref": "codellama:7b-code-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q51",
       "ollama_ref": "codellama:7b-code-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q6-k",
       "ollama_ref": "codellama:7b-code-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-code-q80",
       "ollama_ref": "codellama:7b-code-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct",
       "ollama_ref": "codellama:7b-instruct",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-fp16",
       "ollama_ref": "codellama:7b-instruct-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q2-k",
       "ollama_ref": "codellama:7b-instruct-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q3-k-l",
       "ollama_ref": "codellama:7b-instruct-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q3-k-m",
       "ollama_ref": "codellama:7b-instruct-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q3-k-s",
       "ollama_ref": "codellama:7b-instruct-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q4-k-m",
       "ollama_ref": "codellama:7b-instruct-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q4-k-s",
       "ollama_ref": "codellama:7b-instruct-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q40",
       "ollama_ref": "codellama:7b-instruct-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q41",
       "ollama_ref": "codellama:7b-instruct-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q5-k-m",
       "ollama_ref": "codellama:7b-instruct-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q5-k-s",
       "ollama_ref": "codellama:7b-instruct-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q50",
       "ollama_ref": "codellama:7b-instruct-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q51",
       "ollama_ref": "codellama:7b-instruct-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q6-k",
       "ollama_ref": "codellama:7b-instruct-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-instruct-q80",
       "ollama_ref": "codellama:7b-instruct-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python",
       "ollama_ref": "codellama:7b-python",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-fp16",
       "ollama_ref": "codellama:7b-python-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q2-k",
       "ollama_ref": "codellama:7b-python-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q3-k-l",
       "ollama_ref": "codellama:7b-python-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q3-k-m",
       "ollama_ref": "codellama:7b-python-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q3-k-s",
       "ollama_ref": "codellama:7b-python-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q4-k-m",
       "ollama_ref": "codellama:7b-python-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q4-k-s",
       "ollama_ref": "codellama:7b-python-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q40",
       "ollama_ref": "codellama:7b-python-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q41",
       "ollama_ref": "codellama:7b-python-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q5-k-m",
       "ollama_ref": "codellama:7b-python-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q5-k-s",
       "ollama_ref": "codellama:7b-python-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q50",
       "ollama_ref": "codellama:7b-python-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q51",
       "ollama_ref": "codellama:7b-python-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q6-k",
       "ollama_ref": "codellama:7b-python-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-python-q80",
       "ollama_ref": "codellama:7b-python-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "code",
       "ollama_ref": "codellama:code",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "instruct",
       "ollama_ref": "codellama:instruct",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "codellama:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "python",
       "ollama_ref": "codellama:python",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

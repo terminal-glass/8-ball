@@ -3,7 +3,7 @@
   "model_slug": "lfm2",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,38 +18,50 @@
     {
       "size_slug": "24b",
       "ollama_ref": "lfm2:24b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "24b-a2b",
       "ollama_ref": "lfm2:24b-a2b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "24b-bf16",
       "ollama_ref": "lfm2:24b-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 63.82 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 63.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "24b-q4-k-m",
       "ollama_ref": "lfm2:24b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "24b-q80",
       "ollama_ref": "lfm2:24b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 37.38 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 37.38 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "lfm2:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 17.82 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 17.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     }
   ]
 }

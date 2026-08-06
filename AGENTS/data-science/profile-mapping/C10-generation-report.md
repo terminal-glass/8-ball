@@ -48,39 +48,28 @@ profiles/provider-assumptions/cloud-aws-lightsail-cpu.json
 profiles/provider-assumptions/cloud-aws-lightsail-gpu.json
 ```
 
-## Provider-assumption smoke tests
-
-| Model slug | Lane | Selected `ollama_ref` | Status |
-| --- | --- | --- | --- |
-| `qwen3` | `ubuntu/cpu` | `qwen3:8b` | PASS — largest size fitting lane assumptions |
-| `gemma` | `ubuntu/cpu` | `gemma:7b` | PASS — promoted size fits lane |
-
-Command:
-
-```bash
-python3 install/shared/c10-select-model.py qwen3 ubuntu/cpu profiles/provider-assumptions/ubuntu-cpu.json
-python3 install/shared/c10-select-model.py gemma ubuntu/cpu profiles/provider-assumptions/ubuntu-cpu.json
-```
-
-## Validation
-
-```bash
-python3 scripts/validate-c10-profiles.py
-# valid: true
-```
-
 ## Data gaps
 
-1. `AGENTS/data-science/ollama-mapping/` does not exist. Normalized catalog input used instead:
-   - `data/normalized/tags.json`
-   - `data/normalized/models.json`
-   - `data/normalized/hardware-assumed-profiles.json`
-   - `AGENTS/TG-8Ball-*.csv`
-   - `AGENTS/data-science/P2-Provider-Datasets/`
+1. `AGENTS/data-science/ollama-mapping/` does not exist. Normalized catalog input used instead.
 
-2. `cloud/aws-lightsail/gpu` hardware defaults incomplete — see `C10.1-1-executable-install-matrix/DATA-GAP.md`
+2. AWS Lightsail GPU VRAM/CUDA/Ollama GPU support remain **unknown** until runtime probe upgrades `AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv` — see `C10.1-1-executable-install-matrix/DATA-GAP.md`.
 
 3. Per-tag RAM/VRAM for non-default tags uses `estimated` values derived from `download_size_bytes` when manifest deployment estimates are absent.
+
+## Conservative fit semantics
+
+- `fit_status`: `fit` | `no_fit` | `unknown`
+- `fits: true` only when `fit_status=fit`
+- Selector returns `selection_status: unverified` when no confirmed fit exists (never falls back to smallest unknown size)
+
+## Provider-assumption smoke tests
+
+| Model slug | Lane | Result | Status |
+| --- | --- | --- | --- |
+| `gemma` | `ubuntu/cpu` | `gemma:7b` | PASS — confirmed fit |
+| `qwen3` | `ubuntu/cpu` | `qwen3:4b` | PASS — largest confirmed fit |
+| `qwen3` | `cloud/aws-lightsail/gpu` | none | PASS — unverified (unknown VRAM/CUDA) |
+| `qwen3:235b` | `cloud/digitalocean/gpu-droplet` | n/a | PASS — `no_fit` on smallest DO GPU plan |
 
 ## Public entrypoint
 

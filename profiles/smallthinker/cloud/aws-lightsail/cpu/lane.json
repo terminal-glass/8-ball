@@ -3,7 +3,7 @@
   "model_slug": "smallthinker",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -19,32 +19,42 @@
     {
       "size_slug": "3b",
       "ollama_ref": "smallthinker:3b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.73 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 6.73 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "3b-preview-fp16",
       "ollama_ref": "smallthinker:3b-preview-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.41 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.41 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "3b-preview-q4-k-m",
       "ollama_ref": "smallthinker:3b-preview-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 5.0 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 5.0 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "3b-preview-q80",
       "ollama_ref": "smallthinker:3b-preview-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.73 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 6.73 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "smallthinker:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 5.86 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 5.86 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     }
   ]
 }

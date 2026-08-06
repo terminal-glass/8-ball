@@ -6,6 +6,7 @@ set -euo pipefail
 MODEL_SLUG="${1:-}"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main}"
 REPO_HINT="${EIGHTBALL_REPO_ROOT:-}"
+PROFILES_BASE="${EIGHTBALL_PROFILES_BASE:-${RAW_BASE}}"
 
 detect_lane() {
   local os arch gpu_vram cuda lane
@@ -92,6 +93,8 @@ main() {
   installer="$(resolve_installer "${lane}")"
   export EIGHTBALL_INSTALL_LANE="${lane}"
   export EIGHTBALL_MODEL_SLUG="${MODEL_SLUG}"
+  export EIGHTBALL_PROFILES_BASE="${PROFILES_BASE}"
+  export EIGHTBALL_RAW_BASE="${RAW_BASE}"
   if [[ -n "${MODEL_SLUG}" ]]; then
     exec "${installer}" --model-slug "${MODEL_SLUG}" "$@"
   fi

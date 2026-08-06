@@ -19,7 +19,17 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import importlib.util
+import sys
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
+_C10_COMMON_PATH = REPO_ROOT / "scripts" / "c10_common.py"
+_SPEC = importlib.util.spec_from_file_location("c10_common", _C10_COMMON_PATH)
+if _SPEC is None or _SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_COMMON_PATH}")
+c10_common = importlib.util.module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = c10_common
+_SPEC.loader.exec_module(c10_common)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 REPORT_DIR = REPO_ROOT / "AGENTS" / "data-science" / "profile-mapping"
@@ -45,7 +55,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "source_dir": "ubuntu",
         "shell": True,
         "detection_signals": ["os=linux", "distro=ubuntu|debian", "cuda=false"],
-        "assumed_profile_id": "cuda_entry_8gb",
+        "assumed_profile_id": "windows_cpu_16gb",
         "fallback_profile_id": None,
         "stage7_applicable": False,
         "stage7_reason": "CPU-only Ubuntu lane; GPU stage not required for lane selection.",
@@ -146,7 +156,6 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "stage7_applicable": False,
         "stage7_reason": "DigitalOcean CPU droplet lane; no GPU assumed.",
         "source_csv": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
-        "provider_plan_hint": "s-2vcpu-4gb",
     },
     {
         "lane_path": "cloud/digitalocean/gpu-droplet",
@@ -163,7 +172,6 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "stage7_applicable": True,
         "stage7_reason": "DigitalOcean GPU droplet lane.",
         "source_csv": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
-        "provider_plan_hint": "gpu-h100x1-80gb",
     },
     {
         "lane_path": "cloud/aws-lightsail/cpu",
@@ -180,7 +188,6 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "stage7_applicable": False,
         "stage7_reason": "AWS Lightsail CPU instance lane.",
         "source_csv": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
-        "provider_plan_hint": "medium_3_0",
     },
     {
         "lane_path": "cloud/aws-lightsail/gpu",
@@ -196,8 +203,7 @@ INSTALL_LANES: list[dict[str, Any]] = [
         "fallback_profile_id": None,
         "stage7_applicable": True,
         "stage7_reason": "AWS Lightsail GPU instance lane when GPU bundles are available.",
-        "source_csv": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-        "provider_plan_hint": None,
+        "source_csv": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     },
 ]
 
@@ -213,6 +219,9 @@ def load_json(path: Path) -> Any:
 
 
 def write_json(path: Path, payload: Any) -> None:
+    if isinstance(payload, dict):
+        c10_common.write_json_preserve_timestamp(path, payload, build_timestamp=c10_common.build_timestamp())
+        return
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -297,6 +306,7 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
                 "ram_gb": plan.get("memory_gb"),
                 "disk_gb": plan.get("disk_gb"),
                 "source_path": str(do_gp.relative_to(REPO_ROOT)),
+                "plans": plans,
             }
     ls = REPO_ROOT / "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json"
     if ls.exists():
@@ -308,19 +318,29 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
                 "ram_gb": medium.get("ram_gb"),
                 "disk_gb": medium.get("ssd_gb"),
                 "source_path": str(ls.relative_to(REPO_ROOT)),
+                "plans": plans,
             }
-    do_gpu_csv = REPO_ROOT / "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv"
-    if do_gpu_csv.exists():
-        with do_gpu_csv.open(encoding="utf-8") as handle:
-            rows = list(csv.DictReader(handle))
-        if rows:
-            row = rows[0]
+    do_gpu_plans = c10_common.load_digitalocean_gpu_plans(REPO_ROOT)
+    if do_gpu_plans:
+        baseline = c10_common.smallest_digitalocean_gpu_plan(do_gpu_plans)
+        if baseline:
             defaults["cloud-digitalocean-gpu-droplet"] = {
-                "vcpu": int(row.get("vcpus") or 0) or None,
-                "ram_gb": float(row.get("ram_gb") or 0) or None,
-                "disk_gb": float(row.get("disk_gb") or 0) or None,
-                "vram_gb": float(row.get("vram_gb") or 0) or None,
-                "source_path": str(do_gpu_csv.relative_to(REPO_ROOT)),
+                **baseline,
+                "baseline_plan_id": baseline.get("plan_id"),
+                "plans": do_gpu_plans,
+                "selection_policy": "smallest_published_plan_conservative_baseline",
+            }
+    aws_gpu_plans = c10_common.load_aws_lightsail_gpu_plans(REPO_ROOT)
+    if aws_gpu_plans:
+        baseline = c10_common.smallest_aws_lightsail_gpu_plan(aws_gpu_plans)
+        if baseline:
+            defaults["cloud-aws-lightsail-gpu"] = {
+                **baseline,
+                "baseline_plan_name": baseline.get("plan_name"),
+                "plans": aws_gpu_plans,
+                "selection_policy": "smallest_published_plan_conservative_baseline",
+                "cuda_available": None,
+                "vram_status": "unknown",
             }
     return defaults
 
@@ -375,11 +395,11 @@ def build_model_pages(tags: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return pages
 
 
-def lane_hardware(lane: dict[str, Any], hardware_profiles: dict[str, dict[str, Any]], cloud_defaults: dict[str, dict[str, Any]]) -> dict[str, Any]:
+def lane_hardware(lane: dict[str, Any], hardware_profiles: dict[str, dict[str, Any]], cloud_defaults: dict[str, Any]) -> dict[str, Any]:
     profile_id = lane.get("assumed_profile_id")
     if profile_id and profile_id in hardware_profiles:
         p = hardware_profiles[profile_id]
-        return {
+        hw = {
             "cpu_cores": p.get("cpu_count"),
             "system_ram_gb": p.get("system_ram_gb"),
             "usable_model_ram_gb": p.get("usable_model_ram_gb"),
@@ -390,52 +410,46 @@ def lane_hardware(lane: dict[str, Any], hardware_profiles: dict[str, dict[str, A
             "source_path": p.get("source_reference"),
             "provenance_status": p.get("provenance_status"),
         }
+        return c10_common.normalize_lane_hardware(hw, lane)
     cloud = cloud_defaults.get(lane["provider_id"])
     if cloud:
-        return {
+        ram_gb = cloud.get("ram_gb")
+        hw = {
             "cpu_cores": cloud.get("vcpu"),
-            "system_ram_gb": cloud.get("ram_gb"),
-            "usable_model_ram_gb": round((cloud.get("ram_gb") or 0) * 0.6, 2) if cloud.get("ram_gb") else None,
+            "system_ram_gb": ram_gb,
+            "usable_model_ram_gb": round(ram_gb * 0.6, 2) if ram_gb is not None else None,
             "minimum_free_disk_gb": cloud.get("disk_gb"),
-            "total_vram_gb": cloud.get("vram_gb"),
-            "cuda_available": lane.get("gpu_lane"),
+            "total_vram_gb": cloud.get("total_vram_gb"),
+            "vram_gb_per_gpu": cloud.get("vram_gb_per_gpu"),
+            "gpu_count": cloud.get("gpu_count"),
+            "cuda_available": cloud.get("cuda_available"),
             "apple_metal_available": False,
             "source_path": cloud.get("source_path"),
-            "provenance_status": "provider_published",
+            "provenance_status": cloud.get("evidence_status") or "provider_published",
+            "baseline_plan_id": cloud.get("baseline_plan_id") or cloud.get("baseline_plan_name"),
+            "selection_policy": cloud.get("selection_policy"),
+            "plans": cloud.get("plans"),
+            "vram_status": cloud.get("vram_status"),
         }
-    return {
+        if lane.get("gpu_lane") and hw["total_vram_gb"] is not None:
+            hw["cuda_available"] = True
+        return c10_common.normalize_lane_hardware(hw, lane)
+    hw = {
         "cpu_cores": None,
         "system_ram_gb": None,
         "usable_model_ram_gb": None,
         "minimum_free_disk_gb": None,
         "total_vram_gb": None,
-        "cuda_available": lane.get("gpu_lane"),
+        "cuda_available": None if lane.get("gpu_lane") else False,
         "apple_metal_available": lane.get("provider_id") == "mac-apple-silicon",
         "source_path": lane.get("source_csv"),
         "provenance_status": "data_gap",
     }
+    return c10_common.normalize_lane_hardware(hw, lane)
 
 
-def size_fits_lane(size: dict[str, Any], lane: dict[str, Any], hardware: dict[str, Any]) -> tuple[bool, str]:
-    est = size.get("estimated") or {}
-    ram_need = est.get("min_system_ram_gb")
-    vram_need = est.get("min_vram_gb")
-    disk_need = est.get("min_disk_gb")
-    usable_ram = hardware.get("usable_model_ram_gb") or hardware.get("system_ram_gb")
-    if usable_ram is not None and ram_need is not None and ram_need > usable_ram:
-        return False, f"requires {ram_need} GB RAM; lane provides {usable_ram} GB usable"
-    if lane.get("gpu_lane"):
-        vram_avail = hardware.get("total_vram_gb")
-        if vram_avail is not None and vram_need is not None and vram_need > vram_avail:
-            return False, f"requires {vram_need} GB VRAM; lane provides {vram_avail} GB"
-    elif vram_need is not None and usable_ram is not None and vram_need > usable_ram and not lane.get("gpu_lane"):
-        return False, f"CPU lane cannot satisfy VRAM-heavy size ({vram_need} GB estimated)"
-    disk_avail = hardware.get("minimum_free_disk_gb")
-    if disk_avail is not None and disk_need is not None and disk_need > disk_avail:
-        return False, f"requires {disk_need} GB disk; lane minimum free disk is {disk_avail} GB"
-    if ram_need is None and disk_need is None:
-        return False, "insufficient source measurements to confirm fit"
-    return True, "fits lane hardware assumptions"
+def size_fits_lane(size: dict[str, Any], lane: dict[str, Any], hardware: dict[str, Any]) -> c10_common.FitResult:
+    return c10_common.evaluate_lane_fit(size, lane, hardware)
 
 
 def build_stage_file(stage: str, lane: dict[str, Any], hardware: dict[str, Any], model_slug: str, sizes: list[dict[str, Any]]) -> dict[str, Any]:
@@ -453,13 +467,15 @@ def build_stage_file(stage: str, lane: dict[str, Any], hardware: dict[str, Any],
     if stage == "lane":
         fitting = []
         for size in sizes:
-            fits, reason = size_fits_lane(size, lane, hardware)
+            fit = size_fits_lane(size, lane, hardware)
             fitting.append(
                 {
                     "size_slug": size["size_slug"],
                     "ollama_ref": size["ollama_ref"],
-                    "fits": fits,
-                    "reason": reason,
+                    "fit_status": fit.fit_status,
+                    "fits": fit.fits,
+                    "reason": fit.reason,
+                    "missing_evidence": list(fit.missing_evidence),
                 }
             )
         return {
@@ -590,6 +606,8 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
             "data/normalized/hardware-assumed-profiles.json",
             "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
             "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+            "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+            "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
             "AGENTS/data-science/P2-Provider-Datasets/",
         ],
         "model_count": len(model_pages),
@@ -618,6 +636,8 @@ def generate() -> dict[str, Any]:
         lane_hardware_map[lane["lane_path"]] = hw
         if hw.get("provenance_status") == "data_gap":
             gaps.append(f"Hardware defaults incomplete for lane {lane['lane_path']}")
+        if lane["provider_id"] == "cloud-digitalocean-gpu-droplet" and hw.get("total_vram_gb") is None:
+            gaps.append("DigitalOcean GPU baseline missing VRAM after CSV parse")
         write_json(provider_dir / f"{lane['provider_id']}.json", build_provider_assumption(lane, hw))
         copy_install_lane(lane)
 

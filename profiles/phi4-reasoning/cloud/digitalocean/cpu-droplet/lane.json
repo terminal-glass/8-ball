@@ -3,7 +3,7 @@
   "model_slug": "phi4-reasoning",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -19,56 +19,74 @@
     {
       "size_slug": "14b",
       "ollama_ref": "phi4-reasoning:14b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-fp16",
       "ollama_ref": "phi4-reasoning:14b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 39.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-plus-fp16",
       "ollama_ref": "phi4-reasoning:14b-plus-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 39.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-plus-q4-k-m",
       "ollama_ref": "phi4-reasoning:14b-plus-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-plus-q80",
       "ollama_ref": "phi4-reasoning:14b-plus-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 25.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 25.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-q4-k-m",
       "ollama_ref": "phi4-reasoning:14b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-q80",
       "ollama_ref": "phi4-reasoning:14b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 25.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 25.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "phi4-reasoning:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "plus",
       "ollama_ref": "phi4-reasoning:plus",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

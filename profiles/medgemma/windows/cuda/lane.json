@@ -3,7 +3,7 @@
   "model_slug": "medgemma",
   "lane_path": "windows/cuda",
   "provider_assumption_id": "windows-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,56 +19,92 @@
     {
       "size_slug": "27b",
       "ollama_ref": "medgemma:27b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.04 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 29.04 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "27b-it-bf16",
       "ollama_ref": "medgemma:27b-it-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 72.74 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 72.74 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "27b-it-q4-k-m",
       "ollama_ref": "medgemma:27b-it-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.04 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 29.04 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "27b-it-q80",
       "ollama_ref": "medgemma:27b-it-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 43.99 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 43.99 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "4b",
       "ollama_ref": "medgemma:4b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "4b-it-bf16",
       "ollama_ref": "medgemma:4b-it-bf16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "4b-it-q4-k-m",
       "ollama_ref": "medgemma:4b-it-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "4b-it-q80",
       "ollama_ref": "medgemma:4b-it-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "medgemma:latest",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

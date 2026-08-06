@@ -3,13 +3,13 @@
   "model_slug": "tinydolphin",
   "lane_path": "ubuntu/cpu",
   "provider_assumption_id": "ubuntu-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:11Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-    "provenance_status": "internal_assumption_class"
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
   },
   "applicable": true,
-  "minimum_cpu_cores": 4,
-  "recommended_cpu_cores": 4,
+  "minimum_cpu_cores": 6,
+  "recommended_cpu_cores": 6,
   "reason": "CPU stage applies to all lanes."
 }

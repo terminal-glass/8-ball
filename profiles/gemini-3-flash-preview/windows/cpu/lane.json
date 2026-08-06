@@ -3,7 +3,7 @@
   "model_slug": "gemini-3-flash-preview",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,8 +18,13 @@
     {
       "size_slug": "latest",
       "ollama_ref": "gemini-3-flash-preview:latest",
+      "fit_status": "unknown",
       "fits": false,
-      "reason": "insufficient source measurements to confirm fit"
+      "reason": "missing evidence: model_disk_requirement, model_ram_requirement",
+      "missing_evidence": [
+        "model_disk_requirement",
+        "model_ram_requirement"
+      ]
     }
   ]
 }

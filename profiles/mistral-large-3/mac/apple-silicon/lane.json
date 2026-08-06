@@ -3,7 +3,7 @@
   "model_slug": "mistral-large-3",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,8 +19,15 @@
     {
       "size_slug": "675b-cloud",
       "ollama_ref": "mistral-large-3:675b-cloud",
+      "fit_status": "unknown",
       "fits": false,
-      "reason": "insufficient source measurements to confirm fit"
+      "reason": "missing evidence: lane_vram_capacity, model_disk_requirement, model_ram_requirement, model_vram_requirement",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "model_disk_requirement",
+        "model_ram_requirement",
+        "model_vram_requirement"
+      ]
     }
   ]
 }

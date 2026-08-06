@@ -3,10 +3,10 @@
   "model_slug": "granite3.2",
   "lane_path": "ubuntu/cpu",
   "provider_assumption_id": "ubuntu-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-    "provenance_status": "internal_assumption_class"
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
   },
   "lane_id": "ubuntu/cpu",
   "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
@@ -19,56 +19,74 @@
     {
       "size_slug": "8b",
       "ollama_ref": "granite3.2:8b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-fp16",
       "ollama_ref": "granite3.2:8b-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 22.42 GB RAM; lane provides 16.0 GB usable"
+      "reason": "requires 22.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q4-k-m",
       "ollama_ref": "granite3.2:8b-instruct-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-instruct-q80",
       "ollama_ref": "granite3.2:8b-instruct-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.03 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "2b",
       "ollama_ref": "granite3.2:2b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "2b-instruct-fp16",
       "ollama_ref": "granite3.2:2b-instruct-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "2b-instruct-q4-k-m",
       "ollama_ref": "granite3.2:2b-instruct-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "2b-instruct-q80",
       "ollama_ref": "granite3.2:2b-instruct-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "granite3.2:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

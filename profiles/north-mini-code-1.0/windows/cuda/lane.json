@@ -3,7 +3,7 @@
   "model_slug": "north-mini-code-1.0",
   "lane_path": "windows/cuda",
   "provider_assumption_id": "windows-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,44 +19,72 @@
     {
       "size_slug": "bf16",
       "ollama_ref": "north-mini-code-1.0:bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 71.88 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 71.88 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "north-mini-code-1.0:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 23.57 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 23.57 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "mlx-bf16",
       "ollama_ref": "north-mini-code-1.0:mlx-bf16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 71.88 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 71.88 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "mlx-mxfp8",
       "ollama_ref": "north-mini-code-1.0:mlx-mxfp8",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 37.38 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 37.38 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "mlx-nvfp4",
       "ollama_ref": "north-mini-code-1.0:mlx-nvfp4",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "q4-k-m",
       "ollama_ref": "north-mini-code-1.0:q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 23.57 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 23.57 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "q80",
       "ollama_ref": "north-mini-code-1.0:q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.52 GB RAM; lane provides 20.0 GB usable"
+      "reason": "requires 38.52 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

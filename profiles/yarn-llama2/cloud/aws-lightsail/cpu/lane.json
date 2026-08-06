@@ -3,7 +3,7 @@
   "model_slug": "yarn-llama2",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:56Z",
+  "generated_at": "2026-08-06T05:53:11Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -19,404 +19,538 @@
     {
       "size_slug": "13b",
       "ollama_ref": "yarn-llama2:13b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k",
       "ollama_ref": "yarn-llama2:13b-128k",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-fp16",
       "ollama_ref": "yarn-llama2:13b-128k-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.36 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 35.36 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q2-k",
       "ollama_ref": "yarn-llama2:13b-128k-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 11.67 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 11.67 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q3-k-l",
       "ollama_ref": "yarn-llama2:13b-128k-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.4 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.4 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q3-k-m",
       "ollama_ref": "yarn-llama2:13b-128k-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q3-k-s",
       "ollama_ref": "yarn-llama2:13b-128k-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q4-k-m",
       "ollama_ref": "yarn-llama2:13b-128k-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.55 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 14.55 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q4-k-s",
       "ollama_ref": "yarn-llama2:13b-128k-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q40",
       "ollama_ref": "yarn-llama2:13b-128k-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q41",
       "ollama_ref": "yarn-llama2:13b-128k-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.89 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 14.89 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q5-k-m",
       "ollama_ref": "yarn-llama2:13b-128k-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.04 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 16.04 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q5-k-s",
       "ollama_ref": "yarn-llama2:13b-128k-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q50",
       "ollama_ref": "yarn-llama2:13b-128k-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q51",
       "ollama_ref": "yarn-llama2:13b-128k-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.73 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 16.73 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q6-k",
       "ollama_ref": "yarn-llama2:13b-128k-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 18.11 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 18.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b128k-q80",
       "ollama_ref": "yarn-llama2:13b-128k-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.56 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 21.56 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k",
       "ollama_ref": "yarn-llama2:13b-64k",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-fp16",
       "ollama_ref": "yarn-llama2:13b-64k-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.36 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 35.36 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q2-k",
       "ollama_ref": "yarn-llama2:13b-64k-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 11.67 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 11.67 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q3-k-l",
       "ollama_ref": "yarn-llama2:13b-64k-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.4 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.4 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q3-k-m",
       "ollama_ref": "yarn-llama2:13b-64k-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 12.71 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q3-k-s",
       "ollama_ref": "yarn-llama2:13b-64k-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q4-k-m",
       "ollama_ref": "yarn-llama2:13b-64k-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.55 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 14.55 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q4-k-s",
       "ollama_ref": "yarn-llama2:13b-64k-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q40",
       "ollama_ref": "yarn-llama2:13b-64k-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 13.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q41",
       "ollama_ref": "yarn-llama2:13b-64k-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 14.89 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 14.89 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q5-k-m",
       "ollama_ref": "yarn-llama2:13b-64k-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.04 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 16.04 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q5-k-s",
       "ollama_ref": "yarn-llama2:13b-64k-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q50",
       "ollama_ref": "yarn-llama2:13b-64k-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q51",
       "ollama_ref": "yarn-llama2:13b-64k-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.73 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 16.73 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q6-k",
       "ollama_ref": "yarn-llama2:13b-64k-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 18.11 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 18.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b64k-q80",
       "ollama_ref": "yarn-llama2:13b-64k-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.56 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 21.56 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b",
       "ollama_ref": "yarn-llama2:7b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k",
       "ollama_ref": "yarn-llama2:7b-128k",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-fp16",
       "ollama_ref": "yarn-llama2:7b-128k-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 18.69 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 18.69 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q2-k",
       "ollama_ref": "yarn-llama2:7b-128k-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.96 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 6.96 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q3-k-l",
       "ollama_ref": "yarn-llama2:7b-128k-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.88 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.88 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q3-k-m",
       "ollama_ref": "yarn-llama2:7b-128k-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.53 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.53 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q3-k-s",
       "ollama_ref": "yarn-llama2:7b-128k-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.07 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.07 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q4-k-m",
       "ollama_ref": "yarn-llama2:7b-128k-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.45 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.45 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q4-k-s",
       "ollama_ref": "yarn-llama2:7b-128k-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.22 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.22 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q40",
       "ollama_ref": "yarn-llama2:7b-128k-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q41",
       "ollama_ref": "yarn-llama2:7b-128k-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.57 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.57 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q5-k-m",
       "ollama_ref": "yarn-llama2:7b-128k-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.26 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.26 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q5-k-s",
       "ollama_ref": "yarn-llama2:7b-128k-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q50",
       "ollama_ref": "yarn-llama2:7b-128k-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q51",
       "ollama_ref": "yarn-llama2:7b-128k-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.6 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.6 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q6-k",
       "ollama_ref": "yarn-llama2:7b-128k-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.06 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.06 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b128k-q80",
       "ollama_ref": "yarn-llama2:7b-128k-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k",
       "ollama_ref": "yarn-llama2:7b-64k",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-fp16",
       "ollama_ref": "yarn-llama2:7b-64k-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 18.69 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 18.69 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q2-k",
       "ollama_ref": "yarn-llama2:7b-64k-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.96 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 6.96 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q3-k-l",
       "ollama_ref": "yarn-llama2:7b-64k-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.88 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.88 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q3-k-m",
       "ollama_ref": "yarn-llama2:7b-64k-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.53 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.53 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q3-k-s",
       "ollama_ref": "yarn-llama2:7b-64k-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 7.07 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 7.07 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q4-k-m",
       "ollama_ref": "yarn-llama2:7b-64k-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.45 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.45 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q4-k-s",
       "ollama_ref": "yarn-llama2:7b-64k-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.22 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.22 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q40",
       "ollama_ref": "yarn-llama2:7b-64k-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q41",
       "ollama_ref": "yarn-llama2:7b-64k-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 8.57 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 8.57 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q5-k-m",
       "ollama_ref": "yarn-llama2:7b-64k-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.26 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.26 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q5-k-s",
       "ollama_ref": "yarn-llama2:7b-64k-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q50",
       "ollama_ref": "yarn-llama2:7b-64k-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.14 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q51",
       "ollama_ref": "yarn-llama2:7b-64k-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 9.6 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 9.6 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q6-k",
       "ollama_ref": "yarn-llama2:7b-64k-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 10.06 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 10.06 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b64k-q80",
       "ollama_ref": "yarn-llama2:7b-64k-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "yarn-llama2:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 6.09 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 6.09 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     }
   ]
 }

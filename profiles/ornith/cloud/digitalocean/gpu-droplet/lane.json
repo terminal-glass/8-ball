@@ -3,7 +3,7 @@
   "model_slug": "ornith",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
@@ -19,56 +19,74 @@
     {
       "size_slug": "35b",
       "ollama_ref": "ornith:35b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.94 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "35b-bf16",
       "ollama_ref": "ornith:35b-bf16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 91.14 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "35b-q4-k-m",
       "ollama_ref": "ornith:35b-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.94 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "35b-q80",
       "ollama_ref": "ornith:35b-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 54.34 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b",
       "ollama_ref": "ornith:9b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-bf16",
       "ollama_ref": "ornith:9b-bf16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.01 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-q4-k-m",
       "ollama_ref": "ornith:9b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "9b-q80",
       "ollama_ref": "ornith:9b-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "ornith:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

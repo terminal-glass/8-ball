@@ -3,7 +3,7 @@
   "model_slug": "llama3.3",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -19,86 +19,114 @@
     {
       "size_slug": "70b",
       "ollama_ref": "llama3.3:70b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-fp16",
       "ollama_ref": "llama3.3:70b-instruct-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 174.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 174.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q2-k",
       "ollama_ref": "llama3.3:70b-instruct-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q3-k-m",
       "ollama_ref": "llama3.3:70b-instruct-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 45.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 45.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q3-k-s",
       "ollama_ref": "llama3.3:70b-instruct-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 42.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 42.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q4-k-m",
       "ollama_ref": "llama3.3:70b-instruct-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q4-k-s",
       "ollama_ref": "llama3.3:70b-instruct-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q40",
       "ollama_ref": "llama3.3:70b-instruct-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q5-k-m",
       "ollama_ref": "llama3.3:70b-instruct-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 65.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 65.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q50",
       "ollama_ref": "llama3.3:70b-instruct-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q51",
       "ollama_ref": "llama3.3:70b-instruct-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 68.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 68.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q6-k",
       "ollama_ref": "llama3.3:70b-instruct-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 74.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 74.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-instruct-q80",
       "ollama_ref": "llama3.3:70b-instruct-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 95.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 95.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "llama3.3:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     }
   ]
 }

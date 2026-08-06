@@ -3,7 +3,7 @@
   "model_slug": "mixtral",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,422 +18,562 @@
     {
       "size_slug": "8x22b",
       "ollama_ref": "mixtral:8x22b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct",
       "ollama_ref": "mixtral:8x22b-instruct",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-fp16",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 324.88 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 324.88 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q2-k",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.52 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 61.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q3-k-l",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 85.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 85.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q3-k-m",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 79.92 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 79.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q3-k-s",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 73.02 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 73.02 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q4-k-m",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 100.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 100.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q4-k-s",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q40",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q41",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 102.92 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 102.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q5-k-m",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 116.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 116.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q5-k-s",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q50",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q51",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 123.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 123.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q6-k",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 135.12 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 135.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-instruct-v0.1-q80",
       "ollama_ref": "mixtral:8x22b-instruct-v0.1-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 173.07 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 173.07 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text",
       "ollama_ref": "mixtral:8x22b-text",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-fp16",
       "ollama_ref": "mixtral:8x22b-text-v0.1-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 324.88 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 324.88 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q2-k",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.52 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 61.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q3-k-l",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 85.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 85.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q3-k-m",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 79.92 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 79.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q3-k-s",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 71.88 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 71.88 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q4-k-m",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 100.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 100.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q4-k-s",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q40",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q41",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 102.92 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 102.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q5-k-m",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 116.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 116.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q5-k-s",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q50",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 113.27 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q51",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 123.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 123.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q6-k",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 135.12 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 135.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x22b-text-v0.1-q80",
       "ollama_ref": "mixtral:8x22b-text-v0.1-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 173.07 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 173.07 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b",
       "ollama_ref": "mixtral:8x7b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-fp16",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 108.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 108.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q2-k",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.27 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 21.27 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q3-k-l",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.32 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 29.32 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q3-k-m",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.17 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 28.17 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q3-k-s",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q4-k-m",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.92 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 33.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q4-k-s",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.77 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 32.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q40",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q41",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.07 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 35.07 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q5-k-m",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 39.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q5-k-s",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q50",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q51",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.97 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 41.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q6-k",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 45.42 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 45.42 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-instruct-v0.1-q80",
       "ollama_ref": "mixtral:8x7b-instruct-v0.1-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 59.22 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 59.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text",
       "ollama_ref": "mixtral:8x7b-text",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-fp16",
       "ollama_ref": "mixtral:8x7b-text-v0.1-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 108.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 108.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q2-k",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 21.27 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 21.27 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q3-k-l",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.32 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 29.32 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q3-k-m",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 28.17 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 28.17 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q3-k-s",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q4-k-m",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 33.92 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 33.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q4-k-s",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.77 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 32.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q40",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q41",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 35.07 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 35.07 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q5-k-m",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.67 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 39.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q5-k-s",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q50",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 38.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q51",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.97 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 41.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q6-k",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 45.42 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 45.42 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "8x7b-text-v0.1-q80",
       "ollama_ref": "mixtral:8x7b-text-v0.1-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 59.22 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 59.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "instruct",
       "ollama_ref": "mixtral:instruct",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "mixtral:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "text",
       "ollama_ref": "mixtral:text",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 31.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "v0.1",
       "ollama_ref": "mixtral:v0.1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "v0.1-instruct",
       "ollama_ref": "mixtral:v0.1-instruct",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 93.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     }
   ]
 }

@@ -3,7 +3,7 @@
   "model_slug": "phi4",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,32 +19,42 @@
     {
       "size_slug": "14b",
       "ollama_ref": "phi4:14b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-fp16",
       "ollama_ref": "phi4:14b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-q4-k-m",
       "ollama_ref": "phi4:14b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-q80",
       "ollama_ref": "phi4:14b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.15 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 24.15 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "phi4:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

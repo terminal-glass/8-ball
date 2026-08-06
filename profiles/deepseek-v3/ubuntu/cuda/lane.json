@@ -3,7 +3,7 @@
   "model_slug": "deepseek-v3",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,32 +19,42 @@
     {
       "size_slug": "671b",
       "ollama_ref": "deepseek-v3:671b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 659.24 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 659.24 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-fp16",
       "ollama_ref": "deepseek-v3:671b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 1689.64 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 1689.64 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-q4-k-m",
       "ollama_ref": "deepseek-v3:671b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 659.24 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 659.24 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "671b-q80",
       "ollama_ref": "deepseek-v3:671b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 1014.59 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 1014.59 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "deepseek-v3:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 466.32 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 466.32 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     }
   ]
 }

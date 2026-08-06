@@ -3,14 +3,14 @@
   "model_slug": "magistral",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
   "applicable": false,
   "cuda_available": false,
-  "apple_metal_available": null,
+  "apple_metal_available": false,
   "total_vram_gb": null,
   "reason": "Intel Mac lane uses CPU-only fallback; discrete GPU not assumed."
 }

@@ -3,7 +3,7 @@
   "model_slug": "command-a",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,32 +18,42 @@
     {
       "size_slug": "111b",
       "ollama_ref": "command-a:111b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 110.69 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 110.69 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "111b032025-fp16",
       "ollama_ref": "command-a:111b-03-2025-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 288.94 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 288.94 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "111b032025-q4-k-m",
       "ollama_ref": "command-a:111b-03-2025-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 110.69 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 110.69 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "111b032025-q80",
       "ollama_ref": "command-a:111b-03-2025-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 169.34 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 169.34 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "command-a:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 78.77 GB RAM; lane provides 4.5 GB usable"
+      "reason": "requires 78.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
     }
   ]
 }

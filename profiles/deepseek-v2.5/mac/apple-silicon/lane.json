@@ -3,7 +3,7 @@
   "model_slug": "deepseek-v2.5",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -19,44 +19,72 @@
     {
       "size_slug": "236b",
       "ollama_ref": "deepseek-v2.5:236b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 222.52 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 222.52 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "236b-q40",
       "ollama_ref": "deepseek-v2.5:236b-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 222.52 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 222.52 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "236b-q41",
       "ollama_ref": "deepseek-v2.5:236b-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 239.77 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 239.77 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "236b-q50",
       "ollama_ref": "deepseek-v2.5:236b-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 255.87 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 255.87 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "236b-q51",
       "ollama_ref": "deepseek-v2.5:236b-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 273.12 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 273.12 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "236b-q80",
       "ollama_ref": "deepseek-v2.5:236b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 358.22 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 358.22 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     },
     {
       "size_slug": "latest",
       "ollama_ref": "deepseek-v2.5:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 154.67 GB RAM; lane provides 10.0 GB usable"
+      "reason": "requires 154.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
     }
   ]
 }

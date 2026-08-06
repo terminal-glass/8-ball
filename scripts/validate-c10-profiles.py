@@ -8,6 +8,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+from eight_ball.agents_csv.import_collection import discover_agents_csv_files
+from eight_ball.agents_csv.registry import source_specs
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
@@ -24,6 +27,14 @@ INSTALL_LANES = [
     "cloud/aws-lightsail/cpu",
     "cloud/aws-lightsail/gpu",
 ]
+
+CPU_LANES = {
+    "ubuntu/cpu",
+    "mac/intel",
+    "windows/cpu",
+    "cloud/digitalocean/cpu-droplet",
+    "cloud/aws-lightsail/cpu",
+}
 
 STAGE_FILES = (
     "lane.json",
@@ -55,8 +66,7 @@ C10_NAME_RE = re.compile(r"c10|10-b", re.I)
 def is_size_directory(path: Path, model_slug: str) -> bool:
     if not path.is_dir():
         return False
-    name = path.name
-    if name in LANE_ROOTS:
+    if path.name in LANE_ROOTS:
         return False
     return path.parent == PROFILES_DIR / model_slug
 
@@ -69,6 +79,49 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def validate_registered_agents_csvs(errors: list[str]) -> None:
+    registered = {Path(spec.path).name for spec in source_specs()}
+    for path in discover_agents_csv_files(repo_root=REPO_ROOT):
+        if path.name not in registered:
+            fail(errors, f"Unregistered AGENTS CSV: {path.relative_to(REPO_ROOT)}")
+
+
+def validate_lane_fit_semantics(lane_payload: dict, path: Path, errors: list[str]) -> None:
+    for row in lane_payload.get("size_fit", []):
+        fit_status = row.get("fit_status")
+        fits = row.get("fits")
+        if fit_status is None:
+            fail(errors, f"Missing fit_status in {path} for {row.get('ollama_ref')}")
+            continue
+        if fit_status == "fit" and not fits:
+            fail(errors, f"fit_status=fit but fits=false in {path} for {row.get('ollama_ref')}")
+        if fit_status in {"unknown", "no_fit"} and fits:
+            fail(errors, f"fits=true with fit_status={fit_status} in {path} for {row.get('ollama_ref')}")
+        if fits and fit_status != "fit":
+            fail(errors, f"fits=true without fit_status=fit in {path} for {row.get('ollama_ref')}")
+
+
+def validate_provider_assumption(payload: dict, path: Path, errors: list[str]) -> None:
+    if not payload.get("detection_signals"):
+        fail(errors, f"Provider assumption missing detection_signals: {path}")
+    hardware = payload.get("hardware") or {}
+    lane_path = payload.get("lane_path", "")
+    if lane_path in CPU_LANES:
+        if hardware.get("cuda_available") is True:
+            fail(errors, f"CPU lane claims cuda_available=true: {path}")
+        vram = hardware.get("total_vram_gb")
+        if isinstance(vram, (int, float)) and vram > 0:
+            fail(errors, f"CPU lane claims positive VRAM: {path}")
+    if payload.get("provider_assumption_id") == "cloud-digitalocean-gpu-droplet":
+        if hardware.get("system_ram_gb") is None or hardware.get("total_vram_gb") is None:
+            fail(errors, f"DigitalOcean GPU assumption missing parsed capacity: {path}")
+    if payload.get("provider_assumption_id") == "cloud-aws-lightsail-gpu":
+        if hardware.get("total_vram_gb") is not None:
+            fail(errors, f"AWS Lightsail GPU assumption must not claim VRAM before runtime probe: {path}")
+        if hardware.get("cuda_available") is True:
+            fail(errors, f"AWS Lightsail GPU assumption must not claim CUDA before runtime probe: {path}")
+
+
 def validate(errors: list[str]) -> dict:
     stats = {
         "model_pages": 0,
@@ -79,6 +132,8 @@ def validate(errors: list[str]) -> dict:
         "shell_checked": 0,
         "index_rows": 0,
     }
+
+    validate_registered_agents_csvs(errors)
 
     model_pages = sorted(p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"})
     stats["model_pages"] = len(model_pages)
@@ -132,10 +187,12 @@ def validate(errors: list[str]) -> dict:
                 path = leaf / stage_file
                 if not path.is_file():
                     fail(errors, f"Missing stage file: {path}")
-                else:
-                    payload = load_json(path)
-                    if "applicable" in payload and payload["applicable"] is False and not payload.get("reason"):
-                        fail(errors, f"Non-applicable stage missing reason: {path}")
+                    continue
+                payload = load_json(path)
+                if stage_file == "lane.json":
+                    validate_lane_fit_semantics(payload, path, errors)
+                if "applicable" in payload and payload["applicable"] is False and not payload.get("reason"):
+                    fail(errors, f"Non-applicable stage missing reason: {path}")
 
     for lane in INSTALL_LANES:
         lane_dir = INSTALL_DIR / lane
@@ -162,9 +219,7 @@ def validate(errors: list[str]) -> dict:
             fail(errors, f"Missing provider assumption: {path}")
         else:
             stats["provider_assumptions"] += 1
-            payload = load_json(path)
-            if not payload.get("detection_signals"):
-                fail(errors, f"Provider assumption missing detection_signals: {path}")
+            validate_provider_assumption(load_json(path), path, errors)
 
     for row in index_rows:
         for key in ("model_page", "lane_dir"):

@@ -3,10 +3,10 @@
   "model_slug": "minimax-m2.7",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-    "provenance_status": "data_gap"
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
   },
   "lane_id": "cloud/aws-lightsail/gpu",
   "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
@@ -19,8 +19,16 @@
     {
       "size_slug": "cloud",
       "ollama_ref": "minimax-m2.7:cloud",
+      "fit_status": "unknown",
       "fits": false,
-      "reason": "insufficient source measurements to confirm fit"
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity, model_disk_requirement, model_ram_requirement, model_vram_requirement",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity",
+        "model_disk_requirement",
+        "model_ram_requirement",
+        "model_vram_requirement"
+      ]
     }
   ]
 }

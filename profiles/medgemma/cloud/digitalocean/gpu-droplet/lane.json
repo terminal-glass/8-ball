@@ -3,7 +3,7 @@
   "model_slug": "medgemma",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
@@ -19,56 +19,74 @@
     {
       "size_slug": "27b",
       "ollama_ref": "medgemma:27b",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "27b-it-bf16",
       "ollama_ref": "medgemma:27b-it-bf16",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 72.74 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "27b-it-q4-k-m",
       "ollama_ref": "medgemma:27b-it-q4_K_M",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "27b-it-q80",
       "ollama_ref": "medgemma:27b-it-q8_0",
-      "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.99 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b",
       "ollama_ref": "medgemma:4b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b-it-bf16",
       "ollama_ref": "medgemma:4b-it-bf16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b-it-q4-k-m",
       "ollama_ref": "medgemma:4b-it-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "4b-it-q80",
       "ollama_ref": "medgemma:4b-it-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "medgemma:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

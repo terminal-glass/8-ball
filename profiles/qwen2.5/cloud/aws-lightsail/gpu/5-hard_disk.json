@@ -3,12 +3,12 @@
   "model_slug": "qwen2.5",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-    "provenance_status": "data_gap"
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
   },
   "applicable": true,
-  "minimum_free_disk_gb": null,
+  "minimum_free_disk_gb": 50.0,
   "reason": "Disk headroom sourced from hardware or provider plan assumptions."
 }

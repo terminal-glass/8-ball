@@ -3,10 +3,10 @@
   "model_slug": "bge-m3",
   "lane_path": "ubuntu/cpu",
   "provider_assumption_id": "ubuntu-cpu",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
-    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-    "provenance_status": "internal_assumption_class"
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
   },
   "applicable": true,
   "fallback_lane": null,

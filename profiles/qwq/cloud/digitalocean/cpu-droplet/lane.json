@@ -3,7 +3,7 @@
   "model_slug": "qwq",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -19,50 +19,66 @@
     {
       "size_slug": "32b",
       "ollama_ref": "qwq:32b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-fp16",
       "ollama_ref": "qwq:32b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 84.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 84.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-preview-fp16",
       "ollama_ref": "qwq:32b-preview-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 84.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 84.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-preview-q4-k-m",
       "ollama_ref": "qwq:32b-preview-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-preview-q80",
       "ollama_ref": "qwq:32b-preview-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 47.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 47.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-q4-k-m",
       "ollama_ref": "qwq:32b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-q80",
       "ollama_ref": "qwq:32b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 47.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 47.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "qwq:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     }
   ]
 }

@@ -3,7 +3,7 @@
   "model_slug": "wizard-math",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:56Z",
+  "generated_at": "2026-08-06T05:53:11Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -19,386 +19,514 @@
     {
       "size_slug": "70b",
       "ollama_ref": "wizard-math:70b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-fp16",
       "ollama_ref": "wizard-math:70b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q2-k",
       "ollama_ref": "wizard-math:70b-q2_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 39.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 39.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q3-k-l",
       "ollama_ref": "wizard-math:70b-q3_K_L",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q3-k-m",
       "ollama_ref": "wizard-math:70b-q3_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q3-k-s",
       "ollama_ref": "wizard-math:70b-q3_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 41.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q4-k-m",
       "ollama_ref": "wizard-math:70b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 54.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q4-k-s",
       "ollama_ref": "wizard-math:70b-q4_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q40",
       "ollama_ref": "wizard-math:70b-q4_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 51.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q41",
       "ollama_ref": "wizard-math:70b-q4_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q5-k-m",
       "ollama_ref": "wizard-math:70b-q5_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q5-k-s",
       "ollama_ref": "wizard-math:70b-q5_K_S",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q50",
       "ollama_ref": "wizard-math:70b-q5_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 61.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q51",
       "ollama_ref": "wizard-math:70b-q5_1",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 67.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q6-k",
       "ollama_ref": "wizard-math:70b-q6_K",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 73.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "70b-q80",
       "ollama_ref": "wizard-math:70b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 92.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b",
       "ollama_ref": "wizard-math:13b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-fp16",
       "ollama_ref": "wizard-math:13b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB"
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q2-k",
       "ollama_ref": "wizard-math:13b-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q3-k-l",
       "ollama_ref": "wizard-math:13b-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q3-k-m",
       "ollama_ref": "wizard-math:13b-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q3-k-s",
       "ollama_ref": "wizard-math:13b-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q4-k-m",
       "ollama_ref": "wizard-math:13b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q4-k-s",
       "ollama_ref": "wizard-math:13b-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q40",
       "ollama_ref": "wizard-math:13b-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q41",
       "ollama_ref": "wizard-math:13b-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q5-k-m",
       "ollama_ref": "wizard-math:13b-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q5-k-s",
       "ollama_ref": "wizard-math:13b-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q50",
       "ollama_ref": "wizard-math:13b-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q51",
       "ollama_ref": "wizard-math:13b-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q6-k",
       "ollama_ref": "wizard-math:13b-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "13b-q80",
       "ollama_ref": "wizard-math:13b-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b",
       "ollama_ref": "wizard-math:7b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-fp16",
       "ollama_ref": "wizard-math:7b-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q2-k",
       "ollama_ref": "wizard-math:7b-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q3-k-l",
       "ollama_ref": "wizard-math:7b-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q3-k-m",
       "ollama_ref": "wizard-math:7b-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q3-k-s",
       "ollama_ref": "wizard-math:7b-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q4-k-m",
       "ollama_ref": "wizard-math:7b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q4-k-s",
       "ollama_ref": "wizard-math:7b-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q40",
       "ollama_ref": "wizard-math:7b-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q41",
       "ollama_ref": "wizard-math:7b-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q5-k-m",
       "ollama_ref": "wizard-math:7b-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q5-k-s",
       "ollama_ref": "wizard-math:7b-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q50",
       "ollama_ref": "wizard-math:7b-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q51",
       "ollama_ref": "wizard-math:7b-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q6-k",
       "ollama_ref": "wizard-math:7b-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-q80",
       "ollama_ref": "wizard-math:7b-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-fp16",
       "ollama_ref": "wizard-math:7b-v1.1-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q2-k",
       "ollama_ref": "wizard-math:7b-v1.1-q2_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q3-k-l",
       "ollama_ref": "wizard-math:7b-v1.1-q3_K_L",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q3-k-m",
       "ollama_ref": "wizard-math:7b-v1.1-q3_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q3-k-s",
       "ollama_ref": "wizard-math:7b-v1.1-q3_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q4-k-m",
       "ollama_ref": "wizard-math:7b-v1.1-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q4-k-s",
       "ollama_ref": "wizard-math:7b-v1.1-q4_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q40",
       "ollama_ref": "wizard-math:7b-v1.1-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q41",
       "ollama_ref": "wizard-math:7b-v1.1-q4_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q5-k-m",
       "ollama_ref": "wizard-math:7b-v1.1-q5_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q5-k-s",
       "ollama_ref": "wizard-math:7b-v1.1-q5_K_S",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q50",
       "ollama_ref": "wizard-math:7b-v1.1-q5_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q51",
       "ollama_ref": "wizard-math:7b-v1.1-q5_1",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q6-k",
       "ollama_ref": "wizard-math:7b-v1.1-q6_K",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7b-v1.1-q80",
       "ollama_ref": "wizard-math:7b-v1.1-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "wizard-math:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

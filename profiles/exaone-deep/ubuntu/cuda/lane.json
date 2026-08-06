@@ -3,7 +3,7 @@
   "model_slug": "exaone-deep",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,80 +19,106 @@
     {
       "size_slug": "32b",
       "ollama_ref": "exaone-deep:32b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.77 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 32.77 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-fp16",
       "ollama_ref": "exaone-deep:32b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 84.52 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 84.52 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-q4-k-m",
       "ollama_ref": "exaone-deep:32b-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 32.77 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 32.77 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "32b-q80",
       "ollama_ref": "exaone-deep:32b-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 50.02 GB RAM; lane provides 24.0 GB usable"
+      "reason": "requires 50.02 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "7.8b",
       "ollama_ref": "exaone-deep:7.8b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7.8b-fp16",
       "ollama_ref": "exaone-deep:7.8b-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 18.4 GB VRAM; lane provides 16.0 GB"
+      "reason": "requires 18.4 GB VRAM; lane provides 16.0 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "7.8b-q4-k-m",
       "ollama_ref": "exaone-deep:7.8b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "7.8b-q80",
       "ollama_ref": "exaone-deep:7.8b-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "2.4b",
       "ollama_ref": "exaone-deep:2.4b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "2.4b-fp16",
       "ollama_ref": "exaone-deep:2.4b-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "2.4b-q4-k-m",
       "ollama_ref": "exaone-deep:2.4b-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "2.4b-q80",
       "ollama_ref": "exaone-deep:2.4b-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "exaone-deep:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

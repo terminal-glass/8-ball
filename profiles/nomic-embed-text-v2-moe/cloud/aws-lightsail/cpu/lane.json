@@ -3,7 +3,7 @@
   "model_slug": "nomic-embed-text-v2-moe",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -19,8 +19,10 @@
     {
       "size_slug": "latest",
       "ollama_ref": "nomic-embed-text-v2-moe:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 2.83 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 2.83 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     }
   ]
 }

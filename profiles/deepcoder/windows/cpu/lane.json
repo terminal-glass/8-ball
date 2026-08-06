@@ -3,7 +3,7 @@
   "model_slug": "deepcoder",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -18,56 +18,74 @@
     {
       "size_slug": "14b",
       "ollama_ref": "deepcoder:14b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.1 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 16.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-preview-fp16",
       "ollama_ref": "deepcoder:14b-preview-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 40.25 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 40.25 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-preview-q4-k-m",
       "ollama_ref": "deepcoder:14b-preview-q4_K_M",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 16.1 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 16.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "14b-preview-q80",
       "ollama_ref": "deepcoder:14b-preview-q8_0",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 24.15 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 24.15 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "1.5b",
       "ollama_ref": "deepcoder:1.5b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "1.5b-preview-fp16",
       "ollama_ref": "deepcoder:1.5b-preview-fp16",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "1.5b-preview-q4-k-m",
       "ollama_ref": "deepcoder:1.5b-preview-q4_K_M",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "1.5b-preview-q80",
       "ollama_ref": "deepcoder:1.5b-preview-q8_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "deepcoder:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 12.07 GB RAM; lane provides 9.0 GB usable"
+      "reason": "requires 12.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
     }
   ]
 }

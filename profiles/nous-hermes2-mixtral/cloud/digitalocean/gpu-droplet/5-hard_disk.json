@@ -3,12 +3,12 @@
   "model_slug": "nous-hermes2-mixtral",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
   },
   "applicable": true,
-  "minimum_free_disk_gb": null,
+  "minimum_free_disk_gb": 500.0,
   "reason": "Disk headroom sourced from hardware or provider plan assumptions."
 }

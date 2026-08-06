@@ -3,7 +3,7 @@
   "model_slug": "llava-llama3",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:10Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -19,26 +19,34 @@
     {
       "size_slug": "8b",
       "ollama_ref": "llava-llama3:8b",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-v1.1-fp16",
       "ollama_ref": "llava-llama3:8b-v1.1-fp16",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 19.55 GB VRAM; lane provides 16.0 GB"
+      "reason": "requires 19.55 GB VRAM; lane provides 16.0 GB",
+      "missing_evidence": []
     },
     {
       "size_slug": "8b-v1.1-q40",
       "ollama_ref": "llava-llama3:8b-v1.1-q4_0",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "llava-llama3:latest",
+      "fit_status": "fit",
       "fits": true,
-      "reason": "fits lane hardware assumptions"
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
     }
   ]
 }

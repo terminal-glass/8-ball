@@ -3,7 +3,7 @@
   "model_slug": "gpt-oss",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T05:53:09Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -19,32 +19,42 @@
     {
       "size_slug": "120b",
       "ollama_ref": "gpt-oss:120b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 110.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 110.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "120b-cloud",
       "ollama_ref": "gpt-oss:120b-cloud",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 110.97 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 110.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "20b",
       "ollama_ref": "gpt-oss:20b",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "20b-cloud",
       "ollama_ref": "gpt-oss:20b-cloud",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 82.22 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 82.22 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     },
     {
       "size_slug": "latest",
       "ollama_ref": "gpt-oss:latest",
+      "fit_status": "no_fit",
       "fits": false,
-      "reason": "requires 17.82 GB RAM; lane provides 2.4 GB usable"
+      "reason": "requires 17.82 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
     }
   ]
 }

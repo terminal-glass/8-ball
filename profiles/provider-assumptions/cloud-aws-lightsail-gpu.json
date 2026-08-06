@@ -12,22 +12,68 @@
     "gpu=true"
   ],
   "hardware": {
-    "cpu_cores": null,
-    "system_ram_gb": null,
-    "usable_model_ram_gb": null,
-    "minimum_free_disk_gb": null,
+    "cpu_cores": 4,
+    "system_ram_gb": 16.0,
+    "usable_model_ram_gb": 9.6,
+    "minimum_free_disk_gb": 50.0,
     "total_vram_gb": null,
-    "cuda_available": true,
+    "vram_gb_per_gpu": null,
+    "gpu_count": null,
+    "cuda_available": null,
     "apple_metal_available": false,
-    "source_path": "AGENTS/TG-8Ball-GPU-Source-Inventory.csv",
-    "provenance_status": "data_gap"
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional",
+    "baseline_plan_id": "GPU XL",
+    "selection_policy": "smallest_published_plan_conservative_baseline",
+    "plans": [
+      {
+        "plan_name": "GPU XL",
+        "vcpu": 4,
+        "ram_gb": 16.0,
+        "disk_gb": 50.0,
+        "gpu_count": null,
+        "vram_gb_per_gpu": null,
+        "total_vram_gb": null,
+        "cuda_expected": "unknown",
+        "ollama_gpu_expected": "unknown",
+        "evidence_status": "provisional",
+        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+      },
+      {
+        "plan_name": "GPU 2XL",
+        "vcpu": 8,
+        "ram_gb": 32.0,
+        "disk_gb": 50.0,
+        "gpu_count": null,
+        "vram_gb_per_gpu": null,
+        "total_vram_gb": null,
+        "cuda_expected": "unknown",
+        "ollama_gpu_expected": "unknown",
+        "evidence_status": "provisional",
+        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+      },
+      {
+        "plan_name": "GPU 4XL",
+        "vcpu": 16,
+        "ram_gb": 64.0,
+        "disk_gb": 50.0,
+        "gpu_count": null,
+        "vram_gb_per_gpu": null,
+        "total_vram_gb": null,
+        "cuda_expected": "unknown",
+        "ollama_gpu_expected": "unknown",
+        "evidence_status": "provisional",
+        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+      }
+    ],
+    "vram_status": "unknown"
   },
   "fallback_profile_id": null,
   "assumed_profile_id": null,
   "source_paths": [
-    "AGENTS/TG-8Ball-GPU-Source-Inventory.csv"
+    "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
   ],
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T05:53:08Z",
   "installer_reference": "install/cloud/aws-lightsail/gpu/trial-install.sh",
   "profiles_reference": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json"
 }
