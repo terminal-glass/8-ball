@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="cloud/aws-lightsail/cpu"
-EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-aws-lightsail-cpu.json"
+EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/cloud-aws-lightsail-cpu.json"
 
 EIGHTBALL_INSTALL_PROFILE="cloud/aws-lightsail/cpu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

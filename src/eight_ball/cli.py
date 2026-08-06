@@ -18,7 +18,6 @@ from eight_ball.config import load_json, write_json
 from eight_ball.export.installer_datasets import build_p2_indexes, export_p3_catalog
 from eight_ball.generate.outputs import generate_outputs
 from eight_ball.generate.pages import validate_generated_pages
-from eight_ball.generate.root_profiles import RootProfilesError, generate_root_profiles
 from eight_ball.normalize.catalog import normalize_legacy_catalog
 from eight_ball.normalize.ollama_web import (
     normalize_ollama_from_manifest,
@@ -33,7 +32,6 @@ from eight_ball.paths import (
     INDEXES_DIR,
     LEGACY_FAMILIES_DIR,
     NORMALIZED_DIR,
-    PROFILES_DIR,
     RAW_DIR,
     REPO_ROOT,
     REPORTS_DIR,
@@ -646,28 +644,6 @@ def cmd_export_datasets(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_generate_root_profiles(args: argparse.Namespace) -> int:
-    try:
-        summary = generate_root_profiles(
-            include_provider_assumptions=not args.skip_provider_assumptions,
-        )
-    except RootProfilesError as exc:
-        print(str(exc), file=sys.stderr)
-        return 1
-
-    print(
-        "Root profiles generated: "
-        f"{summary.family_count} families, "
-        f"{summary.model_count} models, "
-        f"{summary.deployment_class_count} deployment classes, "
-        f"{summary.model_deployment_count} model deployments, "
-        f"{summary.provider_assumption_count} provider assumptions."
-    )
-    print(f"Index rows: {summary.index_row_count}")
-    print(f"Manifest: {PROFILES_DIR / 'manifest.json'}")
-    return 0
-
-
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="eight-ball", description="8-BALL Ollama metadata catalog tooling")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -759,17 +735,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="Validate AGENTS CSV namespaces, dedup keys, and provenance boundaries.",
     )
     validate_agents_csv.set_defaults(handler=cmd_validate_agents_csv)
-
-    generate_root_profiles = subparsers.add_parser(
-        "generate-root-profiles",
-        help="Build repo-root profiles/ from data/generated/pages/ (C5 canonical source).",
-    )
-    generate_root_profiles.add_argument(
-        "--skip-provider-assumptions",
-        action="store_true",
-        help="Omit profiles/provider-assumptions/ even when C6 assumption data exists.",
-    )
-    generate_root_profiles.set_defaults(handler=cmd_generate_root_profiles)
     return parser
 
 

@@ -3,13 +3,13 @@
   "model_slug": "lfm2.5",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T08:43:29Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
   "lane_id": "mac/apple-silicon",
-  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "provider_assumption": "data/generated/provider-assumptions/mac-apple-silicon.json",
   "detection_signals": [
     "os=darwin",
     "arch=arm64",

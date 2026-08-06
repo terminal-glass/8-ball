@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="mac/apple-silicon"
-EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/mac-apple-silicon.json"
+EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/mac-apple-silicon.json"
 
 EIGHTBALL_INSTALL_PROFILE="mac/apple-silicon"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

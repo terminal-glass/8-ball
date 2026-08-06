@@ -3,13 +3,13 @@
   "model_slug": "smollm2",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T05:53:10Z",
+  "generated_at": "2026-08-06T08:43:30Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
   },
   "lane_id": "cloud/aws-lightsail/cpu",
-  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "provider_assumption": "data/generated/provider-assumptions/cloud-aws-lightsail-cpu.json",
   "detection_signals": [
     "provider=aws",
     "lightsail=true",

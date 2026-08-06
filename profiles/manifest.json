@@ -1,37 +1,50 @@
 {
-  "schema_version": "profiles.manifest.v1",
-  "generated_at": "2026-08-05T01:22:40Z",
+  "schema_version": "c10.profiles-manifest.v1",
+  "generated_at": "2026-08-06T08:43:31Z",
   "generator": {
-    "command": "eight-ball generate-root-profiles",
-    "version": "1.0.0"
+    "command": "python3 scripts/generate-c10-profiles.py"
   },
-  "primary_source": {
-    "install_manifest_path": "data/generated/pages/install-manifest.json",
-    "install_manifest_schema": "c5.install-manifest.v1",
-    "install_manifest_generated_at": "2026-08-04T07:42:21Z",
-    "pages_root": "data/generated/pages"
-  },
-  "lookup_contract": "manifest.models[model_id].deployments[deployment_class_id]",
-  "deployment_class_ids": [
-    "3",
-    "4",
-    "5",
-    "6",
-    "7"
-  ],
   "counts": {
-    "families": 234,
-    "models": 437,
-    "deployment_classes": 5,
-    "model_deployments": 2185,
-    "provider_assumptions": 17,
-    "index_rows": 2878
+    "model_pages": 234,
+    "model_directories": 234,
+    "install_lanes": 10,
+    "profile_lane_leaves": 14040,
+    "provider_assumptions": 10,
+    "c10_index_rows": 2340
   },
+  "install_lanes": [
+    "ubuntu/cpu",
+    "ubuntu/cuda",
+    "mac/apple-silicon",
+    "mac/intel",
+    "windows/cpu",
+    "windows/cuda",
+    "cloud/digitalocean/cpu-droplet",
+    "cloud/digitalocean/gpu-droplet",
+    "cloud/aws-lightsail/cpu",
+    "cloud/aws-lightsail/gpu"
+  ],
+  "stage_files": [
+    "lane.json",
+    "3-cpu.json",
+    "4-ram.json",
+    "5-hard_disk.json",
+    "6-CPU_only.json",
+    "7-video_card.json"
+  ],
   "paths": {
-    "index_csv": "profiles/index.csv",
-    "families": "profiles/families/",
-    "models": "profiles/models/",
-    "deployment_classes": "profiles/deployment-classes/",
-    "provider_assumptions": "profiles/provider-assumptions/"
-  }
+    "c10_index": "profiles/c10-index.json",
+    "provider_assumptions": "data/generated/provider-assumptions/",
+    "model_page_pattern": "profiles/<model-slug>.json",
+    "model_lane_pattern": "profiles/<model-slug>/",
+    "canonical_families": "data/generated/pages/families/",
+    "canonical_models": "data/generated/pages/models/",
+    "canonical_deployment_types": "data/generated/pages/deployment-types/",
+    "canonical_install_manifest": "data/generated/pages/install-manifest.json"
+  },
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json",
+    "data/normalized/hardware-assumed-profiles.json"
+  ]
 }

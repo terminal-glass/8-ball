@@ -30,14 +30,7 @@ STAGE_FILES = (
     "7-video_card.json",
 )
 
-NON_MODEL_PROFILE_DIRS = frozenset(
-    {
-        "families",
-        "models",
-        "deployment-classes",
-        "provider-assumptions",
-    }
-)
+NON_MODEL_PROFILE_DIRS = frozenset()
 
 
 def _c10_model_slugs() -> list[str]:

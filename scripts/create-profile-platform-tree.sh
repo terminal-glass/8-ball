@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-MANIFEST="data/generated/pages/install-manifest.json"
+INDEX="profiles/c10-index.json"
 PROFILES_DIR="profiles"
 
 PLATFORM_LANES=(
@@ -19,8 +19,8 @@ PLATFORM_LANES=(
   "cloud/aws-lightsail/gpu"
 )
 
-if [[ ! -f "$MANIFEST" ]]; then
-  echo "Missing canonical manifest: $MANIFEST" >&2
+if [[ ! -f "$INDEX" ]]; then
+  echo "Missing C10 index: $INDEX (run scripts/generate-c10-profiles.py)" >&2
   exit 1
 fi
 
@@ -29,16 +29,14 @@ mapfile -t MODEL_SLUGS < <(
 import json
 from pathlib import Path
 
-manifest = json.loads(Path("data/generated/pages/install-manifest.json").read_text(encoding="utf-8"))
-models = manifest.get("models", {})
-slugs = sorted({entry.get("model_slug") or model_id for model_id, entry in models.items()})
-for slug in slugs:
+rows = json.loads(Path("profiles/c10-index.json").read_text(encoding="utf-8")).get("rows", [])
+for slug in sorted({row["model_slug"] for row in rows}):
     print(slug)
 PY
 )
 
 if [[ "${#MODEL_SLUGS[@]}" -eq 0 ]]; then
-  echo "No model slugs found in $MANIFEST" >&2
+  echo "No model slugs found in $INDEX" >&2
   exit 1
 fi
 
@@ -53,4 +51,4 @@ for slug in "${MODEL_SLUGS[@]}"; do
   done
 done
 
-echo "Platform tree created for ${#MODEL_SLUGS[@]} models (${created} leaf lanes)."
+echo "Platform tree ensured for ${#MODEL_SLUGS[@]} C10 models (${created} leaf lanes)."

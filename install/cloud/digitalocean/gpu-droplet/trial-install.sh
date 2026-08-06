@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="cloud/digitalocean/gpu-droplet"
-EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json"
+EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/cloud-digitalocean-gpu-droplet.json"
 
 EIGHTBALL_INSTALL_PROFILE="cloud/digitalocean/gpu-droplet"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

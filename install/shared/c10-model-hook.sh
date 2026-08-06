@@ -21,7 +21,7 @@ c10_resolve_repo_root() {
 c10_select_model_slug() {
   local slug="$1"
   local lane="${EIGHTBALL_INSTALL_LANE:-${EIGHTBALL_INSTALL_PROFILE:-ubuntu/cpu}}"
-  local assumption="${EIGHTBALL_PROVIDER_ASSUMPTION:-profiles/provider-assumptions/ubuntu-cpu.json}"
+  local assumption="${EIGHTBALL_PROVIDER_ASSUMPTION:-data/generated/provider-assumptions/ubuntu-cpu.json}"
   local selector=""
   local result=""
   local selected=""

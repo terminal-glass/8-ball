@@ -3,13 +3,13 @@
   "model_slug": "kimi-k2.5",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T08:43:29Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
   "lane_id": "windows/cpu",
-  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "provider_assumption": "data/generated/provider-assumptions/windows-cpu.json",
   "detection_signals": [
     "os=windows",
     "cuda=false"

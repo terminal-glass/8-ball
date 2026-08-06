@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="cloud/aws-lightsail/gpu"
-EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-aws-lightsail-gpu.json"
+EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/cloud-aws-lightsail-gpu.json"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"

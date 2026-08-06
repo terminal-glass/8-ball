@@ -3,13 +3,13 @@
   "model_slug": "llama3",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T08:43:29Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
   },
   "lane_id": "cloud/digitalocean/cpu-droplet",
-  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "provider_assumption": "data/generated/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
   "detection_signals": [
     "provider=digitalocean",
     "droplet=true",

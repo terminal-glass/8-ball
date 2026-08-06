@@ -13,7 +13,19 @@ from eight_ball.agents_csv.registry import source_specs
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PROFILES_DIR = REPO_ROOT / "profiles"
+PROVIDER_ASSUMPTIONS_DIR = REPO_ROOT / "data" / "generated" / "provider-assumptions"
 INSTALL_DIR = REPO_ROOT / "install"
+
+FORBIDDEN_PROFILE_DIRS = frozenset(
+    {
+        "families",
+        "models",
+        "deployment-classes",
+        "provider-assumptions",
+    }
+)
+ALLOWED_PROFILE_ROOT_FILES = frozenset({"README.md", "c10-index.json", "manifest.json"})
+FORBIDDEN_PROFILE_ROOT_FILES = frozenset({"index.csv", "environment.profile.example.env"})
 
 INSTALL_LANES = [
     "ubuntu/cpu",
@@ -143,6 +155,65 @@ def validate_provider_assumption(payload: dict, path: Path, errors: list[str]) -
             fail(errors, f"AWS Lightsail GPU assumption must not claim CUDA before runtime probe: {path}")
 
 
+def validate_profiles_namespace(errors: list[str]) -> set[str]:
+    for name in FORBIDDEN_PROFILE_DIRS:
+        path = PROFILES_DIR / name
+        if path.exists():
+            fail(errors, f"Forbidden profiles/ directory exists: {path}")
+
+    for name in FORBIDDEN_PROFILE_ROOT_FILES:
+        path = PROFILES_DIR / name
+        if path.is_file():
+            fail(errors, f"Forbidden profiles/ root file exists: {path}")
+
+    if (PROFILES_DIR / "provider-assumptions").exists():
+        fail(errors, "profiles/provider-assumptions/ must not exist; use data/generated/provider-assumptions/")
+
+    model_pages = {
+        path.stem
+        for path in PROFILES_DIR.glob("*.json")
+        if path.name not in {"c10-index.json", "manifest.json"}
+    }
+
+    model_dirs = {
+        path.name
+        for path in PROFILES_DIR.iterdir()
+        if path.is_dir() and path.name not in FORBIDDEN_PROFILE_DIRS
+    }
+
+    for child in PROFILES_DIR.iterdir():
+        if child.is_file() and child.name not in ALLOWED_PROFILE_ROOT_FILES:
+            if child.suffix == ".json" and child.name not in {"c10-index.json", "manifest.json"}:
+                continue
+            fail(errors, f"Unexpected profiles/ root file: {child}")
+
+    missing_dirs = sorted(model_pages - model_dirs)
+    missing_pages = sorted(model_dirs - model_pages)
+    if missing_dirs:
+        fail(errors, f"Model pages without directories: {missing_dirs[:10]}")
+    if missing_pages:
+        fail(errors, f"Model directories without pages: {missing_pages[:10]}")
+
+    return model_pages
+
+
+def validate_c10_manifest(errors: list[str]) -> None:
+    manifest_path = PROFILES_DIR / "manifest.json"
+    if not manifest_path.is_file():
+        return
+    manifest = load_json(manifest_path)
+    if manifest.get("schema_version") != "c10.profiles-manifest.v1":
+        fail(errors, f"profiles/manifest.json must use c10.profiles-manifest.v1: {manifest_path}")
+    paths = manifest.get("paths") or {}
+    stale_keys = ("index_csv", "families", "models", "deployment_classes")
+    for key in stale_keys:
+        if key in paths:
+            fail(errors, f"Stale legacy path in profiles/manifest.json: {key}")
+    provider_path = paths.get("provider_assumptions", "")
+    if provider_path and "profiles/provider-assumptions" in provider_path:
+        fail(errors, "profiles/manifest.json must not reference profiles/provider-assumptions/")
+
+
 def validate(errors: list[str]) -> dict:
     stats = {
         "model_pages": 0,
@@ -155,10 +226,14 @@ def validate(errors: list[str]) -> dict:
     }
 
     validate_registered_agents_csvs(errors)
+    validate_profiles_namespace(errors)
+    validate_c10_manifest(errors)
 
-    model_pages = sorted(p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"})
-    stats["model_pages"] = len(model_pages)
-    if not model_pages:
+    model_pages_paths = sorted(
+        p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"}
+    )
+    stats["model_pages"] = len(model_pages_paths)
+    if not model_pages_paths:
         fail(errors, "No profiles/<model-slug>.json model pages found")
 
     index_path = PROFILES_DIR / "c10-index.json"
@@ -167,7 +242,7 @@ def validate(errors: list[str]) -> dict:
         index_rows = load_json(index_path).get("rows", [])
         stats["index_rows"] = len(index_rows)
 
-    for page_path in model_pages:
+    for page_path in model_pages_paths:
         slug = page_path.stem
         if C10_NAME_RE.search(slug):
             fail(errors, f"Model slug contains C10 label: {slug}")
@@ -235,7 +310,9 @@ def validate(errors: list[str]) -> dict:
             if result.returncode != 0:
                 fail(errors, f"bash -n failed for {script}: {result.stderr.strip()}")
 
-    pa_dir = PROFILES_DIR / "provider-assumptions"
+    pa_dir = PROVIDER_ASSUMPTIONS_DIR
+    if not pa_dir.is_dir():
+        fail(errors, f"Missing provider assumptions directory: {pa_dir}")
     for name in PROVIDER_FILES:
         path = pa_dir / name
         if not path.is_file():

@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="mac/intel"
-EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/mac-intel.json"
+EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/mac-intel.json"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"

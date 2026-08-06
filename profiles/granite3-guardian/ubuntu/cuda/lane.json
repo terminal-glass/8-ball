@@ -3,13 +3,13 @@
   "model_slug": "granite3-guardian",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T08:43:29Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
   },
   "lane_id": "ubuntu/cuda",
-  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "provider_assumption": "data/generated/provider-assumptions/ubuntu-cuda.json",
   "detection_signals": [
     "os=linux",
     "cuda=true",

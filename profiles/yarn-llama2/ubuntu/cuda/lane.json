@@ -3,13 +3,13 @@
   "model_slug": "yarn-llama2",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T05:53:11Z",
+  "generated_at": "2026-08-06T08:43:31Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
   },
   "lane_id": "ubuntu/cuda",
-  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "provider_assumption": "data/generated/provider-assumptions/ubuntu-cuda.json",
   "detection_signals": [
     "os=linux",
     "cuda=true",

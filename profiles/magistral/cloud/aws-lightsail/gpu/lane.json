@@ -3,13 +3,13 @@
   "model_slug": "magistral",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T06:40:19Z",
+  "generated_at": "2026-08-06T08:43:29Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis"
   },
   "lane_id": "cloud/aws-lightsail/gpu",
-  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "provider_assumption": "data/generated/provider-assumptions/cloud-aws-lightsail-gpu.json",
   "detection_signals": [
     "provider=aws",
     "lightsail=true",

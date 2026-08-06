@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="windows/cuda"
-EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/windows-cuda.json"
+EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/windows-cuda.json"
 
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
