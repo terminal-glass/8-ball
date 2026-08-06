@@ -3,7 +3,7 @@
   "model_slug": "exaone3.5",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,163 @@
   "applicable": true,
   "system_ram_gb": null,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "exaone3.5:32b",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-instruct-fp16",
+      "ollama_ref": "exaone3.5:32b-instruct-fp16",
+      "min_system_ram_gb": 84.52,
+      "recommended_system_ram_gb": 101.43,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:32b-instruct-q4_K_M",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-instruct-q80",
+      "ollama_ref": "exaone3.5:32b-instruct-q8_0",
+      "min_system_ram_gb": 50.02,
+      "recommended_system_ram_gb": 60.03,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7.8b",
+      "ollama_ref": "exaone3.5:7.8b",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7.8b-instruct-fp16",
+      "ollama_ref": "exaone3.5:7.8b-instruct-fp16",
+      "min_system_ram_gb": 22.37,
+      "recommended_system_ram_gb": 26.84,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7.8b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q4_K_M",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7.8b-instruct-q80",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q8_0",
+      "min_system_ram_gb": 13.51,
+      "recommended_system_ram_gb": 16.21,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2.4b",
+      "ollama_ref": "exaone3.5:2.4b",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2.4b-instruct-fp16",
+      "ollama_ref": "exaone3.5:2.4b-instruct-fp16",
+      "min_system_ram_gb": 8.51,
+      "recommended_system_ram_gb": 10.21,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2.4b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q4_K_M",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2.4b-instruct-q80",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q8_0",
+      "min_system_ram_gb": 5.63,
+      "recommended_system_ram_gb": 6.76,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "exaone3.5:latest",
+      "min_system_ram_gb": 7.24,
+      "recommended_system_ram_gb": 8.69,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -3,7 +3,7 @@
   "model_slug": "nomic-embed-text-v2-moe",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,17 @@
   "applicable": true,
   "system_ram_gb": 8.0,
   "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nomic-embed-text-v2-moe:latest",
+      "min_system_ram_gb": 2.83,
+      "recommended_system_ram_gb": 3.39,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

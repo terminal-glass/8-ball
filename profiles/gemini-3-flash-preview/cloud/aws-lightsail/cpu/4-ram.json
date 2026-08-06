@@ -3,7 +3,7 @@
   "model_slug": "gemini-3-flash-preview",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,19 @@
   "applicable": true,
   "system_ram_gb": 4,
   "usable_model_ram_gb": 2.4,
+  "size_ram_fit": [
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gemini-3-flash-preview:latest",
+      "min_system_ram_gb": null,
+      "recommended_system_ram_gb": null,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: model_ram_requirement",
+      "missing_evidence": [
+        "model_ram_requirement"
+      ]
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

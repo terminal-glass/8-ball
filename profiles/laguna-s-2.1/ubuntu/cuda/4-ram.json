@@ -3,7 +3,7 @@
   "model_slug": "laguna-s-2.1",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -11,5 +11,77 @@
   "applicable": true,
   "system_ram_gb": 24.0,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "f16",
+      "ollama_ref": "laguna-s-2.1:f16",
+      "min_system_ram_gb": 271.97,
+      "recommended_system_ram_gb": 326.37,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 271.97 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "laguna-s-2.1:latest",
+      "min_system_ram_gb": 112.12,
+      "recommended_system_ram_gb": 134.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 112.12 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mlx-bf16",
+      "ollama_ref": "laguna-s-2.1:mlx-bf16",
+      "min_system_ram_gb": 271.97,
+      "recommended_system_ram_gb": 326.37,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 271.97 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mxfp8",
+      "ollama_ref": "laguna-s-2.1:mxfp8",
+      "min_system_ram_gb": 158.12,
+      "recommended_system_ram_gb": 189.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 158.12 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "nvfp4",
+      "ollama_ref": "laguna-s-2.1:nvfp4",
+      "min_system_ram_gb": 78.77,
+      "recommended_system_ram_gb": 94.53,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "laguna-s-2.1:q4_K_M",
+      "min_system_ram_gb": 112.12,
+      "recommended_system_ram_gb": 134.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 112.12 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "laguna-s-2.1:q8_0",
+      "min_system_ram_gb": 148.92,
+      "recommended_system_ram_gb": 178.71,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 148.92 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

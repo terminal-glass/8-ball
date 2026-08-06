@@ -3,7 +3,7 @@
   "model_slug": "north-mini-code-1.0",
   "lane_path": "ubuntu/cpu",
   "provider_assumption_id": "ubuntu-cpu",
-  "generated_at": "2026-08-06T05:53:10Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,77 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "bf16",
+      "ollama_ref": "north-mini-code-1.0:bf16",
+      "min_system_ram_gb": 71.88,
+      "recommended_system_ram_gb": 86.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.88 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "north-mini-code-1.0:latest",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mlx-bf16",
+      "ollama_ref": "north-mini-code-1.0:mlx-bf16",
+      "min_system_ram_gb": 71.88,
+      "recommended_system_ram_gb": 86.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.88 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mlx-mxfp8",
+      "ollama_ref": "north-mini-code-1.0:mlx-mxfp8",
+      "min_system_ram_gb": 37.38,
+      "recommended_system_ram_gb": 44.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.38 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mlx-nvfp4",
+      "ollama_ref": "north-mini-code-1.0:mlx-nvfp4",
+      "min_system_ram_gb": 24.72,
+      "recommended_system_ram_gb": 29.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "north-mini-code-1.0:q4_K_M",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "north-mini-code-1.0:q8_0",
+      "min_system_ram_gb": 38.52,
+      "recommended_system_ram_gb": 46.23,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

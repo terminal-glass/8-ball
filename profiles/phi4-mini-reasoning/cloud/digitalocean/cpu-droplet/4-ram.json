@@ -3,7 +3,7 @@
   "model_slug": "phi4-mini-reasoning",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,67 @@
   "applicable": true,
   "system_ram_gb": null,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "phi4-mini-reasoning:3.8b",
+      "min_system_ram_gb": 6.5,
+      "recommended_system_ram_gb": 7.8,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "3.8b-fp16",
+      "ollama_ref": "phi4-mini-reasoning:3.8b-fp16",
+      "min_system_ram_gb": 11.67,
+      "recommended_system_ram_gb": 14.01,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "3.8b-q4-k-m",
+      "ollama_ref": "phi4-mini-reasoning:3.8b-q4_K_M",
+      "min_system_ram_gb": 6.5,
+      "recommended_system_ram_gb": 7.8,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "3.8b-q80",
+      "ollama_ref": "phi4-mini-reasoning:3.8b-q8_0",
+      "min_system_ram_gb": 8.11,
+      "recommended_system_ram_gb": 9.73,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-mini-reasoning:latest",
+      "min_system_ram_gb": 5.4,
+      "recommended_system_ram_gb": 6.49,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -3,7 +3,7 @@
   "model_slug": "deepseek-v3",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
@@ -11,5 +11,57 @@
   "applicable": true,
   "system_ram_gb": 32.0,
   "usable_model_ram_gb": 19.2,
+  "size_ram_fit": [
+    {
+      "size_slug": "671b",
+      "ollama_ref": "deepseek-v3:671b",
+      "min_system_ram_gb": 659.24,
+      "recommended_system_ram_gb": 791.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 659.24 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-fp16",
+      "ollama_ref": "deepseek-v3:671b-fp16",
+      "min_system_ram_gb": 1689.64,
+      "recommended_system_ram_gb": 2027.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1689.64 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-q4-k-m",
+      "ollama_ref": "deepseek-v3:671b-q4_K_M",
+      "min_system_ram_gb": 659.24,
+      "recommended_system_ram_gb": 791.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 659.24 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-q80",
+      "ollama_ref": "deepseek-v3:671b-q8_0",
+      "min_system_ram_gb": 1014.59,
+      "recommended_system_ram_gb": 1217.5,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1014.59 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-v3:latest",
+      "min_system_ram_gb": 466.32,
+      "recommended_system_ram_gb": 559.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 466.32 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

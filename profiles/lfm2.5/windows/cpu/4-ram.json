@@ -3,7 +3,7 @@
   "model_slug": "lfm2.5",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,57 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "lfm2.5:8b",
+      "min_system_ram_gb": 10.0,
+      "recommended_system_ram_gb": 12.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.0 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-a1b-bf16",
+      "ollama_ref": "lfm2.5:8b-a1b-bf16",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-a1b-q4-k-m",
+      "ollama_ref": "lfm2.5:8b-a1b-q4_K_M",
+      "min_system_ram_gb": 10.0,
+      "recommended_system_ram_gb": 12.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.0 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-a1b-q80",
+      "ollama_ref": "lfm2.5:8b-a1b-q8_0",
+      "min_system_ram_gb": 14.37,
+      "recommended_system_ram_gb": 17.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "lfm2.5:latest",
+      "min_system_ram_gb": 7.7,
+      "recommended_system_ram_gb": 9.25,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

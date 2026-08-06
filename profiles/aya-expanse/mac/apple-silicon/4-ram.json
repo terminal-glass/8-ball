@@ -3,7 +3,7 @@
   "model_slug": "aya-expanse",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,337 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "aya-expanse:32b",
+      "min_system_ram_gb": 33.92,
+      "recommended_system_ram_gb": 40.71,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-fp16",
+      "ollama_ref": "aya-expanse:32b-fp16",
+      "min_system_ram_gb": 85.67,
+      "recommended_system_ram_gb": 102.81,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q2-k",
+      "ollama_ref": "aya-expanse:32b-q2_K",
+      "min_system_ram_gb": 25.87,
+      "recommended_system_ram_gb": 31.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q3-k-l",
+      "ollama_ref": "aya-expanse:32b-q3_K_L",
+      "min_system_ram_gb": 31.62,
+      "recommended_system_ram_gb": 37.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q3-k-m",
+      "ollama_ref": "aya-expanse:32b-q3_K_M",
+      "min_system_ram_gb": 29.32,
+      "recommended_system_ram_gb": 35.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q3-k-s",
+      "ollama_ref": "aya-expanse:32b-q3_K_S",
+      "min_system_ram_gb": 28.17,
+      "recommended_system_ram_gb": 33.81,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.17 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q4-k-m",
+      "ollama_ref": "aya-expanse:32b-q4_K_M",
+      "min_system_ram_gb": 33.92,
+      "recommended_system_ram_gb": 40.71,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q4-k-s",
+      "ollama_ref": "aya-expanse:32b-q4_K_S",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q40",
+      "ollama_ref": "aya-expanse:32b-q4_0",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q41",
+      "ollama_ref": "aya-expanse:32b-q4_1",
+      "min_system_ram_gb": 35.07,
+      "recommended_system_ram_gb": 42.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q5-k-m",
+      "ollama_ref": "aya-expanse:32b-q5_K_M",
+      "min_system_ram_gb": 37.38,
+      "recommended_system_ram_gb": 44.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.38 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q5-k-s",
+      "ollama_ref": "aya-expanse:32b-q5_K_S",
+      "min_system_ram_gb": 36.22,
+      "recommended_system_ram_gb": 43.47,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.22 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q50",
+      "ollama_ref": "aya-expanse:32b-q5_0",
+      "min_system_ram_gb": 36.22,
+      "recommended_system_ram_gb": 43.47,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.22 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q51",
+      "ollama_ref": "aya-expanse:32b-q5_1",
+      "min_system_ram_gb": 38.52,
+      "recommended_system_ram_gb": 46.23,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q6-k",
+      "ollama_ref": "aya-expanse:32b-q6_K",
+      "min_system_ram_gb": 41.97,
+      "recommended_system_ram_gb": 50.37,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q80",
+      "ollama_ref": "aya-expanse:32b-q8_0",
+      "min_system_ram_gb": 50.02,
+      "recommended_system_ram_gb": 60.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "aya-expanse:8b",
+      "min_system_ram_gb": 9.89,
+      "recommended_system_ram_gb": 11.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-fp16",
+      "ollama_ref": "aya-expanse:8b-fp16",
+      "min_system_ram_gb": 22.42,
+      "recommended_system_ram_gb": 26.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q2-k",
+      "ollama_ref": "aya-expanse:8b-q2_K",
+      "min_system_ram_gb": 7.93,
+      "recommended_system_ram_gb": 9.52,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q3-k-l",
+      "ollama_ref": "aya-expanse:8b-q3_K_L",
+      "min_system_ram_gb": 9.2,
+      "recommended_system_ram_gb": 11.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q3-k-m",
+      "ollama_ref": "aya-expanse:8b-q3_K_M",
+      "min_system_ram_gb": 8.85,
+      "recommended_system_ram_gb": 10.63,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q3-k-s",
+      "ollama_ref": "aya-expanse:8b-q3_K_S",
+      "min_system_ram_gb": 8.51,
+      "recommended_system_ram_gb": 10.21,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q4-k-m",
+      "ollama_ref": "aya-expanse:8b-q4_K_M",
+      "min_system_ram_gb": 9.89,
+      "recommended_system_ram_gb": 11.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q4-k-s",
+      "ollama_ref": "aya-expanse:8b-q4_K_S",
+      "min_system_ram_gb": 9.54,
+      "recommended_system_ram_gb": 11.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q40",
+      "ollama_ref": "aya-expanse:8b-q4_0",
+      "min_system_ram_gb": 9.54,
+      "recommended_system_ram_gb": 11.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q41",
+      "ollama_ref": "aya-expanse:8b-q4_1",
+      "min_system_ram_gb": 10.0,
+      "recommended_system_ram_gb": 12.01,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q5-k-m",
+      "ollama_ref": "aya-expanse:8b-q5_K_M",
+      "min_system_ram_gb": 10.7,
+      "recommended_system_ram_gb": 12.83,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q5-k-s",
+      "ollama_ref": "aya-expanse:8b-q5_K_S",
+      "min_system_ram_gb": 10.58,
+      "recommended_system_ram_gb": 12.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q50",
+      "ollama_ref": "aya-expanse:8b-q5_0",
+      "min_system_ram_gb": 10.58,
+      "recommended_system_ram_gb": 12.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q51",
+      "ollama_ref": "aya-expanse:8b-q5_1",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q6-k",
+      "ollama_ref": "aya-expanse:8b-q6_K",
+      "min_system_ram_gb": 11.61,
+      "recommended_system_ram_gb": 13.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q80",
+      "ollama_ref": "aya-expanse:8b-q8_0",
+      "min_system_ram_gb": 13.8,
+      "recommended_system_ram_gb": 16.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "aya-expanse:latest",
+      "min_system_ram_gb": 7.59,
+      "recommended_system_ram_gb": 9.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -3,7 +3,7 @@
   "model_slug": "embeddinggemma",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T06:40:19Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis"
@@ -11,5 +11,57 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "300m",
+      "ollama_ref": "embeddinggemma:300m",
+      "min_system_ram_gb": 2.53,
+      "recommended_system_ram_gb": 3.03,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "300m-bf16",
+      "ollama_ref": "embeddinggemma:300m-bf16",
+      "min_system_ram_gb": 2.53,
+      "recommended_system_ram_gb": 3.03,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "300m-qat-q40",
+      "ollama_ref": "embeddinggemma:300m-qat-q4_0",
+      "min_system_ram_gb": 2.09,
+      "recommended_system_ram_gb": 2.5,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "300m-qat-q80",
+      "ollama_ref": "embeddinggemma:300m-qat-q8_0",
+      "min_system_ram_gb": 2.2,
+      "recommended_system_ram_gb": 2.64,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "embeddinggemma:latest",
+      "min_system_ram_gb": 2.44,
+      "recommended_system_ram_gb": 2.93,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

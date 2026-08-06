@@ -3,7 +3,7 @@
   "model_slug": "nemotron3",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,47 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "33b",
+      "ollama_ref": "nemotron3:33b",
+      "min_system_ram_gb": 43.41,
+      "recommended_system_ram_gb": 52.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.41 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-bf16",
+      "ollama_ref": "nemotron3:33b-bf16",
+      "min_system_ram_gb": 87.11,
+      "recommended_system_ram_gb": 104.53,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.11 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-q4-k-m",
+      "ollama_ref": "nemotron3:33b-q4_K_M",
+      "min_system_ram_gb": 43.41,
+      "recommended_system_ram_gb": 52.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.41 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-q8",
+      "ollama_ref": "nemotron3:33b-q8",
+      "min_system_ram_gb": 52.61,
+      "recommended_system_ram_gb": 63.13,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.61 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

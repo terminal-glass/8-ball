@@ -3,7 +3,7 @@
   "model_slug": "codegemma",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -11,5 +11,857 @@
   "applicable": true,
   "system_ram_gb": 24.0,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "codegemma:7b",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code",
+      "ollama_ref": "codegemma:7b-code",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-fp16",
+      "ollama_ref": "codegemma:7b-code-fp16",
+      "min_system_ram_gb": 23.29,
+      "recommended_system_ram_gb": 27.94,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q2-k",
+      "ollama_ref": "codegemma:7b-code-q2_K",
+      "min_system_ram_gb": 7.76,
+      "recommended_system_ram_gb": 9.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q3-k-l",
+      "ollama_ref": "codegemma:7b-code-q3_K_L",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q3-k-m",
+      "ollama_ref": "codegemma:7b-code-q3_K_M",
+      "min_system_ram_gb": 8.8,
+      "recommended_system_ram_gb": 10.56,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q3-k-s",
+      "ollama_ref": "codegemma:7b-code-q3_K_S",
+      "min_system_ram_gb": 8.34,
+      "recommended_system_ram_gb": 10.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q4-k-m",
+      "ollama_ref": "codegemma:7b-code-q4_K_M",
+      "min_system_ram_gb": 9.83,
+      "recommended_system_ram_gb": 11.8,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q4-k-s",
+      "ollama_ref": "codegemma:7b-code-q4_K_S",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q40",
+      "ollama_ref": "codegemma:7b-code-q4_0",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q41",
+      "ollama_ref": "codegemma:7b-code-q4_1",
+      "min_system_ram_gb": 10.06,
+      "recommended_system_ram_gb": 12.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q5-k-m",
+      "ollama_ref": "codegemma:7b-code-q5_K_M",
+      "min_system_ram_gb": 10.75,
+      "recommended_system_ram_gb": 12.9,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q5-k-s",
+      "ollama_ref": "codegemma:7b-code-q5_K_S",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q50",
+      "ollama_ref": "codegemma:7b-code-q5_0",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q51",
+      "ollama_ref": "codegemma:7b-code-q5_1",
+      "min_system_ram_gb": 11.21,
+      "recommended_system_ram_gb": 13.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q6-k",
+      "ollama_ref": "codegemma:7b-code-q6_K",
+      "min_system_ram_gb": 11.79,
+      "recommended_system_ram_gb": 14.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-code-q80",
+      "ollama_ref": "codegemma:7b-code-q8_0",
+      "min_system_ram_gb": 14.2,
+      "recommended_system_ram_gb": 17.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct",
+      "ollama_ref": "codegemma:7b-instruct",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-fp16",
+      "ollama_ref": "codegemma:7b-instruct-fp16",
+      "min_system_ram_gb": 23.29,
+      "recommended_system_ram_gb": 27.94,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q2-k",
+      "ollama_ref": "codegemma:7b-instruct-q2_K",
+      "min_system_ram_gb": 7.76,
+      "recommended_system_ram_gb": 9.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q3-k-l",
+      "ollama_ref": "codegemma:7b-instruct-q3_K_L",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q3-k-m",
+      "ollama_ref": "codegemma:7b-instruct-q3_K_M",
+      "min_system_ram_gb": 8.8,
+      "recommended_system_ram_gb": 10.56,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q3-k-s",
+      "ollama_ref": "codegemma:7b-instruct-q3_K_S",
+      "min_system_ram_gb": 8.34,
+      "recommended_system_ram_gb": 10.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q4-k-m",
+      "ollama_ref": "codegemma:7b-instruct-q4_K_M",
+      "min_system_ram_gb": 9.83,
+      "recommended_system_ram_gb": 11.8,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q4-k-s",
+      "ollama_ref": "codegemma:7b-instruct-q4_K_S",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q40",
+      "ollama_ref": "codegemma:7b-instruct-q4_0",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q41",
+      "ollama_ref": "codegemma:7b-instruct-q4_1",
+      "min_system_ram_gb": 10.06,
+      "recommended_system_ram_gb": 12.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q5-k-m",
+      "ollama_ref": "codegemma:7b-instruct-q5_K_M",
+      "min_system_ram_gb": 10.75,
+      "recommended_system_ram_gb": 12.9,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q5-k-s",
+      "ollama_ref": "codegemma:7b-instruct-q5_K_S",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q50",
+      "ollama_ref": "codegemma:7b-instruct-q5_0",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q51",
+      "ollama_ref": "codegemma:7b-instruct-q5_1",
+      "min_system_ram_gb": 11.21,
+      "recommended_system_ram_gb": 13.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q6-k",
+      "ollama_ref": "codegemma:7b-instruct-q6_K",
+      "min_system_ram_gb": 11.79,
+      "recommended_system_ram_gb": 14.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q80",
+      "ollama_ref": "codegemma:7b-instruct-q8_0",
+      "min_system_ram_gb": 14.2,
+      "recommended_system_ram_gb": 17.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-fp16",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-fp16",
+      "min_system_ram_gb": 23.29,
+      "recommended_system_ram_gb": 27.94,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q2-k",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q2_K",
+      "min_system_ram_gb": 7.76,
+      "recommended_system_ram_gb": 9.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q3-k-l",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q3_K_L",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q3-k-m",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q3_K_M",
+      "min_system_ram_gb": 8.8,
+      "recommended_system_ram_gb": 10.56,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q3-k-s",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q3_K_S",
+      "min_system_ram_gb": 8.34,
+      "recommended_system_ram_gb": 10.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q4-k-m",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q4_K_M",
+      "min_system_ram_gb": 9.83,
+      "recommended_system_ram_gb": 11.8,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q4-k-s",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q4_K_S",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q40",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q4_0",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q41",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q4_1",
+      "min_system_ram_gb": 10.06,
+      "recommended_system_ram_gb": 12.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q5-k-m",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q5_K_M",
+      "min_system_ram_gb": 10.75,
+      "recommended_system_ram_gb": 12.9,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q5-k-s",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q5_K_S",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q50",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q5_0",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q51",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q5_1",
+      "min_system_ram_gb": 11.21,
+      "recommended_system_ram_gb": 13.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q6-k",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q6_K",
+      "min_system_ram_gb": 11.79,
+      "recommended_system_ram_gb": 14.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-v1.1-q80",
+      "ollama_ref": "codegemma:7b-instruct-v1.1-q8_0",
+      "min_system_ram_gb": 14.2,
+      "recommended_system_ram_gb": 17.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-v1.1",
+      "ollama_ref": "codegemma:7b-v1.1",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "codegemma:2b",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code",
+      "ollama_ref": "codegemma:2b-code",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-fp16",
+      "ollama_ref": "codegemma:2b-code-fp16",
+      "min_system_ram_gb": 8.05,
+      "recommended_system_ram_gb": 9.66,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q2-k",
+      "ollama_ref": "codegemma:2b-code-q2_K",
+      "min_system_ram_gb": 3.68,
+      "recommended_system_ram_gb": 4.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q3-k-l",
+      "ollama_ref": "codegemma:2b-code-q3_K_L",
+      "min_system_ram_gb": 4.02,
+      "recommended_system_ram_gb": 4.83,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q3-k-m",
+      "ollama_ref": "codegemma:2b-code-q3_K_M",
+      "min_system_ram_gb": 3.91,
+      "recommended_system_ram_gb": 4.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q3-k-s",
+      "ollama_ref": "codegemma:2b-code-q3_K_S",
+      "min_system_ram_gb": 3.79,
+      "recommended_system_ram_gb": 4.55,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q4-k-m",
+      "ollama_ref": "codegemma:2b-code-q4_K_M",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q4-k-s",
+      "ollama_ref": "codegemma:2b-code-q4_K_S",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q40",
+      "ollama_ref": "codegemma:2b-code-q4_0",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q41",
+      "ollama_ref": "codegemma:2b-code-q4_1",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q5-k-m",
+      "ollama_ref": "codegemma:2b-code-q5_K_M",
+      "min_system_ram_gb": 4.37,
+      "recommended_system_ram_gb": 5.24,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q5-k-s",
+      "ollama_ref": "codegemma:2b-code-q5_K_S",
+      "min_system_ram_gb": 4.37,
+      "recommended_system_ram_gb": 5.24,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q50",
+      "ollama_ref": "codegemma:2b-code-q5_0",
+      "min_system_ram_gb": 4.37,
+      "recommended_system_ram_gb": 5.24,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q51",
+      "ollama_ref": "codegemma:2b-code-q5_1",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q6-k",
+      "ollama_ref": "codegemma:2b-code-q6_K",
+      "min_system_ram_gb": 4.71,
+      "recommended_system_ram_gb": 5.66,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-q80",
+      "ollama_ref": "codegemma:2b-code-q8_0",
+      "min_system_ram_gb": 5.4,
+      "recommended_system_ram_gb": 6.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-fp16",
+      "ollama_ref": "codegemma:2b-code-v1.1-fp16",
+      "min_system_ram_gb": 8.05,
+      "recommended_system_ram_gb": 9.66,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q2-k",
+      "ollama_ref": "codegemma:2b-code-v1.1-q2_K",
+      "min_system_ram_gb": 3.68,
+      "recommended_system_ram_gb": 4.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q3-k-l",
+      "ollama_ref": "codegemma:2b-code-v1.1-q3_K_L",
+      "min_system_ram_gb": 4.02,
+      "recommended_system_ram_gb": 4.83,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q3-k-m",
+      "ollama_ref": "codegemma:2b-code-v1.1-q3_K_M",
+      "min_system_ram_gb": 3.91,
+      "recommended_system_ram_gb": 4.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q3-k-s",
+      "ollama_ref": "codegemma:2b-code-v1.1-q3_K_S",
+      "min_system_ram_gb": 3.79,
+      "recommended_system_ram_gb": 4.55,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q4-k-m",
+      "ollama_ref": "codegemma:2b-code-v1.1-q4_K_M",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q4-k-s",
+      "ollama_ref": "codegemma:2b-code-v1.1-q4_K_S",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q40",
+      "ollama_ref": "codegemma:2b-code-v1.1-q4_0",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q41",
+      "ollama_ref": "codegemma:2b-code-v1.1-q4_1",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q5-k-m",
+      "ollama_ref": "codegemma:2b-code-v1.1-q5_K_M",
+      "min_system_ram_gb": 4.37,
+      "recommended_system_ram_gb": 5.24,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q5-k-s",
+      "ollama_ref": "codegemma:2b-code-v1.1-q5_K_S",
+      "min_system_ram_gb": 4.37,
+      "recommended_system_ram_gb": 5.24,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q50",
+      "ollama_ref": "codegemma:2b-code-v1.1-q5_0",
+      "min_system_ram_gb": 4.37,
+      "recommended_system_ram_gb": 5.24,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q51",
+      "ollama_ref": "codegemma:2b-code-v1.1-q5_1",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q6-k",
+      "ollama_ref": "codegemma:2b-code-v1.1-q6_K",
+      "min_system_ram_gb": 4.71,
+      "recommended_system_ram_gb": 5.66,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-code-v1.1-q80",
+      "ollama_ref": "codegemma:2b-code-v1.1-q8_0",
+      "min_system_ram_gb": 5.4,
+      "recommended_system_ram_gb": 6.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-v1.1",
+      "ollama_ref": "codegemma:2b-v1.1",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "code",
+      "ollama_ref": "codegemma:code",
+      "min_system_ram_gb": 3.56,
+      "recommended_system_ram_gb": 4.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "codegemma:instruct",
+      "min_system_ram_gb": 7.47,
+      "recommended_system_ram_gb": 8.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "codegemma:latest",
+      "min_system_ram_gb": 7.47,
+      "recommended_system_ram_gb": 8.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

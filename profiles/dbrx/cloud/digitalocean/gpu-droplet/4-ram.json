@@ -3,7 +3,7 @@
   "model_slug": "dbrx",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
@@ -11,5 +11,77 @@
   "applicable": true,
   "system_ram_gb": 32.0,
   "usable_model_ram_gb": 19.2,
+  "size_ram_fit": [
+    {
+      "size_slug": "132b",
+      "ollama_ref": "dbrx:132b",
+      "min_system_ram_gb": 124.77,
+      "recommended_system_ram_gb": 149.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 124.77 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "132b-instruct-fp16",
+      "ollama_ref": "dbrx:132b-instruct-fp16",
+      "min_system_ram_gb": 342.12,
+      "recommended_system_ram_gb": 410.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 342.12 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "132b-instruct-q2-k",
+      "ollama_ref": "dbrx:132b-instruct-q2_K",
+      "min_system_ram_gb": 94.87,
+      "recommended_system_ram_gb": 113.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "132b-instruct-q40",
+      "ollama_ref": "dbrx:132b-instruct-q4_0",
+      "min_system_ram_gb": 124.77,
+      "recommended_system_ram_gb": 149.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 124.77 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "132b-instruct-q80",
+      "ollama_ref": "dbrx:132b-instruct-q8_0",
+      "min_system_ram_gb": 200.67,
+      "recommended_system_ram_gb": 240.81,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 200.67 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "dbrx:instruct",
+      "min_system_ram_gb": 86.82,
+      "recommended_system_ram_gb": 104.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "dbrx:latest",
+      "min_system_ram_gb": 86.82,
+      "recommended_system_ram_gb": 104.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 86.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

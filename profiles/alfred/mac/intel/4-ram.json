@@ -3,7 +3,7 @@
   "model_slug": "alfred",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,77 @@
   "applicable": true,
   "system_ram_gb": 8.0,
   "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "40b",
+      "ollama_ref": "alfred:40b",
+      "min_system_ram_gb": 40.82,
+      "recommended_system_ram_gb": 48.99,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b1023-q40",
+      "ollama_ref": "alfred:40b-1023-q4_0",
+      "min_system_ram_gb": 40.82,
+      "recommended_system_ram_gb": 48.99,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b1023-q41",
+      "ollama_ref": "alfred:40b-1023-q4_1",
+      "min_system_ram_gb": 43.12,
+      "recommended_system_ram_gb": 51.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b1023-q50",
+      "ollama_ref": "alfred:40b-1023-q5_0",
+      "min_system_ram_gb": 46.57,
+      "recommended_system_ram_gb": 55.89,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 46.57 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b1023-q51",
+      "ollama_ref": "alfred:40b-1023-q5_1",
+      "min_system_ram_gb": 50.02,
+      "recommended_system_ram_gb": 60.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b1023-q80",
+      "ollama_ref": "alfred:40b-1023-q8_0",
+      "min_system_ram_gb": 63.82,
+      "recommended_system_ram_gb": 76.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "alfred:latest",
+      "min_system_ram_gb": 29.32,
+      "recommended_system_ram_gb": 35.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

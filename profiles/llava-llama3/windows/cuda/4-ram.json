@@ -3,7 +3,7 @@
   "model_slug": "llava-llama3",
   "lane_path": "windows/cuda",
   "provider_assumption_id": "windows-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,47 @@
   "applicable": true,
   "system_ram_gb": 32.0,
   "usable_model_ram_gb": 20.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "llava-llama3:8b",
+      "min_system_ram_gb": 10.35,
+      "recommended_system_ram_gb": 12.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v1.1-fp16",
+      "ollama_ref": "llava-llama3:8b-v1.1-fp16",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v1.1-q40",
+      "ollama_ref": "llava-llama3:8b-v1.1-q4_0",
+      "min_system_ram_gb": 10.35,
+      "recommended_system_ram_gb": 12.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llava-llama3:latest",
+      "min_system_ram_gb": 8.05,
+      "recommended_system_ram_gb": 9.66,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

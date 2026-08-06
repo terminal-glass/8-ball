@@ -3,7 +3,7 @@
   "model_slug": "snowflake-arctic-embed2",
   "lane_path": "ubuntu/cpu",
   "provider_assumption_id": "ubuntu-cpu",
-  "generated_at": "2026-08-06T05:53:10Z",
+  "generated_at": "2026-08-06T07:44:42Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,37 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "568m",
+      "ollama_ref": "snowflake-arctic-embed2:568m",
+      "min_system_ram_gb": 3.27,
+      "recommended_system_ram_gb": 3.92,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "568m-l-fp16",
+      "ollama_ref": "snowflake-arctic-embed2:568m-l-fp16",
+      "min_system_ram_gb": 3.27,
+      "recommended_system_ram_gb": 3.92,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "snowflake-arctic-embed2:latest",
+      "min_system_ram_gb": 3.1,
+      "recommended_system_ram_gb": 3.73,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

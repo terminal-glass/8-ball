@@ -3,7 +3,7 @@
   "model_slug": "nemotron-mini",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,211 @@
   "applicable": true,
   "system_ram_gb": null,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "4b",
+      "ollama_ref": "nemotron-mini:4b",
+      "min_system_ram_gb": 5.98,
+      "recommended_system_ram_gb": 7.18,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-fp16",
+      "ollama_ref": "nemotron-mini:4b-instruct-fp16",
+      "min_system_ram_gb": 12.54,
+      "recommended_system_ram_gb": 15.04,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q2-k",
+      "ollama_ref": "nemotron-mini:4b-instruct-q2_K",
+      "min_system_ram_gb": 5.06,
+      "recommended_system_ram_gb": 6.07,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q3-k-l",
+      "ollama_ref": "nemotron-mini:4b-instruct-q3_K_L",
+      "min_system_ram_gb": 5.75,
+      "recommended_system_ram_gb": 6.9,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q3-k-m",
+      "ollama_ref": "nemotron-mini:4b-instruct-q3_K_M",
+      "min_system_ram_gb": 5.52,
+      "recommended_system_ram_gb": 6.62,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q3-k-s",
+      "ollama_ref": "nemotron-mini:4b-instruct-q3_K_S",
+      "min_system_ram_gb": 5.29,
+      "recommended_system_ram_gb": 6.35,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q4-k-m",
+      "ollama_ref": "nemotron-mini:4b-instruct-q4_K_M",
+      "min_system_ram_gb": 5.98,
+      "recommended_system_ram_gb": 7.18,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q4-k-s",
+      "ollama_ref": "nemotron-mini:4b-instruct-q4_K_S",
+      "min_system_ram_gb": 5.86,
+      "recommended_system_ram_gb": 7.04,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q40",
+      "ollama_ref": "nemotron-mini:4b-instruct-q4_0",
+      "min_system_ram_gb": 5.86,
+      "recommended_system_ram_gb": 7.04,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q41",
+      "ollama_ref": "nemotron-mini:4b-instruct-q4_1",
+      "min_system_ram_gb": 6.09,
+      "recommended_system_ram_gb": 7.31,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q5-k-m",
+      "ollama_ref": "nemotron-mini:4b-instruct-q5_K_M",
+      "min_system_ram_gb": 6.44,
+      "recommended_system_ram_gb": 7.73,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q5-k-s",
+      "ollama_ref": "nemotron-mini:4b-instruct-q5_K_S",
+      "min_system_ram_gb": 6.32,
+      "recommended_system_ram_gb": 7.59,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q50",
+      "ollama_ref": "nemotron-mini:4b-instruct-q5_0",
+      "min_system_ram_gb": 6.32,
+      "recommended_system_ram_gb": 7.59,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q51",
+      "ollama_ref": "nemotron-mini:4b-instruct-q5_1",
+      "min_system_ram_gb": 6.55,
+      "recommended_system_ram_gb": 7.87,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q6-k",
+      "ollama_ref": "nemotron-mini:4b-instruct-q6_K",
+      "min_system_ram_gb": 6.79,
+      "recommended_system_ram_gb": 8.14,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-instruct-q80",
+      "ollama_ref": "nemotron-mini:4b-instruct-q8_0",
+      "min_system_ram_gb": 8.05,
+      "recommended_system_ram_gb": 9.66,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nemotron-mini:latest",
+      "min_system_ram_gb": 4.83,
+      "recommended_system_ram_gb": 5.8,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

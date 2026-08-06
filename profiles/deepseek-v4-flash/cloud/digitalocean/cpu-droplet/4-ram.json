@@ -3,7 +3,7 @@
   "model_slug": "deepseek-v4-flash",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,33 @@
   "applicable": true,
   "system_ram_gb": null,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "0731-cloud",
+      "ollama_ref": "deepseek-v4-flash:0731-cloud",
+      "min_system_ram_gb": null,
+      "recommended_system_ram_gb": null,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity, model_ram_requirement",
+      "missing_evidence": [
+        "lane_ram_capacity",
+        "model_ram_requirement"
+      ]
+    },
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "deepseek-v4-flash:cloud",
+      "min_system_ram_gb": null,
+      "recommended_system_ram_gb": null,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity, model_ram_requirement",
+      "missing_evidence": [
+        "lane_ram_capacity",
+        "model_ram_requirement"
+      ]
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

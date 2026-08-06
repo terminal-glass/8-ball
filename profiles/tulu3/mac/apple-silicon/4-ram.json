@@ -3,7 +3,7 @@
   "model_slug": "tulu3",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:56Z",
+  "generated_at": "2026-08-06T07:44:42Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,97 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "70b",
+      "ollama_ref": "tulu3:70b",
+      "min_system_ram_gb": 71.3,
+      "recommended_system_ram_gb": 85.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-fp16",
+      "ollama_ref": "tulu3:70b-fp16",
+      "min_system_ram_gb": 184.0,
+      "recommended_system_ram_gb": 220.8,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 184.0 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-q4-k-m",
+      "ollama_ref": "tulu3:70b-q4_K_M",
+      "min_system_ram_gb": 71.3,
+      "recommended_system_ram_gb": 85.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-q80",
+      "ollama_ref": "tulu3:70b-q8_0",
+      "min_system_ram_gb": 108.1,
+      "recommended_system_ram_gb": 129.72,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.1 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "tulu3:8b",
+      "min_system_ram_gb": 9.66,
+      "recommended_system_ram_gb": 11.59,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-fp16",
+      "ollama_ref": "tulu3:8b-fp16",
+      "min_system_ram_gb": 22.42,
+      "recommended_system_ram_gb": 26.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q4-k-m",
+      "ollama_ref": "tulu3:8b-q4_K_M",
+      "min_system_ram_gb": 9.66,
+      "recommended_system_ram_gb": 11.59,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q80",
+      "ollama_ref": "tulu3:8b-q8_0",
+      "min_system_ram_gb": 13.8,
+      "recommended_system_ram_gb": 16.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "tulu3:latest",
+      "min_system_ram_gb": 7.36,
+      "recommended_system_ram_gb": 8.83,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -3,7 +3,7 @@
   "model_slug": "phi4-mini",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,57 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "phi4-mini:3.8b",
+      "min_system_ram_gb": 5.69,
+      "recommended_system_ram_gb": 6.83,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-fp16",
+      "ollama_ref": "phi4-mini:3.8b-fp16",
+      "min_system_ram_gb": 11.67,
+      "recommended_system_ram_gb": 14.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q4-k-m",
+      "ollama_ref": "phi4-mini:3.8b-q4_K_M",
+      "min_system_ram_gb": 5.69,
+      "recommended_system_ram_gb": 6.83,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q80",
+      "ollama_ref": "phi4-mini:3.8b-q8_0",
+      "min_system_ram_gb": 7.53,
+      "recommended_system_ram_gb": 9.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-mini:latest",
+      "min_system_ram_gb": 4.6,
+      "recommended_system_ram_gb": 5.52,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

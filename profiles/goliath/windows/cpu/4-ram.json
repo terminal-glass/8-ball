@@ -3,7 +3,7 @@
   "model_slug": "goliath",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,167 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "120b-fp16",
+      "ollama_ref": "goliath:120b-fp16",
+      "min_system_ram_gb": 307.62,
+      "recommended_system_ram_gb": 369.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 307.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q2-k",
+      "ollama_ref": "goliath:120b-q2_K",
+      "min_system_ram_gb": 93.72,
+      "recommended_system_ram_gb": 112.47,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 93.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q3-k-l",
+      "ollama_ref": "goliath:120b-q3_K_L",
+      "min_system_ram_gb": 107.52,
+      "recommended_system_ram_gb": 129.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 107.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q3-k-m",
+      "ollama_ref": "goliath:120b-q3_K_M",
+      "min_system_ram_gb": 100.62,
+      "recommended_system_ram_gb": 120.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 100.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q3-k-s",
+      "ollama_ref": "goliath:120b-q3_K_S",
+      "min_system_ram_gb": 94.87,
+      "recommended_system_ram_gb": 113.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q4-k-m",
+      "ollama_ref": "goliath:120b-q4_K_M",
+      "min_system_ram_gb": 117.87,
+      "recommended_system_ram_gb": 141.45,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 117.87 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q4-k-s",
+      "ollama_ref": "goliath:120b-q4_K_S",
+      "min_system_ram_gb": 112.12,
+      "recommended_system_ram_gb": 134.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 112.12 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q40",
+      "ollama_ref": "goliath:120b-q4_0",
+      "min_system_ram_gb": 112.12,
+      "recommended_system_ram_gb": 134.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 112.12 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q41",
+      "ollama_ref": "goliath:120b-q4_1",
+      "min_system_ram_gb": 121.32,
+      "recommended_system_ram_gb": 145.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 121.32 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q5-k-m",
+      "ollama_ref": "goliath:120b-q5_K_M",
+      "min_system_ram_gb": 131.67,
+      "recommended_system_ram_gb": 158.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 131.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q5-k-s",
+      "ollama_ref": "goliath:120b-q5_K_S",
+      "min_system_ram_gb": 129.38,
+      "recommended_system_ram_gb": 155.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 129.38 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q50",
+      "ollama_ref": "goliath:120b-q5_0",
+      "min_system_ram_gb": 129.38,
+      "recommended_system_ram_gb": 155.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 129.38 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q51",
+      "ollama_ref": "goliath:120b-q5_1",
+      "min_system_ram_gb": 137.42,
+      "recommended_system_ram_gb": 164.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 137.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q6-k",
+      "ollama_ref": "goliath:120b-q6_K",
+      "min_system_ram_gb": 147.77,
+      "recommended_system_ram_gb": 177.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 147.77 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-q80",
+      "ollama_ref": "goliath:120b-q8_0",
+      "min_system_ram_gb": 179.97,
+      "recommended_system_ram_gb": 215.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 179.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "goliath:latest",
+      "min_system_ram_gb": 77.62,
+      "recommended_system_ram_gb": 93.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 77.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }
