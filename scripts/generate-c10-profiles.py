@@ -494,11 +494,28 @@ def build_stage_file(stage: str, lane: dict[str, Any], hardware: dict[str, Any],
             "reason": "CPU stage applies to all lanes.",
         }
     if stage == "4-ram":
+        size_ram_fit = []
+        for size in sizes:
+            fit = c10_common.evaluate_ram_fit(size, hardware)
+            est = size.get("estimated") or {}
+            size_ram_fit.append(
+                {
+                    "size_slug": size["size_slug"],
+                    "ollama_ref": size["ollama_ref"],
+                    "min_system_ram_gb": est.get("min_system_ram_gb"),
+                    "recommended_system_ram_gb": est.get("recommended_system_ram_gb"),
+                    "ram_fit_status": fit.fit_status,
+                    "fits": fit.fits,
+                    "reason": fit.reason,
+                    "missing_evidence": list(fit.missing_evidence),
+                }
+            )
         return {
             **base,
             "applicable": True,
             "system_ram_gb": hardware.get("system_ram_gb"),
             "usable_model_ram_gb": hardware.get("usable_model_ram_gb"),
+            "size_ram_fit": size_ram_fit,
             "reason": "RAM limits sourced from provider or client hardware assumptions.",
         }
     if stage == "5-hard_disk":

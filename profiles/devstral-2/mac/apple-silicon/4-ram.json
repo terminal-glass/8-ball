@@ -3,7 +3,7 @@
   "model_slug": "devstral-2",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,57 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "123b",
+      "ollama_ref": "devstral-2:123b",
+      "min_system_ram_gb": 123.34,
+      "recommended_system_ram_gb": 148.0,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 123.34 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "123b-instruct2512-fp16",
+      "ollama_ref": "devstral-2:123b-instruct-2512-fp16",
+      "min_system_ram_gb": 324.59,
+      "recommended_system_ram_gb": 389.5,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 324.59 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "123b-instruct2512-q4-k-m",
+      "ollama_ref": "devstral-2:123b-instruct-2512-q4_K_M",
+      "min_system_ram_gb": 123.34,
+      "recommended_system_ram_gb": 148.0,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 123.34 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "123b-instruct2512-q80",
+      "ollama_ref": "devstral-2:123b-instruct-2512-q8_0",
+      "min_system_ram_gb": 190.04,
+      "recommended_system_ram_gb": 228.04,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 190.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "devstral-2:latest",
+      "min_system_ram_gb": 87.97,
+      "recommended_system_ram_gb": 105.57,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

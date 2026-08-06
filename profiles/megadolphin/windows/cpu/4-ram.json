@@ -3,7 +3,7 @@
   "model_slug": "megadolphin",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,197 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "megadolphin:120b",
+      "min_system_ram_gb": 114.42,
+      "recommended_system_ram_gb": 137.31,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2",
+      "ollama_ref": "megadolphin:120b-v2.2",
+      "min_system_ram_gb": 114.42,
+      "recommended_system_ram_gb": 137.31,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-fp16",
+      "ollama_ref": "megadolphin:120b-v2.2-fp16",
+      "min_system_ram_gb": 313.38,
+      "recommended_system_ram_gb": 376.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 313.38 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q2-k",
+      "ollama_ref": "megadolphin:120b-v2.2-q2_K",
+      "min_system_ram_gb": 94.87,
+      "recommended_system_ram_gb": 113.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-l",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_L",
+      "min_system_ram_gb": 108.67,
+      "recommended_system_ram_gb": 130.41,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_M",
+      "min_system_ram_gb": 102.92,
+      "recommended_system_ram_gb": 123.51,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 102.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_S",
+      "min_system_ram_gb": 96.02,
+      "recommended_system_ram_gb": 115.23,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 96.02 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q4-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_K_M",
+      "min_system_ram_gb": 119.02,
+      "recommended_system_ram_gb": 142.83,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 119.02 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q4-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_K_S",
+      "min_system_ram_gb": 114.42,
+      "recommended_system_ram_gb": 137.31,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q40",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_0",
+      "min_system_ram_gb": 114.42,
+      "recommended_system_ram_gb": 137.31,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q41",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_1",
+      "min_system_ram_gb": 122.47,
+      "recommended_system_ram_gb": 146.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 122.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q5-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_K_M",
+      "min_system_ram_gb": 133.97,
+      "recommended_system_ram_gb": 160.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 133.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q5-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_K_S",
+      "min_system_ram_gb": 131.67,
+      "recommended_system_ram_gb": 158.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 131.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q50",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_0",
+      "min_system_ram_gb": 131.67,
+      "recommended_system_ram_gb": 158.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 131.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q51",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_1",
+      "min_system_ram_gb": 139.72,
+      "recommended_system_ram_gb": 167.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 139.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q6-k",
+      "ollama_ref": "megadolphin:120b-v2.2-q6_K",
+      "min_system_ram_gb": 150.07,
+      "recommended_system_ram_gb": 180.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 150.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-v2.2-q80",
+      "ollama_ref": "megadolphin:120b-v2.2-q8_0",
+      "min_system_ram_gb": 183.42,
+      "recommended_system_ram_gb": 220.11,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 183.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "megadolphin:latest",
+      "min_system_ram_gb": 79.92,
+      "recommended_system_ram_gb": 95.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v2.2",
+      "ollama_ref": "megadolphin:v2.2",
+      "min_system_ram_gb": 79.92,
+      "recommended_system_ram_gb": 95.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

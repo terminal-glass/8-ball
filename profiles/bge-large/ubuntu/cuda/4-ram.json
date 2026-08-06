@@ -3,7 +3,7 @@
   "model_slug": "bge-large",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -11,5 +11,37 @@
   "applicable": true,
   "system_ram_gb": 24.0,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "335m",
+      "ollama_ref": "bge-large:335m",
+      "min_system_ram_gb": 2.59,
+      "recommended_system_ram_gb": 3.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "335m-en-v1.5-fp16",
+      "ollama_ref": "bge-large:335m-en-v1.5-fp16",
+      "min_system_ram_gb": 2.59,
+      "recommended_system_ram_gb": 3.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "bge-large:latest",
+      "min_system_ram_gb": 2.5,
+      "recommended_system_ram_gb": 3.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

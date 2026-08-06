@@ -3,7 +3,7 @@
   "model_slug": "granite3.2-vision",
   "lane_path": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T05:53:09Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
@@ -11,5 +11,57 @@
   "applicable": true,
   "system_ram_gb": 32.0,
   "usable_model_ram_gb": 19.2,
+  "size_ram_fit": [
+    {
+      "size_slug": "2b",
+      "ollama_ref": "granite3.2-vision:2b",
+      "min_system_ram_gb": 5.06,
+      "recommended_system_ram_gb": 6.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-fp16",
+      "ollama_ref": "granite3.2-vision:2b-fp16",
+      "min_system_ram_gb": 9.2,
+      "recommended_system_ram_gb": 11.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-q4-k-m",
+      "ollama_ref": "granite3.2-vision:2b-q4_K_M",
+      "min_system_ram_gb": 5.06,
+      "recommended_system_ram_gb": 6.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-q80",
+      "ollama_ref": "granite3.2-vision:2b-q8_0",
+      "min_system_ram_gb": 6.44,
+      "recommended_system_ram_gb": 7.73,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite3.2-vision:latest",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

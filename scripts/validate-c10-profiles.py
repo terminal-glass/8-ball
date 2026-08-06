@@ -101,6 +101,27 @@ def validate_lane_fit_semantics(lane_payload: dict, path: Path, errors: list[str
             fail(errors, f"fits=true without fit_status=fit in {path} for {row.get('ollama_ref')}")
 
 
+def validate_ram_fit_semantics(ram_payload: dict, path: Path, errors: list[str]) -> None:
+    size_ram_fit = ram_payload.get("size_ram_fit")
+    if not isinstance(size_ram_fit, list) or not size_ram_fit:
+        fail(errors, f"Missing size_ram_fit in {path}")
+        return
+    for row in size_ram_fit:
+        fit_status = row.get("ram_fit_status")
+        fits = row.get("fits")
+        if fit_status is None:
+            fail(errors, f"Missing ram_fit_status in {path} for {row.get('ollama_ref')}")
+            continue
+        if fit_status == "fit" and not fits:
+            fail(errors, f"ram_fit_status=fit but fits=false in {path} for {row.get('ollama_ref')}")
+        if fit_status in {"unknown", "no_fit"} and fits:
+            fail(errors, f"fits=true with ram_fit_status={fit_status} in {path} for {row.get('ollama_ref')}")
+        if fits and fit_status != "fit":
+            fail(errors, f"fits=true without ram_fit_status=fit in {path} for {row.get('ollama_ref')}")
+        if row.get("min_system_ram_gb") is None and fit_status == "fit":
+            fail(errors, f"ram_fit_status=fit with null min_system_ram_gb in {path} for {row.get('ollama_ref')}")
+
+
 def validate_provider_assumption(payload: dict, path: Path, errors: list[str]) -> None:
     if not payload.get("detection_signals"):
         fail(errors, f"Provider assumption missing detection_signals: {path}")
@@ -191,6 +212,8 @@ def validate(errors: list[str]) -> dict:
                 payload = load_json(path)
                 if stage_file == "lane.json":
                     validate_lane_fit_semantics(payload, path, errors)
+                if stage_file == "4-ram.json":
+                    validate_ram_fit_semantics(payload, path, errors)
                 if "applicable" in payload and payload["applicable"] is False and not payload.get("reason"):
                     fail(errors, f"Non-applicable stage missing reason: {path}")
 

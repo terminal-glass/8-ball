@@ -110,6 +110,52 @@ def test_aws_lightsail_gpu_unknown_vram_is_not_confirmed_fit() -> None:
     assert fit.fits is False
 
 
+def test_ram_fit_uses_provider_published_system_ram_only() -> None:
+    plans = c10_common.load_aws_lightsail_gpu_plans(REPO_ROOT)
+    baseline = c10_common.smallest_aws_lightsail_gpu_plan(plans)
+    assert baseline is not None
+    assert baseline["ram_gb"] == 16.0
+    hardware = {
+        "system_ram_gb": baseline["ram_gb"],
+        "usable_model_ram_gb": round((baseline["ram_gb"] or 0) * 0.6, 2),
+    }
+    page = json.loads((REPO_ROOT / "profiles/qwen3.json").read_text(encoding="utf-8"))
+    target = next(size for size in page["sizes"] if size["ollama_ref"] == "qwen3:0.6b")
+    ram_fit = c10_common.evaluate_ram_fit(target, hardware)
+    assert ram_fit.fit_status == "fit"
+    assert ram_fit.fits is True
+
+
+def test_unknown_ram_requirement_never_fits() -> None:
+    hardware = {"system_ram_gb": 64.0, "usable_model_ram_gb": 38.4}
+    size = {
+        "size_slug": "unknown-size",
+        "ollama_ref": "example:unknown",
+        "estimated": {
+            "min_system_ram_gb": None,
+            "recommended_system_ram_gb": None,
+        },
+    }
+    fit = c10_common.evaluate_ram_fit(size, hardware)
+    assert fit.fit_status == "unknown"
+    assert fit.fits is False
+    assert "model_ram_requirement" in fit.missing_evidence
+
+
+def test_4_ram_stage_includes_size_ram_fit() -> None:
+    path = REPO_ROOT / "profiles/gemma/ubuntu/cpu/4-ram.json"
+    assert path.is_file()
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert payload.get("system_ram_gb") is not None
+    assert payload.get("usable_model_ram_gb") is not None
+    size_ram_fit = payload.get("size_ram_fit")
+    assert isinstance(size_ram_fit, list) and size_ram_fit
+    for row in size_ram_fit:
+        assert row.get("ram_fit_status") in {"fit", "no_fit", "unknown"}
+        if row.get("ram_fit_status") != "fit":
+            assert row.get("fits") is False
+
+
 def test_selector_never_chooses_unknown_fit() -> None:
     env = os.environ.copy()
     env["EIGHTBALL_REPO_ROOT"] = str(REPO_ROOT)

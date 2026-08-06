@@ -3,7 +3,7 @@
   "model_slug": "openthinker",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,187 @@
   "applicable": true,
   "system_ram_gb": null,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "openthinker:32b",
+      "min_system_ram_gb": 33.92,
+      "recommended_system_ram_gb": 40.71,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-fp16",
+      "ollama_ref": "openthinker:32b-fp16",
+      "min_system_ram_gb": 86.82,
+      "recommended_system_ram_gb": 104.19,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-q4-k-m",
+      "ollama_ref": "openthinker:32b-q4_K_M",
+      "min_system_ram_gb": 33.92,
+      "recommended_system_ram_gb": 40.71,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-q80",
+      "ollama_ref": "openthinker:32b-q8_0",
+      "min_system_ram_gb": 51.17,
+      "recommended_system_ram_gb": 61.41,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-v2-fp16",
+      "ollama_ref": "openthinker:32b-v2-fp16",
+      "min_system_ram_gb": 86.82,
+      "recommended_system_ram_gb": 104.19,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-v2-q4-k-m",
+      "ollama_ref": "openthinker:32b-v2-q4_K_M",
+      "min_system_ram_gb": 33.92,
+      "recommended_system_ram_gb": 40.71,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-v2-q80",
+      "ollama_ref": "openthinker:32b-v2-q8_0",
+      "min_system_ram_gb": 51.17,
+      "recommended_system_ram_gb": 61.41,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "openthinker:7b",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "openthinker:7b-fp16",
+      "min_system_ram_gb": 20.99,
+      "recommended_system_ram_gb": 25.18,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "openthinker:7b-q4_K_M",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "openthinker:7b-q8_0",
+      "min_system_ram_gb": 13.05,
+      "recommended_system_ram_gb": 15.66,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-v2-fp16",
+      "ollama_ref": "openthinker:7b-v2-fp16",
+      "min_system_ram_gb": 20.99,
+      "recommended_system_ram_gb": 25.18,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-v2-q4-k-m",
+      "ollama_ref": "openthinker:7b-v2-q4_K_M",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-v2-q80",
+      "ollama_ref": "openthinker:7b-v2-q8_0",
+      "min_system_ram_gb": 13.05,
+      "recommended_system_ram_gb": 15.66,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "openthinker:latest",
+      "min_system_ram_gb": 7.13,
+      "recommended_system_ram_gb": 8.56,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

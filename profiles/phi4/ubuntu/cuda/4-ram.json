@@ -3,7 +3,7 @@
   "model_slug": "phi4",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -11,5 +11,57 @@
   "applicable": true,
   "system_ram_gb": 24.0,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi4:14b",
+      "min_system_ram_gb": 16.21,
+      "recommended_system_ram_gb": 19.46,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-fp16",
+      "ollama_ref": "phi4:14b-fp16",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-q4-k-m",
+      "ollama_ref": "phi4:14b-q4_K_M",
+      "min_system_ram_gb": 16.21,
+      "recommended_system_ram_gb": 19.46,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-q80",
+      "ollama_ref": "phi4:14b-q8_0",
+      "min_system_ram_gb": 24.15,
+      "recommended_system_ram_gb": 28.98,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.15 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4:latest",
+      "min_system_ram_gb": 12.19,
+      "recommended_system_ram_gb": 14.63,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

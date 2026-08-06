@@ -3,7 +3,7 @@
   "model_slug": "nuextract",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
@@ -11,5 +11,177 @@
   "applicable": true,
   "system_ram_gb": 24.0,
   "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "nuextract:3.8b",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-fp16",
+      "ollama_ref": "nuextract:3.8b-fp16",
+      "min_system_ram_gb": 11.56,
+      "recommended_system_ram_gb": 13.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q2-k",
+      "ollama_ref": "nuextract:3.8b-q2_K",
+      "min_system_ram_gb": 4.43,
+      "recommended_system_ram_gb": 5.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q3-k-l",
+      "ollama_ref": "nuextract:3.8b-q3_K_L",
+      "min_system_ram_gb": 5.23,
+      "recommended_system_ram_gb": 6.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q3-k-m",
+      "ollama_ref": "nuextract:3.8b-q3_K_M",
+      "min_system_ram_gb": 5.12,
+      "recommended_system_ram_gb": 6.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q3-k-s",
+      "ollama_ref": "nuextract:3.8b-q3_K_S",
+      "min_system_ram_gb": 4.77,
+      "recommended_system_ram_gb": 5.73,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q4-k-m",
+      "ollama_ref": "nuextract:3.8b-q4_K_M",
+      "min_system_ram_gb": 5.58,
+      "recommended_system_ram_gb": 6.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q4-k-s",
+      "ollama_ref": "nuextract:3.8b-q4_K_S",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q40",
+      "ollama_ref": "nuextract:3.8b-q4_0",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q41",
+      "ollama_ref": "nuextract:3.8b-q4_1",
+      "min_system_ram_gb": 5.58,
+      "recommended_system_ram_gb": 6.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q5-k-m",
+      "ollama_ref": "nuextract:3.8b-q5_K_M",
+      "min_system_ram_gb": 6.04,
+      "recommended_system_ram_gb": 7.24,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q5-k-s",
+      "ollama_ref": "nuextract:3.8b-q5_K_S",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q50",
+      "ollama_ref": "nuextract:3.8b-q5_0",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q51",
+      "ollama_ref": "nuextract:3.8b-q5_1",
+      "min_system_ram_gb": 6.15,
+      "recommended_system_ram_gb": 7.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q6-k",
+      "ollama_ref": "nuextract:3.8b-q6_K",
+      "min_system_ram_gb": 6.38,
+      "recommended_system_ram_gb": 7.66,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-q80",
+      "ollama_ref": "nuextract:3.8b-q8_0",
+      "min_system_ram_gb": 7.53,
+      "recommended_system_ram_gb": 9.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nuextract:latest",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -183,6 +183,41 @@ def normalize_lane_hardware(hardware: dict[str, Any], lane: dict[str, Any]) -> d
     return hw
 
 
+def evaluate_ram_fit(
+    size: dict[str, Any],
+    hardware: dict[str, Any],
+) -> FitResult:
+    est = size.get("estimated") or {}
+    ram_need = est.get("min_system_ram_gb")
+    usable_ram = hardware.get("usable_model_ram_gb")
+    system_ram = hardware.get("system_ram_gb")
+    ram_avail = usable_ram if usable_ram is not None else system_ram
+    missing: list[str] = []
+
+    if ram_need is None:
+        missing.append("model_ram_requirement")
+    if ram_avail is None:
+        missing.append("lane_ram_capacity")
+
+    if ram_need is not None and ram_avail is not None and ram_need > ram_avail:
+        return FitResult(
+            "no_fit",
+            False,
+            f"requires {ram_need} GB RAM; lane provides {ram_avail} GB usable",
+            tuple(missing),
+        )
+
+    if missing:
+        return FitResult(
+            "unknown",
+            False,
+            f"missing evidence: {', '.join(sorted(set(missing)))}",
+            tuple(sorted(set(missing))),
+        )
+
+    return FitResult("fit", True, "fits lane RAM assumptions", ())
+
+
 def evaluate_lane_fit(
     size: dict[str, Any],
     lane: dict[str, Any],

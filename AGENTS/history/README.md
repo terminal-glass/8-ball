@@ -17,3 +17,4 @@ The authoritative catalog development brief remains at `AGENTS/cursorFileA0.md`.
 | `CursorFileC2-environment-artifact-sequencing.md` | `AGENTS/history/CursorFileC2-environment-artifact-sequencing.md` |
 | `CursorFileC1-environment-artifacts.md` | `AGENTS/history/CursorFileC1-environment-artifacts.md` |
 | `CursorFileC0-8-BALL-CATALOG-DEVELOPMENT-BRIEF.md` | `AGENTS/history/CursorFileC0-8-BALL-CATALOG-DEVELOPMENT-BRIEF.md` |
+| `cursorFile.C10.1-4-ram.md` | `AGENTS/history/cursorFile.C10.1-4-ram.md` |

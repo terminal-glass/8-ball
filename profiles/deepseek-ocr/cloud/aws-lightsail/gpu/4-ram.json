@@ -3,7 +3,7 @@
   "model_slug": "deepseek-ocr",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T06:40:19Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis"
@@ -11,5 +11,37 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "3b",
+      "ollama_ref": "deepseek-ocr:3b",
+      "min_system_ram_gb": 10.29,
+      "recommended_system_ram_gb": 12.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.29 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-bf16",
+      "ollama_ref": "deepseek-ocr:3b-bf16",
+      "min_system_ram_gb": 10.29,
+      "recommended_system_ram_gb": 12.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.29 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-ocr:latest",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -3,7 +3,7 @@
   "model_slug": "mxbai-embed-large",
   "lane_path": "ubuntu/cpu",
   "provider_assumption_id": "ubuntu-cpu",
-  "generated_at": "2026-08-06T05:53:10Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,47 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "335m",
+      "ollama_ref": "mxbai-embed-large:335m",
+      "min_system_ram_gb": 2.59,
+      "recommended_system_ram_gb": 3.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "335m-v1-fp16",
+      "ollama_ref": "mxbai-embed-large:335m-v1-fp16",
+      "min_system_ram_gb": 2.59,
+      "recommended_system_ram_gb": 3.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "mxbai-embed-large:latest",
+      "min_system_ram_gb": 2.5,
+      "recommended_system_ram_gb": 2.99,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v1",
+      "ollama_ref": "mxbai-embed-large:v1",
+      "min_system_ram_gb": 2.5,
+      "recommended_system_ram_gb": 2.99,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

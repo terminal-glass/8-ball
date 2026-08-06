@@ -3,7 +3,7 @@
   "model_slug": "llava-llama3",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,47 @@
   "applicable": true,
   "system_ram_gb": 4,
   "usable_model_ram_gb": 2.4,
+  "size_ram_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "llava-llama3:8b",
+      "min_system_ram_gb": 10.35,
+      "recommended_system_ram_gb": 12.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v1.1-fp16",
+      "ollama_ref": "llava-llama3:8b-v1.1-fp16",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v1.1-q40",
+      "ollama_ref": "llava-llama3:8b-v1.1-q4_0",
+      "min_system_ram_gb": 10.35,
+      "recommended_system_ram_gb": 12.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llava-llama3:latest",
+      "min_system_ram_gb": 8.05,
+      "recommended_system_ram_gb": 9.66,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.05 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

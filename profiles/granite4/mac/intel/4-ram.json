@@ -3,7 +3,7 @@
   "model_slug": "granite4",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,177 @@
   "applicable": true,
   "system_ram_gb": 8.0,
   "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "32b-a9b-h",
+      "ollama_ref": "granite4:32b-a9b-h",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-a1b-h",
+      "ollama_ref": "granite4:7b-a1b-h",
+      "min_system_ram_gb": 8.57,
+      "recommended_system_ram_gb": 10.28,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.57 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "granite4:3b",
+      "min_system_ram_gb": 5.0,
+      "recommended_system_ram_gb": 6.0,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-h",
+      "ollama_ref": "granite4:3b-h",
+      "min_system_ram_gb": 4.77,
+      "recommended_system_ram_gb": 5.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b",
+      "ollama_ref": "granite4:1b",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-bf16",
+      "ollama_ref": "granite4:1b-bf16",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-h",
+      "ollama_ref": "granite4:1b-h",
+      "min_system_ram_gb": 3.85,
+      "recommended_system_ram_gb": 4.62,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-h-q80",
+      "ollama_ref": "granite4:1b-h-q8_0",
+      "min_system_ram_gb": 3.85,
+      "recommended_system_ram_gb": 4.62,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "350m",
+      "ollama_ref": "granite4:350m",
+      "min_system_ram_gb": 2.64,
+      "recommended_system_ram_gb": 3.17,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "350m-bf16",
+      "ollama_ref": "granite4:350m-bf16",
+      "min_system_ram_gb": 2.64,
+      "recommended_system_ram_gb": 3.17,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "350m-h",
+      "ollama_ref": "granite4:350m-h",
+      "min_system_ram_gb": 2.25,
+      "recommended_system_ram_gb": 2.7,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "350m-h-q80",
+      "ollama_ref": "granite4:350m-h-q8_0",
+      "min_system_ram_gb": 2.25,
+      "recommended_system_ram_gb": 2.7,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite4:latest",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "micro",
+      "ollama_ref": "granite4:micro",
+      "min_system_ram_gb": 4.14,
+      "recommended_system_ram_gb": 4.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "micro-h",
+      "ollama_ref": "granite4:micro-h",
+      "min_system_ram_gb": 3.91,
+      "recommended_system_ram_gb": 4.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "small-h",
+      "ollama_ref": "granite4:small-h",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "tiny-h",
+      "ollama_ref": "granite4:tiny-h",
+      "min_system_ram_gb": 6.55,
+      "recommended_system_ram_gb": 7.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.55 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

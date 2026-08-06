@@ -3,7 +3,7 @@
   "model_slug": "nemotron-cascade-2",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,37 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "30b",
+      "ollama_ref": "nemotron-cascade-2:30b",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-q4-k-m",
+      "ollama_ref": "nemotron-cascade-2:30b-a3b-q4_K_M",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nemotron-cascade-2:latest",
+      "min_system_ram_gb": 29.32,
+      "recommended_system_ram_gb": 35.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

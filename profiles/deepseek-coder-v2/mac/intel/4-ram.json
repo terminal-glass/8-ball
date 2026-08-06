@@ -3,7 +3,7 @@
   "model_slug": "deepseek-coder-v2",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
@@ -11,5 +11,647 @@
   "applicable": true,
   "system_ram_gb": 8.0,
   "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "236b",
+      "ollama_ref": "deepseek-coder-v2:236b",
+      "min_system_ram_gb": 222.52,
+      "recommended_system_ram_gb": 267.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 222.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-fp16",
+      "ollama_ref": "deepseek-coder-v2:236b-base-fp16",
+      "min_system_ram_gb": 612.38,
+      "recommended_system_ram_gb": 734.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 612.38 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q2-k",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q2_K",
+      "min_system_ram_gb": 168.47,
+      "recommended_system_ram_gb": 202.17,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 168.47 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q3-k-l",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q3_K_L",
+      "min_system_ram_gb": 209.87,
+      "recommended_system_ram_gb": 251.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 209.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q3-k-m",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q3_K_M",
+      "min_system_ram_gb": 199.52,
+      "recommended_system_ram_gb": 239.43,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 199.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q3-k-s",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q3_K_S",
+      "min_system_ram_gb": 186.87,
+      "recommended_system_ram_gb": 224.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 186.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q4-k-m",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q4_K_M",
+      "min_system_ram_gb": 232.87,
+      "recommended_system_ram_gb": 279.45,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 232.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q4-k-s",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q4_K_S",
+      "min_system_ram_gb": 223.67,
+      "recommended_system_ram_gb": 268.41,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 223.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q40",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q4_0",
+      "min_system_ram_gb": 222.52,
+      "recommended_system_ram_gb": 267.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 222.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q41",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q4_1",
+      "min_system_ram_gb": 239.77,
+      "recommended_system_ram_gb": 287.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 239.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q5-k-m",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q5_K_M",
+      "min_system_ram_gb": 261.62,
+      "recommended_system_ram_gb": 313.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 261.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q5-k-s",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q5_K_S",
+      "min_system_ram_gb": 255.87,
+      "recommended_system_ram_gb": 307.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 255.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q50",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q5_0",
+      "min_system_ram_gb": 255.87,
+      "recommended_system_ram_gb": 307.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 255.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q51",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q5_1",
+      "min_system_ram_gb": 273.12,
+      "recommended_system_ram_gb": 327.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 273.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q6-k",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q6_K",
+      "min_system_ram_gb": 292.67,
+      "recommended_system_ram_gb": 351.21,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 292.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-base-q80",
+      "ollama_ref": "deepseek-coder-v2:236b-base-q8_0",
+      "min_system_ram_gb": 358.22,
+      "recommended_system_ram_gb": 429.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 358.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-fp16",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-fp16",
+      "min_system_ram_gb": 612.38,
+      "recommended_system_ram_gb": 734.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 612.38 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q2-k",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q2_K",
+      "min_system_ram_gb": 168.47,
+      "recommended_system_ram_gb": 202.17,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 168.47 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q3-k-l",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q3_K_L",
+      "min_system_ram_gb": 209.87,
+      "recommended_system_ram_gb": 251.85,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 209.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q3-k-m",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q3_K_M",
+      "min_system_ram_gb": 199.52,
+      "recommended_system_ram_gb": 239.43,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 199.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q3-k-s",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q3_K_S",
+      "min_system_ram_gb": 186.87,
+      "recommended_system_ram_gb": 224.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 186.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q4-k-m",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q4_K_M",
+      "min_system_ram_gb": 232.87,
+      "recommended_system_ram_gb": 279.45,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 232.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q4-k-s",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q4_K_S",
+      "min_system_ram_gb": 223.67,
+      "recommended_system_ram_gb": 268.41,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 223.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q40",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q4_0",
+      "min_system_ram_gb": 222.52,
+      "recommended_system_ram_gb": 267.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 222.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q41",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q4_1",
+      "min_system_ram_gb": 239.77,
+      "recommended_system_ram_gb": 287.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 239.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q5-k-m",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q5_K_M",
+      "min_system_ram_gb": 261.62,
+      "recommended_system_ram_gb": 313.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 261.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q5-k-s",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q5_K_S",
+      "min_system_ram_gb": 255.87,
+      "recommended_system_ram_gb": 307.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 255.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q50",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q5_0",
+      "min_system_ram_gb": 255.87,
+      "recommended_system_ram_gb": 307.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 255.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q51",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q5_1",
+      "min_system_ram_gb": 273.12,
+      "recommended_system_ram_gb": 327.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 273.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q6-k",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q6_K",
+      "min_system_ram_gb": 292.67,
+      "recommended_system_ram_gb": 351.21,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 292.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "236b-instruct-q80",
+      "ollama_ref": "deepseek-coder-v2:236b-instruct-q8_0",
+      "min_system_ram_gb": 358.22,
+      "recommended_system_ram_gb": 429.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 358.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b",
+      "ollama_ref": "deepseek-coder-v2:16b",
+      "min_system_ram_gb": 16.56,
+      "recommended_system_ram_gb": 19.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.56 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-fp16",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-fp16",
+      "min_system_ram_gb": 41.97,
+      "recommended_system_ram_gb": 50.37,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q2-k",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q2_K",
+      "min_system_ram_gb": 13.68,
+      "recommended_system_ram_gb": 16.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.68 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q3-k-l",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q3_K_L",
+      "min_system_ram_gb": 16.1,
+      "recommended_system_ram_gb": 19.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.1 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q3-k-m",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q3_K_M",
+      "min_system_ram_gb": 15.64,
+      "recommended_system_ram_gb": 18.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.64 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q3-k-s",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q3_K_S",
+      "min_system_ram_gb": 14.95,
+      "recommended_system_ram_gb": 17.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q4-k-m",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q4_K_M",
+      "min_system_ram_gb": 17.82,
+      "recommended_system_ram_gb": 21.39,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q4-k-s",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q4_K_S",
+      "min_system_ram_gb": 17.25,
+      "recommended_system_ram_gb": 20.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q40",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q4_0",
+      "min_system_ram_gb": 16.56,
+      "recommended_system_ram_gb": 19.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.56 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q41",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q4_1",
+      "min_system_ram_gb": 17.71,
+      "recommended_system_ram_gb": 21.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.71 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q5-k-m",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q5_K_M",
+      "min_system_ram_gb": 20.12,
+      "recommended_system_ram_gb": 24.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q5-k-s",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q5_K_S",
+      "min_system_ram_gb": 18.97,
+      "recommended_system_ram_gb": 22.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q50",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q5_0",
+      "min_system_ram_gb": 18.97,
+      "recommended_system_ram_gb": 22.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q51",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q5_1",
+      "min_system_ram_gb": 20.12,
+      "recommended_system_ram_gb": 24.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q6-k",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q6_K",
+      "min_system_ram_gb": 22.42,
+      "recommended_system_ram_gb": 26.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-base-q80",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-base-q8_0",
+      "min_system_ram_gb": 25.87,
+      "recommended_system_ram_gb": 31.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-fp16",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-fp16",
+      "min_system_ram_gb": 41.97,
+      "recommended_system_ram_gb": 50.37,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q2-k",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q2_K",
+      "min_system_ram_gb": 13.68,
+      "recommended_system_ram_gb": 16.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.68 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q3-k-l",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q3_K_L",
+      "min_system_ram_gb": 16.1,
+      "recommended_system_ram_gb": 19.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.1 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q3-k-m",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q3_K_M",
+      "min_system_ram_gb": 15.64,
+      "recommended_system_ram_gb": 18.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.64 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q3-k-s",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q3_K_S",
+      "min_system_ram_gb": 14.95,
+      "recommended_system_ram_gb": 17.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q4-k-m",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q4_K_M",
+      "min_system_ram_gb": 17.82,
+      "recommended_system_ram_gb": 21.39,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q4-k-s",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q4_K_S",
+      "min_system_ram_gb": 17.25,
+      "recommended_system_ram_gb": 20.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q40",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q4_0",
+      "min_system_ram_gb": 16.56,
+      "recommended_system_ram_gb": 19.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.56 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q41",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q4_1",
+      "min_system_ram_gb": 17.71,
+      "recommended_system_ram_gb": 21.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.71 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q5-k-m",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q5_K_M",
+      "min_system_ram_gb": 20.12,
+      "recommended_system_ram_gb": 24.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q5-k-s",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q5_K_S",
+      "min_system_ram_gb": 18.97,
+      "recommended_system_ram_gb": 22.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q50",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q5_0",
+      "min_system_ram_gb": 18.97,
+      "recommended_system_ram_gb": 22.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q51",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q5_1",
+      "min_system_ram_gb": 20.12,
+      "recommended_system_ram_gb": 24.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q6-k",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q6_K",
+      "min_system_ram_gb": 22.42,
+      "recommended_system_ram_gb": 26.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16b-lite-instruct-q80",
+      "ollama_ref": "deepseek-coder-v2:16b-lite-instruct-q8_0",
+      "min_system_ram_gb": 25.87,
+      "recommended_system_ram_gb": 31.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-coder-v2:latest",
+      "min_system_ram_gb": 11.96,
+      "recommended_system_ram_gb": 14.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.96 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "lite",
+      "ollama_ref": "deepseek-coder-v2:lite",
+      "min_system_ram_gb": 11.96,
+      "recommended_system_ram_gb": 14.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.96 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

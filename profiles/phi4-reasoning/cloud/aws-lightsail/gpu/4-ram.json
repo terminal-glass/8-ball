@@ -3,7 +3,7 @@
   "model_slug": "phi4-reasoning",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T06:40:20Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis"
@@ -11,5 +11,97 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi4-reasoning:14b",
+      "min_system_ram_gb": 18.4,
+      "recommended_system_ram_gb": 22.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-fp16",
+      "ollama_ref": "phi4-reasoning:14b-fp16",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-plus-fp16",
+      "ollama_ref": "phi4-reasoning:14b-plus-fp16",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-plus-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-plus-q4_K_M",
+      "min_system_ram_gb": 18.4,
+      "recommended_system_ram_gb": 22.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-plus-q80",
+      "ollama_ref": "phi4-reasoning:14b-plus-q8_0",
+      "min_system_ram_gb": 25.3,
+      "recommended_system_ram_gb": 30.36,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-q4_K_M",
+      "min_system_ram_gb": 18.4,
+      "recommended_system_ram_gb": 22.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-q80",
+      "ollama_ref": "phi4-reasoning:14b-q8_0",
+      "min_system_ram_gb": 25.3,
+      "recommended_system_ram_gb": 30.36,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-reasoning:latest",
+      "min_system_ram_gb": 14.37,
+      "recommended_system_ram_gb": 17.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "plus",
+      "ollama_ref": "phi4-reasoning:plus",
+      "min_system_ram_gb": 14.37,
+      "recommended_system_ram_gb": 17.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -3,7 +3,7 @@
   "model_slug": "codegeex4",
   "lane_path": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:54Z",
+  "generated_at": "2026-08-06T07:44:40Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"
@@ -11,5 +11,177 @@
   "applicable": true,
   "system_ram_gb": 4,
   "usable_model_ram_gb": 2.4,
+  "size_ram_fit": [
+    {
+      "size_slug": "9b",
+      "ollama_ref": "codegeex4:9b",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.64 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-fp16",
+      "ollama_ref": "codegeex4:9b-all-fp16",
+      "min_system_ram_gb": 26.16,
+      "recommended_system_ram_gb": 31.39,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.16 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q2-k",
+      "ollama_ref": "codegeex4:9b-all-q2_K",
+      "min_system_ram_gb": 8.91,
+      "recommended_system_ram_gb": 10.69,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.91 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q3-k-l",
+      "ollama_ref": "codegeex4:9b-all-q3_K_L",
+      "min_system_ram_gb": 10.41,
+      "recommended_system_ram_gb": 12.49,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.41 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q3-k-m",
+      "ollama_ref": "codegeex4:9b-all-q3_K_M",
+      "min_system_ram_gb": 10.18,
+      "recommended_system_ram_gb": 12.21,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.18 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q3-k-s",
+      "ollama_ref": "codegeex4:9b-all-q3_K_S",
+      "min_system_ram_gb": 9.6,
+      "recommended_system_ram_gb": 11.52,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.6 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q4-k-m",
+      "ollama_ref": "codegeex4:9b-all-q4_K_M",
+      "min_system_ram_gb": 11.56,
+      "recommended_system_ram_gb": 13.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.56 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q4-k-s",
+      "ollama_ref": "codegeex4:9b-all-q4_K_S",
+      "min_system_ram_gb": 10.98,
+      "recommended_system_ram_gb": 13.18,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.98 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q40",
+      "ollama_ref": "codegeex4:9b-all-q4_0",
+      "min_system_ram_gb": 10.64,
+      "recommended_system_ram_gb": 12.76,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.64 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q41",
+      "ollama_ref": "codegeex4:9b-all-q4_1",
+      "min_system_ram_gb": 11.21,
+      "recommended_system_ram_gb": 13.45,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.21 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q5-k-m",
+      "ollama_ref": "codegeex4:9b-all-q5_K_M",
+      "min_system_ram_gb": 12.48,
+      "recommended_system_ram_gb": 14.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.48 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q5-k-s",
+      "ollama_ref": "codegeex4:9b-all-q5_K_S",
+      "min_system_ram_gb": 12.02,
+      "recommended_system_ram_gb": 14.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q50",
+      "ollama_ref": "codegeex4:9b-all-q5_0",
+      "min_system_ram_gb": 11.9,
+      "recommended_system_ram_gb": 14.28,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.9 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q51",
+      "ollama_ref": "codegeex4:9b-all-q5_1",
+      "min_system_ram_gb": 12.48,
+      "recommended_system_ram_gb": 14.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.48 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q6-k",
+      "ollama_ref": "codegeex4:9b-all-q6_K",
+      "min_system_ram_gb": 13.86,
+      "recommended_system_ram_gb": 16.63,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.86 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-all-q80",
+      "ollama_ref": "codegeex4:9b-all-q8_0",
+      "min_system_ram_gb": 15.81,
+      "recommended_system_ram_gb": 18.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "codegeex4:latest",
+      "min_system_ram_gb": 8.05,
+      "recommended_system_ram_gb": 9.66,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.05 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }

@@ -3,7 +3,7 @@
   "model_slug": "nemotron-3-nano",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T06:40:20Z",
+  "generated_at": "2026-08-06T07:44:41Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis"
@@ -11,5 +11,97 @@
   "applicable": true,
   "system_ram_gb": 16.0,
   "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "30b",
+      "ollama_ref": "nemotron-3-nano:30b",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-fp16",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-fp16",
+      "min_system_ram_gb": 82.8,
+      "recommended_system_ram_gb": 99.36,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.8 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-q4-k-m",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-q4_K_M",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-q80",
+      "ollama_ref": "nemotron-3-nano:30b-a3b-q8_0",
+      "min_system_ram_gb": 49.45,
+      "recommended_system_ram_gb": 59.34,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 49.45 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-cloud",
+      "ollama_ref": "nemotron-3-nano:30b-cloud",
+      "min_system_ram_gb": 82.8,
+      "recommended_system_ram_gb": 99.36,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.8 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "nemotron-3-nano:4b",
+      "min_system_ram_gb": 6.09,
+      "recommended_system_ram_gb": 7.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-bf16",
+      "ollama_ref": "nemotron-3-nano:4b-bf16",
+      "min_system_ram_gb": 12.07,
+      "recommended_system_ram_gb": 14.49,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.07 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-q80",
+      "ollama_ref": "nemotron-3-nano:4b-q8_0",
+      "min_system_ram_gb": 7.7,
+      "recommended_system_ram_gb": 9.25,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nemotron-3-nano:latest",
+      "min_system_ram_gb": 29.32,
+      "recommended_system_ram_gb": 35.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    }
+  ],
   "reason": "RAM limits sourced from provider or client hardware assumptions."
 }
