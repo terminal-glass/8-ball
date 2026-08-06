@@ -1,0 +1,147 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "snowflake-arctic-embed",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cpu",
+  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "335m",
+      "ollama_ref": "snowflake-arctic-embed:335m",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "335m-l-fp16",
+      "ollama_ref": "snowflake-arctic-embed:335m-l-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "137m",
+      "ollama_ref": "snowflake-arctic-embed:137m",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "137m-m-long-fp16",
+      "ollama_ref": "snowflake-arctic-embed:137m-m-long-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "110m",
+      "ollama_ref": "snowflake-arctic-embed:110m",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "110m-m-fp16",
+      "ollama_ref": "snowflake-arctic-embed:110m-m-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33m",
+      "ollama_ref": "snowflake-arctic-embed:33m",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33m-s-fp16",
+      "ollama_ref": "snowflake-arctic-embed:33m-s-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22m",
+      "ollama_ref": "snowflake-arctic-embed:22m",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22m-xs-fp16",
+      "ollama_ref": "snowflake-arctic-embed:22m-xs-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "l",
+      "ollama_ref": "snowflake-arctic-embed:l",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "snowflake-arctic-embed:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "m",
+      "ollama_ref": "snowflake-arctic-embed:m",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "m-long",
+      "ollama_ref": "snowflake-arctic-embed:m-long",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "s",
+      "ollama_ref": "snowflake-arctic-embed:s",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "xs",
+      "ollama_ref": "snowflake-arctic-embed:xs",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

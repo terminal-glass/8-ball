@@ -1,0 +1,60 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "medgemma1.5",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "4b",
+      "ollama_ref": "medgemma1.5:4b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.67 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-it-bf16",
+      "ollama_ref": "medgemma1.5:4b-it-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.76 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-it-q4-k-m",
+      "ollama_ref": "medgemma1.5:4b-it-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.67 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-it-q80",
+      "ollama_ref": "medgemma1.5:4b-it-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.62 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "medgemma1.5:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.52 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

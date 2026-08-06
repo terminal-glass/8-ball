@@ -1,0 +1,15 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "wizardlm-uncensored",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T02:17:56Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "minimum_cpu_cores": 6,
+  "recommended_cpu_cores": 6,
+  "reason": "CPU stage applies to all lanes."
+}

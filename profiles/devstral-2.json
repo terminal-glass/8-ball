@@ -1,0 +1,112 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "devstral-2",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "123b",
+      "ollama_ref": "devstral-2:123b",
+      "parameter_count": 123000000000,
+      "quantization": null,
+      "download_size_bytes": 75000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 123.34,
+        "recommended_system_ram_gb": 148.0,
+        "min_vram_gb": 86.25,
+        "recommended_vram_gb": 123.34,
+        "min_disk_gb": 95.0
+      }
+    },
+    {
+      "size_slug": "123b-instruct2512-fp16",
+      "ollama_ref": "devstral-2:123b-instruct-2512-fp16",
+      "parameter_count": 123000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 250000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 324.59,
+        "recommended_system_ram_gb": 389.5,
+        "min_vram_gb": 287.5,
+        "recommended_vram_gb": 324.59,
+        "min_disk_gb": 305.0
+      }
+    },
+    {
+      "size_slug": "123b-instruct2512-q4-k-m",
+      "ollama_ref": "devstral-2:123b-instruct-2512-q4_K_M",
+      "parameter_count": 123000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 75000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 123.34,
+        "recommended_system_ram_gb": 148.0,
+        "min_vram_gb": 86.25,
+        "recommended_vram_gb": 123.34,
+        "min_disk_gb": 95.0
+      }
+    },
+    {
+      "size_slug": "123b-instruct2512-q80",
+      "ollama_ref": "devstral-2:123b-instruct-2512-q8_0",
+      "parameter_count": 123000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 133000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 190.04,
+        "recommended_system_ram_gb": 228.04,
+        "min_vram_gb": 152.95,
+        "recommended_vram_gb": 190.04,
+        "min_disk_gb": 164.6
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "devstral-2:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 75000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/devstral-2/tags",
+        "retrieved_at": "2026-08-01T11:52:55Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 87.97,
+        "recommended_system_ram_gb": 105.57,
+        "min_vram_gb": 86.25,
+        "recommended_vram_gb": 87.97,
+        "min_disk_gb": 95.0
+      }
+    }
+  ],
+  "promoted_size_slug": "123b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

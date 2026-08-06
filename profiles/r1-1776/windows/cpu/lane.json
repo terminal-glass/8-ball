@@ -1,0 +1,91 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "r1-1776",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cpu",
+  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "671b",
+      "ollama_ref": "r1-1776:671b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 659.24 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-fp16",
+      "ollama_ref": "r1-1776:671b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1689.64 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-q4-k-m",
+      "ollama_ref": "r1-1776:671b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 659.24 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-q80",
+      "ollama_ref": "r1-1776:671b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1014.59 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b",
+      "ollama_ref": "r1-1776:70b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-distill-llama-fp16",
+      "ollama_ref": "r1-1776:70b-distill-llama-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 184.0 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-distill-llama-q4-k-m",
+      "ollama_ref": "r1-1776:70b-distill-llama-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-distill-llama-q80",
+      "ollama_ref": "r1-1776:70b-distill-llama-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "r1-1776:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 51.17 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

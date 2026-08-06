@@ -1,0 +1,192 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "llama3.2-vision",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "90b",
+      "ollama_ref": "llama3.2-vision:90b",
+      "parameter_count": 90000000000,
+      "quantization": null,
+      "download_size_bytes": 55000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 90.85,
+        "recommended_system_ram_gb": 109.02,
+        "min_vram_gb": 63.25,
+        "recommended_vram_gb": 90.85,
+        "min_disk_gb": 71.0
+      }
+    },
+    {
+      "size_slug": "90b-instruct-fp16",
+      "ollama_ref": "llama3.2-vision:90b-instruct-fp16",
+      "parameter_count": 90000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 177000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 231.15,
+        "recommended_system_ram_gb": 277.38,
+        "min_vram_gb": 203.55,
+        "recommended_vram_gb": 231.15,
+        "min_disk_gb": 217.4
+      }
+    },
+    {
+      "size_slug": "90b-instruct-q4-k-m",
+      "ollama_ref": "llama3.2-vision:90b-instruct-q4_K_M",
+      "parameter_count": 90000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 55000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 90.85,
+        "recommended_system_ram_gb": 109.02,
+        "min_vram_gb": 63.25,
+        "recommended_vram_gb": 90.85,
+        "min_disk_gb": 71.0
+      }
+    },
+    {
+      "size_slug": "90b-instruct-q80",
+      "ollama_ref": "llama3.2-vision:90b-instruct-q8_0",
+      "parameter_count": 90000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 95000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 136.85,
+        "recommended_system_ram_gb": 164.22,
+        "min_vram_gb": 109.25,
+        "recommended_vram_gb": 136.85,
+        "min_disk_gb": 119.0
+      }
+    },
+    {
+      "size_slug": "11b",
+      "ollama_ref": "llama3.2-vision:11b",
+      "parameter_count": 11000000000,
+      "quantization": null,
+      "download_size_bytes": 7800000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.86,
+        "recommended_system_ram_gb": 16.63,
+        "min_vram_gb": 8.97,
+        "recommended_vram_gb": 13.86,
+        "min_disk_gb": 14.36
+      }
+    },
+    {
+      "size_slug": "11b-instruct-fp16",
+      "ollama_ref": "llama3.2-vision:11b-instruct-fp16",
+      "parameter_count": 11000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 21000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 29.04,
+        "recommended_system_ram_gb": 34.84,
+        "min_vram_gb": 24.15,
+        "recommended_vram_gb": 29.04,
+        "min_disk_gb": 30.2
+      }
+    },
+    {
+      "size_slug": "11b-instruct-q4-k-m",
+      "ollama_ref": "llama3.2-vision:11b-instruct-q4_K_M",
+      "parameter_count": 11000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 7800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.86,
+        "recommended_system_ram_gb": 16.63,
+        "min_vram_gb": 8.97,
+        "recommended_vram_gb": 13.86,
+        "min_disk_gb": 14.36
+      }
+    },
+    {
+      "size_slug": "11b-instruct-q80",
+      "ollama_ref": "llama3.2-vision:11b-instruct-q8_0",
+      "parameter_count": 11000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 12000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.69,
+        "recommended_system_ram_gb": 22.43,
+        "min_vram_gb": 13.8,
+        "recommended_vram_gb": 18.69,
+        "min_disk_gb": 19.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama3.2-vision:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 7800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama3.2-vision/tags",
+        "retrieved_at": "2026-08-01T11:55:28Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.7,
+        "recommended_system_ram_gb": 12.83,
+        "min_vram_gb": 8.97,
+        "recommended_vram_gb": 10.7,
+        "min_disk_gb": 14.36
+      }
+    }
+  ],
+  "promoted_size_slug": "90b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "marco-o1",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "marco-o1:7b",
+      "parameter_count": 7000000000,
+      "quantization": null,
+      "download_size_bytes": 4700000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/marco-o1/tags",
+        "retrieved_at": "2026-08-01T11:55:46Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.14,
+        "recommended_system_ram_gb": 10.97,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.14,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "marco-o1:7b-fp16",
+      "parameter_count": 7000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 15000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/marco-o1/tags",
+        "retrieved_at": "2026-08-01T11:55:46Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 20.99,
+        "recommended_system_ram_gb": 25.18,
+        "min_vram_gb": 17.25,
+        "recommended_vram_gb": 20.99,
+        "min_disk_gb": 23.0
+      }
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "marco-o1:7b-q4_K_M",
+      "parameter_count": 7000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/marco-o1/tags",
+        "retrieved_at": "2026-08-01T11:55:46Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.14,
+        "recommended_system_ram_gb": 10.97,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.14,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "marco-o1:7b-q8_0",
+      "parameter_count": 7000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 8100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/marco-o1/tags",
+        "retrieved_at": "2026-08-01T11:55:46Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.05,
+        "recommended_system_ram_gb": 15.66,
+        "min_vram_gb": 9.31,
+        "recommended_vram_gb": 13.05,
+        "min_disk_gb": 14.72
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "marco-o1:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/marco-o1/tags",
+        "retrieved_at": "2026-08-01T11:55:46Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.13,
+        "recommended_system_ram_gb": 8.56,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 7.13,
+        "min_disk_gb": 10.64
+      }
+    }
+  ],
+  "promoted_size_slug": "7b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

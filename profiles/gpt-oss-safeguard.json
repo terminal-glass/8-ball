@@ -1,0 +1,72 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "gpt-oss-safeguard",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "gpt-oss-safeguard:120b",
+      "parameter_count": 120000000000,
+      "quantization": null,
+      "download_size_bytes": 65000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/gpt-oss-safeguard/tags",
+        "retrieved_at": "2026-08-01T11:54:05Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 110.97,
+        "recommended_system_ram_gb": 133.17,
+        "min_vram_gb": 74.75,
+        "recommended_vram_gb": 110.97,
+        "min_disk_gb": 83.0
+      }
+    },
+    {
+      "size_slug": "20b",
+      "ollama_ref": "gpt-oss-safeguard:20b",
+      "parameter_count": 20000000000,
+      "quantization": null,
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/gpt-oss-safeguard/tags",
+        "retrieved_at": "2026-08-01T11:54:05Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 23.57,
+        "recommended_system_ram_gb": 28.29,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 23.57,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gpt-oss-safeguard:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/gpt-oss-safeguard/tags",
+        "retrieved_at": "2026-08-01T11:54:05Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 17.82,
+        "recommended_system_ram_gb": 21.39,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 17.82,
+        "min_disk_gb": 21.8
+      }
+    }
+  ],
+  "promoted_size_slug": "120b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "marco-o1",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "marco-o1:7b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "marco-o1:7b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.99 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "marco-o1:7b-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "marco-o1:7b-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "marco-o1:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

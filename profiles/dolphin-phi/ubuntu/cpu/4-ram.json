@@ -1,0 +1,15 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "dolphin-phi",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.0,
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

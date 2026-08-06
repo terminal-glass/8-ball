@@ -1,0 +1,112 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "mistral-medium-3.5",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "128b",
+      "ollama_ref": "mistral-medium-3.5:128b",
+      "parameter_count": 128000000000,
+      "quantization": null,
+      "download_size_bytes": 80000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+        "retrieved_at": "2026-08-01T11:56:22Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 130.52,
+        "recommended_system_ram_gb": 156.63,
+        "min_vram_gb": 92.0,
+        "recommended_vram_gb": 130.52,
+        "min_disk_gb": 101.0
+      }
+    },
+    {
+      "size_slug": "128b-bf16",
+      "ollama_ref": "mistral-medium-3.5:128b-bf16",
+      "parameter_count": 128000000000,
+      "quantization": "bf16",
+      "download_size_bytes": 255000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+        "retrieved_at": "2026-08-01T11:56:22Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 331.77,
+        "recommended_system_ram_gb": 398.13,
+        "min_vram_gb": 293.25,
+        "recommended_vram_gb": 331.77,
+        "min_disk_gb": 311.0
+      }
+    },
+    {
+      "size_slug": "128b-q4-k-m",
+      "ollama_ref": "mistral-medium-3.5:128b-q4_K_M",
+      "parameter_count": 128000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 80000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+        "retrieved_at": "2026-08-01T11:56:22Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 130.52,
+        "recommended_system_ram_gb": 156.63,
+        "min_vram_gb": 92.0,
+        "recommended_vram_gb": 130.52,
+        "min_disk_gb": 101.0
+      }
+    },
+    {
+      "size_slug": "128b-q80",
+      "ollama_ref": "mistral-medium-3.5:128b-q8_0",
+      "parameter_count": 128000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 138000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+        "retrieved_at": "2026-08-01T11:56:22Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 197.22,
+        "recommended_system_ram_gb": 236.67,
+        "min_vram_gb": 158.7,
+        "recommended_vram_gb": 197.22,
+        "min_disk_gb": 170.6
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "mistral-medium-3.5:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 80000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+        "retrieved_at": "2026-08-01T11:56:22Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 93.72,
+        "recommended_system_ram_gb": 112.47,
+        "min_vram_gb": 92.0,
+        "recommended_vram_gb": 93.72,
+        "min_disk_gb": 101.0
+      }
+    }
+  ],
+  "promoted_size_slug": "128b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

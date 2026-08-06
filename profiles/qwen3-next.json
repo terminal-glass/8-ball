@@ -1,0 +1,192 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "qwen3-next",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "80b",
+      "ollama_ref": "qwen3-next:80b",
+      "parameter_count": 80000000000,
+      "quantization": null,
+      "download_size_bytes": 50000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 82.22,
+        "recommended_system_ram_gb": 98.67,
+        "min_vram_gb": 57.5,
+        "recommended_vram_gb": 82.22,
+        "min_disk_gb": 65.0
+      }
+    },
+    {
+      "size_slug": "80b-a3b-instruct-fp16",
+      "ollama_ref": "qwen3-next:80b-a3b-instruct-fp16",
+      "parameter_count": 80000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 159000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 207.57,
+        "recommended_system_ram_gb": 249.09,
+        "min_vram_gb": 182.85,
+        "recommended_vram_gb": 207.57,
+        "min_disk_gb": 195.8
+      }
+    },
+    {
+      "size_slug": "80b-a3b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-next:80b-a3b-instruct-q4_K_M",
+      "parameter_count": 80000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 50000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 82.22,
+        "recommended_system_ram_gb": 98.67,
+        "min_vram_gb": 57.5,
+        "recommended_vram_gb": 82.22,
+        "min_disk_gb": 65.0
+      }
+    },
+    {
+      "size_slug": "80b-a3b-instruct-q80",
+      "ollama_ref": "qwen3-next:80b-a3b-instruct-q8_0",
+      "parameter_count": 80000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 85000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 122.47,
+        "recommended_system_ram_gb": 146.97,
+        "min_vram_gb": 97.75,
+        "recommended_vram_gb": 122.47,
+        "min_disk_gb": 107.0
+      }
+    },
+    {
+      "size_slug": "80b-a3b-thinking",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking",
+      "parameter_count": 80000000000,
+      "quantization": null,
+      "download_size_bytes": 50000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 82.22,
+        "recommended_system_ram_gb": 98.67,
+        "min_vram_gb": 57.5,
+        "recommended_vram_gb": 82.22,
+        "min_disk_gb": 65.0
+      }
+    },
+    {
+      "size_slug": "80b-a3b-thinking-fp16",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking-fp16",
+      "parameter_count": 80000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 159000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 207.57,
+        "recommended_system_ram_gb": 249.09,
+        "min_vram_gb": 182.85,
+        "recommended_vram_gb": 207.57,
+        "min_disk_gb": 195.8
+      }
+    },
+    {
+      "size_slug": "80b-a3b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking-q4_K_M",
+      "parameter_count": 80000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 50000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 82.22,
+        "recommended_system_ram_gb": 98.67,
+        "min_vram_gb": 57.5,
+        "recommended_vram_gb": 82.22,
+        "min_disk_gb": 65.0
+      }
+    },
+    {
+      "size_slug": "80b-a3b-thinking-q80",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking-q8_0",
+      "parameter_count": 80000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 85000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 122.47,
+        "recommended_system_ram_gb": 146.97,
+        "min_vram_gb": 97.75,
+        "recommended_vram_gb": 122.47,
+        "min_disk_gb": 107.0
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3-next:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 50000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/qwen3-next/tags",
+        "retrieved_at": "2026-08-01T11:58:34Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 59.22,
+        "recommended_system_ram_gb": 71.07,
+        "min_vram_gb": 57.5,
+        "recommended_vram_gb": 59.22,
+        "min_disk_gb": 65.0
+      }
+    }
+  ],
+  "promoted_size_slug": "80b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

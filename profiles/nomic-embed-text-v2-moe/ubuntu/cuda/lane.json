@@ -1,0 +1,28 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nomic-embed-text-v2-moe",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nomic-embed-text-v2-moe:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

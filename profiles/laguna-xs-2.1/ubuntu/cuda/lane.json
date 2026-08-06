@@ -1,0 +1,76 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "laguna-xs-2.1",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "bf16",
+      "ollama_ref": "laguna-xs-2.1:bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "laguna-xs-2.1:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mlx-bf16",
+      "ollama_ref": "laguna-xs-2.1:mlx-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mxfp8",
+      "ollama_ref": "laguna-xs-2.1:mxfp8",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 46.57 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "nvfp4",
+      "ollama_ref": "laguna-xs-2.1:nvfp4",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.85 GB VRAM; lane provides 16.0 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "laguna-xs-2.1:q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "laguna-xs-2.1:q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.12 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

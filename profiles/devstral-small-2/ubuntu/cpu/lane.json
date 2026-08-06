@@ -1,0 +1,68 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "devstral-small-2",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "24b",
+      "ollama_ref": "devstral-small-2:24b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "24b-cloud",
+      "ollama_ref": "devstral-small-2:24b-cloud",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "24b-instruct2512-fp16",
+      "ollama_ref": "devstral-small-2:24b-instruct-2512-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "24b-instruct2512-q4-k-m",
+      "ollama_ref": "devstral-small-2:24b-instruct-2512-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "24b-instruct2512-q80",
+      "ollama_ref": "devstral-small-2:24b-instruct-2512-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "devstral-small-2:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

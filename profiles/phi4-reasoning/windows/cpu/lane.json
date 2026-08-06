@@ -1,0 +1,91 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phi4-reasoning",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cpu",
+  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi4-reasoning:14b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-fp16",
+      "ollama_ref": "phi4-reasoning:14b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-plus-fp16",
+      "ollama_ref": "phi4-reasoning:14b-plus-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-plus-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-plus-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-plus-q80",
+      "ollama_ref": "phi4-reasoning:14b-plus-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-q80",
+      "ollama_ref": "phi4-reasoning:14b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-reasoning:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "plus",
+      "ollama_ref": "phi4-reasoning:plus",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

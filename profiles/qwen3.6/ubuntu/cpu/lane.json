@@ -1,0 +1,260 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3.6",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "35b",
+      "ollama_ref": "qwen3.6:35b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.39 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b",
+      "ollama_ref": "qwen3.6:35b-a3b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.39 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-bf16",
+      "ollama_ref": "qwen3.6:35b-a3b-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 93.44 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-coding-bf16",
+      "ollama_ref": "qwen3.6:35b-a3b-coding-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 92.29 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-coding-mxfp8",
+      "ollama_ref": "qwen3.6:35b-a3b-coding-mxfp8",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 55.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-coding-nvfp4",
+      "ollama_ref": "qwen3.6:35b-a3b-coding-nvfp4",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.09 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-mlx-bf16",
+      "ollama_ref": "qwen3.6:35b-a3b-mlx-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 92.29 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-mtp-bf16",
+      "ollama_ref": "qwen3.6:35b-a3b-mtp-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 94.59 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-mtp-q4-k-m",
+      "ollama_ref": "qwen3.6:35b-a3b-mtp-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.24 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-mtp-q80",
+      "ollama_ref": "qwen3.6:35b-a3b-mtp-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.64 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-mxfp8",
+      "ollama_ref": "qwen3.6:35b-a3b-mxfp8",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 55.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-nvfp4",
+      "ollama_ref": "qwen3.6:35b-a3b-nvfp4",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.09 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-q4-k-m",
+      "ollama_ref": "qwen3.6:35b-a3b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.39 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-a3b-q80",
+      "ollama_ref": "qwen3.6:35b-a3b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.64 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-mlx",
+      "ollama_ref": "qwen3.6:35b-mlx",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.09 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b",
+      "ollama_ref": "qwen3.6:27b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-bf16",
+      "ollama_ref": "qwen3.6:27b-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 73.89 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-coding-bf16",
+      "ollama_ref": "qwen3.6:27b-coding-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 72.74 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-coding-mxfp8",
+      "ollama_ref": "qwen3.6:27b-coding-mxfp8",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.14 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-coding-nvfp4",
+      "ollama_ref": "qwen3.6:27b-coding-nvfp4",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-mlx",
+      "ollama_ref": "qwen3.6:27b-mlx",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-mlx-bf16",
+      "ollama_ref": "qwen3.6:27b-mlx-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 72.74 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-mtp-bf16",
+      "ollama_ref": "qwen3.6:27b-mtp-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 73.89 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-mtp-q4-k-m",
+      "ollama_ref": "qwen3.6:27b-mtp-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 30.19 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-mtp-q80",
+      "ollama_ref": "qwen3.6:27b-mtp-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.99 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-mxfp8",
+      "ollama_ref": "qwen3.6:27b-mxfp8",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.14 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-nvfp4",
+      "ollama_ref": "qwen3.6:27b-nvfp4",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-q4-k-m",
+      "ollama_ref": "qwen3.6:27b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-q80",
+      "ollama_ref": "qwen3.6:27b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.99 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3.6:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

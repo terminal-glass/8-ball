@@ -1,6 +1,6 @@
 # 8-BALL Catalog Report
 
-- Report generated at: 2026-08-01T14:12:21Z
+- Report generated at: 2026-08-06T02:20:23Z
 - Input identifier: data/families
 
 ## Coverage

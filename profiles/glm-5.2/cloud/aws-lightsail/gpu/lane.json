@@ -1,0 +1,34 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "glm-5.2",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "glm-5.2:cloud",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity, model_disk_requirement, model_ram_requirement, model_vram_requirement",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity",
+        "model_disk_requirement",
+        "model_ram_requirement",
+        "model_vram_requirement"
+      ]
+    }
+  ]
+}

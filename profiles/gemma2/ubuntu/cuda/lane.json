@@ -1,0 +1,772 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gemma2",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "27b",
+      "ollama_ref": "gemma2:27b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.89 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-fp16",
+      "ollama_ref": "gemma2:27b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.59 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q2-k",
+      "ollama_ref": "gemma2:27b-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q3-k-l",
+      "ollama_ref": "gemma2:27b-instruct-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.74 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q3-k-m",
+      "ollama_ref": "gemma2:27b-instruct-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.44 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q3-k-s",
+      "ollama_ref": "gemma2:27b-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q4-k-m",
+      "ollama_ref": "gemma2:27b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q4-k-s",
+      "ollama_ref": "gemma2:27b-instruct-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.89 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q40",
+      "ollama_ref": "gemma2:27b-instruct-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.89 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q41",
+      "ollama_ref": "gemma2:27b-instruct-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q5-k-m",
+      "ollama_ref": "gemma2:27b-instruct-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.34 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q5-k-s",
+      "ollama_ref": "gemma2:27b-instruct-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.34 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q50",
+      "ollama_ref": "gemma2:27b-instruct-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.34 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q51",
+      "ollama_ref": "gemma2:27b-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.64 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q6-k",
+      "ollama_ref": "gemma2:27b-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.79 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-instruct-q80",
+      "ollama_ref": "gemma2:27b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 42.84 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-fp16",
+      "ollama_ref": "gemma2:27b-text-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.59 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q2-k",
+      "ollama_ref": "gemma2:27b-text-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q3-k-l",
+      "ollama_ref": "gemma2:27b-text-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.74 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q3-k-m",
+      "ollama_ref": "gemma2:27b-text-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.44 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q3-k-s",
+      "ollama_ref": "gemma2:27b-text-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q4-k-m",
+      "ollama_ref": "gemma2:27b-text-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q4-k-s",
+      "ollama_ref": "gemma2:27b-text-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.89 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q40",
+      "ollama_ref": "gemma2:27b-text-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.89 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q41",
+      "ollama_ref": "gemma2:27b-text-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q5-k-m",
+      "ollama_ref": "gemma2:27b-text-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.34 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q5-k-s",
+      "ollama_ref": "gemma2:27b-text-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.34 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q50",
+      "ollama_ref": "gemma2:27b-text-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.34 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q51",
+      "ollama_ref": "gemma2:27b-text-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.64 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q6-k",
+      "ollama_ref": "gemma2:27b-text-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.79 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-text-q80",
+      "ollama_ref": "gemma2:27b-text-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 42.84 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b",
+      "ollama_ref": "gemma2:9b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-fp16",
+      "ollama_ref": "gemma2:9b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.01 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q2-k",
+      "ollama_ref": "gemma2:9b-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q3-k-l",
+      "ollama_ref": "gemma2:9b-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q3-k-m",
+      "ollama_ref": "gemma2:9b-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q3-k-s",
+      "ollama_ref": "gemma2:9b-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q4-k-m",
+      "ollama_ref": "gemma2:9b-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q4-k-s",
+      "ollama_ref": "gemma2:9b-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q40",
+      "ollama_ref": "gemma2:9b-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q41",
+      "ollama_ref": "gemma2:9b-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q5-k-m",
+      "ollama_ref": "gemma2:9b-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q5-k-s",
+      "ollama_ref": "gemma2:9b-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q50",
+      "ollama_ref": "gemma2:9b-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q51",
+      "ollama_ref": "gemma2:9b-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q6-k",
+      "ollama_ref": "gemma2:9b-instruct-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-instruct-q80",
+      "ollama_ref": "gemma2:9b-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-fp16",
+      "ollama_ref": "gemma2:9b-text-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.01 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q2-k",
+      "ollama_ref": "gemma2:9b-text-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q3-k-l",
+      "ollama_ref": "gemma2:9b-text-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q3-k-m",
+      "ollama_ref": "gemma2:9b-text-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q3-k-s",
+      "ollama_ref": "gemma2:9b-text-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q4-k-m",
+      "ollama_ref": "gemma2:9b-text-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q4-k-s",
+      "ollama_ref": "gemma2:9b-text-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q40",
+      "ollama_ref": "gemma2:9b-text-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q41",
+      "ollama_ref": "gemma2:9b-text-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q5-k-m",
+      "ollama_ref": "gemma2:9b-text-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q5-k-s",
+      "ollama_ref": "gemma2:9b-text-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q50",
+      "ollama_ref": "gemma2:9b-text-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q51",
+      "ollama_ref": "gemma2:9b-text-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q6-k",
+      "ollama_ref": "gemma2:9b-text-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-text-q80",
+      "ollama_ref": "gemma2:9b-text-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "gemma2:2b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-fp16",
+      "ollama_ref": "gemma2:2b-instruct-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q2-k",
+      "ollama_ref": "gemma2:2b-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q3-k-l",
+      "ollama_ref": "gemma2:2b-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q3-k-m",
+      "ollama_ref": "gemma2:2b-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q3-k-s",
+      "ollama_ref": "gemma2:2b-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q4-k-m",
+      "ollama_ref": "gemma2:2b-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q4-k-s",
+      "ollama_ref": "gemma2:2b-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q40",
+      "ollama_ref": "gemma2:2b-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q41",
+      "ollama_ref": "gemma2:2b-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q5-k-m",
+      "ollama_ref": "gemma2:2b-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q5-k-s",
+      "ollama_ref": "gemma2:2b-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q50",
+      "ollama_ref": "gemma2:2b-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q51",
+      "ollama_ref": "gemma2:2b-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q6-k",
+      "ollama_ref": "gemma2:2b-instruct-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q80",
+      "ollama_ref": "gemma2:2b-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-fp16",
+      "ollama_ref": "gemma2:2b-text-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q2-k",
+      "ollama_ref": "gemma2:2b-text-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q3-k-l",
+      "ollama_ref": "gemma2:2b-text-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q3-k-m",
+      "ollama_ref": "gemma2:2b-text-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q3-k-s",
+      "ollama_ref": "gemma2:2b-text-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q4-k-m",
+      "ollama_ref": "gemma2:2b-text-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q4-k-s",
+      "ollama_ref": "gemma2:2b-text-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q40",
+      "ollama_ref": "gemma2:2b-text-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q41",
+      "ollama_ref": "gemma2:2b-text-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q5-k-m",
+      "ollama_ref": "gemma2:2b-text-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q5-k-s",
+      "ollama_ref": "gemma2:2b-text-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q50",
+      "ollama_ref": "gemma2:2b-text-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q51",
+      "ollama_ref": "gemma2:2b-text-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q6-k",
+      "ollama_ref": "gemma2:2b-text-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-text-q80",
+      "ollama_ref": "gemma2:2b-text-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gemma2:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "ornith",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "35b",
+      "ollama_ref": "ornith:35b",
+      "parameter_count": 35000000000,
+      "quantization": null,
+      "download_size_bytes": 21000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 35.94,
+        "recommended_system_ram_gb": 43.12,
+        "min_vram_gb": 24.15,
+        "recommended_vram_gb": 35.94,
+        "min_disk_gb": 30.2
+      }
+    },
+    {
+      "size_slug": "35b-bf16",
+      "ollama_ref": "ornith:35b-bf16",
+      "parameter_count": 35000000000,
+      "quantization": "bf16",
+      "download_size_bytes": 69000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 91.14,
+        "recommended_system_ram_gb": 109.36,
+        "min_vram_gb": 79.35,
+        "recommended_vram_gb": 91.14,
+        "min_disk_gb": 87.8
+      }
+    },
+    {
+      "size_slug": "35b-q4-k-m",
+      "ollama_ref": "ornith:35b-q4_K_M",
+      "parameter_count": 35000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 21000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 35.94,
+        "recommended_system_ram_gb": 43.12,
+        "min_vram_gb": 24.15,
+        "recommended_vram_gb": 35.94,
+        "min_disk_gb": 30.2
+      }
+    },
+    {
+      "size_slug": "35b-q80",
+      "ollama_ref": "ornith:35b-q8_0",
+      "parameter_count": 35000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 37000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 54.34,
+        "recommended_system_ram_gb": 65.2,
+        "min_vram_gb": 42.55,
+        "recommended_vram_gb": 54.34,
+        "min_disk_gb": 49.4
+      }
+    },
+    {
+      "size_slug": "9b",
+      "ollama_ref": "ornith:9b",
+      "parameter_count": 9000000000,
+      "quantization": null,
+      "download_size_bytes": 5600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.75,
+        "recommended_system_ram_gb": 12.9,
+        "min_vram_gb": 6.44,
+        "recommended_vram_gb": 10.75,
+        "min_disk_gb": 11.72
+      }
+    },
+    {
+      "size_slug": "9b-bf16",
+      "ollama_ref": "ornith:9b-bf16",
+      "parameter_count": 9000000000,
+      "quantization": "bf16",
+      "download_size_bytes": 18000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 25.01,
+        "recommended_system_ram_gb": 30.01,
+        "min_vram_gb": 20.7,
+        "recommended_vram_gb": 25.01,
+        "min_disk_gb": 26.6
+      }
+    },
+    {
+      "size_slug": "9b-q4-k-m",
+      "ollama_ref": "ornith:9b-q4_K_M",
+      "parameter_count": 9000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 5600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.75,
+        "recommended_system_ram_gb": 12.9,
+        "min_vram_gb": 6.44,
+        "recommended_vram_gb": 10.75,
+        "min_disk_gb": 11.72
+      }
+    },
+    {
+      "size_slug": "9b-q80",
+      "ollama_ref": "ornith:9b-q8_0",
+      "parameter_count": 9000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 9500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.24,
+        "recommended_system_ram_gb": 18.28,
+        "min_vram_gb": 10.92,
+        "recommended_vram_gb": 15.24,
+        "min_disk_gb": 16.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "ornith:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 5600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/ornith/tags",
+        "retrieved_at": "2026-08-01T11:57:49Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.16,
+        "recommended_system_ram_gb": 9.8,
+        "min_vram_gb": 6.44,
+        "recommended_vram_gb": 8.16,
+        "min_disk_gb": 11.72
+      }
+    }
+  ],
+  "promoted_size_slug": "35b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

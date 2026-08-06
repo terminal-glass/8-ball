@@ -1,0 +1,32 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "minimax-m2.5",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "minimax-m2.5:cloud",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": null,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minimax-m2.5:cloud",
+        "retrieved_at": "2026-07-16T05:08:59Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": null,
+        "recommended_system_ram_gb": null,
+        "min_vram_gb": null,
+        "recommended_vram_gb": null,
+        "min_disk_gb": null
+      }
+    }
+  ],
+  "promoted_size_slug": "cloud",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

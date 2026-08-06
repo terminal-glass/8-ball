@@ -1,0 +1,284 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "yarn-mistral",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:11Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "yarn-mistral:7b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k",
+      "ollama_ref": "yarn-mistral:7b-128k",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-fp16",
+      "ollama_ref": "yarn-mistral:7b-128k-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q2-k",
+      "ollama_ref": "yarn-mistral:7b-128k-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q3-k-l",
+      "ollama_ref": "yarn-mistral:7b-128k-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q3-k-m",
+      "ollama_ref": "yarn-mistral:7b-128k-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q3-k-s",
+      "ollama_ref": "yarn-mistral:7b-128k-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q4-k-m",
+      "ollama_ref": "yarn-mistral:7b-128k-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q4-k-s",
+      "ollama_ref": "yarn-mistral:7b-128k-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q40",
+      "ollama_ref": "yarn-mistral:7b-128k-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q41",
+      "ollama_ref": "yarn-mistral:7b-128k-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.03 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q5-k-m",
+      "ollama_ref": "yarn-mistral:7b-128k-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.6 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q5-k-s",
+      "ollama_ref": "yarn-mistral:7b-128k-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q50",
+      "ollama_ref": "yarn-mistral:7b-128k-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q51",
+      "ollama_ref": "yarn-mistral:7b-128k-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q6-k",
+      "ollama_ref": "yarn-mistral:7b-128k-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b128k-q80",
+      "ollama_ref": "yarn-mistral:7b-128k-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.59 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k",
+      "ollama_ref": "yarn-mistral:7b-64k",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q2-k",
+      "ollama_ref": "yarn-mistral:7b-64k-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q3-k-l",
+      "ollama_ref": "yarn-mistral:7b-64k-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q3-k-m",
+      "ollama_ref": "yarn-mistral:7b-64k-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q3-k-s",
+      "ollama_ref": "yarn-mistral:7b-64k-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q4-k-m",
+      "ollama_ref": "yarn-mistral:7b-64k-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q4-k-s",
+      "ollama_ref": "yarn-mistral:7b-64k-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q40",
+      "ollama_ref": "yarn-mistral:7b-64k-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q41",
+      "ollama_ref": "yarn-mistral:7b-64k-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.03 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q5-k-m",
+      "ollama_ref": "yarn-mistral:7b-64k-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.6 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q5-k-s",
+      "ollama_ref": "yarn-mistral:7b-64k-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q50",
+      "ollama_ref": "yarn-mistral:7b-64k-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q51",
+      "ollama_ref": "yarn-mistral:7b-64k-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q6-k",
+      "ollama_ref": "yarn-mistral:7b-64k-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b64k-q80",
+      "ollama_ref": "yarn-mistral:7b-64k-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.59 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "yarn-mistral:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

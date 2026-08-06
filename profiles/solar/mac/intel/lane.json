@@ -1,0 +1,275 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "solar",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/intel",
+  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "10.7b",
+      "ollama_ref": "solar:10.7b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-fp16",
+      "ollama_ref": "solar:10.7b-instruct-v1-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q2-k",
+      "ollama_ref": "solar:10.7b-instruct-v1-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.98 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q3-k-l",
+      "ollama_ref": "solar:10.7b-instruct-v1-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.36 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q3-k-m",
+      "ollama_ref": "solar:10.7b-instruct-v1-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.78 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q3-k-s",
+      "ollama_ref": "solar:10.7b-instruct-v1-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.21 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q4-k-m",
+      "ollama_ref": "solar:10.7b-instruct-v1-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.28 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q4-k-s",
+      "ollama_ref": "solar:10.7b-instruct-v1-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q40",
+      "ollama_ref": "solar:10.7b-instruct-v1-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q41",
+      "ollama_ref": "solar:10.7b-instruct-v1-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.51 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q5-k-m",
+      "ollama_ref": "solar:10.7b-instruct-v1-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.54 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q5-k-s",
+      "ollama_ref": "solar:10.7b-instruct-v1-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.31 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q50",
+      "ollama_ref": "solar:10.7b-instruct-v1-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.31 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q51",
+      "ollama_ref": "solar:10.7b-instruct-v1-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q6-k",
+      "ollama_ref": "solar:10.7b-instruct-v1-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-instruct-v1-q80",
+      "ollama_ref": "solar:10.7b-instruct-v1-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.45 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-fp16",
+      "ollama_ref": "solar:10.7b-text-v1-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q2-k",
+      "ollama_ref": "solar:10.7b-text-v1-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.98 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q3-k-l",
+      "ollama_ref": "solar:10.7b-text-v1-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.36 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q3-k-m",
+      "ollama_ref": "solar:10.7b-text-v1-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.78 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q3-k-s",
+      "ollama_ref": "solar:10.7b-text-v1-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.21 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q4-k-m",
+      "ollama_ref": "solar:10.7b-text-v1-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.28 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q4-k-s",
+      "ollama_ref": "solar:10.7b-text-v1-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q40",
+      "ollama_ref": "solar:10.7b-text-v1-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q41",
+      "ollama_ref": "solar:10.7b-text-v1-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.51 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q5-k-m",
+      "ollama_ref": "solar:10.7b-text-v1-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.54 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q5-k-s",
+      "ollama_ref": "solar:10.7b-text-v1-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.31 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q50",
+      "ollama_ref": "solar:10.7b-text-v1-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.31 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q51",
+      "ollama_ref": "solar:10.7b-text-v1-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q6-k",
+      "ollama_ref": "solar:10.7b-text-v1-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-text-v1-q80",
+      "ollama_ref": "solar:10.7b-text-v1-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.45 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "solar:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.74 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

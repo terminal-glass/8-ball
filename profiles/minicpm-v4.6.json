@@ -1,0 +1,272 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "minicpm-v4.6",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "1b",
+      "ollama_ref": "minicpm-v4.6:1b",
+      "parameter_count": 1000000000,
+      "quantization": null,
+      "download_size_bytes": 1600000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.85,
+        "recommended_system_ram_gb": 4.62,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 3.85,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "f16",
+      "ollama_ref": "minicpm-v4.6:f16",
+      "parameter_count": null,
+      "quantization": "f16",
+      "download_size_bytes": 2600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 4.71,
+        "recommended_system_ram_gb": 5.66,
+        "min_vram_gb": 2.99,
+        "recommended_vram_gb": 4.71,
+        "min_disk_gb": 8.12
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "minicpm-v4.6:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.56,
+        "recommended_system_ram_gb": 4.28,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 3.56,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "minicpm-v4.6:q4_K_M",
+      "parameter_count": null,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.56,
+        "recommended_system_ram_gb": 4.28,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 3.56,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "q4-k-s",
+      "ollama_ref": "minicpm-v4.6:q4_K_S",
+      "parameter_count": null,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.56,
+        "recommended_system_ram_gb": 4.28,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 3.56,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "q40",
+      "ollama_ref": "minicpm-v4.6:q4_0",
+      "parameter_count": null,
+      "quantization": "q4_0",
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.56,
+        "recommended_system_ram_gb": 4.28,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 3.56,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "q41",
+      "ollama_ref": "minicpm-v4.6:q4_1",
+      "parameter_count": null,
+      "quantization": "q4_1",
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.56,
+        "recommended_system_ram_gb": 4.28,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 3.56,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "q5-k-m",
+      "ollama_ref": "minicpm-v4.6:q5_K_M",
+      "parameter_count": null,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 1700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.68,
+        "recommended_system_ram_gb": 4.42,
+        "min_vram_gb": 1.95,
+        "recommended_vram_gb": 3.68,
+        "min_disk_gb": 7.04
+      }
+    },
+    {
+      "size_slug": "q5-k-s",
+      "ollama_ref": "minicpm-v4.6:q5_K_S",
+      "parameter_count": null,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 1700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.68,
+        "recommended_system_ram_gb": 4.42,
+        "min_vram_gb": 1.95,
+        "recommended_vram_gb": 3.68,
+        "min_disk_gb": 7.04
+      }
+    },
+    {
+      "size_slug": "q50",
+      "ollama_ref": "minicpm-v4.6:q5_0",
+      "parameter_count": null,
+      "quantization": "q5_0",
+      "download_size_bytes": 1700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.68,
+        "recommended_system_ram_gb": 4.42,
+        "min_vram_gb": 1.95,
+        "recommended_vram_gb": 3.68,
+        "min_disk_gb": 7.04
+      }
+    },
+    {
+      "size_slug": "q51",
+      "ollama_ref": "minicpm-v4.6:q5_1",
+      "parameter_count": null,
+      "quantization": "q5_1",
+      "download_size_bytes": 1700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.68,
+        "recommended_system_ram_gb": 4.42,
+        "min_vram_gb": 1.95,
+        "recommended_vram_gb": 3.68,
+        "min_disk_gb": 7.04
+      }
+    },
+    {
+      "size_slug": "q6-k",
+      "ollama_ref": "minicpm-v4.6:q6_K",
+      "parameter_count": null,
+      "quantization": "q6_K",
+      "download_size_bytes": 1700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.68,
+        "recommended_system_ram_gb": 4.42,
+        "min_vram_gb": 1.95,
+        "recommended_vram_gb": 3.68,
+        "min_disk_gb": 7.04
+      }
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "minicpm-v4.6:q8_0",
+      "parameter_count": null,
+      "quantization": "q8_0",
+      "download_size_bytes": 1900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+        "retrieved_at": "2026-08-01T11:56:06Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.91,
+        "recommended_system_ram_gb": 4.69,
+        "min_vram_gb": 2.18,
+        "recommended_vram_gb": 3.91,
+        "min_disk_gb": 7.28
+      }
+    }
+  ],
+  "promoted_size_slug": "1b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

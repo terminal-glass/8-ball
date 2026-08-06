@@ -1,0 +1,100 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "granite3-guardian",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "granite3-guardian:8b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-fp16",
+      "ollama_ref": "granite3-guardian:8b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q5-k-m",
+      "ollama_ref": "granite3-guardian:8b-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q5-k-s",
+      "ollama_ref": "granite3-guardian:8b-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q6-k",
+      "ollama_ref": "granite3-guardian:8b-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q80",
+      "ollama_ref": "granite3-guardian:8b-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "granite3-guardian:2b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-fp16",
+      "ollama_ref": "granite3-guardian:2b-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-q80",
+      "ollama_ref": "granite3-guardian:2b-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite3-guardian:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

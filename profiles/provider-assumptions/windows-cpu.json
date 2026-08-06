@@ -1,0 +1,33 @@
+{
+  "schema_version": "c10.provider-assumption.v1",
+  "provider_assumption_id": "windows-cpu",
+  "lane_path": "windows/cpu",
+  "platform": "windows",
+  "provider": null,
+  "architecture": "x86_64",
+  "gpu_lane": false,
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "hardware": {
+    "cpu_cores": 6,
+    "system_ram_gb": 16.0,
+    "usable_model_ram_gb": 9.0,
+    "minimum_free_disk_gb": 35.0,
+    "total_vram_gb": null,
+    "cuda_available": false,
+    "apple_metal_available": false,
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class",
+    "vram_gb_per_gpu": null
+  },
+  "fallback_profile_id": "windows_cpu_8gb",
+  "assumed_profile_id": "windows_cpu_16gb",
+  "source_paths": [
+    "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv"
+  ],
+  "generated_at": "2026-08-06T05:53:08Z",
+  "installer_reference": "install/windows/cpu/trial-install.sh",
+  "profiles_reference": "profiles/provider-assumptions/windows-cpu.json"
+}

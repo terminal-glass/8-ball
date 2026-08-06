@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-01T14:11:11Z",
+  "generated_at": "2026-08-06T02:19:12Z",
   "source_repository": "terminal-glass/8-ball",
-  "source_commit": "5e10890f95c1372dc01adb035d7b810f44a51b75",
+  "source_commit": "ab31e723ca7e9141463ee01c3833cac24e7329ef",
   "catalog_version": "2026.08.01",
   "catalog_source_id": "ollama-library",
   "normalized_dir": "data/normalized",

@@ -1,0 +1,672 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "reader-lm",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "1.5b",
+      "ollama_ref": "reader-lm:1.5b",
+      "parameter_count": 1500000000,
+      "quantization": null,
+      "download_size_bytes": 935000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.23,
+        "recommended_system_ram_gb": 3.88,
+        "min_vram_gb": 1.08,
+        "recommended_vram_gb": 3.23,
+        "min_disk_gb": 6.12
+      }
+    },
+    {
+      "size_slug": "1.5b-fp16",
+      "ollama_ref": "reader-lm:1.5b-fp16",
+      "parameter_count": 1500000000,
+      "quantization": "fp16",
+      "download_size_bytes": 3100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 5.72,
+        "recommended_system_ram_gb": 6.87,
+        "min_vram_gb": 3.56,
+        "recommended_vram_gb": 5.72,
+        "min_disk_gb": 8.72
+      }
+    },
+    {
+      "size_slug": "1.5b-q2-k",
+      "ollama_ref": "reader-lm:1.5b-q2_K",
+      "parameter_count": 1500000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 676000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.93,
+        "recommended_system_ram_gb": 3.52,
+        "min_vram_gb": 0.78,
+        "recommended_vram_gb": 2.93,
+        "min_disk_gb": 5.81
+      }
+    },
+    {
+      "size_slug": "1.5b-q3-k-l",
+      "ollama_ref": "reader-lm:1.5b-q3_K_L",
+      "parameter_count": 1500000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 880000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.17,
+        "recommended_system_ram_gb": 3.8,
+        "min_vram_gb": 1.01,
+        "recommended_vram_gb": 3.17,
+        "min_disk_gb": 6.06
+      }
+    },
+    {
+      "size_slug": "1.5b-q3-k-m",
+      "ollama_ref": "reader-lm:1.5b-q3_K_M",
+      "parameter_count": 1500000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 824000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.1,
+        "recommended_system_ram_gb": 3.72,
+        "min_vram_gb": 0.95,
+        "recommended_vram_gb": 3.1,
+        "min_disk_gb": 5.99
+      }
+    },
+    {
+      "size_slug": "1.5b-q3-k-s",
+      "ollama_ref": "reader-lm:1.5b-q3_K_S",
+      "parameter_count": 1500000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 761000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.03,
+        "recommended_system_ram_gb": 3.64,
+        "min_vram_gb": 0.88,
+        "recommended_vram_gb": 3.03,
+        "min_disk_gb": 5.91
+      }
+    },
+    {
+      "size_slug": "1.5b-q4-k-m",
+      "ollama_ref": "reader-lm:1.5b-q4_K_M",
+      "parameter_count": 1500000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 986000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.29,
+        "recommended_system_ram_gb": 3.95,
+        "min_vram_gb": 1.13,
+        "recommended_vram_gb": 3.29,
+        "min_disk_gb": 6.18
+      }
+    },
+    {
+      "size_slug": "1.5b-q4-k-s",
+      "ollama_ref": "reader-lm:1.5b-q4_K_S",
+      "parameter_count": 1500000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 940000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.24,
+        "recommended_system_ram_gb": 3.88,
+        "min_vram_gb": 1.08,
+        "recommended_vram_gb": 3.24,
+        "min_disk_gb": 6.13
+      }
+    },
+    {
+      "size_slug": "1.5b-q40",
+      "ollama_ref": "reader-lm:1.5b-q4_0",
+      "parameter_count": 1500000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 935000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.23,
+        "recommended_system_ram_gb": 3.88,
+        "min_vram_gb": 1.08,
+        "recommended_vram_gb": 3.23,
+        "min_disk_gb": 6.12
+      }
+    },
+    {
+      "size_slug": "1.5b-q41",
+      "ollama_ref": "reader-lm:1.5b-q4_1",
+      "parameter_count": 1500000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 1000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.31,
+        "recommended_system_ram_gb": 3.97,
+        "min_vram_gb": 1.15,
+        "recommended_vram_gb": 3.31,
+        "min_disk_gb": 6.2
+      }
+    },
+    {
+      "size_slug": "1.5b-q5-k-m",
+      "ollama_ref": "reader-lm:1.5b-q5_K_M",
+      "parameter_count": 1500000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 1100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.42,
+        "recommended_system_ram_gb": 4.11,
+        "min_vram_gb": 1.26,
+        "recommended_vram_gb": 3.42,
+        "min_disk_gb": 6.32
+      }
+    },
+    {
+      "size_slug": "1.5b-q5-k-s",
+      "ollama_ref": "reader-lm:1.5b-q5_K_S",
+      "parameter_count": 1500000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 1100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.42,
+        "recommended_system_ram_gb": 4.11,
+        "min_vram_gb": 1.26,
+        "recommended_vram_gb": 3.42,
+        "min_disk_gb": 6.32
+      }
+    },
+    {
+      "size_slug": "1.5b-q50",
+      "ollama_ref": "reader-lm:1.5b-q5_0",
+      "parameter_count": 1500000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 1100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.42,
+        "recommended_system_ram_gb": 4.11,
+        "min_vram_gb": 1.26,
+        "recommended_vram_gb": 3.42,
+        "min_disk_gb": 6.32
+      }
+    },
+    {
+      "size_slug": "1.5b-q51",
+      "ollama_ref": "reader-lm:1.5b-q5_1",
+      "parameter_count": 1500000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 1200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.54,
+        "recommended_system_ram_gb": 4.24,
+        "min_vram_gb": 1.38,
+        "recommended_vram_gb": 3.54,
+        "min_disk_gb": 6.44
+      }
+    },
+    {
+      "size_slug": "1.5b-q6-k",
+      "ollama_ref": "reader-lm:1.5b-q6_K",
+      "parameter_count": 1500000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 1300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.65,
+        "recommended_system_ram_gb": 4.38,
+        "min_vram_gb": 1.49,
+        "recommended_vram_gb": 3.65,
+        "min_disk_gb": 6.56
+      }
+    },
+    {
+      "size_slug": "1.5b-q80",
+      "ollama_ref": "reader-lm:1.5b-q8_0",
+      "parameter_count": 1500000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 4.0,
+        "recommended_system_ram_gb": 4.8,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 4.0,
+        "min_disk_gb": 6.92
+      }
+    },
+    {
+      "size_slug": "0.5b",
+      "ollama_ref": "reader-lm:0.5b",
+      "parameter_count": 500000000,
+      "quantization": null,
+      "download_size_bytes": 352000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.27,
+        "recommended_system_ram_gb": 2.73,
+        "min_vram_gb": 0.4,
+        "recommended_vram_gb": 2.27,
+        "min_disk_gb": 5.42
+      }
+    },
+    {
+      "size_slug": "0.5b-fp16",
+      "ollama_ref": "reader-lm:0.5b-fp16",
+      "parameter_count": 500000000,
+      "quantization": "fp16",
+      "download_size_bytes": 994000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.01,
+        "recommended_system_ram_gb": 3.61,
+        "min_vram_gb": 1.14,
+        "recommended_vram_gb": 3.01,
+        "min_disk_gb": 6.19
+      }
+    },
+    {
+      "size_slug": "0.5b-q2-k",
+      "ollama_ref": "reader-lm:0.5b-q2_K",
+      "parameter_count": 500000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 339000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.26,
+        "recommended_system_ram_gb": 2.71,
+        "min_vram_gb": 0.39,
+        "recommended_vram_gb": 2.26,
+        "min_disk_gb": 5.41
+      }
+    },
+    {
+      "size_slug": "0.5b-q3-k-l",
+      "ollama_ref": "reader-lm:0.5b-q3_K_L",
+      "parameter_count": 500000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 369000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.29,
+        "recommended_system_ram_gb": 2.75,
+        "min_vram_gb": 0.42,
+        "recommended_vram_gb": 2.29,
+        "min_disk_gb": 5.44
+      }
+    },
+    {
+      "size_slug": "0.5b-q3-k-m",
+      "ollama_ref": "reader-lm:0.5b-q3_K_M",
+      "parameter_count": 500000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 355000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.28,
+        "recommended_system_ram_gb": 2.73,
+        "min_vram_gb": 0.41,
+        "recommended_vram_gb": 2.28,
+        "min_disk_gb": 5.43
+      }
+    },
+    {
+      "size_slug": "0.5b-q3-k-s",
+      "ollama_ref": "reader-lm:0.5b-q3_K_S",
+      "parameter_count": 500000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 338000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.26,
+        "recommended_system_ram_gb": 2.71,
+        "min_vram_gb": 0.39,
+        "recommended_vram_gb": 2.26,
+        "min_disk_gb": 5.41
+      }
+    },
+    {
+      "size_slug": "0.5b-q4-k-m",
+      "ollama_ref": "reader-lm:0.5b-q4_K_M",
+      "parameter_count": 500000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 398000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.33,
+        "recommended_system_ram_gb": 2.79,
+        "min_vram_gb": 0.46,
+        "recommended_vram_gb": 2.33,
+        "min_disk_gb": 5.48
+      }
+    },
+    {
+      "size_slug": "0.5b-q4-k-s",
+      "ollama_ref": "reader-lm:0.5b-q4_K_S",
+      "parameter_count": 500000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 385000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.31,
+        "recommended_system_ram_gb": 2.77,
+        "min_vram_gb": 0.44,
+        "recommended_vram_gb": 2.31,
+        "min_disk_gb": 5.46
+      }
+    },
+    {
+      "size_slug": "0.5b-q40",
+      "ollama_ref": "reader-lm:0.5b-q4_0",
+      "parameter_count": 500000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 352000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.27,
+        "recommended_system_ram_gb": 2.73,
+        "min_vram_gb": 0.4,
+        "recommended_vram_gb": 2.27,
+        "min_disk_gb": 5.42
+      }
+    },
+    {
+      "size_slug": "0.5b-q41",
+      "ollama_ref": "reader-lm:0.5b-q4_1",
+      "parameter_count": 500000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 375000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.3,
+        "recommended_system_ram_gb": 2.76,
+        "min_vram_gb": 0.43,
+        "recommended_vram_gb": 2.3,
+        "min_disk_gb": 5.45
+      }
+    },
+    {
+      "size_slug": "0.5b-q5-k-m",
+      "ollama_ref": "reader-lm:0.5b-q5_K_M",
+      "parameter_count": 500000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 420000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.35,
+        "recommended_system_ram_gb": 2.82,
+        "min_vram_gb": 0.48,
+        "recommended_vram_gb": 2.35,
+        "min_disk_gb": 5.5
+      }
+    },
+    {
+      "size_slug": "0.5b-q5-k-s",
+      "ollama_ref": "reader-lm:0.5b-q5_K_S",
+      "parameter_count": 500000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 413000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.34,
+        "recommended_system_ram_gb": 2.81,
+        "min_vram_gb": 0.47,
+        "recommended_vram_gb": 2.34,
+        "min_disk_gb": 5.5
+      }
+    },
+    {
+      "size_slug": "0.5b-q50",
+      "ollama_ref": "reader-lm:0.5b-q5_0",
+      "parameter_count": 500000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 397000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.33,
+        "recommended_system_ram_gb": 2.79,
+        "min_vram_gb": 0.46,
+        "recommended_vram_gb": 2.33,
+        "min_disk_gb": 5.48
+      }
+    },
+    {
+      "size_slug": "0.5b-q51",
+      "ollama_ref": "reader-lm:0.5b-q5_1",
+      "parameter_count": 500000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 419000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.35,
+        "recommended_system_ram_gb": 2.82,
+        "min_vram_gb": 0.48,
+        "recommended_vram_gb": 2.35,
+        "min_disk_gb": 5.5
+      }
+    },
+    {
+      "size_slug": "0.5b-q6-k",
+      "ollama_ref": "reader-lm:0.5b-q6_K",
+      "parameter_count": 500000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 506000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.45,
+        "recommended_system_ram_gb": 2.94,
+        "min_vram_gb": 0.58,
+        "recommended_vram_gb": 2.45,
+        "min_disk_gb": 5.61
+      }
+    },
+    {
+      "size_slug": "0.5b-q80",
+      "ollama_ref": "reader-lm:0.5b-q8_0",
+      "parameter_count": 500000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 531000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.48,
+        "recommended_system_ram_gb": 2.98,
+        "min_vram_gb": 0.61,
+        "recommended_vram_gb": 2.48,
+        "min_disk_gb": 5.64
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "reader-lm:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 935000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/reader-lm/tags",
+        "retrieved_at": "2026-08-01T11:58:48Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.8,
+        "recommended_system_ram_gb": 3.36,
+        "min_vram_gb": 1.08,
+        "recommended_vram_gb": 2.8,
+        "min_disk_gb": 6.12
+      }
+    }
+  ],
+  "promoted_size_slug": "1.5b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

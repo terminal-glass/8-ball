@@ -1,0 +1,112 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "cogito-2.1",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "671b",
+      "ollama_ref": "cogito-2.1:671b",
+      "parameter_count": 671000000000,
+      "quantization": null,
+      "download_size_bytes": 1300000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/cogito-2.1/tags",
+        "retrieved_at": "2026-08-01T11:52:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1689.64,
+        "recommended_system_ram_gb": 2027.56,
+        "min_vram_gb": 1495.0,
+        "recommended_vram_gb": 1689.64,
+        "min_disk_gb": 1565.0
+      }
+    },
+    {
+      "size_slug": "671b-fp16",
+      "ollama_ref": "cogito-2.1:671b-fp16",
+      "parameter_count": 671000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 1300000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/cogito-2.1/tags",
+        "retrieved_at": "2026-08-01T11:52:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1689.64,
+        "recommended_system_ram_gb": 2027.56,
+        "min_vram_gb": 1495.0,
+        "recommended_vram_gb": 1689.64,
+        "min_disk_gb": 1565.0
+      }
+    },
+    {
+      "size_slug": "671b-q4-k-m",
+      "ollama_ref": "cogito-2.1:671b-q4_K_M",
+      "parameter_count": 671000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 404000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/cogito-2.1/tags",
+        "retrieved_at": "2026-08-01T11:52:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 659.24,
+        "recommended_system_ram_gb": 791.08,
+        "min_vram_gb": 464.6,
+        "recommended_vram_gb": 659.24,
+        "min_disk_gb": 489.8
+      }
+    },
+    {
+      "size_slug": "671b-q80",
+      "ollama_ref": "cogito-2.1:671b-q8_0",
+      "parameter_count": 671000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 713000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/cogito-2.1/tags",
+        "retrieved_at": "2026-08-01T11:52:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1014.59,
+        "recommended_system_ram_gb": 1217.5,
+        "min_vram_gb": 819.95,
+        "recommended_vram_gb": 1014.59,
+        "min_disk_gb": 860.6
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "cogito-2.1:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 1300000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/cogito-2.1/tags",
+        "retrieved_at": "2026-08-01T11:52:07Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1496.72,
+        "recommended_system_ram_gb": 1796.07,
+        "min_vram_gb": 1495.0,
+        "recommended_vram_gb": 1496.72,
+        "min_disk_gb": 1565.0
+      }
+    }
+  ],
+  "promoted_size_slug": "671b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

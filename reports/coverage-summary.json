@@ -1,0 +1,167 @@
+{
+  "publishers": 12,
+  "families": 234,
+  "models": 437,
+  "tags": 7271,
+  "local_tags": 7256,
+  "cloud_tags": 149,
+  "unknown_parameter_count": 578,
+  "unknown_download_size": 15,
+  "unknown_quantization": 1010,
+  "unknown_context_window": 40,
+  "unknown_architecture": 7271,
+  "unknown_parameter_count_rate": 0.0795,
+  "unknown_download_size_rate": 0.0021,
+  "manual_review_count": 428,
+  "publisher_counts": {
+    "alibaba-qwen": 15,
+    "deepseek": 11,
+    "google": 13,
+    "ibm": 13,
+    "llava-project": 3,
+    "meta": 9,
+    "microsoft": 7,
+    "mistral-ai": 16,
+    "nomic-ai": 2,
+    "ollama-library": 2,
+    "tinyllama": 1,
+    "unknown": 142
+  },
+  "unknown_publisher_families": 142,
+  "unknown_publisher_rate": 0.6068,
+  "publisher_mappings_needing_review": 228,
+  "model_capability_coverage": {
+    "chat": {
+      "true": 0,
+      "false": 0,
+      "unknown": 437
+    },
+    "text_generation": {
+      "true": 435,
+      "false": 0,
+      "unknown": 2
+    },
+    "coding": {
+      "true": 0,
+      "false": 0,
+      "unknown": 437
+    },
+    "reasoning": {
+      "true": 72,
+      "false": 0,
+      "unknown": 365
+    },
+    "vision": {
+      "true": 68,
+      "false": 0,
+      "unknown": 369
+    },
+    "embeddings": {
+      "true": 20,
+      "false": 0,
+      "unknown": 417
+    },
+    "tool_use": {
+      "true": 167,
+      "false": 0,
+      "unknown": 270
+    },
+    "structured_output": {
+      "true": 0,
+      "false": 0,
+      "unknown": 437
+    },
+    "multilingual": {
+      "true": 0,
+      "false": 0,
+      "unknown": 437
+    },
+    "audio": {
+      "true": 0,
+      "false": 0,
+      "unknown": 437
+    },
+    "cloud": {
+      "true": 31,
+      "false": 0,
+      "unknown": 406
+    }
+  },
+  "tag_capability_coverage": {
+    "chat": {
+      "true": 0,
+      "false": 0,
+      "unknown": 7271
+    },
+    "text_generation": {
+      "true": 7269,
+      "false": 0,
+      "unknown": 2
+    },
+    "coding": {
+      "true": 0,
+      "false": 0,
+      "unknown": 7271
+    },
+    "reasoning": {
+      "true": 445,
+      "false": 0,
+      "unknown": 6826
+    },
+    "vision": {
+      "true": 529,
+      "false": 0,
+      "unknown": 6742
+    },
+    "embeddings": {
+      "true": 69,
+      "false": 0,
+      "unknown": 7202
+    },
+    "tool_use": {
+      "true": 1912,
+      "false": 0,
+      "unknown": 5359
+    },
+    "structured_output": {
+      "true": 0,
+      "false": 0,
+      "unknown": 7271
+    },
+    "multilingual": {
+      "true": 0,
+      "false": 0,
+      "unknown": 7271
+    },
+    "audio": {
+      "true": 0,
+      "false": 0,
+      "unknown": 7271
+    },
+    "cloud": {
+      "true": 147,
+      "false": 0,
+      "unknown": 7124
+    }
+  },
+  "unknown_capability_field_count": 69588,
+  "provenance_confidence_counts": {
+    "observed": 7258,
+    "derived": 41977,
+    "estimated": 0,
+    "manual": 0,
+    "unknown": 1652
+  },
+  "missing_provenance_record_count": 2,
+  "capability_conflict_count": 0,
+  "review_reason_counts": {
+    "publisher_mapping_needs_review": 276,
+    "unknown_publisher": 376
+  },
+  "unknown_field_flag_counts": {},
+  "deployment_combinations": 174504,
+  "input_identifier": "data/families",
+  "report_generated_at": "2026-08-06T02:20:23Z",
+  "validation_valid": true,
+  "validation_error_count": 0
+}

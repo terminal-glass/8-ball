@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "wizard-vicuna-uncensored",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T05:53:11Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "cuda_available": true,
+  "apple_metal_available": false,
+  "total_vram_gb": 20.0,
+  "reason": "DigitalOcean GPU droplet lane."
+}

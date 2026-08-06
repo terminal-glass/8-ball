@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-08-06T05:53:11Z",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json",
+    "data/normalized/hardware-assumed-profiles.json",
+    "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "AGENTS/data-science/P2-Provider-Datasets/"
+  ],
+  "model_count": 234,
+  "size_count": 7271,
+  "install_lane_count": 10,
+  "data_gaps": [
+    "AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/P1-P4 instead."
+  ]
+}

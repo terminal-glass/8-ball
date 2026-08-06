@@ -1,0 +1,70 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "mistral-small3.2",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "24b",
+      "ollama_ref": "mistral-small3.2:24b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "24b-instruct2506-fp16",
+      "ollama_ref": "mistral-small3.2:24b-instruct-2506-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "24b-instruct2506-q4-k-m",
+      "ollama_ref": "mistral-small3.2:24b-instruct-2506-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "24b-instruct2506-q80",
+      "ollama_ref": "mistral-small3.2:24b-instruct-2506-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "mistral-small3.2:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

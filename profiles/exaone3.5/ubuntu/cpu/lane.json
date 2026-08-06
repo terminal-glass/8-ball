@@ -1,0 +1,124 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "exaone3.5",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "exaone3.5:32b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-fp16",
+      "ollama_ref": "exaone3.5:32b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 84.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:32b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-q80",
+      "ollama_ref": "exaone3.5:32b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b",
+      "ollama_ref": "exaone3.5:7.8b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-instruct-fp16",
+      "ollama_ref": "exaone3.5:7.8b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.37 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-instruct-q80",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.51 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b",
+      "ollama_ref": "exaone3.5:2.4b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-instruct-fp16",
+      "ollama_ref": "exaone3.5:2.4b-instruct-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-instruct-q80",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "exaone3.5:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

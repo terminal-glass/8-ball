@@ -1,0 +1,672 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "llama-pro",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "8b-instruct-fp16",
+      "ollama_ref": "llama-pro:8b-instruct-fp16",
+      "parameter_count": 8000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 17000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 23.57,
+        "recommended_system_ram_gb": 28.29,
+        "min_vram_gb": 19.55,
+        "recommended_vram_gb": 23.57,
+        "min_disk_gb": 25.4
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q2-k",
+      "ollama_ref": "llama-pro:8b-instruct-q2_K",
+      "parameter_count": 8000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 3500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.05,
+        "recommended_system_ram_gb": 9.66,
+        "min_vram_gb": 4.02,
+        "recommended_vram_gb": 8.05,
+        "min_disk_gb": 9.2
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q3-k-l",
+      "ollama_ref": "llama-pro:8b-instruct-q3_K_L",
+      "parameter_count": 8000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.2,
+        "recommended_system_ram_gb": 11.04,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 9.2,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q3-k-m",
+      "ollama_ref": "llama-pro:8b-instruct-q3_K_M",
+      "parameter_count": 8000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 4100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.74,
+        "recommended_system_ram_gb": 10.49,
+        "min_vram_gb": 4.71,
+        "recommended_vram_gb": 8.74,
+        "min_disk_gb": 9.92
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q3-k-s",
+      "ollama_ref": "llama-pro:8b-instruct-q3_K_S",
+      "parameter_count": 8000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 3600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.16,
+        "recommended_system_ram_gb": 9.8,
+        "min_vram_gb": 4.14,
+        "recommended_vram_gb": 8.16,
+        "min_disk_gb": 9.32
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q4-k-m",
+      "ollama_ref": "llama-pro:8b-instruct-q4_K_M",
+      "parameter_count": 8000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 5100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.89,
+        "recommended_system_ram_gb": 11.87,
+        "min_vram_gb": 5.86,
+        "recommended_vram_gb": 9.89,
+        "min_disk_gb": 11.12
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q4-k-s",
+      "ollama_ref": "llama-pro:8b-instruct-q4_K_S",
+      "parameter_count": 8000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 4800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.54,
+        "recommended_system_ram_gb": 11.45,
+        "min_vram_gb": 5.52,
+        "recommended_vram_gb": 9.54,
+        "min_disk_gb": 10.76
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q40",
+      "ollama_ref": "llama-pro:8b-instruct-q4_0",
+      "parameter_count": 8000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.43,
+        "recommended_system_ram_gb": 11.32,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.43,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q41",
+      "ollama_ref": "llama-pro:8b-instruct-q4_1",
+      "parameter_count": 8000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 5300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.12,
+        "recommended_system_ram_gb": 12.14,
+        "min_vram_gb": 6.09,
+        "recommended_vram_gb": 10.12,
+        "min_disk_gb": 11.36
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q5-k-m",
+      "ollama_ref": "llama-pro:8b-instruct-q5_K_M",
+      "parameter_count": 8000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 5900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.81,
+        "recommended_system_ram_gb": 12.97,
+        "min_vram_gb": 6.79,
+        "recommended_vram_gb": 10.81,
+        "min_disk_gb": 12.08
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q5-k-s",
+      "ollama_ref": "llama-pro:8b-instruct-q5_K_S",
+      "parameter_count": 8000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.7,
+        "recommended_system_ram_gb": 12.83,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 10.7,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q50",
+      "ollama_ref": "llama-pro:8b-instruct-q5_0",
+      "parameter_count": 8000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.7,
+        "recommended_system_ram_gb": 12.83,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 10.7,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q51",
+      "ollama_ref": "llama-pro:8b-instruct-q5_1",
+      "parameter_count": 8000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 6300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.27,
+        "recommended_system_ram_gb": 13.52,
+        "min_vram_gb": 7.24,
+        "recommended_vram_gb": 11.27,
+        "min_disk_gb": 12.56
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q6-k",
+      "ollama_ref": "llama-pro:8b-instruct-q6_K",
+      "parameter_count": 8000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 6900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.96,
+        "recommended_system_ram_gb": 14.35,
+        "min_vram_gb": 7.93,
+        "recommended_vram_gb": 11.96,
+        "min_disk_gb": 13.28
+      }
+    },
+    {
+      "size_slug": "8b-instruct-q80",
+      "ollama_ref": "llama-pro:8b-instruct-q8_0",
+      "parameter_count": 8000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 8900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.26,
+        "recommended_system_ram_gb": 17.11,
+        "min_vram_gb": 10.23,
+        "recommended_vram_gb": 14.26,
+        "min_disk_gb": 15.68
+      }
+    },
+    {
+      "size_slug": "8b-text-fp16",
+      "ollama_ref": "llama-pro:8b-text-fp16",
+      "parameter_count": 8000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 17000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 23.57,
+        "recommended_system_ram_gb": 28.29,
+        "min_vram_gb": 19.55,
+        "recommended_vram_gb": 23.57,
+        "min_disk_gb": 25.4
+      }
+    },
+    {
+      "size_slug": "8b-text-q2-k",
+      "ollama_ref": "llama-pro:8b-text-q2_K",
+      "parameter_count": 8000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 3500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.05,
+        "recommended_system_ram_gb": 9.66,
+        "min_vram_gb": 4.02,
+        "recommended_vram_gb": 8.05,
+        "min_disk_gb": 9.2
+      }
+    },
+    {
+      "size_slug": "8b-text-q3-k-l",
+      "ollama_ref": "llama-pro:8b-text-q3_K_L",
+      "parameter_count": 8000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 4500000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.2,
+        "recommended_system_ram_gb": 11.04,
+        "min_vram_gb": 5.17,
+        "recommended_vram_gb": 9.2,
+        "min_disk_gb": 10.4
+      }
+    },
+    {
+      "size_slug": "8b-text-q3-k-m",
+      "ollama_ref": "llama-pro:8b-text-q3_K_M",
+      "parameter_count": 8000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 4100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.74,
+        "recommended_system_ram_gb": 10.49,
+        "min_vram_gb": 4.71,
+        "recommended_vram_gb": 8.74,
+        "min_disk_gb": 9.92
+      }
+    },
+    {
+      "size_slug": "8b-text-q3-k-s",
+      "ollama_ref": "llama-pro:8b-text-q3_K_S",
+      "parameter_count": 8000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 3600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 8.16,
+        "recommended_system_ram_gb": 9.8,
+        "min_vram_gb": 4.14,
+        "recommended_vram_gb": 8.16,
+        "min_disk_gb": 9.32
+      }
+    },
+    {
+      "size_slug": "8b-text-q4-k-m",
+      "ollama_ref": "llama-pro:8b-text-q4_K_M",
+      "parameter_count": 8000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 5100000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.89,
+        "recommended_system_ram_gb": 11.87,
+        "min_vram_gb": 5.86,
+        "recommended_vram_gb": 9.89,
+        "min_disk_gb": 11.12
+      }
+    },
+    {
+      "size_slug": "8b-text-q4-k-s",
+      "ollama_ref": "llama-pro:8b-text-q4_K_S",
+      "parameter_count": 8000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 4800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.54,
+        "recommended_system_ram_gb": 11.45,
+        "min_vram_gb": 5.52,
+        "recommended_vram_gb": 9.54,
+        "min_disk_gb": 10.76
+      }
+    },
+    {
+      "size_slug": "8b-text-q40",
+      "ollama_ref": "llama-pro:8b-text-q4_0",
+      "parameter_count": 8000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 9.43,
+        "recommended_system_ram_gb": 11.32,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 9.43,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "8b-text-q41",
+      "ollama_ref": "llama-pro:8b-text-q4_1",
+      "parameter_count": 8000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 5300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.12,
+        "recommended_system_ram_gb": 12.14,
+        "min_vram_gb": 6.09,
+        "recommended_vram_gb": 10.12,
+        "min_disk_gb": 11.36
+      }
+    },
+    {
+      "size_slug": "8b-text-q5-k-m",
+      "ollama_ref": "llama-pro:8b-text-q5_K_M",
+      "parameter_count": 8000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 5900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.81,
+        "recommended_system_ram_gb": 12.97,
+        "min_vram_gb": 6.79,
+        "recommended_vram_gb": 10.81,
+        "min_disk_gb": 12.08
+      }
+    },
+    {
+      "size_slug": "8b-text-q5-k-s",
+      "ollama_ref": "llama-pro:8b-text-q5_K_S",
+      "parameter_count": 8000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.7,
+        "recommended_system_ram_gb": 12.83,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 10.7,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "8b-text-q50",
+      "ollama_ref": "llama-pro:8b-text-q5_0",
+      "parameter_count": 8000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 5800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.7,
+        "recommended_system_ram_gb": 12.83,
+        "min_vram_gb": 6.67,
+        "recommended_vram_gb": 10.7,
+        "min_disk_gb": 11.96
+      }
+    },
+    {
+      "size_slug": "8b-text-q51",
+      "ollama_ref": "llama-pro:8b-text-q5_1",
+      "parameter_count": 8000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 6300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.27,
+        "recommended_system_ram_gb": 13.52,
+        "min_vram_gb": 7.24,
+        "recommended_vram_gb": 11.27,
+        "min_disk_gb": 12.56
+      }
+    },
+    {
+      "size_slug": "8b-text-q6-k",
+      "ollama_ref": "llama-pro:8b-text-q6_K",
+      "parameter_count": 8000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 6900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.96,
+        "recommended_system_ram_gb": 14.35,
+        "min_vram_gb": 7.93,
+        "recommended_vram_gb": 11.96,
+        "min_disk_gb": 13.28
+      }
+    },
+    {
+      "size_slug": "8b-text-q80",
+      "ollama_ref": "llama-pro:8b-text-q8_0",
+      "parameter_count": 8000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 8900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.26,
+        "recommended_system_ram_gb": 17.11,
+        "min_vram_gb": 10.23,
+        "recommended_vram_gb": 14.26,
+        "min_disk_gb": 15.68
+      }
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "llama-pro:instruct",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.13,
+        "recommended_system_ram_gb": 8.56,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 7.13,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama-pro:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.13,
+        "recommended_system_ram_gb": 8.56,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 7.13,
+        "min_disk_gb": 10.64
+      }
+    },
+    {
+      "size_slug": "text",
+      "ollama_ref": "llama-pro:text",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 4700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/llama-pro/tags",
+        "retrieved_at": "2026-08-01T11:55:04Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 7.13,
+        "recommended_system_ram_gb": 8.56,
+        "min_vram_gb": 5.4,
+        "recommended_vram_gb": 7.13,
+        "min_disk_gb": 10.64
+      }
+    }
+  ],
+  "promoted_size_slug": "8b-instruct-fp16",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "deepseek-v2.5",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "236b",
+      "ollama_ref": "deepseek-v2.5:236b",
+      "parameter_count": 236000000000,
+      "quantization": null,
+      "download_size_bytes": 133000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+        "retrieved_at": "2026-08-01T11:52:41Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 222.52,
+        "recommended_system_ram_gb": 267.03,
+        "min_vram_gb": 152.95,
+        "recommended_vram_gb": 222.52,
+        "min_disk_gb": 164.6
+      }
+    },
+    {
+      "size_slug": "236b-q40",
+      "ollama_ref": "deepseek-v2.5:236b-q4_0",
+      "parameter_count": 236000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 133000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+        "retrieved_at": "2026-08-01T11:52:41Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 222.52,
+        "recommended_system_ram_gb": 267.03,
+        "min_vram_gb": 152.95,
+        "recommended_vram_gb": 222.52,
+        "min_disk_gb": 164.6
+      }
+    },
+    {
+      "size_slug": "236b-q41",
+      "ollama_ref": "deepseek-v2.5:236b-q4_1",
+      "parameter_count": 236000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 148000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+        "retrieved_at": "2026-08-01T11:52:41Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 239.77,
+        "recommended_system_ram_gb": 287.73,
+        "min_vram_gb": 170.2,
+        "recommended_vram_gb": 239.77,
+        "min_disk_gb": 182.6
+      }
+    },
+    {
+      "size_slug": "236b-q50",
+      "ollama_ref": "deepseek-v2.5:236b-q5_0",
+      "parameter_count": 236000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 162000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+        "retrieved_at": "2026-08-01T11:52:41Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 255.87,
+        "recommended_system_ram_gb": 307.05,
+        "min_vram_gb": 186.3,
+        "recommended_vram_gb": 255.87,
+        "min_disk_gb": 199.4
+      }
+    },
+    {
+      "size_slug": "236b-q51",
+      "ollama_ref": "deepseek-v2.5:236b-q5_1",
+      "parameter_count": 236000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 177000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+        "retrieved_at": "2026-08-01T11:52:41Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 273.12,
+        "recommended_system_ram_gb": 327.75,
+        "min_vram_gb": 203.55,
+        "recommended_vram_gb": 273.12,
+        "min_disk_gb": 217.4
+      }
+    },
+    {
+      "size_slug": "236b-q80",
+      "ollama_ref": "deepseek-v2.5:236b-q8_0",
+      "parameter_count": 236000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 251000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+        "retrieved_at": "2026-08-01T11:52:41Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 358.22,
+        "recommended_system_ram_gb": 429.87,
+        "min_vram_gb": 288.65,
+        "recommended_vram_gb": 358.22,
+        "min_disk_gb": 306.2
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-v2.5:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 133000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/deepseek-v2.5/tags",
+        "retrieved_at": "2026-08-01T11:52:41Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 154.67,
+        "recommended_system_ram_gb": 185.61,
+        "min_vram_gb": 152.95,
+        "recommended_vram_gb": 154.67,
+        "min_disk_gb": 164.6
+      }
+    }
+  ],
+  "promoted_size_slug": "236b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

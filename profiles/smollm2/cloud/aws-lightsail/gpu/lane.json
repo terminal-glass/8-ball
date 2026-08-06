@@ -1,0 +1,559 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "smollm2",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "1.7b",
+      "ollama_ref": "smollm2:1.7b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-fp16",
+      "ollama_ref": "smollm2:1.7b-instruct-fp16",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q2-k",
+      "ollama_ref": "smollm2:1.7b-instruct-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q3-k-l",
+      "ollama_ref": "smollm2:1.7b-instruct-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q3-k-m",
+      "ollama_ref": "smollm2:1.7b-instruct-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q3-k-s",
+      "ollama_ref": "smollm2:1.7b-instruct-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q4-k-m",
+      "ollama_ref": "smollm2:1.7b-instruct-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q4-k-s",
+      "ollama_ref": "smollm2:1.7b-instruct-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q40",
+      "ollama_ref": "smollm2:1.7b-instruct-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q41",
+      "ollama_ref": "smollm2:1.7b-instruct-q4_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q5-k-m",
+      "ollama_ref": "smollm2:1.7b-instruct-q5_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q5-k-s",
+      "ollama_ref": "smollm2:1.7b-instruct-q5_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q50",
+      "ollama_ref": "smollm2:1.7b-instruct-q5_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q51",
+      "ollama_ref": "smollm2:1.7b-instruct-q5_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q6-k",
+      "ollama_ref": "smollm2:1.7b-instruct-q6_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "1.7b-instruct-q80",
+      "ollama_ref": "smollm2:1.7b-instruct-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m",
+      "ollama_ref": "smollm2:360m",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-fp16",
+      "ollama_ref": "smollm2:360m-instruct-fp16",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q2-k",
+      "ollama_ref": "smollm2:360m-instruct-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q3-k-l",
+      "ollama_ref": "smollm2:360m-instruct-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q3-k-m",
+      "ollama_ref": "smollm2:360m-instruct-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q3-k-s",
+      "ollama_ref": "smollm2:360m-instruct-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q4-k-m",
+      "ollama_ref": "smollm2:360m-instruct-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q4-k-s",
+      "ollama_ref": "smollm2:360m-instruct-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q40",
+      "ollama_ref": "smollm2:360m-instruct-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q41",
+      "ollama_ref": "smollm2:360m-instruct-q4_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q5-k-m",
+      "ollama_ref": "smollm2:360m-instruct-q5_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q5-k-s",
+      "ollama_ref": "smollm2:360m-instruct-q5_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q50",
+      "ollama_ref": "smollm2:360m-instruct-q5_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q51",
+      "ollama_ref": "smollm2:360m-instruct-q5_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q6-k",
+      "ollama_ref": "smollm2:360m-instruct-q6_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "360m-instruct-q80",
+      "ollama_ref": "smollm2:360m-instruct-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m",
+      "ollama_ref": "smollm2:135m",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-fp16",
+      "ollama_ref": "smollm2:135m-instruct-fp16",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q2-k",
+      "ollama_ref": "smollm2:135m-instruct-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q3-k-l",
+      "ollama_ref": "smollm2:135m-instruct-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q3-k-m",
+      "ollama_ref": "smollm2:135m-instruct-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q3-k-s",
+      "ollama_ref": "smollm2:135m-instruct-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q4-k-m",
+      "ollama_ref": "smollm2:135m-instruct-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q4-k-s",
+      "ollama_ref": "smollm2:135m-instruct-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q40",
+      "ollama_ref": "smollm2:135m-instruct-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q41",
+      "ollama_ref": "smollm2:135m-instruct-q4_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q5-k-m",
+      "ollama_ref": "smollm2:135m-instruct-q5_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q5-k-s",
+      "ollama_ref": "smollm2:135m-instruct-q5_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q50",
+      "ollama_ref": "smollm2:135m-instruct-q5_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q51",
+      "ollama_ref": "smollm2:135m-instruct-q5_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q6-k",
+      "ollama_ref": "smollm2:135m-instruct-q6_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "135m-instruct-q80",
+      "ollama_ref": "smollm2:135m-instruct-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "smollm2:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

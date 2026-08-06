@@ -1,0 +1,72 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "glm-ocr",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "bf16",
+      "ollama_ref": "glm-ocr:bf16",
+      "parameter_count": null,
+      "quantization": "bf16",
+      "download_size_bytes": 2200000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/glm-ocr/tags",
+        "retrieved_at": "2026-08-01T11:53:56Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 4.25,
+        "recommended_system_ram_gb": 5.11,
+        "min_vram_gb": 2.53,
+        "recommended_vram_gb": 4.25,
+        "min_disk_gb": 7.64
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "glm-ocr:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 2200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/glm-ocr/tags",
+        "retrieved_at": "2026-08-01T11:53:56Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 4.25,
+        "recommended_system_ram_gb": 5.11,
+        "min_vram_gb": 2.53,
+        "recommended_vram_gb": 4.25,
+        "min_disk_gb": 7.64
+      }
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "glm-ocr:q8_0",
+      "parameter_count": null,
+      "quantization": "q8_0",
+      "download_size_bytes": 1600000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/glm-ocr/tags",
+        "retrieved_at": "2026-08-01T11:53:56Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 3.56,
+        "recommended_system_ram_gb": 4.28,
+        "min_vram_gb": 1.84,
+        "recommended_vram_gb": 3.56,
+        "min_disk_gb": 6.92
+      }
+    }
+  ],
+  "promoted_size_slug": "bf16",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

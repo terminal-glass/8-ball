@@ -1,0 +1,764 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama3.1",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "405b",
+      "ollama_ref": "llama3.1:405b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 296.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-fp16",
+      "ollama_ref": "llama3.1:405b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 979.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q2-k",
+      "ollama_ref": "llama3.1:405b-instruct-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 183.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q3-k-l",
+      "ollama_ref": "llama3.1:405b-instruct-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 260.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q3-k-m",
+      "ollama_ref": "llama3.1:405b-instruct-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 239.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q3-k-s",
+      "ollama_ref": "llama3.1:405b-instruct-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 215.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q4-k-m",
+      "ollama_ref": "llama3.1:405b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 296.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q4-k-s",
+      "ollama_ref": "llama3.1:405b-instruct-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 282.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q40",
+      "ollama_ref": "llama3.1:405b-instruct-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 279.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q41",
+      "ollama_ref": "llama3.1:405b-instruct-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 309.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q5-k-m",
+      "ollama_ref": "llama3.1:405b-instruct-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 349.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q5-k-s",
+      "ollama_ref": "llama3.1:405b-instruct-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 339.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q50",
+      "ollama_ref": "llama3.1:405b-instruct-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 339.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q51",
+      "ollama_ref": "llama3.1:405b-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 371.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q6-k",
+      "ollama_ref": "llama3.1:405b-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 404.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-instruct-q80",
+      "ollama_ref": "llama3.1:405b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 522.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-fp16",
+      "ollama_ref": "llama3.1:405b-text-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 979.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q2-k",
+      "ollama_ref": "llama3.1:405b-text-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 183.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q3-k-l",
+      "ollama_ref": "llama3.1:405b-text-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 260.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q3-k-m",
+      "ollama_ref": "llama3.1:405b-text-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 239.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q3-k-s",
+      "ollama_ref": "llama3.1:405b-text-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 215.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q4-k-m",
+      "ollama_ref": "llama3.1:405b-text-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 296.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q4-k-s",
+      "ollama_ref": "llama3.1:405b-text-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 282.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q40",
+      "ollama_ref": "llama3.1:405b-text-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 279.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q41",
+      "ollama_ref": "llama3.1:405b-text-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 309.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q5-k-m",
+      "ollama_ref": "llama3.1:405b-text-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 349.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q5-k-s",
+      "ollama_ref": "llama3.1:405b-text-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 339.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q50",
+      "ollama_ref": "llama3.1:405b-text-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 339.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q51",
+      "ollama_ref": "llama3.1:405b-text-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 371.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q6-k",
+      "ollama_ref": "llama3.1:405b-text-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 404.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-text-q80",
+      "ollama_ref": "llama3.1:405b-text-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 522.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b",
+      "ollama_ref": "llama3.1:70b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-fp16",
+      "ollama_ref": "llama3.1:70b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 174.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q2-k",
+      "ollama_ref": "llama3.1:70b-instruct-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-l",
+      "ollama_ref": "llama3.1:70b-instruct-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 49.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-m",
+      "ollama_ref": "llama3.1:70b-instruct-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-s",
+      "ollama_ref": "llama3.1:70b-instruct-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 42.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q4-k-m",
+      "ollama_ref": "llama3.1:70b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q4-k-s",
+      "ollama_ref": "llama3.1:70b-instruct-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q40",
+      "ollama_ref": "llama3.1:70b-instruct-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q5-k-m",
+      "ollama_ref": "llama3.1:70b-instruct-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 65.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q5-k-s",
+      "ollama_ref": "llama3.1:70b-instruct-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q50",
+      "ollama_ref": "llama3.1:70b-instruct-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q51",
+      "ollama_ref": "llama3.1:70b-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 68.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q6-k",
+      "ollama_ref": "llama3.1:70b-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 74.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-instruct-q80",
+      "ollama_ref": "llama3.1:70b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 95.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-fp16",
+      "ollama_ref": "llama3.1:70b-text-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 174.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q2-k",
+      "ollama_ref": "llama3.1:70b-text-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q3-k-l",
+      "ollama_ref": "llama3.1:70b-text-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 49.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q3-k-m",
+      "ollama_ref": "llama3.1:70b-text-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q3-k-s",
+      "ollama_ref": "llama3.1:70b-text-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 42.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q4-k-m",
+      "ollama_ref": "llama3.1:70b-text-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q4-k-s",
+      "ollama_ref": "llama3.1:70b-text-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q40",
+      "ollama_ref": "llama3.1:70b-text-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 53.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q41",
+      "ollama_ref": "llama3.1:70b-text-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 57.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q5-k-m",
+      "ollama_ref": "llama3.1:70b-text-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 65.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q5-k-s",
+      "ollama_ref": "llama3.1:70b-text-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q50",
+      "ollama_ref": "llama3.1:70b-text-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q51",
+      "ollama_ref": "llama3.1:70b-text-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 68.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q6-k",
+      "ollama_ref": "llama3.1:70b-text-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 74.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-text-q80",
+      "ollama_ref": "llama3.1:70b-text-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 95.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "llama3.1:8b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-fp16",
+      "ollama_ref": "llama3.1:8b-instruct-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q2-k",
+      "ollama_ref": "llama3.1:8b-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q3-k-l",
+      "ollama_ref": "llama3.1:8b-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q3-k-m",
+      "ollama_ref": "llama3.1:8b-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q3-k-s",
+      "ollama_ref": "llama3.1:8b-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q4-k-m",
+      "ollama_ref": "llama3.1:8b-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q4-k-s",
+      "ollama_ref": "llama3.1:8b-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q40",
+      "ollama_ref": "llama3.1:8b-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q41",
+      "ollama_ref": "llama3.1:8b-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q5-k-m",
+      "ollama_ref": "llama3.1:8b-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q5-k-s",
+      "ollama_ref": "llama3.1:8b-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q50",
+      "ollama_ref": "llama3.1:8b-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q51",
+      "ollama_ref": "llama3.1:8b-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q6-k",
+      "ollama_ref": "llama3.1:8b-instruct-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q80",
+      "ollama_ref": "llama3.1:8b-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-fp16",
+      "ollama_ref": "llama3.1:8b-text-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q2-k",
+      "ollama_ref": "llama3.1:8b-text-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q3-k-l",
+      "ollama_ref": "llama3.1:8b-text-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q3-k-m",
+      "ollama_ref": "llama3.1:8b-text-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q3-k-s",
+      "ollama_ref": "llama3.1:8b-text-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q4-k-m",
+      "ollama_ref": "llama3.1:8b-text-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q4-k-s",
+      "ollama_ref": "llama3.1:8b-text-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q40",
+      "ollama_ref": "llama3.1:8b-text-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q41",
+      "ollama_ref": "llama3.1:8b-text-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q5-k-m",
+      "ollama_ref": "llama3.1:8b-text-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q5-k-s",
+      "ollama_ref": "llama3.1:8b-text-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q50",
+      "ollama_ref": "llama3.1:8b-text-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q51",
+      "ollama_ref": "llama3.1:8b-text-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q6-k",
+      "ollama_ref": "llama3.1:8b-text-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-text-q80",
+      "ollama_ref": "llama3.1:8b-text-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama3.1:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

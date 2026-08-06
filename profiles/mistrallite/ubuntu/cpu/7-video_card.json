@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "mistrallite",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": false,
+  "cuda_available": false,
+  "apple_metal_available": false,
+  "total_vram_gb": null,
+  "reason": "CPU-only Ubuntu lane; GPU stage not required for lane selection."
+}

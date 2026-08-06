@@ -1,0 +1,92 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gemma3n",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "lane_id": "ubuntu/cuda",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cuda.json",
+  "detection_signals": [
+    "os=linux",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "e4b",
+      "ollama_ref": "gemma3n:e4b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "e4b-it-fp16",
+      "ollama_ref": "gemma3n:e4b-it-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.1 GB VRAM; lane provides 16.0 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "e4b-it-q4-k-m",
+      "ollama_ref": "gemma3n:e4b-it-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "e4b-it-q80",
+      "ollama_ref": "gemma3n:e4b-it-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "e2b",
+      "ollama_ref": "gemma3n:e2b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "e2b-it-fp16",
+      "ollama_ref": "gemma3n:e2b-it-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "e2b-it-q4-k-m",
+      "ollama_ref": "gemma3n:e2b-it-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "e2b-it-q80",
+      "ollama_ref": "gemma3n:e2b-it-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gemma3n:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "mistral-medium-3.5",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "128b",
+      "ollama_ref": "mistral-medium-3.5:128b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 101.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "128b-bf16",
+      "ollama_ref": "mistral-medium-3.5:128b-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 311.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "128b-q4-k-m",
+      "ollama_ref": "mistral-medium-3.5:128b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 101.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "128b-q80",
+      "ollama_ref": "mistral-medium-3.5:128b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 170.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "mistral-medium-3.5:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 101.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    }
+  ]
+}

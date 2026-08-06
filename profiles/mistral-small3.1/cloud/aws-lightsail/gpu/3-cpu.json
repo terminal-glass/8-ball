@@ -1,0 +1,15 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "mistral-small3.1",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
+  },
+  "applicable": true,
+  "minimum_cpu_cores": 4,
+  "recommended_cpu_cores": 4,
+  "reason": "CPU stage applies to all lanes."
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "dolphin3",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cpu",
+  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "dolphin3:8b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-fp16",
+      "ollama_ref": "dolphin3:8b-llama3.1-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q4-k-m",
+      "ollama_ref": "dolphin3:8b-llama3.1-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q80",
+      "ollama_ref": "dolphin3:8b-llama3.1-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "dolphin3:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "granite3-guardian",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "granite3-guardian:8b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b-fp16",
+      "ollama_ref": "granite3-guardian:8b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b-q5-k-m",
+      "ollama_ref": "granite3-guardian:8b-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b-q5-k-s",
+      "ollama_ref": "granite3-guardian:8b-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b-q6-k",
+      "ollama_ref": "granite3-guardian:8b-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.73 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b-q80",
+      "ollama_ref": "granite3-guardian:8b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.03 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "granite3-guardian:2b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-fp16",
+      "ollama_ref": "granite3-guardian:2b-fp16",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-q80",
+      "ollama_ref": "granite3-guardian:2b-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "granite3-guardian:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

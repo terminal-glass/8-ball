@@ -1,0 +1,190 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "codegeex4",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "9b",
+      "ollama_ref": "codegeex4:9b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-fp16",
+      "ollama_ref": "codegeex4:9b-all-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.16 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q2-k",
+      "ollama_ref": "codegeex4:9b-all-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q3-k-l",
+      "ollama_ref": "codegeex4:9b-all-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q3-k-m",
+      "ollama_ref": "codegeex4:9b-all-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q3-k-s",
+      "ollama_ref": "codegeex4:9b-all-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q4-k-m",
+      "ollama_ref": "codegeex4:9b-all-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q4-k-s",
+      "ollama_ref": "codegeex4:9b-all-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q40",
+      "ollama_ref": "codegeex4:9b-all-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q41",
+      "ollama_ref": "codegeex4:9b-all-q4_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q5-k-m",
+      "ollama_ref": "codegeex4:9b-all-q5_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q5-k-s",
+      "ollama_ref": "codegeex4:9b-all-q5_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q50",
+      "ollama_ref": "codegeex4:9b-all-q5_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q51",
+      "ollama_ref": "codegeex4:9b-all-q5_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q6-k",
+      "ollama_ref": "codegeex4:9b-all-q6_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-all-q80",
+      "ollama_ref": "codegeex4:9b-all-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "codegeex4:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

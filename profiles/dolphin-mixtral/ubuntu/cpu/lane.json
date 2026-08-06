@@ -1,0 +1,580 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "dolphin-mixtral",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "8x22b",
+      "ollama_ref": "dolphin-mixtral:8x22b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 93.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 93.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-fp16",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 324.88 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q2-k",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 61.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q3-k-l",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q3-k-m",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q3-k-s",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.88 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q4-k-m",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 100.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q4-k-s",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 93.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q40",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 93.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q41",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 102.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q5-k-m",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 116.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q5-k-s",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 113.27 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q50",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 113.27 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q51",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 123.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q6-k",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 135.12 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x22b-v2.9-q80",
+      "ollama_ref": "dolphin-mixtral:8x22b-v2.9-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 173.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b",
+      "ollama_ref": "dolphin-mixtral:8x7b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-fp16",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q2-k",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.27 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q3-k-l",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q3-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.17 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q3-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q4-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q4-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q40",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q41",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q5-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q5-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q50",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q51",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q6-k",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.5-q80",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.5-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.22 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-fp16",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q2-k",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.27 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q3-k-l",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q3-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.17 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q3-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q4-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q4-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q40",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q41",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q5-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q5-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q50",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q51",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q6-k",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.6-q80",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.6-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.22 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-fp16",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q2-k",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.27 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q3-k-l",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q3-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.17 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q3-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q4-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q4-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q40",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q41",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q5-k-m",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q5-k-s",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q50",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q51",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q6-k",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-v2.7-q80",
+      "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.22 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "dolphin-mixtral:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v2.5",
+      "ollama_ref": "dolphin-mixtral:v2.5",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v2.6",
+      "ollama_ref": "dolphin-mixtral:v2.6",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v2.7",
+      "ollama_ref": "dolphin-mixtral:v2.7",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

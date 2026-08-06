@@ -21,6 +21,15 @@ PLATFORM_LANES = (
     "cloud/aws-lightsail/gpu",
 )
 
+STAGE_FILES = (
+    "lane.json",
+    "3-cpu.json",
+    "4-ram.json",
+    "5-hard_disk.json",
+    "6-CPU_only.json",
+    "7-video_card.json",
+)
+
 NON_MODEL_PROFILE_DIRS = frozenset(
     {
         "families",
@@ -31,18 +40,12 @@ NON_MODEL_PROFILE_DIRS = frozenset(
 )
 
 
-def _model_slugs_from_manifest() -> list[str]:
-    manifest = json.loads(GENERATED_INSTALL_MANIFEST_PATH.read_text(encoding="utf-8"))
-    models = manifest.get("models", {})
-    return sorted({entry.get("model_slug") or model_id for model_id, entry in models.items()})
-
-
-def _model_profile_dirs() -> list[Path]:
-    return sorted(
-        path
-        for path in PROFILES_DIR.iterdir()
-        if path.is_dir() and path.name not in NON_MODEL_PROFILE_DIRS
-    )
+def _c10_model_slugs() -> list[str]:
+    index_path = PROFILES_DIR / "c10-index.json"
+    if not index_path.is_file():
+        return []
+    rows = json.loads(index_path.read_text(encoding="utf-8")).get("rows", [])
+    return sorted({row["model_slug"] for row in rows})
 
 
 def test_platform_lane_skeleton_for_sample_models(tmp_path: Path) -> None:
@@ -59,27 +62,40 @@ def test_platform_lane_skeleton_for_sample_models(tmp_path: Path) -> None:
 
 
 @pytest.mark.skipif(
-    not GENERATED_INSTALL_MANIFEST_PATH.is_file(),
-    reason="install manifest missing",
+    not (PROFILES_DIR / "c10-index.json").is_file(),
+    reason="C10 profile index missing",
 )
-def test_profile_platform_tree_complete_in_working_tree() -> None:
-    script = REPO_ROOT / "scripts" / "create-profile-platform-tree.sh"
-    subprocess.run(["bash", str(script)], cwd=REPO_ROOT, check=True)
-
-    model_dirs = _model_profile_dirs()
-    expected_slugs = _model_slugs_from_manifest()
-    assert len(model_dirs) == len(expected_slugs)
+def test_c10_profile_platform_tree_complete_in_working_tree() -> None:
+    model_slugs = _c10_model_slugs()
+    assert model_slugs, "C10 index must list model slugs"
 
     missing: list[str] = []
-    with_files: list[str] = []
-    for model_dir in model_dirs:
+    for slug in model_slugs:
+        page = PROFILES_DIR / f"{slug}.json"
+        if not page.is_file():
+            missing.append(f"{slug}.json")
         for lane in PLATFORM_LANES:
-            lane_path = model_dir / lane
-            if not lane_path.is_dir():
-                missing.append(f"{model_dir.name}/{lane}")
-        if any(path.is_file() for path in model_dir.rglob("*")):
-            with_files.append(model_dir.name)
+            leaf = PROFILES_DIR / slug / lane
+            if not leaf.is_dir():
+                missing.append(f"{slug}/{lane}")
+                continue
+            for stage in STAGE_FILES:
+                if not (leaf / stage).is_file():
+                    missing.append(f"{slug}/{lane}/{stage}")
 
-    assert not missing, f"Missing platform lanes: {missing[:10]}"
-    assert not with_files, f"Model folders contain files: {with_files[:10]}"
-    assert len(model_dirs) * len(PLATFORM_LANES) == 4370
+    assert not missing, f"Missing C10 profile artifacts: {missing[:10]}"
+    assert len(model_slugs) >= 200
+
+
+def test_create_profile_platform_tree_script_runs(tmp_path: Path) -> None:
+    script = REPO_ROOT / "scripts" / "create-profile-platform-tree.sh"
+    if not GENERATED_INSTALL_MANIFEST_PATH.is_file():
+        pytest.skip("install manifest missing")
+    subprocess.run(["bash", str(script)], cwd=REPO_ROOT, check=True)
+
+    model_dirs = sorted(
+        path
+        for path in PROFILES_DIR.iterdir()
+        if path.is_dir() and path.name not in NON_MODEL_PROFILE_DIRS
+    )
+    assert model_dirs

@@ -1,0 +1,119 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phi4-reasoning",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi4-reasoning:14b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "14b-fp16",
+      "ollama_ref": "phi4-reasoning:14b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "14b-plus-fp16",
+      "ollama_ref": "phi4-reasoning:14b-plus-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "14b-plus-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-plus-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "14b-plus-q80",
+      "ollama_ref": "phi4-reasoning:14b-plus-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "14b-q4-k-m",
+      "ollama_ref": "phi4-reasoning:14b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "14b-q80",
+      "ollama_ref": "phi4-reasoning:14b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi4-reasoning:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "plus",
+      "ollama_ref": "phi4-reasoning:plus",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    }
+  ]
+}

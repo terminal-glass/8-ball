@@ -1,0 +1,383 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "aya",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T05:53:08Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "35b",
+      "ollama_ref": "aya:35b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.79 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23",
+      "ollama_ref": "aya:35b-23",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.79 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q2-k",
+      "ollama_ref": "aya:35b-23-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.89 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q3-k-l",
+      "ollama_ref": "aya:35b-23-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.64 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q3-k-m",
+      "ollama_ref": "aya:35b-23-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.49 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q3-k-s",
+      "ollama_ref": "aya:35b-23-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 30.19 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q4-k-m",
+      "ollama_ref": "aya:35b-23-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.09 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q4-k-s",
+      "ollama_ref": "aya:35b-23-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.79 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q40",
+      "ollama_ref": "aya:35b-23-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.79 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q41",
+      "ollama_ref": "aya:35b-23-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.09 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q5-k-m",
+      "ollama_ref": "aya:35b-23-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.54 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q5-k-s",
+      "ollama_ref": "aya:35b-23-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.39 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q50",
+      "ollama_ref": "aya:35b-23-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.39 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q51",
+      "ollama_ref": "aya:35b-23-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.69 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q6-k",
+      "ollama_ref": "aya:35b-23-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.14 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "35b23-q80",
+      "ollama_ref": "aya:35b-23-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 54.34 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "aya:8b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23",
+      "ollama_ref": "aya:8b-23",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23-q2-k",
+      "ollama_ref": "aya:8b-23-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23-q3-k-l",
+      "ollama_ref": "aya:8b-23-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23-q3-k-m",
+      "ollama_ref": "aya:8b-23-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23-q3-k-s",
+      "ollama_ref": "aya:8b-23-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23-q4-k-m",
+      "ollama_ref": "aya:8b-23-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.89 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b23-q4-k-s",
+      "ollama_ref": "aya:8b-23-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23-q40",
+      "ollama_ref": "aya:8b-23-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "8b23-q41",
+      "ollama_ref": "aya:8b-23-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.0 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b23-q5-k-m",
+      "ollama_ref": "aya:8b-23-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.7 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b23-q5-k-s",
+      "ollama_ref": "aya:8b-23-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b23-q50",
+      "ollama_ref": "aya:8b-23-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b23-q51",
+      "ollama_ref": "aya:8b-23-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b23-q6-k",
+      "ollama_ref": "aya:8b-23-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "8b23-q80",
+      "ollama_ref": "aya:8b-23-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "aya:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

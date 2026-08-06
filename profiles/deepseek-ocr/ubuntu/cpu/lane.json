@@ -1,0 +1,44 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepseek-ocr",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "ubuntu/cpu",
+  "provider_assumption": "profiles/provider-assumptions/ubuntu-cpu.json",
+  "detection_signals": [
+    "os=linux",
+    "distro=ubuntu|debian",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "3b",
+      "ollama_ref": "deepseek-ocr:3b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.29 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-bf16",
+      "ollama_ref": "deepseek-ocr:3b-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.29 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-ocr:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

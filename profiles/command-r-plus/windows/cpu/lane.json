@@ -1,0 +1,187 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "command-r-plus",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cpu",
+  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "104b",
+      "ollama_ref": "command-r-plus:104b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 99.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b-fp16",
+      "ollama_ref": "command-r-plus:104b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 270.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b-q2-k",
+      "ollama_ref": "command-r-plus:104b-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 76.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b-q40",
+      "ollama_ref": "command-r-plus:104b-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 99.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b-q80",
+      "ollama_ref": "command-r-plus:104b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 158.12 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-fp16",
+      "ollama_ref": "command-r-plus:104b-08-2024-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 270.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q2-k",
+      "ollama_ref": "command-r-plus:104b-08-2024-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 76.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q3-k-l",
+      "ollama_ref": "command-r-plus:104b-08-2024-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q3-k-m",
+      "ollama_ref": "command-r-plus:104b-08-2024-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 90.27 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q3-k-s",
+      "ollama_ref": "command-r-plus:104b-08-2024-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 84.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q4-k-m",
+      "ollama_ref": "command-r-plus:104b-08-2024-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 104.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q4-k-s",
+      "ollama_ref": "command-r-plus:104b-08-2024-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 100.62 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q40",
+      "ollama_ref": "command-r-plus:104b-08-2024-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 99.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q41",
+      "ollama_ref": "command-r-plus:104b-08-2024-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 107.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q5-k-m",
+      "ollama_ref": "command-r-plus:104b-08-2024-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 116.72 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q5-k-s",
+      "ollama_ref": "command-r-plus:104b-08-2024-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q50",
+      "ollama_ref": "command-r-plus:104b-08-2024-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q51",
+      "ollama_ref": "command-r-plus:104b-08-2024-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 121.32 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q6-k",
+      "ollama_ref": "command-r-plus:104b-08-2024-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 129.38 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "104b082024-q80",
+      "ollama_ref": "command-r-plus:104b-08-2024-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 158.12 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "command-r-plus:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 69.57 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

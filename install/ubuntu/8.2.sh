@@ -10,14 +10,31 @@ PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 RESULT_FILE="${PHILOSOPHER_ROOT}/8ball-result.txt"
 MANIFEST="${EIGHTBALL_MANIFEST:-}"
 REQUESTED_MODEL=""
+MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 OLLAMA_API="${OLLAMA_API:-http://127.0.0.1:11434}"
+
+# Locate shared C10 helpers from lane or profile install directories.
+_C10_HOOK=""
+for _candidate in \
+  "${SCRIPT_DIR}/../shared/c10-model-hook.sh" \
+  "${SCRIPT_DIR}/../../shared/c10-model-hook.sh" \
+  "${SCRIPT_DIR}/../../../shared/c10-model-hook.sh"; do
+  if [[ -f "${_candidate}" ]]; then
+    _C10_HOOK="${_candidate}"
+    break
+  fi
+done
+if [[ -n "${_C10_HOOK}" ]]; then
+  # shellcheck source=/dev/null
+  source "${_C10_HOOK}"
+fi
 
 usage() {
   cat <<'EOF'
-Usage: 8.2.sh [--manifest PATH] [--model OLLAMA_TAG]
+Usage: 8.2.sh [--manifest PATH] [--model OLLAMA_TAG] [--model-slug SLUG]
 
-Reads data/generated/pages/install-manifest.json (or EIGHTBALL_MANIFEST) and selects a
-conservative local model for the free 8-BALL trial.
+Reads profiles/<model-slug>.json when --model-slug is provided, otherwise uses
+data/generated/pages/install-manifest.json for conservative trial selection.
 EOF
 }
 
@@ -50,6 +67,10 @@ parse_args() {
         ;;
       --model)
         REQUESTED_MODEL="$2"
+        shift 2
+        ;;
+      --model-slug)
+        MODEL_SLUG="$2"
         shift 2
         ;;
       -h|--help)
@@ -166,7 +187,9 @@ PY
 
 test_model() {
   local model="$1"
-  ollama pull "${model}"
+  if ! ollama pull "${model}"; then
+    return 1
+  fi
   local response
   response="$(
     curl -fsS "${OLLAMA_API}/api/generate" \
@@ -181,6 +204,26 @@ test_model() {
   return 1
 }
 
+test_model_with_fallback() {
+  local primary="$1"
+  if test_model "${primary}"; then
+    printf '%s' "${primary}"
+    return 0
+  fi
+  if [[ -n "${MODEL_SLUG}" ]] && declare -F c10_fallback_pull >/dev/null 2>&1; then
+    local candidate
+    while IFS= read -r candidate; do
+      [[ -z "${candidate}" || "${candidate}" == "${primary}" ]] && continue
+      log "Pull failed for ${primary}; trying fallback ${candidate}"
+      if test_model "${candidate}"; then
+        printf '%s' "${candidate}"
+        return 0
+      fi
+    done < <(c10_fallback_pull "${MODEL_SLUG}")
+  fi
+  return 1
+}
+
 write_result() {
   local model="$1" tier="$2" test_status="$3"
   install -d -m 0755 "${PHILOSOPHER_ROOT}"
@@ -188,6 +231,8 @@ write_result() {
 Model: ${model}
 Profile: ${model//[:\/]/-}
 Install profile: ${EIGHTBALL_INSTALL_PROFILE}
+Install lane: ${EIGHTBALL_INSTALL_LANE:-${EIGHTBALL_INSTALL_PROFILE}}
+Model slug: ${MODEL_SLUG:-n/a}
 Tier: ${tier}
 Model test: ${test_status}
 Jets status: READY_AFTER_SIGNIN
@@ -214,24 +259,32 @@ EOF
 
 main() {
   parse_args "$@"
-  require_manifest
   if ! curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then
     echo "Ollama is not responding. Run 8.1.sh first." >&2
     exit 1
   fi
   detect_hardware
-  deployment_type="$(deployment_type_for_hardware)"
-  log "Using deployment type ${deployment_type} from manifest ${MANIFEST}"
-  selected_model="$(select_model_from_manifest "${deployment_type}")"
+  selected_model=""
+  if [[ -n "${MODEL_SLUG}" ]] && declare -F c10_select_model_slug >/dev/null 2>&1; then
+    if selected_model="$(c10_select_model_slug "${MODEL_SLUG}")"; then
+      log "C10 selected ${selected_model} for model slug ${MODEL_SLUG}"
+    fi
+  fi
+  if [[ -z "${selected_model}" ]]; then
+    require_manifest
+    deployment_type="$(deployment_type_for_hardware)"
+    log "Using deployment type ${deployment_type} from manifest ${MANIFEST}"
+    selected_model="$(select_model_from_manifest "${deployment_type}")"
+  fi
   log "Selected model ${selected_model}"
   tier="LOCAL LITE"
-  if test_model "${selected_model}"; then
-    write_result "${selected_model}" "${tier}" "PASSED"
+  if tested_model="$(test_model_with_fallback "${selected_model}")"; then
+    write_result "${tested_model}" "${tier}" "PASSED"
     install_8balljets_helper
     log "Model test passed; result written to ${RESULT_FILE}"
   else
     write_result "${selected_model}" "${tier}" "FAILED"
-    echo "Model test failed for ${selected_model}" >&2
+    echo "Model test failed for ${selected_model} (no smaller fallback succeeded)" >&2
     exit 1
   fi
 }

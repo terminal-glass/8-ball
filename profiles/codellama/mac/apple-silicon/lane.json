@@ -1,0 +1,2010 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "codellama",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "70b",
+      "ollama_ref": "codellama:70b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code",
+      "ollama_ref": "codellama:70b-code",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-fp16",
+      "ollama_ref": "codellama:70b-code-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 180.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q2-k",
+      "ollama_ref": "codellama:70b-code-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.6 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q3-k-l",
+      "ollama_ref": "codellama:70b-code-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.25 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q3-k-m",
+      "ollama_ref": "codellama:70b-code-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q3-k-s",
+      "ollama_ref": "codellama:70b-code-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q4-k-m",
+      "ollama_ref": "codellama:70b-code-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 69.0 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q4-k-s",
+      "ollama_ref": "codellama:70b-code-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q40",
+      "ollama_ref": "codellama:70b-code-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q41",
+      "ollama_ref": "codellama:70b-code-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q5-k-m",
+      "ollama_ref": "codellama:70b-code-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q5-k-s",
+      "ollama_ref": "codellama:70b-code-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q50",
+      "ollama_ref": "codellama:70b-code-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q51",
+      "ollama_ref": "codellama:70b-code-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 81.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q6-k",
+      "ollama_ref": "codellama:70b-code-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.4 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-code-q80",
+      "ollama_ref": "codellama:70b-code-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 105.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct",
+      "ollama_ref": "codellama:70b-instruct",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-fp16",
+      "ollama_ref": "codellama:70b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 180.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q2-k",
+      "ollama_ref": "codellama:70b-instruct-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.6 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-l",
+      "ollama_ref": "codellama:70b-instruct-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.25 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-m",
+      "ollama_ref": "codellama:70b-instruct-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q3-k-s",
+      "ollama_ref": "codellama:70b-instruct-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q4-k-m",
+      "ollama_ref": "codellama:70b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 69.0 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q4-k-s",
+      "ollama_ref": "codellama:70b-instruct-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q40",
+      "ollama_ref": "codellama:70b-instruct-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q41",
+      "ollama_ref": "codellama:70b-instruct-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q5-k-m",
+      "ollama_ref": "codellama:70b-instruct-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q5-k-s",
+      "ollama_ref": "codellama:70b-instruct-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q50",
+      "ollama_ref": "codellama:70b-instruct-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q51",
+      "ollama_ref": "codellama:70b-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 81.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q6-k",
+      "ollama_ref": "codellama:70b-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.4 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-instruct-q80",
+      "ollama_ref": "codellama:70b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 105.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python",
+      "ollama_ref": "codellama:70b-python",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-fp16",
+      "ollama_ref": "codellama:70b-python-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 180.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q2-k",
+      "ollama_ref": "codellama:70b-python-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.6 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q3-k-l",
+      "ollama_ref": "codellama:70b-python-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.25 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q3-k-m",
+      "ollama_ref": "codellama:70b-python-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q3-k-s",
+      "ollama_ref": "codellama:70b-python-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q4-k-m",
+      "ollama_ref": "codellama:70b-python-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 69.0 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q4-k-s",
+      "ollama_ref": "codellama:70b-python-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q40",
+      "ollama_ref": "codellama:70b-python-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q41",
+      "ollama_ref": "codellama:70b-python-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q5-k-m",
+      "ollama_ref": "codellama:70b-python-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q5-k-s",
+      "ollama_ref": "codellama:70b-python-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q50",
+      "ollama_ref": "codellama:70b-python-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q51",
+      "ollama_ref": "codellama:70b-python-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 81.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q6-k",
+      "ollama_ref": "codellama:70b-python-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.4 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "70b-python-q80",
+      "ollama_ref": "codellama:70b-python-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 105.8 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b",
+      "ollama_ref": "codellama:34b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code",
+      "ollama_ref": "codellama:34b-code",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q2-k",
+      "ollama_ref": "codellama:34b-code-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.6 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q3-k-l",
+      "ollama_ref": "codellama:34b-code-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.2 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q3-k-m",
+      "ollama_ref": "codellama:34b-code-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q3-k-s",
+      "ollama_ref": "codellama:34b-code-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q4-k-m",
+      "ollama_ref": "codellama:34b-code-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q4-k-s",
+      "ollama_ref": "codellama:34b-code-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q40",
+      "ollama_ref": "codellama:34b-code-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q41",
+      "ollama_ref": "codellama:34b-code-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q5-k-m",
+      "ollama_ref": "codellama:34b-code-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q5-k-s",
+      "ollama_ref": "codellama:34b-code-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q50",
+      "ollama_ref": "codellama:34b-code-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q51",
+      "ollama_ref": "codellama:34b-code-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q6-k",
+      "ollama_ref": "codellama:34b-code-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-code-q80",
+      "ollama_ref": "codellama:34b-code-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct",
+      "ollama_ref": "codellama:34b-instruct",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-fp16",
+      "ollama_ref": "codellama:34b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 88.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q2-k",
+      "ollama_ref": "codellama:34b-instruct-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.6 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q3-k-l",
+      "ollama_ref": "codellama:34b-instruct-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.2 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q3-k-m",
+      "ollama_ref": "codellama:34b-instruct-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q3-k-s",
+      "ollama_ref": "codellama:34b-instruct-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q4-k-m",
+      "ollama_ref": "codellama:34b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q4-k-s",
+      "ollama_ref": "codellama:34b-instruct-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q40",
+      "ollama_ref": "codellama:34b-instruct-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q41",
+      "ollama_ref": "codellama:34b-instruct-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q5-k-m",
+      "ollama_ref": "codellama:34b-instruct-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q5-k-s",
+      "ollama_ref": "codellama:34b-instruct-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q50",
+      "ollama_ref": "codellama:34b-instruct-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q51",
+      "ollama_ref": "codellama:34b-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q6-k",
+      "ollama_ref": "codellama:34b-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-instruct-q80",
+      "ollama_ref": "codellama:34b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python",
+      "ollama_ref": "codellama:34b-python",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-fp16",
+      "ollama_ref": "codellama:34b-python-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 88.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q2-k",
+      "ollama_ref": "codellama:34b-python-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.6 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q3-k-l",
+      "ollama_ref": "codellama:34b-python-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.2 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q3-k-m",
+      "ollama_ref": "codellama:34b-python-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q3-k-s",
+      "ollama_ref": "codellama:34b-python-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q4-k-m",
+      "ollama_ref": "codellama:34b-python-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q4-k-s",
+      "ollama_ref": "codellama:34b-python-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q40",
+      "ollama_ref": "codellama:34b-python-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q41",
+      "ollama_ref": "codellama:34b-python-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q5-k-m",
+      "ollama_ref": "codellama:34b-python-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q5-k-s",
+      "ollama_ref": "codellama:34b-python-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q50",
+      "ollama_ref": "codellama:34b-python-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q51",
+      "ollama_ref": "codellama:34b-python-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q6-k",
+      "ollama_ref": "codellama:34b-python-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.7 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "34b-python-q80",
+      "ollama_ref": "codellama:34b-python-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.9 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b",
+      "ollama_ref": "codellama:13b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code",
+      "ollama_ref": "codellama:13b-code",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-fp16",
+      "ollama_ref": "codellama:13b-code-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q2-k",
+      "ollama_ref": "codellama:13b-code-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q3-k-l",
+      "ollama_ref": "codellama:13b-code-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.4 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q3-k-m",
+      "ollama_ref": "codellama:13b-code-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q3-k-s",
+      "ollama_ref": "codellama:13b-code-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q4-k-m",
+      "ollama_ref": "codellama:13b-code-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q4-k-s",
+      "ollama_ref": "codellama:13b-code-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q40",
+      "ollama_ref": "codellama:13b-code-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q41",
+      "ollama_ref": "codellama:13b-code-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.89 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q5-k-m",
+      "ollama_ref": "codellama:13b-code-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q5-k-s",
+      "ollama_ref": "codellama:13b-code-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q50",
+      "ollama_ref": "codellama:13b-code-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q51",
+      "ollama_ref": "codellama:13b-code-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.73 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q6-k",
+      "ollama_ref": "codellama:13b-code-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.11 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-code-q80",
+      "ollama_ref": "codellama:13b-code-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct",
+      "ollama_ref": "codellama:13b-instruct",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-fp16",
+      "ollama_ref": "codellama:13b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q2-k",
+      "ollama_ref": "codellama:13b-instruct-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q3-k-l",
+      "ollama_ref": "codellama:13b-instruct-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.4 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q3-k-m",
+      "ollama_ref": "codellama:13b-instruct-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q3-k-s",
+      "ollama_ref": "codellama:13b-instruct-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q4-k-m",
+      "ollama_ref": "codellama:13b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q4-k-s",
+      "ollama_ref": "codellama:13b-instruct-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q40",
+      "ollama_ref": "codellama:13b-instruct-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q41",
+      "ollama_ref": "codellama:13b-instruct-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.89 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q5-k-m",
+      "ollama_ref": "codellama:13b-instruct-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q5-k-s",
+      "ollama_ref": "codellama:13b-instruct-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q50",
+      "ollama_ref": "codellama:13b-instruct-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q51",
+      "ollama_ref": "codellama:13b-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.73 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q6-k",
+      "ollama_ref": "codellama:13b-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.11 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-instruct-q80",
+      "ollama_ref": "codellama:13b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python",
+      "ollama_ref": "codellama:13b-python",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-fp16",
+      "ollama_ref": "codellama:13b-python-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q2-k",
+      "ollama_ref": "codellama:13b-python-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q3-k-l",
+      "ollama_ref": "codellama:13b-python-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.4 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q3-k-m",
+      "ollama_ref": "codellama:13b-python-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.71 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q3-k-s",
+      "ollama_ref": "codellama:13b-python-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q4-k-m",
+      "ollama_ref": "codellama:13b-python-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.55 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q4-k-s",
+      "ollama_ref": "codellama:13b-python-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q40",
+      "ollama_ref": "codellama:13b-python-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q41",
+      "ollama_ref": "codellama:13b-python-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.89 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q5-k-m",
+      "ollama_ref": "codellama:13b-python-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q5-k-s",
+      "ollama_ref": "codellama:13b-python-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q50",
+      "ollama_ref": "codellama:13b-python-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.81 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q51",
+      "ollama_ref": "codellama:13b-python-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.73 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q6-k",
+      "ollama_ref": "codellama:13b-python-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.11 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "13b-python-q80",
+      "ollama_ref": "codellama:13b-python-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.56 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "codellama:7b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code",
+      "ollama_ref": "codellama:7b-code",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-fp16",
+      "ollama_ref": "codellama:7b-code-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.69 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q2-k",
+      "ollama_ref": "codellama:7b-code-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q3-k-l",
+      "ollama_ref": "codellama:7b-code-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q3-k-m",
+      "ollama_ref": "codellama:7b-code-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q3-k-s",
+      "ollama_ref": "codellama:7b-code-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q4-k-m",
+      "ollama_ref": "codellama:7b-code-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q4-k-s",
+      "ollama_ref": "codellama:7b-code-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q40",
+      "ollama_ref": "codellama:7b-code-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q41",
+      "ollama_ref": "codellama:7b-code-q4_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q5-k-m",
+      "ollama_ref": "codellama:7b-code-q5_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q5-k-s",
+      "ollama_ref": "codellama:7b-code-q5_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q50",
+      "ollama_ref": "codellama:7b-code-q5_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q51",
+      "ollama_ref": "codellama:7b-code-q5_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q6-k",
+      "ollama_ref": "codellama:7b-code-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.06 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-code-q80",
+      "ollama_ref": "codellama:7b-code-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct",
+      "ollama_ref": "codellama:7b-instruct",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-fp16",
+      "ollama_ref": "codellama:7b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.69 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q2-k",
+      "ollama_ref": "codellama:7b-instruct-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q3-k-l",
+      "ollama_ref": "codellama:7b-instruct-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q3-k-m",
+      "ollama_ref": "codellama:7b-instruct-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q3-k-s",
+      "ollama_ref": "codellama:7b-instruct-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q4-k-m",
+      "ollama_ref": "codellama:7b-instruct-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q4-k-s",
+      "ollama_ref": "codellama:7b-instruct-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q40",
+      "ollama_ref": "codellama:7b-instruct-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q41",
+      "ollama_ref": "codellama:7b-instruct-q4_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q5-k-m",
+      "ollama_ref": "codellama:7b-instruct-q5_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q5-k-s",
+      "ollama_ref": "codellama:7b-instruct-q5_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q50",
+      "ollama_ref": "codellama:7b-instruct-q5_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q51",
+      "ollama_ref": "codellama:7b-instruct-q5_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q6-k",
+      "ollama_ref": "codellama:7b-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.06 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-instruct-q80",
+      "ollama_ref": "codellama:7b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python",
+      "ollama_ref": "codellama:7b-python",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-fp16",
+      "ollama_ref": "codellama:7b-python-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.69 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q2-k",
+      "ollama_ref": "codellama:7b-python-q2_K",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q3-k-l",
+      "ollama_ref": "codellama:7b-python-q3_K_L",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q3-k-m",
+      "ollama_ref": "codellama:7b-python-q3_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q3-k-s",
+      "ollama_ref": "codellama:7b-python-q3_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q4-k-m",
+      "ollama_ref": "codellama:7b-python-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q4-k-s",
+      "ollama_ref": "codellama:7b-python-q4_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q40",
+      "ollama_ref": "codellama:7b-python-q4_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q41",
+      "ollama_ref": "codellama:7b-python-q4_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q5-k-m",
+      "ollama_ref": "codellama:7b-python-q5_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q5-k-s",
+      "ollama_ref": "codellama:7b-python-q5_K_S",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q50",
+      "ollama_ref": "codellama:7b-python-q5_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q51",
+      "ollama_ref": "codellama:7b-python-q5_1",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q6-k",
+      "ollama_ref": "codellama:7b-python-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.06 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-python-q80",
+      "ollama_ref": "codellama:7b-python-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "code",
+      "ollama_ref": "codellama:code",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "codellama:instruct",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "codellama:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "python",
+      "ollama_ref": "codellama:python",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

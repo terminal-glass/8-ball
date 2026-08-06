@@ -1,0 +1,52 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "functiongemma",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "270m",
+      "ollama_ref": "functiongemma:270m",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "270m-it-fp16",
+      "ollama_ref": "functiongemma:270m-it-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 2.44 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "270m-it-q80",
+      "ollama_ref": "functiongemma:270m-it-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "functiongemma:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

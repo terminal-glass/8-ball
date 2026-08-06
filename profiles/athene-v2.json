@@ -1,0 +1,352 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "athene-v2",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "72b",
+      "ollama_ref": "athene-v2:72b",
+      "parameter_count": 72000000000,
+      "quantization": null,
+      "download_size_bytes": 47000000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 76.47,
+        "recommended_system_ram_gb": 91.77,
+        "min_vram_gb": 54.05,
+        "recommended_vram_gb": 76.47,
+        "min_disk_gb": 61.4
+      }
+    },
+    {
+      "size_slug": "72b-fp16",
+      "ollama_ref": "athene-v2:72b-fp16",
+      "parameter_count": 72000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 145000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 189.17,
+        "recommended_system_ram_gb": 227.01,
+        "min_vram_gb": 166.75,
+        "recommended_vram_gb": 189.17,
+        "min_disk_gb": 179.0
+      }
+    },
+    {
+      "size_slug": "72b-q2-k",
+      "ollama_ref": "athene-v2:72b-q2_K",
+      "parameter_count": 72000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 30000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 56.92,
+        "recommended_system_ram_gb": 68.31,
+        "min_vram_gb": 34.5,
+        "recommended_vram_gb": 56.92,
+        "min_disk_gb": 41.0
+      }
+    },
+    {
+      "size_slug": "72b-q3-k-l",
+      "ollama_ref": "athene-v2:72b-q3_K_L",
+      "parameter_count": 72000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 40000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 68.42,
+        "recommended_system_ram_gb": 82.11,
+        "min_vram_gb": 46.0,
+        "recommended_vram_gb": 68.42,
+        "min_disk_gb": 53.0
+      }
+    },
+    {
+      "size_slug": "72b-q3-k-m",
+      "ollama_ref": "athene-v2:72b-q3_K_M",
+      "parameter_count": 72000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 38000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 66.12,
+        "recommended_system_ram_gb": 79.35,
+        "min_vram_gb": 43.7,
+        "recommended_vram_gb": 66.12,
+        "min_disk_gb": 50.6
+      }
+    },
+    {
+      "size_slug": "72b-q3-k-s",
+      "ollama_ref": "athene-v2:72b-q3_K_S",
+      "parameter_count": 72000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 34000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 61.52,
+        "recommended_system_ram_gb": 73.83,
+        "min_vram_gb": 39.1,
+        "recommended_vram_gb": 61.52,
+        "min_disk_gb": 45.8
+      }
+    },
+    {
+      "size_slug": "72b-q4-k-m",
+      "ollama_ref": "athene-v2:72b-q4_K_M",
+      "parameter_count": 72000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 47000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 76.47,
+        "recommended_system_ram_gb": 91.77,
+        "min_vram_gb": 54.05,
+        "recommended_vram_gb": 76.47,
+        "min_disk_gb": 61.4
+      }
+    },
+    {
+      "size_slug": "72b-q4-k-s",
+      "ollama_ref": "athene-v2:72b-q4_K_S",
+      "parameter_count": 72000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 44000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 73.02,
+        "recommended_system_ram_gb": 87.63,
+        "min_vram_gb": 50.6,
+        "recommended_vram_gb": 73.02,
+        "min_disk_gb": 57.8
+      }
+    },
+    {
+      "size_slug": "72b-q40",
+      "ollama_ref": "athene-v2:72b-q4_0",
+      "parameter_count": 72000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 41000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 69.57,
+        "recommended_system_ram_gb": 83.49,
+        "min_vram_gb": 47.15,
+        "recommended_vram_gb": 69.57,
+        "min_disk_gb": 54.2
+      }
+    },
+    {
+      "size_slug": "72b-q41",
+      "ollama_ref": "athene-v2:72b-q4_1",
+      "parameter_count": 72000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 46000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 75.32,
+        "recommended_system_ram_gb": 90.39,
+        "min_vram_gb": 52.9,
+        "recommended_vram_gb": 75.32,
+        "min_disk_gb": 60.2
+      }
+    },
+    {
+      "size_slug": "72b-q5-k-m",
+      "ollama_ref": "athene-v2:72b-q5_K_M",
+      "parameter_count": 72000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 54000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 84.52,
+        "recommended_system_ram_gb": 101.43,
+        "min_vram_gb": 62.1,
+        "recommended_vram_gb": 84.52,
+        "min_disk_gb": 69.8
+      }
+    },
+    {
+      "size_slug": "72b-q5-k-s",
+      "ollama_ref": "athene-v2:72b-q5_K_S",
+      "parameter_count": 72000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 51000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 81.07,
+        "recommended_system_ram_gb": 97.29,
+        "min_vram_gb": 58.65,
+        "recommended_vram_gb": 81.07,
+        "min_disk_gb": 66.2
+      }
+    },
+    {
+      "size_slug": "72b-q50",
+      "ollama_ref": "athene-v2:72b-q5_0",
+      "parameter_count": 72000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 50000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 79.92,
+        "recommended_system_ram_gb": 95.91,
+        "min_vram_gb": 57.5,
+        "recommended_vram_gb": 79.92,
+        "min_disk_gb": 65.0
+      }
+    },
+    {
+      "size_slug": "72b-q51",
+      "ollama_ref": "athene-v2:72b-q5_1",
+      "parameter_count": 72000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 55000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 85.67,
+        "recommended_system_ram_gb": 102.81,
+        "min_vram_gb": 63.25,
+        "recommended_vram_gb": 85.67,
+        "min_disk_gb": 71.0
+      }
+    },
+    {
+      "size_slug": "72b-q6-k",
+      "ollama_ref": "athene-v2:72b-q6_K",
+      "parameter_count": 72000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 64000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 96.02,
+        "recommended_system_ram_gb": 115.23,
+        "min_vram_gb": 73.6,
+        "recommended_vram_gb": 96.02,
+        "min_disk_gb": 81.8
+      }
+    },
+    {
+      "size_slug": "72b-q80",
+      "ollama_ref": "athene-v2:72b-q8_0",
+      "parameter_count": 72000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 77000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 110.97,
+        "recommended_system_ram_gb": 133.17,
+        "min_vram_gb": 88.55,
+        "recommended_vram_gb": 110.97,
+        "min_disk_gb": 97.4
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "athene-v2:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 47000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/athene-v2/tags",
+        "retrieved_at": "2026-08-01T11:51:33Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 55.77,
+        "recommended_system_ram_gb": 66.93,
+        "min_vram_gb": 54.05,
+        "recommended_vram_gb": 55.77,
+        "min_disk_gb": 61.4
+      }
+    }
+  ],
+  "promoted_size_slug": "72b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

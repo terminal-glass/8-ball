@@ -1,0 +1,352 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "wizard-vicuna",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "13b",
+      "ollama_ref": "wizard-vicuna:13b",
+      "parameter_count": 13000000000,
+      "quantization": null,
+      "download_size_bytes": 7400000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-fp16",
+      "ollama_ref": "wizard-vicuna:13b-fp16",
+      "parameter_count": 13000000000,
+      "quantization": "fp16",
+      "download_size_bytes": 26000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 35.36,
+        "recommended_system_ram_gb": 42.43,
+        "min_vram_gb": 29.9,
+        "recommended_vram_gb": 35.36,
+        "min_disk_gb": 36.2
+      }
+    },
+    {
+      "size_slug": "13b-q2-k",
+      "ollama_ref": "wizard-vicuna:13b-q2_K",
+      "parameter_count": 13000000000,
+      "quantization": "q2_K",
+      "download_size_bytes": 5400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 11.67,
+        "recommended_system_ram_gb": 14.01,
+        "min_vram_gb": 6.21,
+        "recommended_vram_gb": 11.67,
+        "min_disk_gb": 11.48
+      }
+    },
+    {
+      "size_slug": "13b-q3-k-l",
+      "ollama_ref": "wizard-vicuna:13b-q3_K_L",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_L",
+      "download_size_bytes": 6900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.4,
+        "recommended_system_ram_gb": 16.08,
+        "min_vram_gb": 7.93,
+        "recommended_vram_gb": 13.4,
+        "min_disk_gb": 13.28
+      }
+    },
+    {
+      "size_slug": "13b-q3-k-m",
+      "ollama_ref": "wizard-vicuna:13b-q3_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_M",
+      "download_size_bytes": 6300000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.71,
+        "recommended_system_ram_gb": 15.25,
+        "min_vram_gb": 7.24,
+        "recommended_vram_gb": 12.71,
+        "min_disk_gb": 12.56
+      }
+    },
+    {
+      "size_slug": "13b-q3-k-s",
+      "ollama_ref": "wizard-vicuna:13b-q3_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q3_K_S",
+      "download_size_bytes": 5700000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 12.02,
+        "recommended_system_ram_gb": 14.42,
+        "min_vram_gb": 6.55,
+        "recommended_vram_gb": 12.02,
+        "min_disk_gb": 11.84
+      }
+    },
+    {
+      "size_slug": "13b-q4-k-m",
+      "ollama_ref": "wizard-vicuna:13b-q4_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q4_K_M",
+      "download_size_bytes": 7900000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.55,
+        "recommended_system_ram_gb": 17.46,
+        "min_vram_gb": 9.08,
+        "recommended_vram_gb": 14.55,
+        "min_disk_gb": 14.48
+      }
+    },
+    {
+      "size_slug": "13b-q4-k-s",
+      "ollama_ref": "wizard-vicuna:13b-q4_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q4_K_S",
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-q40",
+      "ollama_ref": "wizard-vicuna:13b-q4_0",
+      "parameter_count": 13000000000,
+      "quantization": "q4_0",
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 13.97,
+        "recommended_system_ram_gb": 16.77,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 13.97,
+        "min_disk_gb": 13.88
+      }
+    },
+    {
+      "size_slug": "13b-q41",
+      "ollama_ref": "wizard-vicuna:13b-q4_1",
+      "parameter_count": 13000000000,
+      "quantization": "q4_1",
+      "download_size_bytes": 8200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 14.89,
+        "recommended_system_ram_gb": 17.87,
+        "min_vram_gb": 9.43,
+        "recommended_vram_gb": 14.89,
+        "min_disk_gb": 14.84
+      }
+    },
+    {
+      "size_slug": "13b-q5-k-m",
+      "ollama_ref": "wizard-vicuna:13b-q5_K_M",
+      "parameter_count": 13000000000,
+      "quantization": "q5_K_M",
+      "download_size_bytes": 9200000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 16.04,
+        "recommended_system_ram_gb": 19.25,
+        "min_vram_gb": 10.58,
+        "recommended_vram_gb": 16.04,
+        "min_disk_gb": 16.04
+      }
+    },
+    {
+      "size_slug": "13b-q5-k-s",
+      "ollama_ref": "wizard-vicuna:13b-q5_K_S",
+      "parameter_count": 13000000000,
+      "quantization": "q5_K_S",
+      "download_size_bytes": 9000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.81,
+        "recommended_system_ram_gb": 18.97,
+        "min_vram_gb": 10.35,
+        "recommended_vram_gb": 15.81,
+        "min_disk_gb": 15.8
+      }
+    },
+    {
+      "size_slug": "13b-q50",
+      "ollama_ref": "wizard-vicuna:13b-q5_0",
+      "parameter_count": 13000000000,
+      "quantization": "q5_0",
+      "download_size_bytes": 9000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 15.81,
+        "recommended_system_ram_gb": 18.97,
+        "min_vram_gb": 10.35,
+        "recommended_vram_gb": 15.81,
+        "min_disk_gb": 15.8
+      }
+    },
+    {
+      "size_slug": "13b-q51",
+      "ollama_ref": "wizard-vicuna:13b-q5_1",
+      "parameter_count": 13000000000,
+      "quantization": "q5_1",
+      "download_size_bytes": 9800000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 16.73,
+        "recommended_system_ram_gb": 20.08,
+        "min_vram_gb": 11.27,
+        "recommended_vram_gb": 16.73,
+        "min_disk_gb": 16.76
+      }
+    },
+    {
+      "size_slug": "13b-q6-k",
+      "ollama_ref": "wizard-vicuna:13b-q6_K",
+      "parameter_count": 13000000000,
+      "quantization": "q6_K",
+      "download_size_bytes": 11000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 18.11,
+        "recommended_system_ram_gb": 21.73,
+        "min_vram_gb": 12.65,
+        "recommended_vram_gb": 18.11,
+        "min_disk_gb": 18.2
+      }
+    },
+    {
+      "size_slug": "13b-q80",
+      "ollama_ref": "wizard-vicuna:13b-q8_0",
+      "parameter_count": 13000000000,
+      "quantization": "q8_0",
+      "download_size_bytes": 14000000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 21.56,
+        "recommended_system_ram_gb": 25.88,
+        "min_vram_gb": 16.1,
+        "recommended_vram_gb": 21.56,
+        "min_disk_gb": 21.8
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "wizard-vicuna:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 7400000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/wizard-vicuna/tags",
+        "retrieved_at": "2026-08-01T11:59:50Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 10.23,
+        "recommended_system_ram_gb": 12.28,
+        "min_vram_gb": 8.51,
+        "recommended_vram_gb": 10.23,
+        "min_disk_gb": 13.88
+      }
+    }
+  ],
+  "promoted_size_slug": "13b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

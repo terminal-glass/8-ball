@@ -1,0 +1,119 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gemma3n",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "e4b",
+      "ollama_ref": "gemma3n:e4b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "e4b-it-fp16",
+      "ollama_ref": "gemma3n:e4b-it-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.82 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "e4b-it-q4-k-m",
+      "ollama_ref": "gemma3n:e4b-it-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "e4b-it-q80",
+      "ollama_ref": "gemma3n:e4b-it-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.65 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "e2b",
+      "ollama_ref": "gemma3n:e2b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e2b-it-fp16",
+      "ollama_ref": "gemma3n:e2b-it-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.96 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "e2b-it-q4-k-m",
+      "ollama_ref": "gemma3n:e2b-it-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e2b-it-q80",
+      "ollama_ref": "gemma3n:e2b-it-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: cuda_runtime_verification, lane_vram_capacity",
+      "missing_evidence": [
+        "cuda_runtime_verification",
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gemma3n:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    }
+  ]
+}

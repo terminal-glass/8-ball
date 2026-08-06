@@ -1,0 +1,332 @@
+{
+  "schema_version": "c10.model-page.v1",
+  "model_slug": "snowflake-arctic-embed",
+  "generated_at": "2026-08-06T02:17:54Z",
+  "sizes": [
+    {
+      "size_slug": "335m",
+      "ollama_ref": "snowflake-arctic-embed:335m",
+      "parameter_count": 335000000,
+      "quantization": null,
+      "download_size_bytes": 669000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.59,
+        "recommended_system_ram_gb": 3.11,
+        "min_vram_gb": 0.77,
+        "recommended_vram_gb": 2.59,
+        "min_disk_gb": 5.8
+      }
+    },
+    {
+      "size_slug": "335m-l-fp16",
+      "ollama_ref": "snowflake-arctic-embed:335m-l-fp16",
+      "parameter_count": 335000000,
+      "quantization": "fp16",
+      "download_size_bytes": 669000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.59,
+        "recommended_system_ram_gb": 3.11,
+        "min_vram_gb": 0.77,
+        "recommended_vram_gb": 2.59,
+        "min_disk_gb": 5.8
+      }
+    },
+    {
+      "size_slug": "137m",
+      "ollama_ref": "snowflake-arctic-embed:137m",
+      "parameter_count": 137000000,
+      "quantization": null,
+      "download_size_bytes": 274000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.08,
+        "recommended_system_ram_gb": 2.5,
+        "min_vram_gb": 0.32,
+        "recommended_vram_gb": 2.08,
+        "min_disk_gb": 5.33
+      }
+    },
+    {
+      "size_slug": "137m-m-long-fp16",
+      "ollama_ref": "snowflake-arctic-embed:137m-m-long-fp16",
+      "parameter_count": 137000000,
+      "quantization": "fp16",
+      "download_size_bytes": 274000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.08,
+        "recommended_system_ram_gb": 2.5,
+        "min_vram_gb": 0.32,
+        "recommended_vram_gb": 2.08,
+        "min_disk_gb": 5.33
+      }
+    },
+    {
+      "size_slug": "110m",
+      "ollama_ref": "snowflake-arctic-embed:110m",
+      "parameter_count": 110000000,
+      "quantization": null,
+      "download_size_bytes": 219000000,
+      "promoted": true,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.01,
+        "recommended_system_ram_gb": 2.41,
+        "min_vram_gb": 0.25,
+        "recommended_vram_gb": 2.01,
+        "min_disk_gb": 5.26
+      }
+    },
+    {
+      "size_slug": "110m-m-fp16",
+      "ollama_ref": "snowflake-arctic-embed:110m-m-fp16",
+      "parameter_count": 110000000,
+      "quantization": "fp16",
+      "download_size_bytes": 219000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.01,
+        "recommended_system_ram_gb": 2.41,
+        "min_vram_gb": 0.25,
+        "recommended_vram_gb": 2.01,
+        "min_disk_gb": 5.26
+      }
+    },
+    {
+      "size_slug": "33m",
+      "ollama_ref": "snowflake-arctic-embed:33m",
+      "parameter_count": 33000000,
+      "quantization": null,
+      "download_size_bytes": 67000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.81,
+        "recommended_system_ram_gb": 2.17,
+        "min_vram_gb": 0.08,
+        "recommended_vram_gb": 1.81,
+        "min_disk_gb": 5.08
+      }
+    },
+    {
+      "size_slug": "33m-s-fp16",
+      "ollama_ref": "snowflake-arctic-embed:33m-s-fp16",
+      "parameter_count": 33000000,
+      "quantization": "fp16",
+      "download_size_bytes": 67000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.81,
+        "recommended_system_ram_gb": 2.17,
+        "min_vram_gb": 0.08,
+        "recommended_vram_gb": 1.81,
+        "min_disk_gb": 5.08
+      }
+    },
+    {
+      "size_slug": "22m",
+      "ollama_ref": "snowflake-arctic-embed:22m",
+      "parameter_count": 22000000,
+      "quantization": null,
+      "download_size_bytes": 46000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.78,
+        "recommended_system_ram_gb": 2.14,
+        "min_vram_gb": 0.05,
+        "recommended_vram_gb": 1.78,
+        "min_disk_gb": 5.06
+      }
+    },
+    {
+      "size_slug": "22m-xs-fp16",
+      "ollama_ref": "snowflake-arctic-embed:22m-xs-fp16",
+      "parameter_count": 22000000,
+      "quantization": "fp16",
+      "download_size_bytes": 46000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.78,
+        "recommended_system_ram_gb": 2.14,
+        "min_vram_gb": 0.05,
+        "recommended_vram_gb": 1.78,
+        "min_disk_gb": 5.06
+      }
+    },
+    {
+      "size_slug": "l",
+      "ollama_ref": "snowflake-arctic-embed:l",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 669000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.49,
+        "recommended_system_ram_gb": 2.99,
+        "min_vram_gb": 0.77,
+        "recommended_vram_gb": 2.49,
+        "min_disk_gb": 5.8
+      }
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "snowflake-arctic-embed:latest",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 669000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.49,
+        "recommended_system_ram_gb": 2.99,
+        "min_vram_gb": 0.77,
+        "recommended_vram_gb": 2.49,
+        "min_disk_gb": 5.8
+      }
+    },
+    {
+      "size_slug": "m",
+      "ollama_ref": "snowflake-arctic-embed:m",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 219000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.98,
+        "recommended_system_ram_gb": 2.37,
+        "min_vram_gb": 0.25,
+        "recommended_vram_gb": 1.98,
+        "min_disk_gb": 5.26
+      }
+    },
+    {
+      "size_slug": "m-long",
+      "ollama_ref": "snowflake-arctic-embed:m-long",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 274000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 2.04,
+        "recommended_system_ram_gb": 2.45,
+        "min_vram_gb": 0.32,
+        "recommended_vram_gb": 2.04,
+        "min_disk_gb": 5.33
+      }
+    },
+    {
+      "size_slug": "s",
+      "ollama_ref": "snowflake-arctic-embed:s",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 67000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.8,
+        "recommended_system_ram_gb": 2.16,
+        "min_vram_gb": 0.08,
+        "recommended_vram_gb": 1.8,
+        "min_disk_gb": 5.08
+      }
+    },
+    {
+      "size_slug": "xs",
+      "ollama_ref": "snowflake-arctic-embed:xs",
+      "parameter_count": null,
+      "quantization": null,
+      "download_size_bytes": 46000000,
+      "promoted": false,
+      "provenance": {
+        "source_path": "data/normalized/tags.json",
+        "source_url": "https://ollama.com/library/snowflake-arctic-embed/tags",
+        "retrieved_at": "2026-08-01T11:59:09Z"
+      },
+      "estimated": {
+        "min_system_ram_gb": 1.78,
+        "recommended_system_ram_gb": 2.13,
+        "min_vram_gb": 0.05,
+        "recommended_vram_gb": 1.78,
+        "min_disk_gb": 5.06
+      }
+    }
+  ],
+  "promoted_size_slug": "335m",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepseek-v3.1",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "provenance_status": "provisional"
+  },
+  "applicable": true,
+  "cuda_available": null,
+  "apple_metal_available": false,
+  "total_vram_gb": null,
+  "reason": "AWS Lightsail GPU instance lane when GPU bundles are available."
+}
