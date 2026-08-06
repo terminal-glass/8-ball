@@ -22,11 +22,12 @@
     "cuda_available": null,
     "apple_metal_available": false,
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
-    "provenance_status": "provisional",
+    "provenance_status": "provisional_hypothesis",
     "baseline_plan_id": "GPU XL",
     "selection_policy": "smallest_published_plan_conservative_baseline",
     "plans": [
       {
+        "plan_id": "gpu-xl",
         "plan_name": "GPU XL",
         "vcpu": 4,
         "ram_gb": 16.0,
@@ -34,12 +35,18 @@
         "gpu_count": null,
         "vram_gb_per_gpu": null,
         "total_vram_gb": null,
-        "cuda_expected": "unknown",
+        "cuda_expected": "runtime_detection_required",
         "ollama_gpu_expected": "unknown",
-        "evidence_status": "provisional",
-        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+        "evidence_status": "provisional_hypothesis",
+        "declared_gpu_behavior": "GPU plan is published; GPU identity and VRAM are not published",
+        "most_probable_runtime_behavior": "Probable GPU device exposed to the guest; NVIDIA/CUDA remains unconfirmed",
+        "confidence": "low",
+        "verification_commands": "nvidia-smi; lspci; free -h; df -h; ollama run <smoke-test-model>; ollama ps",
+        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+        "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
       },
       {
+        "plan_id": "gpu-2xl",
         "plan_name": "GPU 2XL",
         "vcpu": 8,
         "ram_gb": 32.0,
@@ -47,12 +54,18 @@
         "gpu_count": null,
         "vram_gb_per_gpu": null,
         "total_vram_gb": null,
-        "cuda_expected": "unknown",
+        "cuda_expected": "runtime_detection_required",
         "ollama_gpu_expected": "unknown",
-        "evidence_status": "provisional",
-        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+        "evidence_status": "provisional_hypothesis",
+        "declared_gpu_behavior": "GPU plan is published; GPU identity and VRAM are not published",
+        "most_probable_runtime_behavior": "Probable GPU device exposed to the guest; NVIDIA/CUDA remains unconfirmed",
+        "confidence": "low",
+        "verification_commands": "nvidia-smi; lspci; free -h; df -h; ollama run <smoke-test-model>; ollama ps",
+        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+        "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
       },
       {
+        "plan_id": "gpu-4xl",
         "plan_name": "GPU 4XL",
         "vcpu": 16,
         "ram_gb": 64.0,
@@ -60,10 +73,15 @@
         "gpu_count": null,
         "vram_gb_per_gpu": null,
         "total_vram_gb": null,
-        "cuda_expected": "unknown",
+        "cuda_expected": "runtime_detection_required",
         "ollama_gpu_expected": "unknown",
-        "evidence_status": "provisional",
-        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+        "evidence_status": "provisional_hypothesis",
+        "declared_gpu_behavior": "GPU plan is published; GPU identity and VRAM are not published",
+        "most_probable_runtime_behavior": "Probable GPU device exposed to the guest; NVIDIA/CUDA remains unconfirmed",
+        "confidence": "low",
+        "verification_commands": "nvidia-smi; lspci; free -h; df -h; ollama run <smoke-test-model>; ollama ps",
+        "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+        "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
       }
     ],
     "vram_status": "unknown"
@@ -73,7 +91,7 @@
   "source_paths": [
     "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
   ],
-  "generated_at": "2026-08-06T05:53:08Z",
+  "generated_at": "2026-08-06T06:02:36Z",
   "installer_reference": "install/cloud/aws-lightsail/gpu/trial-install.sh",
   "profiles_reference": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json"
 }

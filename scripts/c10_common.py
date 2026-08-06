@@ -99,17 +99,36 @@ def smallest_digitalocean_gpu_plan(plans: list[dict[str, Any]]) -> dict[str, Any
 
 
 def load_aws_lightsail_gpu_plans(repo_root: Path = REPO_ROOT) -> list[dict[str, Any]]:
-    provisional = repo_root / "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
-    if provisional.is_file():
-        source_path = str(provisional.relative_to(repo_root))
-        rows = load_csv_rows(provisional)
+    research_path = repo_root / "AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv"
+    provisional_path = repo_root / "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+    research_by_plan: dict[str, dict[str, str]] = {}
+    if research_path.is_file():
+        for row in load_csv_rows(research_path):
+            plan_id = row.get("provider_plan_id") or row.get("plan_id")
+            if plan_id:
+                research_by_plan[plan_id] = row
+
+    if provisional_path.is_file():
+        source_path = str(provisional_path.relative_to(repo_root))
+        rows = load_csv_rows(provisional_path)
+    elif research_path.is_file():
+        source_path = str(research_path.relative_to(repo_root))
+        rows = load_csv_rows(research_path)
     else:
-        source_path = "AGENTS/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv"
-        rows = load_csv_rows(repo_root / source_path)
+        return []
+
     plans: list[dict[str, Any]] = []
     for row in rows:
-        ram = parse_numeric(row.get("system_ram_gib") or row.get("system_ram_gb"))
-        disk = parse_numeric(row.get("boot_disk_gib") or row.get("storage_gb"))
+        plan_id = row.get("plan_id") or row.get("provider_plan_id")
+        research = research_by_plan.get(plan_id or "", {})
+        ram = parse_numeric(
+            row.get("system_ram_gib")
+            or row.get("system_ram_gb")
+            or research.get("system_ram_gb")
+        )
+        disk = parse_numeric(
+            row.get("boot_disk_gib") or row.get("storage_gb") or research.get("storage_gb")
+        )
         vram_per = parse_numeric(row.get("vram_gib_per_gpu") or row.get("vram_gb"))
         gpu_count = parse_gpu_count(row.get("gpu_count"))
         total_vram = parse_numeric(row.get("total_vram_gib"))
@@ -117,17 +136,26 @@ def load_aws_lightsail_gpu_plans(repo_root: Path = REPO_ROOT) -> list[dict[str, 
             total_vram = round(gpu_count * vram_per, 2)
         plans.append(
             {
-                "plan_name": row.get("plan_name") or row.get("provider_plan_id"),
-                "vcpu": parse_int(row.get("vcpus")),
+                "plan_id": plan_id,
+                "plan_name": row.get("plan_name") or research.get("display_name") or plan_id,
+                "vcpu": parse_int(row.get("vcpus") or research.get("vcpus")),
                 "ram_gb": ram,
                 "disk_gb": disk,
                 "gpu_count": gpu_count,
                 "vram_gb_per_gpu": vram_per,
                 "total_vram_gb": total_vram,
-                "cuda_expected": row.get("cuda_expected"),
-                "ollama_gpu_expected": row.get("ollama_gpu_expected"),
-                "evidence_status": row.get("evidence_status"),
+                "cuda_expected": row.get("cuda_expected") or row.get("cuda_status"),
+                "ollama_gpu_expected": row.get("ollama_gpu_expected")
+                or row.get("ollama_support_status"),
+                "evidence_status": row.get("evidence_status") or row.get("provenance_status"),
+                "declared_gpu_behavior": row.get("declared_gpu_behavior"),
+                "most_probable_runtime_behavior": row.get("most_probable_runtime_behavior"),
+                "confidence": row.get("confidence"),
+                "verification_commands": row.get("verification_commands"),
                 "source_path": source_path,
+                "source_reference": row.get("source_reference")
+                or row.get("source_url")
+                or str(research_path.relative_to(repo_root)),
             }
         )
     return plans
