@@ -63,16 +63,15 @@ def load_profile_document(relative_path: str) -> Any:
 
 
 def main() -> int:
-    if len(sys.argv) < 4:
+    if len(sys.argv) < 3:
         print(
-            "Usage: c10-select-model.py <model-slug> <lane-path> <provider-assumption.json>",
+            "Usage: c10-select-model.py <model-slug> <lane-path> [legacy-assumption-ignored]",
             file=sys.stderr,
         )
         return 2
 
     model_slug = sys.argv[1]
     lane_path = sys.argv[2]
-    assumption_ref = sys.argv[3]
 
     model_page = load_profile_document(f"profiles/{model_slug}.json")
     lane_data = load_profile_document(f"profiles/{model_slug}/{lane_path}/lane.json")
@@ -102,7 +101,6 @@ def main() -> int:
         output = {
             "model_slug": model_slug,
             "lane_path": lane_path,
-            "provider_assumption": assumption_ref,
             "selection_status": "unverified",
             "selected_ollama_ref": None,
             "promoted_size_slug": model_page.get("promoted_size_slug"),
@@ -115,7 +113,6 @@ def main() -> int:
     output = {
         "model_slug": model_slug,
         "lane_path": lane_path,
-        "provider_assumption": assumption_ref,
         "selection_status": "selected",
         "selected_ollama_ref": selected,
         "promoted_size_slug": model_page.get("promoted_size_slug"),

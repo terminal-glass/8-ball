@@ -3,13 +3,14 @@
   "model_slug": "mxbai-embed-large",
   "lane_path": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T08:43:30Z",
+  "generated_at": "2026-08-07T17:43:12Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
-  "lane_id": "windows/cpu",
-  "provider_assumption": "data/generated/provider-assumptions/windows-cpu.json",
+  "lane_id": "windows-cpu",
+  "install_path": "install/windows/cpu/",
+  "profile_path": "windows/cpu/",
   "detection_signals": [
     "os=windows",
     "cuda=false"

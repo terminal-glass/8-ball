@@ -1,0 +1,5 @@
+size_slug,size_json_path,ollama_ref
+270m,profiles/functiongemma/sizes/270m.json,functiongemma:270m
+270m-it-fp16,profiles/functiongemma/sizes/270m-it-fp16.json,functiongemma:270m-it-fp16
+270m-it-q80,profiles/functiongemma/sizes/270m-it-q80.json,functiongemma:270m-it-q8_0
+latest,profiles/functiongemma/sizes/latest.json,functiongemma:latest

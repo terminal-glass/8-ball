@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3",
+  "size_slug": "32b-fp16",
+  "ollama_ref": "qwen3:32b-fp16",
+  "parameter_count": 32000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 66000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3/tags",
+    "retrieved_at": "2026-08-01T11:58:25Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 86.82,
+    "recommended_system_ram_gb": 104.19,
+    "min_vram_gb": 75.9,
+    "recommended_vram_gb": 86.82,
+    "min_disk_gb": 84.2
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

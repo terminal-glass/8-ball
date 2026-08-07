@@ -1,0 +1,14 @@
+size_slug,size_json_path,ollama_ref
+27b,profiles/translategemma/sizes/27b.json,translategemma:27b
+27b-it-bf16,profiles/translategemma/sizes/27b-it-bf16.json,translategemma:27b-it-bf16
+27b-it-q4-k-m,profiles/translategemma/sizes/27b-it-q4-k-m.json,translategemma:27b-it-q4_K_M
+27b-it-q80,profiles/translategemma/sizes/27b-it-q80.json,translategemma:27b-it-q8_0
+12b,profiles/translategemma/sizes/12b.json,translategemma:12b
+12b-it-bf16,profiles/translategemma/sizes/12b-it-bf16.json,translategemma:12b-it-bf16
+12b-it-q4-k-m,profiles/translategemma/sizes/12b-it-q4-k-m.json,translategemma:12b-it-q4_K_M
+12b-it-q80,profiles/translategemma/sizes/12b-it-q80.json,translategemma:12b-it-q8_0
+4b,profiles/translategemma/sizes/4b.json,translategemma:4b
+4b-it-bf16,profiles/translategemma/sizes/4b-it-bf16.json,translategemma:4b-it-bf16
+4b-it-q4-k-m,profiles/translategemma/sizes/4b-it-q4-k-m.json,translategemma:4b-it-q4_K_M
+4b-it-q80,profiles/translategemma/sizes/4b-it-q80.json,translategemma:4b-it-q8_0
+latest,profiles/translategemma/sizes/latest.json,translategemma:latest

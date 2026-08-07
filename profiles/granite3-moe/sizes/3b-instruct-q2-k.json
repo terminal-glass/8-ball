@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "granite3-moe",
+  "size_slug": "3b-instruct-q2-k",
+  "ollama_ref": "granite3-moe:3b-instruct-q2_K",
+  "parameter_count": 3000000000,
+  "quantization": "q2_K",
+  "download_size_bytes": 1300000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/granite3-moe/tags",
+    "retrieved_at": "2026-08-01T11:54:17Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.08,
+    "recommended_system_ram_gb": 4.9,
+    "min_vram_gb": 1.49,
+    "recommended_vram_gb": 4.08,
+    "min_disk_gb": 6.56
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

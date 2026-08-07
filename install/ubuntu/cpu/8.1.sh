@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="ubuntu/cpu"
-EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/ubuntu-cpu.json"
+EIGHTBALL_LANE_ID="ubuntu-cpu"
 
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"

@@ -1,0 +1,17 @@
+size_slug,size_json_path,ollama_ref
+335m,profiles/snowflake-arctic-embed/sizes/335m.json,snowflake-arctic-embed:335m
+335m-l-fp16,profiles/snowflake-arctic-embed/sizes/335m-l-fp16.json,snowflake-arctic-embed:335m-l-fp16
+137m,profiles/snowflake-arctic-embed/sizes/137m.json,snowflake-arctic-embed:137m
+137m-m-long-fp16,profiles/snowflake-arctic-embed/sizes/137m-m-long-fp16.json,snowflake-arctic-embed:137m-m-long-fp16
+110m,profiles/snowflake-arctic-embed/sizes/110m.json,snowflake-arctic-embed:110m
+110m-m-fp16,profiles/snowflake-arctic-embed/sizes/110m-m-fp16.json,snowflake-arctic-embed:110m-m-fp16
+33m,profiles/snowflake-arctic-embed/sizes/33m.json,snowflake-arctic-embed:33m
+33m-s-fp16,profiles/snowflake-arctic-embed/sizes/33m-s-fp16.json,snowflake-arctic-embed:33m-s-fp16
+22m,profiles/snowflake-arctic-embed/sizes/22m.json,snowflake-arctic-embed:22m
+22m-xs-fp16,profiles/snowflake-arctic-embed/sizes/22m-xs-fp16.json,snowflake-arctic-embed:22m-xs-fp16
+l,profiles/snowflake-arctic-embed/sizes/l.json,snowflake-arctic-embed:l
+latest,profiles/snowflake-arctic-embed/sizes/latest.json,snowflake-arctic-embed:latest
+m,profiles/snowflake-arctic-embed/sizes/m.json,snowflake-arctic-embed:m
+m-long,profiles/snowflake-arctic-embed/sizes/m-long.json,snowflake-arctic-embed:m-long
+s,profiles/snowflake-arctic-embed/sizes/s.json,snowflake-arctic-embed:s
+xs,profiles/snowflake-arctic-embed/sizes/xs.json,snowflake-arctic-embed:xs

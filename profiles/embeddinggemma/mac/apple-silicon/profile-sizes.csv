@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+300m,profiles/embeddinggemma/sizes/300m.json,embeddinggemma:300m
+300m-bf16,profiles/embeddinggemma/sizes/300m-bf16.json,embeddinggemma:300m-bf16
+300m-qat-q40,profiles/embeddinggemma/sizes/300m-qat-q40.json,embeddinggemma:300m-qat-q4_0
+300m-qat-q80,profiles/embeddinggemma/sizes/300m-qat-q80.json,embeddinggemma:300m-qat-q8_0
+latest,profiles/embeddinggemma/sizes/latest.json,embeddinggemma:latest

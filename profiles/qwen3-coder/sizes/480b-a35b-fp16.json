@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3-coder",
+  "size_slug": "480b-a35b-fp16",
+  "ollama_ref": "qwen3-coder:480b-a35b-fp16",
+  "parameter_count": 480000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 960000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3-coder/tags",
+    "retrieved_at": "2026-08-01T11:58:28Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 1243.72,
+    "recommended_system_ram_gb": 1492.47,
+    "min_vram_gb": 1104.0,
+    "recommended_vram_gb": 1243.72,
+    "min_disk_gb": 1157.0
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

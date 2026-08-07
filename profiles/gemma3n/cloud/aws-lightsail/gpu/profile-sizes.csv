@@ -1,0 +1,10 @@
+size_slug,size_json_path,ollama_ref
+e4b,profiles/gemma3n/sizes/e4b.json,gemma3n:e4b
+e4b-it-fp16,profiles/gemma3n/sizes/e4b-it-fp16.json,gemma3n:e4b-it-fp16
+e4b-it-q4-k-m,profiles/gemma3n/sizes/e4b-it-q4-k-m.json,gemma3n:e4b-it-q4_K_M
+e4b-it-q80,profiles/gemma3n/sizes/e4b-it-q80.json,gemma3n:e4b-it-q8_0
+e2b,profiles/gemma3n/sizes/e2b.json,gemma3n:e2b
+e2b-it-fp16,profiles/gemma3n/sizes/e2b-it-fp16.json,gemma3n:e2b-it-fp16
+e2b-it-q4-k-m,profiles/gemma3n/sizes/e2b-it-q4-k-m.json,gemma3n:e2b-it-q4_K_M
+e2b-it-q80,profiles/gemma3n/sizes/e2b-it-q80.json,gemma3n:e2b-it-q8_0
+latest,profiles/gemma3n/sizes/latest.json,gemma3n:latest

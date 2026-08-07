@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "codellama",
+  "size_slug": "70b-instruct-q4-k-m",
+  "ollama_ref": "codellama:70b-instruct-q4_K_M",
+  "parameter_count": 70000000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 41000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/codellama/tags",
+    "retrieved_at": "2026-08-01T11:51:56Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 69.0,
+    "recommended_system_ram_gb": 82.8,
+    "min_vram_gb": 47.15,
+    "recommended_vram_gb": 69.0,
+    "min_disk_gb": 54.2
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

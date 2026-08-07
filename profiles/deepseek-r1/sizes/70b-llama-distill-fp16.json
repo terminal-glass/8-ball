@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "deepseek-r1",
+  "size_slug": "70b-llama-distill-fp16",
+  "ollama_ref": "deepseek-r1:70b-llama-distill-fp16",
+  "parameter_count": 70000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 141000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepseek-r1/tags",
+    "retrieved_at": "2026-08-01T11:52:37Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 184.0,
+    "recommended_system_ram_gb": 220.8,
+    "min_vram_gb": 162.15,
+    "recommended_vram_gb": 184.0,
+    "min_disk_gb": 174.2
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

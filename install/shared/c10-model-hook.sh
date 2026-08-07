@@ -21,7 +21,6 @@ c10_resolve_repo_root() {
 c10_select_model_slug() {
   local slug="$1"
   local lane="${EIGHTBALL_INSTALL_LANE:-${EIGHTBALL_INSTALL_PROFILE:-ubuntu/cpu}}"
-  local assumption="${EIGHTBALL_PROVIDER_ASSUMPTION:-data/generated/provider-assumptions/ubuntu-cpu.json}"
   local selector=""
   local result=""
   local selected=""
@@ -41,7 +40,7 @@ c10_select_model_slug() {
   fi
   [[ -f "${selector}" ]] || return 1
 
-  if ! result="$(python3 "${selector}" "${slug}" "${lane}" "${assumption}")"; then
+  if ! result="$(python3 "${selector}" "${slug}" "${lane}")"; then
   echo "${result}" >&2
   return 1
   fi

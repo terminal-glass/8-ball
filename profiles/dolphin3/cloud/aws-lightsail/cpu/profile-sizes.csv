@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+8b,profiles/dolphin3/sizes/8b.json,dolphin3:8b
+8b-llama3.1-fp16,profiles/dolphin3/sizes/8b-llama3.1-fp16.json,dolphin3:8b-llama3.1-fp16
+8b-llama3.1-q4-k-m,profiles/dolphin3/sizes/8b-llama3.1-q4-k-m.json,dolphin3:8b-llama3.1-q4_K_M
+8b-llama3.1-q80,profiles/dolphin3/sizes/8b-llama3.1-q80.json,dolphin3:8b-llama3.1-q8_0
+latest,profiles/dolphin3/sizes/latest.json,dolphin3:latest

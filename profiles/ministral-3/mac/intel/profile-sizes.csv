@@ -1,0 +1,14 @@
+size_slug,size_json_path,ollama_ref
+14b,profiles/ministral-3/sizes/14b.json,ministral-3:14b
+14b-instruct2512-fp16,profiles/ministral-3/sizes/14b-instruct2512-fp16.json,ministral-3:14b-instruct-2512-fp16
+14b-instruct2512-q4-k-m,profiles/ministral-3/sizes/14b-instruct2512-q4-k-m.json,ministral-3:14b-instruct-2512-q4_K_M
+14b-instruct2512-q80,profiles/ministral-3/sizes/14b-instruct2512-q80.json,ministral-3:14b-instruct-2512-q8_0
+8b,profiles/ministral-3/sizes/8b.json,ministral-3:8b
+8b-instruct2512-fp16,profiles/ministral-3/sizes/8b-instruct2512-fp16.json,ministral-3:8b-instruct-2512-fp16
+8b-instruct2512-q4-k-m,profiles/ministral-3/sizes/8b-instruct2512-q4-k-m.json,ministral-3:8b-instruct-2512-q4_K_M
+8b-instruct2512-q80,profiles/ministral-3/sizes/8b-instruct2512-q80.json,ministral-3:8b-instruct-2512-q8_0
+3b,profiles/ministral-3/sizes/3b.json,ministral-3:3b
+3b-instruct2512-fp16,profiles/ministral-3/sizes/3b-instruct2512-fp16.json,ministral-3:3b-instruct-2512-fp16
+3b-instruct2512-q4-k-m,profiles/ministral-3/sizes/3b-instruct2512-q4-k-m.json,ministral-3:3b-instruct-2512-q4_K_M
+3b-instruct2512-q80,profiles/ministral-3/sizes/3b-instruct2512-q80.json,ministral-3:3b-instruct-2512-q8_0
+latest,profiles/ministral-3/sizes/latest.json,ministral-3:latest

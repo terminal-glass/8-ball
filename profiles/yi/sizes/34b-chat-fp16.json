@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "yi",
+  "size_slug": "34b-chat-fp16",
+  "ollama_ref": "yi:34b-chat-fp16",
+  "parameter_count": 34000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 69000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yi/tags",
+    "retrieved_at": "2026-08-01T12:00:11Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 90.85,
+    "recommended_system_ram_gb": 109.02,
+    "min_vram_gb": 79.35,
+    "recommended_vram_gb": 90.85,
+    "min_disk_gb": 87.8
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

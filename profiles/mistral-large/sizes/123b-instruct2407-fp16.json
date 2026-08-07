@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mistral-large",
+  "size_slug": "123b-instruct2407-fp16",
+  "ollama_ref": "mistral-large:123b-instruct-2407-fp16",
+  "parameter_count": 123000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 245000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral-large/tags",
+    "retrieved_at": "2026-08-01T11:56:18Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 318.84,
+    "recommended_system_ram_gb": 382.6,
+    "min_vram_gb": 281.75,
+    "recommended_vram_gb": 318.84,
+    "min_disk_gb": 299.0
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

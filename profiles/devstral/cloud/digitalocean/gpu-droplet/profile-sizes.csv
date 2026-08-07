@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+24b,profiles/devstral/sizes/24b.json,devstral:24b
+24b-small2505-fp16,profiles/devstral/sizes/24b-small2505-fp16.json,devstral:24b-small-2505-fp16
+24b-small2505-q4-k-m,profiles/devstral/sizes/24b-small2505-q4-k-m.json,devstral:24b-small-2505-q4_K_M
+24b-small2505-q80,profiles/devstral/sizes/24b-small2505-q80.json,devstral:24b-small-2505-q8_0
+latest,profiles/devstral/sizes/latest.json,devstral:latest

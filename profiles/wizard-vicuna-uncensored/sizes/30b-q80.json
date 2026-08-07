@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "wizard-vicuna-uncensored",
+  "size_slug": "30b-q80",
+  "ollama_ref": "wizard-vicuna-uncensored:30b-q8_0",
+  "parameter_count": 30000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 35000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizard-vicuna-uncensored/tags",
+    "retrieved_at": "2026-08-01T11:59:52Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 50.6,
+    "recommended_system_ram_gb": 60.72,
+    "min_vram_gb": 40.25,
+    "recommended_vram_gb": 50.6,
+    "min_disk_gb": 47.0
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "codestral",
+  "size_slug": "22b-v0.1-q3-k-l",
+  "ollama_ref": "codestral:22b-v0.1-q3_K_L",
+  "parameter_count": 22000000000,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 12000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/codestral/tags",
+    "retrieved_at": "2026-08-01T11:52:00Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 21.85,
+    "recommended_system_ram_gb": 26.22,
+    "min_vram_gb": 13.8,
+    "recommended_vram_gb": 21.85,
+    "min_disk_gb": 19.4
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

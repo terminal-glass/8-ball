@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nemotron3",
+  "size_slug": "33b-q8",
+  "ollama_ref": "nemotron3:33b-q8",
+  "parameter_count": 33000000000,
+  "quantization": "q8",
+  "download_size_bytes": 36000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nemotron3/tags",
+    "retrieved_at": "2026-08-01T11:56:59Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 52.61,
+    "recommended_system_ram_gb": 63.13,
+    "min_vram_gb": 41.4,
+    "recommended_vram_gb": 52.61,
+    "min_disk_gb": 48.2
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

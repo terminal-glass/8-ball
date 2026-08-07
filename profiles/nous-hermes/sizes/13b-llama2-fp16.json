@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nous-hermes",
+  "size_slug": "13b-llama2-fp16",
+  "ollama_ref": "nous-hermes:13b-llama2-fp16",
+  "parameter_count": 13000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 26000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nous-hermes/tags",
+    "retrieved_at": "2026-08-01T11:57:17Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 35.36,
+    "recommended_system_ram_gb": 42.43,
+    "min_vram_gb": 29.9,
+    "recommended_vram_gb": 35.36,
+    "min_disk_gb": 36.2
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

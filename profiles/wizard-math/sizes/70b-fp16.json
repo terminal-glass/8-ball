@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "wizard-math",
+  "size_slug": "70b-fp16",
+  "ollama_ref": "wizard-math:70b-fp16",
+  "parameter_count": 70000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 138000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizard-math/tags",
+    "retrieved_at": "2026-08-01T11:59:48Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 180.55,
+    "recommended_system_ram_gb": 216.66,
+    "min_vram_gb": 158.7,
+    "recommended_vram_gb": 180.55,
+    "min_disk_gb": 170.6
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

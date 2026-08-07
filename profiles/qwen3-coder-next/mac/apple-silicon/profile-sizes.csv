@@ -1,0 +1,4 @@
+size_slug,size_json_path,ollama_ref
+latest,profiles/qwen3-coder-next/sizes/latest.json,qwen3-coder-next:latest
+q4-k-m,profiles/qwen3-coder-next/sizes/q4-k-m.json,qwen3-coder-next:q4_K_M
+q80,profiles/qwen3-coder-next/sizes/q80.json,qwen3-coder-next:q8_0

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "starcoder2",
+  "size_slug": "7b-q41",
+  "ollama_ref": "starcoder2:7b-q4_1",
+  "parameter_count": 7000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 4500000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/starcoder2/tags",
+    "retrieved_at": "2026-08-01T11:59:32Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.91,
+    "recommended_system_ram_gb": 10.69,
+    "min_vram_gb": 5.17,
+    "recommended_vram_gb": 8.91,
+    "min_disk_gb": 10.4
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

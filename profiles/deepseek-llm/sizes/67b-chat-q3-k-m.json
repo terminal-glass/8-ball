@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "deepseek-llm",
+  "size_slug": "67b-chat-q3-k-m",
+  "ollama_ref": "deepseek-llm:67b-chat-q3_K_M",
+  "parameter_count": 67000000000,
+  "quantization": "q3_K_M",
+  "download_size_bytes": 33000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepseek-llm/tags",
+    "retrieved_at": "2026-08-01T11:52:32Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 58.94,
+    "recommended_system_ram_gb": 70.72,
+    "min_vram_gb": 37.95,
+    "recommended_vram_gb": 58.94,
+    "min_disk_gb": 44.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

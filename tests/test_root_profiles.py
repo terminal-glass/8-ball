@@ -1,11 +1,21 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 import subprocess
+import sys
+from pathlib import Path
 
 import pytest
 
-from eight_ball.paths import GENERATED_PROVIDER_ASSUMPTIONS_DIR, PROFILES_DIR, REPO_ROOT
+from eight_ball.paths import PROFILES_DIR, REPO_ROOT
+
+_C10_LANES_PATH = REPO_ROOT / "scripts" / "c10_lanes.py"
+_SPEC = importlib.util.spec_from_file_location("c10_lanes", _C10_LANES_PATH)
+assert _SPEC and _SPEC.loader
+c10_lanes = importlib.util.module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = c10_lanes
+_SPEC.loader.exec_module(c10_lanes)
 
 FORBIDDEN_PROFILE_DIRS = (
     "families",
@@ -14,30 +24,25 @@ FORBIDDEN_PROFILE_DIRS = (
     "provider-assumptions",
 )
 FORBIDDEN_PROFILE_FILES = (
-    "index.csv",
     "environment.profile.example.env",
 )
-ALLOWED_PROFILE_ROOT_FILES = frozenset({"README.md", "c10-index.json", "manifest.json"})
-INSTALL_LANES = (
-    "ubuntu/cpu",
-    "ubuntu/cuda",
-    "mac/apple-silicon",
-    "mac/intel",
-    "windows/cpu",
-    "windows/cuda",
-    "cloud/digitalocean/cpu-droplet",
-    "cloud/digitalocean/gpu-droplet",
-    "cloud/aws-lightsail/cpu",
-    "cloud/aws-lightsail/gpu",
+ALLOWED_PROFILE_ROOT_FILES = frozenset(
+    {
+        "README.md",
+        "c10-index.json",
+        "manifest.json",
+        "lanes.json",
+        "index.csv",
+        "_lane-matrix-audit.json",
+        "_lane-matrix-audit.csv",
+    }
 )
-STAGE_FILES = (
-    "lane.json",
-    "3-cpu.json",
-    "4-ram.json",
-    "5-hard_disk.json",
-    "6-CPU_only.json",
-    "7-video_card.json",
-)
+STAGE_FILES = c10_lanes.STAGE_PAYLOAD_FILES
+
+
+def _lane_paths() -> list[str]:
+    manifest = json.loads((PROFILES_DIR / "lanes.json").read_text(encoding="utf-8"))
+    return [lane["profile_path"].rstrip("/") for lane in manifest["lanes"]]
 
 
 def test_generate_root_profiles_cli_removed() -> None:
@@ -67,28 +72,52 @@ def test_forbidden_profile_root_files_absent() -> None:
         assert not (PROFILES_DIR / name).is_file(), f"Forbidden file exists: profiles/{name}"
 
 
-def test_provider_assumptions_live_under_data_generated() -> None:
-    assert GENERATED_PROVIDER_ASSUMPTIONS_DIR.is_dir()
-    for name in (
-        "ubuntu-cpu.json",
-        "ubuntu-cuda.json",
-        "mac-apple-silicon.json",
-        "mac-intel.json",
-        "windows-cpu.json",
-        "windows-cuda.json",
-        "cloud-digitalocean-cpu-droplet.json",
-        "cloud-digitalocean-gpu-droplet.json",
-        "cloud-aws-lightsail-cpu.json",
-        "cloud-aws-lightsail-gpu.json",
-    ):
-        assert (GENERATED_PROVIDER_ASSUMPTIONS_DIR / name).is_file()
+def test_provider_assumptions_dir_absent() -> None:
+    assert not (REPO_ROOT / "data/generated/provider-assumptions").exists()
+    assert not (PROFILES_DIR / "provider-assumptions").exists()
+
+
+def test_lanes_manifest_matches_canonical_contract() -> None:
+    manifest = json.loads((PROFILES_DIR / "lanes.json").read_text(encoding="utf-8"))
+    rows = c10_lanes.canonical_lane_rows_from_manifest(manifest)
+    assert c10_lanes.lane_rows_match_canonical(rows)
+
+
+def test_install_payload_contract_from_lanes_manifest() -> None:
+    manifest = json.loads((PROFILES_DIR / "lanes.json").read_text(encoding="utf-8"))
+    payload_count = 0
+    readme_count = 0
+    for lane in manifest["lanes"]:
+        lane_dir = c10_lanes.install_lane_dir(lane)
+        assert lane_dir.is_dir()
+        readme_count += int((lane_dir / "README.md").is_file())
+        for path in c10_lanes.payload_paths_for_lane(lane):
+            assert path.is_file() and path.stat().st_size > 0, path
+            payload_count += 1
+    assert payload_count == c10_lanes.REQUIRED_INSTALL_PAYLOAD_FILE_COUNT
+    assert readme_count == c10_lanes.REQUIRED_INSTALL_README_COUNT
+
+
+def test_git_tracks_canonical_lane_payloads_when_staged() -> None:
+    """Canonical lane payloads must not be gitignored; count from lanes.json paths."""
+    manifest = json.loads((PROFILES_DIR / "lanes.json").read_text(encoding="utf-8"))
+    for lane in manifest["lanes"]:
+        for path in c10_lanes.payload_paths_for_lane(lane):
+            rel = path.relative_to(REPO_ROOT).as_posix()
+            assert path.is_file() and path.stat().st_size > 0
+            ignore = subprocess.run(
+                ["git", "check-ignore", "-q", "--", rel],
+                cwd=REPO_ROOT,
+            ).returncode
+            assert ignore != 0, f"Canonical payload is gitignored: {rel}"
 
 
 def test_model_pages_and_directories_are_paired() -> None:
     model_pages = {
         path.stem
         for path in PROFILES_DIR.glob("*.json")
-        if path.name not in {"c10-index.json", "manifest.json"}
+        if path.name
+        not in {"c10-index.json", "manifest.json", "lanes.json", "_lane-matrix-audit.json"}
     }
     model_dirs = {
         path.name
@@ -106,6 +135,8 @@ def test_profiles_root_allowlist() -> None:
             continue
         if child.suffix == ".json" and child.name not in ALLOWED_PROFILE_ROOT_FILES:
             continue
+        if child.suffix == ".csv" and child.name in {"index.csv", "_lane-matrix-audit.csv"}:
+            continue
         assert child.name in ALLOWED_PROFILE_ROOT_FILES, f"Unexpected profiles root file: {child.name}"
 
 
@@ -117,7 +148,8 @@ def test_c10_manifest_is_c10_only() -> None:
     paths = manifest.get("paths") or {}
     assert "profiles/families" not in json.dumps(paths)
     assert "profiles/models" not in json.dumps(paths)
-    assert paths.get("provider_assumptions", "").startswith("data/generated/provider-assumptions")
+    assert "provider_assumptions" not in paths
+    assert paths.get("lanes_manifest") == "profiles/lanes.json"
 
 
 def test_environment_profile_example_moved_out_of_profiles() -> None:
@@ -146,9 +178,11 @@ def test_c10_generator_does_not_erase_model_pages() -> None:
     assert (PROFILES_DIR / "c10-index.json").is_file()
 
 
-def test_lane_json_references_new_provider_assumption_path() -> None:
+def test_lane_json_maps_to_install_path() -> None:
     lane = json.loads((PROFILES_DIR / "gemma/ubuntu/cpu/lane.json").read_text(encoding="utf-8"))
-    assert lane["provider_assumption"].startswith("data/generated/provider-assumptions/")
+    assert lane["install_path"] == "install/ubuntu/cpu/"
+    assert lane["lane_id"] == "ubuntu-cpu"
+    assert "provider_assumption" not in lane
 
 
 def test_ram_stage_retains_size_ram_fit() -> None:
@@ -163,12 +197,15 @@ def test_every_model_has_ten_lane_leaves_with_stage_files() -> None:
     model_pages = sorted(
         path.stem
         for path in PROFILES_DIR.glob("*.json")
-        if path.name not in {"c10-index.json", "manifest.json"}
+        if path.name
+        not in {"c10-index.json", "manifest.json", "lanes.json", "_lane-matrix-audit.json"}
     )
     assert len(model_pages) >= 200
+    lane_paths = _lane_paths()
     for slug in model_pages[:5]:
-        for lane in INSTALL_LANES:
+        for lane in lane_paths:
             leaf = PROFILES_DIR / slug / lane
             assert leaf.is_dir(), slug
-            for stage in STAGE_FILES:
+            assert (leaf / "profile-sizes.csv").is_file()
+            for stage in ("lane.json", *STAGE_FILES):
                 assert (leaf / stage).is_file(), f"{slug}/{lane}/{stage}"

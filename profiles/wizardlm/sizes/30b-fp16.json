@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "wizardlm",
+  "size_slug": "30b-fp16",
+  "ollama_ref": "wizardlm:30b-fp16",
+  "parameter_count": 30000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 65000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizardlm/tags",
+    "retrieved_at": "2026-08-01T11:59:57Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 85.1,
+    "recommended_system_ram_gb": 102.12,
+    "min_vram_gb": 74.75,
+    "recommended_vram_gb": 85.1,
+    "min_disk_gb": 83.0
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

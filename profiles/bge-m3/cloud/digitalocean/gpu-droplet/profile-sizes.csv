@@ -1,0 +1,4 @@
+size_slug,size_json_path,ollama_ref
+567m,profiles/bge-m3/sizes/567m.json,bge-m3:567m
+567m-fp16,profiles/bge-m3/sizes/567m-fp16.json,bge-m3:567m-fp16
+latest,profiles/bge-m3/sizes/latest.json,bge-m3:latest

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "hermes3",
+  "size_slug": "3b-llama3.2-q41",
+  "ollama_ref": "hermes3:3b-llama3.2-q4_1",
+  "parameter_count": 3000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 2100000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/hermes3/tags",
+    "retrieved_at": "2026-08-01T11:54:37Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 5.0,
+    "recommended_system_ram_gb": 6.0,
+    "min_vram_gb": 2.42,
+    "recommended_vram_gb": 5.0,
+    "min_disk_gb": 7.52
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

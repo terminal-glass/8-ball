@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+1.2b,profiles/lfm2.5-thinking/sizes/1.2b.json,lfm2.5-thinking:1.2b
+1.2b-bf16,profiles/lfm2.5-thinking/sizes/1.2b-bf16.json,lfm2.5-thinking:1.2b-bf16
+1.2b-q4-k-m,profiles/lfm2.5-thinking/sizes/1.2b-q4-k-m.json,lfm2.5-thinking:1.2b-q4_K_M
+1.2b-q80,profiles/lfm2.5-thinking/sizes/1.2b-q80.json,lfm2.5-thinking:1.2b-q8_0
+latest,profiles/lfm2.5-thinking/sizes/latest.json,lfm2.5-thinking:latest

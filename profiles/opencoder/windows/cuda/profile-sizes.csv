@@ -1,0 +1,10 @@
+size_slug,size_json_path,ollama_ref
+8b,profiles/opencoder/sizes/8b.json,opencoder:8b
+8b-instruct-fp16,profiles/opencoder/sizes/8b-instruct-fp16.json,opencoder:8b-instruct-fp16
+8b-instruct-q4-k-m,profiles/opencoder/sizes/8b-instruct-q4-k-m.json,opencoder:8b-instruct-q4_K_M
+8b-instruct-q80,profiles/opencoder/sizes/8b-instruct-q80.json,opencoder:8b-instruct-q8_0
+1.5b,profiles/opencoder/sizes/1.5b.json,opencoder:1.5b
+1.5b-instruct-fp16,profiles/opencoder/sizes/1.5b-instruct-fp16.json,opencoder:1.5b-instruct-fp16
+1.5b-instruct-q4-k-m,profiles/opencoder/sizes/1.5b-instruct-q4-k-m.json,opencoder:1.5b-instruct-q4_K_M
+1.5b-instruct-q80,profiles/opencoder/sizes/1.5b-instruct-q80.json,opencoder:1.5b-instruct-q8_0
+latest,profiles/opencoder/sizes/latest.json,opencoder:latest

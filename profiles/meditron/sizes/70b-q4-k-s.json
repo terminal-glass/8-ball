@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "meditron",
+  "size_slug": "70b-q4-k-s",
+  "ollama_ref": "meditron:70b-q4_K_S",
+  "parameter_count": 70000000000,
+  "quantization": "q4_K_S",
+  "download_size_bytes": 39000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/meditron/tags",
+    "retrieved_at": "2026-08-01T11:55:55Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 66.7,
+    "recommended_system_ram_gb": 80.04,
+    "min_vram_gb": 44.85,
+    "recommended_vram_gb": 66.7,
+    "min_disk_gb": 51.8
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

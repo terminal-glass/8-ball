@@ -1,0 +1,2 @@
+size_slug,size_json_path,ollama_ref
+cloud,profiles/deepseek-v4-pro/sizes/cloud.json,deepseek-v4-pro:cloud

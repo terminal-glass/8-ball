@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="cloud/digitalocean/cpu-droplet"
-EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/cloud-digitalocean-cpu-droplet.json"
+EIGHTBALL_LANE_ID="digitalocean-cpu-droplet"
 
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"

@@ -2,8 +2,8 @@
   "schema_version": "c10.stage.v1",
   "model_slug": "minicpm-v",
   "lane_path": "cloud/aws-lightsail/cpu",
-  "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "provider_assumption_id": "aws-lightsail-cpu",
+  "generated_at": "2026-08-07T17:43:12Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
     "provenance_status": "provider_published"

@@ -1,0 +1,4 @@
+size_slug,size_json_path,ollama_ref
+335m,profiles/bge-large/sizes/335m.json,bge-large:335m
+335m-en-v1.5-fp16,profiles/bge-large/sizes/335m-en-v1.5-fp16.json,bge-large:335m-en-v1.5-fp16
+latest,profiles/bge-large/sizes/latest.json,bge-large:latest

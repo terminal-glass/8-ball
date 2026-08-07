@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "phi3",
+  "size_slug": "mini4k",
+  "ollama_ref": "phi3:mini-4k",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 2400000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/phi3/tags",
+    "retrieved_at": "2026-08-01T11:57:55Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.48,
+    "recommended_system_ram_gb": 5.38,
+    "min_vram_gb": 2.76,
+    "recommended_vram_gb": 4.48,
+    "min_disk_gb": 7.88
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

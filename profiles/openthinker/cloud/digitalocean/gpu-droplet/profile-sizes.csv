@@ -1,0 +1,16 @@
+size_slug,size_json_path,ollama_ref
+32b,profiles/openthinker/sizes/32b.json,openthinker:32b
+32b-fp16,profiles/openthinker/sizes/32b-fp16.json,openthinker:32b-fp16
+32b-q4-k-m,profiles/openthinker/sizes/32b-q4-k-m.json,openthinker:32b-q4_K_M
+32b-q80,profiles/openthinker/sizes/32b-q80.json,openthinker:32b-q8_0
+32b-v2-fp16,profiles/openthinker/sizes/32b-v2-fp16.json,openthinker:32b-v2-fp16
+32b-v2-q4-k-m,profiles/openthinker/sizes/32b-v2-q4-k-m.json,openthinker:32b-v2-q4_K_M
+32b-v2-q80,profiles/openthinker/sizes/32b-v2-q80.json,openthinker:32b-v2-q8_0
+7b,profiles/openthinker/sizes/7b.json,openthinker:7b
+7b-fp16,profiles/openthinker/sizes/7b-fp16.json,openthinker:7b-fp16
+7b-q4-k-m,profiles/openthinker/sizes/7b-q4-k-m.json,openthinker:7b-q4_K_M
+7b-q80,profiles/openthinker/sizes/7b-q80.json,openthinker:7b-q8_0
+7b-v2-fp16,profiles/openthinker/sizes/7b-v2-fp16.json,openthinker:7b-v2-fp16
+7b-v2-q4-k-m,profiles/openthinker/sizes/7b-v2-q4-k-m.json,openthinker:7b-v2-q4_K_M
+7b-v2-q80,profiles/openthinker/sizes/7b-v2-q80.json,openthinker:7b-v2-q8_0
+latest,profiles/openthinker/sizes/latest.json,openthinker:latest

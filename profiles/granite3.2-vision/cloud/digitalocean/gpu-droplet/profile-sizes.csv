@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+2b,profiles/granite3.2-vision/sizes/2b.json,granite3.2-vision:2b
+2b-fp16,profiles/granite3.2-vision/sizes/2b-fp16.json,granite3.2-vision:2b-fp16
+2b-q4-k-m,profiles/granite3.2-vision/sizes/2b-q4-k-m.json,granite3.2-vision:2b-q4_K_M
+2b-q80,profiles/granite3.2-vision/sizes/2b-q80.json,granite3.2-vision:2b-q8_0
+latest,profiles/granite3.2-vision/sizes/latest.json,granite3.2-vision:latest

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "yi",
+  "size_slug": "6b-chat-q41",
+  "ollama_ref": "yi:6b-chat-q4_1",
+  "parameter_count": 6000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 3800000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yi/tags",
+    "retrieved_at": "2026-08-01T12:00:11Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 7.82,
+    "recommended_system_ram_gb": 9.38,
+    "min_vram_gb": 4.37,
+    "recommended_vram_gb": 7.82,
+    "min_disk_gb": 9.56
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "zephyr",
+  "size_slug": "7b-alpha-q6-k",
+  "ollama_ref": "zephyr:7b-alpha-q6_K",
+  "parameter_count": 7000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 5900000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/zephyr/tags",
+    "retrieved_at": "2026-08-01T12:00:16Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 10.52,
+    "recommended_system_ram_gb": 12.63,
+    "min_vram_gb": 6.79,
+    "recommended_vram_gb": 10.52,
+    "min_disk_gb": 12.08
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

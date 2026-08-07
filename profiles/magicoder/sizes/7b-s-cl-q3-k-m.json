@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "magicoder",
+  "size_slug": "7b-s-cl-q3-k-m",
+  "ollama_ref": "magicoder:7b-s-cl-q3_K_M",
+  "parameter_count": 7000000000,
+  "quantization": "q3_K_M",
+  "download_size_bytes": 3300000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/magicoder/tags",
+    "retrieved_at": "2026-08-01T11:55:41Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 7.53,
+    "recommended_system_ram_gb": 9.04,
+    "min_vram_gb": 3.79,
+    "recommended_vram_gb": 7.53,
+    "min_disk_gb": 8.96
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

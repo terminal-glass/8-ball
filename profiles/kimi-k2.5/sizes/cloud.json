@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "kimi-k2.5",
+  "size_slug": "cloud",
+  "ollama_ref": "kimi-k2.5:cloud",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": null,
+  "promoted": true,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/kimi-k2.5:cloud",
+    "retrieved_at": "2026-07-16T05:07:45Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": null,
+    "recommended_system_ram_gb": null,
+    "min_vram_gb": null,
+    "recommended_vram_gb": null,
+    "min_disk_gb": null
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

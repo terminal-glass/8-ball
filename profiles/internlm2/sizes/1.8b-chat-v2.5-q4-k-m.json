@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "internlm2",
+  "size_slug": "1.8b-chat-v2.5-q4-k-m",
+  "ollama_ref": "internlm2:1.8b-chat-v2.5-q4_K_M",
+  "parameter_count": 1800000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 1200000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/internlm2/tags",
+    "retrieved_at": "2026-08-01T11:54:40Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 3.62,
+    "recommended_system_ram_gb": 4.35,
+    "min_vram_gb": 1.38,
+    "recommended_vram_gb": 3.62,
+    "min_disk_gb": 6.44
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

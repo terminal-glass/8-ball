@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "exaone3.5",
+  "size_slug": "7.8b",
+  "ollama_ref": "exaone3.5:7.8b",
+  "parameter_count": 7800000000,
+  "quantization": null,
+  "download_size_bytes": 4800000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/exaone3.5/tags",
+    "retrieved_at": "2026-08-01T11:53:22Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 9.49,
+    "recommended_system_ram_gb": 11.38,
+    "min_vram_gb": 5.52,
+    "recommended_vram_gb": 9.49,
+    "min_disk_gb": 10.76
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mistral-medium-3.5",
+  "size_slug": "latest",
+  "ollama_ref": "mistral-medium-3.5:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 80000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral-medium-3.5/tags",
+    "retrieved_at": "2026-08-01T11:56:22Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 93.72,
+    "recommended_system_ram_gb": 112.47,
+    "min_vram_gb": 92.0,
+    "recommended_vram_gb": 93.72,
+    "min_disk_gb": 101.0
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

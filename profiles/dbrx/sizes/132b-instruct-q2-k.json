@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "dbrx",
+  "size_slug": "132b-instruct-q2-k",
+  "ollama_ref": "dbrx:132b-instruct-q2_K",
+  "parameter_count": 132000000000,
+  "quantization": "q2_K",
+  "download_size_bytes": 48000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/dbrx/tags",
+    "retrieved_at": "2026-08-01T11:52:21Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 94.87,
+    "recommended_system_ram_gb": 113.85,
+    "min_vram_gb": 55.2,
+    "recommended_vram_gb": 94.87,
+    "min_disk_gb": 62.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

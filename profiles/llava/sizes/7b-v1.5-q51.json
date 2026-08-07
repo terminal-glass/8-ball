@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llava",
+  "size_slug": "7b-v1.5-q51",
+  "ollama_ref": "llava:7b-v1.5-q5_1",
+  "parameter_count": 7000000000,
+  "quantization": "q5_1",
+  "download_size_bytes": 5700000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llava/tags",
+    "retrieved_at": "2026-08-01T11:55:34Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 10.29,
+    "recommended_system_ram_gb": 12.35,
+    "min_vram_gb": 6.55,
+    "recommended_vram_gb": 10.29,
+    "min_disk_gb": 11.84
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

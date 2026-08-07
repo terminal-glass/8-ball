@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mistral-large",
+  "size_slug": "123b-instruct2411-q51",
+  "ollama_ref": "mistral-large:123b-instruct-2411-q5_1",
+  "parameter_count": 123000000000,
+  "quantization": "q5_1",
+  "download_size_bytes": 92000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral-large/tags",
+    "retrieved_at": "2026-08-01T11:56:18Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 142.89,
+    "recommended_system_ram_gb": 171.46,
+    "min_vram_gb": 105.8,
+    "recommended_vram_gb": 142.89,
+    "min_disk_gb": 115.4
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

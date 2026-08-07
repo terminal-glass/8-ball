@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3.5",
+  "size_slug": "35b-mlx",
+  "ollama_ref": "qwen3.5:35b-mlx",
+  "parameter_count": 35000000000,
+  "quantization": null,
+  "download_size_bytes": 22000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3.5/tags",
+    "retrieved_at": "2026-08-01T11:58:39Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 37.09,
+    "recommended_system_ram_gb": 44.5,
+    "min_vram_gb": 25.3,
+    "recommended_vram_gb": 37.09,
+    "min_disk_gb": 31.4
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

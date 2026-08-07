@@ -1,0 +1,2 @@
+size_slug,size_json_path,ollama_ref
+cloud,profiles/glm-5.1/sizes/cloud.json,glm-5.1:cloud

@@ -1,0 +1,7 @@
+size_slug,size_json_path,ollama_ref
+278m,profiles/granite-embedding/sizes/278m.json,granite-embedding:278m
+278m-fp16,profiles/granite-embedding/sizes/278m-fp16.json,granite-embedding:278m-fp16
+30m,profiles/granite-embedding/sizes/30m.json,granite-embedding:30m
+30m-en,profiles/granite-embedding/sizes/30m-en.json,granite-embedding:30m-en
+30m-en-fp16,profiles/granite-embedding/sizes/30m-en-fp16.json,granite-embedding:30m-en-fp16
+latest,profiles/granite-embedding/sizes/latest.json,granite-embedding:latest

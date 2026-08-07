@@ -1,0 +1,14 @@
+size_slug,size_json_path,ollama_ref
+1b,profiles/minicpm-v4.6/sizes/1b.json,minicpm-v4.6:1b
+f16,profiles/minicpm-v4.6/sizes/f16.json,minicpm-v4.6:f16
+latest,profiles/minicpm-v4.6/sizes/latest.json,minicpm-v4.6:latest
+q4-k-m,profiles/minicpm-v4.6/sizes/q4-k-m.json,minicpm-v4.6:q4_K_M
+q4-k-s,profiles/minicpm-v4.6/sizes/q4-k-s.json,minicpm-v4.6:q4_K_S
+q40,profiles/minicpm-v4.6/sizes/q40.json,minicpm-v4.6:q4_0
+q41,profiles/minicpm-v4.6/sizes/q41.json,minicpm-v4.6:q4_1
+q5-k-m,profiles/minicpm-v4.6/sizes/q5-k-m.json,minicpm-v4.6:q5_K_M
+q5-k-s,profiles/minicpm-v4.6/sizes/q5-k-s.json,minicpm-v4.6:q5_K_S
+q50,profiles/minicpm-v4.6/sizes/q50.json,minicpm-v4.6:q5_0
+q51,profiles/minicpm-v4.6/sizes/q51.json,minicpm-v4.6:q5_1
+q6-k,profiles/minicpm-v4.6/sizes/q6-k.json,minicpm-v4.6:q6_K
+q80,profiles/minicpm-v4.6/sizes/q80.json,minicpm-v4.6:q8_0

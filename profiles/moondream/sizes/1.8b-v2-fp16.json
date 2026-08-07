@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "moondream",
+  "size_slug": "1.8b-v2-fp16",
+  "ollama_ref": "moondream:1.8b-v2-fp16",
+  "parameter_count": 1800000000,
+  "quantization": "fp16",
+  "download_size_bytes": 3700000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/moondream/tags",
+    "retrieved_at": "2026-08-01T11:56:41Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 6.5,
+    "recommended_system_ram_gb": 7.8,
+    "min_vram_gb": 4.25,
+    "recommended_vram_gb": 6.5,
+    "min_disk_gb": 9.44
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

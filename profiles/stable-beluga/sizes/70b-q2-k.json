@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "stable-beluga",
+  "size_slug": "70b-q2-k",
+  "ollama_ref": "stable-beluga:70b-q2_K",
+  "parameter_count": 70000000000,
+  "quantization": "q2_K",
+  "download_size_bytes": 29000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/stable-beluga/tags",
+    "retrieved_at": "2026-08-01T11:59:20Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 55.2,
+    "recommended_system_ram_gb": 66.24,
+    "min_vram_gb": 33.35,
+    "recommended_vram_gb": 55.2,
+    "min_disk_gb": 39.8
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

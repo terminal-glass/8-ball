@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen2.5-coder",
+  "size_slug": "32b-instruct-q41",
+  "ollama_ref": "qwen2.5-coder:32b-instruct-q4_1",
+  "parameter_count": 32000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 21000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen2.5-coder/tags",
+    "retrieved_at": "2026-08-01T11:58:21Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 35.07,
+    "recommended_system_ram_gb": 42.09,
+    "min_vram_gb": 24.15,
+    "recommended_vram_gb": 35.07,
+    "min_disk_gb": 30.2
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

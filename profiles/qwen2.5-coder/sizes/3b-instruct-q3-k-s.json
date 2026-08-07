@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen2.5-coder",
+  "size_slug": "3b-instruct-q3-k-s",
+  "ollama_ref": "qwen2.5-coder:3b-instruct-q3_K_S",
+  "parameter_count": 3000000000,
+  "quantization": "q3_K_S",
+  "download_size_bytes": 1500000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen2.5-coder/tags",
+    "retrieved_at": "2026-08-01T11:58:21Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.31,
+    "recommended_system_ram_gb": 5.17,
+    "min_vram_gb": 1.72,
+    "recommended_vram_gb": 4.31,
+    "min_disk_gb": 6.8
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

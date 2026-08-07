@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3-vl",
+  "size_slug": "235b-a22b-thinking-bf16",
+  "ollama_ref": "qwen3-vl:235b-a22b-thinking-bf16",
+  "parameter_count": 235000000000,
+  "quantization": "bf16",
+  "download_size_bytes": 471000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3-vl/tags",
+    "retrieved_at": "2026-08-01T11:58:37Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 610.94,
+    "recommended_system_ram_gb": 733.12,
+    "min_vram_gb": 541.65,
+    "recommended_vram_gb": 610.94,
+    "min_disk_gb": 570.2
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

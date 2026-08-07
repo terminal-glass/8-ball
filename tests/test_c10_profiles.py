@@ -44,14 +44,22 @@ def test_model_page_shape() -> None:
     assert page["sizes"][0]["parameter_count"] >= page["sizes"][1]["parameter_count"]
 
 
-def test_provider_assumptions_exist() -> None:
-    expected = REPO_ROOT / "data/generated/provider-assumptions/ubuntu-cpu.json"
-    assert expected.is_file()
-    payload = json.loads(expected.read_text(encoding="utf-8"))
-    assert payload["detection_signals"]
-    hardware = payload["hardware"]
-    assert hardware.get("cuda_available") is False
-    assert hardware.get("total_vram_gb") in (None, 0)
+def test_provider_assumptions_dir_removed() -> None:
+    assert not (REPO_ROOT / "data/generated/provider-assumptions").exists()
+
+
+def test_lanes_manifest_present() -> None:
+    path = REPO_ROOT / "profiles/lanes.json"
+    assert path.is_file()
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    assert len(manifest.get("lanes", [])) == 10
+
+
+def test_lane_matrix_audit_present() -> None:
+    audit = json.loads((REPO_ROOT / "profiles/_lane-matrix-audit.json").read_text(encoding="utf-8"))
+    counts = audit["counts"]
+    assert counts["required_install_lane_count"] == 10
+    assert counts["required_install_payload_file_count"] == 50
 
 
 def test_digitalocean_gpu_csv_headers_map_to_capacity() -> None:
@@ -165,7 +173,6 @@ def test_selector_never_chooses_unknown_fit() -> None:
             str(REPO_ROOT / "install/shared/c10-select-model.py"),
             "qwen3",
             "cloud/aws-lightsail/gpu",
-            "data/generated/provider-assumptions/cloud-aws-lightsail-gpu.json",
         ],
         capture_output=True,
         text=True,
@@ -188,7 +195,6 @@ def test_selector_chooses_confirmed_fit_on_cpu_lane() -> None:
             str(REPO_ROOT / "install/shared/c10-select-model.py"),
             "gemma",
             "ubuntu/cpu",
-            "data/generated/provider-assumptions/ubuntu-cpu.json",
         ],
         capture_output=True,
         text=True,
@@ -228,7 +234,7 @@ def test_trial_install_isolated_copy(tmp_path: Path) -> None:
     env = os.environ.copy()
     env["EIGHTBALL_REPO_ROOT"] = str(copy_root)
     result = subprocess.run(
-        ["python3", str(copy_root / "install/shared/c10-select-model.py"), "gemma", "ubuntu/cpu", "data/generated/provider-assumptions/ubuntu-cpu.json"],
+        ["python3", str(copy_root / "install/shared/c10-select-model.py"), "gemma", "ubuntu/cpu"],
         capture_output=True,
         text=True,
         check=False,
@@ -247,7 +253,6 @@ def test_missing_profile_errors_clearly() -> None:
             str(REPO_ROOT / "install/shared/c10-select-model.py"),
             "definitely-not-a-real-model-slug-xyz",
             "ubuntu/cpu",
-            "data/generated/provider-assumptions/ubuntu-cpu.json",
         ],
         capture_output=True,
         text=True,

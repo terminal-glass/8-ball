@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+671b,profiles/cogito-2.1/sizes/671b.json,cogito-2.1:671b
+671b-fp16,profiles/cogito-2.1/sizes/671b-fp16.json,cogito-2.1:671b-fp16
+671b-q4-k-m,profiles/cogito-2.1/sizes/671b-q4-k-m.json,cogito-2.1:671b-q4_K_M
+671b-q80,profiles/cogito-2.1/sizes/671b-q80.json,cogito-2.1:671b-q8_0
+latest,profiles/cogito-2.1/sizes/latest.json,cogito-2.1:latest

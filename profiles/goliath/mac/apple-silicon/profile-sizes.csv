@@ -1,0 +1,17 @@
+size_slug,size_json_path,ollama_ref
+120b-fp16,profiles/goliath/sizes/120b-fp16.json,goliath:120b-fp16
+120b-q2-k,profiles/goliath/sizes/120b-q2-k.json,goliath:120b-q2_K
+120b-q3-k-l,profiles/goliath/sizes/120b-q3-k-l.json,goliath:120b-q3_K_L
+120b-q3-k-m,profiles/goliath/sizes/120b-q3-k-m.json,goliath:120b-q3_K_M
+120b-q3-k-s,profiles/goliath/sizes/120b-q3-k-s.json,goliath:120b-q3_K_S
+120b-q4-k-m,profiles/goliath/sizes/120b-q4-k-m.json,goliath:120b-q4_K_M
+120b-q4-k-s,profiles/goliath/sizes/120b-q4-k-s.json,goliath:120b-q4_K_S
+120b-q40,profiles/goliath/sizes/120b-q40.json,goliath:120b-q4_0
+120b-q41,profiles/goliath/sizes/120b-q41.json,goliath:120b-q4_1
+120b-q5-k-m,profiles/goliath/sizes/120b-q5-k-m.json,goliath:120b-q5_K_M
+120b-q5-k-s,profiles/goliath/sizes/120b-q5-k-s.json,goliath:120b-q5_K_S
+120b-q50,profiles/goliath/sizes/120b-q50.json,goliath:120b-q5_0
+120b-q51,profiles/goliath/sizes/120b-q51.json,goliath:120b-q5_1
+120b-q6-k,profiles/goliath/sizes/120b-q6-k.json,goliath:120b-q6_K
+120b-q80,profiles/goliath/sizes/120b-q80.json,goliath:120b-q8_0
+latest,profiles/goliath/sizes/latest.json,goliath:latest

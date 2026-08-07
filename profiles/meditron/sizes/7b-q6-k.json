@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "meditron",
+  "size_slug": "7b-q6-k",
+  "ollama_ref": "meditron:7b-q6_K",
+  "parameter_count": 7000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 5500000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/meditron/tags",
+    "retrieved_at": "2026-08-01T11:55:55Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 10.06,
+    "recommended_system_ram_gb": 12.07,
+    "min_vram_gb": 6.32,
+    "recommended_vram_gb": 10.06,
+    "min_disk_gb": 11.6
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

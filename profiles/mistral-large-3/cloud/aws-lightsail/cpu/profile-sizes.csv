@@ -1,0 +1,2 @@
+size_slug,size_json_path,ollama_ref
+675b-cloud,profiles/mistral-large-3/sizes/675b-cloud.json,mistral-large-3:675b-cloud

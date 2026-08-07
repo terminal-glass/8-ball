@@ -1,0 +1,16 @@
+size_slug,size_json_path,ollama_ref
+2.7b,profiles/dolphin-phi/sizes/2.7b.json,dolphin-phi:2.7b
+2.7b-v2.6,profiles/dolphin-phi/sizes/2.7b-v2.6.json,dolphin-phi:2.7b-v2.6
+2.7b-v2.6-q2-k,profiles/dolphin-phi/sizes/2.7b-v2.6-q2-k.json,dolphin-phi:2.7b-v2.6-q2_K
+2.7b-v2.6-q3-k-l,profiles/dolphin-phi/sizes/2.7b-v2.6-q3-k-l.json,dolphin-phi:2.7b-v2.6-q3_K_L
+2.7b-v2.6-q3-k-m,profiles/dolphin-phi/sizes/2.7b-v2.6-q3-k-m.json,dolphin-phi:2.7b-v2.6-q3_K_M
+2.7b-v2.6-q3-k-s,profiles/dolphin-phi/sizes/2.7b-v2.6-q3-k-s.json,dolphin-phi:2.7b-v2.6-q3_K_S
+2.7b-v2.6-q4-k-m,profiles/dolphin-phi/sizes/2.7b-v2.6-q4-k-m.json,dolphin-phi:2.7b-v2.6-q4_K_M
+2.7b-v2.6-q4-k-s,profiles/dolphin-phi/sizes/2.7b-v2.6-q4-k-s.json,dolphin-phi:2.7b-v2.6-q4_K_S
+2.7b-v2.6-q40,profiles/dolphin-phi/sizes/2.7b-v2.6-q40.json,dolphin-phi:2.7b-v2.6-q4_0
+2.7b-v2.6-q5-k-m,profiles/dolphin-phi/sizes/2.7b-v2.6-q5-k-m.json,dolphin-phi:2.7b-v2.6-q5_K_M
+2.7b-v2.6-q5-k-s,profiles/dolphin-phi/sizes/2.7b-v2.6-q5-k-s.json,dolphin-phi:2.7b-v2.6-q5_K_S
+2.7b-v2.6-q50,profiles/dolphin-phi/sizes/2.7b-v2.6-q50.json,dolphin-phi:2.7b-v2.6-q5_0
+2.7b-v2.6-q6-k,profiles/dolphin-phi/sizes/2.7b-v2.6-q6-k.json,dolphin-phi:2.7b-v2.6-q6_K
+2.7b-v2.6-q80,profiles/dolphin-phi/sizes/2.7b-v2.6-q80.json,dolphin-phi:2.7b-v2.6-q8_0
+latest,profiles/dolphin-phi/sizes/latest.json,dolphin-phi:latest

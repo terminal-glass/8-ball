@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llama3.1",
+  "size_slug": "405b-text-q51",
+  "ollama_ref": "llama3.1:405b-text-q5_1",
+  "parameter_count": 405000000000,
+  "quantization": "q5_1",
+  "download_size_bytes": 305000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama3.1/tags",
+    "retrieved_at": "2026-08-01T11:55:23Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 468.91,
+    "recommended_system_ram_gb": 562.69,
+    "min_vram_gb": 350.75,
+    "recommended_vram_gb": 468.91,
+    "min_disk_gb": 371.0
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

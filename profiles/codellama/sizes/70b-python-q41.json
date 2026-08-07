@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "codellama",
+  "size_slug": "70b-python-q41",
+  "ollama_ref": "codellama:70b-python-q4_1",
+  "parameter_count": 70000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 43000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/codellama/tags",
+    "retrieved_at": "2026-08-01T11:51:56Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 71.3,
+    "recommended_system_ram_gb": 85.56,
+    "min_vram_gb": 49.45,
+    "recommended_vram_gb": 71.3,
+    "min_disk_gb": 56.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

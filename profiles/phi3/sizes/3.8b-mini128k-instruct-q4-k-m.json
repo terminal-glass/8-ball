@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "phi3",
+  "size_slug": "3.8b-mini128k-instruct-q4-k-m",
+  "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_K_M",
+  "parameter_count": 3800000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 2400000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/phi3/tags",
+    "retrieved_at": "2026-08-01T11:57:55Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 5.58,
+    "recommended_system_ram_gb": 6.69,
+    "min_vram_gb": 2.76,
+    "recommended_vram_gb": 5.58,
+    "min_disk_gb": 7.88
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "cogito",
+  "size_slug": "14b-v1-preview-qwen-q80",
+  "ollama_ref": "cogito:14b-v1-preview-qwen-q8_0",
+  "parameter_count": 14000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 16000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/cogito/tags",
+    "retrieved_at": "2026-08-01T11:52:05Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 24.15,
+    "recommended_system_ram_gb": 28.98,
+    "min_vram_gb": 18.4,
+    "recommended_vram_gb": 24.15,
+    "min_disk_gb": 24.2
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

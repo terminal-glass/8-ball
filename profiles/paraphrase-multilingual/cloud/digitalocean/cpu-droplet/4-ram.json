@@ -2,8 +2,8 @@
   "schema_version": "c10.stage.v1",
   "model_slug": "paraphrase-multilingual",
   "lane_path": "cloud/digitalocean/cpu-droplet",
-  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T07:44:41Z",
+  "provider_assumption_id": "digitalocean-cpu-droplet",
+  "generated_at": "2026-08-07T17:43:13Z",
   "provenance": {
     "source_path": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"

@@ -1,0 +1,8 @@
+size_slug,size_json_path,ollama_ref
+671b,profiles/deepseek-v3.1/sizes/671b.json,deepseek-v3.1:671b
+671b-fp16,profiles/deepseek-v3.1/sizes/671b-fp16.json,deepseek-v3.1:671b-fp16
+671b-q80,profiles/deepseek-v3.1/sizes/671b-q80.json,deepseek-v3.1:671b-q8_0
+671b-terminus-fp16,profiles/deepseek-v3.1/sizes/671b-terminus-fp16.json,deepseek-v3.1:671b-terminus-fp16
+671b-terminus-q4-k-m,profiles/deepseek-v3.1/sizes/671b-terminus-q4-k-m.json,deepseek-v3.1:671b-terminus-q4_K_M
+671b-terminus-q80,profiles/deepseek-v3.1/sizes/671b-terminus-q80.json,deepseek-v3.1:671b-terminus-q8_0
+latest,profiles/deepseek-v3.1/sizes/latest.json,deepseek-v3.1:latest

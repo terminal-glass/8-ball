@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "phind-codellama",
+  "size_slug": "34b-q3-k-s",
+  "ollama_ref": "phind-codellama:34b-q3_K_S",
+  "parameter_count": 34000000000,
+  "quantization": "q3_K_S",
+  "download_size_bytes": 15000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/phind-codellama/tags",
+    "retrieved_at": "2026-08-01T11:58:09Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 28.75,
+    "recommended_system_ram_gb": 34.5,
+    "min_vram_gb": 17.25,
+    "recommended_vram_gb": 28.75,
+    "min_disk_gb": 23.0
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

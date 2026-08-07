@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "yarn-mistral",
+  "size_slug": "7b64k-q3-k-l",
+  "ollama_ref": "yarn-mistral:7b-64k-q3_K_L",
+  "parameter_count": 7000000000,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 3800000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yarn-mistral/tags",
+    "retrieved_at": "2026-08-01T12:00:09Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.11,
+    "recommended_system_ram_gb": 9.73,
+    "min_vram_gb": 4.37,
+    "recommended_vram_gb": 8.11,
+    "min_disk_gb": 9.56
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

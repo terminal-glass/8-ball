@@ -1,0 +1,10 @@
+size_slug,size_json_path,ollama_ref
+14b,profiles/deepcoder/sizes/14b.json,deepcoder:14b
+14b-preview-fp16,profiles/deepcoder/sizes/14b-preview-fp16.json,deepcoder:14b-preview-fp16
+14b-preview-q4-k-m,profiles/deepcoder/sizes/14b-preview-q4-k-m.json,deepcoder:14b-preview-q4_K_M
+14b-preview-q80,profiles/deepcoder/sizes/14b-preview-q80.json,deepcoder:14b-preview-q8_0
+1.5b,profiles/deepcoder/sizes/1.5b.json,deepcoder:1.5b
+1.5b-preview-fp16,profiles/deepcoder/sizes/1.5b-preview-fp16.json,deepcoder:1.5b-preview-fp16
+1.5b-preview-q4-k-m,profiles/deepcoder/sizes/1.5b-preview-q4-k-m.json,deepcoder:1.5b-preview-q4_K_M
+1.5b-preview-q80,profiles/deepcoder/sizes/1.5b-preview-q80.json,deepcoder:1.5b-preview-q8_0
+latest,profiles/deepcoder/sizes/latest.json,deepcoder:latest

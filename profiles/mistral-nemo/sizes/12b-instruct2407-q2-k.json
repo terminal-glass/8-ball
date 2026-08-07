@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mistral-nemo",
+  "size_slug": "12b-instruct2407-q2-k",
+  "ollama_ref": "mistral-nemo:12b-instruct-2407-q2_K",
+  "parameter_count": 12000000000,
+  "quantization": "q2_K",
+  "download_size_bytes": 4800000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral-nemo/tags",
+    "retrieved_at": "2026-08-01T11:56:25Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 10.7,
+    "recommended_system_ram_gb": 12.83,
+    "min_vram_gb": 5.52,
+    "recommended_vram_gb": 10.7,
+    "min_disk_gb": 10.76
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "tulu3",
+  "size_slug": "8b-fp16",
+  "ollama_ref": "tulu3:8b-fp16",
+  "parameter_count": 8000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 16000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/tulu3/tags",
+    "retrieved_at": "2026-08-01T11:59:43Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 22.42,
+    "recommended_system_ram_gb": 26.91,
+    "min_vram_gb": 18.4,
+    "recommended_vram_gb": 22.42,
+    "min_disk_gb": 24.2
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

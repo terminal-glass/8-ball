@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "gemma",
+  "size_slug": "instruct",
+  "ollama_ref": "gemma:instruct",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 5000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/gemma/tags",
+    "retrieved_at": "2026-08-01T11:53:38Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 7.47,
+    "recommended_system_ram_gb": 8.97,
+    "min_vram_gb": 5.75,
+    "recommended_vram_gb": 7.47,
+    "min_disk_gb": 11.0
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+3.8b,profiles/phi4-mini-reasoning/sizes/3.8b.json,phi4-mini-reasoning:3.8b
+3.8b-fp16,profiles/phi4-mini-reasoning/sizes/3.8b-fp16.json,phi4-mini-reasoning:3.8b-fp16
+3.8b-q4-k-m,profiles/phi4-mini-reasoning/sizes/3.8b-q4-k-m.json,phi4-mini-reasoning:3.8b-q4_K_M
+3.8b-q80,profiles/phi4-mini-reasoning/sizes/3.8b-q80.json,phi4-mini-reasoning:3.8b-q8_0
+latest,profiles/phi4-mini-reasoning/sizes/latest.json,phi4-mini-reasoning:latest

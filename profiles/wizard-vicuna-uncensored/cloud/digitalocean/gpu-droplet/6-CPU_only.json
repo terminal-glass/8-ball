@@ -2,8 +2,8 @@
   "schema_version": "c10.stage.v1",
   "model_slug": "wizard-vicuna-uncensored",
   "lane_path": "cloud/digitalocean/gpu-droplet",
-  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T02:17:56Z",
+  "provider_assumption_id": "digitalocean-gpu-droplet",
+  "generated_at": "2026-08-07T17:43:14Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"

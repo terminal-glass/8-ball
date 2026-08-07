@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "yi",
+  "size_slug": "34b-q2-k",
+  "ollama_ref": "yi:34b-q2_K",
+  "parameter_count": 34000000000,
+  "quantization": "q2_K",
+  "download_size_bytes": 15000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yi/tags",
+    "retrieved_at": "2026-08-01T12:00:11Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 28.75,
+    "recommended_system_ram_gb": 34.5,
+    "min_vram_gb": 17.25,
+    "recommended_vram_gb": 28.75,
+    "min_disk_gb": 23.0
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

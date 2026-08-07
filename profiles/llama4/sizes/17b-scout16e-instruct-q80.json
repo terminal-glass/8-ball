@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llama4",
+  "size_slug": "17b-scout16e-instruct-q80",
+  "ollama_ref": "llama4:17b-scout-16e-instruct-q8_0",
+  "parameter_count": 17000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 117000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama4/tags",
+    "retrieved_at": "2026-08-01T11:55:32Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 141.16,
+    "recommended_system_ram_gb": 169.39,
+    "min_vram_gb": 134.55,
+    "recommended_vram_gb": 141.16,
+    "min_disk_gb": 145.4
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

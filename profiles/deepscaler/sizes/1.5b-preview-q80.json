@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "deepscaler",
+  "size_slug": "1.5b-preview-q80",
+  "ollama_ref": "deepscaler:1.5b-preview-q8_0",
+  "parameter_count": 1500000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 1900000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepscaler/tags",
+    "retrieved_at": "2026-08-01T11:52:25Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.34,
+    "recommended_system_ram_gb": 5.21,
+    "min_vram_gb": 2.18,
+    "recommended_vram_gb": 4.34,
+    "min_disk_gb": 7.28
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

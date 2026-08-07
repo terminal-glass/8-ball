@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "olmo2",
+  "size_slug": "7b1124-instruct-fp16",
+  "ollama_ref": "olmo2:7b-1124-instruct-fp16",
+  "parameter_count": 7000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 15000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/olmo2/tags",
+    "retrieved_at": "2026-08-01T11:57:30Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 20.99,
+    "recommended_system_ram_gb": 25.18,
+    "min_vram_gb": 17.25,
+    "recommended_vram_gb": 20.99,
+    "min_disk_gb": 23.0
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

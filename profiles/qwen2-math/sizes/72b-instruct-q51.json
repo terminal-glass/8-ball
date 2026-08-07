@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen2-math",
+  "size_slug": "72b-instruct-q51",
+  "ollama_ref": "qwen2-math:72b-instruct-q5_1",
+  "parameter_count": 72000000000,
+  "quantization": "q5_1",
+  "download_size_bytes": 55000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen2-math/tags",
+    "retrieved_at": "2026-08-01T11:58:16Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 85.67,
+    "recommended_system_ram_gb": 102.81,
+    "min_vram_gb": 63.25,
+    "recommended_vram_gb": 85.67,
+    "min_disk_gb": 71.0
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

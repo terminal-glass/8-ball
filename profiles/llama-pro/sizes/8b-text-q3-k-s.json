@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llama-pro",
+  "size_slug": "8b-text-q3-k-s",
+  "ollama_ref": "llama-pro:8b-text-q3_K_S",
+  "parameter_count": 8000000000,
+  "quantization": "q3_K_S",
+  "download_size_bytes": 3600000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama-pro/tags",
+    "retrieved_at": "2026-08-01T11:55:04Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.16,
+    "recommended_system_ram_gb": 9.8,
+    "min_vram_gb": 4.14,
+    "recommended_vram_gb": 8.16,
+    "min_disk_gb": 9.32
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

@@ -1,0 +1,8 @@
+size_slug,size_json_path,ollama_ref
+120b,profiles/nemotron-3-super/sizes/120b.json,nemotron-3-super:120b
+120b-a12b,profiles/nemotron-3-super/sizes/120b-a12b.json,nemotron-3-super:120b-a12b
+120b-a12b-bf16,profiles/nemotron-3-super/sizes/120b-a12b-bf16.json,nemotron-3-super:120b-a12b-bf16
+120b-a12b-q4-k-m,profiles/nemotron-3-super/sizes/120b-a12b-q4-k-m.json,nemotron-3-super:120b-a12b-q4_K_M
+120b-a12b-q80,profiles/nemotron-3-super/sizes/120b-a12b-q80.json,nemotron-3-super:120b-a12b-q8_0
+cloud,profiles/nemotron-3-super/sizes/cloud.json,nemotron-3-super:cloud
+latest,profiles/nemotron-3-super/sizes/latest.json,nemotron-3-super:latest

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nous-hermes2-mixtral",
+  "size_slug": "8x7b-dpo-q4-k-s",
+  "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_K_S",
+  "parameter_count": null,
+  "quantization": "q4_K_S",
+  "download_size_bytes": 27000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nous-hermes2-mixtral/tags",
+    "retrieved_at": "2026-08-01T11:57:21Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 32.77,
+    "recommended_system_ram_gb": 39.33,
+    "min_vram_gb": 31.05,
+    "recommended_vram_gb": 32.77,
+    "min_disk_gb": 37.4
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

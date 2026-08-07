@@ -1,0 +1,11 @@
+size_slug,size_json_path,ollama_ref
+8b,profiles/granite3-guardian/sizes/8b.json,granite3-guardian:8b
+8b-fp16,profiles/granite3-guardian/sizes/8b-fp16.json,granite3-guardian:8b-fp16
+8b-q5-k-m,profiles/granite3-guardian/sizes/8b-q5-k-m.json,granite3-guardian:8b-q5_K_M
+8b-q5-k-s,profiles/granite3-guardian/sizes/8b-q5-k-s.json,granite3-guardian:8b-q5_K_S
+8b-q6-k,profiles/granite3-guardian/sizes/8b-q6-k.json,granite3-guardian:8b-q6_K
+8b-q80,profiles/granite3-guardian/sizes/8b-q80.json,granite3-guardian:8b-q8_0
+2b,profiles/granite3-guardian/sizes/2b.json,granite3-guardian:2b
+2b-fp16,profiles/granite3-guardian/sizes/2b-fp16.json,granite3-guardian:2b-fp16
+2b-q80,profiles/granite3-guardian/sizes/2b-q80.json,granite3-guardian:2b-q8_0
+latest,profiles/granite3-guardian/sizes/latest.json,granite3-guardian:latest

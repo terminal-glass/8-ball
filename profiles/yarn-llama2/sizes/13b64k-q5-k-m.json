@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "yarn-llama2",
+  "size_slug": "13b64k-q5-k-m",
+  "ollama_ref": "yarn-llama2:13b-64k-q5_K_M",
+  "parameter_count": 13000000000,
+  "quantization": "q5_K_M",
+  "download_size_bytes": 9200000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yarn-llama2/tags",
+    "retrieved_at": "2026-08-01T12:00:06Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 16.04,
+    "recommended_system_ram_gb": 19.25,
+    "min_vram_gb": 10.58,
+    "recommended_vram_gb": 16.04,
+    "min_disk_gb": 16.04
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

@@ -1,0 +1,14 @@
+size_slug,size_json_path,ollama_ref
+20b,profiles/sailor2/sizes/20b.json,sailor2:20b
+20b-chat-fp16,profiles/sailor2/sizes/20b-chat-fp16.json,sailor2:20b-chat-fp16
+20b-chat-q4-k-m,profiles/sailor2/sizes/20b-chat-q4-k-m.json,sailor2:20b-chat-q4_K_M
+20b-chat-q80,profiles/sailor2/sizes/20b-chat-q80.json,sailor2:20b-chat-q8_0
+8b,profiles/sailor2/sizes/8b.json,sailor2:8b
+8b-chat-fp16,profiles/sailor2/sizes/8b-chat-fp16.json,sailor2:8b-chat-fp16
+8b-chat-q4-k-m,profiles/sailor2/sizes/8b-chat-q4-k-m.json,sailor2:8b-chat-q4_K_M
+8b-chat-q80,profiles/sailor2/sizes/8b-chat-q80.json,sailor2:8b-chat-q8_0
+1b,profiles/sailor2/sizes/1b.json,sailor2:1b
+1b-chat-fp16,profiles/sailor2/sizes/1b-chat-fp16.json,sailor2:1b-chat-fp16
+1b-chat-q4-k-m,profiles/sailor2/sizes/1b-chat-q4-k-m.json,sailor2:1b-chat-q4_K_M
+1b-chat-q80,profiles/sailor2/sizes/1b-chat-q80.json,sailor2:1b-chat-q8_0
+latest,profiles/sailor2/sizes/latest.json,sailor2:latest

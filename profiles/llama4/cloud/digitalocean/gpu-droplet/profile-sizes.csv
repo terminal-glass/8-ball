@@ -1,0 +1,12 @@
+size_slug,size_json_path,ollama_ref
+128x17b,profiles/llama4/sizes/128x17b.json,llama4:128x17b
+16x17b,profiles/llama4/sizes/16x17b.json,llama4:16x17b
+17b-maverick128e-instruct-fp16,profiles/llama4/sizes/17b-maverick128e-instruct-fp16.json,llama4:17b-maverick-128e-instruct-fp16
+17b-maverick128e-instruct-q4-k-m,profiles/llama4/sizes/17b-maverick128e-instruct-q4-k-m.json,llama4:17b-maverick-128e-instruct-q4_K_M
+17b-maverick128e-instruct-q80,profiles/llama4/sizes/17b-maverick128e-instruct-q80.json,llama4:17b-maverick-128e-instruct-q8_0
+17b-scout16e-instruct-fp16,profiles/llama4/sizes/17b-scout16e-instruct-fp16.json,llama4:17b-scout-16e-instruct-fp16
+17b-scout16e-instruct-q4-k-m,profiles/llama4/sizes/17b-scout16e-instruct-q4-k-m.json,llama4:17b-scout-16e-instruct-q4_K_M
+17b-scout16e-instruct-q80,profiles/llama4/sizes/17b-scout16e-instruct-q80.json,llama4:17b-scout-16e-instruct-q8_0
+latest,profiles/llama4/sizes/latest.json,llama4:latest
+maverick,profiles/llama4/sizes/maverick.json,llama4:maverick
+scout,profiles/llama4/sizes/scout.json,llama4:scout

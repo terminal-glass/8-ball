@@ -1,0 +1,16 @@
+size_slug,size_json_path,ollama_ref
+32b,profiles/olmo-3/sizes/32b.json,olmo-3:32b
+32b-think,profiles/olmo-3/sizes/32b-think.json,olmo-3:32b-think
+32b-think-fp16,profiles/olmo-3/sizes/32b-think-fp16.json,olmo-3:32b-think-fp16
+32b-think-q4-k-m,profiles/olmo-3/sizes/32b-think-q4-k-m.json,olmo-3:32b-think-q4_K_M
+32b-think-q80,profiles/olmo-3/sizes/32b-think-q80.json,olmo-3:32b-think-q8_0
+7b,profiles/olmo-3/sizes/7b.json,olmo-3:7b
+7b-instruct,profiles/olmo-3/sizes/7b-instruct.json,olmo-3:7b-instruct
+7b-instruct-fp16,profiles/olmo-3/sizes/7b-instruct-fp16.json,olmo-3:7b-instruct-fp16
+7b-instruct-q4-k-m,profiles/olmo-3/sizes/7b-instruct-q4-k-m.json,olmo-3:7b-instruct-q4_K_M
+7b-instruct-q80,profiles/olmo-3/sizes/7b-instruct-q80.json,olmo-3:7b-instruct-q8_0
+7b-think,profiles/olmo-3/sizes/7b-think.json,olmo-3:7b-think
+7b-think-fp16,profiles/olmo-3/sizes/7b-think-fp16.json,olmo-3:7b-think-fp16
+7b-think-q4-k-m,profiles/olmo-3/sizes/7b-think-q4-k-m.json,olmo-3:7b-think-q4_K_M
+7b-think-q80,profiles/olmo-3/sizes/7b-think-q80.json,olmo-3:7b-think-q8_0
+latest,profiles/olmo-3/sizes/latest.json,olmo-3:latest

@@ -1,0 +1,2 @@
+size_slug,size_json_path,ollama_ref
+latest,profiles/gemini-3-flash-preview/sizes/latest.json,gemini-3-flash-preview:latest
