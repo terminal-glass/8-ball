@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "devstral-2",
+  "size_slug": "123b",
+  "ollama_ref": "devstral-2:123b",
+  "parameter_count": 123000000000,
+  "quantization": null,
+  "download_size_bytes": 75000000000,
+  "promoted": true,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/devstral-2/tags",
+    "retrieved_at": "2026-08-01T11:52:55Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 123.34,
+    "recommended_system_ram_gb": 148.0,
+    "min_vram_gb": 86.25,
+    "recommended_vram_gb": 123.34,
+    "min_disk_gb": 95.0
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

@@ -1,0 +1,4 @@
+size_slug,size_json_path,ollama_ref
+3b,profiles/deepseek-ocr/sizes/3b.json,deepseek-ocr:3b
+3b-bf16,profiles/deepseek-ocr/sizes/3b-bf16.json,deepseek-ocr:3b-bf16
+latest,profiles/deepseek-ocr/sizes/latest.json,deepseek-ocr:latest

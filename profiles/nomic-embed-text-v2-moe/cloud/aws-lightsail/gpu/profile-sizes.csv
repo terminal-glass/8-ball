@@ -1,0 +1,2 @@
+size_slug,size_json_path,ollama_ref
+latest,profiles/nomic-embed-text-v2-moe/sizes/latest.json,nomic-embed-text-v2-moe:latest

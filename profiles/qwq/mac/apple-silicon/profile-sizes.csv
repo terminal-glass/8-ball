@@ -1,0 +1,9 @@
+size_slug,size_json_path,ollama_ref
+32b,profiles/qwq/sizes/32b.json,qwq:32b
+32b-fp16,profiles/qwq/sizes/32b-fp16.json,qwq:32b-fp16
+32b-preview-fp16,profiles/qwq/sizes/32b-preview-fp16.json,qwq:32b-preview-fp16
+32b-preview-q4-k-m,profiles/qwq/sizes/32b-preview-q4-k-m.json,qwq:32b-preview-q4_K_M
+32b-preview-q80,profiles/qwq/sizes/32b-preview-q80.json,qwq:32b-preview-q8_0
+32b-q4-k-m,profiles/qwq/sizes/32b-q4-k-m.json,qwq:32b-q4_K_M
+32b-q80,profiles/qwq/sizes/32b-q80.json,qwq:32b-q8_0
+latest,profiles/qwq/sizes/latest.json,qwq:latest

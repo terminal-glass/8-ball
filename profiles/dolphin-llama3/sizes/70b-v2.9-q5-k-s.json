@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "dolphin-llama3",
+  "size_slug": "70b-v2.9-q5-k-s",
+  "ollama_ref": "dolphin-llama3:70b-v2.9-q5_K_S",
+  "parameter_count": 70000000000,
+  "quantization": "q5_K_S",
+  "download_size_bytes": 49000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/dolphin-llama3/tags",
+    "retrieved_at": "2026-08-01T11:52:59Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 78.2,
+    "recommended_system_ram_gb": 93.84,
+    "min_vram_gb": 56.35,
+    "recommended_vram_gb": 78.2,
+    "min_disk_gb": 63.8
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

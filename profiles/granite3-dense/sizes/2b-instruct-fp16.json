@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "granite3-dense",
+  "size_slug": "2b-instruct-fp16",
+  "ollama_ref": "granite3-dense:2b-instruct-fp16",
+  "parameter_count": 2000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 5300000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/granite3-dense/tags",
+    "retrieved_at": "2026-08-01T11:54:12Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.39,
+    "recommended_system_ram_gb": 10.07,
+    "min_vram_gb": 6.09,
+    "recommended_vram_gb": 8.39,
+    "min_disk_gb": 11.36
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

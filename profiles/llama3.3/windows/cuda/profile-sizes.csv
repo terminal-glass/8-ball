@@ -1,0 +1,15 @@
+size_slug,size_json_path,ollama_ref
+70b,profiles/llama3.3/sizes/70b.json,llama3.3:70b
+70b-instruct-fp16,profiles/llama3.3/sizes/70b-instruct-fp16.json,llama3.3:70b-instruct-fp16
+70b-instruct-q2-k,profiles/llama3.3/sizes/70b-instruct-q2-k.json,llama3.3:70b-instruct-q2_K
+70b-instruct-q3-k-m,profiles/llama3.3/sizes/70b-instruct-q3-k-m.json,llama3.3:70b-instruct-q3_K_M
+70b-instruct-q3-k-s,profiles/llama3.3/sizes/70b-instruct-q3-k-s.json,llama3.3:70b-instruct-q3_K_S
+70b-instruct-q4-k-m,profiles/llama3.3/sizes/70b-instruct-q4-k-m.json,llama3.3:70b-instruct-q4_K_M
+70b-instruct-q4-k-s,profiles/llama3.3/sizes/70b-instruct-q4-k-s.json,llama3.3:70b-instruct-q4_K_S
+70b-instruct-q40,profiles/llama3.3/sizes/70b-instruct-q40.json,llama3.3:70b-instruct-q4_0
+70b-instruct-q5-k-m,profiles/llama3.3/sizes/70b-instruct-q5-k-m.json,llama3.3:70b-instruct-q5_K_M
+70b-instruct-q50,profiles/llama3.3/sizes/70b-instruct-q50.json,llama3.3:70b-instruct-q5_0
+70b-instruct-q51,profiles/llama3.3/sizes/70b-instruct-q51.json,llama3.3:70b-instruct-q5_1
+70b-instruct-q6-k,profiles/llama3.3/sizes/70b-instruct-q6-k.json,llama3.3:70b-instruct-q6_K
+70b-instruct-q80,profiles/llama3.3/sizes/70b-instruct-q80.json,llama3.3:70b-instruct-q8_0
+latest,profiles/llama3.3/sizes/latest.json,llama3.3:latest

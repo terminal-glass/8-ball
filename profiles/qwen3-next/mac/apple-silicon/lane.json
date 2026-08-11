@@ -3,13 +3,14 @@
   "model_slug": "qwen3-next",
   "lane_path": "mac/apple-silicon",
   "provider_assumption_id": "mac-apple-silicon",
-  "generated_at": "2026-08-06T08:43:30Z",
+  "generated_at": "2026-08-07T17:43:13Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
-  "lane_id": "mac/apple-silicon",
-  "provider_assumption": "data/generated/provider-assumptions/mac-apple-silicon.json",
+  "lane_id": "mac-apple-silicon",
+  "install_path": "install/mac/apple-silicon/",
+  "profile_path": "mac/apple-silicon/",
   "detection_signals": [
     "os=darwin",
     "arch=arm64",

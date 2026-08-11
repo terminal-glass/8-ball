@@ -1,0 +1,10 @@
+size_slug,size_json_path,ollama_ref
+35b,profiles/ornith/sizes/35b.json,ornith:35b
+35b-bf16,profiles/ornith/sizes/35b-bf16.json,ornith:35b-bf16
+35b-q4-k-m,profiles/ornith/sizes/35b-q4-k-m.json,ornith:35b-q4_K_M
+35b-q80,profiles/ornith/sizes/35b-q80.json,ornith:35b-q8_0
+9b,profiles/ornith/sizes/9b.json,ornith:9b
+9b-bf16,profiles/ornith/sizes/9b-bf16.json,ornith:9b-bf16
+9b-q4-k-m,profiles/ornith/sizes/9b-q4-k-m.json,ornith:9b-q4_K_M
+9b-q80,profiles/ornith/sizes/9b-q80.json,ornith:9b-q8_0
+latest,profiles/ornith/sizes/latest.json,ornith:latest

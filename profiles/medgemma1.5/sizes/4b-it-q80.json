@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "medgemma1.5",
+  "size_slug": "4b-it-q80",
+  "ollama_ref": "medgemma1.5:4b-it-q8_0",
+  "parameter_count": 4000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 5000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/medgemma1.5/tags",
+    "retrieved_at": "2026-08-01T11:55:53Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.62,
+    "recommended_system_ram_gb": 10.35,
+    "min_vram_gb": 5.75,
+    "recommended_vram_gb": 8.62,
+    "min_disk_gb": 11.0
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+7b,profiles/marco-o1/sizes/7b.json,marco-o1:7b
+7b-fp16,profiles/marco-o1/sizes/7b-fp16.json,marco-o1:7b-fp16
+7b-q4-k-m,profiles/marco-o1/sizes/7b-q4-k-m.json,marco-o1:7b-q4_K_M
+7b-q80,profiles/marco-o1/sizes/7b-q80.json,marco-o1:7b-q8_0
+latest,profiles/marco-o1/sizes/latest.json,marco-o1:latest

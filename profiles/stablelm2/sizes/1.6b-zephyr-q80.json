@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "stablelm2",
+  "size_slug": "1.6b-zephyr-q80",
+  "ollama_ref": "stablelm2:1.6b-zephyr-q8_0",
+  "parameter_count": 1600000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 1800000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/stablelm2/tags",
+    "retrieved_at": "2026-08-01T11:59:27Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.25,
+    "recommended_system_ram_gb": 5.11,
+    "min_vram_gb": 2.07,
+    "recommended_vram_gb": 4.25,
+    "min_disk_gb": 7.16
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

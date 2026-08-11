@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "translategemma",
+  "size_slug": "12b-it-q80",
+  "ollama_ref": "translategemma:12b-it-q8_0",
+  "parameter_count": 12000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 13000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/translategemma/tags",
+    "retrieved_at": "2026-08-01T11:59:41Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 20.12,
+    "recommended_system_ram_gb": 24.15,
+    "min_vram_gb": 14.95,
+    "recommended_vram_gb": 20.12,
+    "min_disk_gb": 20.6
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

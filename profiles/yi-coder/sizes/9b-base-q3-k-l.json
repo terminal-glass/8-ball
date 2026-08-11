@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "yi-coder",
+  "size_slug": "9b-base-q3-k-l",
+  "ollama_ref": "yi-coder:9b-base-q3_K_L",
+  "parameter_count": 9000000000,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 4700000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yi-coder/tags",
+    "retrieved_at": "2026-08-01T12:00:13Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 9.72,
+    "recommended_system_ram_gb": 11.66,
+    "min_vram_gb": 5.4,
+    "recommended_vram_gb": 9.72,
+    "min_disk_gb": 10.64
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

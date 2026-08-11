@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "command-r7b",
+  "size_slug": "7b122024-fp16",
+  "ollama_ref": "command-r7b:7b-12-2024-fp16",
+  "parameter_count": 7000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 16000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/command-r7b/tags",
+    "retrieved_at": "2026-08-01T11:52:16Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 22.14,
+    "recommended_system_ram_gb": 26.56,
+    "min_vram_gb": 18.4,
+    "recommended_vram_gb": 22.14,
+    "min_disk_gb": 24.2
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

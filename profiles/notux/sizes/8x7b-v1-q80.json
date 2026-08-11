@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "notux",
+  "size_slug": "8x7b-v1-q80",
+  "ollama_ref": "notux:8x7b-v1-q8_0",
+  "parameter_count": null,
+  "quantization": "q8_0",
+  "download_size_bytes": 50000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/notux/tags",
+    "retrieved_at": "2026-08-01T11:57:14Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 59.22,
+    "recommended_system_ram_gb": 71.07,
+    "min_vram_gb": 57.5,
+    "recommended_vram_gb": 59.22,
+    "min_disk_gb": 65.0
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

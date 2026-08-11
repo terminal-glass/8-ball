@@ -1,0 +1,108 @@
+{
+  "schema_version": "c10.lane-matrix-audit.v1",
+  "generated_at": "2026-08-07T17:46:16Z",
+  "lanes": [
+    {
+      "lane_id": "ubuntu-cpu",
+      "install_path": "install/ubuntu/cpu/",
+      "profile_path": "ubuntu/cpu/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "ubuntu-cuda",
+      "install_path": "install/ubuntu/cuda/",
+      "profile_path": "ubuntu/cuda/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "mac-apple-silicon",
+      "install_path": "install/mac/apple-silicon/",
+      "profile_path": "mac/apple-silicon/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "mac-intel",
+      "install_path": "install/mac/intel/",
+      "profile_path": "mac/intel/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "windows-cpu",
+      "install_path": "install/windows/cpu/",
+      "profile_path": "windows/cpu/",
+      "runtime_type": "PowerShell"
+    },
+    {
+      "lane_id": "windows-cuda",
+      "install_path": "install/windows/cuda/",
+      "profile_path": "windows/cuda/",
+      "runtime_type": "PowerShell"
+    },
+    {
+      "lane_id": "digitalocean-cpu-droplet",
+      "install_path": "install/cloud/digitalocean/cpu-droplet/",
+      "profile_path": "cloud/digitalocean/cpu-droplet/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "digitalocean-gpu-droplet",
+      "install_path": "install/cloud/digitalocean/gpu-droplet/",
+      "profile_path": "cloud/digitalocean/gpu-droplet/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "aws-lightsail-cpu",
+      "install_path": "install/cloud/aws-lightsail/cpu/",
+      "profile_path": "cloud/aws-lightsail/cpu/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "aws-lightsail-gpu",
+      "install_path": "install/cloud/aws-lightsail/gpu/",
+      "profile_path": "cloud/aws-lightsail/gpu/",
+      "runtime_type": "shell"
+    }
+  ],
+  "counts": {
+    "required_install_lane_count": 10,
+    "actual_install_lane_count": 10,
+    "required_install_payload_file_count": 50,
+    "actual_install_payload_file_count": 50,
+    "required_install_readme_count": 10,
+    "actual_install_readme_count": 10,
+    "model_slug_count": 234,
+    "model_size_count": 7271,
+    "expected_profile_lane_count": 2340,
+    "actual_profile_lane_count": 2340,
+    "profile_matrix_row_count": 72710,
+    "profile_stage_payload_file_count": 11700,
+    "unknown_limit_count": 0,
+    "conflict_count": 0
+  },
+  "formulas": {
+    "expected_profile_lane_count": "model_slug_count × 10",
+    "profile_matrix_row_count": "model_size_count × 10 (profiles/index.csv rows)",
+    "profile_stage_payload_file_count": "model_slug_count × 10 × 5 (stage 3–7 files per model lane)",
+    "required_install_payload_file_count": "10 lanes × 5 payload roles"
+  },
+  "twelve_thousand_verification": {
+    "model_size_lane_index": {
+      "observed": false,
+      "claimed_category": "model-size-lane index rows",
+      "formula": "model_size_count × 10",
+      "observed_count": 72710,
+      "target": 12000,
+      "discrepancy": 60710
+    },
+    "model_lane_stage_payloads": {
+      "observed": false,
+      "claimed_category": "model-lane stage payload files (stages 3–7)",
+      "formula": "model_slug_count × 10 × 5",
+      "observed_count": 11700,
+      "target": 12000,
+      "discrepancy": -300
+    },
+    "note": "12,000 was not observed for either category with current catalog inputs."
+  },
+  "data_gaps": []
+}

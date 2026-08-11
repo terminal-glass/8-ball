@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "athene-v2",
+  "size_slug": "72b-q3-k-s",
+  "ollama_ref": "athene-v2:72b-q3_K_S",
+  "parameter_count": 72000000000,
+  "quantization": "q3_K_S",
+  "download_size_bytes": 34000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/athene-v2/tags",
+    "retrieved_at": "2026-08-01T11:51:33Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 61.52,
+    "recommended_system_ram_gb": 73.83,
+    "min_vram_gb": 39.1,
+    "recommended_vram_gb": 61.52,
+    "min_disk_gb": 45.8
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

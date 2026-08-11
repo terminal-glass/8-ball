@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+7b,profiles/command-r7b/sizes/7b.json,command-r7b:7b
+7b122024-fp16,profiles/command-r7b/sizes/7b122024-fp16.json,command-r7b:7b-12-2024-fp16
+7b122024-q4-k-m,profiles/command-r7b/sizes/7b122024-q4-k-m.json,command-r7b:7b-12-2024-q4_K_M
+7b122024-q80,profiles/command-r7b/sizes/7b122024-q80.json,command-r7b:7b-12-2024-q8_0
+latest,profiles/command-r7b/sizes/latest.json,command-r7b:latest

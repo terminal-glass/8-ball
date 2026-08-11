@@ -1,0 +1,14 @@
+size_slug,size_json_path,ollama_ref
+32b,profiles/exaone3.5/sizes/32b.json,exaone3.5:32b
+32b-instruct-fp16,profiles/exaone3.5/sizes/32b-instruct-fp16.json,exaone3.5:32b-instruct-fp16
+32b-instruct-q4-k-m,profiles/exaone3.5/sizes/32b-instruct-q4-k-m.json,exaone3.5:32b-instruct-q4_K_M
+32b-instruct-q80,profiles/exaone3.5/sizes/32b-instruct-q80.json,exaone3.5:32b-instruct-q8_0
+7.8b,profiles/exaone3.5/sizes/7.8b.json,exaone3.5:7.8b
+7.8b-instruct-fp16,profiles/exaone3.5/sizes/7.8b-instruct-fp16.json,exaone3.5:7.8b-instruct-fp16
+7.8b-instruct-q4-k-m,profiles/exaone3.5/sizes/7.8b-instruct-q4-k-m.json,exaone3.5:7.8b-instruct-q4_K_M
+7.8b-instruct-q80,profiles/exaone3.5/sizes/7.8b-instruct-q80.json,exaone3.5:7.8b-instruct-q8_0
+2.4b,profiles/exaone3.5/sizes/2.4b.json,exaone3.5:2.4b
+2.4b-instruct-fp16,profiles/exaone3.5/sizes/2.4b-instruct-fp16.json,exaone3.5:2.4b-instruct-fp16
+2.4b-instruct-q4-k-m,profiles/exaone3.5/sizes/2.4b-instruct-q4-k-m.json,exaone3.5:2.4b-instruct-q4_K_M
+2.4b-instruct-q80,profiles/exaone3.5/sizes/2.4b-instruct-q80.json,exaone3.5:2.4b-instruct-q8_0
+latest,profiles/exaone3.5/sizes/latest.json,exaone3.5:latest

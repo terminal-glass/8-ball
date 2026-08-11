@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T05:53:11Z",
+  "generated_at": "2026-08-07T17:43:14Z",
   "source_paths": [
     "data/normalized/tags.json",
     "data/normalized/models.json",
@@ -13,7 +13,5 @@
   "model_count": 234,
   "size_count": 7271,
   "install_lane_count": 10,
-  "data_gaps": [
-    "AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/P1-P4 instead."
-  ]
+  "data_gaps": []
 }

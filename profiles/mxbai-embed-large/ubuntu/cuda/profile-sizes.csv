@@ -1,0 +1,5 @@
+size_slug,size_json_path,ollama_ref
+335m,profiles/mxbai-embed-large/sizes/335m.json,mxbai-embed-large:335m
+335m-v1-fp16,profiles/mxbai-embed-large/sizes/335m-v1-fp16.json,mxbai-embed-large:335m-v1-fp16
+latest,profiles/mxbai-embed-large/sizes/latest.json,mxbai-embed-large:latest
+v1,profiles/mxbai-embed-large/sizes/v1.json,mxbai-embed-large:v1

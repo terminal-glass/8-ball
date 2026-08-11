@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "north-mini-code-1.0",
+  "size_slug": "mlx-nvfp4",
+  "ollama_ref": "north-mini-code-1.0:mlx-nvfp4",
+  "parameter_count": null,
+  "quantization": "nvfp4",
+  "download_size_bytes": 20000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/north-mini-code-1.0/tags",
+    "retrieved_at": "2026-08-01T11:57:10Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 24.72,
+    "recommended_system_ram_gb": 29.67,
+    "min_vram_gb": 23.0,
+    "recommended_vram_gb": 24.72,
+    "min_disk_gb": 29.0
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+24b,profiles/mistral-small3.1/sizes/24b.json,mistral-small3.1:24b
+24b-instruct2503-fp16,profiles/mistral-small3.1/sizes/24b-instruct2503-fp16.json,mistral-small3.1:24b-instruct-2503-fp16
+24b-instruct2503-q4-k-m,profiles/mistral-small3.1/sizes/24b-instruct2503-q4-k-m.json,mistral-small3.1:24b-instruct-2503-q4_K_M
+24b-instruct2503-q80,profiles/mistral-small3.1/sizes/24b-instruct2503-q80.json,mistral-small3.1:24b-instruct-2503-q8_0
+latest,profiles/mistral-small3.1/sizes/latest.json,mistral-small3.1:latest

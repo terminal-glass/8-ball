@@ -1,0 +1,10 @@
+size_slug,size_json_path,ollama_ref
+80b,profiles/qwen3-next/sizes/80b.json,qwen3-next:80b
+80b-a3b-instruct-fp16,profiles/qwen3-next/sizes/80b-a3b-instruct-fp16.json,qwen3-next:80b-a3b-instruct-fp16
+80b-a3b-instruct-q4-k-m,profiles/qwen3-next/sizes/80b-a3b-instruct-q4-k-m.json,qwen3-next:80b-a3b-instruct-q4_K_M
+80b-a3b-instruct-q80,profiles/qwen3-next/sizes/80b-a3b-instruct-q80.json,qwen3-next:80b-a3b-instruct-q8_0
+80b-a3b-thinking,profiles/qwen3-next/sizes/80b-a3b-thinking.json,qwen3-next:80b-a3b-thinking
+80b-a3b-thinking-fp16,profiles/qwen3-next/sizes/80b-a3b-thinking-fp16.json,qwen3-next:80b-a3b-thinking-fp16
+80b-a3b-thinking-q4-k-m,profiles/qwen3-next/sizes/80b-a3b-thinking-q4-k-m.json,qwen3-next:80b-a3b-thinking-q4_K_M
+80b-a3b-thinking-q80,profiles/qwen3-next/sizes/80b-a3b-thinking-q80.json,qwen3-next:80b-a3b-thinking-q8_0
+latest,profiles/qwen3-next/sizes/latest.json,qwen3-next:latest

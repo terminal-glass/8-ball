@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "dolphin-mixtral",
+  "size_slug": "8x22b-v2.9-fp16",
+  "ollama_ref": "dolphin-mixtral:8x22b-v2.9-fp16",
+  "parameter_count": null,
+  "quantization": "fp16",
+  "download_size_bytes": 281000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+    "retrieved_at": "2026-08-01T11:53:04Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 324.88,
+    "recommended_system_ram_gb": 389.85,
+    "min_vram_gb": 323.15,
+    "recommended_vram_gb": 324.88,
+    "min_disk_gb": 342.2
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

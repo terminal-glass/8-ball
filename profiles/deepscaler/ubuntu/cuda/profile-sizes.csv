@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+1.5b,profiles/deepscaler/sizes/1.5b.json,deepscaler:1.5b
+1.5b-preview-fp16,profiles/deepscaler/sizes/1.5b-preview-fp16.json,deepscaler:1.5b-preview-fp16
+1.5b-preview-q4-k-m,profiles/deepscaler/sizes/1.5b-preview-q4-k-m.json,deepscaler:1.5b-preview-q4_K_M
+1.5b-preview-q80,profiles/deepscaler/sizes/1.5b-preview-q80.json,deepscaler:1.5b-preview-q8_0
+latest,profiles/deepscaler/sizes/latest.json,deepscaler:latest

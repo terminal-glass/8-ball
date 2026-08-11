@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+4b,profiles/medgemma1.5/sizes/4b.json,medgemma1.5:4b
+4b-it-bf16,profiles/medgemma1.5/sizes/4b-it-bf16.json,medgemma1.5:4b-it-bf16
+4b-it-q4-k-m,profiles/medgemma1.5/sizes/4b-it-q4-k-m.json,medgemma1.5:4b-it-q4_K_M
+4b-it-q80,profiles/medgemma1.5/sizes/4b-it-q80.json,medgemma1.5:4b-it-q8_0
+latest,profiles/medgemma1.5/sizes/latest.json,medgemma1.5:latest

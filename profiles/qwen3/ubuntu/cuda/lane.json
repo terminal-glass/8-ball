@@ -3,13 +3,14 @@
   "model_slug": "qwen3",
   "lane_path": "ubuntu/cuda",
   "provider_assumption_id": "ubuntu-cuda",
-  "generated_at": "2026-08-06T08:43:30Z",
+  "generated_at": "2026-08-07T17:43:13Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
     "provenance_status": "internal_assumption_class"
   },
-  "lane_id": "ubuntu/cuda",
-  "provider_assumption": "data/generated/provider-assumptions/ubuntu-cuda.json",
+  "lane_id": "ubuntu-cuda",
+  "install_path": "install/ubuntu/cuda/",
+  "profile_path": "ubuntu/cuda/",
   "detection_signals": [
     "os=linux",
     "cuda=true",

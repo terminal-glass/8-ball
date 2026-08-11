@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "tinyllama",
+  "size_slug": "1.1b-chat-v0.6-fp16",
+  "ollama_ref": "tinyllama:1.1b-chat-v0.6-fp16",
+  "parameter_count": 1100000000,
+  "quantization": "fp16",
+  "download_size_bytes": 2200000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/tinyllama/tags",
+    "retrieved_at": "2026-08-01T11:59:39Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.57,
+    "recommended_system_ram_gb": 5.49,
+    "min_vram_gb": 2.53,
+    "recommended_vram_gb": 4.57,
+    "min_disk_gb": 7.64
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

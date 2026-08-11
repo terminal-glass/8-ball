@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "command-r-plus",
+  "size_slug": "104b082024-q6-k",
+  "ollama_ref": "command-r-plus:104b-08-2024-q6_K",
+  "parameter_count": 104000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 85000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/command-r-plus/tags",
+    "retrieved_at": "2026-08-01T11:52:14Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 129.38,
+    "recommended_system_ram_gb": 155.25,
+    "min_vram_gb": 97.75,
+    "recommended_vram_gb": 129.38,
+    "min_disk_gb": 107.0
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

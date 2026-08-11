@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+123b,profiles/devstral-2/sizes/123b.json,devstral-2:123b
+123b-instruct2512-fp16,profiles/devstral-2/sizes/123b-instruct2512-fp16.json,devstral-2:123b-instruct-2512-fp16
+123b-instruct2512-q4-k-m,profiles/devstral-2/sizes/123b-instruct2512-q4-k-m.json,devstral-2:123b-instruct-2512-q4_K_M
+123b-instruct2512-q80,profiles/devstral-2/sizes/123b-instruct2512-q80.json,devstral-2:123b-instruct-2512-q8_0
+latest,profiles/devstral-2/sizes/latest.json,devstral-2:latest

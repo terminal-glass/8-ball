@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen",
+  "size_slug": "14b-chat-v1.5-q50",
+  "ollama_ref": "qwen:14b-chat-v1.5-q5_0",
+  "parameter_count": 14000000000,
+  "quantization": "q5_0",
+  "download_size_bytes": 9900000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen/tags",
+    "retrieved_at": "2026-08-01T11:58:11Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 17.13,
+    "recommended_system_ram_gb": 20.56,
+    "min_vram_gb": 11.38,
+    "recommended_vram_gb": 17.13,
+    "min_disk_gb": 16.88
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

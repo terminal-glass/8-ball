@@ -2,6 +2,8 @@
 """Validate C10 profiles and install lane matrix."""
 from __future__ import annotations
 
+import csv
+import importlib.util
 import json
 import re
 import subprocess
@@ -12,9 +14,17 @@ from eight_ball.agents_csv.import_collection import discover_agents_csv_files
 from eight_ball.agents_csv.registry import source_specs
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+_C10_LANES_PATH = REPO_ROOT / "scripts" / "c10_lanes.py"
+_LANES_SPEC = importlib.util.spec_from_file_location("c10_lanes", _C10_LANES_PATH)
+if _LANES_SPEC is None or _LANES_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_LANES_PATH}")
+c10_lanes = importlib.util.module_from_spec(_LANES_SPEC)
+sys.modules[_LANES_SPEC.name] = c10_lanes
+_LANES_SPEC.loader.exec_module(c10_lanes)
+
 PROFILES_DIR = REPO_ROOT / "profiles"
-PROVIDER_ASSUMPTIONS_DIR = REPO_ROOT / "data" / "generated" / "provider-assumptions"
 INSTALL_DIR = REPO_ROOT / "install"
+PROVIDER_ASSUMPTIONS_DIR = REPO_ROOT / "data" / "generated" / "provider-assumptions"
 
 FORBIDDEN_PROFILE_DIRS = frozenset(
     {
@@ -24,61 +34,29 @@ FORBIDDEN_PROFILE_DIRS = frozenset(
         "provider-assumptions",
     }
 )
-ALLOWED_PROFILE_ROOT_FILES = frozenset({"README.md", "c10-index.json", "manifest.json"})
-FORBIDDEN_PROFILE_ROOT_FILES = frozenset({"index.csv", "environment.profile.example.env"})
-
-INSTALL_LANES = [
-    "ubuntu/cpu",
-    "ubuntu/cuda",
-    "mac/apple-silicon",
-    "mac/intel",
-    "windows/cpu",
-    "windows/cuda",
-    "cloud/digitalocean/cpu-droplet",
-    "cloud/digitalocean/gpu-droplet",
-    "cloud/aws-lightsail/cpu",
-    "cloud/aws-lightsail/gpu",
-]
-
-CPU_LANES = {
-    "ubuntu/cpu",
-    "mac/intel",
-    "windows/cpu",
-    "cloud/digitalocean/cpu-droplet",
-    "cloud/aws-lightsail/cpu",
-}
-
-STAGE_FILES = (
-    "lane.json",
-    "3-cpu.json",
-    "4-ram.json",
-    "5-hard_disk.json",
-    "6-CPU_only.json",
-    "7-video_card.json",
+ALLOWED_PROFILE_ROOT_FILES = frozenset(
+    {
+        "README.md",
+        "c10-index.json",
+        "manifest.json",
+        "lanes.json",
+        "index.csv",
+        "_lane-matrix-audit.json",
+        "_lane-matrix-audit.csv",
+    }
 )
-
-PROVIDER_FILES = (
-    "ubuntu-cpu.json",
-    "ubuntu-cuda.json",
-    "mac-apple-silicon.json",
-    "mac-intel.json",
-    "windows-cpu.json",
-    "windows-cuda.json",
-    "cloud-digitalocean-cpu-droplet.json",
-    "cloud-digitalocean-gpu-droplet.json",
-    "cloud-aws-lightsail-cpu.json",
-    "cloud-aws-lightsail-gpu.json",
-)
+FORBIDDEN_PROFILE_ROOT_FILES = frozenset({"environment.profile.example.env"})
 
 LANE_ROOTS = {"ubuntu", "mac", "windows", "cloud"}
 OLLAMA_REF_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*:[^\s]+$", re.I)
 C10_NAME_RE = re.compile(r"c10|10-b", re.I)
+STAGE_FILES = c10_lanes.STAGE_PAYLOAD_FILES
 
 
 def is_size_directory(path: Path, model_slug: str) -> bool:
     if not path.is_dir():
         return False
-    if path.name in LANE_ROOTS:
+    if path.name in LANE_ROOTS or path.name == "sizes":
         return False
     return path.parent == PROFILES_DIR / model_slug
 
@@ -89,6 +67,18 @@ def fail(errors: list[str], message: str) -> None:
 
 def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_canonical_lanes(errors: list[str]) -> list[dict[str, str]]:
+    manifest_path = PROFILES_DIR / "lanes.json"
+    if not manifest_path.is_file():
+        fail(errors, "Missing profiles/lanes.json")
+        return []
+    manifest = load_json(manifest_path)
+    rows = c10_lanes.canonical_lane_rows_from_manifest(manifest)
+    if not c10_lanes.lane_rows_match_canonical(rows):
+        fail(errors, "profiles/lanes.json does not match the canonical ten-lane contract")
+    return rows
 
 
 def validate_registered_agents_csvs(errors: list[str]) -> None:
@@ -134,27 +124,6 @@ def validate_ram_fit_semantics(ram_payload: dict, path: Path, errors: list[str])
             fail(errors, f"ram_fit_status=fit with null min_system_ram_gb in {path} for {row.get('ollama_ref')}")
 
 
-def validate_provider_assumption(payload: dict, path: Path, errors: list[str]) -> None:
-    if not payload.get("detection_signals"):
-        fail(errors, f"Provider assumption missing detection_signals: {path}")
-    hardware = payload.get("hardware") or {}
-    lane_path = payload.get("lane_path", "")
-    if lane_path in CPU_LANES:
-        if hardware.get("cuda_available") is True:
-            fail(errors, f"CPU lane claims cuda_available=true: {path}")
-        vram = hardware.get("total_vram_gb")
-        if isinstance(vram, (int, float)) and vram > 0:
-            fail(errors, f"CPU lane claims positive VRAM: {path}")
-    if payload.get("provider_assumption_id") == "cloud-digitalocean-gpu-droplet":
-        if hardware.get("system_ram_gb") is None or hardware.get("total_vram_gb") is None:
-            fail(errors, f"DigitalOcean GPU assumption missing parsed capacity: {path}")
-    if payload.get("provider_assumption_id") == "cloud-aws-lightsail-gpu":
-        if hardware.get("total_vram_gb") is not None:
-            fail(errors, f"AWS Lightsail GPU assumption must not claim VRAM before runtime probe: {path}")
-        if hardware.get("cuda_available") is True:
-            fail(errors, f"AWS Lightsail GPU assumption must not claim CUDA before runtime probe: {path}")
-
-
 def validate_profiles_namespace(errors: list[str]) -> set[str]:
     for name in FORBIDDEN_PROFILE_DIRS:
         path = PROFILES_DIR / name
@@ -167,12 +136,16 @@ def validate_profiles_namespace(errors: list[str]) -> set[str]:
             fail(errors, f"Forbidden profiles/ root file exists: {path}")
 
     if (PROFILES_DIR / "provider-assumptions").exists():
-        fail(errors, "profiles/provider-assumptions/ must not exist; use data/generated/provider-assumptions/")
+        fail(errors, "profiles/provider-assumptions/ must not exist")
+
+    if PROVIDER_ASSUMPTIONS_DIR.exists():
+        fail(errors, "data/generated/provider-assumptions/ must not exist for C10.2 contract")
 
     model_pages = {
         path.stem
         for path in PROFILES_DIR.glob("*.json")
-        if path.name not in {"c10-index.json", "manifest.json"}
+        if path.name
+        not in {"c10-index.json", "manifest.json", "lanes.json", "_lane-matrix-audit.json"}
     }
 
     model_dirs = {
@@ -182,10 +155,15 @@ def validate_profiles_namespace(errors: list[str]) -> set[str]:
     }
 
     for child in PROFILES_DIR.iterdir():
-        if child.is_file() and child.name not in ALLOWED_PROFILE_ROOT_FILES:
-            if child.suffix == ".json" and child.name not in {"c10-index.json", "manifest.json"}:
-                continue
-            fail(errors, f"Unexpected profiles/ root file: {child}")
+        if child.is_dir():
+            assert child.name not in FORBIDDEN_PROFILE_DIRS
+            continue
+        if child.suffix == ".json" and child.name not in ALLOWED_PROFILE_ROOT_FILES:
+            continue
+        if child.suffix == ".csv" and child.name in {"index.csv", "_lane-matrix-audit.csv"}:
+            continue
+        if child.name not in ALLOWED_PROFILE_ROOT_FILES:
+            fail(errors, f"Unexpected profiles root file: {child}")
 
     missing_dirs = sorted(model_pages - model_dirs)
     missing_pages = sorted(model_dirs - model_pages)
@@ -205,13 +183,87 @@ def validate_c10_manifest(errors: list[str]) -> None:
     if manifest.get("schema_version") != "c10.profiles-manifest.v1":
         fail(errors, f"profiles/manifest.json must use c10.profiles-manifest.v1: {manifest_path}")
     paths = manifest.get("paths") or {}
-    stale_keys = ("index_csv", "families", "models", "deployment_classes")
+    stale_keys = ("families", "models", "deployment_classes", "provider_assumptions")
     for key in stale_keys:
         if key in paths:
             fail(errors, f"Stale legacy path in profiles/manifest.json: {key}")
-    provider_path = paths.get("provider_assumptions", "")
-    if provider_path and "profiles/provider-assumptions" in provider_path:
-        fail(errors, "profiles/manifest.json must not reference profiles/provider-assumptions/")
+
+
+def validate_install_lane_contract(lanes: list[dict[str, str]], errors: list[str]) -> dict[str, int]:
+    stats = {
+        "install_lanes": 0,
+        "install_payload_files": 0,
+        "install_readmes": 0,
+        "shell_checked": 0,
+    }
+    if len(lanes) != c10_lanes.REQUIRED_INSTALL_LANE_COUNT:
+        fail(errors, f"Canonical lane count is {len(lanes)}, expected 10")
+        return stats
+
+    for lane in lanes:
+        lane_dir = c10_lanes.install_lane_dir(lane)
+        if not lane_dir.is_dir():
+            fail(errors, f"Missing install lane directory: {lane_dir}")
+            continue
+        stats["install_lanes"] += 1
+        readme = lane_dir / "README.md"
+        if not readme.is_file() or readme.stat().st_size == 0:
+            fail(errors, f"Install lane missing non-empty README.md: {lane_dir}")
+        else:
+            stats["install_readmes"] += 1
+
+        roles = c10_lanes.payload_roles_for_runtime(lane["runtime_type"])
+        for _role, rel in roles:
+            path = lane_dir / rel
+            if not path.is_file() or path.stat().st_size == 0:
+                fail(errors, f"Install lane missing payload {rel}: {lane_dir}")
+            else:
+                stats["install_payload_files"] += 1
+            if rel.endswith(".sh"):
+                result = subprocess.run(["bash", "-n", str(path)], capture_output=True, text=True)
+                stats["shell_checked"] += 1
+                if result.returncode != 0:
+                    fail(errors, f"bash -n failed for {path}: {result.stderr.strip()}")
+            if lane["runtime_type"].lower() == "powershell" and rel.endswith(".ps1"):
+                text = path.read_text(encoding="utf-8")
+                if not text.strip():
+                    fail(errors, f"Empty PowerShell payload: {path}")
+
+    if stats["install_payload_files"] != c10_lanes.REQUIRED_INSTALL_PAYLOAD_FILE_COUNT:
+        fail(
+            errors,
+            f"Install payload file count is {stats['install_payload_files']}, expected 50",
+        )
+    if stats["install_readmes"] != c10_lanes.REQUIRED_INSTALL_README_COUNT:
+        fail(errors, f"Install README count is {stats['install_readmes']}, expected 10")
+    return stats
+
+
+def validate_index_csv(lanes: list[dict[str, str]], errors: list[str]) -> int:
+    index_path = PROFILES_DIR / "index.csv"
+    if not index_path.is_file():
+        fail(errors, "Missing profiles/index.csv")
+        return 0
+    lane_ids = {lane["lane_id"] for lane in lanes}
+    seen: set[tuple[str, str, str]] = set()
+    row_count = 0
+    with index_path.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            row_count += 1
+            key = (row.get("model_slug", ""), row.get("size_slug", ""), row.get("lane_id", ""))
+            if key in seen:
+                fail(errors, f"Duplicate index.csv row: {key}")
+            seen.add(key)
+            if row.get("lane_id") not in lane_ids:
+                fail(errors, f"index.csv references unknown lane_id: {row.get('lane_id')}")
+            size_path = REPO_ROOT / row.get("size_json_path", "")
+            if not size_path.is_file():
+                fail(errors, f"index.csv points to missing size file: {row.get('size_json_path')}")
+            lane_json = REPO_ROOT / row.get("lane_json_path", "")
+            if not lane_json.is_file():
+                fail(errors, f"index.csv points to missing lane.json: {row.get('lane_json_path')}")
+    return row_count
 
 
 def validate(errors: list[str]) -> dict:
@@ -220,27 +272,33 @@ def validate(errors: list[str]) -> dict:
         "sizes": 0,
         "install_lanes": 0,
         "profile_leaves": 0,
-        "provider_assumptions": 0,
         "shell_checked": 0,
         "index_rows": 0,
+        "profile_matrix_rows": 0,
     }
 
+    lanes = load_canonical_lanes(errors)
     validate_registered_agents_csvs(errors)
     validate_profiles_namespace(errors)
     validate_c10_manifest(errors)
+    install_stats = validate_install_lane_contract(lanes, errors)
+    stats.update(install_stats)
+
+    audit_path = PROFILES_DIR / "_lane-matrix-audit.json"
+    if not audit_path.is_file():
+        fail(errors, "Missing profiles/_lane-matrix-audit.json")
 
     model_pages_paths = sorted(
-        p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"}
+        p for p in PROFILES_DIR.glob("*.json") if p.stem not in {"c10-index", "manifest", "lanes", "_lane-matrix-audit"}
     )
     stats["model_pages"] = len(model_pages_paths)
     if not model_pages_paths:
         fail(errors, "No profiles/<model-slug>.json model pages found")
 
-    index_path = PROFILES_DIR / "c10-index.json"
-    index_rows = []
-    if index_path.exists():
-        index_rows = load_json(index_path).get("rows", [])
-        stats["index_rows"] = len(index_rows)
+    stats["profile_matrix_rows"] = validate_index_csv(lanes, errors)
+    stats["index_rows"] = stats["profile_matrix_rows"]
+
+    lane_paths = [lane["profile_path"].rstrip("/") for lane in lanes]
 
     for page_path in model_pages_paths:
         slug = page_path.stem
@@ -251,35 +309,25 @@ def validate(errors: list[str]) -> dict:
         if not sizes:
             fail(errors, f"Model page has no sizes: {page_path}")
         stats["sizes"] += len(sizes)
-        params = []
+
+        sizes_dir = PROFILES_DIR / slug / "sizes"
         for size in sizes:
-            value = size.get("parameter_count")
-            if isinstance(value, (int, float)) and value > 0:
-                params.append(float(value))
-            else:
-                match = re.search(r"(\d+(?:\.\d+)?)\s*([bmk])", size.get("size_slug", ""), re.I)
-                if match:
-                    unit = match.group(2).lower()
-                    multiplier = {"b": 1e9, "m": 1e6, "k": 1e3}.get(unit, 1.0)
-                    params.append(float(match.group(1)) * multiplier)
-                else:
-                    params.append(0.0)
-        if params != sorted(params, reverse=True):
-            fail(errors, f"Sizes not descending by parameter count: {slug}")
-        for size in sizes:
-            ref = size.get("ollama_ref", "")
-            if not OLLAMA_REF_RE.match(ref):
-                fail(errors, f"Invalid ollama_ref {ref!r} in {slug}")
+            size_json = sizes_dir / f"{size['size_slug']}.json"
+            if not size_json.is_file():
+                fail(errors, f"Missing size JSON: {size_json}")
             size_dir = PROFILES_DIR / slug / size.get("size_slug", "MISSING")
             if is_size_directory(size_dir, slug):
                 fail(errors, f"Size directory must not exist: {size_dir}")
-        for lane in INSTALL_LANES:
-            leaf = PROFILES_DIR / slug / lane
+
+        for lane_path in lane_paths:
+            leaf = PROFILES_DIR / slug / lane_path
             if not leaf.is_dir():
                 fail(errors, f"Missing profile leaf: {leaf}")
                 continue
             stats["profile_leaves"] += 1
-            for stage_file in STAGE_FILES:
+            if not (leaf / "profile-sizes.csv").is_file():
+                fail(errors, f"Missing profile-sizes.csv: {leaf}")
+            for stage_file in ("lane.json", *STAGE_FILES):
                 path = leaf / stage_file
                 if not path.is_file():
                     fail(errors, f"Missing stage file: {path}")
@@ -287,45 +335,24 @@ def validate(errors: list[str]) -> dict:
                 payload = load_json(path)
                 if stage_file == "lane.json":
                     validate_lane_fit_semantics(payload, path, errors)
+                    install_path = payload.get("install_path", "")
+                    expected = next(
+                        (lane["install_path"] for lane in lanes if lane["profile_path"].rstrip("/") == lane_path),
+                        "",
+                    )
+                    if install_path and expected and install_path != expected:
+                        fail(errors, f"lane.json install_path mismatch at {path}")
                 if stage_file == "4-ram.json":
                     validate_ram_fit_semantics(payload, path, errors)
                 if "applicable" in payload and payload["applicable"] is False and not payload.get("reason"):
                     fail(errors, f"Non-applicable stage missing reason: {path}")
 
-    for lane in INSTALL_LANES:
-        lane_dir = INSTALL_DIR / lane
-        if not lane_dir.is_dir():
-            fail(errors, f"Missing install lane: {lane_dir}")
-            continue
-        required = ["trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh", "README.md"]
-        for name in required:
-            if not (lane_dir / name).is_file():
-                fail(errors, f"Install lane missing {name}: {lane_dir}")
-        if not (lane_dir / "assets").is_dir():
-            fail(errors, f"Install lane missing assets/: {lane_dir}")
-        stats["install_lanes"] += 1
-        for script in lane_dir.glob("*.sh"):
-            result = subprocess.run(["bash", "-n", str(script)], capture_output=True, text=True)
-            stats["shell_checked"] += 1
-            if result.returncode != 0:
-                fail(errors, f"bash -n failed for {script}: {result.stderr.strip()}")
-
-    pa_dir = PROVIDER_ASSUMPTIONS_DIR
-    if not pa_dir.is_dir():
-        fail(errors, f"Missing provider assumptions directory: {pa_dir}")
-    for name in PROVIDER_FILES:
-        path = pa_dir / name
-        if not path.is_file():
-            fail(errors, f"Missing provider assumption: {path}")
-        else:
-            stats["provider_assumptions"] += 1
-            validate_provider_assumption(load_json(path), path, errors)
-
-    for row in index_rows:
-        for key in ("model_page", "lane_dir"):
-            rel = row.get(key)
+    index_path = PROFILES_DIR / "c10-index.json"
+    if index_path.exists():
+        for row in load_json(index_path).get("rows", []):
+            rel = row.get("lane_dir")
             if rel and not (REPO_ROOT / rel).exists():
-                fail(errors, f"Index points to missing file: {rel}")
+                fail(errors, f"c10-index points to missing lane_dir: {rel}")
 
     root_trial = REPO_ROOT / "trial-install.sh"
     if not root_trial.is_file():

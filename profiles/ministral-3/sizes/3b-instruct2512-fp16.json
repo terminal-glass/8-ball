@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "ministral-3",
+  "size_slug": "3b-instruct2512-fp16",
+  "ollama_ref": "ministral-3:3b-instruct-2512-fp16",
+  "parameter_count": 3000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 7700000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/ministral-3/tags",
+    "retrieved_at": "2026-08-01T11:56:13Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 11.44,
+    "recommended_system_ram_gb": 13.73,
+    "min_vram_gb": 8.85,
+    "recommended_vram_gb": 11.44,
+    "min_disk_gb": 14.24
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

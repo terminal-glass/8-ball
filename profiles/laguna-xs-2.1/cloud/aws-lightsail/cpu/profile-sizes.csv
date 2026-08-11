@@ -1,0 +1,8 @@
+size_slug,size_json_path,ollama_ref
+bf16,profiles/laguna-xs-2.1/sizes/bf16.json,laguna-xs-2.1:bf16
+latest,profiles/laguna-xs-2.1/sizes/latest.json,laguna-xs-2.1:latest
+mlx-bf16,profiles/laguna-xs-2.1/sizes/mlx-bf16.json,laguna-xs-2.1:mlx-bf16
+mxfp8,profiles/laguna-xs-2.1/sizes/mxfp8.json,laguna-xs-2.1:mxfp8
+nvfp4,profiles/laguna-xs-2.1/sizes/nvfp4.json,laguna-xs-2.1:nvfp4
+q4-k-m,profiles/laguna-xs-2.1/sizes/q4-k-m.json,laguna-xs-2.1:q4_K_M
+q80,profiles/laguna-xs-2.1/sizes/q80.json,laguna-xs-2.1:q8_0

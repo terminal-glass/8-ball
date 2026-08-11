@@ -3,13 +3,14 @@
   "model_slug": "laguna-xs-2.1",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T08:43:29Z",
+  "generated_at": "2026-08-07T17:43:12Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"
   },
-  "lane_id": "mac/intel",
-  "provider_assumption": "data/generated/provider-assumptions/mac-intel.json",
+  "lane_id": "mac-intel",
+  "install_path": "install/mac/intel/",
+  "profile_path": "mac/intel/",
   "detection_signals": [
     "os=darwin",
     "arch=x86_64"

@@ -1,0 +1,4 @@
+size_slug,size_json_path,ollama_ref
+120b,profiles/gpt-oss-safeguard/sizes/120b.json,gpt-oss-safeguard:120b
+20b,profiles/gpt-oss-safeguard/sizes/20b.json,gpt-oss-safeguard:20b
+latest,profiles/gpt-oss-safeguard/sizes/latest.json,gpt-oss-safeguard:latest

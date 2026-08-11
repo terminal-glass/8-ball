@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "stable-code",
+  "size_slug": "3b-instruct-q80",
+  "ollama_ref": "stable-code:3b-instruct-q8_0",
+  "parameter_count": 3000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 3000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/stable-code/tags",
+    "retrieved_at": "2026-08-01T11:59:23Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 6.04,
+    "recommended_system_ram_gb": 7.24,
+    "min_vram_gb": 3.45,
+    "recommended_vram_gb": 6.04,
+    "min_disk_gb": 8.6
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

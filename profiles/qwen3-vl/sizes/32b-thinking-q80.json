@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3-vl",
+  "size_slug": "32b-thinking-q80",
+  "ollama_ref": "qwen3-vl:32b-thinking-q8_0",
+  "parameter_count": 32000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 36000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3-vl/tags",
+    "retrieved_at": "2026-08-01T11:58:37Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 52.32,
+    "recommended_system_ram_gb": 62.79,
+    "min_vram_gb": 41.4,
+    "recommended_vram_gb": 52.32,
+    "min_disk_gb": 48.2
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

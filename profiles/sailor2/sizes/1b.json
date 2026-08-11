@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "sailor2",
+  "size_slug": "1b",
+  "ollama_ref": "sailor2:1b",
+  "parameter_count": 1000000000,
+  "quantization": null,
+  "download_size_bytes": 1100000000,
+  "promoted": true,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/sailor2/tags",
+    "retrieved_at": "2026-08-01T11:58:55Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 3.28,
+    "recommended_system_ram_gb": 3.93,
+    "min_vram_gb": 1.26,
+    "recommended_vram_gb": 3.28,
+    "min_disk_gb": 6.32
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

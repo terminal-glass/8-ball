@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "minicpm-v4.6",
+  "size_slug": "f16",
+  "ollama_ref": "minicpm-v4.6:f16",
+  "parameter_count": null,
+  "quantization": "f16",
+  "download_size_bytes": 2600000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/minicpm-v4.6/tags",
+    "retrieved_at": "2026-08-01T11:56:06Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.71,
+    "recommended_system_ram_gb": 5.66,
+    "min_vram_gb": 2.99,
+    "recommended_vram_gb": 4.71,
+    "min_disk_gb": 8.12
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

@@ -1,0 +1,11 @@
+size_slug,size_json_path,ollama_ref
+33m,profiles/all-minilm/sizes/33m.json,all-minilm:33m
+33m-l12-v2-fp16,profiles/all-minilm/sizes/33m-l12-v2-fp16.json,all-minilm:33m-l12-v2-fp16
+22m,profiles/all-minilm/sizes/22m.json,all-minilm:22m
+22m-l6-v2-fp16,profiles/all-minilm/sizes/22m-l6-v2-fp16.json,all-minilm:22m-l6-v2-fp16
+l12,profiles/all-minilm/sizes/l12.json,all-minilm:l12
+l12-v2,profiles/all-minilm/sizes/l12-v2.json,all-minilm:l12-v2
+l6,profiles/all-minilm/sizes/l6.json,all-minilm:l6
+l6-v2,profiles/all-minilm/sizes/l6-v2.json,all-minilm:l6-v2
+latest,profiles/all-minilm/sizes/latest.json,all-minilm:latest
+v2,profiles/all-minilm/sizes/v2.json,all-minilm:v2

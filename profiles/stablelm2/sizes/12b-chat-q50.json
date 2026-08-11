@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "stablelm2",
+  "size_slug": "12b-chat-q50",
+  "ollama_ref": "stablelm2:12b-chat-q5_0",
+  "parameter_count": 12000000000,
+  "quantization": "q5_0",
+  "download_size_bytes": 8400000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/stablelm2/tags",
+    "retrieved_at": "2026-08-01T11:59:27Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 14.83,
+    "recommended_system_ram_gb": 17.8,
+    "min_vram_gb": 9.66,
+    "recommended_vram_gb": 14.83,
+    "min_disk_gb": 15.08
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

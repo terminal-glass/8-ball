@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "megadolphin",
+  "size_slug": "120b-v2.2-q80",
+  "ollama_ref": "megadolphin:120b-v2.2-q8_0",
+  "parameter_count": 120000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 128000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/megadolphin/tags",
+    "retrieved_at": "2026-08-01T11:55:59Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 183.42,
+    "recommended_system_ram_gb": 220.11,
+    "min_vram_gb": 147.2,
+    "recommended_vram_gb": 183.42,
+    "min_disk_gb": 158.6
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

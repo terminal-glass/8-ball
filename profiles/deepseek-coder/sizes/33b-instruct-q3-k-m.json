@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "deepseek-coder",
+  "size_slug": "33b-instruct-q3-k-m",
+  "ollama_ref": "deepseek-coder:33b-instruct-q3_K_M",
+  "parameter_count": 33000000000,
+  "quantization": "q3_K_M",
+  "download_size_bytes": 16000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepseek-coder/tags",
+    "retrieved_at": "2026-08-01T11:52:28Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 29.61,
+    "recommended_system_ram_gb": 35.53,
+    "min_vram_gb": 18.4,
+    "recommended_vram_gb": 29.61,
+    "min_disk_gb": 24.2
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

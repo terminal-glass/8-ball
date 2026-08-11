@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+14b,profiles/phi4/sizes/14b.json,phi4:14b
+14b-fp16,profiles/phi4/sizes/14b-fp16.json,phi4:14b-fp16
+14b-q4-k-m,profiles/phi4/sizes/14b-q4-k-m.json,phi4:14b-q4_K_M
+14b-q80,profiles/phi4/sizes/14b-q80.json,phi4:14b-q8_0
+latest,profiles/phi4/sizes/latest.json,phi4:latest

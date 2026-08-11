@@ -2,8 +2,8 @@
   "schema_version": "c10.stage.v1",
   "model_slug": "sqlcoder",
   "lane_path": "cloud/aws-lightsail/gpu",
-  "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T06:40:20Z",
+  "provider_assumption_id": "aws-lightsail-gpu",
+  "generated_at": "2026-08-07T17:43:14Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
     "provenance_status": "provisional_hypothesis"

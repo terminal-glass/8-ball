@@ -1,0 +1,8 @@
+size_slug,size_json_path,ollama_ref
+132b,profiles/dbrx/sizes/132b.json,dbrx:132b
+132b-instruct-fp16,profiles/dbrx/sizes/132b-instruct-fp16.json,dbrx:132b-instruct-fp16
+132b-instruct-q2-k,profiles/dbrx/sizes/132b-instruct-q2-k.json,dbrx:132b-instruct-q2_K
+132b-instruct-q40,profiles/dbrx/sizes/132b-instruct-q40.json,dbrx:132b-instruct-q4_0
+132b-instruct-q80,profiles/dbrx/sizes/132b-instruct-q80.json,dbrx:132b-instruct-q8_0
+instruct,profiles/dbrx/sizes/instruct.json,dbrx:instruct
+latest,profiles/dbrx/sizes/latest.json,dbrx:latest

@@ -1,0 +1,10 @@
+size_slug,size_json_path,ollama_ref
+70b,profiles/tulu3/sizes/70b.json,tulu3:70b
+70b-fp16,profiles/tulu3/sizes/70b-fp16.json,tulu3:70b-fp16
+70b-q4-k-m,profiles/tulu3/sizes/70b-q4-k-m.json,tulu3:70b-q4_K_M
+70b-q80,profiles/tulu3/sizes/70b-q80.json,tulu3:70b-q8_0
+8b,profiles/tulu3/sizes/8b.json,tulu3:8b
+8b-fp16,profiles/tulu3/sizes/8b-fp16.json,tulu3:8b-fp16
+8b-q4-k-m,profiles/tulu3/sizes/8b-q4-k-m.json,tulu3:8b-q4_K_M
+8b-q80,profiles/tulu3/sizes/8b-q80.json,tulu3:8b-q8_0
+latest,profiles/tulu3/sizes/latest.json,tulu3:latest

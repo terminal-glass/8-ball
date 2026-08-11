@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+120b,profiles/gpt-oss/sizes/120b.json,gpt-oss:120b
+120b-cloud,profiles/gpt-oss/sizes/120b-cloud.json,gpt-oss:120b-cloud
+20b,profiles/gpt-oss/sizes/20b.json,gpt-oss:20b
+20b-cloud,profiles/gpt-oss/sizes/20b-cloud.json,gpt-oss:20b-cloud
+latest,profiles/gpt-oss/sizes/latest.json,gpt-oss:latest

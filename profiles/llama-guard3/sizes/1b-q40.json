@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llama-guard3",
+  "size_slug": "1b-q40",
+  "ollama_ref": "llama-guard3:1b-q4_0",
+  "parameter_count": 1000000000,
+  "quantization": "q4_0",
+  "download_size_bytes": 919000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama-guard3/tags",
+    "retrieved_at": "2026-08-01T11:55:02Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 3.07,
+    "recommended_system_ram_gb": 3.68,
+    "min_vram_gb": 1.06,
+    "recommended_vram_gb": 3.07,
+    "min_disk_gb": 6.1
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

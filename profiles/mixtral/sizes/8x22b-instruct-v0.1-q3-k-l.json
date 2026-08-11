@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mixtral",
+  "size_slug": "8x22b-instruct-v0.1-q3-k-l",
+  "ollama_ref": "mixtral:8x22b-instruct-v0.1-q3_K_L",
+  "parameter_count": null,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 73000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mixtral/tags",
+    "retrieved_at": "2026-08-01T11:56:38Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 85.67,
+    "recommended_system_ram_gb": 102.81,
+    "min_vram_gb": 83.95,
+    "recommended_vram_gb": 85.67,
+    "min_disk_gb": 92.6
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

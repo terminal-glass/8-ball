@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "granite-code",
+  "size_slug": "3b-instruct-q80",
+  "ollama_ref": "granite-code:3b-instruct-q8_0",
+  "parameter_count": 3000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 3700000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/granite-code/tags",
+    "retrieved_at": "2026-08-01T11:54:08Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 6.84,
+    "recommended_system_ram_gb": 8.21,
+    "min_vram_gb": 4.25,
+    "recommended_vram_gb": 6.84,
+    "min_disk_gb": 9.44
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

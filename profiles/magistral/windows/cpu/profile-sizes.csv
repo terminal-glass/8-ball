@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+24b,profiles/magistral/sizes/24b.json,magistral:24b
+24b-small2506-fp16,profiles/magistral/sizes/24b-small2506-fp16.json,magistral:24b-small-2506-fp16
+24b-small2506-q4-k-m,profiles/magistral/sizes/24b-small2506-q4-k-m.json,magistral:24b-small-2506-q4_K_M
+24b-small2506-q80,profiles/magistral/sizes/24b-small2506-q80.json,magistral:24b-small-2506-q8_0
+latest,profiles/magistral/sizes/latest.json,magistral:latest

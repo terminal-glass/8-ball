@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "gemma4",
+  "size_slug": "e2b-it-bf16",
+  "ollama_ref": "gemma4:e2b-it-bf16",
+  "parameter_count": null,
+  "quantization": "bf16",
+  "download_size_bytes": 10000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/gemma4/tags",
+    "retrieved_at": "2026-08-01T11:53:47Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 13.22,
+    "recommended_system_ram_gb": 15.87,
+    "min_vram_gb": 11.5,
+    "recommended_vram_gb": 13.22,
+    "min_disk_gb": 17.0
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

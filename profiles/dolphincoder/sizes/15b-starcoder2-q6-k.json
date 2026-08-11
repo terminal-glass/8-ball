@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "dolphincoder",
+  "size_slug": "15b-starcoder2-q6-k",
+  "ollama_ref": "dolphincoder:15b-starcoder2-q6_K",
+  "parameter_count": 15000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 13000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/dolphincoder/tags",
+    "retrieved_at": "2026-08-01T11:53:11Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 20.99,
+    "recommended_system_ram_gb": 25.18,
+    "min_vram_gb": 14.95,
+    "recommended_vram_gb": 20.99,
+    "min_disk_gb": 20.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "c10.lanes.v1",
+  "generated_at": "2026-08-07T17:46:13Z",
+  "lanes": [
+    {
+      "lane_id": "ubuntu-cpu",
+      "install_path": "install/ubuntu/cpu/",
+      "profile_path": "ubuntu/cpu/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "ubuntu-cuda",
+      "install_path": "install/ubuntu/cuda/",
+      "profile_path": "ubuntu/cuda/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "mac-apple-silicon",
+      "install_path": "install/mac/apple-silicon/",
+      "profile_path": "mac/apple-silicon/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "mac-intel",
+      "install_path": "install/mac/intel/",
+      "profile_path": "mac/intel/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "windows-cpu",
+      "install_path": "install/windows/cpu/",
+      "profile_path": "windows/cpu/",
+      "runtime_type": "PowerShell"
+    },
+    {
+      "lane_id": "windows-cuda",
+      "install_path": "install/windows/cuda/",
+      "profile_path": "windows/cuda/",
+      "runtime_type": "PowerShell"
+    },
+    {
+      "lane_id": "digitalocean-cpu-droplet",
+      "install_path": "install/cloud/digitalocean/cpu-droplet/",
+      "profile_path": "cloud/digitalocean/cpu-droplet/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "digitalocean-gpu-droplet",
+      "install_path": "install/cloud/digitalocean/gpu-droplet/",
+      "profile_path": "cloud/digitalocean/gpu-droplet/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "aws-lightsail-cpu",
+      "install_path": "install/cloud/aws-lightsail/cpu/",
+      "profile_path": "cloud/aws-lightsail/cpu/",
+      "runtime_type": "shell"
+    },
+    {
+      "lane_id": "aws-lightsail-gpu",
+      "install_path": "install/cloud/aws-lightsail/gpu/",
+      "profile_path": "cloud/aws-lightsail/gpu/",
+      "runtime_type": "shell"
+    }
+  ]
+}

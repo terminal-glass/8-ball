@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "gemma4",
+  "size_slug": "31b-it-q80",
+  "ollama_ref": "gemma4:31b-it-q8_0",
+  "parameter_count": 31000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 34000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/gemma4/tags",
+    "retrieved_at": "2026-08-01T11:53:47Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 49.74,
+    "recommended_system_ram_gb": 59.68,
+    "min_vram_gb": 39.1,
+    "recommended_vram_gb": 49.74,
+    "min_disk_gb": 45.8
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

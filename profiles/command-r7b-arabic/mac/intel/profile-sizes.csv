@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+7b,profiles/command-r7b-arabic/sizes/7b.json,command-r7b-arabic:7b
+7b022025-fp16,profiles/command-r7b-arabic/sizes/7b022025-fp16.json,command-r7b-arabic:7b-02-2025-fp16
+7b022025-q4-k-m,profiles/command-r7b-arabic/sizes/7b022025-q4-k-m.json,command-r7b-arabic:7b-02-2025-q4_K_M
+7b022025-q80,profiles/command-r7b-arabic/sizes/7b022025-q80.json,command-r7b-arabic:7b-02-2025-q8_0
+latest,profiles/command-r7b-arabic/sizes/latest.json,command-r7b-arabic:latest

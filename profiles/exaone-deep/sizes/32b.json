@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "exaone-deep",
+  "size_slug": "32b",
+  "ollama_ref": "exaone-deep:32b",
+  "parameter_count": 32000000000,
+  "quantization": null,
+  "download_size_bytes": 19000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/exaone-deep/tags",
+    "retrieved_at": "2026-08-01T11:53:20Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 32.77,
+    "recommended_system_ram_gb": 39.33,
+    "min_vram_gb": 21.85,
+    "recommended_vram_gb": 32.77,
+    "min_disk_gb": 27.8
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

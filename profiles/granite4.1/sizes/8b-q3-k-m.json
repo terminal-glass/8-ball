@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "granite4.1",
+  "size_slug": "8b-q3-k-m",
+  "ollama_ref": "granite4.1:8b-q3_K_M",
+  "parameter_count": 8000000000,
+  "quantization": "q3_K_M",
+  "download_size_bytes": 4300000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/granite4.1/tags",
+    "retrieved_at": "2026-08-01T11:54:33Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.97,
+    "recommended_system_ram_gb": 10.76,
+    "min_vram_gb": 4.94,
+    "recommended_vram_gb": 8.97,
+    "min_disk_gb": 10.16
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

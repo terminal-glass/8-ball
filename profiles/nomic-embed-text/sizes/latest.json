@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nomic-embed-text",
+  "size_slug": "latest",
+  "ollama_ref": "nomic-embed-text:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 274000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nomic-embed-text/tags",
+    "retrieved_at": "2026-08-01T11:57:05Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 2.04,
+    "recommended_system_ram_gb": 2.45,
+    "min_vram_gb": 0.32,
+    "recommended_vram_gb": 2.04,
+    "min_disk_gb": 5.33
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

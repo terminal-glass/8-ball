@@ -2,10 +2,13 @@
 """C10 profile and install-lane generator.
 
 Reads normalized catalog data and AGENTS hardware CSVs, then emits:
+- profiles/lanes.json canonical lane manifest
 - profiles/<model-slug>.json model data pages
-- profiles/<model-slug>/<lane>/ stage JSON files
-- data/generated/provider-assumptions/<lane-id>.json
-- install/<lane>/ executable installer payloads
+- profiles/<model-slug>/sizes/<size-slug>.json size records
+- profiles/<model-slug>/<lane>/ stage JSON files and profile-sizes.csv
+- profiles/index.csv model-size-lane index
+- profiles/_lane-matrix-audit.{json,csv}
+- install/<lane>/ executable installer payloads (shell or PowerShell)
 """
 from __future__ import annotations
 
@@ -30,12 +33,18 @@ if _SPEC is None or _SPEC.loader is None:
 c10_common = importlib.util.module_from_spec(_SPEC)
 sys.modules[_SPEC.name] = c10_common
 _SPEC.loader.exec_module(c10_common)
+_C10_LANES_PATH = REPO_ROOT / "scripts" / "c10_lanes.py"
+_LANES_SPEC = importlib.util.spec_from_file_location("c10_lanes", _C10_LANES_PATH)
+if _LANES_SPEC is None or _LANES_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_LANES_PATH}")
+c10_lanes = importlib.util.module_from_spec(_LANES_SPEC)
+sys.modules[_LANES_SPEC.name] = c10_lanes
+_LANES_SPEC.loader.exec_module(c10_lanes)
 PROFILES_DIR = REPO_ROOT / "profiles"
-PROVIDER_ASSUMPTIONS_DIR = REPO_ROOT / "data" / "generated" / "provider-assumptions"
-PROVIDER_ASSUMPTIONS_REL = "data/generated/provider-assumptions"
 INSTALL_DIR = REPO_ROOT / "install"
 REPORT_DIR = REPO_ROOT / "AGENTS" / "data-science" / "profile-mapping"
 MAPPING_DIR = REPORT_DIR / "C10.1-1-executable-install-matrix"
+INSTALL_LANES: list[dict[str, Any]] = c10_lanes.build_install_lanes()
 
 STAGE_FILES = (
     "lane.json",
@@ -45,169 +54,6 @@ STAGE_FILES = (
     "6-CPU_only.json",
     "7-video_card.json",
 )
-
-INSTALL_LANES: list[dict[str, Any]] = [
-    {
-        "lane_path": "ubuntu/cpu",
-        "provider_id": "ubuntu-cpu",
-        "platform": "ubuntu",
-        "provider": None,
-        "architecture": "x86_64",
-        "gpu_lane": False,
-        "source_dir": "ubuntu",
-        "shell": True,
-        "detection_signals": ["os=linux", "distro=ubuntu|debian", "cuda=false"],
-        "assumed_profile_id": "windows_cpu_16gb",
-        "fallback_profile_id": None,
-        "stage7_applicable": False,
-        "stage7_reason": "CPU-only Ubuntu lane; GPU stage not required for lane selection.",
-        "source_csv": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-    },
-    {
-        "lane_path": "ubuntu/cuda",
-        "provider_id": "ubuntu-cuda",
-        "platform": "ubuntu",
-        "provider": None,
-        "architecture": "x86_64",
-        "gpu_lane": True,
-        "source_dir": "ubuntu",
-        "shell": True,
-        "detection_signals": ["os=linux", "cuda=true", "nvidia-smi"],
-        "assumed_profile_id": "cuda_mid_12_16gb",
-        "fallback_profile_id": "cuda_entry_8gb",
-        "stage7_applicable": True,
-        "stage7_reason": "CUDA server lane; NVIDIA GPU and driver detection required.",
-        "source_csv": "AGENTS/TG-8Ball-CUDA-Server-Assumptions.csv",
-    },
-    {
-        "lane_path": "mac/apple-silicon",
-        "provider_id": "mac-apple-silicon",
-        "platform": "mac",
-        "provider": None,
-        "architecture": "arm64",
-        "gpu_lane": True,
-        "source_dir": "mac",
-        "shell": True,
-        "detection_signals": ["os=darwin", "arch=arm64", "apple-metal"],
-        "assumed_profile_id": "mac_air_apple_silicon_16gb",
-        "fallback_profile_id": "mac_air_apple_silicon_8gb",
-        "stage7_applicable": True,
-        "stage7_reason": "Apple Silicon unified memory; Metal GPU path.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
-    },
-    {
-        "lane_path": "mac/intel",
-        "provider_id": "mac-intel",
-        "platform": "mac",
-        "provider": None,
-        "architecture": "x86_64",
-        "gpu_lane": False,
-        "source_dir": "mac",
-        "shell": True,
-        "detection_signals": ["os=darwin", "arch=x86_64"],
-        "assumed_profile_id": "mac_air_apple_silicon_8gb",
-        "fallback_profile_id": None,
-        "stage7_applicable": False,
-        "stage7_reason": "Intel Mac lane uses CPU-only fallback; discrete GPU not assumed.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
-    },
-    {
-        "lane_path": "windows/cpu",
-        "provider_id": "windows-cpu",
-        "platform": "windows",
-        "provider": None,
-        "architecture": "x86_64",
-        "gpu_lane": False,
-        "source_dir": "windows",
-        "shell": True,
-        "detection_signals": ["os=windows", "cuda=false"],
-        "assumed_profile_id": "windows_cpu_16gb",
-        "fallback_profile_id": "windows_cpu_8gb",
-        "stage7_applicable": False,
-        "stage7_reason": "Windows CPU-only lane; no NVIDIA CUDA assumed.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
-    },
-    {
-        "lane_path": "windows/cuda",
-        "provider_id": "windows-cuda",
-        "platform": "windows",
-        "provider": None,
-        "architecture": "x86_64",
-        "gpu_lane": True,
-        "source_dir": "windows",
-        "shell": True,
-        "detection_signals": ["os=windows", "cuda=true", "nvidia-smi"],
-        "assumed_profile_id": "windows_nvidia_32_64gb_vram_12_16gb",
-        "fallback_profile_id": "windows_nvidia_16gb_vram_6_8gb",
-        "stage7_applicable": True,
-        "stage7_reason": "Windows NVIDIA CUDA lane.",
-        "source_csv": "AGENTS/TG-8Ball-Client-Hardware-Assumptions.csv",
-    },
-    {
-        "lane_path": "cloud/digitalocean/cpu-droplet",
-        "provider_id": "cloud-digitalocean-cpu-droplet",
-        "platform": "cloud",
-        "provider": "digitalocean",
-        "architecture": "x86_64",
-        "gpu_lane": False,
-        "source_dir": "cloud/digitalocean-droplet",
-        "shell": True,
-        "detection_signals": ["provider=digitalocean", "droplet=true", "gpu=false"],
-        "assumed_profile_id": None,
-        "fallback_profile_id": None,
-        "stage7_applicable": False,
-        "stage7_reason": "DigitalOcean CPU droplet lane; no GPU assumed.",
-        "source_csv": "AGENTS/data-science/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
-    },
-    {
-        "lane_path": "cloud/digitalocean/gpu-droplet",
-        "provider_id": "cloud-digitalocean-gpu-droplet",
-        "platform": "cloud",
-        "provider": "digitalocean",
-        "architecture": "x86_64",
-        "gpu_lane": True,
-        "source_dir": "cloud/digitalocean-droplet",
-        "shell": True,
-        "detection_signals": ["provider=digitalocean", "gpu-droplet=true", "nvidia"],
-        "assumed_profile_id": None,
-        "fallback_profile_id": None,
-        "stage7_applicable": True,
-        "stage7_reason": "DigitalOcean GPU droplet lane.",
-        "source_csv": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
-    },
-    {
-        "lane_path": "cloud/aws-lightsail/cpu",
-        "provider_id": "cloud-aws-lightsail-cpu",
-        "platform": "cloud",
-        "provider": "aws-lightsail",
-        "architecture": "x86_64",
-        "gpu_lane": False,
-        "source_dir": "cloud/aws-lightsail",
-        "shell": True,
-        "detection_signals": ["provider=aws", "lightsail=true", "gpu=false"],
-        "assumed_profile_id": None,
-        "fallback_profile_id": None,
-        "stage7_applicable": False,
-        "stage7_reason": "AWS Lightsail CPU instance lane.",
-        "source_csv": "AGENTS/data-science/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json",
-    },
-    {
-        "lane_path": "cloud/aws-lightsail/gpu",
-        "provider_id": "cloud-aws-lightsail-gpu",
-        "platform": "cloud",
-        "provider": "aws-lightsail",
-        "architecture": "x86_64",
-        "gpu_lane": True,
-        "source_dir": "cloud/aws-lightsail",
-        "shell": True,
-        "detection_signals": ["provider=aws", "lightsail=true", "gpu=true"],
-        "assumed_profile_id": None,
-        "fallback_profile_id": None,
-        "stage7_applicable": True,
-        "stage7_reason": "AWS Lightsail GPU instance lane when GPU bundles are available.",
-        "source_csv": "AGENTS/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
-    },
-]
 
 PARAM_RE = re.compile(r"(\d+(?:\.\d+)?)\s*([bmk])", re.I)
 
@@ -303,7 +149,7 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
         plans = load_json(do_gp)
         if plans:
             plan = plans[0]
-            defaults["cloud-digitalocean-cpu-droplet"] = {
+            defaults["digitalocean-cpu-droplet"] = {
                 "vcpu": plan.get("vcpus"),
                 "ram_gb": plan.get("memory_gb"),
                 "disk_gb": plan.get("disk_gb"),
@@ -315,7 +161,7 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
         plans = load_json(ls)
         medium = next((p for p in plans if p.get("bundle_id") == "medium_3_0"), plans[0] if plans else None)
         if medium:
-            defaults["cloud-aws-lightsail-cpu"] = {
+            defaults["aws-lightsail-cpu"] = {
                 "vcpu": medium.get("vcpu_count"),
                 "ram_gb": medium.get("ram_gb"),
                 "disk_gb": medium.get("ssd_gb"),
@@ -326,7 +172,7 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
     if do_gpu_plans:
         baseline = c10_common.smallest_digitalocean_gpu_plan(do_gpu_plans)
         if baseline:
-            defaults["cloud-digitalocean-gpu-droplet"] = {
+            defaults["digitalocean-gpu-droplet"] = {
                 **baseline,
                 "baseline_plan_id": baseline.get("plan_id"),
                 "plans": do_gpu_plans,
@@ -336,7 +182,7 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
     if aws_gpu_plans:
         baseline = c10_common.smallest_aws_lightsail_gpu_plan(aws_gpu_plans)
         if baseline:
-            defaults["cloud-aws-lightsail-gpu"] = {
+            defaults["aws-lightsail-gpu"] = {
                 **baseline,
                 "baseline_plan_name": baseline.get("plan_name"),
                 "plans": aws_gpu_plans,
@@ -413,7 +259,7 @@ def lane_hardware(lane: dict[str, Any], hardware_profiles: dict[str, dict[str, A
             "provenance_status": p.get("provenance_status"),
         }
         return c10_common.normalize_lane_hardware(hw, lane)
-    cloud = cloud_defaults.get(lane["provider_id"])
+    cloud = cloud_defaults.get(lane["lane_id"])
     if cloud:
         ram_gb = cloud.get("ram_gb")
         hw = {
@@ -443,7 +289,7 @@ def lane_hardware(lane: dict[str, Any], hardware_profiles: dict[str, dict[str, A
         "minimum_free_disk_gb": None,
         "total_vram_gb": None,
         "cuda_available": None if lane.get("gpu_lane") else False,
-        "apple_metal_available": lane.get("provider_id") == "mac-apple-silicon",
+        "apple_metal_available": lane.get("lane_id") == "mac-apple-silicon",
         "source_path": lane.get("source_csv"),
         "provenance_status": "data_gap",
     }
@@ -459,7 +305,7 @@ def build_stage_file(stage: str, lane: dict[str, Any], hardware: dict[str, Any],
         "schema_version": "c10.stage.v1",
         "model_slug": model_slug,
         "lane_path": lane["lane_path"],
-        "provider_assumption_id": lane["provider_id"],
+        "provider_assumption_id": lane["lane_id"],
         "generated_at": utc_now(),
         "provenance": {
             "source_path": hardware.get("source_path"),
@@ -482,8 +328,9 @@ def build_stage_file(stage: str, lane: dict[str, Any], hardware: dict[str, Any],
             )
         return {
             **base,
-            "lane_id": lane["lane_path"],
-            "provider_assumption": f"{PROVIDER_ASSUMPTIONS_REL}/{lane['provider_id']}.json",
+            "lane_id": lane["lane_id"],
+            "install_path": lane["install_path"],
+            "profile_path": lane["profile_path"],
             "detection_signals": lane["detection_signals"],
             "size_fit": fitting,
         }
@@ -531,7 +378,7 @@ def build_stage_file(stage: str, lane: dict[str, Any], hardware: dict[str, Any],
         cpu_only = not lane.get("gpu_lane")
         return {
             **base,
-            "applicable": cpu_only or lane["provider_id"] in {"ubuntu-cuda", "windows-cuda", "cloud-digitalocean-gpu-droplet"},
+            "applicable": cpu_only or lane["lane_id"] in {"ubuntu-cuda", "windows-cuda", "digitalocean-gpu-droplet"},
             "fallback_lane": f"{lane['lane_path'].rsplit('/', 1)[0]}/cpu" if lane.get("gpu_lane") else None,
             "reason": "CPU-only fallback when GPU path is unavailable or lane is CPU-first.",
         }
@@ -547,50 +394,80 @@ def build_stage_file(stage: str, lane: dict[str, Any], hardware: dict[str, Any],
     raise ValueError(stage)
 
 
-def build_provider_assumption(lane: dict[str, Any], hardware: dict[str, Any]) -> dict[str, Any]:
+def build_size_record(model_slug: str, size: dict[str, Any]) -> dict[str, Any]:
     return {
-        "schema_version": "c10.provider-assumption.v1",
-        "provider_assumption_id": lane["provider_id"],
-        "lane_path": lane["lane_path"],
-        "platform": lane["platform"],
-        "provider": lane.get("provider"),
-        "architecture": lane["architecture"],
-        "gpu_lane": lane.get("gpu_lane", False),
-        "detection_signals": lane["detection_signals"],
-        "hardware": hardware,
-        "fallback_profile_id": lane.get("fallback_profile_id"),
-        "assumed_profile_id": lane.get("assumed_profile_id"),
-        "source_paths": [lane.get("source_csv")],
+        "schema_version": "c10.size.v1",
+        "model_slug": model_slug,
+        "size_slug": size["size_slug"],
+        "ollama_ref": size["ollama_ref"],
+        "parameter_count": size.get("parameter_count"),
+        "quantization": size.get("quantization"),
+        "download_size_bytes": size.get("download_size_bytes"),
+        "promoted": size.get("promoted"),
+        "provenance": size.get("provenance"),
+        "estimated": size.get("estimated"),
         "generated_at": utc_now(),
-        "installer_reference": f"install/{lane['lane_path']}/trial-install.sh",
-        "profiles_reference": f"{PROVIDER_ASSUMPTIONS_REL}/{lane['provider_id']}.json",
     }
+
+
+def write_profile_sizes_csv(path: Path, model_slug: str, sizes: list[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["size_slug", "size_json_path", "ollama_ref"])
+        for size in sizes:
+            rel = f"profiles/{model_slug}/sizes/{size['size_slug']}.json"
+            writer.writerow([size["size_slug"], rel, size["ollama_ref"]])
 
 
 def copy_install_lane(lane: dict[str, Any]) -> None:
     source = INSTALL_DIR / lane["source_dir"]
     target = INSTALL_DIR / lane["lane_path"]
     target.mkdir(parents=True, exist_ok=True)
-    for name in ("trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh"):
-        src = source / name
-        if src.exists():
-            text = src.read_text(encoding="utf-8")
-            text = text.replace(
-                f'EIGHTBALL_INSTALL_PROFILE="{lane["source_dir"].split("/")[-1]}"',
-                f'EIGHTBALL_INSTALL_PROFILE="{lane["lane_path"]}"',
+    runtime = lane.get("runtime_type", "shell")
+    is_powershell = runtime.lower() == "powershell"
+
+    if is_powershell:
+        for old in target.glob("*.sh"):
+            old.unlink()
+        for _role, rel in c10_lanes.POWERSHELL_PAYLOAD_ROLES:
+            if rel.startswith("assets/"):
+                continue
+            script_name = Path(rel).name
+            (target / script_name).write_text(
+                c10_lanes.windows_ps1_stub(lane["lane_id"], lane["lane_path"], script_name),
+                encoding="utf-8",
             )
-            text = text.replace(
-                f"install/{lane['source_dir'].split('/')[-1]}",
-                f"install/{lane['lane_path']}",
-            )
-            if "EIGHTBALL_INSTALL_LANE" not in text:
+    else:
+        for old in target.glob("*.ps1"):
+            old.unlink()
+        for name in ("trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh"):
+            src = source / name
+            if src.exists():
+                text = src.read_text(encoding="utf-8")
                 text = text.replace(
-                    "set -euo pipefail\n",
-                    f"set -euo pipefail\n\nEIGHTBALL_INSTALL_LANE=\"{lane['lane_path']}\"\nEIGHTBALL_PROVIDER_ASSUMPTION=\"{PROVIDER_ASSUMPTIONS_REL}/{lane['provider_id']}.json\"\n",
-                    1,
+                    f'EIGHTBALL_INSTALL_PROFILE="{lane["source_dir"].split("/")[-1]}"',
+                    f'EIGHTBALL_INSTALL_PROFILE="{lane["lane_path"]}"',
                 )
-            (target / name).write_text(text, encoding="utf-8")
-            (target / name).chmod(0o755)
+                text = text.replace(
+                    f"install/{lane['source_dir'].split('/')[-1]}",
+                    f"install/{lane['lane_path']}",
+                )
+                for line in list(text.splitlines()):
+                    if "EIGHTBALL_PROVIDER_ASSUMPTION" in line:
+                        text = "\n".join(
+                            ln for ln in text.splitlines() if "EIGHTBALL_PROVIDER_ASSUMPTION" not in ln
+                        )
+                        break
+                if "EIGHTBALL_INSTALL_LANE" not in text:
+                    text = text.replace(
+                        "set -euo pipefail\n",
+                        f"set -euo pipefail\n\nEIGHTBALL_INSTALL_LANE=\"{lane['lane_path']}\"\nEIGHTBALL_LANE_ID=\"{lane['lane_id']}\"\n",
+                        1,
+                    )
+                (target / name).write_text(text, encoding="utf-8")
+                (target / name).chmod(0o755)
+
     assets_src = source / "assets"
     assets_dst = target / "assets"
     if assets_src.exists():
@@ -599,13 +476,21 @@ def copy_install_lane(lane: dict[str, Any]) -> None:
             dst = assets_dst / item.name
             if item.is_file():
                 shutil.copy2(item, dst)
+    if not (assets_dst / "first-MOTD.txt").is_file():
+        assets_dst.mkdir(parents=True, exist_ok=True)
+        (assets_dst / "first-MOTD.txt").write_text(
+            "Welcome to 8-BALL trial install.\n", encoding="utf-8"
+        )
+
     readme = target / "README.md"
     readme.write_text(
         "\n".join(
             [
                 f"# Install lane: {lane['lane_path']}",
                 "",
-                f"Provider assumption: `{PROVIDER_ASSUMPTIONS_REL}/{lane['provider_id']}.json`",
+                f"Lane ID: `{lane['lane_id']}`",
+                f"Install path: `{lane['install_path']}`",
+                f"Profile path: `profiles/<model>/{lane['profile_path']}`",
                 "",
                 "Generated by `scripts/generate-c10-profiles.py`.",
                 "",
@@ -643,30 +528,40 @@ def generate() -> dict[str, Any]:
     cloud_defaults = load_cloud_plan_defaults()
     model_pages = build_model_pages(tags)
     gaps: list[str] = []
+    unknown_limit_count = 0
+    conflict_count = 0
 
-    if not (REPO_ROOT / "AGENTS/data-science/ollama-mapping").exists():
-        gaps.append("AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/P1-P4 instead.")
+    c10_lanes.write_lanes_manifest(generated_at=utc_now())
 
-    provider_dir = PROVIDER_ASSUMPTIONS_DIR
-    provider_dir.mkdir(parents=True, exist_ok=True)
     lane_hardware_map: dict[str, dict[str, Any]] = {}
     for lane in INSTALL_LANES:
         hw = lane_hardware(lane, hardware_profiles, cloud_defaults)
         lane_hardware_map[lane["lane_path"]] = hw
         if hw.get("provenance_status") == "data_gap":
             gaps.append(f"Hardware defaults incomplete for lane {lane['lane_path']}")
-        if lane["provider_id"] == "cloud-digitalocean-gpu-droplet" and hw.get("total_vram_gb") is None:
+            unknown_limit_count += 1
+        if lane["lane_id"] == "digitalocean-gpu-droplet" and hw.get("total_vram_gb") is None:
             gaps.append("DigitalOcean GPU baseline missing VRAM after CSV parse")
-        write_json(provider_dir / f"{lane['provider_id']}.json", build_provider_assumption(lane, hw))
         copy_install_lane(lane)
 
     profile_leaf_count = 0
+    profile_stage_payload_file_count = 0
+    model_size_count = 0
+    index_csv_rows: list[list[str]] = []
+
     for model_slug, page in sorted(model_pages.items()):
         write_json(PROFILES_DIR / f"{model_slug}.json", page)
+        sizes_dir = PROFILES_DIR / model_slug / "sizes"
+        sizes_dir.mkdir(parents=True, exist_ok=True)
+        for size in page["sizes"]:
+            write_json(sizes_dir / f"{size['size_slug']}.json", build_size_record(model_slug, size))
+            model_size_count += 1
+
         for lane in INSTALL_LANES:
             hw = lane_hardware_map[lane["lane_path"]]
             leaf = PROFILES_DIR / model_slug / lane["lane_path"]
             leaf.mkdir(parents=True, exist_ok=True)
+            write_profile_sizes_csv(leaf / "profile-sizes.csv", model_slug, page["sizes"])
             mapping = {
                 "lane.json": "lane",
                 "3-cpu.json": "3-cpu",
@@ -679,22 +574,90 @@ def generate() -> dict[str, Any]:
                 stage = "lane" if stage_key == "lane" else stage_key
                 write_json(leaf / filename, build_stage_file(stage, lane, hw, model_slug, page["sizes"]))
                 profile_leaf_count += 1
+                if filename != "lane.json":
+                    profile_stage_payload_file_count += 1
+            for size in page["sizes"]:
+                index_csv_rows.append(
+                    [
+                        model_slug,
+                        size["size_slug"],
+                        lane["lane_id"],
+                        lane["lane_path"],
+                        f"profiles/{model_slug}/sizes/{size['size_slug']}.json",
+                        f"profiles/{model_slug}/{lane['lane_path']}/lane.json",
+                        lane["install_path"],
+                    ]
+                )
 
     write_inventory(model_pages, gaps)
 
-    index_rows = []
+    index_path = PROFILES_DIR / "index.csv"
+    with index_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(
+            [
+                "model_slug",
+                "size_slug",
+                "lane_id",
+                "lane_path",
+                "size_json_path",
+                "lane_json_path",
+                "install_path",
+            ]
+        )
+        writer.writerows(index_csv_rows)
+
+    c10_index_rows = []
     for model_slug, page in sorted(model_pages.items()):
         for lane in INSTALL_LANES:
-            index_rows.append(
+            c10_index_rows.append(
                 {
                     "model_slug": model_slug,
                     "lane_path": lane["lane_path"],
-                    "provider_assumption_id": lane["provider_id"],
+                    "lane_id": lane["lane_id"],
                     "model_page": f"profiles/{model_slug}.json",
                     "lane_dir": f"profiles/{model_slug}/{lane['lane_path']}",
+                    "install_path": lane["install_path"],
                 }
             )
-    write_json(PROFILES_DIR / "c10-index.json", {"generated_at": utc_now(), "rows": index_rows})
+    write_json(PROFILES_DIR / "c10-index.json", {"generated_at": utc_now(), "rows": c10_index_rows})
+
+    model_slug_count = len(model_pages)
+    profile_matrix_row_count = len(index_csv_rows)
+    twelve_k = {
+        "observed": False,
+        "claimed_category": "model-size-lane index rows",
+        "formula": "model_size_count × 10",
+        "observed_count": profile_matrix_row_count,
+        "target": 12000,
+        "discrepancy": profile_matrix_row_count - 12000,
+    }
+    stage_twelve_k = {
+        "observed": False,
+        "claimed_category": "model-lane stage payload files (stages 3–7)",
+        "formula": "model_slug_count × 10 × 5",
+        "observed_count": profile_stage_payload_file_count,
+        "target": 12000,
+        "discrepancy": profile_stage_payload_file_count - 12000,
+    }
+
+    actual_profile_lane_count = model_slug_count * len(INSTALL_LANES)
+    audit = c10_lanes.build_lane_matrix_audit(
+        model_slug_count=model_slug_count,
+        model_size_count=model_size_count,
+        actual_profile_lane_count=actual_profile_lane_count,
+        profile_matrix_row_count=profile_matrix_row_count,
+        profile_stage_payload_file_count=profile_stage_payload_file_count,
+        unknown_limit_count=unknown_limit_count,
+        conflict_count=conflict_count,
+        data_gaps=gaps,
+        twelve_k_claim={
+            "model_size_lane_index": twelve_k,
+            "model_lane_stage_payloads": stage_twelve_k,
+            "note": "12,000 was not observed for either category with current catalog inputs.",
+        },
+    )
+    c10_lanes.write_lane_matrix_audit(audit)
 
     write_json(
         PROFILES_DIR / "manifest.json",
@@ -705,20 +668,27 @@ def generate() -> dict[str, Any]:
                 "command": "python3 scripts/generate-c10-profiles.py",
             },
             "counts": {
-                "model_pages": len(model_pages),
-                "model_directories": len(model_pages),
+                "model_pages": model_slug_count,
+                "model_directories": model_slug_count,
+                "model_sizes": model_size_count,
                 "install_lanes": len(INSTALL_LANES),
-                "profile_lane_leaves": profile_leaf_count,
-                "provider_assumptions": len(INSTALL_LANES),
-                "c10_index_rows": len(index_rows),
+                "profile_lane_leaves": actual_profile_lane_count,
+                "profile_matrix_rows": profile_matrix_row_count,
+                "profile_stage_payload_files": profile_stage_payload_file_count,
+                "c10_index_rows": len(c10_index_rows),
             },
             "install_lanes": [lane["lane_path"] for lane in INSTALL_LANES],
+            "lane_ids": [lane["lane_id"] for lane in INSTALL_LANES],
             "stage_files": list(STAGE_FILES),
             "paths": {
+                "lanes_manifest": "profiles/lanes.json",
+                "lane_matrix_audit_json": "profiles/_lane-matrix-audit.json",
+                "lane_matrix_audit_csv": "profiles/_lane-matrix-audit.csv",
+                "profiles_index": "profiles/index.csv",
                 "c10_index": "profiles/c10-index.json",
-                "provider_assumptions": f"{PROVIDER_ASSUMPTIONS_REL}/",
                 "model_page_pattern": "profiles/<model-slug>.json",
-                "model_lane_pattern": "profiles/<model-slug>/",
+                "model_size_pattern": "profiles/<model-slug>/sizes/<size-slug>.json",
+                "model_lane_pattern": "profiles/<model-slug>/<profile-path>/",
                 "canonical_families": "data/generated/pages/families/",
                 "canonical_models": "data/generated/pages/models/",
                 "canonical_deployment_types": "data/generated/pages/deployment-types/",
@@ -728,17 +698,20 @@ def generate() -> dict[str, Any]:
                 "data/normalized/tags.json",
                 "data/normalized/models.json",
                 "data/normalized/hardware-assumed-profiles.json",
+                "profiles/lanes.json",
             ],
         },
     )
 
     return {
-        "model_count": len(model_pages),
-        "size_count": sum(len(p["sizes"]) for p in model_pages.values()),
+        "model_count": model_slug_count,
+        "size_count": model_size_count,
         "install_lane_count": len(INSTALL_LANES),
-        "profile_leaf_count": profile_leaf_count,
-        "provider_assumption_count": len(INSTALL_LANES),
+        "profile_leaf_count": actual_profile_lane_count,
+        "profile_matrix_row_count": profile_matrix_row_count,
+        "profile_stage_payload_file_count": profile_stage_payload_file_count,
         "data_gaps": gaps,
+        "audit": audit["counts"],
     }
 
 

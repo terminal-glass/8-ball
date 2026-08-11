@@ -1,0 +1,2 @@
+size_slug,size_json_path,ollama_ref
+cloud,profiles/minimax-m3/sizes/cloud.json,minimax-m3:cloud

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "gemma2",
+  "size_slug": "27b-instruct-q5-k-s",
+  "ollama_ref": "gemma2:27b-instruct-q5_K_S",
+  "parameter_count": 27000000000,
+  "quantization": "q5_K_S",
+  "download_size_bytes": 19000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/gemma2/tags",
+    "retrieved_at": "2026-08-01T11:53:40Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 31.34,
+    "recommended_system_ram_gb": 37.6,
+    "min_vram_gb": 21.85,
+    "recommended_vram_gb": 31.34,
+    "min_disk_gb": 27.8
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

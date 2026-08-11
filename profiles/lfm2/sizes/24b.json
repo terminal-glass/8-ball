@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "lfm2",
+  "size_slug": "24b",
+  "ollama_ref": "lfm2:24b",
+  "parameter_count": 24000000000,
+  "quantization": null,
+  "download_size_bytes": 14000000000,
+  "promoted": true,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/lfm2/tags",
+    "retrieved_at": "2026-08-01T11:54:55Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 24.72,
+    "recommended_system_ram_gb": 29.67,
+    "min_vram_gb": 16.1,
+    "recommended_vram_gb": 24.72,
+    "min_disk_gb": 21.8
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

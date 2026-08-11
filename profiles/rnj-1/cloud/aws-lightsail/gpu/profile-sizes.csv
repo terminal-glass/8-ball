@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+8b,profiles/rnj-1/sizes/8b.json,rnj-1:8b
+8b-instruct-fp16,profiles/rnj-1/sizes/8b-instruct-fp16.json,rnj-1:8b-instruct-fp16
+8b-instruct-q4-k-m,profiles/rnj-1/sizes/8b-instruct-q4-k-m.json,rnj-1:8b-instruct-q4_K_M
+8b-instruct-q80,profiles/rnj-1/sizes/8b-instruct-q80.json,rnj-1:8b-instruct-q8_0
+latest,profiles/rnj-1/sizes/latest.json,rnj-1:latest

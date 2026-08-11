@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "reader-lm",
+  "size_slug": "latest",
+  "ollama_ref": "reader-lm:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 935000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/reader-lm/tags",
+    "retrieved_at": "2026-08-01T11:58:48Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 2.8,
+    "recommended_system_ram_gb": 3.36,
+    "min_vram_gb": 1.08,
+    "recommended_vram_gb": 2.8,
+    "min_disk_gb": 6.12
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

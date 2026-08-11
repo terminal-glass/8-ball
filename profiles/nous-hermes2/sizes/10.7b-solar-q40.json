@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nous-hermes2",
+  "size_slug": "10.7b-solar-q40",
+  "ollama_ref": "nous-hermes2:10.7b-solar-q4_0",
+  "parameter_count": 10700000000,
+  "quantization": "q4_0",
+  "download_size_bytes": 6100000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nous-hermes2/tags",
+    "retrieved_at": "2026-08-01T11:57:19Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 11.82,
+    "recommended_system_ram_gb": 14.18,
+    "min_vram_gb": 7.01,
+    "recommended_vram_gb": 11.82,
+    "min_disk_gb": 12.32
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

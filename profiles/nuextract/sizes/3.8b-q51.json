@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nuextract",
+  "size_slug": "3.8b-q51",
+  "ollama_ref": "nuextract:3.8b-q5_1",
+  "parameter_count": 3800000000,
+  "quantization": "q5_1",
+  "download_size_bytes": 2900000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nuextract/tags",
+    "retrieved_at": "2026-08-01T11:57:24Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 6.15,
+    "recommended_system_ram_gb": 7.38,
+    "min_vram_gb": 3.33,
+    "recommended_vram_gb": 6.15,
+    "min_disk_gb": 8.48
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

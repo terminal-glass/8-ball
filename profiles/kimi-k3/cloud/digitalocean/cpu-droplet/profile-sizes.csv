@@ -1,0 +1,2 @@
+size_slug,size_json_path,ollama_ref
+cloud,profiles/kimi-k3/sizes/cloud.json,kimi-k3:cloud

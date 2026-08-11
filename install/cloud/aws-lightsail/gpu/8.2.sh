@@ -4,7 +4,7 @@
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="cloud/aws-lightsail/gpu"
-EIGHTBALL_PROVIDER_ASSUMPTION="data/generated/provider-assumptions/cloud-aws-lightsail-gpu.json"
+EIGHTBALL_LANE_ID="aws-lightsail-gpu"
 
 EIGHTBALL_INSTALL_PROFILE="cloud/aws-lightsail/gpu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

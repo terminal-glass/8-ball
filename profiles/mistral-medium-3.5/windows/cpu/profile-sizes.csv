@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+128b,profiles/mistral-medium-3.5/sizes/128b.json,mistral-medium-3.5:128b
+128b-bf16,profiles/mistral-medium-3.5/sizes/128b-bf16.json,mistral-medium-3.5:128b-bf16
+128b-q4-k-m,profiles/mistral-medium-3.5/sizes/128b-q4-k-m.json,mistral-medium-3.5:128b-q4_K_M
+128b-q80,profiles/mistral-medium-3.5/sizes/128b-q80.json,mistral-medium-3.5:128b-q8_0
+latest,profiles/mistral-medium-3.5/sizes/latest.json,mistral-medium-3.5:latest

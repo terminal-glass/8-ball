@@ -1,0 +1,5 @@
+size_slug,size_json_path,ollama_ref
+33b,profiles/nemotron3/sizes/33b.json,nemotron3:33b
+33b-bf16,profiles/nemotron3/sizes/33b-bf16.json,nemotron3:33b-bf16
+33b-q4-k-m,profiles/nemotron3/sizes/33b-q4-k-m.json,nemotron3:33b-q4_K_M
+33b-q8,profiles/nemotron3/sizes/33b-q8.json,nemotron3:33b-q8

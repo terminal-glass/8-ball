@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen2.5-coder",
+  "size_slug": "0.5b-base-fp16",
+  "ollama_ref": "qwen2.5-coder:0.5b-base-fp16",
+  "parameter_count": 500000000,
+  "quantization": "fp16",
+  "download_size_bytes": 994000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen2.5-coder/tags",
+    "retrieved_at": "2026-08-01T11:58:21Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 3.01,
+    "recommended_system_ram_gb": 3.61,
+    "min_vram_gb": 1.14,
+    "recommended_vram_gb": 3.01,
+    "min_disk_gb": 6.19
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

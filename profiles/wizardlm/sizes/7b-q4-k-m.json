@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "wizardlm",
+  "size_slug": "7b-q4-k-m",
+  "ollama_ref": "wizardlm:7b-q4_K_M",
+  "parameter_count": 7000000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 4100000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizardlm/tags",
+    "retrieved_at": "2026-08-01T11:59:57Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.45,
+    "recommended_system_ram_gb": 10.14,
+    "min_vram_gb": 4.71,
+    "recommended_vram_gb": 8.45,
+    "min_disk_gb": 9.92
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "deepseek-coder-v2",
+  "size_slug": "236b-base-q41",
+  "ollama_ref": "deepseek-coder-v2:236b-base-q4_1",
+  "parameter_count": 236000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 148000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepseek-coder-v2/tags",
+    "retrieved_at": "2026-08-01T11:52:30Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 239.77,
+    "recommended_system_ram_gb": 287.73,
+    "min_vram_gb": 170.2,
+    "recommended_vram_gb": 239.77,
+    "min_disk_gb": 182.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3.6",
+  "size_slug": "35b-a3b-mxfp8",
+  "ollama_ref": "qwen3.6:35b-a3b-mxfp8",
+  "parameter_count": 35000000000,
+  "quantization": "mxfp8",
+  "download_size_bytes": 38000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3.6/tags",
+    "retrieved_at": "2026-08-01T11:58:41Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 55.49,
+    "recommended_system_ram_gb": 66.58,
+    "min_vram_gb": 43.7,
+    "recommended_vram_gb": 55.49,
+    "min_disk_gb": 50.6
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

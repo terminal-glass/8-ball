@@ -1,0 +1,4 @@
+size_slug,size_json_path,ollama_ref
+8b,profiles/granite3.3/sizes/8b.json,granite3.3:8b
+2b,profiles/granite3.3/sizes/2b.json,granite3.3:2b
+latest,profiles/granite3.3/sizes/latest.json,granite3.3:latest

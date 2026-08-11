@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "goliath",
+  "size_slug": "120b-q5-k-m",
+  "ollama_ref": "goliath:120b-q5_K_M",
+  "parameter_count": 120000000000,
+  "quantization": "q5_K_M",
+  "download_size_bytes": 83000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/goliath/tags",
+    "retrieved_at": "2026-08-01T11:54:01Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 131.67,
+    "recommended_system_ram_gb": 158.01,
+    "min_vram_gb": 95.45,
+    "recommended_vram_gb": 131.67,
+    "min_disk_gb": 104.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

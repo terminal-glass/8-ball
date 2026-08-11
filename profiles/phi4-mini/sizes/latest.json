@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "phi4-mini",
+  "size_slug": "latest",
+  "ollama_ref": "phi4-mini:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 2500000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/phi4-mini/tags",
+    "retrieved_at": "2026-08-01T11:58:02Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 4.6,
+    "recommended_system_ram_gb": 5.52,
+    "min_vram_gb": 2.88,
+    "recommended_vram_gb": 4.6,
+    "min_disk_gb": 8.0
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

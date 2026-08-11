@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "deepseek-llm",
+  "size_slug": "latest",
+  "ollama_ref": "deepseek-llm:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 4000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepseek-llm/tags",
+    "retrieved_at": "2026-08-01T11:52:32Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 6.32,
+    "recommended_system_ram_gb": 7.59,
+    "min_vram_gb": 4.6,
+    "recommended_vram_gb": 6.32,
+    "min_disk_gb": 9.8
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

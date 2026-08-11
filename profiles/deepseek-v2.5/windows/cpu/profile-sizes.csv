@@ -1,0 +1,8 @@
+size_slug,size_json_path,ollama_ref
+236b,profiles/deepseek-v2.5/sizes/236b.json,deepseek-v2.5:236b
+236b-q40,profiles/deepseek-v2.5/sizes/236b-q40.json,deepseek-v2.5:236b-q4_0
+236b-q41,profiles/deepseek-v2.5/sizes/236b-q41.json,deepseek-v2.5:236b-q4_1
+236b-q50,profiles/deepseek-v2.5/sizes/236b-q50.json,deepseek-v2.5:236b-q5_0
+236b-q51,profiles/deepseek-v2.5/sizes/236b-q51.json,deepseek-v2.5:236b-q5_1
+236b-q80,profiles/deepseek-v2.5/sizes/236b-q80.json,deepseek-v2.5:236b-q8_0
+latest,profiles/deepseek-v2.5/sizes/latest.json,deepseek-v2.5:latest

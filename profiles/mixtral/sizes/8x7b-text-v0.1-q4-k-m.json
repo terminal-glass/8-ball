@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mixtral",
+  "size_slug": "8x7b-text-v0.1-q4-k-m",
+  "ollama_ref": "mixtral:8x7b-text-v0.1-q4_K_M",
+  "parameter_count": null,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 28000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mixtral/tags",
+    "retrieved_at": "2026-08-01T11:56:38Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 33.92,
+    "recommended_system_ram_gb": 40.71,
+    "min_vram_gb": 32.2,
+    "recommended_vram_gb": 33.92,
+    "min_disk_gb": 38.6
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

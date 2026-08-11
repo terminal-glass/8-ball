@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "command-a",
+  "size_slug": "111b032025-q80",
+  "ollama_ref": "command-a:111b-03-2025-q8_0",
+  "parameter_count": 111000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 118000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/command-a/tags",
+    "retrieved_at": "2026-08-01T11:52:09Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 169.34,
+    "recommended_system_ram_gb": 203.2,
+    "min_vram_gb": 135.7,
+    "recommended_vram_gb": 169.34,
+    "min_disk_gb": 146.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

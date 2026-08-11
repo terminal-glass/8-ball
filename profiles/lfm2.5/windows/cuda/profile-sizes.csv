@@ -1,0 +1,6 @@
+size_slug,size_json_path,ollama_ref
+8b,profiles/lfm2.5/sizes/8b.json,lfm2.5:8b
+8b-a1b-bf16,profiles/lfm2.5/sizes/8b-a1b-bf16.json,lfm2.5:8b-a1b-bf16
+8b-a1b-q4-k-m,profiles/lfm2.5/sizes/8b-a1b-q4-k-m.json,lfm2.5:8b-a1b-q4_K_M
+8b-a1b-q80,profiles/lfm2.5/sizes/8b-a1b-q80.json,lfm2.5:8b-a1b-q8_0
+latest,profiles/lfm2.5/sizes/latest.json,lfm2.5:latest

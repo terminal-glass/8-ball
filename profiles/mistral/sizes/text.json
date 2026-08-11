@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mistral",
+  "size_slug": "text",
+  "ollama_ref": "mistral:text",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 4100000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral/tags",
+    "retrieved_at": "2026-08-01T11:56:15Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 6.44,
+    "recommended_system_ram_gb": 7.73,
+    "min_vram_gb": 4.71,
+    "recommended_vram_gb": 6.44,
+    "min_disk_gb": 9.92
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

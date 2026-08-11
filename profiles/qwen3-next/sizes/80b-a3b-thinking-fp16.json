@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3-next",
+  "size_slug": "80b-a3b-thinking-fp16",
+  "ollama_ref": "qwen3-next:80b-a3b-thinking-fp16",
+  "parameter_count": 80000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 159000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3-next/tags",
+    "retrieved_at": "2026-08-01T11:58:34Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 207.57,
+    "recommended_system_ram_gb": 249.09,
+    "min_vram_gb": 182.85,
+    "recommended_vram_gb": 207.57,
+    "min_disk_gb": 195.8
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

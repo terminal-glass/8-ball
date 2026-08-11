@@ -1,0 +1,10 @@
+size_slug,size_json_path,ollama_ref
+30b,profiles/nemotron-3-nano/sizes/30b.json,nemotron-3-nano:30b
+30b-a3b-fp16,profiles/nemotron-3-nano/sizes/30b-a3b-fp16.json,nemotron-3-nano:30b-a3b-fp16
+30b-a3b-q4-k-m,profiles/nemotron-3-nano/sizes/30b-a3b-q4-k-m.json,nemotron-3-nano:30b-a3b-q4_K_M
+30b-a3b-q80,profiles/nemotron-3-nano/sizes/30b-a3b-q80.json,nemotron-3-nano:30b-a3b-q8_0
+30b-cloud,profiles/nemotron-3-nano/sizes/30b-cloud.json,nemotron-3-nano:30b-cloud
+4b,profiles/nemotron-3-nano/sizes/4b.json,nemotron-3-nano:4b
+4b-bf16,profiles/nemotron-3-nano/sizes/4b-bf16.json,nemotron-3-nano:4b-bf16
+4b-q80,profiles/nemotron-3-nano/sizes/4b-q80.json,nemotron-3-nano:4b-q8_0
+latest,profiles/nemotron-3-nano/sizes/latest.json,nemotron-3-nano:latest

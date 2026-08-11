@@ -1,0 +1,13 @@
+size_slug,size_json_path,ollama_ref
+8b,profiles/qwen3-embedding/sizes/8b.json,qwen3-embedding:8b
+8b-fp16,profiles/qwen3-embedding/sizes/8b-fp16.json,qwen3-embedding:8b-fp16
+8b-q4-k-m,profiles/qwen3-embedding/sizes/8b-q4-k-m.json,qwen3-embedding:8b-q4_K_M
+8b-q80,profiles/qwen3-embedding/sizes/8b-q80.json,qwen3-embedding:8b-q8_0
+4b,profiles/qwen3-embedding/sizes/4b.json,qwen3-embedding:4b
+4b-fp16,profiles/qwen3-embedding/sizes/4b-fp16.json,qwen3-embedding:4b-fp16
+4b-q4-k-m,profiles/qwen3-embedding/sizes/4b-q4-k-m.json,qwen3-embedding:4b-q4_K_M
+4b-q80,profiles/qwen3-embedding/sizes/4b-q80.json,qwen3-embedding:4b-q8_0
+0.6b,profiles/qwen3-embedding/sizes/0.6b.json,qwen3-embedding:0.6b
+0.6b-fp16,profiles/qwen3-embedding/sizes/0.6b-fp16.json,qwen3-embedding:0.6b-fp16
+0.6b-q80,profiles/qwen3-embedding/sizes/0.6b-q80.json,qwen3-embedding:0.6b-q8_0
+latest,profiles/qwen3-embedding/sizes/latest.json,qwen3-embedding:latest

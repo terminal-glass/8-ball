@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llama-pro",
+  "size_slug": "8b-instruct-fp16",
+  "ollama_ref": "llama-pro:8b-instruct-fp16",
+  "parameter_count": 8000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 17000000000,
+  "promoted": true,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama-pro/tags",
+    "retrieved_at": "2026-08-01T11:55:04Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 23.57,
+    "recommended_system_ram_gb": 28.29,
+    "min_vram_gb": 19.55,
+    "recommended_vram_gb": 23.57,
+    "min_disk_gb": 25.4
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "granite-code",
+  "size_slug": "34b-base-q50",
+  "ollama_ref": "granite-code:34b-base-q5_0",
+  "parameter_count": 34000000000,
+  "quantization": "q5_0",
+  "download_size_bytes": 23000000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/granite-code/tags",
+    "retrieved_at": "2026-08-01T11:54:08Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 37.95,
+    "recommended_system_ram_gb": 45.54,
+    "min_vram_gb": 26.45,
+    "recommended_vram_gb": 37.95,
+    "min_disk_gb": 32.6
+  },
+  "generated_at": "2026-08-07T17:43:11Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llama3-gradient",
+  "size_slug": "8b-instruct1048k-q4-k-s",
+  "ollama_ref": "llama3-gradient:8b-instruct-1048k-q4_K_S",
+  "parameter_count": 8000000000,
+  "quantization": "q4_K_S",
+  "download_size_bytes": 4700000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama3-gradient/tags",
+    "retrieved_at": "2026-08-01T11:55:18Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 9.43,
+    "recommended_system_ram_gb": 11.32,
+    "min_vram_gb": 5.4,
+    "recommended_vram_gb": 9.43,
+    "min_disk_gb": 10.64
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

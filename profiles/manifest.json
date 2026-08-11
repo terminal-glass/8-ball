@@ -1,15 +1,17 @@
 {
   "schema_version": "c10.profiles-manifest.v1",
-  "generated_at": "2026-08-06T08:43:31Z",
+  "generated_at": "2026-08-07T17:44:05Z",
   "generator": {
     "command": "python3 scripts/generate-c10-profiles.py"
   },
   "counts": {
     "model_pages": 234,
     "model_directories": 234,
+    "model_sizes": 7271,
     "install_lanes": 10,
-    "profile_lane_leaves": 14040,
-    "provider_assumptions": 10,
+    "profile_lane_leaves": 2340,
+    "profile_matrix_rows": 72710,
+    "profile_stage_payload_files": 11700,
     "c10_index_rows": 2340
   },
   "install_lanes": [
@@ -24,6 +26,18 @@
     "cloud/aws-lightsail/cpu",
     "cloud/aws-lightsail/gpu"
   ],
+  "lane_ids": [
+    "ubuntu-cpu",
+    "ubuntu-cuda",
+    "mac-apple-silicon",
+    "mac-intel",
+    "windows-cpu",
+    "windows-cuda",
+    "digitalocean-cpu-droplet",
+    "digitalocean-gpu-droplet",
+    "aws-lightsail-cpu",
+    "aws-lightsail-gpu"
+  ],
   "stage_files": [
     "lane.json",
     "3-cpu.json",
@@ -33,10 +47,14 @@
     "7-video_card.json"
   ],
   "paths": {
+    "lanes_manifest": "profiles/lanes.json",
+    "lane_matrix_audit_json": "profiles/_lane-matrix-audit.json",
+    "lane_matrix_audit_csv": "profiles/_lane-matrix-audit.csv",
+    "profiles_index": "profiles/index.csv",
     "c10_index": "profiles/c10-index.json",
-    "provider_assumptions": "data/generated/provider-assumptions/",
     "model_page_pattern": "profiles/<model-slug>.json",
-    "model_lane_pattern": "profiles/<model-slug>/",
+    "model_size_pattern": "profiles/<model-slug>/sizes/<size-slug>.json",
+    "model_lane_pattern": "profiles/<model-slug>/<profile-path>/",
     "canonical_families": "data/generated/pages/families/",
     "canonical_models": "data/generated/pages/models/",
     "canonical_deployment_types": "data/generated/pages/deployment-types/",
@@ -45,6 +63,7 @@
   "source_paths": [
     "data/normalized/tags.json",
     "data/normalized/models.json",
-    "data/normalized/hardware-assumed-profiles.json"
+    "data/normalized/hardware-assumed-profiles.json",
+    "profiles/lanes.json"
   ]
 }

@@ -2,14 +2,15 @@
   "schema_version": "c10.stage.v1",
   "model_slug": "gemini-3-flash-preview",
   "lane_path": "cloud/digitalocean/gpu-droplet",
-  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T08:43:29Z",
+  "provider_assumption_id": "digitalocean-gpu-droplet",
+  "generated_at": "2026-08-07T17:43:11Z",
   "provenance": {
     "source_path": "AGENTS/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "provenance_status": "provider_published"
   },
-  "lane_id": "cloud/digitalocean/gpu-droplet",
-  "provider_assumption": "data/generated/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "lane_id": "digitalocean-gpu-droplet",
+  "install_path": "install/cloud/digitalocean/gpu-droplet/",
+  "profile_path": "cloud/digitalocean/gpu-droplet/",
   "detection_signals": [
     "provider=digitalocean",
     "gpu-droplet=true",

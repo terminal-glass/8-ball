@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mistral-nemo",
+  "size_slug": "12b",
+  "ollama_ref": "mistral-nemo:12b",
+  "parameter_count": 12000000000,
+  "quantization": null,
+  "download_size_bytes": 7100000000,
+  "promoted": true,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral-nemo/tags",
+    "retrieved_at": "2026-08-01T11:56:25Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 13.34,
+    "recommended_system_ram_gb": 16.01,
+    "min_vram_gb": 8.16,
+    "recommended_vram_gb": 13.34,
+    "min_disk_gb": 13.52
+  },
+  "generated_at": "2026-08-07T17:43:12Z"
+}

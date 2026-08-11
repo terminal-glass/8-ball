@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "orca-mini",
+  "size_slug": "13b",
+  "ollama_ref": "orca-mini:13b",
+  "parameter_count": 13000000000,
+  "quantization": null,
+  "download_size_bytes": 7400000000,
+  "promoted": true,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/orca-mini/tags",
+    "retrieved_at": "2026-08-01T11:57:44Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 13.97,
+    "recommended_system_ram_gb": 16.77,
+    "min_vram_gb": 8.51,
+    "recommended_vram_gb": 13.97,
+    "min_disk_gb": 13.88
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "snowflake-arctic-embed2",
+  "size_slug": "latest",
+  "ollama_ref": "snowflake-arctic-embed2:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 1200000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/snowflake-arctic-embed2/tags",
+    "retrieved_at": "2026-08-01T11:59:11Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 3.1,
+    "recommended_system_ram_gb": 3.73,
+    "min_vram_gb": 1.38,
+    "recommended_vram_gb": 3.1,
+    "min_disk_gb": 6.44
+  },
+  "generated_at": "2026-08-07T17:43:14Z"
+}

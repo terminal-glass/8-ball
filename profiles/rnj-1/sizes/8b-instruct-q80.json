@@ -1,0 +1,23 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "rnj-1",
+  "size_slug": "8b-instruct-q80",
+  "ollama_ref": "rnj-1:8b-instruct-q8_0",
+  "parameter_count": 8000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 8800000000,
+  "promoted": false,
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/rnj-1/tags",
+    "retrieved_at": "2026-08-01T11:58:53Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 14.14,
+    "recommended_system_ram_gb": 16.97,
+    "min_vram_gb": 10.12,
+    "recommended_vram_gb": 14.14,
+    "min_disk_gb": 15.56
+  },
+  "generated_at": "2026-08-07T17:43:13Z"
+}
