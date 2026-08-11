@@ -1,0 +1,60 @@
+{
+  "schema_version": "c10.lightsail-capability-report.v1",
+  "plan_counts": {
+    "cpu_base_pilot": 11,
+    "gpu_research": 3,
+    "total": 14
+  },
+  "target_lanes": {
+    "cloud/aws-lightsail/cpu": [
+      "lightsail-linux-gp-nano-0.5gb-ipv4",
+      "lightsail-linux-gp-micro-1gb-ipv4",
+      "lightsail-linux-gp-small-2gb-ipv4",
+      "lightsail-linux-gp-medium-4gb-ipv4",
+      "lightsail-linux-gp-large-8gb-ipv4",
+      "lightsail-linux-gp-xlarge-16gb-ipv4",
+      "lightsail-linux-gp-2xlarge-32gb-ipv4",
+      "lightsail-linux-gp-4xlarge-64gb-ipv4",
+      "lightsail-linux-gp-8xlarge-128gb-ipv4",
+      "lightsail-linux-gp-12xlarge-192gb-ipv4",
+      "lightsail-linux-gp-16xlarge-256gb-ipv4"
+    ],
+    "cloud/aws-lightsail/gpu": [
+      "lightsail-research-gpu-xl",
+      "lightsail-research-gpu-2xl",
+      "lightsail-research-gpu-4xl"
+    ]
+  },
+  "pilot_menu_band_counts": {
+    "fallback-under-4gb": 3,
+    "pilot-4gb": 1,
+    "pilot-8gb": 1,
+    "pilot-12gb": 2,
+    "pilot-24gb-plus": 7
+  },
+  "compatibility_row_counts": {
+    "cloud/aws-lightsail/cpu": 79981,
+    "cloud/aws-lightsail/gpu": 21813
+  },
+  "compatibility_status_counts": {
+    "cloud/aws-lightsail/cpu": {
+      "unknown": 79941,
+      "no-fit": 6,
+      "capacity-candidate": 34
+    },
+    "cloud/aws-lightsail/gpu": {
+      "unknown": 21798,
+      "no-fit": 1,
+      "capacity-candidate": 14
+    }
+  },
+  "gpu_model_unknown": true,
+  "gpu_vram_unknown": true,
+  "model_requirements_formula_generated": false,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+    "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+    "AGENTS/data-science/profile-mapping/aws-lightsail-source-snapshot.json"
+  ]
+}

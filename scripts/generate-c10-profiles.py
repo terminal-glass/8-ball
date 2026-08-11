@@ -30,6 +30,13 @@ if _SPEC is None or _SPEC.loader is None:
 c10_common = importlib.util.module_from_spec(_SPEC)
 sys.modules[_SPEC.name] = c10_common
 _SPEC.loader.exec_module(c10_common)
+_C10_LIGHTSAIL_PATH = REPO_ROOT / "scripts" / "c10_lightsail_compatibility.py"
+_LIGHTSAIL_SPEC = importlib.util.spec_from_file_location("c10_lightsail_compatibility", _C10_LIGHTSAIL_PATH)
+if _LIGHTSAIL_SPEC is None or _LIGHTSAIL_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_LIGHTSAIL_PATH}")
+c10_lightsail = importlib.util.module_from_spec(_LIGHTSAIL_SPEC)
+sys.modules[_LIGHTSAIL_SPEC.name] = c10_lightsail
+_LIGHTSAIL_SPEC.loader.exec_module(c10_lightsail)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 REPORT_DIR = REPO_ROOT / "AGENTS" / "data-science" / "profile-mapping"
@@ -308,18 +315,35 @@ def load_cloud_plan_defaults() -> dict[str, dict[str, Any]]:
                 "source_path": str(do_gp.relative_to(REPO_ROOT)),
                 "plans": plans,
             }
-    ls = REPO_ROOT / "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json"
-    if ls.exists():
-        plans = load_json(ls)
-        medium = next((p for p in plans if p.get("bundle_id") == "medium_3_0"), plans[0] if plans else None)
+    ls_csv = REPO_ROOT / "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv"
+    if ls_csv.exists():
+        ls_plans = c10_lightsail.load_lightsail_plans(REPO_ROOT)[0]
+        medium = next(
+            (p for p in ls_plans if p.get("provider_plan_id") == "lightsail-linux-gp-medium-4gb-ipv4"),
+            ls_plans[0] if ls_plans else None,
+        )
         if medium:
             defaults["cloud-aws-lightsail-cpu"] = {
                 "vcpu": medium.get("vcpu_count"),
-                "ram_gb": medium.get("ram_gb"),
-                "disk_gb": medium.get("ssd_gb"),
-                "source_path": str(ls.relative_to(REPO_ROOT)),
-                "plans": plans,
+                "ram_gb": medium.get("system_ram_gb"),
+                "disk_gb": medium.get("included_ssd_gb"),
+                "source_path": str(ls_csv.relative_to(REPO_ROOT)),
+                "plans": ls_plans,
+                "baseline_plan_id": medium.get("provider_plan_id"),
             }
+    else:
+        ls = REPO_ROOT / "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/lightsail/linux-unix-public-ipv4-bundles.json"
+        if ls.exists():
+            plans = load_json(ls)
+            medium = next((p for p in plans if p.get("bundle_id") == "medium_3_0"), plans[0] if plans else None)
+            if medium:
+                defaults["cloud-aws-lightsail-cpu"] = {
+                    "vcpu": medium.get("vcpu_count"),
+                    "ram_gb": medium.get("ram_gb"),
+                    "disk_gb": medium.get("ssd_gb"),
+                    "source_path": str(ls.relative_to(REPO_ROOT)),
+                    "plans": plans,
+                }
     do_gpu_plans = c10_common.load_digitalocean_gpu_plans(REPO_ROOT)
     if do_gpu_plans:
         baseline = c10_common.smallest_digitalocean_gpu_plan(do_gpu_plans)
@@ -625,6 +649,10 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
             "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
             "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
             "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+            "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+            "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+            "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+            "AGENTS/data-science/profile-mapping/aws-lightsail-source-snapshot.json",
             "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/",
         ],
         "model_count": len(model_pages),
@@ -694,6 +722,8 @@ def generate() -> dict[str, Any]:
             )
     write_json(PROFILES_DIR / "c10-index.json", {"generated_at": utc_now(), "rows": index_rows})
 
+    lightsail_stats = c10_lightsail.generate_lightsail_compatibility(REPO_ROOT)
+
     return {
         "model_count": len(model_pages),
         "size_count": sum(len(p["sizes"]) for p in model_pages.values()),
@@ -701,6 +731,7 @@ def generate() -> dict[str, Any]:
         "profile_leaf_count": profile_leaf_count,
         "provider_assumption_count": len(INSTALL_LANES),
         "data_gaps": gaps,
+        "lightsail_compatibility": lightsail_stats,
     }
 
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T05:53:11Z",
+  "generated_at": "2026-08-11T10:15:49Z",
   "source_paths": [
     "data/normalized/tags.json",
     "data/normalized/models.json",
@@ -8,12 +8,14 @@
     "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
     "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
     "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
+    "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+    "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+    "AGENTS/data-science/profile-mapping/aws-lightsail-source-snapshot.json",
     "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/"
   ],
   "model_count": 234,
   "size_count": 7271,
   "install_lane_count": 10,
-  "data_gaps": [
-    "AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/ollama-mapping/P1-P4 instead."
-  ]
+  "data_gaps": []
 }

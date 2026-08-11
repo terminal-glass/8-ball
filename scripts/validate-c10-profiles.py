@@ -8,10 +8,19 @@ import subprocess
 import sys
 from pathlib import Path
 
+import importlib.util
+
 from eight_ball.agents_csv.import_collection import discover_agents_csv_files
 from eight_ball.agents_csv.registry import source_specs
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+_C10_LIGHTSAIL_PATH = REPO_ROOT / "scripts" / "c10_lightsail_compatibility.py"
+_LIGHTSAIL_SPEC = importlib.util.spec_from_file_location("c10_lightsail_compatibility", _C10_LIGHTSAIL_PATH)
+if _LIGHTSAIL_SPEC is None or _LIGHTSAIL_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_LIGHTSAIL_PATH}")
+c10_lightsail = importlib.util.module_from_spec(_LIGHTSAIL_SPEC)
+sys.modules[_LIGHTSAIL_SPEC.name] = c10_lightsail
+_LIGHTSAIL_SPEC.loader.exec_module(c10_lightsail)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 
@@ -155,6 +164,7 @@ def validate(errors: list[str]) -> dict:
     }
 
     validate_registered_agents_csvs(errors)
+    errors.extend(c10_lightsail.validate_lightsail_sources(REPO_ROOT))
 
     model_pages = sorted(p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"})
     stats["model_pages"] = len(model_pages)

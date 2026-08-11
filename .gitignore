@@ -18,6 +18,7 @@ venv/
 data/generated/*
 !data/generated/pages/
 !data/generated/pages/**
+!data/generated/aws-lightsail-capability-report.json
 /indexes/
 
 # Ephemeral collection caches

@@ -1,0 +1,101 @@
+{
+  "schema_version": "c10.base-pilot-menu.v1",
+  "source_kind": "validated_internal_planning",
+  "source_paths": [
+    "install/cloud/aws-lightsail/cpu/8.2.sh"
+  ],
+  "source_locators": [
+    {
+      "path": "install/cloud/aws-lightsail/cpu/8.2.sh",
+      "functions": [
+        {
+          "name": "deployment_type_for_hardware",
+          "line_range": [100, 112],
+          "role": "RAM-tier deployment type selection from detected hardware"
+        },
+        {
+          "name": "select_model_from_manifest",
+          "line_range": [114, 168],
+          "role": "preferred_order pilot candidate chain (qwen3-first Happy Nerds menu intent)"
+        }
+      ],
+      "note": "Legacy installer references preferred_order rather than build_candidate_list/minimum_disk_mb_for_model; this JSON encodes the C10.1-5 base-pilot policy bands and disk thresholds as auditable planning data."
+    }
+  ],
+  "runtime_model_test_required": true,
+  "pilot_candidates": [
+    "qwen3:0.6b",
+    "qwen3:1.7b",
+    "qwen3:4b",
+    "qwen3:8b",
+    "qwen3:14b"
+  ],
+  "bands": [
+    {
+      "pilot_menu_band": "fallback-under-4gb",
+      "physical_ram_condition": "< 4 GB",
+      "ordered_pilot_candidates": ["qwen3:0.6b"],
+      "disk_thresholds_mib": {
+        "qwen3:0.6b": 3072
+      }
+    },
+    {
+      "pilot_menu_band": "pilot-4gb",
+      "physical_ram_condition": ">= 4 GB and < 8 GB",
+      "ordered_pilot_candidates": ["qwen3:1.7b", "qwen3:0.6b"],
+      "disk_thresholds_mib": {
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      }
+    },
+    {
+      "pilot_menu_band": "pilot-8gb",
+      "physical_ram_condition": ">= 8 GB and < 12 GB",
+      "ordered_pilot_candidates": ["qwen3:4b", "qwen3:1.7b", "qwen3:0.6b"],
+      "disk_thresholds_mib": {
+        "qwen3:4b": 6144,
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      }
+    },
+    {
+      "pilot_menu_band": "pilot-12gb",
+      "physical_ram_condition": ">= 12 GB and < 24 GB",
+      "ordered_pilot_candidates": ["qwen3:8b", "qwen3:4b", "qwen3:1.7b", "qwen3:0.6b"],
+      "disk_thresholds_mib": {
+        "qwen3:8b": 9216,
+        "qwen3:4b": 6144,
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      }
+    },
+    {
+      "pilot_menu_band": "pilot-24gb-plus",
+      "physical_ram_condition": ">= 24 GB",
+      "ordered_pilot_candidates": ["qwen3:14b", "qwen3:8b", "qwen3:4b", "qwen3:1.7b", "qwen3:0.6b"],
+      "disk_thresholds_mib": {
+        "qwen3:14b": 14336,
+        "qwen3:8b": 9216,
+        "qwen3:4b": 6144,
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      }
+    }
+  ],
+  "plan_to_band": {
+    "lightsail-linux-gp-nano-0.5gb-ipv4": "fallback-under-4gb",
+    "lightsail-linux-gp-micro-1gb-ipv4": "fallback-under-4gb",
+    "lightsail-linux-gp-small-2gb-ipv4": "fallback-under-4gb",
+    "lightsail-linux-gp-medium-4gb-ipv4": "pilot-4gb",
+    "lightsail-linux-gp-large-8gb-ipv4": "pilot-8gb",
+    "lightsail-linux-gp-xlarge-16gb-ipv4": "pilot-12gb",
+    "lightsail-linux-gp-2xlarge-32gb-ipv4": "pilot-24gb-plus",
+    "lightsail-linux-gp-4xlarge-64gb-ipv4": "pilot-24gb-plus",
+    "lightsail-linux-gp-8xlarge-128gb-ipv4": "pilot-24gb-plus",
+    "lightsail-linux-gp-12xlarge-192gb-ipv4": "pilot-24gb-plus",
+    "lightsail-linux-gp-16xlarge-256gb-ipv4": "pilot-24gb-plus",
+    "lightsail-research-gpu-xl": "pilot-12gb",
+    "lightsail-research-gpu-2xl": "pilot-24gb-plus",
+    "lightsail-research-gpu-4xl": "pilot-24gb-plus"
+  }
+}

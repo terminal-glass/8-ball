@@ -99,14 +99,44 @@ def smallest_digitalocean_gpu_plan(plans: list[dict[str, Any]]) -> dict[str, Any
 
 
 def load_aws_lightsail_gpu_plans(repo_root: Path = REPO_ROOT) -> list[dict[str, Any]]:
+    canonical_path = (
+        repo_root / "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv"
+    )
+    if canonical_path.is_file():
+        plans: list[dict[str, Any]] = []
+        for row in load_csv_rows(canonical_path):
+            plan_id = row.get("provider_plan_id")
+            ram = parse_numeric(row.get("system_ram_gb"))
+            disk = parse_numeric(row.get("included_ssd_gb"))
+            plans.append(
+                {
+                    "plan_id": plan_id,
+                    "plan_name": row.get("display_name") or plan_id,
+                    "vcpu": parse_int(row.get("vcpu_count")),
+                    "ram_gb": ram,
+                    "disk_gb": disk,
+                    "gpu_count": 1 if str(row.get("accelerator_present", "")).lower() == "true" else None,
+                    "vram_gb_per_gpu": None,
+                    "total_vram_gb": None,
+                    "cuda_expected": "runtime_detection_required",
+                    "ollama_gpu_expected": "unknown",
+                    "evidence_status": row.get("evidence_level") or "provider_published",
+                    "source_path": str(canonical_path.relative_to(repo_root)),
+                    "source_reference": row.get("source_url"),
+                }
+            )
+        return plans
+
     research_path = repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-Research-GPU-Plans.csv"
-    provisional_path = repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+    provisional_path = (
+        repo_root / "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+    )
     research_by_plan: dict[str, dict[str, str]] = {}
     if research_path.is_file():
         for row in load_csv_rows(research_path):
-            plan_id = row.get("provider_plan_id") or row.get("plan_id")
-            if plan_id:
-                research_by_plan[plan_id] = row
+            legacy_plan_id = row.get("provider_plan_id") or row.get("plan_id")
+            if legacy_plan_id:
+                research_by_plan[legacy_plan_id] = row
 
     if provisional_path.is_file():
         source_path = str(provisional_path.relative_to(repo_root))
@@ -117,7 +147,7 @@ def load_aws_lightsail_gpu_plans(repo_root: Path = REPO_ROOT) -> list[dict[str, 
     else:
         return []
 
-    plans: list[dict[str, Any]] = []
+    plans = []
     for row in rows:
         plan_id = row.get("plan_id") or row.get("provider_plan_id")
         research = research_by_plan.get(plan_id or "", {})

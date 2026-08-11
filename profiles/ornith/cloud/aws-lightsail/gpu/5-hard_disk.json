@@ -3,10 +3,10 @@
   "model_slug": "ornith",
   "lane_path": "cloud/aws-lightsail/gpu",
   "provider_assumption_id": "cloud-aws-lightsail-gpu",
-  "generated_at": "2026-08-06T06:40:20Z",
+  "generated_at": "2026-08-11T10:15:48Z",
   "provenance": {
-    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv",
-    "provenance_status": "provisional_hypothesis"
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
   },
   "applicable": true,
   "minimum_free_disk_gb": 50.0,
