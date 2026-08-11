@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "falcon",
+  "size_slug": "40b-instruct-q50",
+  "ollama_ref": "falcon:40b-instruct-q5_0",
+  "parameter_count": 40000000000,
+  "quantization": "q5_0",
+  "download_size_bytes": 29000000000,
+  "minimum_ram_gb": 46.57,
+  "recommended_ram_gb": 55.89,
+  "minimum_vram_gb": 33.35,
+  "recommended_vram_gb": 46.57,
+  "minimum_disk_free_gb": 39.8,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "falcon:40b-instruct-q5_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/falcon/tags",
+    "retrieved_at": "2026-08-01T11:53:24Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 46.57,
+    "recommended_system_ram_gb": 55.89,
+    "min_vram_gb": 33.35,
+    "recommended_vram_gb": 46.57,
+    "min_disk_gb": 39.8
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

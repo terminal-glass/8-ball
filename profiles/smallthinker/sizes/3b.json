@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "smallthinker",
+  "size_slug": "3b",
+  "ollama_ref": "smallthinker:3b",
+  "parameter_count": 3000000000,
+  "quantization": null,
+  "download_size_bytes": 3600000000,
+  "minimum_ram_gb": 6.73,
+  "recommended_ram_gb": 8.07,
+  "minimum_vram_gb": 4.14,
+  "recommended_vram_gb": 6.73,
+  "minimum_disk_free_gb": 9.32,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "smallthinker:3b",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/smallthinker/tags",
+    "retrieved_at": "2026-08-01T11:59:02Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 6.73,
+    "recommended_system_ram_gb": 8.07,
+    "min_vram_gb": 4.14,
+    "recommended_vram_gb": 6.73,
+    "min_disk_gb": 9.32
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "openchat",
+  "size_slug": "7b-v3.50106-q80",
+  "ollama_ref": "openchat:7b-v3.5-0106-q8_0",
+  "parameter_count": 7000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 7700000000,
+  "minimum_ram_gb": 12.59,
+  "recommended_ram_gb": 15.11,
+  "minimum_vram_gb": 8.85,
+  "recommended_vram_gb": 12.59,
+  "minimum_disk_free_gb": 14.24,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "openchat:7b-v3.5-0106-q8_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/openchat/tags",
+    "retrieved_at": "2026-08-01T11:57:35Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 12.59,
+    "recommended_system_ram_gb": 15.11,
+    "min_vram_gb": 8.85,
+    "recommended_vram_gb": 12.59,
+    "min_disk_gb": 14.24
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

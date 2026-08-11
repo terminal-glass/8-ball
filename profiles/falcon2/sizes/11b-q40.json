@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "falcon2",
+  "size_slug": "11b-q40",
+  "ollama_ref": "falcon2:11b-q4_0",
+  "parameter_count": 11000000000,
+  "quantization": "q4_0",
+  "download_size_bytes": 6400000000,
+  "minimum_ram_gb": 12.25,
+  "recommended_ram_gb": 14.7,
+  "minimum_vram_gb": 7.36,
+  "recommended_vram_gb": 12.25,
+  "minimum_disk_free_gb": 12.68,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "falcon2:11b-q4_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/falcon2/tags",
+    "retrieved_at": "2026-08-01T11:53:27Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 12.25,
+    "recommended_system_ram_gb": 14.7,
+    "min_vram_gb": 7.36,
+    "recommended_vram_gb": 12.25,
+    "min_disk_gb": 12.68
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nous-hermes2",
+  "size_slug": "10.7b-solar-fp16",
+  "ollama_ref": "nous-hermes2:10.7b-solar-fp16",
+  "parameter_count": 10700000000,
+  "quantization": "fp16",
+  "download_size_bytes": 21000000000,
+  "minimum_ram_gb": 28.95,
+  "recommended_ram_gb": 34.74,
+  "minimum_vram_gb": 24.15,
+  "recommended_vram_gb": 28.95,
+  "minimum_disk_free_gb": 30.2,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "nous-hermes2:10.7b-solar-fp16",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nous-hermes2/tags",
+    "retrieved_at": "2026-08-01T11:57:19Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 28.95,
+    "recommended_system_ram_gb": 34.74,
+    "min_vram_gb": 24.15,
+    "recommended_vram_gb": 28.95,
+    "min_disk_gb": 30.2
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

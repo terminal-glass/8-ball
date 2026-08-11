@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "llama3-chatqa",
+  "size_slug": "70b-v1.5",
+  "ollama_ref": "llama3-chatqa:70b-v1.5",
+  "parameter_count": 70000000000,
+  "quantization": null,
+  "download_size_bytes": 40000000000,
+  "minimum_ram_gb": 67.85,
+  "recommended_ram_gb": 81.42,
+  "minimum_vram_gb": 46.0,
+  "recommended_vram_gb": 67.85,
+  "minimum_disk_free_gb": 53.0,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "llama3-chatqa:70b-v1.5",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama3-chatqa/tags",
+    "retrieved_at": "2026-08-01T11:55:16Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 67.85,
+    "recommended_system_ram_gb": 81.42,
+    "min_vram_gb": 46.0,
+    "recommended_vram_gb": 67.85,
+    "min_disk_gb": 53.0
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

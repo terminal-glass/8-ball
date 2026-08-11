@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3.5",
+  "size_slug": "27b-coding-mxfp8",
+  "ollama_ref": "qwen3.5:27b-coding-mxfp8",
+  "parameter_count": 27000000000,
+  "quantization": "mxfp8",
+  "download_size_bytes": 31000000000,
+  "minimum_ram_gb": 45.14,
+  "recommended_ram_gb": 54.16,
+  "minimum_vram_gb": 35.65,
+  "recommended_vram_gb": 45.14,
+  "minimum_disk_free_gb": 42.2,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "qwen3.5:27b-coding-mxfp8",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3.5/tags",
+    "retrieved_at": "2026-08-01T11:58:39Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 45.14,
+    "recommended_system_ram_gb": 54.16,
+    "min_vram_gb": 35.65,
+    "recommended_vram_gb": 45.14,
+    "min_disk_gb": 42.2
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

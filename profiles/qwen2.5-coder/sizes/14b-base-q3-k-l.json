@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen2.5-coder",
+  "size_slug": "14b-base-q3-k-l",
+  "ollama_ref": "qwen2.5-coder:14b-base-q3_K_L",
+  "parameter_count": 14000000000,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 7900000000,
+  "minimum_ram_gb": 14.83,
+  "recommended_ram_gb": 17.8,
+  "minimum_vram_gb": 9.08,
+  "recommended_vram_gb": 14.83,
+  "minimum_disk_free_gb": 14.48,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "qwen2.5-coder:14b-base-q3_K_L",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen2.5-coder/tags",
+    "retrieved_at": "2026-08-01T11:58:21Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 14.83,
+    "recommended_system_ram_gb": 17.8,
+    "min_vram_gb": 9.08,
+    "recommended_vram_gb": 14.83,
+    "min_disk_gb": 14.48
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

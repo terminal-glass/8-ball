@@ -9,7 +9,6 @@ Reads normalized catalog data and AGENTS hardware CSVs, then emits:
 """
 from __future__ import annotations
 
-import csv
 import json
 import re
 import shutil
@@ -20,9 +19,16 @@ from pathlib import Path
 from typing import Any
 
 import importlib.util
-import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+_C10_INVENTORY_PATH = REPO_ROOT / "scripts" / "c10_agents_inventory.py"
+_INV_SPEC = importlib.util.spec_from_file_location("c10_agents_inventory", _C10_INVENTORY_PATH)
+if _INV_SPEC is None or _INV_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_INVENTORY_PATH}")
+c10_agents_inventory = importlib.util.module_from_spec(_INV_SPEC)
+sys.modules[_INV_SPEC.name] = c10_agents_inventory
+_INV_SPEC.loader.exec_module(c10_agents_inventory)
+
 _C10_COMMON_PATH = REPO_ROOT / "scripts" / "c10_common.py"
 _SPEC = importlib.util.spec_from_file_location("c10_common", _C10_COMMON_PATH)
 if _SPEC is None or _SPEC.loader is None:
@@ -636,18 +642,34 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
 
 
 def generate() -> dict[str, Any]:
+    inventory_rows = c10_agents_inventory.inventory_agents_tree(
+        load_json=load_json,
+        load_csv_rows=c10_common.load_csv_rows,
+    )
+    c10_agents_inventory.write_agent_inventory(inventory_rows, write_json=write_json)
+
     tags = load_json(REPO_ROOT / "data/normalized/tags.json")
     hardware_profiles = load_hardware_profiles()
     cloud_defaults = load_cloud_plan_defaults()
     model_pages = build_model_pages(tags)
     gaps: list[str] = []
+    conflict_count = 0
+    unknown_limit_count = 0
 
     if not (REPO_ROOT / "AGENTS/data-science/ollama-mapping").exists():
         gaps.append("AGENTS/data-science/ollama-mapping/ not present; used data/normalized/ and AGENTS/data-science/ollama-mapping/P1-P4 instead.")
 
+    p4_variants = c10_agents_inventory.p4_deployment_variant_count(load_json=load_json)
+    model_size_count = sum(len(p["sizes"]) for p in model_pages.values())
+    if p4_variants is not None and p4_variants != model_size_count:
+        gaps.append(
+            f"P4 deployment variant count ({p4_variants}) differs from normalized tag count ({model_size_count})"
+        )
+
     provider_dir = PROFILES_DIR / "provider-assumptions"
     provider_dir.mkdir(parents=True, exist_ok=True)
     lane_hardware_map: dict[str, dict[str, Any]] = {}
+    lane_fit_lookup: dict[tuple[str, str, str], str] = {}
     for lane in INSTALL_LANES:
         hw = lane_hardware(lane, hardware_profiles, cloud_defaults)
         lane_hardware_map[lane["lane_path"]] = hw
@@ -659,6 +681,7 @@ def generate() -> dict[str, Any]:
         copy_install_lane(lane)
 
     profile_leaf_count = 0
+    profile_stage_payload_count = 0
     for model_slug, page in sorted(model_pages.items()):
         write_json(PROFILES_DIR / f"{model_slug}.json", page)
         for lane in INSTALL_LANES:
@@ -675,8 +698,26 @@ def generate() -> dict[str, Any]:
             }
             for filename, stage_key in mapping.items():
                 stage = "lane" if stage_key == "lane" else stage_key
-                write_json(leaf / filename, build_stage_file(stage, lane, hw, model_slug, page["sizes"]))
+                payload = build_stage_file(stage, lane, hw, model_slug, page["sizes"])
+                write_json(leaf / filename, payload)
                 profile_leaf_count += 1
+                if filename != "lane.json":
+                    profile_stage_payload_count += 1
+                if filename == "lane.json":
+                    for row in payload.get("size_fit", []):
+                        lane_fit_lookup[(model_slug, row["ollama_ref"], lane["lane_path"])] = row["fit_status"]
+
+    c10_agents_inventory.write_size_records(model_pages, write_json=write_json)
+    normalized_records, _matrix_rows = c10_agents_inventory.write_matrix_index(
+        model_pages, INSTALL_LANES, lane_fit_lookup
+    )
+    c10_agents_inventory.write_normalized_jsonl(normalized_records)
+
+    for page in model_pages.values():
+        for size in page["sizes"]:
+            est = size.get("estimated") or {}
+            if est.get("min_system_ram_gb") is None:
+                unknown_limit_count += 1
 
     write_inventory(model_pages, gaps)
 
@@ -694,12 +735,43 @@ def generate() -> dict[str, Any]:
             )
     write_json(PROFILES_DIR / "c10-index.json", {"generated_at": utc_now(), "rows": index_rows})
 
+    model_count = len(model_pages)
+    profile_lane_count = model_count * len(INSTALL_LANES)
+    matrix_row_count = len(normalized_records)
+
+    c10_agents_inventory.write_glassball_report(
+        inventory_rows=inventory_rows,
+        model_count=model_count,
+        model_size_count=model_size_count,
+        profile_lane_count=profile_lane_count,
+        matrix_row_count=matrix_row_count,
+        stage_payload_count=profile_stage_payload_count,
+        conflict_count=conflict_count,
+        unknown_limit_count=unknown_limit_count,
+        skipped=gaps,
+        p4_variants=p4_variants,
+    )
+
+    # Refresh inventory after report file is written under AGENTS/.
+    inventory_rows = c10_agents_inventory.inventory_agents_tree(
+        load_json=load_json,
+        load_csv_rows=c10_common.load_csv_rows,
+    )
+    c10_agents_inventory.write_agent_inventory(inventory_rows, write_json=write_json)
+
     return {
-        "model_count": len(model_pages),
-        "size_count": sum(len(p["sizes"]) for p in model_pages.values()),
+        "agents_files_inspected": len(inventory_rows),
+        "agents_files_parsed": sum(1 for r in inventory_rows if r.get("parse_status") == "parsed"),
+        "model_count": model_count,
+        "size_count": model_size_count,
         "install_lane_count": len(INSTALL_LANES),
         "profile_leaf_count": profile_leaf_count,
+        "profile_lane_count": profile_lane_count,
+        "profile_stage_payload_count": profile_stage_payload_count,
+        "matrix_row_count": matrix_row_count,
         "provider_assumption_count": len(INSTALL_LANES),
+        "records_with_unknown_limits": unknown_limit_count,
+        "records_with_conflicts": conflict_count,
         "data_gaps": gaps,
     }
 

@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "command-r-plus",
+  "size_slug": "104b082024-q51",
+  "ollama_ref": "command-r-plus:104b-08-2024-q5_1",
+  "parameter_count": 104000000000,
+  "quantization": "q5_1",
+  "download_size_bytes": 78000000000,
+  "minimum_ram_gb": 121.32,
+  "recommended_ram_gb": 145.59,
+  "minimum_vram_gb": 89.7,
+  "recommended_vram_gb": 121.32,
+  "minimum_disk_free_gb": 98.6,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "command-r-plus:104b-08-2024-q5_1",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/command-r-plus/tags",
+    "retrieved_at": "2026-08-01T11:52:14Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 121.32,
+    "recommended_system_ram_gb": 145.59,
+    "min_vram_gb": 89.7,
+    "recommended_vram_gb": 121.32,
+    "min_disk_gb": 98.6
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "qwen3-vl",
+  "size_slug": "8b-thinking-q80",
+  "ollama_ref": "qwen3-vl:8b-thinking-q8_0",
+  "parameter_count": 8000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 9800000000,
+  "minimum_ram_gb": 15.29,
+  "recommended_ram_gb": 18.35,
+  "minimum_vram_gb": 11.27,
+  "recommended_vram_gb": 15.29,
+  "minimum_disk_free_gb": 16.76,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "qwen3-vl:8b-thinking-q8_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen3-vl/tags",
+    "retrieved_at": "2026-08-01T11:58:37Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 15.29,
+    "recommended_system_ram_gb": 18.35,
+    "min_vram_gb": 11.27,
+    "recommended_vram_gb": 15.29,
+    "min_disk_gb": 16.76
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

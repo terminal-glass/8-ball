@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "phi4-reasoning",
+  "size_slug": "14b-q80",
+  "ollama_ref": "phi4-reasoning:14b-q8_0",
+  "parameter_count": 14000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 17000000000,
+  "minimum_ram_gb": 25.3,
+  "recommended_ram_gb": 30.36,
+  "minimum_vram_gb": 19.55,
+  "recommended_vram_gb": 25.3,
+  "minimum_disk_free_gb": 25.4,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "phi4-reasoning:14b-q8_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/phi4-reasoning/tags",
+    "retrieved_at": "2026-08-01T11:58:07Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 25.3,
+    "recommended_system_ram_gb": 30.36,
+    "min_vram_gb": 19.55,
+    "recommended_vram_gb": 25.3,
+    "min_disk_gb": 25.4
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

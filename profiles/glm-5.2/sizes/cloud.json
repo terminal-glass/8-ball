@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "glm-5.2",
+  "size_slug": "cloud",
+  "ollama_ref": "glm-5.2:cloud",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": null,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "glm-5.2:cloud",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/glm-5.2/tags",
+    "retrieved_at": "2026-08-01T11:53:54Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": null,
+    "recommended_system_ram_gb": null,
+    "min_vram_gb": null,
+    "recommended_vram_gb": null,
+    "min_disk_gb": null
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

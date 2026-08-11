@@ -2,6 +2,7 @@
 """Validate C10 profiles and install lane matrix."""
 from __future__ import annotations
 
+import csv
 import json
 import re
 import subprocess
@@ -58,6 +59,14 @@ PROVIDER_FILES = (
     "cloud-aws-lightsail-gpu.json",
 )
 
+ALLOWED_ROOT_JSON = frozenset(
+    {
+        "c10-index.json",
+        "manifest.json",
+        "_agent-input-inventory.json",
+    }
+)
+
 LANE_ROOTS = {"ubuntu", "mac", "windows", "cloud"}
 OLLAMA_REF_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*:[^\s]+$", re.I)
 C10_NAME_RE = re.compile(r"c10|10-b", re.I)
@@ -66,7 +75,7 @@ C10_NAME_RE = re.compile(r"c10|10-b", re.I)
 def is_size_directory(path: Path, model_slug: str) -> bool:
     if not path.is_dir():
         return False
-    if path.name in LANE_ROOTS:
+    if path.name in LANE_ROOTS or path.name == "sizes":
         return False
     return path.parent == PROFILES_DIR / model_slug
 
@@ -143,6 +152,23 @@ def validate_provider_assumption(payload: dict, path: Path, errors: list[str]) -
             fail(errors, f"AWS Lightsail GPU assumption must not claim CUDA before runtime probe: {path}")
 
 
+def validate_glassball_artifacts(errors: list[str], stats: dict) -> None:
+    for name in ("_agent-input-inventory.json", "_agent-input-inventory.csv", "_agent-normalized-records.jsonl"):
+        path = PROFILES_DIR / name
+        if not path.is_file():
+            fail(errors, f"Missing Glass Ball artifact: profiles/{name}")
+    index_csv = PROFILES_DIR / "index.csv"
+    if not index_csv.is_file():
+        fail(errors, "Missing profiles/index.csv matrix index")
+        return
+    with index_csv.open(encoding="utf-8", newline="") as handle:
+        row_count = sum(1 for _ in csv.DictReader(handle))
+    stats["matrix_row_count"] = row_count
+    expected = stats.get("sizes", 0) * len(INSTALL_LANES)
+    if expected and row_count != expected:
+        fail(errors, f"index.csv row count {row_count} != expected {expected} (sizes × lanes)")
+
+
 def validate(errors: list[str]) -> dict:
     stats = {
         "model_pages": 0,
@@ -152,11 +178,17 @@ def validate(errors: list[str]) -> dict:
         "provider_assumptions": 0,
         "shell_checked": 0,
         "index_rows": 0,
+        "matrix_row_count": 0,
+        "profile_stage_payload_files": 0,
     }
 
     validate_registered_agents_csvs(errors)
 
-    model_pages = sorted(p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"})
+    model_pages = sorted(
+        p
+        for p in PROFILES_DIR.glob("*.json")
+        if p.name not in ALLOWED_ROOT_JSON and not p.name.startswith("_")
+    )
     stats["model_pages"] = len(model_pages)
     if not model_pages:
         fail(errors, "No profiles/<model-slug>.json model pages found")
@@ -209,11 +241,15 @@ def validate(errors: list[str]) -> dict:
                 if not path.is_file():
                     fail(errors, f"Missing stage file: {path}")
                     continue
+                if stage_file.endswith(".sh") or stage_file.endswith(".ps1"):
+                    fail(errors, f"Incompatible shell stage file must not exist: {path}")
                 payload = load_json(path)
                 if stage_file == "lane.json":
                     validate_lane_fit_semantics(payload, path, errors)
-                if stage_file == "4-ram.json":
+                elif stage_file == "4-ram.json":
                     validate_ram_fit_semantics(payload, path, errors)
+                if stage_file != "lane.json":
+                    stats["profile_stage_payload_files"] += 1
                 if "applicable" in payload and payload["applicable"] is False and not payload.get("reason"):
                     fail(errors, f"Non-applicable stage missing reason: {path}")
 
@@ -249,6 +285,15 @@ def validate(errors: list[str]) -> dict:
             rel = row.get(key)
             if rel and not (REPO_ROOT / rel).exists():
                 fail(errors, f"Index points to missing file: {rel}")
+
+    validate_glassball_artifacts(errors, stats)
+
+    expected_stage_files = stats["model_pages"] * len(INSTALL_LANES) * 5
+    if stats["profile_stage_payload_files"] and stats["profile_stage_payload_files"] != expected_stage_files:
+        fail(
+            errors,
+            f"Stage payload count {stats['profile_stage_payload_files']} != expected {expected_stage_files}",
+        )
 
     root_trial = REPO_ROOT / "trial-install.sh"
     if not root_trial.is_file():

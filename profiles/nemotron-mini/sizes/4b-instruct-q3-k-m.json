@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "nemotron-mini",
+  "size_slug": "4b-instruct-q3-k-m",
+  "ollama_ref": "nemotron-mini:4b-instruct-q3_K_M",
+  "parameter_count": 4000000000,
+  "quantization": "q3_K_M",
+  "download_size_bytes": 2300000000,
+  "minimum_ram_gb": 5.52,
+  "recommended_ram_gb": 6.62,
+  "minimum_vram_gb": 2.64,
+  "recommended_vram_gb": 5.52,
+  "minimum_disk_free_gb": 7.76,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "nemotron-mini:4b-instruct-q3_K_M",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nemotron-mini/tags",
+    "retrieved_at": "2026-08-01T11:56:56Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 5.52,
+    "recommended_system_ram_gb": 6.62,
+    "min_vram_gb": 2.64,
+    "recommended_vram_gb": 5.52,
+    "min_disk_gb": 7.76
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

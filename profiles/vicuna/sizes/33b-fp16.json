@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "vicuna",
+  "size_slug": "33b-fp16",
+  "ollama_ref": "vicuna:33b-fp16",
+  "parameter_count": 33000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 65000000000,
+  "minimum_ram_gb": 85.96,
+  "recommended_ram_gb": 103.15,
+  "minimum_vram_gb": 74.75,
+  "recommended_vram_gb": 85.96,
+  "minimum_disk_free_gb": 83.0,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "vicuna:33b-fp16",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/vicuna/tags",
+    "retrieved_at": "2026-08-01T11:59:46Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 85.96,
+    "recommended_system_ram_gb": 103.15,
+    "min_vram_gb": 74.75,
+    "recommended_vram_gb": 85.96,
+    "min_disk_gb": 83.0
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

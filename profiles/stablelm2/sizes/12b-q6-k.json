@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "stablelm2",
+  "size_slug": "12b-q6-k",
+  "ollama_ref": "stablelm2:12b-q6_K",
+  "parameter_count": 12000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 10000000000,
+  "minimum_ram_gb": 16.67,
+  "recommended_ram_gb": 20.01,
+  "minimum_vram_gb": 11.5,
+  "recommended_vram_gb": 16.67,
+  "minimum_disk_free_gb": 17.0,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "stablelm2:12b-q6_K",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/stablelm2/tags",
+    "retrieved_at": "2026-08-01T11:59:27Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 16.67,
+    "recommended_system_ram_gb": 20.01,
+    "min_vram_gb": 11.5,
+    "recommended_vram_gb": 16.67,
+    "min_disk_gb": 17.0
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

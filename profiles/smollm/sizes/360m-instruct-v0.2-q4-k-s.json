@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "smollm",
+  "size_slug": "360m-instruct-v0.2-q4-k-s",
+  "ollama_ref": "smollm:360m-instruct-v0.2-q4_K_S",
+  "parameter_count": 360000000,
+  "quantization": "q4_K_S",
+  "download_size_bytes": 260000000,
+  "minimum_ram_gb": 2.13,
+  "recommended_ram_gb": 2.55,
+  "minimum_vram_gb": 0.3,
+  "recommended_vram_gb": 2.13,
+  "minimum_disk_free_gb": 5.31,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "smollm:360m-instruct-v0.2-q4_K_S",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/smollm/tags",
+    "retrieved_at": "2026-08-01T11:59:04Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 2.13,
+    "recommended_system_ram_gb": 2.55,
+    "min_vram_gb": 0.3,
+    "recommended_vram_gb": 2.13,
+    "min_disk_gb": 5.31
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

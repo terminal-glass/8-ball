@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "wizardlm",
+  "size_slug": "13b-llama2-q4-k-m",
+  "ollama_ref": "wizardlm:13b-llama2-q4_K_M",
+  "parameter_count": 13000000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 7900000000,
+  "minimum_ram_gb": 14.55,
+  "recommended_ram_gb": 17.46,
+  "minimum_vram_gb": 9.08,
+  "recommended_vram_gb": 14.55,
+  "minimum_disk_free_gb": 14.48,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "wizardlm:13b-llama2-q4_K_M",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizardlm/tags",
+    "retrieved_at": "2026-08-01T11:59:57Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 14.55,
+    "recommended_system_ram_gb": 17.46,
+    "min_vram_gb": 9.08,
+    "recommended_vram_gb": 14.55,
+    "min_disk_gb": 14.48
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

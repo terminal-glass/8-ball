@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "deepcoder",
+  "size_slug": "14b",
+  "ollama_ref": "deepcoder:14b",
+  "parameter_count": 14000000000,
+  "quantization": null,
+  "download_size_bytes": 9000000000,
+  "minimum_ram_gb": 16.1,
+  "recommended_ram_gb": 19.32,
+  "minimum_vram_gb": 10.35,
+  "recommended_vram_gb": 16.1,
+  "minimum_disk_free_gb": 15.8,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "deepcoder:14b",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepcoder/tags",
+    "retrieved_at": "2026-08-01T11:52:23Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 16.1,
+    "recommended_system_ram_gb": 19.32,
+    "min_vram_gb": 10.35,
+    "recommended_vram_gb": 16.1,
+    "min_disk_gb": 15.8
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "gemma3",
+  "size_slug": "1b",
+  "ollama_ref": "gemma3:1b",
+  "parameter_count": 1000000000,
+  "quantization": null,
+  "download_size_bytes": 815000000,
+  "minimum_ram_gb": 2.95,
+  "recommended_ram_gb": 3.54,
+  "minimum_vram_gb": 0.94,
+  "recommended_vram_gb": 2.95,
+  "minimum_disk_free_gb": 5.98,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "gemma3:1b",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/gemma3/tags",
+    "retrieved_at": "2026-08-01T11:53:43Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 2.95,
+    "recommended_system_ram_gb": 3.54,
+    "min_vram_gb": 0.94,
+    "recommended_vram_gb": 2.95,
+    "min_disk_gb": 5.98
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

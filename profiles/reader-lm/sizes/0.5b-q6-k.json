@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "reader-lm",
+  "size_slug": "0.5b-q6-k",
+  "ollama_ref": "reader-lm:0.5b-q6_K",
+  "parameter_count": 500000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 506000000,
+  "minimum_ram_gb": 2.45,
+  "recommended_ram_gb": 2.94,
+  "minimum_vram_gb": 0.58,
+  "recommended_vram_gb": 2.45,
+  "minimum_disk_free_gb": 5.61,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "reader-lm:0.5b-q6_K",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/reader-lm/tags",
+    "retrieved_at": "2026-08-01T11:58:48Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 2.45,
+    "recommended_system_ram_gb": 2.94,
+    "min_vram_gb": 0.58,
+    "recommended_vram_gb": 2.45,
+    "min_disk_gb": 5.61
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

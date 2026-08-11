@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "zephyr",
+  "size_slug": "141b-v0.1-q40",
+  "ollama_ref": "zephyr:141b-v0.1-q4_0",
+  "parameter_count": 141000000000,
+  "quantization": "q4_0",
+  "download_size_bytes": 80000000000,
+  "minimum_ram_gb": 134.26,
+  "recommended_ram_gb": 161.11,
+  "minimum_vram_gb": 92.0,
+  "recommended_vram_gb": 134.26,
+  "minimum_disk_free_gb": 101.0,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "zephyr:141b-v0.1-q4_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/zephyr/tags",
+    "retrieved_at": "2026-08-01T12:00:16Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 134.26,
+    "recommended_system_ram_gb": 161.11,
+    "min_vram_gb": 92.0,
+    "recommended_vram_gb": 134.26,
+    "min_disk_gb": 101.0
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

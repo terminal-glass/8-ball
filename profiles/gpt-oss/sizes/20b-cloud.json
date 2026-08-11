@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "gpt-oss",
+  "size_slug": "20b-cloud",
+  "ollama_ref": "gpt-oss:20b-cloud",
+  "parameter_count": 20000000000,
+  "quantization": null,
+  "download_size_bytes": 65000000000,
+  "minimum_ram_gb": 82.22,
+  "recommended_ram_gb": 98.67,
+  "minimum_vram_gb": 74.75,
+  "recommended_vram_gb": 82.22,
+  "minimum_disk_free_gb": 83.0,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "gpt-oss:20b-cloud",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/gpt-oss/tags",
+    "retrieved_at": "2026-08-01T11:54:03Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 82.22,
+    "recommended_system_ram_gb": 98.67,
+    "min_vram_gb": 74.75,
+    "recommended_vram_gb": 82.22,
+    "min_disk_gb": 83.0
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

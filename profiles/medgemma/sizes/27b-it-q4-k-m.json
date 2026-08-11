@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "medgemma",
+  "size_slug": "27b-it-q4-k-m",
+  "ollama_ref": "medgemma:27b-it-q4_K_M",
+  "parameter_count": 27000000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 17000000000,
+  "minimum_ram_gb": 29.04,
+  "recommended_ram_gb": 34.84,
+  "minimum_vram_gb": 19.55,
+  "recommended_vram_gb": 29.04,
+  "minimum_disk_free_gb": 25.4,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "medgemma:27b-it-q4_K_M",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/medgemma/tags",
+    "retrieved_at": "2026-08-01T11:55:50Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 29.04,
+    "recommended_system_ram_gb": 34.84,
+    "min_vram_gb": 19.55,
+    "recommended_vram_gb": 29.04,
+    "min_disk_gb": 25.4
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

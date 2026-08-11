@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "shieldgemma",
+  "size_slug": "2b-q3-k-s",
+  "ollama_ref": "shieldgemma:2b-q3_K_S",
+  "parameter_count": 2000000000,
+  "quantization": "q3_K_S",
+  "download_size_bytes": 1400000000,
+  "minimum_ram_gb": 3.91,
+  "recommended_ram_gb": 4.69,
+  "minimum_vram_gb": 1.61,
+  "recommended_vram_gb": 3.91,
+  "minimum_disk_free_gb": 6.68,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "shieldgemma:2b-q3_K_S",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/shieldgemma/tags",
+    "retrieved_at": "2026-08-01T11:59:00Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 3.91,
+    "recommended_system_ram_gb": 4.69,
+    "min_vram_gb": 1.61,
+    "recommended_vram_gb": 3.91,
+    "min_disk_gb": 6.68
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

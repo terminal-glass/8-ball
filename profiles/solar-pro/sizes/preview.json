@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "solar-pro",
+  "size_slug": "preview",
+  "ollama_ref": "solar-pro:preview",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 13000000000,
+  "minimum_ram_gb": 16.67,
+  "recommended_ram_gb": 20.01,
+  "minimum_vram_gb": 14.95,
+  "recommended_vram_gb": 16.67,
+  "minimum_disk_free_gb": 20.6,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "solar-pro:preview",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/solar-pro/tags",
+    "retrieved_at": "2026-08-01T11:59:16Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 16.67,
+    "recommended_system_ram_gb": 20.01,
+    "min_vram_gb": 14.95,
+    "recommended_vram_gb": 16.67,
+    "min_disk_gb": 20.6
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

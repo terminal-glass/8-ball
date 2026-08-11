@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "starcoder",
+  "size_slug": "1b-base-q41",
+  "ollama_ref": "starcoder:1b-base-q4_1",
+  "parameter_count": 1000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 797000000,
+  "minimum_ram_gb": 2.93,
+  "recommended_ram_gb": 3.51,
+  "minimum_vram_gb": 0.92,
+  "recommended_vram_gb": 2.93,
+  "minimum_disk_free_gb": 5.96,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "starcoder:1b-base-q4_1",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/starcoder/tags",
+    "retrieved_at": "2026-08-01T11:59:30Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 2.93,
+    "recommended_system_ram_gb": 3.51,
+    "min_vram_gb": 0.92,
+    "recommended_vram_gb": 2.93,
+    "min_disk_gb": 5.96
+  },
+  "generated_at": "2026-08-11T09:15:12Z"
+}

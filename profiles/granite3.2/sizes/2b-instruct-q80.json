@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "granite3.2",
+  "size_slug": "2b-instruct-q80",
+  "ollama_ref": "granite3.2:2b-instruct-q8_0",
+  "parameter_count": 2000000000,
+  "quantization": "q8_0",
+  "download_size_bytes": 2700000000,
+  "minimum_ram_gb": 5.4,
+  "recommended_ram_gb": 6.49,
+  "minimum_vram_gb": 3.1,
+  "recommended_vram_gb": 5.4,
+  "minimum_disk_free_gb": 8.24,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "granite3.2:2b-instruct-q8_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/granite3.2/tags",
+    "retrieved_at": "2026-08-01T11:54:23Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 5.4,
+    "recommended_system_ram_gb": 6.49,
+    "min_vram_gb": 3.1,
+    "recommended_vram_gb": 5.4,
+    "min_disk_gb": 8.24
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "mistral-large-3",
+  "size_slug": "675b-cloud",
+  "ollama_ref": "mistral-large-3:675b-cloud",
+  "parameter_count": 675000000000,
+  "quantization": null,
+  "download_size_bytes": null,
+  "minimum_ram_gb": null,
+  "recommended_ram_gb": null,
+  "minimum_vram_gb": null,
+  "recommended_vram_gb": null,
+  "minimum_disk_free_gb": null,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "mistral-large-3:675b-cloud",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral-large-3/tags",
+    "retrieved_at": "2026-08-01T11:56:20Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": null,
+    "recommended_system_ram_gb": null,
+    "min_vram_gb": null,
+    "recommended_vram_gb": null,
+    "min_disk_gb": null
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}

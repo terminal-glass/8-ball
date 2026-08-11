@@ -1,0 +1,30 @@
+{
+  "schema_version": "c10.size.v1",
+  "model_slug": "dolphincoder",
+  "size_slug": "7b-starcoder2-q40",
+  "ollama_ref": "dolphincoder:7b-starcoder2-q4_0",
+  "parameter_count": 7000000000,
+  "quantization": "q4_0",
+  "download_size_bytes": 4200000000,
+  "minimum_ram_gb": 8.57,
+  "recommended_ram_gb": 10.28,
+  "minimum_vram_gb": 4.83,
+  "recommended_vram_gb": 8.57,
+  "minimum_disk_free_gb": 10.04,
+  "source_kind": "normalized_catalog_tag",
+  "source_path": "data/normalized/tags.json",
+  "source_locator": "dolphincoder:7b-starcoder2-q4_0",
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/dolphincoder/tags",
+    "retrieved_at": "2026-08-01T11:53:11Z"
+  },
+  "estimated": {
+    "min_system_ram_gb": 8.57,
+    "recommended_system_ram_gb": 10.28,
+    "min_vram_gb": 4.83,
+    "recommended_vram_gb": 8.57,
+    "min_disk_gb": 10.04
+  },
+  "generated_at": "2026-08-11T09:15:11Z"
+}
