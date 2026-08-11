@@ -4,7 +4,6 @@ import importlib.util
 import json
 import subprocess
 import sys
-from pathlib import Path
 
 import pytest
 
@@ -108,6 +107,7 @@ def test_git_tracks_canonical_lane_payloads_when_staged() -> None:
             ignore = subprocess.run(
                 ["git", "check-ignore", "-q", "--", rel],
                 cwd=REPO_ROOT,
+                check=False,
             ).returncode
             assert ignore != 0, f"Canonical payload is gitignored: {rel}"
 
