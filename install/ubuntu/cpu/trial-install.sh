@@ -8,6 +8,14 @@ EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cpu.json"
 
 EIGHTBALL_INSTALL_PROFILE="ubuntu/cpu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify Debian-family host identity
+- Would orchestrate foundation (8.1), model ladder (8.2), and MOTD (8.3) during a real install (requires root)"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/cpu}"
@@ -35,7 +43,8 @@ EOF
 }
 
 log() {
-  printf '[trial-install] %s\n' "$*"
+  printf '[trial-install] %s
+' "$*"
 }
 
 require_root() {
@@ -121,6 +130,7 @@ run_step() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   require_root
   install -d -m 0755 "${PHILOSOPHER_ROOT}"

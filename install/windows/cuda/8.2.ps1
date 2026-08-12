@@ -1,9 +1,8 @@
 # 8.2.ps1 — Windows Happy Nerds model trial ladder with local inference verification (CUDA lane).
 #Requires -Version 5.1
-param(
-    [string]$Model,
-    [switch]$Help
-)
+param([string]$Model,
+    [switch]$Help,
+    [switch]$Preflight)
 
 $ErrorActionPreference = 'Stop'
 $script:WinTargetLane = 'windows/cuda'
@@ -12,11 +11,12 @@ $script:WinLaneMode = 'cuda'
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
+. (Join-Path $ScriptDir '..\..\shared\installer-smoke-contract.ps1')
+Test-InstallerSmokeFlags -Help:$Help -Preflight:$Preflight -ScriptName '8.2.ps1' -Lane $script:WinTargetLane -Checks @'
+- Verify runtime observation and loopback Ollama API availability
+- Would run the Happy Nerds trial ladder during a real install
+'@ -LaneMode 'cuda'
 
-if ($Help) {
-    Write-Host 'Usage: .\8.2.ps1 [-Model OLLAMA_TAG]'
-    exit 0
-}
 
 Assert-NonElevated
 Assert-NativeWindows

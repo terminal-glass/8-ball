@@ -12,7 +12,15 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../lib/macos-common.sh
 source "${SCRIPT_DIR}/../lib/macos-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.1.sh"
+INSTALLER_SMOKE_PLATFORM="mac"
+INSTALLER_SMOKE_CHECKS="- Verify macOS version, architecture, and loopback Ollama API settings
+- Would observe Ollama app lifecycle without installing during --preflight"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 main() {
+  installer_smoke_prologue "$@"
   mac_refuse_root
   mac_require_darwin
   mac_resolve_eightball_root

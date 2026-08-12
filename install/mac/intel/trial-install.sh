@@ -12,6 +12,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../lib/macos-common.sh
 source "${SCRIPT_DIR}/../lib/macos-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
+INSTALLER_SMOKE_PLATFORM="mac"
+INSTALLER_SMOKE_CHECKS="- Verify macOS version and lane architecture
+- Run foundation (8.1), model ladder (8.2), and optional completion card (8.3)
+- Does not install software during --preflight"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 REQUESTED_MODEL=""
 SKIP_MOTD=0
 MANIFEST=""
@@ -82,6 +90,7 @@ run_step() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   mac_refuse_root
   mac_require_darwin

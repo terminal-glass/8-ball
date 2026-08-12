@@ -7,12 +7,21 @@ EIGHTBALL_INSTALL_LANE="cloud/digitalocean/cpu-droplet"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+INSTALLER_SMOKE_SCRIPT_NAME="8.3.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify MOTD template presence
+- Would install /etc/update-motd.d helper and remember script during a real install (requires root)"
+# shellcheck source=../../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../../shared/installer-smoke-contract.sh"
+
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 MOTD_TEMPLATE="${SCRIPT_DIR}/assets/first-MOTD.txt"
 MOTD_TARGET="/etc/update-motd.d/99-8ball-trial"
 
 log() {
-  printf '[8.3] %s\n' "$*"
+  printf '[8.3] %s
+' "$*"
 }
 
 require_root() {
@@ -72,6 +81,7 @@ EOF
 }
 
 main() {
+  installer_smoke_prologue "$@"
   require_root
   install_remember_helper
   install_motd

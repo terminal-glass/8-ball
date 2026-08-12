@@ -1,5 +1,9 @@
 # 8.3.ps1 — Windows completion card and user-level status helper (CPU lane).
 #Requires -Version 5.1
+param(
+    [switch]$Help,
+    [switch]$Preflight
+)
 $ErrorActionPreference = 'Stop'
 $script:WinTargetLane = 'windows/cpu'
 $script:WinLogPrefix = '8.3'
@@ -7,6 +11,11 @@ $script:WinLogPrefix = '8.3'
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $MotdTemplate = Join-Path $ScriptDir 'assets\first-MOTD.txt'
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
+. (Join-Path $ScriptDir '..\..\shared\installer-smoke-contract.ps1')
+Test-InstallerSmokeFlags -Help:$Help -Preflight:$Preflight -ScriptName '8.3.ps1' -Lane $script:WinTargetLane -Checks @'
+- Verify completion card template
+- Would print MOTD and write user-level status helper during a real install
+'@ -LaneMode 'cpu'
 
 Assert-NonElevated
 Assert-NativeWindows

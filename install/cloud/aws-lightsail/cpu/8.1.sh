@@ -3,8 +3,17 @@
 # Install profile: aws-lightsail
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 EIGHTBALL_INSTALL_LANE="cloud/aws-lightsail/cpu"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-aws-lightsail-cpu.json"
+
+INSTALLER_SMOKE_SCRIPT_NAME="8.1.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify Debian-family host identity
+- Would install packages and Ollama and verify loopback API during a real install (requires root)"
+# shellcheck source=../../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../../shared/installer-smoke-contract.sh"
 
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
@@ -103,6 +112,7 @@ wait_for_ollama() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   require_root
   require_debian_family
   ensure_philosopher_root

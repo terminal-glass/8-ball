@@ -8,6 +8,14 @@ EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-aws-lightsail
 
 EIGHTBALL_INSTALL_PROFILE="cloud/aws-lightsail/cpu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+INSTALLER_SMOKE_SCRIPT_NAME="8.2.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify catalog manifest availability
+- Would run the Happy Nerds trial ladder with local inference checks during a real install"
+# shellcheck source=../../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../../shared/installer-smoke-contract.sh"
+
 REPO_ROOT=""
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 RESULT_FILE="${PHILOSOPHER_ROOT}/8ball-result.txt"
@@ -25,7 +33,8 @@ EOF
 }
 
 log() {
-  printf '[8.2] %s\n' "$*"
+  printf '[8.2] %s
+' "$*"
 }
 
 resolve_repo_root() {
@@ -216,6 +225,7 @@ EOF
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   require_manifest
   if ! curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then

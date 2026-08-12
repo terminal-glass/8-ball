@@ -1,11 +1,10 @@
 # trial-install.ps1 — public 8-BALL Windows trial installer (CUDA lane).
 #Requires -Version 5.1
-param(
-    [string]$Model,
+param([string]$Model,
     [string]$Manifest,
     [switch]$NoMotd,
-    [switch]$Help
-)
+    [switch]$Help,
+    [switch]$Preflight)
 
 $ErrorActionPreference = 'Stop'
 $script:WinTargetLane = 'windows/cuda'
@@ -14,6 +13,11 @@ $script:WinLaneMode = 'cuda'
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
+. (Join-Path $ScriptDir '..\..\shared\installer-smoke-contract.ps1')
+Test-InstallerSmokeFlags -Help:$Help -Preflight:$Preflight -ScriptName 'trial-install.ps1' -Lane $script:WinTargetLane -Checks @'
+- Verify native Windows CUDA host and user-level install root
+- Would require nvidia-smi evidence in 8.1 without installing drivers during --preflight
+'@ -LaneMode 'cuda'
 
 function Show-Usage {
     @'
@@ -29,7 +33,6 @@ Options:
 '@ | Write-Host
 }
 
-if ($Help) { Show-Usage; exit 0 }
 
 foreach ($name in @('8.1.ps1', '8.2.ps1', '8.3.ps1')) {
     if (-not (Test-Path -LiteralPath (Join-Path $ScriptDir $name))) {
