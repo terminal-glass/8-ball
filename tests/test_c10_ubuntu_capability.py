@@ -91,7 +91,7 @@ def test_lane_projection_covers_both_ubuntu_lanes() -> None:
         )
     )
     assert set(projection["lanes"]) == {"ubuntu/cpu", "ubuntu/cuda"}
-    for lane, entry in projection["lanes"].items():
+    for entry in projection["lanes"].values():
         assert entry["model_fit_proven"] is False
         assert entry["runtime_trial_required"] is True
         assert entry["provider"] is None
