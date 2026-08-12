@@ -1,0 +1,86 @@
+{
+  "schema_version": "c10.windows-lane-runtime-contract-projection.v1",
+  "canonical_lane_count": 2,
+  "lanes": {
+    "windows/cpu": {
+      "target_lane": "windows/cpu",
+      "observation_contract_path": "profiles/provider-compatibility/windows/runtime-observation-contract.json",
+      "lane_routing_category_id": "windows-lane-routing-cpu",
+      "host_topology_category_ids": [
+        "windows-host-kind-physical",
+        "windows-host-kind-hyperv-vm",
+        "windows-host-kind-vmware-vm",
+        "windows-host-kind-virtualbox-vm",
+        "windows-host-kind-other-vm",
+        "windows-host-kind-unknown"
+      ],
+      "gpu_reporting_category_ids": [
+        "windows-gpu-reporting-no-gpu-or-unknown",
+        "windows-gpu-reporting-gpu-present-unverified",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-under-8-gib",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-8-to-under-16-gib",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-16-to-under-24-gib",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-24-gib-or-more"
+      ],
+      "runtime_menu_band_ids": [
+        "windows-ram-band-under-4gib",
+        "windows-ram-band-4-to-8gib",
+        "windows-ram-band-8-to-12gib",
+        "windows-ram-band-12-to-24gib",
+        "windows-ram-band-24gib-plus"
+      ],
+      "disk_gate_candidate_refs": [
+        "qwen3:14b",
+        "qwen3:8b",
+        "qwen3:4b",
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "notes": "Lane projection for native Windows hosts only. WSL is excluded. Does not multiply the C10 model-size index."
+    },
+    "windows/cuda": {
+      "target_lane": "windows/cuda",
+      "observation_contract_path": "profiles/provider-compatibility/windows/runtime-observation-contract.json",
+      "lane_routing_category_id": "windows-lane-routing-cuda",
+      "host_topology_category_ids": [
+        "windows-host-kind-physical",
+        "windows-host-kind-hyperv-vm",
+        "windows-host-kind-vmware-vm",
+        "windows-host-kind-virtualbox-vm",
+        "windows-host-kind-other-vm",
+        "windows-host-kind-unknown"
+      ],
+      "gpu_reporting_category_ids": [
+        "windows-gpu-reporting-no-gpu-or-unknown",
+        "windows-gpu-reporting-gpu-present-unverified",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-under-8-gib",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-8-to-under-16-gib",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-16-to-under-24-gib",
+        "windows-gpu-reporting-nvidia-smi-verified-vram-24-gib-or-more"
+      ],
+      "runtime_menu_band_ids": [
+        "windows-ram-band-under-4gib",
+        "windows-ram-band-4-to-8gib",
+        "windows-ram-band-8-to-12gib",
+        "windows-ram-band-12-to-24gib",
+        "windows-ram-band-24gib-plus"
+      ],
+      "disk_gate_candidate_refs": [
+        "qwen3:14b",
+        "qwen3:8b",
+        "qwen3:4b",
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "notes": "Lane projection for native Windows hosts only. WSL is excluded. Does not multiply the C10 model-size index."
+    }
+  }
+}
