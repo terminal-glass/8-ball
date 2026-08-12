@@ -13,6 +13,17 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/../lib/macos-common.sh"
 
 main() {
+  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+    cat <<'EOF'
+Usage: 8.1.sh [options]
+
+Lane: mac/intel
+
+Options:
+  -h, --help    Show this help without mutating the host
+EOF
+    exit 0
+  fi
   mac_refuse_root
   mac_require_darwin
   mac_resolve_eightball_root

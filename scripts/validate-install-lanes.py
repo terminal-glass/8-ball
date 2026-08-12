@@ -328,19 +328,13 @@ def powershell_syntax_status(path: Path) -> dict[str, str]:
     return {"status": status, "detail": detail}
 
 
-def has_help(path: Path, script_kind: str, readme_text: str, stem: str) -> bool:
+def has_help(path: Path, script_kind: str) -> bool:
     if not path.is_file():
         return False
     text = path.read_text(encoding="utf-8")
     if script_kind == "powershell":
-        if PS_HELP_REQUIRED.search(text):
-            return True
-    else:
-        if SHELL_HELP_REQUIRED.search(text):
-            return True
-    if stem in {"8.1", "8.3"} and stem in readme_text:
-        return True
-    return False
+        return bool(PS_HELP_REQUIRED.search(text))
+    return bool(SHELL_HELP_REQUIRED.search(text))
 
 
 def is_legacy_debt(lane: str, path: str, rule: str) -> dict[str, str] | None:
@@ -505,14 +499,14 @@ def validate_lane(
                 )
             )
 
-        if stem in {"trial-install", "8.2"} and not has_help(script_path, script_kind, readme_text, stem):
+        if not has_help(script_path, script_kind):
             violations.append(
                 Violation(
                     lane=lane,
                     path=rel_script,
                     rule="missing_help_path",
-                    message=f"{script_path.name} lacks discoverable --help/-Help or README coverage.",
-                    remediation="Add --help/-Help handling or document the step in README.md.",
+                    message=f"{script_path.name} lacks discoverable --help/-Help in the executable payload.",
+                    remediation="Add --help/-Help handling directly in the script; README text is not sufficient.",
                 )
             )
 

@@ -72,6 +72,17 @@ EOF
 }
 
 main() {
+  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+    cat <<'EOF'
+Usage: 8.3.sh [options]
+
+Lane: ubuntu/cpu
+
+Options:
+  -h, --help    Show this help without mutating the host
+EOF
+    exit 0
+  fi
   require_root
   install_remember_helper
   install_motd

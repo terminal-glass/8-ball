@@ -42,23 +42,20 @@ def validator():
     return _load_validator()
 
 
-def _write_shell_lane(lane_dir: Path, *, help_stems: set[str] | None = None) -> None:
-    help_stems = help_stems or {"trial-install", "8.2"}
+def _write_shell_lane(lane_dir: Path) -> None:
     lane_dir.mkdir(parents=True, exist_ok=True)
     assets = lane_dir / "assets"
     assets.mkdir(exist_ok=True)
-    (lane_dir / "README.md").write_text("# lane\n8.1\n8.3\n", encoding="utf-8")
+    (lane_dir / "README.md").write_text("# lane\n", encoding="utf-8")
     (assets / "first-MOTD.txt").write_text("motd\n", encoding="utf-8")
     for stem in ("trial-install", "8.1", "8.2", "8.3"):
         script = lane_dir / f"{stem}.sh"
         content = "#!/usr/bin/env bash\n"
-        if stem in help_stems:
-            content += 'if [[ "$1" == "--help" ]]; then echo help; exit 0; fi\n'
+        content += 'if [[ "$1" == "--help" ]]; then echo help; exit 0; fi\n'
         script.write_text(content, encoding="utf-8")
 
 
-def _write_powershell_lane(lane_dir: Path, *, help_stems: set[str] | None = None) -> None:
-    help_stems = help_stems or {"trial-install", "8.2"}
+def _write_powershell_lane(lane_dir: Path) -> None:
     lane_dir.mkdir(parents=True, exist_ok=True)
     assets = lane_dir / "assets"
     assets.mkdir(exist_ok=True)
@@ -67,8 +64,7 @@ def _write_powershell_lane(lane_dir: Path, *, help_stems: set[str] | None = None
     for stem in ("trial-install", "8.1", "8.2", "8.3"):
         script = lane_dir / f"{stem}.ps1"
         content = "param([switch]$Help)\n"
-        if stem in help_stems:
-            content += "if ($Help) { Write-Output 'help'; exit 0 }\n"
+        content += "if ($Help) { Write-Output 'help'; exit 0 }\n"
         script.write_text(content, encoding="utf-8")
 
 
@@ -132,6 +128,29 @@ def test_windows_cpu_cuda_violation(validator, tmp_path):
     report = validator.validate_repo(tmp_path)
     lane = _lane(report, "windows/cpu")
     assert any(v["rule"] == "nvidia_smi_required" for v in lane["violations"])
+
+
+def test_windows_payload_without_help_fails(validator, tmp_path):
+    _write_minimal_repo(tmp_path)
+    lane_dir = tmp_path / "install" / "windows" / "cpu"
+    (lane_dir / "8.1.ps1").write_text("Write-Host 'no help'\n", encoding="utf-8")
+    (lane_dir / "8.3.ps1").write_text("Write-Host 'no help'\n", encoding="utf-8")
+
+    report = validator.validate_repo(tmp_path)
+    lane = _lane(report, "windows/cpu")
+    rules = {v["rule"] for v in lane["violations"]}
+    assert "missing_help_path" in rules
+
+
+def test_readme_only_help_is_insufficient(validator, tmp_path):
+    _write_minimal_repo(tmp_path)
+    lane_dir = tmp_path / "install" / "ubuntu" / "cpu"
+    (lane_dir / "README.md").write_text("# lane\n8.1\n8.3\n", encoding="utf-8")
+    (lane_dir / "8.1.sh").write_text("#!/usr/bin/env bash\n", encoding="utf-8")
+
+    report = validator.validate_repo(tmp_path)
+    lane = _lane(report, "ubuntu/cpu")
+    assert any(v["rule"] == "missing_help_path" for v in lane["violations"])
 
 
 def test_unauthorized_remote_fetch_without_debt(validator, tmp_path):

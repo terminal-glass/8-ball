@@ -48,9 +48,9 @@ Instead, known remote-fetch debt is recorded explicitly (see below).
 
 ## Help surfaces
 
-- `trial-install` and `8.2` must expose discoverable `--help`/`-Help` handling
-- `8.1` and `8.3` are orchestrated sub-steps invoked by `trial-install`; they do
-  not require standalone help flags
+- Every public executable (`trial-install`, `8.1`, `8.2`, `8.3`) must expose discoverable
+  `--help`/`-Help` handling directly in the script payload.
+- README text does not satisfy the conformance gate help check.
 
 ## Legacy debt (temporary)
 

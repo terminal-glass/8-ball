@@ -103,6 +103,17 @@ wait_for_ollama() {
 }
 
 main() {
+  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+    cat <<'EOF'
+Usage: 8.1.sh [options]
+
+Lane: cloud/digitalocean/gpu-droplet
+
+Options:
+  -h, --help    Show this help without mutating the host
+EOF
+    exit 0
+  fi
   require_root
   require_debian_family
   ensure_philosopher_root
