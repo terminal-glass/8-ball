@@ -20,6 +20,7 @@ data/generated/*
 !data/generated/pages/**
 !data/generated/aws-lightsail-capability-report.json
 !data/generated/digitalocean-capability-report.json
+!data/generated/ubuntu-capability-report.json
 /indexes/
 
 # Ephemeral collection caches

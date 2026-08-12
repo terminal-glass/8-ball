@@ -44,6 +44,13 @@ if _DIGITALOCEAN_SPEC is None or _DIGITALOCEAN_SPEC.loader is None:
 c10_digitalocean = importlib.util.module_from_spec(_DIGITALOCEAN_SPEC)
 sys.modules[_DIGITALOCEAN_SPEC.name] = c10_digitalocean
 _DIGITALOCEAN_SPEC.loader.exec_module(c10_digitalocean)
+_C10_UBUNTU_PATH = REPO_ROOT / "scripts" / "c10_ubuntu_compatibility.py"
+_UBUNTU_SPEC = importlib.util.spec_from_file_location("c10_ubuntu_compatibility", _C10_UBUNTU_PATH)
+if _UBUNTU_SPEC is None or _UBUNTU_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_UBUNTU_PATH}")
+c10_ubuntu = importlib.util.module_from_spec(_UBUNTU_SPEC)
+sys.modules[_UBUNTU_SPEC.name] = c10_ubuntu
+_UBUNTU_SPEC.loader.exec_module(c10_ubuntu)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 REPORT_DIR = REPO_ROOT / "AGENTS" / "data-science" / "profile-mapping"
@@ -663,6 +670,8 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
             "AGENTS/data-science/profile-mapping/digitalocean-raw-sizes-2026-08-12.json",
             "AGENTS/data-science/profile-mapping/digitalocean-base-pilot-catalog.json",
             "AGENTS/data-science/profile-mapping/digitalocean-base-pilot-selection.md",
+            "AGENTS/data-science/profile-mapping/ubuntu-runtime-capability-taxonomy.json",
+            "AGENTS/data-science/profile-mapping/ubuntu-runtime-observation-contract.md",
             "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/",
         ],
         "model_count": len(model_pages),
@@ -734,6 +743,7 @@ def generate() -> dict[str, Any]:
 
     lightsail_stats = c10_lightsail.generate_lightsail_compatibility(REPO_ROOT)
     digitalocean_stats = c10_digitalocean.generate_digitalocean_compatibility(REPO_ROOT)
+    ubuntu_stats = c10_ubuntu.generate_ubuntu_compatibility(REPO_ROOT)
 
     return {
         "model_count": len(model_pages),
@@ -744,6 +754,7 @@ def generate() -> dict[str, Any]:
         "data_gaps": gaps,
         "lightsail_compatibility": lightsail_stats,
         "digitalocean_compatibility": digitalocean_stats,
+        "ubuntu_compatibility": ubuntu_stats,
     }
 
 

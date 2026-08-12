@@ -1,0 +1,6 @@
+ram_band_id,lower_bound_gib,upper_bound_gib_or_null,runtime_trial_candidates,source_script_path,source_script_version,classification,model_fit_proven,runtime_trial_required
+ubuntu-ram-band-under-4gib,,4.0,qwen3:0.6b,install/ubuntu/cpu/8.2.sh,public-8.2-ubuntu-cpu,runtime_menu_band_only,false,true
+ubuntu-ram-band-4-to-8gib,4.0,8.0,qwen3:1.7b|qwen3:0.6b,install/ubuntu/cpu/8.2.sh,public-8.2-ubuntu-cpu,runtime_menu_band_only,false,true
+ubuntu-ram-band-8-to-12gib,8.0,12.0,qwen3:4b|qwen3:1.7b|qwen3:0.6b,install/ubuntu/cpu/8.2.sh,public-8.2-ubuntu-cpu,runtime_menu_band_only,false,true
+ubuntu-ram-band-12-to-24gib,12.0,24.0,qwen3:8b|qwen3:4b|qwen3:1.7b|qwen3:0.6b,install/ubuntu/cpu/8.2.sh,public-8.2-ubuntu-cpu,runtime_menu_band_only,false,true
+ubuntu-ram-band-24gib-plus,24.0,,qwen3:14b|qwen3:8b|qwen3:4b|qwen3:1.7b|qwen3:0.6b,install/ubuntu/cpu/8.2.sh,public-8.2-ubuntu-cpu,runtime_menu_band_only,false,true
