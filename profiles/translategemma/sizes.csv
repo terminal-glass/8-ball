@@ -1,0 +1,14 @@
+size_slug,ollama_ref,size_file
+27b,translategemma:27b,sizes/27b.json
+27b-it-bf16,translategemma:27b-it-bf16,sizes/27b-it-bf16.json
+27b-it-q4-k-m,translategemma:27b-it-q4_K_M,sizes/27b-it-q4-k-m.json
+27b-it-q80,translategemma:27b-it-q8_0,sizes/27b-it-q80.json
+12b,translategemma:12b,sizes/12b.json
+12b-it-bf16,translategemma:12b-it-bf16,sizes/12b-it-bf16.json
+12b-it-q4-k-m,translategemma:12b-it-q4_K_M,sizes/12b-it-q4-k-m.json
+12b-it-q80,translategemma:12b-it-q8_0,sizes/12b-it-q80.json
+4b,translategemma:4b,sizes/4b.json
+4b-it-bf16,translategemma:4b-it-bf16,sizes/4b-it-bf16.json
+4b-it-q4-k-m,translategemma:4b-it-q4_K_M,sizes/4b-it-q4-k-m.json
+4b-it-q80,translategemma:4b-it-q8_0,sizes/4b-it-q80.json
+latest,translategemma:latest,sizes/latest.json

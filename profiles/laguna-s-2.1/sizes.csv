@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file
+f16,laguna-s-2.1:f16,sizes/f16.json
+latest,laguna-s-2.1:latest,sizes/latest.json
+mlx-bf16,laguna-s-2.1:mlx-bf16,sizes/mlx-bf16.json
+mxfp8,laguna-s-2.1:mxfp8,sizes/mxfp8.json
+nvfp4,laguna-s-2.1:nvfp4,sizes/nvfp4.json
+q4-k-m,laguna-s-2.1:q4_K_M,sizes/q4-k-m.json
+q80,laguna-s-2.1:q8_0,sizes/q80.json

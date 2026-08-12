@@ -1,0 +1,412 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phind-codellama",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "34b",
+      "ollama_ref": "phind-codellama:34b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-fp16",
+      "ollama_ref": "phind-codellama:34b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python",
+      "ollama_ref": "phind-codellama:34b-python",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-fp16",
+      "ollama_ref": "phind-codellama:34b-python-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q2-k",
+      "ollama_ref": "phind-codellama:34b-python-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q3-k-l",
+      "ollama_ref": "phind-codellama:34b-python-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q3-k-m",
+      "ollama_ref": "phind-codellama:34b-python-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q3-k-s",
+      "ollama_ref": "phind-codellama:34b-python-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q4-k-m",
+      "ollama_ref": "phind-codellama:34b-python-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q4-k-s",
+      "ollama_ref": "phind-codellama:34b-python-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q40",
+      "ollama_ref": "phind-codellama:34b-python-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q41",
+      "ollama_ref": "phind-codellama:34b-python-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q5-k-m",
+      "ollama_ref": "phind-codellama:34b-python-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q5-k-s",
+      "ollama_ref": "phind-codellama:34b-python-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q50",
+      "ollama_ref": "phind-codellama:34b-python-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q51",
+      "ollama_ref": "phind-codellama:34b-python-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q6-k",
+      "ollama_ref": "phind-codellama:34b-python-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q80",
+      "ollama_ref": "phind-codellama:34b-python-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q2-k",
+      "ollama_ref": "phind-codellama:34b-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q3-k-l",
+      "ollama_ref": "phind-codellama:34b-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q3-k-m",
+      "ollama_ref": "phind-codellama:34b-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q3-k-s",
+      "ollama_ref": "phind-codellama:34b-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q4-k-m",
+      "ollama_ref": "phind-codellama:34b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q4-k-s",
+      "ollama_ref": "phind-codellama:34b-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q40",
+      "ollama_ref": "phind-codellama:34b-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q41",
+      "ollama_ref": "phind-codellama:34b-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q5-k-m",
+      "ollama_ref": "phind-codellama:34b-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q5-k-s",
+      "ollama_ref": "phind-codellama:34b-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q50",
+      "ollama_ref": "phind-codellama:34b-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q51",
+      "ollama_ref": "phind-codellama:34b-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q6-k",
+      "ollama_ref": "phind-codellama:34b-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-q80",
+      "ollama_ref": "phind-codellama:34b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2",
+      "ollama_ref": "phind-codellama:34b-v2",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-fp16",
+      "ollama_ref": "phind-codellama:34b-v2-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q2-k",
+      "ollama_ref": "phind-codellama:34b-v2-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q3-k-l",
+      "ollama_ref": "phind-codellama:34b-v2-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q3-k-m",
+      "ollama_ref": "phind-codellama:34b-v2-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q3-k-s",
+      "ollama_ref": "phind-codellama:34b-v2-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q4-k-m",
+      "ollama_ref": "phind-codellama:34b-v2-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q4-k-s",
+      "ollama_ref": "phind-codellama:34b-v2-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q40",
+      "ollama_ref": "phind-codellama:34b-v2-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q41",
+      "ollama_ref": "phind-codellama:34b-v2-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 30.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q5-k-m",
+      "ollama_ref": "phind-codellama:34b-v2-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q5-k-s",
+      "ollama_ref": "phind-codellama:34b-v2-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q50",
+      "ollama_ref": "phind-codellama:34b-v2-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q51",
+      "ollama_ref": "phind-codellama:34b-v2-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q6-k",
+      "ollama_ref": "phind-codellama:34b-v2-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v2-q80",
+      "ollama_ref": "phind-codellama:34b-v2-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 48.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phind-codellama:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    }
+  ]
+}

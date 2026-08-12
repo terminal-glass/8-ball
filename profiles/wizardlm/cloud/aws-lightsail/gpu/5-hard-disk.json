@@ -1,0 +1,14 @@
+{
+  "schema_version": "profiles.stage.v1",
+  "model_slug": "wizardlm",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "minimum_free_disk_gb": 50.0,
+  "reason": "Disk headroom sourced from hardware or provider plan assumptions."
+}

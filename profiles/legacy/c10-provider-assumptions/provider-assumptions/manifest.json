@@ -1,0 +1,116 @@
+{
+  "schema_version": "profiles.provider-assumptions-manifest.v1",
+  "provenance_status": "assumption",
+  "data_class": "provider_assumption_index",
+  "source_path": "data/normalized/hardware-assumed-profiles.json",
+  "secondary_sources": [
+    "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv"
+  ],
+  "assumption_count": 17,
+  "assumptions": [
+    {
+      "profile_id": "cuda_datacenter_141gb",
+      "profile_path": "provider-assumptions/cuda_datacenter_141gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "cuda_datacenter_80gb",
+      "profile_path": "provider-assumptions/cuda_datacenter_80gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "cuda_entry_8gb",
+      "profile_path": "provider-assumptions/cuda_entry_8gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "cuda_high_48gb",
+      "profile_path": "provider-assumptions/cuda_high_48gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "cuda_large_20_24gb",
+      "profile_path": "provider-assumptions/cuda_large_20_24gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "cuda_mid_12_16gb",
+      "profile_path": "provider-assumptions/cuda_mid_12_16gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "cuda_multi_gpu",
+      "profile_path": "provider-assumptions/cuda_multi_gpu.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "mac_air_apple_silicon_16gb",
+      "profile_path": "provider-assumptions/mac_air_apple_silicon_16gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "mac_air_apple_silicon_8gb",
+      "profile_path": "provider-assumptions/mac_air_apple_silicon_8gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "mac_pro_apple_silicon_18_24gb",
+      "profile_path": "provider-assumptions/mac_pro_apple_silicon_18_24gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "mac_pro_apple_silicon_32_36gb",
+      "profile_path": "provider-assumptions/mac_pro_apple_silicon_32_36gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "mac_pro_apple_silicon_64gb",
+      "profile_path": "provider-assumptions/mac_pro_apple_silicon_64gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "windows_cpu_16gb",
+      "profile_path": "provider-assumptions/windows_cpu_16gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "windows_cpu_32gb",
+      "profile_path": "provider-assumptions/windows_cpu_32gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "windows_cpu_8gb",
+      "profile_path": "provider-assumptions/windows_cpu_8gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "windows_nvidia_16gb_vram_6_8gb",
+      "profile_path": "provider-assumptions/windows_nvidia_16gb_vram_6_8gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    },
+    {
+      "profile_id": "windows_nvidia_32_64gb_vram_12_16gb",
+      "profile_path": "provider-assumptions/windows_nvidia_32_64gb_vram_12_16gb.json",
+      "source_reference": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+      "provenance_status": "assumption"
+    }
+  ],
+  "notice": "These records are planning assumptions from AGENTS CSV research files. They are not measured benchmarks or authoritative provider specifications."
+}

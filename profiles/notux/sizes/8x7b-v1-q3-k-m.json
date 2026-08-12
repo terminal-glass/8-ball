@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "notux",
+  "size_slug": "8x7b-v1-q3-k-m",
+  "ollama_ref": "notux:8x7b-v1-q3_K_M",
+  "parameter_count": null,
+  "quantization": "q3_K_M",
+  "download_size_bytes": 20000000000,
+  "estimated": {
+    "min_system_ram_gb": 24.72,
+    "recommended_system_ram_gb": 29.67,
+    "min_vram_gb": 23.0,
+    "recommended_vram_gb": 24.72,
+    "min_disk_gb": 29.0
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/notux/tags",
+    "retrieved_at": "2026-08-01T11:57:14Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 24.72,
+    "recommended_ram_gb": 29.67,
+    "minimum_vram_gb": 23.0,
+    "recommended_vram_gb": 24.72,
+    "minimum_disk_free_gb": 18.626,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=notux;size_index=6;ollama_ref=notux:8x7b-v1-q3_K_M"
+  }
+}

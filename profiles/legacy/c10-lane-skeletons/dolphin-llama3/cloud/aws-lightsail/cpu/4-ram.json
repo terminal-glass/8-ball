@@ -1,0 +1,547 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "dolphin-llama3",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-11T10:15:47Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 4.0,
+  "usable_model_ram_gb": 2.4,
+  "size_ram_fit": [
+    {
+      "size_slug": "70b",
+      "ollama_ref": "dolphin-llama3:70b",
+      "min_system_ram_gb": 67.85,
+      "recommended_system_ram_gb": 81.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9",
+      "ollama_ref": "dolphin-llama3:70b-v2.9",
+      "min_system_ram_gb": 67.85,
+      "recommended_system_ram_gb": 81.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-fp16",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-fp16",
+      "min_system_ram_gb": 184.0,
+      "recommended_system_ram_gb": 220.8,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 184.0 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q2-k",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q2_K",
+      "min_system_ram_gb": 51.75,
+      "recommended_system_ram_gb": 62.1,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 51.75 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q3-k-l",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q3_K_L",
+      "min_system_ram_gb": 64.4,
+      "recommended_system_ram_gb": 77.28,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 64.4 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q3-k-m",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q3_K_M",
+      "min_system_ram_gb": 60.95,
+      "recommended_system_ram_gb": 73.14,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 60.95 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q3-k-s",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q3_K_S",
+      "min_system_ram_gb": 57.5,
+      "recommended_system_ram_gb": 69.0,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 57.5 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q4-k-m",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q4_K_M",
+      "min_system_ram_gb": 71.3,
+      "recommended_system_ram_gb": 85.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q4-k-s",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q4_K_S",
+      "min_system_ram_gb": 67.85,
+      "recommended_system_ram_gb": 81.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q40",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q4_0",
+      "min_system_ram_gb": 67.85,
+      "recommended_system_ram_gb": 81.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q41",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q4_1",
+      "min_system_ram_gb": 72.45,
+      "recommended_system_ram_gb": 86.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 72.45 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q5-k-m",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q5_K_M",
+      "min_system_ram_gb": 79.35,
+      "recommended_system_ram_gb": 95.22,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.35 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q5-k-s",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q5_K_S",
+      "min_system_ram_gb": 78.2,
+      "recommended_system_ram_gb": 93.84,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q50",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q5_0",
+      "min_system_ram_gb": 78.2,
+      "recommended_system_ram_gb": 93.84,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q51",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q5_1",
+      "min_system_ram_gb": 82.8,
+      "recommended_system_ram_gb": 99.36,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.8 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q6-k",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q6_K",
+      "min_system_ram_gb": 88.55,
+      "recommended_system_ram_gb": 106.26,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 88.55 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-v2.9-q80",
+      "ollama_ref": "dolphin-llama3:70b-v2.9-q8_0",
+      "min_system_ram_gb": 108.1,
+      "recommended_system_ram_gb": 129.72,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.1 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "dolphin-llama3:8b",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9",
+      "ollama_ref": "dolphin-llama3:8b-v2.9",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-fp16",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-fp16",
+      "min_system_ram_gb": 22.42,
+      "recommended_system_ram_gb": 26.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q2-k",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q2_K",
+      "min_system_ram_gb": 7.7,
+      "recommended_system_ram_gb": 9.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q3-k-l",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q3_K_L",
+      "min_system_ram_gb": 8.97,
+      "recommended_system_ram_gb": 10.76,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q3-k-m",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q3_K_M",
+      "min_system_ram_gb": 8.62,
+      "recommended_system_ram_gb": 10.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.62 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q3-k-s",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q3_K_S",
+      "min_system_ram_gb": 8.28,
+      "recommended_system_ram_gb": 9.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.28 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q4-k-m",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q4_K_M",
+      "min_system_ram_gb": 9.66,
+      "recommended_system_ram_gb": 11.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q4-k-s",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q4_K_S",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q40",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q4_0",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q41",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q4_1",
+      "min_system_ram_gb": 9.89,
+      "recommended_system_ram_gb": 11.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.89 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q5-k-m",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q5_K_M",
+      "min_system_ram_gb": 10.58,
+      "recommended_system_ram_gb": 12.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q5-k-s",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q5_K_S",
+      "min_system_ram_gb": 10.46,
+      "recommended_system_ram_gb": 12.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q50",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q5_0",
+      "min_system_ram_gb": 10.46,
+      "recommended_system_ram_gb": 12.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q51",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q5_1",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q6-k",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q6_K",
+      "min_system_ram_gb": 11.61,
+      "recommended_system_ram_gb": 13.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-v2.9-q80",
+      "ollama_ref": "dolphin-llama3:8b-v2.9-q8_0",
+      "min_system_ram_gb": 13.8,
+      "recommended_system_ram_gb": 16.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k",
+      "ollama_ref": "dolphin-llama3:8b-256k",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-fp16",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-fp16",
+      "min_system_ram_gb": 22.42,
+      "recommended_system_ram_gb": 26.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q2-k",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q2_K",
+      "min_system_ram_gb": 7.7,
+      "recommended_system_ram_gb": 9.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q3-k-l",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q3_K_L",
+      "min_system_ram_gb": 8.97,
+      "recommended_system_ram_gb": 10.76,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q3-k-m",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q3_K_M",
+      "min_system_ram_gb": 8.62,
+      "recommended_system_ram_gb": 10.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.62 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q3-k-s",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q3_K_S",
+      "min_system_ram_gb": 8.28,
+      "recommended_system_ram_gb": 9.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.28 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q4-k-m",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q4_K_M",
+      "min_system_ram_gb": 9.66,
+      "recommended_system_ram_gb": 11.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q4-k-s",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q4_K_S",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q40",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q4_0",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q41",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q4_1",
+      "min_system_ram_gb": 9.89,
+      "recommended_system_ram_gb": 11.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.89 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q5-k-m",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q5_K_M",
+      "min_system_ram_gb": 10.58,
+      "recommended_system_ram_gb": 12.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q5-k-s",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q5_K_S",
+      "min_system_ram_gb": 10.46,
+      "recommended_system_ram_gb": 12.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q50",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q5_0",
+      "min_system_ram_gb": 10.46,
+      "recommended_system_ram_gb": 12.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q51",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q5_1",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q6-k",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q6_K",
+      "min_system_ram_gb": 11.61,
+      "recommended_system_ram_gb": 13.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b256k-v2.9-q80",
+      "ollama_ref": "dolphin-llama3:8b-256k-v2.9-q8_0",
+      "min_system_ram_gb": 13.8,
+      "recommended_system_ram_gb": 16.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "dolphin-llama3:latest",
+      "min_system_ram_gb": 7.13,
+      "recommended_system_ram_gb": 8.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v2.9",
+      "ollama_ref": "dolphin-llama3:v2.9",
+      "min_system_ram_gb": 7.13,
+      "recommended_system_ram_gb": 8.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.13 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

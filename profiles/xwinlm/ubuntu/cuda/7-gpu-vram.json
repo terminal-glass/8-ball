@@ -1,0 +1,16 @@
+{
+  "schema_version": "profiles.stage.v1",
+  "model_slug": "xwinlm",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "cuda_available": true,
+  "apple_metal_available": false,
+  "total_vram_gb": 16.0,
+  "reason": "CUDA server lane; NVIDIA GPU and driver detection required."
+}

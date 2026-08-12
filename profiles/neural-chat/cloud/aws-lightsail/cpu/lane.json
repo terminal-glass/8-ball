@@ -1,20 +1,24 @@
 {
-  "schema_version": "c10.stage.v1",
+  "schema_version": "profiles.lane.v1",
   "model_slug": "neural-chat",
-  "lane_path": "cloud/aws-lightsail/cpu",
+  "target_lane": "cloud/aws-lightsail/cpu",
   "provider_assumption_id": "cloud-aws-lightsail-cpu",
-  "generated_at": "2026-08-11T10:15:48Z",
-  "provenance": {
-    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
-    "provenance_status": "provider_published"
-  },
-  "lane_id": "cloud/aws-lightsail/cpu",
-  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
   "detection_signals": [
     "provider=aws",
     "lightsail=true",
     "gpu=false"
   ],
+  "hardware": {
+    "cpu_cores": 2,
+    "system_ram_gb": 4.0,
+    "usable_model_ram_gb": 2.4,
+    "minimum_free_disk_gb": 80.0,
+    "total_vram_gb": null,
+    "cuda_available": false,
+    "apple_metal_available": false,
+    "provenance_status": "provider_published",
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv"
+  },
   "size_fit": [
     {
       "size_slug": "7b",
@@ -416,5 +420,7 @@
       "reason": "requires 6.44 GB RAM; lane provides 2.4 GB usable",
       "missing_evidence": []
     }
-  ]
+  ],
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z"
 }

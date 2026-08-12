@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file
+14b,phi4-reasoning:14b,sizes/14b.json
+14b-fp16,phi4-reasoning:14b-fp16,sizes/14b-fp16.json
+14b-plus-fp16,phi4-reasoning:14b-plus-fp16,sizes/14b-plus-fp16.json
+14b-plus-q4-k-m,phi4-reasoning:14b-plus-q4_K_M,sizes/14b-plus-q4-k-m.json
+14b-plus-q80,phi4-reasoning:14b-plus-q8_0,sizes/14b-plus-q80.json
+14b-q4-k-m,phi4-reasoning:14b-q4_K_M,sizes/14b-q4-k-m.json
+14b-q80,phi4-reasoning:14b-q8_0,sizes/14b-q80.json
+latest,phi4-reasoning:latest,sizes/latest.json
+plus,phi4-reasoning:plus,sizes/plus.json

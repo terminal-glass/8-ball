@@ -1,0 +1,75 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "mistral-small3.1",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-11T10:15:48Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "24b",
+      "ollama_ref": "mistral-small3.1:24b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "24b-instruct2503-fp16",
+      "ollama_ref": "mistral-small3.1:24b-instruct-2503-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "24b-instruct2503-q4-k-m",
+      "ollama_ref": "mistral-small3.1:24b-instruct-2503-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.87 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "24b-instruct2503-q80",
+      "ollama_ref": "mistral-small3.1:24b-instruct-2503-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "mistral-small3.1:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.97 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+size_slug,ollama_ref,size_file,fit_status
+32b,exaone-deep:32b,../sizes/32b.json,no_fit
+32b-fp16,exaone-deep:32b-fp16,../sizes/32b-fp16.json,no_fit
+32b-q4-k-m,exaone-deep:32b-q4_K_M,../sizes/32b-q4-k-m.json,no_fit
+32b-q80,exaone-deep:32b-q8_0,../sizes/32b-q80.json,no_fit
+7.8b,exaone-deep:7.8b,../sizes/7.8b.json,no_fit
+7.8b-fp16,exaone-deep:7.8b-fp16,../sizes/7.8b-fp16.json,no_fit
+7.8b-q4-k-m,exaone-deep:7.8b-q4_K_M,../sizes/7.8b-q4-k-m.json,no_fit
+7.8b-q80,exaone-deep:7.8b-q8_0,../sizes/7.8b-q80.json,no_fit
+2.4b,exaone-deep:2.4b,../sizes/2.4b.json,fit
+2.4b-fp16,exaone-deep:2.4b-fp16,../sizes/2.4b-fp16.json,no_fit
+2.4b-q4-k-m,exaone-deep:2.4b-q4_K_M,../sizes/2.4b-q4-k-m.json,fit
+2.4b-q80,exaone-deep:2.4b-q8_0,../sizes/2.4b-q80.json,no_fit
+latest,exaone-deep:latest,../sizes/latest.json,no_fit

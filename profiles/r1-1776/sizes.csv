@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file
+671b,r1-1776:671b,sizes/671b.json
+671b-fp16,r1-1776:671b-fp16,sizes/671b-fp16.json
+671b-q4-k-m,r1-1776:671b-q4_K_M,sizes/671b-q4-k-m.json
+671b-q80,r1-1776:671b-q8_0,sizes/671b-q80.json
+70b,r1-1776:70b,sizes/70b.json
+70b-distill-llama-fp16,r1-1776:70b-distill-llama-fp16,sizes/70b-distill-llama-fp16.json
+70b-distill-llama-q4-k-m,r1-1776:70b-distill-llama-q4_K_M,sizes/70b-distill-llama-q4-k-m.json
+70b-distill-llama-q80,r1-1776:70b-distill-llama-q8_0,sizes/70b-distill-llama-q80.json
+latest,r1-1776:latest,sizes/latest.json

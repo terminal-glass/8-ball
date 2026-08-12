@@ -1,0 +1,14 @@
+size_slug,ollama_ref,size_file
+14b,ministral-3:14b,sizes/14b.json
+14b-instruct2512-fp16,ministral-3:14b-instruct-2512-fp16,sizes/14b-instruct2512-fp16.json
+14b-instruct2512-q4-k-m,ministral-3:14b-instruct-2512-q4_K_M,sizes/14b-instruct2512-q4-k-m.json
+14b-instruct2512-q80,ministral-3:14b-instruct-2512-q8_0,sizes/14b-instruct2512-q80.json
+8b,ministral-3:8b,sizes/8b.json
+8b-instruct2512-fp16,ministral-3:8b-instruct-2512-fp16,sizes/8b-instruct2512-fp16.json
+8b-instruct2512-q4-k-m,ministral-3:8b-instruct-2512-q4_K_M,sizes/8b-instruct2512-q4-k-m.json
+8b-instruct2512-q80,ministral-3:8b-instruct-2512-q8_0,sizes/8b-instruct2512-q80.json
+3b,ministral-3:3b,sizes/3b.json
+3b-instruct2512-fp16,ministral-3:3b-instruct-2512-fp16,sizes/3b-instruct2512-fp16.json
+3b-instruct2512-q4-k-m,ministral-3:3b-instruct-2512-q4_K_M,sizes/3b-instruct2512-q4-k-m.json
+3b-instruct2512-q80,ministral-3:3b-instruct-2512-q8_0,sizes/3b-instruct2512-q80.json
+latest,ministral-3:latest,sizes/latest.json

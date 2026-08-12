@@ -1,0 +1,14 @@
+{
+  "schema_version": "profiles.stage.v1",
+  "model_slug": "phind-codellama",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "minimum_free_disk_gb": 25,
+  "reason": "Disk headroom sourced from hardware or provider plan assumptions."
+}

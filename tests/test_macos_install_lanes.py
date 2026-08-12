@@ -23,7 +23,7 @@ LANE_SCRIPTS = (
     "8.3.sh",
 )
 PROTECTED_PATHS = (
-    REPO_ROOT / "profiles/index.csv",
+    REPO_ROOT / "profiles/manifest.json",
     REPO_ROOT / "profiles/provider-compatibility/macos/lane-runtime-contract-projection.json",
     REPO_ROOT / "AGENTS/data-science/profile-mapping/C10.1-1-executable-install-matrix/install-matrix.csv",
 )

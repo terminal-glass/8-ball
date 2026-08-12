@@ -1,0 +1,9 @@
+size_slug,ollama_ref,size_file
+32b,qwq:32b,sizes/32b.json
+32b-fp16,qwq:32b-fp16,sizes/32b-fp16.json
+32b-preview-fp16,qwq:32b-preview-fp16,sizes/32b-preview-fp16.json
+32b-preview-q4-k-m,qwq:32b-preview-q4_K_M,sizes/32b-preview-q4-k-m.json
+32b-preview-q80,qwq:32b-preview-q8_0,sizes/32b-preview-q80.json
+32b-q4-k-m,qwq:32b-q4_K_M,sizes/32b-q4-k-m.json
+32b-q80,qwq:32b-q8_0,sizes/32b-q80.json
+latest,qwq:latest,sizes/latest.json

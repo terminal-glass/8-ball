@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "firefunction-v2",
+  "size_slug": "70b-q2-k",
+  "ollama_ref": "firefunction-v2:70b-q2_K",
+  "parameter_count": 70000000000,
+  "quantization": "q2_K",
+  "download_size_bytes": 26000000000,
+  "estimated": {
+    "min_system_ram_gb": 51.75,
+    "recommended_system_ram_gb": 62.1,
+    "min_vram_gb": 29.9,
+    "recommended_vram_gb": 51.75,
+    "min_disk_gb": 36.2
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/firefunction-v2/tags",
+    "retrieved_at": "2026-08-01T11:53:31Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 51.75,
+    "recommended_ram_gb": 62.1,
+    "minimum_vram_gb": 29.9,
+    "recommended_vram_gb": 51.75,
+    "minimum_disk_free_gb": 24.214,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=firefunction-v2;size_index=3;ollama_ref=firefunction-v2:70b-q2_K"
+  }
+}

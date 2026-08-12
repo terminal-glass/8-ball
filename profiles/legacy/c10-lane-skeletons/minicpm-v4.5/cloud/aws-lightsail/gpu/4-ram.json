@@ -1,0 +1,147 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "minicpm-v4.5",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-11T10:15:48Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "minicpm-v4.5:8b",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "f16",
+      "ollama_ref": "minicpm-v4.5:f16",
+      "min_system_ram_gb": 21.27,
+      "recommended_system_ram_gb": 25.53,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.27 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "minicpm-v4.5:latest",
+      "min_system_ram_gb": 8.74,
+      "recommended_system_ram_gb": 10.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "minicpm-v4.5:q4_K_M",
+      "min_system_ram_gb": 8.74,
+      "recommended_system_ram_gb": 10.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-s",
+      "ollama_ref": "minicpm-v4.5:q4_K_S",
+      "min_system_ram_gb": 8.51,
+      "recommended_system_ram_gb": 10.21,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q40",
+      "ollama_ref": "minicpm-v4.5:q4_0",
+      "min_system_ram_gb": 8.51,
+      "recommended_system_ram_gb": 10.21,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q41",
+      "ollama_ref": "minicpm-v4.5:q4_1",
+      "min_system_ram_gb": 8.97,
+      "recommended_system_ram_gb": 10.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q5-k-m",
+      "ollama_ref": "minicpm-v4.5:q5_K_M",
+      "min_system_ram_gb": 9.66,
+      "recommended_system_ram_gb": 11.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q5-k-s",
+      "ollama_ref": "minicpm-v4.5:q5_K_S",
+      "min_system_ram_gb": 9.54,
+      "recommended_system_ram_gb": 11.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q50",
+      "ollama_ref": "minicpm-v4.5:q5_0",
+      "min_system_ram_gb": 9.54,
+      "recommended_system_ram_gb": 11.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q51",
+      "ollama_ref": "minicpm-v4.5:q5_1",
+      "min_system_ram_gb": 10.12,
+      "recommended_system_ram_gb": 12.14,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.12 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q6-k",
+      "ollama_ref": "minicpm-v4.5:q6_K",
+      "min_system_ram_gb": 10.7,
+      "recommended_system_ram_gb": 12.83,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.7 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "minicpm-v4.5:q8_0",
+      "min_system_ram_gb": 12.99,
+      "recommended_system_ram_gb": 15.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.99 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

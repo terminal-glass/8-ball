@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+7b,command-r7b-arabic:7b,sizes/7b.json
+7b022025-fp16,command-r7b-arabic:7b-02-2025-fp16,sizes/7b022025-fp16.json
+7b022025-q4-k-m,command-r7b-arabic:7b-02-2025-q4_K_M,sizes/7b022025-q4-k-m.json
+7b022025-q80,command-r7b-arabic:7b-02-2025-q8_0,sizes/7b022025-q80.json
+latest,command-r7b-arabic:latest,sizes/latest.json

@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "aya-expanse",
+  "size_slug": "32b-q5-k-m",
+  "ollama_ref": "aya-expanse:32b-q5_K_M",
+  "parameter_count": 32000000000,
+  "quantization": "q5_K_M",
+  "download_size_bytes": 23000000000,
+  "estimated": {
+    "min_system_ram_gb": 37.38,
+    "recommended_system_ram_gb": 44.85,
+    "min_vram_gb": 26.45,
+    "recommended_vram_gb": 37.38,
+    "min_disk_gb": 32.6
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/aya-expanse/tags",
+    "retrieved_at": "2026-08-01T11:51:37Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 37.38,
+    "recommended_ram_gb": 44.85,
+    "minimum_vram_gb": 26.45,
+    "recommended_vram_gb": 37.38,
+    "minimum_disk_free_gb": 21.42,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=aya-expanse;size_index=11;ollama_ref=aya-expanse:32b-q5_K_M"
+  }
+}

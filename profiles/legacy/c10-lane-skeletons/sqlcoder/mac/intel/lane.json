@@ -1,0 +1,403 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "sqlcoder",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/intel",
+  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "70b-alpha-fp16",
+      "ollama_ref": "sqlcoder:70b-alpha-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 180.55 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q2-k",
+      "ollama_ref": "sqlcoder:70b-alpha-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.6 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q3-k-l",
+      "ollama_ref": "sqlcoder:70b-alpha-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q3-k-m",
+      "ollama_ref": "sqlcoder:70b-alpha-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.8 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q3-k-s",
+      "ollama_ref": "sqlcoder:70b-alpha-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q4-k-m",
+      "ollama_ref": "sqlcoder:70b-alpha-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 69.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q4-k-s",
+      "ollama_ref": "sqlcoder:70b-alpha-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q40",
+      "ollama_ref": "sqlcoder:70b-alpha-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.7 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q41",
+      "ollama_ref": "sqlcoder:70b-alpha-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q5-k-m",
+      "ollama_ref": "sqlcoder:70b-alpha-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q5-k-s",
+      "ollama_ref": "sqlcoder:70b-alpha-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q50",
+      "ollama_ref": "sqlcoder:70b-alpha-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.9 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q51",
+      "ollama_ref": "sqlcoder:70b-alpha-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 81.65 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q6-k",
+      "ollama_ref": "sqlcoder:70b-alpha-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.4 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-alpha-q80",
+      "ollama_ref": "sqlcoder:70b-alpha-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 105.8 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b",
+      "ollama_ref": "sqlcoder:15b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.39 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-fp16",
+      "ollama_ref": "sqlcoder:15b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 42.84 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q2-k",
+      "ollama_ref": "sqlcoder:15b-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.74 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q3-k-l",
+      "ollama_ref": "sqlcoder:15b-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.5 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q3-k-m",
+      "ollama_ref": "sqlcoder:15b-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.47 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q3-k-s",
+      "ollama_ref": "sqlcoder:15b-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q4-k-m",
+      "ollama_ref": "sqlcoder:15b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.54 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q4-k-s",
+      "ollama_ref": "sqlcoder:15b-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.5 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q40",
+      "ollama_ref": "sqlcoder:15b-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.39 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q41",
+      "ollama_ref": "sqlcoder:15b-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.54 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q5-k-m",
+      "ollama_ref": "sqlcoder:15b-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q5-k-s",
+      "ollama_ref": "sqlcoder:15b-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.69 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q50",
+      "ollama_ref": "sqlcoder:15b-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.69 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q51",
+      "ollama_ref": "sqlcoder:15b-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q6-k",
+      "ollama_ref": "sqlcoder:15b-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.99 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "15b-q80",
+      "ollama_ref": "sqlcoder:15b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.59 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "sqlcoder:7b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.45 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "sqlcoder:7b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q2-k",
+      "ollama_ref": "sqlcoder:7b-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.3 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q3-k-l",
+      "ollama_ref": "sqlcoder:7b-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.11 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q3-k-m",
+      "ollama_ref": "sqlcoder:7b-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.76 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q3-k-s",
+      "ollama_ref": "sqlcoder:7b-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.42 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "sqlcoder:7b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.8 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q4-k-s",
+      "ollama_ref": "sqlcoder:7b-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.45 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q40",
+      "ollama_ref": "sqlcoder:7b-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.45 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q41",
+      "ollama_ref": "sqlcoder:7b-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.03 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q5-k-m",
+      "ollama_ref": "sqlcoder:7b-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.6 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q5-k-s",
+      "ollama_ref": "sqlcoder:7b-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q50",
+      "ollama_ref": "sqlcoder:7b-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q51",
+      "ollama_ref": "sqlcoder:7b-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q6-k",
+      "ollama_ref": "sqlcoder:7b-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.52 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "sqlcoder:7b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.59 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "sqlcoder:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.44 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

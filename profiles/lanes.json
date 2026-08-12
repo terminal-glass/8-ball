@@ -1,0 +1,190 @@
+{
+  "schema_version": "profiles.lanes.v1",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "profile_lanes": [
+    "ubuntu/cpu",
+    "ubuntu/cuda",
+    "mac/apple-silicon",
+    "mac/intel",
+    "windows/cpu",
+    "windows/cuda",
+    "cloud/digitalocean/cpu-droplet",
+    "cloud/digitalocean/gpu-droplet",
+    "cloud/aws-lightsail/cpu",
+    "cloud/aws-lightsail/gpu"
+  ],
+  "lanes": [
+    {
+      "lane_path": "ubuntu/cpu",
+      "provider_id": "ubuntu-cpu",
+      "platform": "ubuntu",
+      "provider": null,
+      "architecture": "x86_64",
+      "gpu_lane": false,
+      "detection_signals": [
+        "os=linux",
+        "distro=ubuntu|debian",
+        "cuda=false"
+      ],
+      "operating_system": "ubuntu",
+      "acceleration": "cpu",
+      "cloud_lane": false,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "ubuntu/cuda",
+      "provider_id": "ubuntu-cuda",
+      "platform": "ubuntu",
+      "provider": null,
+      "architecture": "x86_64",
+      "gpu_lane": true,
+      "detection_signals": [
+        "os=linux",
+        "cuda=true",
+        "nvidia-smi"
+      ],
+      "operating_system": "ubuntu",
+      "acceleration": "cuda",
+      "cloud_lane": false,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "mac/apple-silicon",
+      "provider_id": "mac-apple-silicon",
+      "platform": "mac",
+      "provider": null,
+      "architecture": "arm64",
+      "gpu_lane": true,
+      "detection_signals": [
+        "os=darwin",
+        "arch=arm64",
+        "apple-metal"
+      ],
+      "operating_system": "mac",
+      "acceleration": "apple-metal",
+      "cloud_lane": false,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "mac/intel",
+      "provider_id": "mac-intel",
+      "platform": "mac",
+      "provider": null,
+      "architecture": "x86_64",
+      "gpu_lane": false,
+      "detection_signals": [
+        "os=darwin",
+        "arch=x86_64"
+      ],
+      "operating_system": "mac",
+      "acceleration": "cpu",
+      "cloud_lane": false,
+      "intel_mac_cpu_only": true
+    },
+    {
+      "lane_path": "windows/cpu",
+      "provider_id": "windows-cpu",
+      "platform": "windows",
+      "provider": null,
+      "architecture": "x86_64",
+      "gpu_lane": false,
+      "detection_signals": [
+        "os=windows",
+        "cuda=false"
+      ],
+      "operating_system": "windows",
+      "acceleration": "cpu",
+      "cloud_lane": false,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "windows/cuda",
+      "provider_id": "windows-cuda",
+      "platform": "windows",
+      "provider": null,
+      "architecture": "x86_64",
+      "gpu_lane": true,
+      "detection_signals": [
+        "os=windows",
+        "cuda=true",
+        "nvidia-smi"
+      ],
+      "operating_system": "windows",
+      "acceleration": "cuda",
+      "cloud_lane": false,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "cloud/digitalocean/cpu-droplet",
+      "provider_id": "cloud-digitalocean-cpu-droplet",
+      "platform": "cloud",
+      "provider": "digitalocean",
+      "architecture": "x86_64",
+      "gpu_lane": false,
+      "detection_signals": [
+        "provider=digitalocean",
+        "droplet=true",
+        "gpu=false"
+      ],
+      "operating_system": "cloud",
+      "acceleration": "cpu",
+      "cloud_lane": true,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "cloud/digitalocean/gpu-droplet",
+      "provider_id": "cloud-digitalocean-gpu-droplet",
+      "platform": "cloud",
+      "provider": "digitalocean",
+      "architecture": "x86_64",
+      "gpu_lane": true,
+      "detection_signals": [
+        "provider=digitalocean",
+        "gpu-droplet=true",
+        "nvidia"
+      ],
+      "operating_system": "cloud",
+      "acceleration": "cuda",
+      "cloud_lane": true,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "cloud/aws-lightsail/cpu",
+      "provider_id": "cloud-aws-lightsail-cpu",
+      "platform": "cloud",
+      "provider": "aws-lightsail",
+      "architecture": "x86_64",
+      "gpu_lane": false,
+      "detection_signals": [
+        "provider=aws",
+        "lightsail=true",
+        "gpu=false"
+      ],
+      "operating_system": "cloud",
+      "acceleration": "cpu",
+      "cloud_lane": true,
+      "intel_mac_cpu_only": false
+    },
+    {
+      "lane_path": "cloud/aws-lightsail/gpu",
+      "provider_id": "cloud-aws-lightsail-gpu",
+      "platform": "cloud",
+      "provider": "aws-lightsail",
+      "architecture": "x86_64",
+      "gpu_lane": true,
+      "detection_signals": [
+        "provider=aws",
+        "lightsail=true",
+        "gpu=true"
+      ],
+      "operating_system": "cloud",
+      "acceleration": "cuda",
+      "cloud_lane": true,
+      "intel_mac_cpu_only": false
+    }
+  ],
+  "source_paths": [
+    "data/normalized/tags.json",
+    "AGENTS/data-science/ollama-mapping/P3-Ollama-Metadata-Catalog/indexes/model-selection.json"
+  ]
+}

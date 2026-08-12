@@ -1,0 +1,29 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "kimi-k2.5",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "kimi-k2.5:cloud",
+      "min_system_ram_gb": null,
+      "recommended_system_ram_gb": null,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: model_ram_requirement",
+      "missing_evidence": [
+        "model_ram_requirement"
+      ]
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

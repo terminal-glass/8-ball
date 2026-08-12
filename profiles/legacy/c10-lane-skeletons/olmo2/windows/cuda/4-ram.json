@@ -1,0 +1,107 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "olmo2",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 32.0,
+  "usable_model_ram_gb": 20.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "13b",
+      "ollama_ref": "olmo2:13b",
+      "min_system_ram_gb": 15.12,
+      "recommended_system_ram_gb": 18.15,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b1124-instruct-fp16",
+      "ollama_ref": "olmo2:13b-1124-instruct-fp16",
+      "min_system_ram_gb": 36.51,
+      "recommended_system_ram_gb": 43.81,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.51 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b1124-instruct-q4-k-m",
+      "ollama_ref": "olmo2:13b-1124-instruct-q4_K_M",
+      "min_system_ram_gb": 15.12,
+      "recommended_system_ram_gb": 18.15,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b1124-instruct-q80",
+      "ollama_ref": "olmo2:13b-1124-instruct-q8_0",
+      "min_system_ram_gb": 22.71,
+      "recommended_system_ram_gb": 27.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.71 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "olmo2:7b",
+      "min_system_ram_gb": 8.91,
+      "recommended_system_ram_gb": 10.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b1124-instruct-fp16",
+      "ollama_ref": "olmo2:7b-1124-instruct-fp16",
+      "min_system_ram_gb": 20.99,
+      "recommended_system_ram_gb": 25.18,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.99 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b1124-instruct-q4-k-m",
+      "ollama_ref": "olmo2:7b-1124-instruct-q4_K_M",
+      "min_system_ram_gb": 8.91,
+      "recommended_system_ram_gb": 10.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b1124-instruct-q80",
+      "ollama_ref": "olmo2:7b-1124-instruct-q8_0",
+      "min_system_ram_gb": 12.71,
+      "recommended_system_ram_gb": 15.25,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "olmo2:latest",
+      "min_system_ram_gb": 6.9,
+      "recommended_system_ram_gb": 8.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

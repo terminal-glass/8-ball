@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "wizardcoder",
+  "size_slug": "33b-v1.1-q51",
+  "ollama_ref": "wizardcoder:33b-v1.1-q5_1",
+  "parameter_count": 33000000000,
+  "quantization": "q5_1",
+  "download_size_bytes": 25000000000,
+  "estimated": {
+    "min_system_ram_gb": 39.96,
+    "recommended_system_ram_gb": 47.95,
+    "min_vram_gb": 28.75,
+    "recommended_vram_gb": 39.96,
+    "min_disk_gb": 35.0
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizardcoder/tags",
+    "retrieved_at": "2026-08-01T11:59:55Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 39.96,
+    "recommended_ram_gb": 47.95,
+    "minimum_vram_gb": 28.75,
+    "recommended_vram_gb": 39.96,
+    "minimum_disk_free_gb": 23.283,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=wizardcoder;size_index=31;ollama_ref=wizardcoder:33b-v1.1-q5_1"
+  }
+}

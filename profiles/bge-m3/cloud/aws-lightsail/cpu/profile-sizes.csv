@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file,fit_status
+567m,bge-m3:567m,../sizes/567m.json,no_fit
+567m-fp16,bge-m3:567m-fp16,../sizes/567m-fp16.json,no_fit
+latest,bge-m3:latest,../sizes/latest.json,no_fit

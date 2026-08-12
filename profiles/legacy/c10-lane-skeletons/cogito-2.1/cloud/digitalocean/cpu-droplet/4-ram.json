@@ -1,0 +1,77 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "cogito-2.1",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": null,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "671b",
+      "ollama_ref": "cogito-2.1:671b",
+      "min_system_ram_gb": 1689.64,
+      "recommended_system_ram_gb": 2027.56,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "671b-fp16",
+      "ollama_ref": "cogito-2.1:671b-fp16",
+      "min_system_ram_gb": 1689.64,
+      "recommended_system_ram_gb": 2027.56,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "671b-q4-k-m",
+      "ollama_ref": "cogito-2.1:671b-q4_K_M",
+      "min_system_ram_gb": 659.24,
+      "recommended_system_ram_gb": 791.08,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "671b-q80",
+      "ollama_ref": "cogito-2.1:671b-q8_0",
+      "min_system_ram_gb": 1014.59,
+      "recommended_system_ram_gb": 1217.5,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "cogito-2.1:latest",
+      "min_system_ram_gb": 1496.72,
+      "recommended_system_ram_gb": 1796.07,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

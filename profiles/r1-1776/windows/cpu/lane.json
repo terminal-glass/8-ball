@@ -1,19 +1,23 @@
 {
-  "schema_version": "c10.stage.v1",
+  "schema_version": "profiles.lane.v1",
   "model_slug": "r1-1776",
-  "lane_path": "windows/cpu",
+  "target_lane": "windows/cpu",
   "provider_assumption_id": "windows-cpu",
-  "generated_at": "2026-08-06T05:53:10Z",
-  "provenance": {
-    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
-    "provenance_status": "assumed_client_class"
-  },
-  "lane_id": "windows/cpu",
-  "provider_assumption": "profiles/provider-assumptions/windows-cpu.json",
   "detection_signals": [
     "os=windows",
     "cuda=false"
   ],
+  "hardware": {
+    "cpu_cores": 6,
+    "system_ram_gb": 16.0,
+    "usable_model_ram_gb": 9.0,
+    "minimum_free_disk_gb": 35.0,
+    "total_vram_gb": null,
+    "cuda_available": false,
+    "apple_metal_available": false,
+    "provenance_status": "assumed_client_class",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv"
+  },
   "size_fit": [
     {
       "size_slug": "671b",
@@ -87,5 +91,7 @@
       "reason": "requires 51.17 GB RAM; lane provides 9.0 GB usable",
       "missing_evidence": []
     }
-  ]
+  ],
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z"
 }

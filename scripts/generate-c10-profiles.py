@@ -717,6 +717,18 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
 
 
 def generate() -> dict[str, Any]:
+    canonical_manifest = PROFILES_DIR / "manifest.json"
+    if canonical_manifest.is_file():
+        try:
+            payload = json.loads(canonical_manifest.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            payload = {}
+        if payload.get("schema_version") == "profiles.manifest.v1":
+            raise SystemExit(
+                "Canonical C10.3 profiles are present. "
+                "Regenerate with: python3 scripts/generate-profiles-from-agents.py"
+            )
+
     tags = load_json(REPO_ROOT / "data/normalized/tags.json")
     hardware_profiles = load_hardware_profiles()
     cloud_defaults = load_cloud_plan_defaults()

@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+2b,granite3.2-vision:2b,../sizes/2b.json,unknown
+2b-fp16,granite3.2-vision:2b-fp16,../sizes/2b-fp16.json,unknown
+2b-q4-k-m,granite3.2-vision:2b-q4_K_M,../sizes/2b-q4-k-m.json,unknown
+2b-q80,granite3.2-vision:2b-q8_0,../sizes/2b-q80.json,unknown
+latest,granite3.2-vision:latest,../sizes/latest.json,unknown

@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "deepseek-ocr",
+  "size_slug": "latest",
+  "ollama_ref": "deepseek-ocr:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 6700000000,
+  "estimated": {
+    "min_system_ram_gb": 9.43,
+    "recommended_system_ram_gb": 11.32,
+    "min_vram_gb": 7.7,
+    "recommended_vram_gb": 9.43,
+    "min_disk_gb": 13.04
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/deepseek-ocr/tags",
+    "retrieved_at": "2026-08-01T11:52:34Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 9.43,
+    "recommended_ram_gb": 11.32,
+    "minimum_vram_gb": 7.7,
+    "recommended_vram_gb": 9.43,
+    "minimum_disk_free_gb": 6.24,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=deepseek-ocr;size_index=3;ollama_ref=deepseek-ocr:latest"
+  }
+}

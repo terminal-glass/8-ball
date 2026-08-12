@@ -1,0 +1,596 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phi3",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi3:14b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-instruct",
+      "ollama_ref": "phi3:14b-instruct",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-fp16",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q2-k",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q3-k-l",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q3-k-m",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q3-k-s",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q4-k-m",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q4-k-s",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q40",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q41",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q5-k-m",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q5-k-s",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q50",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q51",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q6-k",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q80",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-fp16",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q2-k",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q3-k-l",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q3-k-m",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q3-k-s",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q4-k-m",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q4-k-s",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q40",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q41",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q5-k-m",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q5-k-s",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q50",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q51",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q6-k",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q80",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "phi3:3.8b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-instruct",
+      "ollama_ref": "phi3:3.8b-instruct",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-fp16",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q2-k",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q3-k-l",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q3-k-m",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q3-k-s",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q4-k-m",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q4-k-s",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q40",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q41",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q5-k-m",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q5-k-s",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q50",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q51",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q6-k",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q80",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-fp16",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-fp16",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q2-k",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q3-k-l",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q3-k-m",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q3-k-s",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q4-k-m",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q4-k-s",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q40",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q41",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q5-k-m",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q5-k-s",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q50",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q51",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q6-k",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q80",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "medium128k",
+      "ollama_ref": "phi3:medium-128k",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mini128k",
+      "ollama_ref": "phi3:mini-128k",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "medium4k",
+      "ollama_ref": "phi3:medium-4k",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mini4k",
+      "ollama_ref": "phi3:mini-4k",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "phi3:instruct",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi3:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "medium",
+      "ollama_ref": "phi3:medium",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mini",
+      "ollama_ref": "phi3:mini",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

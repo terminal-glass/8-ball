@@ -1,0 +1,164 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "solar-pro",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "22b",
+      "ollama_ref": "solar-pro:22b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-fp16",
+      "ollama_ref": "solar-pro:22b-preview-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 57.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q2-k",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q3-k-l",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q3-k-m",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q3-k-s",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q4-k-m",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q4-k-s",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q40",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q41",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q5-k-m",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q5-k-s",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q50",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q51",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q6-k",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-preview-instruct-q80",
+      "ollama_ref": "solar-pro:22b-preview-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "solar-pro:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "preview",
+      "ollama_ref": "solar-pro:preview",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

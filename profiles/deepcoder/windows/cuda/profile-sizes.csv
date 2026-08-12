@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+14b,deepcoder:14b,../sizes/14b.json,unknown
+14b-preview-fp16,deepcoder:14b-preview-fp16,../sizes/14b-preview-fp16.json,no_fit
+14b-preview-q4-k-m,deepcoder:14b-preview-q4_K_M,../sizes/14b-preview-q4-k-m.json,unknown
+14b-preview-q80,deepcoder:14b-preview-q8_0,../sizes/14b-preview-q80.json,no_fit
+1.5b,deepcoder:1.5b,../sizes/1.5b.json,unknown
+1.5b-preview-fp16,deepcoder:1.5b-preview-fp16,../sizes/1.5b-preview-fp16.json,unknown
+1.5b-preview-q4-k-m,deepcoder:1.5b-preview-q4_K_M,../sizes/1.5b-preview-q4-k-m.json,unknown
+1.5b-preview-q80,deepcoder:1.5b-preview-q8_0,../sizes/1.5b-preview-q80.json,unknown
+latest,deepcoder:latest,../sizes/latest.json,unknown

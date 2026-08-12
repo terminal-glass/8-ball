@@ -1,0 +1,67 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "cogito-2.1",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-11T10:15:47Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "671b",
+      "ollama_ref": "cogito-2.1:671b",
+      "min_system_ram_gb": 1689.64,
+      "recommended_system_ram_gb": 2027.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1689.64 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-fp16",
+      "ollama_ref": "cogito-2.1:671b-fp16",
+      "min_system_ram_gb": 1689.64,
+      "recommended_system_ram_gb": 2027.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1689.64 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-q4-k-m",
+      "ollama_ref": "cogito-2.1:671b-q4_K_M",
+      "min_system_ram_gb": 659.24,
+      "recommended_system_ram_gb": 791.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 659.24 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "671b-q80",
+      "ollama_ref": "cogito-2.1:671b-q8_0",
+      "min_system_ram_gb": 1014.59,
+      "recommended_system_ram_gb": 1217.5,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1014.59 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "cogito-2.1:latest",
+      "min_system_ram_gb": 1496.72,
+      "recommended_system_ram_gb": 1796.07,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1496.72 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

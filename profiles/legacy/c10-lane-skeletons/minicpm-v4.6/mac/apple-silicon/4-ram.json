@@ -1,0 +1,147 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "minicpm-v4.6",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "1b",
+      "ollama_ref": "minicpm-v4.6:1b",
+      "min_system_ram_gb": 3.85,
+      "recommended_system_ram_gb": 4.62,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "f16",
+      "ollama_ref": "minicpm-v4.6:f16",
+      "min_system_ram_gb": 4.71,
+      "recommended_system_ram_gb": 5.66,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "minicpm-v4.6:latest",
+      "min_system_ram_gb": 3.56,
+      "recommended_system_ram_gb": 4.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "minicpm-v4.6:q4_K_M",
+      "min_system_ram_gb": 3.56,
+      "recommended_system_ram_gb": 4.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-s",
+      "ollama_ref": "minicpm-v4.6:q4_K_S",
+      "min_system_ram_gb": 3.56,
+      "recommended_system_ram_gb": 4.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q40",
+      "ollama_ref": "minicpm-v4.6:q4_0",
+      "min_system_ram_gb": 3.56,
+      "recommended_system_ram_gb": 4.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q41",
+      "ollama_ref": "minicpm-v4.6:q4_1",
+      "min_system_ram_gb": 3.56,
+      "recommended_system_ram_gb": 4.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q5-k-m",
+      "ollama_ref": "minicpm-v4.6:q5_K_M",
+      "min_system_ram_gb": 3.68,
+      "recommended_system_ram_gb": 4.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q5-k-s",
+      "ollama_ref": "minicpm-v4.6:q5_K_S",
+      "min_system_ram_gb": 3.68,
+      "recommended_system_ram_gb": 4.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q50",
+      "ollama_ref": "minicpm-v4.6:q5_0",
+      "min_system_ram_gb": 3.68,
+      "recommended_system_ram_gb": 4.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q51",
+      "ollama_ref": "minicpm-v4.6:q5_1",
+      "min_system_ram_gb": 3.68,
+      "recommended_system_ram_gb": 4.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q6-k",
+      "ollama_ref": "minicpm-v4.6:q6_K",
+      "min_system_ram_gb": 3.68,
+      "recommended_system_ram_gb": 4.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "minicpm-v4.6:q8_0",
+      "min_system_ram_gb": 3.91,
+      "recommended_system_ram_gb": 4.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

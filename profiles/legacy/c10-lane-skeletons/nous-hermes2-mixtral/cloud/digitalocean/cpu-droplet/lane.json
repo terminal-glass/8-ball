@@ -1,0 +1,164 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nous-hermes2-mixtral",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "8x7b",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-fp16",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 116.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q2-k",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q3-k-l",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q3-k-m",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q3-k-s",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q4-k-m",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q4-k-s",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q40",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q41",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.8 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q5-k-m",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 44.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q5-k-s",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q50",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q51",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 47.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q6-k",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q80",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 65.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "dpo",
+      "ollama_ref": "nous-hermes2-mixtral:dpo",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nous-hermes2-mixtral:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    }
+  ]
+}

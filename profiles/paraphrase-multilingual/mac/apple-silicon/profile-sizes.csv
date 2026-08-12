@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file,fit_status
+278m,paraphrase-multilingual:278m,../sizes/278m.json,unknown
+278m-mpnet-base-v2-fp16,paraphrase-multilingual:278m-mpnet-base-v2-fp16,../sizes/278m-mpnet-base-v2-fp16.json,unknown
+latest,paraphrase-multilingual:latest,../sizes/latest.json,unknown

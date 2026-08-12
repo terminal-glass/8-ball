@@ -1,0 +1,11 @@
+size_slug,ollama_ref,size_file,fit_status
+32b,olmo-3.1:32b,../sizes/32b.json,no_fit
+32b-instruct,olmo-3.1:32b-instruct,../sizes/32b-instruct.json,no_fit
+32b-instruct-fp16,olmo-3.1:32b-instruct-fp16,../sizes/32b-instruct-fp16.json,no_fit
+32b-instruct-q4-k-m,olmo-3.1:32b-instruct-q4_K_M,../sizes/32b-instruct-q4-k-m.json,no_fit
+32b-instruct-q80,olmo-3.1:32b-instruct-q8_0,../sizes/32b-instruct-q80.json,no_fit
+32b-think,olmo-3.1:32b-think,../sizes/32b-think.json,no_fit
+32b-think-fp16,olmo-3.1:32b-think-fp16,../sizes/32b-think-fp16.json,no_fit
+32b-think-q4-k-m,olmo-3.1:32b-think-q4_K_M,../sizes/32b-think-q4-k-m.json,no_fit
+32b-think-q80,olmo-3.1:32b-think-q8_0,../sizes/32b-think-q80.json,no_fit
+latest,olmo-3.1:latest,../sizes/latest.json,no_fit

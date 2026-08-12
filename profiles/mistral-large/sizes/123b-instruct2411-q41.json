@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "mistral-large",
+  "size_slug": "123b-instruct2411-q41",
+  "ollama_ref": "mistral-large:123b-instruct-2411-q4_1",
+  "parameter_count": 123000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 77000000000,
+  "estimated": {
+    "min_system_ram_gb": 125.64,
+    "recommended_system_ram_gb": 150.76,
+    "min_vram_gb": 88.55,
+    "recommended_vram_gb": 125.64,
+    "min_disk_gb": 97.4
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/mistral-large/tags",
+    "retrieved_at": "2026-08-01T11:56:18Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 125.64,
+    "recommended_ram_gb": 150.76,
+    "minimum_vram_gb": 88.55,
+    "recommended_vram_gb": 125.64,
+    "minimum_disk_free_gb": 71.712,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=mistral-large;size_index=25;ollama_ref=mistral-large:123b-instruct-2411-q4_1"
+  }
+}

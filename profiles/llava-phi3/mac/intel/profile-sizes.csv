@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+3.8b,llava-phi3:3.8b,../sizes/3.8b.json,no_fit
+3.8b-mini-fp16,llava-phi3:3.8b-mini-fp16,../sizes/3.8b-mini-fp16.json,no_fit
+3.8b-mini-q40,llava-phi3:3.8b-mini-q4_0,../sizes/3.8b-mini-q40.json,no_fit
+latest,llava-phi3:latest,../sizes/latest.json,no_fit

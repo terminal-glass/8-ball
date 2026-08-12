@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+24b,devstral:24b,../sizes/24b.json,fit
+24b-small2505-fp16,devstral:24b-small-2505-fp16,../sizes/24b-small2505-fp16.json,no_fit
+24b-small2505-q4-k-m,devstral:24b-small-2505-q4_K_M,../sizes/24b-small2505-q4-k-m.json,fit
+24b-small2505-q80,devstral:24b-small-2505-q8_0,../sizes/24b-small2505-q80.json,no_fit
+latest,devstral:latest,../sizes/latest.json,fit

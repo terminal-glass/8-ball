@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file
+111b,command-a:111b,sizes/111b.json
+111b032025-fp16,command-a:111b-03-2025-fp16,sizes/111b032025-fp16.json
+111b032025-q4-k-m,command-a:111b-03-2025-q4_K_M,sizes/111b032025-q4-k-m.json
+111b032025-q80,command-a:111b-03-2025-q8_0,sizes/111b032025-q80.json
+latest,command-a:latest,sizes/latest.json

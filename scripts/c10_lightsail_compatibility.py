@@ -150,15 +150,15 @@ def load_model_id_by_ollama_ref(repo_root: Path = REPO_ROOT) -> dict[str, str]:
 
 
 def load_model_pages(repo_root: Path = REPO_ROOT) -> dict[str, dict[str, Any]]:
-    profiles = repo_root / "profiles"
-    pages: dict[str, dict[str, Any]] = {}
-    for path in sorted(profiles.glob("*.json")):
-        if path.name in {"c10-index.json", "manifest.json"}:
-            continue
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        if payload.get("schema_version") == "c10.model-page.v1":
-            pages[path.stem] = payload
-    return pages
+    import importlib.util
+
+    common_path = repo_root / "scripts" / "c10_common.py"
+    spec = importlib.util.spec_from_file_location("c10_common_pages", common_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Unable to load {common_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.load_c10_model_pages(repo_root)
 
 
 def _model_requirements(ollama_ref: str, menu: dict[str, Any], band_id: str) -> dict[str, float | None]:
@@ -550,7 +550,8 @@ def validate_lightsail_sources(repo_root: Path = REPO_ROOT) -> list[str]:
                         f"Sub-4GB plan must not be capacity-candidate: {row.get('provider_plan_id')}:{row.get('ollama_ref')}"
                     )
 
-    index_csv = repo_root / "profiles" / "index.csv"
+    legacy_index = repo_root / "profiles" / "legacy" / "c5-root-export" / "index.csv"
+    index_csv = legacy_index if legacy_index.is_file() else repo_root / "profiles" / "index.csv"
     if index_csv.is_file():
         with index_csv.open(encoding="utf-8", newline="") as handle:
             row_count = sum(1 for _ in csv.DictReader(handle))

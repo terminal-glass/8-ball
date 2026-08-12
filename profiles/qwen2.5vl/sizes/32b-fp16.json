@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "qwen2.5vl",
+  "size_slug": "32b-fp16",
+  "ollama_ref": "qwen2.5vl:32b-fp16",
+  "parameter_count": 32000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 67000000000,
+  "estimated": {
+    "min_system_ram_gb": 87.97,
+    "recommended_system_ram_gb": 105.57,
+    "min_vram_gb": 77.05,
+    "recommended_vram_gb": 87.97,
+    "min_disk_gb": 85.4
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen2.5vl/tags",
+    "retrieved_at": "2026-08-01T11:58:23Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 87.97,
+    "recommended_ram_gb": 105.57,
+    "minimum_vram_gb": 77.05,
+    "recommended_vram_gb": 87.97,
+    "minimum_disk_free_gb": 62.399,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=qwen2.5vl;size_index=6;ollama_ref=qwen2.5vl:32b-fp16"
+  }
+}

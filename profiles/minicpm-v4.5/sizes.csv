@@ -1,0 +1,14 @@
+size_slug,ollama_ref,size_file
+8b,minicpm-v4.5:8b,sizes/8b.json
+f16,minicpm-v4.5:f16,sizes/f16.json
+latest,minicpm-v4.5:latest,sizes/latest.json
+q4-k-m,minicpm-v4.5:q4_K_M,sizes/q4-k-m.json
+q4-k-s,minicpm-v4.5:q4_K_S,sizes/q4-k-s.json
+q40,minicpm-v4.5:q4_0,sizes/q40.json
+q41,minicpm-v4.5:q4_1,sizes/q41.json
+q5-k-m,minicpm-v4.5:q5_K_M,sizes/q5-k-m.json
+q5-k-s,minicpm-v4.5:q5_K_S,sizes/q5-k-s.json
+q50,minicpm-v4.5:q5_0,sizes/q50.json
+q51,minicpm-v4.5:q5_1,sizes/q51.json
+q6-k,minicpm-v4.5:q6_K,sizes/q6-k.json
+q80,minicpm-v4.5:q8_0,sizes/q80.json

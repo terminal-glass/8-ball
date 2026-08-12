@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "wizardcoder",
+  "size_slug": "7b-python-q4-k-s",
+  "ollama_ref": "wizardcoder:7b-python-q4_K_S",
+  "parameter_count": 7000000000,
+  "quantization": "q4_K_S",
+  "download_size_bytes": 3900000000,
+  "estimated": {
+    "min_system_ram_gb": 8.22,
+    "recommended_system_ram_gb": 9.87,
+    "min_vram_gb": 4.48,
+    "recommended_vram_gb": 8.22,
+    "min_disk_gb": 9.68
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizardcoder/tags",
+    "retrieved_at": "2026-08-01T11:59:55Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 8.22,
+    "recommended_ram_gb": 9.87,
+    "minimum_vram_gb": 4.48,
+    "recommended_vram_gb": 8.22,
+    "minimum_disk_free_gb": 3.632,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=wizardcoder;size_index=57;ollama_ref=wizardcoder:7b-python-q4_K_S"
+  }
+}

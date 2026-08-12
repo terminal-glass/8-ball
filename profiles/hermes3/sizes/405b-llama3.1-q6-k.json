@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "hermes3",
+  "size_slug": "405b-llama3.1-q6-k",
+  "ollama_ref": "hermes3:405b-llama3.1-q6_K",
+  "parameter_count": 405000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 333000000000,
+  "estimated": {
+    "min_system_ram_gb": 501.11,
+    "recommended_system_ram_gb": 601.33,
+    "min_vram_gb": 382.95,
+    "recommended_vram_gb": 501.11,
+    "min_disk_gb": 404.6
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/hermes3/tags",
+    "retrieved_at": "2026-08-01T11:54:37Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 501.11,
+    "recommended_ram_gb": 601.33,
+    "minimum_vram_gb": 382.95,
+    "recommended_vram_gb": 501.11,
+    "minimum_disk_free_gb": 310.13,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=hermes3;size_index=15;ollama_ref=hermes3:405b-llama3.1-q6_K"
+  }
+}

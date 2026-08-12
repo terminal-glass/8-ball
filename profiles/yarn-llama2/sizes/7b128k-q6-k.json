@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "yarn-llama2",
+  "size_slug": "7b128k-q6-k",
+  "ollama_ref": "yarn-llama2:7b-128k-q6_K",
+  "parameter_count": 7000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 5500000000,
+  "estimated": {
+    "min_system_ram_gb": 10.06,
+    "recommended_system_ram_gb": 12.07,
+    "min_vram_gb": 6.32,
+    "recommended_vram_gb": 10.06,
+    "min_disk_gb": 11.6
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yarn-llama2/tags",
+    "retrieved_at": "2026-08-01T12:00:06Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 10.06,
+    "recommended_ram_gb": 12.07,
+    "minimum_vram_gb": 6.32,
+    "recommended_vram_gb": 10.06,
+    "minimum_disk_free_gb": 5.122,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=yarn-llama2;size_index=49;ollama_ref=yarn-llama2:7b-128k-q6_K"
+  }
+}

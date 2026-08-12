@@ -1,0 +1,150 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "translategemma",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T05:53:11Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "27b",
+      "ollama_ref": "translategemma:27b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-it-bf16",
+      "ollama_ref": "translategemma:27b-it-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 72.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-it-q4-k-m",
+      "ollama_ref": "translategemma:27b-it-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-it-q80",
+      "ollama_ref": "translategemma:27b-it-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.99 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "12b",
+      "ollama_ref": "translategemma:12b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.49 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "12b-it-bf16",
+      "ollama_ref": "translategemma:12b-it-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "12b-it-q4-k-m",
+      "ollama_ref": "translategemma:12b-it-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.49 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "12b-it-q80",
+      "ollama_ref": "translategemma:12b-it-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "translategemma:4b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-it-bf16",
+      "ollama_ref": "translategemma:4b-it-bf16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.76 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-it-q4-k-m",
+      "ollama_ref": "translategemma:4b-it-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-it-q80",
+      "ollama_ref": "translategemma:4b-it-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "translategemma:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_slug": "nous-hermes",
+  "display_name": "nous-hermes",
+  "size_count": 63,
+  "promoted_size_slug": "70b-llama2-fp16",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ],
+  "generated_at": "2026-01-01T22:38:27Z"
+}

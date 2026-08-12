@@ -1,0 +1,11 @@
+size_slug,ollama_ref,size_file,fit_status
+8b,granite3-guardian:8b,../sizes/8b.json,no_fit
+8b-fp16,granite3-guardian:8b-fp16,../sizes/8b-fp16.json,no_fit
+8b-q5-k-m,granite3-guardian:8b-q5_K_M,../sizes/8b-q5-k-m.json,no_fit
+8b-q5-k-s,granite3-guardian:8b-q5_K_S,../sizes/8b-q5-k-s.json,no_fit
+8b-q6-k,granite3-guardian:8b-q6_K,../sizes/8b-q6-k.json,no_fit
+8b-q80,granite3-guardian:8b-q8_0,../sizes/8b-q80.json,no_fit
+2b,granite3-guardian:2b,../sizes/2b.json,unknown
+2b-fp16,granite3-guardian:2b-fp16,../sizes/2b-fp16.json,unknown
+2b-q80,granite3-guardian:2b-q8_0,../sizes/2b-q80.json,unknown
+latest,granite3-guardian:latest,../sizes/latest.json,unknown

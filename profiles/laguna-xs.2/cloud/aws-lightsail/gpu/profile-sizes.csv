@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file,fit_status
+bf16,laguna-xs.2:bf16,../sizes/bf16.json,no_fit
+latest,laguna-xs.2:latest,../sizes/latest.json,no_fit
+mlx-bf16,laguna-xs.2:mlx-bf16,../sizes/mlx-bf16.json,no_fit
+mxfp8,laguna-xs.2:mxfp8,../sizes/mxfp8.json,no_fit
+nvfp4,laguna-xs.2:nvfp4,../sizes/nvfp4.json,no_fit
+q4-k-m,laguna-xs.2:q4_K_M,../sizes/q4-k-m.json,no_fit
+q80,laguna-xs.2:q8_0,../sizes/q80.json,no_fit

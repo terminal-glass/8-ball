@@ -1,0 +1,14 @@
+size_slug,ollama_ref,size_file,fit_status
+20b,sailor2:20b,../sizes/20b.json,no_fit
+20b-chat-fp16,sailor2:20b-chat-fp16,../sizes/20b-chat-fp16.json,no_fit
+20b-chat-q4-k-m,sailor2:20b-chat-q4_K_M,../sizes/20b-chat-q4-k-m.json,no_fit
+20b-chat-q80,sailor2:20b-chat-q8_0,../sizes/20b-chat-q80.json,no_fit
+8b,sailor2:8b,../sizes/8b.json,unknown
+8b-chat-fp16,sailor2:8b-chat-fp16,../sizes/8b-chat-fp16.json,no_fit
+8b-chat-q4-k-m,sailor2:8b-chat-q4_K_M,../sizes/8b-chat-q4-k-m.json,unknown
+8b-chat-q80,sailor2:8b-chat-q8_0,../sizes/8b-chat-q80.json,unknown
+1b,sailor2:1b,../sizes/1b.json,unknown
+1b-chat-fp16,sailor2:1b-chat-fp16,../sizes/1b-chat-fp16.json,unknown
+1b-chat-q4-k-m,sailor2:1b-chat-q4_K_M,../sizes/1b-chat-q4-k-m.json,unknown
+1b-chat-q80,sailor2:1b-chat-q8_0,../sizes/1b-chat-q80.json,unknown
+latest,sailor2:latest,../sizes/latest.json,unknown

@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file,fit_status
+30b,nemotron-cascade-2:30b,../sizes/30b.json,no_fit
+30b-a3b-q4-k-m,nemotron-cascade-2:30b-a3b-q4_K_M,../sizes/30b-a3b-q4-k-m.json,no_fit
+latest,nemotron-cascade-2:latest,../sizes/latest.json,no_fit

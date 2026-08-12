@@ -1,0 +1,177 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "codebooga",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 8.0,
+  "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "34b",
+      "ollama_ref": "codebooga:34b",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-fp16",
+      "ollama_ref": "codebooga:34b-v0.1-fp16",
+      "min_system_ram_gb": 88.55,
+      "recommended_system_ram_gb": 106.26,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 88.55 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q2-k",
+      "ollama_ref": "codebooga:34b-v0.1-q2_K",
+      "min_system_ram_gb": 27.6,
+      "recommended_system_ram_gb": 33.12,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.6 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q3-k-l",
+      "ollama_ref": "codebooga:34b-v0.1-q3_K_L",
+      "min_system_ram_gb": 32.2,
+      "recommended_system_ram_gb": 38.64,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.2 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q3-k-m",
+      "ollama_ref": "codebooga:34b-v0.1-q3_K_M",
+      "min_system_ram_gb": 29.9,
+      "recommended_system_ram_gb": 35.88,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.9 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q3-k-s",
+      "ollama_ref": "codebooga:34b-v0.1-q3_K_S",
+      "min_system_ram_gb": 28.75,
+      "recommended_system_ram_gb": 34.5,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q4-k-m",
+      "ollama_ref": "codebooga:34b-v0.1-q4_K_M",
+      "min_system_ram_gb": 34.5,
+      "recommended_system_ram_gb": 41.4,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q40",
+      "ollama_ref": "codebooga:34b-v0.1-q4_0",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q41",
+      "ollama_ref": "codebooga:34b-v0.1-q4_1",
+      "min_system_ram_gb": 35.65,
+      "recommended_system_ram_gb": 42.78,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q5-k-m",
+      "ollama_ref": "codebooga:34b-v0.1-q5_K_M",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q5-k-s",
+      "ollama_ref": "codebooga:34b-v0.1-q5_K_S",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q50",
+      "ollama_ref": "codebooga:34b-v0.1-q5_0",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q51",
+      "ollama_ref": "codebooga:34b-v0.1-q5_1",
+      "min_system_ram_gb": 40.25,
+      "recommended_system_ram_gb": 48.3,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q6-k",
+      "ollama_ref": "codebooga:34b-v0.1-q6_K",
+      "min_system_ram_gb": 43.7,
+      "recommended_system_ram_gb": 52.44,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.7 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-v0.1-q80",
+      "ollama_ref": "codebooga:34b-v0.1-q8_0",
+      "min_system_ram_gb": 52.9,
+      "recommended_system_ram_gb": 63.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.9 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "codebooga:latest",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}
