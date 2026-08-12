@@ -15,3 +15,17 @@ Source tables:
 - `AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json`
 
 Regenerate with `python3 scripts/generate-c10-profiles.py`.
+
+## DigitalOcean Droplets (C10.1-9)
+
+- `digitalocean/catalog.json` and `catalog.csv` — 33-plan base-pilot provider snapshot
+- `digitalocean/cpu-plan-compatibility.csv` — 24 CPU plans × all C10 sizes
+- `digitalocean/gpu-plan-compatibility.csv` — 9 on-demand GPU plans × all C10 sizes
+
+Source tables:
+- `AGENTS/data-science/profile-mapping/digitalocean-raw-sizes-2026-08-12.json`
+- `AGENTS/data-science/profile-mapping/digitalocean-base-pilot-catalog.json`
+- `AGENTS/data-science/profile-mapping/digitalocean-base-pilot-selection.md`
+- `AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json`
+
+Regenerate with `python3 scripts/generate-c10-profiles.py`.

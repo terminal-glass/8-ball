@@ -1,0 +1,68 @@
+{
+  "schema_version": "c10.digitalocean-capability-report.v1",
+  "snapshot_id": "2026-08-12",
+  "plan_counts": {
+    "cpu": 24,
+    "gpu": 9,
+    "total": 33
+  },
+  "selected_cpu_slugs_by_family": {
+    "basic": [
+      "s-1vcpu-1gb",
+      "s-1vcpu-2gb",
+      "s-2vcpu-2gb",
+      "s-4vcpu-8gb",
+      "s-8vcpu-16gb",
+      "s-8vcpu-32gb"
+    ],
+    "cpu-optimized": [
+      "c-2vcpu-4gb",
+      "c-4vcpu-8gb",
+      "c-8vcpu-16gb",
+      "c-16vcpu-32gb",
+      "c-32vcpu-64gb",
+      "c-48vcpu-96gb"
+    ],
+    "general-purpose": [
+      "g-2vcpu-8gb",
+      "g-4vcpu-16gb",
+      "g-8vcpu-32gb",
+      "g-16vcpu-64gb",
+      "g-32vcpu-128gb",
+      "g-40vcpu-160gb"
+    ],
+    "memory-optimized": [
+      "m-2vcpu-16gb",
+      "m-4vcpu-32gb",
+      "m-8vcpu-64gb",
+      "m-16vcpu-128gb",
+      "m-24vcpu-192gb",
+      "m-32vcpu-256gb"
+    ]
+  },
+  "size_count_formula": "N = sum(len(model_page['sizes']) for model_page in profiles/*.json c10.model-page.v1)",
+  "size_count": 7271,
+  "compatibility_row_counts": {
+    "cpu": 174504,
+    "gpu": 65439,
+    "cpu_formula": "N × 24 = 7271 × 24 = 174504",
+    "gpu_formula": "N × 9 = 7271 × 9 = 65439"
+  },
+  "compatibility_status_counts": {
+    "cpu": {
+      "unknown": 21905,
+      "not_proven": 152599
+    },
+    "gpu": {
+      "not_proven": 65394,
+      "unknown": 45
+    }
+  },
+  "runtime_verification_required_plan_count": 9,
+  "model_requirements_formula_generated": false,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/digitalocean-raw-sizes-2026-08-12.json",
+    "AGENTS/data-science/profile-mapping/digitalocean-base-pilot-catalog.json",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json"
+  ]
+}

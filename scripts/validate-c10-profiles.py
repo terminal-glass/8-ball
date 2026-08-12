@@ -21,6 +21,13 @@ if _LIGHTSAIL_SPEC is None or _LIGHTSAIL_SPEC.loader is None:
 c10_lightsail = importlib.util.module_from_spec(_LIGHTSAIL_SPEC)
 sys.modules[_LIGHTSAIL_SPEC.name] = c10_lightsail
 _LIGHTSAIL_SPEC.loader.exec_module(c10_lightsail)
+_C10_DIGITALOCEAN_PATH = REPO_ROOT / "scripts" / "c10_digitalocean_compatibility.py"
+_DIGITALOCEAN_SPEC = importlib.util.spec_from_file_location("c10_digitalocean_compatibility", _C10_DIGITALOCEAN_PATH)
+if _DIGITALOCEAN_SPEC is None or _DIGITALOCEAN_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_DIGITALOCEAN_PATH}")
+c10_digitalocean = importlib.util.module_from_spec(_DIGITALOCEAN_SPEC)
+sys.modules[_DIGITALOCEAN_SPEC.name] = c10_digitalocean
+_DIGITALOCEAN_SPEC.loader.exec_module(c10_digitalocean)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 
@@ -165,6 +172,7 @@ def validate(errors: list[str]) -> dict:
 
     validate_registered_agents_csvs(errors)
     errors.extend(c10_lightsail.validate_lightsail_sources(REPO_ROOT))
+    errors.extend(c10_digitalocean.validate_digitalocean_sources(REPO_ROOT))
 
     model_pages = sorted(p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"})
     stats["model_pages"] = len(model_pages)
