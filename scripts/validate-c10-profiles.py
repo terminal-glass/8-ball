@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -103,6 +104,9 @@ PROVIDER_FILES = (
 )
 
 LANE_ROOTS = {"ubuntu", "mac", "windows", "cloud"}
+WINDOWS_PS_LANES = frozenset({"windows/cpu", "windows/cuda"})
+WINDOWS_PS_FILES = ("trial-install.ps1", "8.1.ps1", "8.2.ps1", "8.3.ps1")
+SHELL_LANE_FILES = ("trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh")
 OLLAMA_REF_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*:[^\s]+$", re.I)
 C10_NAME_RE = re.compile(r"c10|10-b", re.I)
 
@@ -272,7 +276,33 @@ def validate(errors: list[str]) -> dict:
         if not lane_dir.is_dir():
             fail(errors, f"Missing install lane: {lane_dir}")
             continue
-        required = ["trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh", "README.md"]
+        if lane in WINDOWS_PS_LANES:
+            required = [*WINDOWS_PS_FILES, "README.md"]
+            for name in required:
+                if not (lane_dir / name).is_file():
+                    fail(errors, f"Install lane missing {name}: {lane_dir}")
+            if not (lane_dir / "assets").is_dir():
+                fail(errors, f"Install lane missing assets/: {lane_dir}")
+            stats["install_lanes"] += 1
+            pwsh = shutil.which("pwsh") or shutil.which("powershell")
+            for script in lane_dir.glob("*.ps1"):
+                if pwsh:
+                    parse_cmd = (
+                        f"$tokens=$null; $errors=$null; "
+                        f"[void][System.Management.Automation.Language.Parser]::ParseFile("
+                        f"'{script.as_posix()}', [ref]$tokens, [ref]$errors); "
+                        f"if ($errors) {{ $errors | ForEach-Object {{ $_.ToString() }}; exit 1 }}"
+                    )
+                    result = subprocess.run(
+                        [pwsh, "-NoProfile", "-Command", parse_cmd],
+                        capture_output=True,
+                        text=True,
+                    )
+                    stats["shell_checked"] += 1
+                    if result.returncode != 0:
+                        fail(errors, f"PowerShell parse failed for {script}: {result.stderr.strip()}")
+            continue
+        required = [*SHELL_LANE_FILES, "README.md"]
         for name in required:
             if not (lane_dir / name).is_file():
                 fail(errors, f"Install lane missing {name}: {lane_dir}")
