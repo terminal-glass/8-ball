@@ -1,0 +1,33 @@
+{
+  "schema_version": "c10.cuda-ollama-nvidia-support-policy.v1",
+  "policy_id": "ollama-nvidia-support-2026-08-12",
+  "source_url": "https://docs.ollama.com/gpu",
+  "source_repository_path": "https://github.com/ollama/ollama/blob/main/docs/gpu.mdx",
+  "retrieval_date": "2026-08-12",
+  "description": "Ollama official NVIDIA GPU software support thresholds. Determines ollama_nvidia_support only; does not assess model VRAM fit.",
+  "rules": {
+    "minimum_compute_capability": 5.0,
+    "minimum_driver_version": 550,
+    "legacy_compute_capability_range": {
+      "lower_inclusive": 5.0,
+      "upper_inclusive": 6.2,
+      "minimum_driver_version": 570
+    }
+  },
+  "ollama_nvidia_support_values": [
+    "supported",
+    "unsupported",
+    "unknown"
+  ],
+  "unknown_behavior": [
+    "When compute_capability is null or cannot be parsed, ollama_nvidia_support is unknown.",
+    "When driver_version is null or cannot be parsed, ollama_nvidia_support is unknown.",
+    "When nvidia-smi is missing, fails, or reports no devices, observation_status is unavailable and ollama_nvidia_support is unknown.",
+    "Do not infer compute capability or driver version from GPU product name or provider plan label."
+  ],
+  "explicit_non_scope": [
+    "Does not set minimum_vram_gb, recommended_vram_gb, fit_status, or catalog model requirements.",
+    "Does not select install lane without independent OS and provider context.",
+    "Does not apply to macOS Metal/unified-memory lanes or AMD ROCm/Vulkan accelerators."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "c10.cuda-capability-report.v1",
+  "category_counts": {
+    "lane_routing": 4,
+    "observation_state": 2,
+    "total": 6
+  },
+  "canonical_cuda_lane_count": 4,
+  "canonical_install_lane_count": 10,
+  "lane_category_ids": [
+    "cuda-lane-ubuntu-cuda",
+    "cuda-lane-windows-cuda",
+    "cuda-lane-cloud-digitalocean-gpu-droplet",
+    "cuda-lane-cloud-aws-lightsail-gpu"
+  ],
+  "observation_state_ids": [
+    "cuda-state-cuda-observation-available",
+    "cuda-state-cuda-observation-unavailable"
+  ],
+  "target_lanes": [
+    "ubuntu/cuda",
+    "windows/cuda",
+    "cloud/digitalocean/gpu-droplet",
+    "cloud/aws-lightsail/gpu"
+  ],
+  "mac_lanes_not_cuda": [
+    "mac/apple-silicon",
+    "mac/intel"
+  ],
+  "policy_id": "ollama-nvidia-support-2026-08-12",
+  "policy_source_url": "https://docs.ollama.com/gpu",
+  "policy_retrieval_date": "2026-08-12",
+  "all_gpu_values_require_source_command": true,
+  "provider_inference_forbidden": true,
+  "model_requirements_from_gpu_observation_forbidden": true,
+  "c10_index_expansion": false,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/cuda/ollama-nvidia-support-policy.json",
+    "AGENTS/data-science/profile-mapping/cuda/runtime-capability-taxonomy.json",
+    "AGENTS/data-science/profile-mapping/cuda/runtime-observation-contract.md",
+    "data/generated/capability-catalog/cuda/capability-report.json",
+    "scripts/cuda-observe-linux.sh",
+    "scripts/cuda-observe-windows.ps1"
+  ]
+}

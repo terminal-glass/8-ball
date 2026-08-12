@@ -22,6 +22,11 @@
     "AGENTS/data-science/profile-mapping/macos/runtime-capability-taxonomy.json",
     "AGENTS/data-science/profile-mapping/macos/runtime-observation-contract.md",
     "scripts/macos-observe-host.sh",
+    "AGENTS/data-science/profile-mapping/cuda/ollama-nvidia-support-policy.json",
+    "AGENTS/data-science/profile-mapping/cuda/runtime-capability-taxonomy.json",
+    "AGENTS/data-science/profile-mapping/cuda/runtime-observation-contract.md",
+    "scripts/cuda-observe-linux.sh",
+    "scripts/cuda-observe-windows.ps1",
     "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/"
   ],
   "model_count": 234,

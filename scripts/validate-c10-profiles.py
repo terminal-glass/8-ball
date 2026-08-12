@@ -49,6 +49,13 @@ if _MACOS_SPEC is None or _MACOS_SPEC.loader is None:
 c10_macos = importlib.util.module_from_spec(_MACOS_SPEC)
 sys.modules[_MACOS_SPEC.name] = c10_macos
 _MACOS_SPEC.loader.exec_module(c10_macos)
+_C10_CUDA_PATH = REPO_ROOT / "scripts" / "c10_cuda_compatibility.py"
+_CUDA_SPEC = importlib.util.spec_from_file_location("c10_cuda_compatibility", _C10_CUDA_PATH)
+if _CUDA_SPEC is None or _CUDA_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_CUDA_PATH}")
+c10_cuda = importlib.util.module_from_spec(_CUDA_SPEC)
+sys.modules[_CUDA_SPEC.name] = c10_cuda
+_CUDA_SPEC.loader.exec_module(c10_cuda)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 
@@ -197,6 +204,7 @@ def validate(errors: list[str]) -> dict:
     errors.extend(c10_ubuntu.validate_ubuntu_sources(REPO_ROOT))
     errors.extend(c10_windows.validate_windows_sources(REPO_ROOT))
     errors.extend(c10_macos.validate_macos_sources(REPO_ROOT))
+    errors.extend(c10_cuda.validate_cuda_sources(REPO_ROOT))
 
     model_pages = sorted(p for p in PROFILES_DIR.glob("*.json") if p.name not in {"c10-index.json", "manifest.json"})
     stats["model_pages"] = len(model_pages)
