@@ -1,0 +1,460 @@
+{
+  "schema_version": "c10.macos-runtime-capability-taxonomy.v1",
+  "canonical_lanes": [
+    "mac/apple-silicon",
+    "mac/intel"
+  ],
+  "category_count": 8,
+  "runtime_menu_band_count": 5,
+  "disk_gate_count": 5,
+  "categories": [
+    {
+      "id": "mac-lane-routing-apple-silicon",
+      "category_kind": "lane_routing",
+      "target_lane": "mac/apple-silicon",
+      "topology": null,
+      "display_category": null,
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "uname -m",
+        "sw_vers -productVersion",
+        "sysctl -n hw.memsize"
+      ],
+      "architecture": "arm64",
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "Native macOS host observed as arm64. Not a CUDA lane. Unified memory is represented by physical_memory_mb; never copy into gpu_memory_mb."
+    },
+    {
+      "id": "mac-lane-routing-intel",
+      "category_kind": "lane_routing",
+      "target_lane": "mac/intel",
+      "topology": null,
+      "display_category": null,
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "uname -m",
+        "sw_vers -productVersion",
+        "sysctl -n hw.memsize"
+      ],
+      "architecture": "x86_64",
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "Native macOS host observed as x86_64. Not a CUDA lane. Display adapters are evidence only; CUDA readiness is not_applicable."
+    },
+    {
+      "id": "mac-topology-bare-metal",
+      "category_kind": "host_topology",
+      "target_lane": null,
+      "topology": "bare_metal",
+      "display_category": null,
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "sysctl -n hw.optional.hypervisor",
+        "system_profiler SPHardwareDataType"
+      ],
+      "architecture": null,
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "Hypervisor signal absent or explicitly zero when available."
+    },
+    {
+      "id": "mac-topology-virtual-machine",
+      "category_kind": "host_topology",
+      "target_lane": null,
+      "topology": "virtual_machine",
+      "display_category": null,
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "sysctl -n hw.optional.hypervisor",
+        "system_profiler SPHardwareDataType"
+      ],
+      "architecture": null,
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "Hypervisor signal present when OS exposes hw.optional.hypervisor."
+    },
+    {
+      "id": "mac-topology-unknown",
+      "category_kind": "host_topology",
+      "target_lane": null,
+      "topology": "unknown",
+      "display_category": null,
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "sysctl -n hw.optional.hypervisor",
+        "system_profiler SPHardwareDataType"
+      ],
+      "architecture": null,
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "Topology unknown when virtualization signal is missing or ambiguous."
+    },
+    {
+      "id": "mac-display-no-gpu-or-unknown",
+      "category_kind": "display_evidence",
+      "target_lane": null,
+      "topology": null,
+      "display_category": "no_gpu_or_unknown",
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "system_profiler SPDisplaysDataType"
+      ],
+      "architecture": null,
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "No display adapter evidence or GPU state unknown."
+    },
+    {
+      "id": "mac-display-gpu-present-unverified",
+      "category_kind": "display_evidence",
+      "target_lane": null,
+      "topology": null,
+      "display_category": "gpu_present_unverified",
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "system_profiler SPDisplaysDataType"
+      ],
+      "architecture": null,
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "system_profiler reports an adapter, but Metal/GPU memory remain unverified facts."
+    },
+    {
+      "id": "mac-display-display-data-partial",
+      "category_kind": "display_evidence",
+      "target_lane": null,
+      "topology": null,
+      "display_category": "display_data_partial",
+      "runtime_detection_required": true,
+      "runtime_evidence_commands": [
+        "system_profiler SPDisplaysDataType"
+      ],
+      "architecture": null,
+      "physical_memory_mb": null,
+      "free_install_disk_mb": null,
+      "cpu_threads": null,
+      "gpu_present": null,
+      "gpu_name": null,
+      "gpu_memory_mb": null,
+      "metal_status": null,
+      "cuda_status": "not_applicable",
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "unknown_fields": [
+        "cpu_brand",
+        "cpu_threads",
+        "free_install_disk_mb",
+        "gpu_memory_mb",
+        "gpu_name",
+        "os_version",
+        "physical_memory_mb"
+      ],
+      "notes": "system_profiler returned partial display data; retain unknown fields."
+    }
+  ],
+  "runtime_menu_bands": [
+    {
+      "ram_band_id": "mac-ram-band-under-4gib-or-unknown",
+      "lower_bound_gib": null,
+      "upper_bound_gib_or_null": 4.0,
+      "runtime_trial_candidates": [
+        "qwen3:0.6b"
+      ],
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_script_version": "public-8.2-mac-apple-silicon",
+      "classification": "runtime_menu_band_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "disk_guard_mib_by_candidate": {
+        "qwen3:0.6b": 3072
+      },
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "notes": "Happy Nerds runtime-menu band from install/mac/apple-silicon/8.2.sh policy via 8ball-base-pilot-menu.json. Trial order only; not a model-fit guarantee. Applies when physical memory is under 4 GiB or memory measurement is unknown."
+    },
+    {
+      "ram_band_id": "mac-ram-band-4-to-8gib",
+      "lower_bound_gib": 4.0,
+      "upper_bound_gib_or_null": 8.0,
+      "runtime_trial_candidates": [
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_script_version": "public-8.2-mac-apple-silicon",
+      "classification": "runtime_menu_band_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "disk_guard_mib_by_candidate": {
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      },
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "notes": "Happy Nerds runtime-menu band from install/mac/apple-silicon/8.2.sh policy via 8ball-base-pilot-menu.json. Trial order only; not a model-fit guarantee."
+    },
+    {
+      "ram_band_id": "mac-ram-band-8-to-12gib",
+      "lower_bound_gib": 8.0,
+      "upper_bound_gib_or_null": 12.0,
+      "runtime_trial_candidates": [
+        "qwen3:4b",
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_script_version": "public-8.2-mac-apple-silicon",
+      "classification": "runtime_menu_band_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "disk_guard_mib_by_candidate": {
+        "qwen3:4b": 6144,
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      },
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "notes": "Happy Nerds runtime-menu band from install/mac/apple-silicon/8.2.sh policy via 8ball-base-pilot-menu.json. Trial order only; not a model-fit guarantee."
+    },
+    {
+      "ram_band_id": "mac-ram-band-12-to-24gib",
+      "lower_bound_gib": 12.0,
+      "upper_bound_gib_or_null": 24.0,
+      "runtime_trial_candidates": [
+        "qwen3:8b",
+        "qwen3:4b",
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_script_version": "public-8.2-mac-apple-silicon",
+      "classification": "runtime_menu_band_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "disk_guard_mib_by_candidate": {
+        "qwen3:8b": 9216,
+        "qwen3:4b": 6144,
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      },
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "notes": "Happy Nerds runtime-menu band from install/mac/apple-silicon/8.2.sh policy via 8ball-base-pilot-menu.json. Trial order only; not a model-fit guarantee."
+    },
+    {
+      "ram_band_id": "mac-ram-band-24gib-plus",
+      "lower_bound_gib": 24.0,
+      "upper_bound_gib_or_null": null,
+      "runtime_trial_candidates": [
+        "qwen3:14b",
+        "qwen3:8b",
+        "qwen3:4b",
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_script_version": "public-8.2-mac-apple-silicon",
+      "classification": "runtime_menu_band_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "disk_guard_mib_by_candidate": {
+        "qwen3:14b": 14336,
+        "qwen3:8b": 9216,
+        "qwen3:4b": 6144,
+        "qwen3:1.7b": 4096,
+        "qwen3:0.6b": 3072
+      },
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "notes": "Happy Nerds runtime-menu band from install/mac/apple-silicon/8.2.sh policy via 8ball-base-pilot-menu.json. Trial order only; not a model-fit guarantee."
+    }
+  ],
+  "disk_gates": [
+    {
+      "candidate_ollama_ref": "qwen3:14b",
+      "required_free_disk_gib": 14.0,
+      "required_free_disk_mib": 14336,
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "classification": "runtime_download_guard_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "notes": "Runtime free-disk guard before trial pull; not a catalog disk requirement."
+    },
+    {
+      "candidate_ollama_ref": "qwen3:8b",
+      "required_free_disk_gib": 9.0,
+      "required_free_disk_mib": 9216,
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "classification": "runtime_download_guard_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "notes": "Runtime free-disk guard before trial pull; not a catalog disk requirement."
+    },
+    {
+      "candidate_ollama_ref": "qwen3:4b",
+      "required_free_disk_gib": 6.0,
+      "required_free_disk_mib": 6144,
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "classification": "runtime_download_guard_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "notes": "Runtime free-disk guard before trial pull; not a catalog disk requirement."
+    },
+    {
+      "candidate_ollama_ref": "qwen3:1.7b",
+      "required_free_disk_gib": 4.0,
+      "required_free_disk_mib": 4096,
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "classification": "runtime_download_guard_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "notes": "Runtime free-disk guard before trial pull; not a catalog disk requirement."
+    },
+    {
+      "candidate_ollama_ref": "qwen3:0.6b",
+      "required_free_disk_gib": 3.0,
+      "required_free_disk_mib": 3072,
+      "source_script_path": "install/mac/apple-silicon/8.2.sh",
+      "source_policy_path": "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+      "classification": "runtime_download_guard_only",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "notes": "Runtime free-disk guard before trial pull; not a catalog disk requirement."
+    }
+  ]
+}

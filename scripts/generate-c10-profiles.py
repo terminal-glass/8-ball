@@ -58,6 +58,13 @@ if _WINDOWS_SPEC is None or _WINDOWS_SPEC.loader is None:
 c10_windows = importlib.util.module_from_spec(_WINDOWS_SPEC)
 sys.modules[_WINDOWS_SPEC.name] = c10_windows
 _WINDOWS_SPEC.loader.exec_module(c10_windows)
+_C10_MACOS_PATH = REPO_ROOT / "scripts" / "c10_macos_compatibility.py"
+_MACOS_SPEC = importlib.util.spec_from_file_location("c10_macos_compatibility", _C10_MACOS_PATH)
+if _MACOS_SPEC is None or _MACOS_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_MACOS_PATH}")
+c10_macos = importlib.util.module_from_spec(_MACOS_SPEC)
+sys.modules[_MACOS_SPEC.name] = c10_macos
+_MACOS_SPEC.loader.exec_module(c10_macos)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 REPORT_DIR = REPO_ROOT / "AGENTS" / "data-science" / "profile-mapping"
@@ -681,6 +688,9 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
             "AGENTS/data-science/profile-mapping/ubuntu-runtime-observation-contract.md",
             "AGENTS/data-science/profile-mapping/windows/runtime-capability-taxonomy.json",
             "AGENTS/data-science/profile-mapping/windows/runtime-observation-contract.md",
+            "AGENTS/data-science/profile-mapping/macos/runtime-capability-taxonomy.json",
+            "AGENTS/data-science/profile-mapping/macos/runtime-observation-contract.md",
+            "scripts/macos-observe-host.sh",
             "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/",
         ],
         "model_count": len(model_pages),
@@ -754,6 +764,7 @@ def generate() -> dict[str, Any]:
     digitalocean_stats = c10_digitalocean.generate_digitalocean_compatibility(REPO_ROOT)
     ubuntu_stats = c10_ubuntu.generate_ubuntu_compatibility(REPO_ROOT)
     windows_stats = c10_windows.generate_windows_compatibility(REPO_ROOT)
+    macos_stats = c10_macos.generate_macos_compatibility(REPO_ROOT)
 
     return {
         "model_count": len(model_pages),
@@ -766,6 +777,7 @@ def generate() -> dict[str, Any]:
         "digitalocean_compatibility": digitalocean_stats,
         "ubuntu_compatibility": ubuntu_stats,
         "windows_compatibility": windows_stats,
+        "macos_compatibility": macos_stats,
     }
 
 
