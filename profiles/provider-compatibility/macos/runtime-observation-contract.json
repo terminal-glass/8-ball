@@ -1,0 +1,67 @@
+{
+  "schema_version": "c10.macos-runtime-observation-contract.v1",
+  "target_lanes": [
+    "mac/apple-silicon",
+    "mac/intel"
+  ],
+  "facts": [
+    {
+      "fact": "os_version",
+      "preferred_evidence": "sw_vers -productVersion",
+      "rule": "Store raw version or null; native macOS only."
+    },
+    {
+      "fact": "kernel_architecture",
+      "preferred_evidence": "uname -m",
+      "rule": "arm64 maps to mac/apple-silicon; x86_64 maps to mac/intel; other yields unknown lane."
+    },
+    {
+      "fact": "cpu_brand",
+      "preferred_evidence": "sysctl -n machdep.cpu.brand_string",
+      "rule": "Null on failure; do not infer core count from marketing name."
+    },
+    {
+      "fact": "cpu_threads",
+      "preferred_evidence": "sysctl -n hw.logicalcpu",
+      "rule": "Positive integer or null."
+    },
+    {
+      "fact": "physical_memory",
+      "preferred_evidence": "sysctl -n hw.memsize",
+      "rule": "Convert bytes to integer MiB; observed fact only, not a model requirement."
+    },
+    {
+      "fact": "free_install_disk",
+      "preferred_evidence": "df -Pk <install-root>",
+      "rule": "Available KiB on install destination converted to MiB."
+    },
+    {
+      "fact": "display_adapters",
+      "preferred_evidence": "system_profiler SPDisplaysDataType",
+      "rule": "Retain observed chipset/vendor/Metal text only; do not parse absent fields."
+    },
+    {
+      "fact": "virtualization",
+      "preferred_evidence": "sysctl -n hw.optional.hypervisor when present",
+      "rule": "Otherwise unknown; do not guess bare metal versus VM."
+    }
+  ],
+  "cuda_lane_forbidden": true,
+  "apple_silicon_unified_memory_vram_forbidden": true,
+  "linux_commands_forbidden": [
+    "/proc/meminfo",
+    "nproc",
+    "lspci",
+    "nvidia-smi"
+  ],
+  "observe_script_path": "scripts/macos-observe-host.sh",
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/macos/runtime-observation-contract.md",
+    "AGENTS/data-science/profile-mapping/macos/runtime-capability-taxonomy.json",
+    "install/mac/apple-silicon/8.2.sh",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json"
+  ],
+  "category_count": 8,
+  "runtime_menu_band_count": 5,
+  "disk_gate_count": 5
+}
