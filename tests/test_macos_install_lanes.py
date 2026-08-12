@@ -89,6 +89,24 @@ def _write_mock_bin(mock_bin: Path, arch: str, *, ollama_app_home: Path | None =
         ),
         encoding="utf-8",
     )
+    (mock_bin / "stat").write_text(
+        textwrap.dedent(
+            """\
+            #!/usr/bin/env bash
+            if [[ "$1" == "-c" && "$2" == "%u" ]]; then
+              echo "${MOCK_ID_UID:-1000}"
+              exit 0
+            fi
+            if [[ "$1" == "-f" && "$2" == "%u" ]]; then
+              echo "${MOCK_ID_UID:-1000}"
+              exit 0
+            fi
+            command -v /usr/bin/stat >/dev/null && exec /usr/bin/stat "$@"
+            exec /bin/stat "$@"
+            """
+        ),
+        encoding="utf-8",
+    )
     (mock_bin / "ollama").write_text(
         textwrap.dedent(
             """\
@@ -149,7 +167,7 @@ def _write_mock_bin(mock_bin: Path, arch: str, *, ollama_app_home: Path | None =
         ),
         encoding="utf-8",
     )
-    for name in ("uname", "sw_vers", "open", "id", "ollama", "curl"):
+    for name in ("uname", "sw_vers", "open", "id", "stat", "ollama", "curl"):
         (mock_bin / name).chmod(stat.S_IRWXU)
 
 
@@ -178,6 +196,7 @@ def _mac_env(
             "EIGHTBALL_ROOT": str(state_root),
             "MOCK_OLLAMA_LOG": str(tmp_path / "ollama.log"),
             "MOCK_OLLAMA_LIST_FILE": str(tmp_path / "ollama-list.txt"),
+            "MOCK_ID_UID": str(os.getuid()),
         }
     )
     if extra_env:
@@ -272,6 +291,7 @@ def test_missing_ollama_app_shows_manual_install_without_download(tmp_path: Path
             "PATH": f"{mock_bin}:{env.get('PATH', '')}",
             "HOME": str(home_dir),
             "EIGHTBALL_ROOT": str(state_root),
+            "MOCK_ID_UID": str(os.getuid()),
         }
     )
     result = _run_bash(APPLE_SILICON / "8.1.sh", env)
