@@ -1,0 +1,60 @@
+{
+  "schema_version": "c10.ubuntu-runtime-observation-contract.v1",
+  "target_lanes": [
+    "ubuntu/cpu",
+    "ubuntu/cuda"
+  ],
+  "facts": [
+    {
+      "fact": "host_topology",
+      "preferred_evidence": "systemd-detect-virt",
+      "rule": "Preserve status/output; unrecognized output is unknown. Map none to bare-metal, vm/kvm/qemu/vmware/microsoft/oracle to virtual-machine; provider stays null."
+    },
+    {
+      "fact": "vm_detail",
+      "preferred_evidence": "systemd-detect-virt --vm and/or lscpu -J",
+      "rule": "Optional detail only; never infer provider from hypervisor strings."
+    },
+    {
+      "fact": "os_architecture",
+      "preferred_evidence": "/etc/os-release, uname -m",
+      "rule": "Record observed values, not an imagined release target."
+    },
+    {
+      "fact": "cpu_threads",
+      "preferred_evidence": "nproc, lscpu -J",
+      "rule": "Record visible/assigned threads; do not derive performance class."
+    },
+    {
+      "fact": "system_ram",
+      "preferred_evidence": "/proc/meminfo",
+      "rule": "Record observed physical memory; never a model requirement."
+    },
+    {
+      "fact": "model_filesystem",
+      "preferred_evidence": "configured Ollama/8-BALL data path then df -P",
+      "rule": "Use free space on that filesystem only; never sum mounts."
+    },
+    {
+      "fact": "gpu_presence",
+      "preferred_evidence": "nvidia-smi first, then lspci -nn when available",
+      "rule": "Adapter discovery is not CUDA readiness."
+    },
+    {
+      "fact": "cuda_state",
+      "preferred_evidence": "nvidia-smi --query-gpu=name,memory.total --format=csv,noheader,nounits",
+      "rule": "Only successful nvidia-smi yields nvidia-cuda-ready; retain per-device evidence."
+    }
+  ],
+  "provider_inference_forbidden": true,
+  "lspci_cuda_ready_forbidden": true,
+  "per_device_gpu_evidence_required": true,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/ubuntu-runtime-observation-contract.md",
+    "AGENTS/data-science/profile-mapping/ubuntu-runtime-capability-taxonomy.json",
+    "install/ubuntu/cpu/8.2.sh",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json"
+  ],
+  "category_count": 10,
+  "runtime_menu_band_count": 5
+}

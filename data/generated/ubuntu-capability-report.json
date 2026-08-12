@@ -1,0 +1,43 @@
+{
+  "schema_version": "c10.ubuntu-capability-report.v1",
+  "category_counts": {
+    "topology_lane": 6,
+    "gpu_runtime_state": 4,
+    "total": 10,
+    "runtime_menu_bands": 5
+  },
+  "topology_lane_ids": [
+    "ubuntu-topology-bare-metal-cpu",
+    "ubuntu-topology-bare-metal-cuda",
+    "ubuntu-topology-virtual-machine-cpu",
+    "ubuntu-topology-virtual-machine-cuda",
+    "ubuntu-topology-unknown-cpu",
+    "ubuntu-topology-unknown-cuda"
+  ],
+  "gpu_state_ids": [
+    "ubuntu-gpu-state-nvidia-cuda-ready",
+    "ubuntu-gpu-state-gpu-present-not-cuda-ready",
+    "ubuntu-gpu-state-no-supported-gpu-detected",
+    "ubuntu-gpu-state-gpu-state-unknown"
+  ],
+  "runtime_menu_band_ids": [
+    "ubuntu-ram-band-under-4gib",
+    "ubuntu-ram-band-4-to-8gib",
+    "ubuntu-ram-band-8-to-12gib",
+    "ubuntu-ram-band-12-to-24gib",
+    "ubuntu-ram-band-24gib-plus"
+  ],
+  "target_lanes": [
+    "ubuntu/cpu",
+    "ubuntu/cuda"
+  ],
+  "provider_inference_forbidden": true,
+  "model_requirements_formula_generated": false,
+  "c10_index_expansion": false,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/ubuntu-runtime-capability-taxonomy.json",
+    "AGENTS/data-science/profile-mapping/ubuntu-runtime-observation-contract.md",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+    "install/ubuntu/cpu/8.2.sh"
+  ]
+}

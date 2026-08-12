@@ -29,3 +29,16 @@ Source tables:
 - `AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json`
 
 Regenerate with `python3 scripts/generate-c10-profiles.py`.
+
+## Ubuntu runtime hosts (C10.1-10)
+
+- `ubuntu/host-capability-categories.json` and `.csv` — 10 runtime host categories
+- `ubuntu/runtime-observation-contract.json` — Linux evidence contract
+- `ubuntu/lane-runtime-contract-projection.json` — `ubuntu/cpu` and `ubuntu/cuda` projections
+
+Source tables:
+- `AGENTS/data-science/profile-mapping/ubuntu-runtime-capability-taxonomy.json`
+- `AGENTS/data-science/profile-mapping/ubuntu-runtime-observation-contract.md`
+- `AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json`
+
+Regenerate with `python3 scripts/generate-c10-profiles.py`.

@@ -1,0 +1,59 @@
+{
+  "schema_version": "c10.ubuntu-lane-runtime-contract-projection.v1",
+  "lanes": {
+    "ubuntu/cpu": {
+      "target_lane": "ubuntu/cpu",
+      "observation_contract_path": "profiles/provider-compatibility/ubuntu/runtime-observation-contract.json",
+      "topology_category_ids": [
+        "ubuntu-topology-bare-metal-cpu",
+        "ubuntu-topology-virtual-machine-cpu",
+        "ubuntu-topology-unknown-cpu"
+      ],
+      "gpu_state_category_ids": [
+        "ubuntu-gpu-state-nvidia-cuda-ready",
+        "ubuntu-gpu-state-gpu-present-not-cuda-ready",
+        "ubuntu-gpu-state-no-supported-gpu-detected",
+        "ubuntu-gpu-state-gpu-state-unknown"
+      ],
+      "runtime_menu_band_ids": [
+        "ubuntu-ram-band-under-4gib",
+        "ubuntu-ram-band-4-to-8gib",
+        "ubuntu-ram-band-8-to-12gib",
+        "ubuntu-ram-band-12-to-24gib",
+        "ubuntu-ram-band-24gib-plus"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "provider": null,
+      "notes": "Lane projection joins runtime topology categories, shared GPU-state categories, and RAM-menu bands without multiplying the C10 model-size index."
+    },
+    "ubuntu/cuda": {
+      "target_lane": "ubuntu/cuda",
+      "observation_contract_path": "profiles/provider-compatibility/ubuntu/runtime-observation-contract.json",
+      "topology_category_ids": [
+        "ubuntu-topology-bare-metal-cuda",
+        "ubuntu-topology-virtual-machine-cuda",
+        "ubuntu-topology-unknown-cuda"
+      ],
+      "gpu_state_category_ids": [
+        "ubuntu-gpu-state-nvidia-cuda-ready",
+        "ubuntu-gpu-state-gpu-present-not-cuda-ready",
+        "ubuntu-gpu-state-no-supported-gpu-detected",
+        "ubuntu-gpu-state-gpu-state-unknown"
+      ],
+      "runtime_menu_band_ids": [
+        "ubuntu-ram-band-under-4gib",
+        "ubuntu-ram-band-4-to-8gib",
+        "ubuntu-ram-band-8-to-12gib",
+        "ubuntu-ram-band-12-to-24gib",
+        "ubuntu-ram-band-24gib-plus"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "provider": null,
+      "notes": "Lane projection joins runtime topology categories, shared GPU-state categories, and RAM-menu bands without multiplying the C10 model-size index."
+    }
+  }
+}
