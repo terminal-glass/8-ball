@@ -625,8 +625,8 @@ def build_provider_assumption(lane: dict[str, Any], hardware: dict[str, Any]) ->
 
 
 def copy_install_lane(lane: dict[str, Any]) -> None:
-    if lane.get("platform") == "mac":
-        # C10.2+ mac lanes ship curated payloads under install/mac/<lane>/.
+    if lane.get("platform") in ("mac", "windows"):
+        # C10.2+ mac/windows lanes ship curated payloads under install/<platform>/<lane>/.
         return
     source = INSTALL_DIR / lane["source_dir"]
     target = INSTALL_DIR / lane["lane_path"]
