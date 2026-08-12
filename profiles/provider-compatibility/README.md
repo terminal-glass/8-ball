@@ -42,3 +42,16 @@ Source tables:
 - `AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json`
 
 Regenerate with `python3 scripts/generate-c10-profiles.py`.
+
+## Windows runtime hosts (C10.1-11)
+
+- `windows/host-capability-categories.json` and `.csv` — runtime host categories
+- `windows/runtime-observation-contract.json` — Windows evidence contract
+- `windows/lane-runtime-contract-projection.json` — `windows/cpu` and `windows/cuda` projections
+
+Source tables:
+- `AGENTS/data-science/profile-mapping/windows/runtime-capability-taxonomy.json`
+- `AGENTS/data-science/profile-mapping/windows/runtime-observation-contract.md`
+- `AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json`
+
+Regenerate with `python3 scripts/generate-c10-profiles.py`.

@@ -1,0 +1,43 @@
+{
+  "schema_version": "c10.windows-capability-report.v1",
+  "category_counts": {
+    "host_topology": 6,
+    "lane_routing": 2,
+    "gpu_reporting": 6,
+    "total": 14,
+    "runtime_menu_bands": 5,
+    "disk_gates": 5
+  },
+  "canonical_lanes": [
+    "windows/cpu",
+    "windows/cuda"
+  ],
+  "install_lane_count_total": 10,
+  "windows_lane_contribution": 2,
+  "intentionally_unknown_fields": [
+    "eightball_cpu_threads",
+    "eightball_disk_free_gb",
+    "eightball_gpu_vram_mb",
+    "eightball_ram_mb",
+    "gpu_memory_gib",
+    "gpu_model",
+    "gpu_vendor",
+    "install_path_free_disk_gib",
+    "system_ram_gib",
+    "visible_cpu_threads",
+    "windows_architecture",
+    "windows_cuda_lane_eligible",
+    "windows_gpu_vram_source"
+  ],
+  "wsl_native_windows_lane_forbidden": true,
+  "adapter_ram_verified_vram_forbidden": true,
+  "model_requirements_formula_generated": false,
+  "c10_index_expansion": false,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/windows/runtime-capability-taxonomy.json",
+    "AGENTS/data-science/profile-mapping/windows/runtime-observation-contract.md",
+    "AGENTS/data-science/profile-mapping/windows/collector-output-schema.json",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+    "install/windows/cpu/8.2.sh"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": "c10.windows-runtime-observation-contract.v1",
+  "target_lanes": [
+    "windows/cpu",
+    "windows/cuda"
+  ],
+  "facts": [
+    {
+      "fact": "os_and_architecture",
+      "preferred_evidence": "Get-CimInstance Win32_OperatingSystem; [Environment]::Is64BitOperatingSystem; PROCESSOR_ARCHITECTURE",
+      "rule": "Record native Windows only. WSL must set os_family=wsl and must not use either windows lane."
+    },
+    {
+      "fact": "host_topology",
+      "preferred_evidence": "Win32_ComputerSystem.Model, Manufacturer, HypervisorPresent",
+      "rule": "Map only clearly evidenced windows_host_kind values; otherwise unknown. Do not infer cloud provider."
+    },
+    {
+      "fact": "installed_ram",
+      "preferred_evidence": "Win32_ComputerSystem.TotalPhysicalMemory",
+      "rule": "Record physical/assigned RAM in MiB as EIGHTBALL_RAM_MB. Never use free RAM as installed RAM."
+    },
+    {
+      "fact": "cpu_threads",
+      "preferred_evidence": "Win32_Processor.NumberOfLogicalProcessors",
+      "rule": "Sum valid logical processors; record EIGHTBALL_CPU_THREADS as measured integer."
+    },
+    {
+      "fact": "install_destination_free_disk",
+      "preferred_evidence": "Get-PSDrive / volume for configured install path",
+      "rule": "Measure the actual intended install destination only."
+    },
+    {
+      "fact": "gpu_presence",
+      "preferred_evidence": "Win32_VideoController",
+      "rule": "Presence alone is not CUDA evidence. AdapterRAM cannot become verified VRAM."
+    },
+    {
+      "fact": "nvidia_identity_and_vram",
+      "preferred_evidence": "nvidia-smi --query-gpu=name,memory.total --format=csv,noheader,nounits",
+      "rule": "Only successful nvidia-smi may set measured NVIDIA VRAM and windows/cuda lane eligibility."
+    }
+  ],
+  "normalized_artifact_fields": [
+    {
+      "name": "EIGHTBALL_OS_FAMILY",
+      "values": "windows | wsl",
+      "notes": "wsl excludes native Windows lanes"
+    },
+    {
+      "name": "EIGHTBALL_PROVIDER",
+      "values": "windows | bare_metal | unknown",
+      "notes": "Not a cloud provider lane"
+    },
+    {
+      "name": "EIGHTBALL_INSTANCE_CLASS",
+      "values": "<observed> | unknown",
+      "notes": "Marketing labels are not capacity claims"
+    },
+    {
+      "name": "EIGHTBALL_RAM_MB",
+      "values": "<measured integer>",
+      "notes": "From TotalPhysicalMemory"
+    },
+    {
+      "name": "EIGHTBALL_CPU_THREADS",
+      "values": "<measured integer>",
+      "notes": "Sum of logical processors"
+    },
+    {
+      "name": "EIGHTBALL_DISK_FREE_GB",
+      "values": "<measured integer>",
+      "notes": "Install destination only"
+    },
+    {
+      "name": "EIGHTBALL_GPU_PRESENT",
+      "values": "yes | no | unknown",
+      "notes": "Win32_VideoController presence"
+    },
+    {
+      "name": "EIGHTBALL_GPU_NAME",
+      "values": "<observed> | unknown",
+      "notes": "nvidia-smi name when verified"
+    },
+    {
+      "name": "EIGHTBALL_GPU_VRAM_MB",
+      "values": "<measured integer> | unknown",
+      "notes": "nvidia-smi only; never AdapterRAM"
+    }
+  ],
+  "windows_extension_fields": [
+    {
+      "name": "windows_host_kind",
+      "values": "physical | hyperv_vm | vmware_vm | virtualbox_vm | other_vm | unknown"
+    },
+    {
+      "name": "windows_architecture",
+      "values": "x64 | arm64 | x86 | unknown"
+    },
+    {
+      "name": "windows_gpu_runtime",
+      "values": "nvidia_smi_verified | gpu_present_unverified | no_gpu_detected | unknown"
+    },
+    {
+      "name": "windows_cuda_lane_eligible",
+      "values": "yes | no | unknown"
+    },
+    {
+      "name": "windows_gpu_vram_source",
+      "values": "nvidia_smi | unknown"
+    }
+  ],
+  "wsl_native_windows_lane_forbidden": true,
+  "adapter_ram_verified_vram_forbidden": true,
+  "nvidia_smi_required_for_cuda_lane": true,
+  "per_device_gpu_evidence_required": true,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/windows/runtime-observation-contract.md",
+    "AGENTS/data-science/profile-mapping/windows/runtime-capability-taxonomy.json",
+    "AGENTS/data-science/profile-mapping/windows/collector-output-schema.json",
+    "install/windows/cpu/8.2.sh",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json"
+  ],
+  "category_count": 14,
+  "runtime_menu_band_count": 5,
+  "disk_gate_count": 5
+}

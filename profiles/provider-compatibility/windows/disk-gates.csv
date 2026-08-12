@@ -1,0 +1,6 @@
+candidate_ollama_ref,required_free_disk_gib,required_free_disk_mib,source_script_path,source_policy_path,classification,model_fit_proven,runtime_trial_required
+qwen3:14b,14.0,14336,install/windows/cpu/8.2.sh,AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json,runtime_download_guard_only,false,true
+qwen3:8b,9.0,9216,install/windows/cpu/8.2.sh,AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json,runtime_download_guard_only,false,true
+qwen3:4b,6.0,6144,install/windows/cpu/8.2.sh,AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json,runtime_download_guard_only,false,true
+qwen3:1.7b,4.0,4096,install/windows/cpu/8.2.sh,AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json,runtime_download_guard_only,false,true
+qwen3:0.6b,3.0,3072,install/windows/cpu/8.2.sh,AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json,runtime_download_guard_only,false,true

@@ -1,0 +1,109 @@
+{
+  "schema_version": "c10.windows-collector-output.v1",
+  "description": "Example normalized collector output for a future Windows PowerShell probe.",
+  "normalized_artifact_fields": [
+    {
+      "name": "EIGHTBALL_OS_FAMILY",
+      "values": "windows | wsl",
+      "notes": "wsl excludes native Windows lanes"
+    },
+    {
+      "name": "EIGHTBALL_PROVIDER",
+      "values": "windows | bare_metal | unknown",
+      "notes": "Not a cloud provider lane"
+    },
+    {
+      "name": "EIGHTBALL_INSTANCE_CLASS",
+      "values": "<observed> | unknown",
+      "notes": "Marketing labels are not capacity claims"
+    },
+    {
+      "name": "EIGHTBALL_RAM_MB",
+      "values": "<measured integer>",
+      "notes": "From TotalPhysicalMemory"
+    },
+    {
+      "name": "EIGHTBALL_CPU_THREADS",
+      "values": "<measured integer>",
+      "notes": "Sum of logical processors"
+    },
+    {
+      "name": "EIGHTBALL_DISK_FREE_GB",
+      "values": "<measured integer>",
+      "notes": "Install destination only"
+    },
+    {
+      "name": "EIGHTBALL_GPU_PRESENT",
+      "values": "yes | no | unknown",
+      "notes": "Win32_VideoController presence"
+    },
+    {
+      "name": "EIGHTBALL_GPU_NAME",
+      "values": "<observed> | unknown",
+      "notes": "nvidia-smi name when verified"
+    },
+    {
+      "name": "EIGHTBALL_GPU_VRAM_MB",
+      "values": "<measured integer> | unknown",
+      "notes": "nvidia-smi only; never AdapterRAM"
+    }
+  ],
+  "windows_extension_fields": [
+    {
+      "name": "windows_host_kind",
+      "values": "physical | hyperv_vm | vmware_vm | virtualbox_vm | other_vm | unknown"
+    },
+    {
+      "name": "windows_architecture",
+      "values": "x64 | arm64 | x86 | unknown"
+    },
+    {
+      "name": "windows_gpu_runtime",
+      "values": "nvidia_smi_verified | gpu_present_unverified | no_gpu_detected | unknown"
+    },
+    {
+      "name": "windows_cuda_lane_eligible",
+      "values": "yes | no | unknown"
+    },
+    {
+      "name": "windows_gpu_vram_source",
+      "values": "nvidia_smi | unknown"
+    }
+  ],
+  "wsl_policy": {
+    "os_family": "wsl",
+    "native_windows_lane_eligible": false,
+    "notes": "WSL detections must not be filed under windows/cpu or windows/cuda."
+  },
+  "per_device_gpu_records_required": true,
+  "adapter_ram_verified_vram_forbidden": true,
+  "lane_selection_fields": [
+    "native_windows_lane_eligible",
+    "target_lane"
+  ],
+  "example_output": {
+    "EIGHTBALL_OS_FAMILY": "windows",
+    "EIGHTBALL_PROVIDER": "unknown",
+    "EIGHTBALL_INSTANCE_CLASS": "unknown",
+    "EIGHTBALL_RAM_MB": null,
+    "EIGHTBALL_CPU_THREADS": null,
+    "EIGHTBALL_DISK_FREE_GB": null,
+    "EIGHTBALL_GPU_PRESENT": "unknown",
+    "EIGHTBALL_GPU_NAME": "unknown",
+    "EIGHTBALL_GPU_VRAM_MB": "unknown",
+    "windows_host_kind": "unknown",
+    "windows_architecture": "unknown",
+    "windows_gpu_runtime": "unknown",
+    "windows_cuda_lane_eligible": "unknown",
+    "windows_gpu_vram_source": "unknown",
+    "native_windows_lane_eligible": true,
+    "target_lane": "unknown",
+    "gpus": []
+  },
+  "wsl_example_output": {
+    "EIGHTBALL_OS_FAMILY": "wsl",
+    "windows_cuda_lane_eligible": "no",
+    "native_windows_lane_eligible": false,
+    "target_lane": "unknown"
+  }
+}
