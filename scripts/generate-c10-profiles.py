@@ -37,6 +37,13 @@ if _LIGHTSAIL_SPEC is None or _LIGHTSAIL_SPEC.loader is None:
 c10_lightsail = importlib.util.module_from_spec(_LIGHTSAIL_SPEC)
 sys.modules[_LIGHTSAIL_SPEC.name] = c10_lightsail
 _LIGHTSAIL_SPEC.loader.exec_module(c10_lightsail)
+_C10_DIGITALOCEAN_PATH = REPO_ROOT / "scripts" / "c10_digitalocean_compatibility.py"
+_DIGITALOCEAN_SPEC = importlib.util.spec_from_file_location("c10_digitalocean_compatibility", _C10_DIGITALOCEAN_PATH)
+if _DIGITALOCEAN_SPEC is None or _DIGITALOCEAN_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_DIGITALOCEAN_PATH}")
+c10_digitalocean = importlib.util.module_from_spec(_DIGITALOCEAN_SPEC)
+sys.modules[_DIGITALOCEAN_SPEC.name] = c10_digitalocean
+_DIGITALOCEAN_SPEC.loader.exec_module(c10_digitalocean)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 REPORT_DIR = REPO_ROOT / "AGENTS" / "data-science" / "profile-mapping"
@@ -653,6 +660,9 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
             "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
             "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
             "AGENTS/data-science/profile-mapping/aws-lightsail-source-snapshot.json",
+            "AGENTS/data-science/profile-mapping/digitalocean-raw-sizes-2026-08-12.json",
+            "AGENTS/data-science/profile-mapping/digitalocean-base-pilot-catalog.json",
+            "AGENTS/data-science/profile-mapping/digitalocean-base-pilot-selection.md",
             "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/",
         ],
         "model_count": len(model_pages),
@@ -723,6 +733,7 @@ def generate() -> dict[str, Any]:
     write_json(PROFILES_DIR / "c10-index.json", {"generated_at": utc_now(), "rows": index_rows})
 
     lightsail_stats = c10_lightsail.generate_lightsail_compatibility(REPO_ROOT)
+    digitalocean_stats = c10_digitalocean.generate_digitalocean_compatibility(REPO_ROOT)
 
     return {
         "model_count": len(model_pages),
@@ -732,6 +743,7 @@ def generate() -> dict[str, Any]:
         "provider_assumption_count": len(INSTALL_LANES),
         "data_gaps": gaps,
         "lightsail_compatibility": lightsail_stats,
+        "digitalocean_compatibility": digitalocean_stats,
     }
 
 
