@@ -225,6 +225,7 @@ At minimum:
 
 ```bash
 bash scripts/validate-catalog.sh
+python3 scripts/validate-install-lanes.py
 pytest
 ```
 
