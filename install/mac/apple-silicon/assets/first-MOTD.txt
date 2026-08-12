@@ -4,8 +4,9 @@ terminal.glass
 SYSTEM STATUS
 Ollama ............. __OLLAMA_STATUS__
 Local Model ........ __MODEL_STATUS__
-8-BALL JETS ........ READY AFTER SIGN-IN
+8-BALL JETS ........ OPTIONAL AFTER SIGN-IN
 
 Local:    ollama run __SELECTED_MODEL__
-Status:   cat /opt/philosopher/8ball-result.txt
-Upgrade:  sudo remember
+Status:   __EIGHTBALL_ROOT__/bin/8ball-status
+Result:   __EIGHTBALL_ROOT__/8ball-result.txt
+Jets:     optional; run 'ollama signin' separately if you want cloud models
