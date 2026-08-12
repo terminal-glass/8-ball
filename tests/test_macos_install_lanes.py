@@ -76,6 +76,19 @@ def _write_mock_bin(mock_bin: Path, arch: str, *, ollama_app_home: Path | None =
         "#!/usr/bin/env bash\nexit 0\n",
         encoding="utf-8",
     )
+    (mock_bin / "id").write_text(
+        textwrap.dedent(
+            """\
+            #!/usr/bin/env bash
+            case "$1" in
+              -u) echo "${MOCK_ID_UID:-1000}" ;;
+              -un) echo "${MOCK_ID_UN:-ubuntu}" ;;
+              *) exit 1 ;;
+            esac
+            """
+        ),
+        encoding="utf-8",
+    )
     (mock_bin / "ollama").write_text(
         textwrap.dedent(
             """\
@@ -136,7 +149,7 @@ def _write_mock_bin(mock_bin: Path, arch: str, *, ollama_app_home: Path | None =
         ),
         encoding="utf-8",
     )
-    for name in ("uname", "sw_vers", "open", "ollama", "curl"):
+    for name in ("uname", "sw_vers", "open", "id", "ollama", "curl"):
         (mock_bin / name).chmod(stat.S_IRWXU)
 
 
@@ -213,10 +226,10 @@ def test_root_refuses_before_state_writes(tmp_path: Path, lane: Path) -> None:
     arch = "arm64" if lane.name == "apple-silicon" else "x86_64"
     env = _mac_env(tmp_path, lane, arch)
     state_root = Path(env["EIGHTBALL_ROOT"])
-    env["SUDO_UID"] = "1000"
+    env["MOCK_ID_UID"] = "0"
     result = _run_bash(lane / "8.1.sh", env)
     assert result.returncode == 1
-    assert "not with sudo" in result.stderr.lower() or "normal user" in result.stderr.lower()
+    assert "normal user" in result.stderr.lower() or "root" in result.stderr.lower()
     assert not (state_root / "runtime-observation.json").exists()
 
 

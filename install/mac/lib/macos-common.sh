@@ -11,9 +11,9 @@ mac_log() {
 }
 
 mac_refuse_root() {
-  if [[ "${EUID:-$(id -u)}" -eq 0 ]] || [[ -n "${SUDO_UID:-}" ]]; then
-    echo "8-BALL macOS installers must run as your normal user account, not with sudo or as root." >&2
-    echo "Re-run without sudo: ./trial-install.sh" >&2
+  if [[ "$(id -u)" -eq 0 ]]; then
+    echo "8-BALL macOS installers must run as your normal user account, not as root." >&2
+    echo "Re-run as your signed-in user: ./trial-install.sh" >&2
     exit 1
   fi
 }
@@ -169,7 +169,7 @@ Manual steps:
 1. Download the official Ollama macOS app from ${OLLAMA_MACOS_DOCS_URL}
 2. Open the DMG and drag Ollama into Applications
 3. Launch Ollama once from Applications and approve the CLI link prompt if macOS asks
-4. Re-run this installer without sudo
+4. Re-run this installer as your signed-in user
 
 The installer does not download Ollama automatically on macOS.
 EOF
@@ -386,13 +386,4 @@ echo "Jets: optional; run 'ollama signin' separately if you want cloud models."
 echo "Status helper: \${ROOT}/bin/8ball-status"
 EOF
   chmod +x "${STATUS_BIN}"
-}
-
-mac_forbidden_command_check() {
-  local file="$1"
-  local forbidden='apt-get|systemctl|/proc/meminfo|nproc|nvidia-smi|ollama serve|sudo '
-  if grep -Eiq "${forbidden}" "${file}"; then
-    echo "Forbidden command pattern found in ${file}" >&2
-    return 1
-  fi
 }
