@@ -1,0 +1,50 @@
+{
+  "schema_version": "c10.cuda-runtime-observation-contract.v1",
+  "policy": {
+    "policy_id": "ollama-nvidia-support-2026-08-12",
+    "source_url": "https://docs.ollama.com/gpu",
+    "retrieval_date": "2026-08-12",
+    "schema_version": "c10.cuda-ollama-nvidia-support-policy.v1"
+  },
+  "device_fields": [
+    "gpu_index",
+    "gpu_uuid",
+    "gpu_name",
+    "gpu_vendor",
+    "gpu_memory_mb",
+    "compute_capability",
+    "driver_version",
+    "driver_reported_cuda_api_max_version",
+    "cuda_toolkit_version",
+    "cuda_visible",
+    "ollama_nvidia_support",
+    "observation_status",
+    "source_command"
+  ],
+  "primary_evidence_command": "nvidia-smi --query-gpu=index,uuid,name,driver_version,memory.total,compute_cap --format=csv,noheader,nounits",
+  "toolkit_evidence_command": "nvcc --version",
+  "driver_cuda_api_field": "driver_reported_cuda_api_max_version",
+  "toolkit_field": "cuda_toolkit_version",
+  "cuda_visible_devices_rules": [
+    "Record sanitized CUDA_VISIBLE_DEVICES when set.",
+    "Resolve UUID only when mapping is unambiguous.",
+    "Do not treat numeric device indices as persistent identity."
+  ],
+  "forbidden_substitutes": [
+    "lspci",
+    "Device Manager display names",
+    "provider-plan labels",
+    "WMI adapter memory",
+    "GPU product-name lookup tables"
+  ],
+  "mac_lane_forbidden": true,
+  "rocm_vulkan_out_of_scope": true,
+  "model_vram_fit_from_observation_forbidden": true,
+  "category_count": 6,
+  "canonical_lanes": [
+    "ubuntu/cuda",
+    "windows/cuda",
+    "cloud/digitalocean/gpu-droplet",
+    "cloud/aws-lightsail/gpu"
+  ]
+}

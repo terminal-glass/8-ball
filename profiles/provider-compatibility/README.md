@@ -68,3 +68,18 @@ Source tables:
 - `scripts/macos-observe-host.sh`
 
 Regenerate with `python3 scripts/generate-c10-profiles.py`.
+
+## CUDA runtime hosts (C10.1-13)
+
+- `cuda/host-capability-categories.json` and `.csv` — CUDA lane and observation-state categories
+- `cuda/runtime-observation-contract.json` — cross-platform nvidia-smi evidence contract
+- `cuda/lane-runtime-contract-projection.json` — four canonical CUDA lane projections
+
+Source tables:
+- `AGENTS/data-science/profile-mapping/cuda/ollama-nvidia-support-policy.json`
+- `AGENTS/data-science/profile-mapping/cuda/runtime-capability-taxonomy.json`
+- `AGENTS/data-science/profile-mapping/cuda/runtime-observation-contract.md`
+- `scripts/cuda-observe-linux.sh`
+- `scripts/cuda-observe-windows.ps1`
+
+Regenerate with `python3 scripts/generate-c10-profiles.py`.

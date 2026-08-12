@@ -1,0 +1,69 @@
+{
+  "schema_version": "c10.cuda-lane-runtime-contract-projection.v1",
+  "lanes": {
+    "ubuntu/cuda": {
+      "target_lane": "ubuntu/cuda",
+      "lane_category_ids": [
+        "cuda-lane-ubuntu-cuda"
+      ],
+      "shared_observation_state_ids": [
+        "cuda-state-cuda-observation-available",
+        "cuda-state-cuda-observation-unavailable"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "provider_inference_forbidden": true,
+      "notes": "CUDA lane projection joins OS/provider context with nvidia-smi evidence. Host VRAM and driver facts do not change catalog model-size fit records."
+    },
+    "windows/cuda": {
+      "target_lane": "windows/cuda",
+      "lane_category_ids": [
+        "cuda-lane-windows-cuda"
+      ],
+      "shared_observation_state_ids": [
+        "cuda-state-cuda-observation-available",
+        "cuda-state-cuda-observation-unavailable"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "provider_inference_forbidden": true,
+      "notes": "CUDA lane projection joins OS/provider context with nvidia-smi evidence. Host VRAM and driver facts do not change catalog model-size fit records."
+    },
+    "cloud/digitalocean/gpu-droplet": {
+      "target_lane": "cloud/digitalocean/gpu-droplet",
+      "lane_category_ids": [
+        "cuda-lane-cloud-digitalocean-gpu-droplet"
+      ],
+      "shared_observation_state_ids": [
+        "cuda-state-cuda-observation-available",
+        "cuda-state-cuda-observation-unavailable"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "provider_inference_forbidden": true,
+      "notes": "CUDA lane projection joins OS/provider context with nvidia-smi evidence. Host VRAM and driver facts do not change catalog model-size fit records."
+    },
+    "cloud/aws-lightsail/gpu": {
+      "target_lane": "cloud/aws-lightsail/gpu",
+      "lane_category_ids": [
+        "cuda-lane-cloud-aws-lightsail-gpu"
+      ],
+      "shared_observation_state_ids": [
+        "cuda-state-cuda-observation-available",
+        "cuda-state-cuda-observation-unavailable"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "provider_inference_forbidden": true,
+      "notes": "CUDA lane projection joins OS/provider context with nvidia-smi evidence. Host VRAM and driver facts do not change catalog model-size fit records."
+    }
+  },
+  "mac_lanes_explicitly_excluded": [
+    "mac/apple-silicon",
+    "mac/intel"
+  ]
+}

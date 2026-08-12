@@ -65,6 +65,13 @@ if _MACOS_SPEC is None or _MACOS_SPEC.loader is None:
 c10_macos = importlib.util.module_from_spec(_MACOS_SPEC)
 sys.modules[_MACOS_SPEC.name] = c10_macos
 _MACOS_SPEC.loader.exec_module(c10_macos)
+_C10_CUDA_PATH = REPO_ROOT / "scripts" / "c10_cuda_compatibility.py"
+_CUDA_SPEC = importlib.util.spec_from_file_location("c10_cuda_compatibility", _C10_CUDA_PATH)
+if _CUDA_SPEC is None or _CUDA_SPEC.loader is None:
+    raise RuntimeError(f"Unable to load {_C10_CUDA_PATH}")
+c10_cuda = importlib.util.module_from_spec(_CUDA_SPEC)
+sys.modules[_CUDA_SPEC.name] = c10_cuda
+_CUDA_SPEC.loader.exec_module(c10_cuda)
 PROFILES_DIR = REPO_ROOT / "profiles"
 INSTALL_DIR = REPO_ROOT / "install"
 REPORT_DIR = REPO_ROOT / "AGENTS" / "data-science" / "profile-mapping"
@@ -691,6 +698,11 @@ def write_inventory(model_pages: dict[str, dict[str, Any]], gaps: list[str]) -> 
             "AGENTS/data-science/profile-mapping/macos/runtime-capability-taxonomy.json",
             "AGENTS/data-science/profile-mapping/macos/runtime-observation-contract.md",
             "scripts/macos-observe-host.sh",
+            "AGENTS/data-science/profile-mapping/cuda/ollama-nvidia-support-policy.json",
+            "AGENTS/data-science/profile-mapping/cuda/runtime-capability-taxonomy.json",
+            "AGENTS/data-science/profile-mapping/cuda/runtime-observation-contract.md",
+            "scripts/cuda-observe-linux.sh",
+            "scripts/cuda-observe-windows.ps1",
             "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/",
         ],
         "model_count": len(model_pages),
@@ -765,6 +777,7 @@ def generate() -> dict[str, Any]:
     ubuntu_stats = c10_ubuntu.generate_ubuntu_compatibility(REPO_ROOT)
     windows_stats = c10_windows.generate_windows_compatibility(REPO_ROOT)
     macos_stats = c10_macos.generate_macos_compatibility(REPO_ROOT)
+    cuda_stats = c10_cuda.generate_cuda_compatibility(REPO_ROOT)
 
     return {
         "model_count": len(model_pages),
@@ -778,6 +791,7 @@ def generate() -> dict[str, Any]:
         "ubuntu_compatibility": ubuntu_stats,
         "windows_compatibility": windows_stats,
         "macos_compatibility": macos_stats,
+        "cuda_compatibility": cuda_stats,
     }
 
 
