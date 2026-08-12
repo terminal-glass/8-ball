@@ -1,201 +1,118 @@
-# 8-BALL
+🎱 8-BALL
 
-**8-BALL** is the Terminal.Glass model-intelligence catalog for publicly available Ollama models. This repository stores **metadata only**. It does not download, cache, mirror, package, or distribute model payloads.
+😎 Private AI with no more guesswork 😎
 
-8-BALL supports separate installer-authoring work. It does **not** generate customer installer scripts.
+<p align="center">
+  <img src="assets/8ball-ollama-pool.jpg"
+       alt="8-BALL for Ollama — private AI without the hardware and model guesswork"
+       width="720">
+</p>
 
-## What this repository contains
+8-BALL helps match Ollama models and AI tools to the computer you actually have.
 
-- Publishers, model families, models, and tags in a normalized JSON catalog
-- Exact Ollama tags plus `ollama pull` / `ollama run` commands
-- Published download sizes and normalized byte values
-- Parameter labels, quantizations, context windows, and availability
-- Provenance/confidence metadata (`observed`, `derived`, `estimated`, `manual`, `unknown`)
-- Configurable hardware estimates and generated deployment recommendations
-- Validation and coverage reports
-- Public free/trial installer scripts under `install/` (see `install/README.md`)
+Instead of guessing about RAM, VRAM, GPUs, model sizes, and cloud options, 8-BALL is building a hardware-aware catalog and installation system for local and hybrid AI.
 
-## What this repository does not contain
+Start with Ollama
 
-- Model weights, GGUF files, layers, or blobs
-- Paid installer packaging, Passport activation, Stripe, or license fulfillment
-- Private S3 release bundles, RecordsCore, or customer-specific install logic
-- Live crawling in CI (tests use offline fixtures)
+Ollama gives you local AI models.
 
-## Authoritative sources
+8-BALL helps answer the next question:
 
-1. [Official Ollama library](https://ollama.com/library)
-2. [NoCloudGPT models](https://nocloudgpt.com/models) — discovery only
-3. [Terminal.Glass models](https://terminal.glass/models) — discovery only
+What should I run on this machine?
 
-Curated sources help discover coverage gaps but are not authoritative for exact tags or download sizes.
+8-BALL maps publicly available Ollama models against hardware profiles, model requirements, deployment types, and installation targets.
 
-## Repository layout
+The goal is simple:
 
-```text
-config/                 Source URLs, crawl policy, capabilities, hardware profiles
-schemas/                JSON schemas for normalized entities
-src/eight_ball/         Collection, normalization, validation, estimation, generation
-data/families/          Legacy per-family source observations (preserved)
-data/overrides/         Reviewed manual metadata overrides
-data/normalized/        Normalized source-derived entities (committed)
-data/generated/         Flat generated JSON (not committed; regenerate with eight-ball generate)
-data/generated/pages/   C5 metadata page tree (committed; regenerate with eight-ball generate)
-data/snapshots/         Cached sanitized snapshots (not committed)
-reports/                Human-readable reports and reproducible JSON summaries
-indexes/                Generated metadata indexes (not committed)
-scripts/                Shell wrappers around the CLI
-install/                Public free/trial installer scripts by profile (see install/README.md)
-tests/fixtures/         Offline sample fixtures
-```
+Machine → right-sized Ollama model → working private AI
 
-## Install
+Add the tools you recognize
 
-One-time development setup:
+Once Ollama is running, 8-BALL is designed around familiar AI tools rather than replacing them.
 
-```bash
-python -m pip install -e ".[dev]"
-```
+💬 Open WebUI
 
-Routine commands use the installed `eight-ball` CLI or `python -m eight_ball` and do not reinstall the package.
+Want a familiar browser-based chat interface?
 
-## CLI
+Open WebUI can turn your Ollama server into a persistent AI workspace with conversations, models, and a modern web interface.
 
-```bash
-eight-ball collect      # Fetch and cache public source snapshots
-eight-ball normalize    # Normalize legacy/catalog inputs into data/normalized/
-eight-ball validate     # Schema and integrity validation
-eight-ball generate     # Generate deployment recommendations and exports
-eight-ball report       # Write coverage and validation reports
-eight-ball all          # Run the full offline-capable pipeline
-```
+✈️ Ollama Cloud + 8-BALL JETS
 
-Useful flags:
+Small computer? Big job?
 
-- `--sample` — limit to the six representative fixture families
-- `--offline` — use cached snapshots only
-- `--fixture` — use `tests/fixtures` inputs
-- `--source ollama --candidate` — rebuild into `data/candidate/` without touching legacy data
-- `--from-index` — discover families from the Ollama library index snapshot
-- `--resume` — resume live collection from cached snapshots/state
+Keep a useful model locally and use Ollama Cloud when larger models make more sense.
 
-Shell wrappers remain available for compatibility:
+8-BALL calls these optional cloud-powered models JETS:
 
-```bash
-bash scripts/validate-catalog.sh
-bash scripts/refresh-catalog.sh            # legacy pipeline (data/families → data/normalized)
-bash scripts/plan-candidate-collect.sh     # offline recreate plan
-bash scripts/refresh-candidate-sample.sh   # offline six-family candidate rebuild
-bash scripts/refresh-candidate-live.sh     # live metadata crawl (metadata pages only)
-bash scripts/promote-candidate.sh          # dry-run promote candidate → normalized
-bash scripts/build-indexes.sh
-```
+🎱 8-BALL JETS — Tiny server. Serious AI.
 
-## Recreate catalog (candidate scaffolding)
+Local when practical. Cloud when useful.
 
-Canonical recreate flow keeps legacy observations intact and writes a reviewable candidate first:
+🦞 OpenClaw
 
-```text
-plan → collect/normalize candidate → validate/compare → promote (dry-run) → promote --apply --confirm
-```
+Want AI that can do more than chat?
 
-1. **Plan** (offline, no network):
+OpenClaw adds an agent layer for tool-using and action-oriented AI workflows.
 
-```bash
-eight-ball plan --fixture --offline --from-index
-# or: bash scripts/plan-candidate-collect.sh
-```
+8-BALL is being designed so the machine, models, chat interface, cloud models, and agents can fit together without turning installation into a research project.
 
-`--fixture` is explicit test data. Without it, an offline index plan requires
-`data/snapshots/ollama-library-index.html`; it never silently substitutes the
-test fixture for a collected index.
+One machine. A simple path.
 
-2. **Rebuild candidate from fixtures** (safe CI/sample path):
+🎱 8-BALL
+   │
+   ├── Ollama ─────────── Local AI
+   │
+   ├── Open WebUI ─────── Persistent Chat
+   │
+   ├── Ollama Cloud ───── 8-BALL JETS
+   │
+   └── OpenClaw ───────── AI Agents
 
-```bash
-bash scripts/refresh-candidate-sample.sh
-eight-ball compare --sample
-```
+You don’t need every layer.
 
-3. **Full-index recreate later** (metadata pages only; not run in CI):
+Start with the machine you have and add what you need.
 
-```bash
-# After an index snapshot exists under data/snapshots/:
-eight-ball collect --source ollama --candidate --offline --from-index
-eight-ball normalize --source ollama --candidate --offline --from-index
-eight-ball validate --candidate --source ollama
-eight-ball compare
-eight-ball promote --dry-run
-```
+⸻
 
-4. **Promote** only after review. Promote validates the candidate, blocks
-unresolved review records and unacknowledged removals, archives
-`data/normalized/` into `data/history/<version>/`, and swaps the staged catalog
-into place with rollback protection. It never modifies `data/families/`:
+🚀 $99 Pilot
 
-```bash
-eight-ball promote --dry-run
-# eight-ball promote --apply --confirm   # explicit canonical replacement
-```
+Want help turning one machine into a complete 8-BALL system?
 
-If reviewed upstream removals or unresolved review records are intentionally
-accepted, acknowledge each gate explicitly:
+The $99 8-BALL Pilot is intended for a single machine and can help connect the appropriate pieces around your hardware and intended use.
 
-```bash
-eight-ball promote --apply --confirm --allow-removals --allow-review-items
-```
+Learn about the $99 Pilot → terminal.glass/8-ball
 
-This repository still does **not** run `ollama pull`, download weights, or generate installer scripts.
+⸻
 
-## Representative sample
+For developers
 
-The offline sample pipeline covers:
+8-BALL is also the Terminal.Glass model-intelligence catalog for publicly available Ollama models.
 
-- `tinyllama` — small local model
-- `llama3` — multiple parameter sizes
-- `codestral` — coding model
-- `llava` — vision model
-- `nomic-embed-text` — embedding model
-- `gemini-3-flash-preview` — cloud model
+The repository stores metadata rather than model weights and provides the data needed to reason about:
 
-```bash
-eight-ball all --fixture --offline --sample
-# Candidate path (preferred recreate scaffolding):
-eight-ball all --source ollama --candidate --fixture --offline --sample
-```
+* Ollama models and exact tags
+* Published model sizes
+* RAM and VRAM estimates
+* CPU and GPU hardware profiles
+* Model families and quantizations
+* Local versus cloud availability
+* Deployment recommendations
+* Installer-authoring datasets
+* Provenance and confidence
+* Validation and coverage
 
-## Installer-authoring datasets (P-steps)
+8-BALL does not replace Ollama, Open WebUI, Ollama Cloud, or OpenClaw.
 
-The repository also hosts static planning datasets and committed exports that
-separate installer repositories (for example `terminal-glass/8-ball-installer`)
-consume. These are metadata only; installer scripts are never generated here.
+It is the model and hardware intelligence that helps these pieces fit the machine.
 
-| Folder | Contents |
-| --- | --- |
-| `AGENTS/data-science/ollama-mapping/P1-Estimator/` | Provider hardware specs, NoCloudGPT planning templates, overhead reserves, workload profiles |
-| `AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/` | Provider plan metadata plus committed indexes (`indexes/`) |
-| `AGENTS/data-science/ollama-mapping/P3-Ollama-Metadata-Catalog/` | Catalog provenance and compact installer-consumable indexes, including `indexes/model-selection.json` (per-hardware-profile local model candidates with estimated RAM/VRAM) |
+⸻
 
-Rebuild the committed P2/P3 exports after catalog or dataset changes:
+Development
 
-```bash
-eight-ball export-datasets
-```
+8-BALL is under active development.
 
-## Provenance and estimates
+The current repository contains the catalog, normalized model metadata, hardware estimates, validation tooling, generated recommendations, and public free/trial installer resources.
 
-Observed values come directly from cited public sources. Derived values are calculated from observed inputs. Estimated values, such as RAM/VRAM recommendations, are heuristic and documented in `src/eight_ball/estimate/`. They are not vendor guarantees.
+Developers and contributors: continue below for the repository architecture, catalog recreation workflow, CLI, validation, datasets, and provenance documentation.
 
-## Agent guidance
-
-See `AGENTS.md` and `AGENTS/cursorFileA0.md` for repository boundaries and prohibited actions.
-
-For C5 generated pages and the `8.2` install manifest contract, see
-`docs/install-manifest-contract.md` and `config/deployment_types.yaml`.
-
-## Validation
-
-```bash
-bash scripts/validate-catalog.sh
-pytest -q
-```
+⸻
