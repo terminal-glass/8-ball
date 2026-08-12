@@ -93,6 +93,16 @@ def test_adapter_ram_cannot_become_verified_vram() -> None:
         ).read_text(encoding="utf-8")
     )
     assert contract["adapter_ram_verified_vram_forbidden"] is True
+    normalized = c10_windows.normalize_collector_output(
+        {
+            "EIGHTBALL_OS_FAMILY": "windows",
+            "windows_gpu_vram_source": "unknown",
+            "EIGHTBALL_GPU_VRAM_MB": 8192,
+            "windows_cuda_lane_eligible": "no",
+            "EIGHTBALL_GPU_PRESENT": "yes",
+        }
+    )
+    assert normalized["EIGHTBALL_GPU_VRAM_MB"] == "unknown"
 
 
 def test_wsl_not_native_windows() -> None:
@@ -110,6 +120,65 @@ def test_wsl_not_native_windows() -> None:
         )
     )
     assert schema["wsl_policy"]["native_windows_lane_eligible"] is False
+    wsl = c10_windows.normalize_collector_output(
+        {
+            "EIGHTBALL_OS_FAMILY": "wsl",
+            "windows_cuda_lane_eligible": "no",
+            "native_windows_lane_eligible": False,
+            "target_lane": "unknown",
+        }
+    )
+    assert wsl["EIGHTBALL_OS_FAMILY"] == "wsl"
+    assert wsl["native_windows_lane_eligible"] is False
+    assert wsl["target_lane"] == "unknown"
+    assert wsl["windows_cuda_lane_eligible"] == "no"
+
+
+def test_wsl_with_nvidia_smi_still_excludes_native_windows_lanes() -> None:
+    wsl = c10_windows.normalize_collector_output(
+        {
+            "EIGHTBALL_OS_FAMILY": "wsl",
+            "windows_cuda_lane_eligible": "yes",
+            "target_lane": "windows/cuda",
+            "EIGHTBALL_GPU_VRAM_MB": 8192,
+            "windows_gpu_vram_source": "nvidia_smi",
+        }
+    )
+    assert wsl["target_lane"] == "unknown"
+    assert wsl["native_windows_lane_eligible"] is False
+
+
+def test_install_path_disk_free_gb_from_measured_bytes() -> None:
+    assert c10_windows.compute_install_disk_free_gb(10 * 1024**3 + 900 * 1024**2) == 10
+    assert c10_windows.compute_install_disk_free_gb(None) is None
+    assert c10_windows.compute_install_disk_free_gb(-1) is None
+
+
+def test_collector_normalization_keeps_unknown_disk_when_unresolved() -> None:
+    normalized = c10_windows.normalize_collector_output(
+        {
+            "EIGHTBALL_OS_FAMILY": "windows",
+            "EIGHTBALL_DISK_FREE_GB": None,
+            "windows_cuda_lane_eligible": "no",
+            "EIGHTBALL_GPU_PRESENT": "yes",
+        }
+    )
+    assert normalized["EIGHTBALL_DISK_FREE_GB"] is None
+
+
+def test_collector_safe_unknown_fallback_shape() -> None:
+    normalized = c10_windows.normalize_collector_output({"EIGHTBALL_OS_FAMILY": "unknown"})
+    assert normalized["target_lane"] == "unknown"
+    assert normalized["EIGHTBALL_GPU_VRAM_MB"] == "unknown"
+
+
+def test_collector_script_documents_wsl_and_install_disk() -> None:
+    text = (REPO_ROOT / "AGENTS/data-science/profile-mapping/windows/collector-example.ps1").read_text(
+        encoding="utf-8"
+    )
+    assert "Test-IsWslEnvironment" in text
+    assert "Get-InstallPathFreeDiskGb" in text
+    assert "$ErrorActionPreference = 'Stop'" not in text
 
 
 def test_capacity_fields_remain_null_not_zero_or_empty() -> None:

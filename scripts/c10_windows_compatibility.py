@@ -13,6 +13,7 @@ TAXONOMY_JSON = MAPPING_DIR / "runtime-capability-taxonomy.json"
 TAXONOMY_CSV = MAPPING_DIR / "runtime-capability-taxonomy.csv"
 CONTRACT_MD = MAPPING_DIR / "runtime-observation-contract.md"
 COLLECTOR_SCHEMA_JSON = MAPPING_DIR / "collector-output-schema.json"
+COLLECTOR_SCRIPT = MAPPING_DIR / "collector-example.ps1"
 
 COMPAT_DIR = REPO_ROOT / "profiles" / "provider-compatibility" / "windows"
 OUTPUT_CATEGORIES_JSON = COMPAT_DIR / "host-capability-categories.json"
@@ -26,6 +27,65 @@ WINDOWS_SOURCE_SCRIPT = "install/windows/cpu/8.2.sh"
 WINDOWS_SOURCE_SCRIPT_VERSION = "public-8.2-windows-cpu"
 
 CANONICAL_LANES = ("windows/cpu", "windows/cuda")
+
+NATIVE_WINDOWS_LANES = frozenset(CANONICAL_LANES)
+
+
+def is_wsl_collector_output(payload: dict[str, Any]) -> bool:
+    return (payload.get("EIGHTBALL_OS_FAMILY") or "").lower() == "wsl"
+
+
+def normalize_collector_output(payload: dict[str, Any]) -> dict[str, Any]:
+    os_family = (payload.get("EIGHTBALL_OS_FAMILY") or "unknown").lower()
+    if os_family == "wsl":
+        return {
+            "EIGHTBALL_OS_FAMILY": "wsl",
+            "windows_cuda_lane_eligible": "no",
+            "native_windows_lane_eligible": False,
+            "target_lane": "unknown",
+            "EIGHTBALL_DISK_FREE_GB": payload.get("EIGHTBALL_DISK_FREE_GB"),
+            "windows_gpu_vram_source": "unknown",
+            "EIGHTBALL_GPU_VRAM_MB": "unknown",
+        }
+
+    target_lane = payload.get("target_lane") or "unknown"
+    if target_lane not in NATIVE_WINDOWS_LANES and target_lane != "unknown":
+        target_lane = "unknown"
+
+    cuda_eligible = payload.get("windows_cuda_lane_eligible") or "unknown"
+    if cuda_eligible == "yes" and target_lane == "unknown":
+        target_lane = "windows/cuda"
+    elif cuda_eligible == "no" and target_lane == "unknown" and payload.get("EIGHTBALL_GPU_PRESENT") in {
+        "yes",
+        "no",
+    }:
+        target_lane = "windows/cpu"
+
+    vram_source = payload.get("windows_gpu_vram_source") or "unknown"
+    gpu_vram = payload.get("EIGHTBALL_GPU_VRAM_MB")
+    if vram_source != "nvidia_smi":
+        gpu_vram = "unknown"
+
+    disk_free = payload.get("EIGHTBALL_DISK_FREE_GB")
+    if disk_free in ("", 0):
+        disk_free = None
+
+    return {
+        "EIGHTBALL_OS_FAMILY": os_family if os_family in {"windows", "unknown"} else "unknown",
+        "windows_cuda_lane_eligible": cuda_eligible,
+        "native_windows_lane_eligible": bool(payload.get("native_windows_lane_eligible", True)),
+        "target_lane": target_lane,
+        "EIGHTBALL_DISK_FREE_GB": disk_free,
+        "windows_gpu_vram_source": vram_source,
+        "EIGHTBALL_GPU_VRAM_MB": gpu_vram,
+    }
+
+
+def compute_install_disk_free_gb(free_bytes: int | None) -> int | None:
+    if free_bytes is None or free_bytes < 0:
+        return None
+    return int(free_bytes // (1024**3))
+
 
 WINDOWS_HOST_KINDS = [
     "physical",
@@ -435,6 +495,10 @@ def build_collector_output_schema() -> dict[str, Any]:
         },
         "per_device_gpu_records_required": True,
         "adapter_ram_verified_vram_forbidden": True,
+        "lane_selection_fields": [
+            "native_windows_lane_eligible",
+            "target_lane",
+        ],
         "example_output": {
             "EIGHTBALL_OS_FAMILY": "windows",
             "EIGHTBALL_PROVIDER": "unknown",
@@ -450,7 +514,15 @@ def build_collector_output_schema() -> dict[str, Any]:
             "windows_gpu_runtime": "unknown",
             "windows_cuda_lane_eligible": "unknown",
             "windows_gpu_vram_source": "unknown",
+            "native_windows_lane_eligible": True,
+            "target_lane": "unknown",
             "gpus": [],
+        },
+        "wsl_example_output": {
+            "EIGHTBALL_OS_FAMILY": "wsl",
+            "windows_cuda_lane_eligible": "no",
+            "native_windows_lane_eligible": False,
+            "target_lane": "unknown",
         },
     }
 
@@ -836,6 +908,54 @@ def validate_windows_sources(repo_root: Path = REPO_ROOT) -> list[str]:
         return errors
     if not CONTRACT_MD.is_file():
         errors.append(f"Missing observation contract markdown: {CONTRACT_MD}")
+    if not COLLECTOR_SCRIPT.is_file():
+        errors.append(f"Missing collector script: {COLLECTOR_SCRIPT}")
+    else:
+        collector_text = COLLECTOR_SCRIPT.read_text(encoding="utf-8")
+        if "Test-IsWslEnvironment" not in collector_text:
+            errors.append("Collector must detect WSL before native Windows collection")
+        if "Get-InstallPathFreeDiskGb" not in collector_text:
+            errors.append("Collector must resolve install-path free disk")
+        if "$ErrorActionPreference = 'Stop'" in collector_text:
+            errors.append("Collector must not use Stop error preference for optional probes")
+
+    wsl_payload = normalize_collector_output(
+        {
+            "EIGHTBALL_OS_FAMILY": "wsl",
+            "windows_cuda_lane_eligible": "no",
+            "native_windows_lane_eligible": False,
+            "target_lane": "unknown",
+        }
+    )
+    if wsl_payload["target_lane"] != "unknown":
+        errors.append("WSL collector normalization must not select a native Windows lane")
+    if wsl_payload["native_windows_lane_eligible"] is not False:
+        errors.append("WSL collector normalization must set native_windows_lane_eligible=false")
+
+    wsl_with_smi = normalize_collector_output(
+        {
+            "EIGHTBALL_OS_FAMILY": "wsl",
+            "windows_cuda_lane_eligible": "yes",
+            "target_lane": "windows/cuda",
+        }
+    )
+    if wsl_with_smi["target_lane"] != "unknown":
+        errors.append("WSL must not inherit windows/cuda even when cuda appears available")
+
+    if compute_install_disk_free_gb(5 * 1024**3 + 512 * 1024**2) != 5:
+        errors.append("Install disk conversion must floor measured free bytes to GiB")
+
+    adapter_payload = normalize_collector_output(
+        {
+            "EIGHTBALL_OS_FAMILY": "windows",
+            "windows_gpu_vram_source": "unknown",
+            "EIGHTBALL_GPU_VRAM_MB": 4096,
+            "windows_cuda_lane_eligible": "no",
+            "EIGHTBALL_GPU_PRESENT": "yes",
+        }
+    )
+    if adapter_payload["EIGHTBALL_GPU_VRAM_MB"] != "unknown":
+        errors.append("Non-nvidia-smi VRAM must remain unknown")
 
     taxonomy = load_taxonomy(repo_root)
     categories = taxonomy.get("categories", [])

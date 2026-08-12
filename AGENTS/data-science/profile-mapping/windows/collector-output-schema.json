@@ -77,6 +77,10 @@
   },
   "per_device_gpu_records_required": true,
   "adapter_ram_verified_vram_forbidden": true,
+  "lane_selection_fields": [
+    "native_windows_lane_eligible",
+    "target_lane"
+  ],
   "example_output": {
     "EIGHTBALL_OS_FAMILY": "windows",
     "EIGHTBALL_PROVIDER": "unknown",
@@ -92,6 +96,14 @@
     "windows_gpu_runtime": "unknown",
     "windows_cuda_lane_eligible": "unknown",
     "windows_gpu_vram_source": "unknown",
+    "native_windows_lane_eligible": true,
+    "target_lane": "unknown",
     "gpus": []
+  },
+  "wsl_example_output": {
+    "EIGHTBALL_OS_FAMILY": "wsl",
+    "windows_cuda_lane_eligible": "no",
+    "native_windows_lane_eligible": false,
+    "target_lane": "unknown"
   }
 }
