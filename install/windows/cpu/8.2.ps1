@@ -5,6 +5,17 @@ param(
     [switch]$Help
 )
 
+if ($Help) {
+    Write-Host @'
+Usage: .\8.2.ps1 [-Model OLLAMA_TAG] [-Help]
+
+Lane: windows/cpu
+
+Runs the Happy Nerds trial ladder with CPU acceleration during install.
+'@
+    exit 0
+}
+
 $ErrorActionPreference = 'Stop'
 $script:WinTargetLane = 'windows/cpu'
 $script:WinLogPrefix = '8.2'
@@ -12,11 +23,6 @@ $script:WinLaneMode = 'cpu'
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
-
-if ($Help) {
-    Write-Host 'Usage: .\8.2.ps1 [-Model OLLAMA_TAG]'
-    exit 0
-}
 
 Assert-NonElevated
 Assert-NativeWindows

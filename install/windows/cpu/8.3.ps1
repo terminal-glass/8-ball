@@ -1,5 +1,20 @@
 # 8.3.ps1 — Windows completion card and user-level status helper (CPU lane).
 #Requires -Version 5.1
+param(
+    [switch]$Help
+)
+
+if ($Help) {
+    Write-Host @'
+Usage: .\8.3.ps1 [-Help]
+
+Lane: windows/cpu
+
+Prints the completion card and writes a user-level status helper during install.
+'@
+    exit 0
+}
+
 $ErrorActionPreference = 'Stop'
 $script:WinTargetLane = 'windows/cpu'
 $script:WinLogPrefix = '8.3'

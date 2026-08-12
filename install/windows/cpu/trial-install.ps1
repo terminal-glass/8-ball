@@ -7,16 +7,8 @@ param(
     [switch]$Help
 )
 
-$ErrorActionPreference = 'Stop'
-$script:WinTargetLane = 'windows/cpu'
-$script:WinLogPrefix = 'trial-install'
-$script:WinLaneMode = 'cpu'
-
-$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-. (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
-
-function Show-Usage {
-    @'
+if ($Help) {
+    Write-Host @'
 Usage: .\trial-install.ps1 [options]
 
 Public free/trial 8-BALL installer for native Windows CPU (windows/cpu).
@@ -25,11 +17,18 @@ Options:
   -Model TAG        Request a specific Ollama tag (passed to 8.2.ps1)
   -NoMotd           Run 8.1 and 8.2 only
   -Manifest PATH    Accepted for compatibility; Windows trial uses the Happy Nerds ladder
-  -Help             Show this help
-'@ | Write-Host
+  -Help             Show this help without mutating the host
+'@
+    exit 0
 }
 
-if ($Help) { Show-Usage; exit 0 }
+$ErrorActionPreference = 'Stop'
+$script:WinTargetLane = 'windows/cpu'
+$script:WinLogPrefix = 'trial-install'
+$script:WinLaneMode = 'cpu'
+
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+. (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
 
 foreach ($name in @('8.1.ps1', '8.2.ps1', '8.3.ps1')) {
     if (-not (Test-Path -LiteralPath (Join-Path $ScriptDir $name))) {

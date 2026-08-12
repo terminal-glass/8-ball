@@ -1,5 +1,21 @@
 # 8.1.ps1 — Windows foundation: Ollama verification and runtime observation (CPU lane).
 #Requires -Version 5.1
+param(
+    [switch]$Help
+)
+
+if ($Help) {
+    Write-Host @'
+Usage: .\8.1.ps1 [-Help]
+
+Lane: windows/cpu
+
+Verifies native Windows, loopback Ollama API settings, and runtime observation during install.
+Does not install NVIDIA/CUDA drivers.
+'@
+    exit 0
+}
+
 $ErrorActionPreference = 'Stop'
 $script:WinTargetLane = 'windows/cpu'
 $script:WinLogPrefix = '8.1'

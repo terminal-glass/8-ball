@@ -1,5 +1,20 @@
 # 8.3.ps1 — Windows completion card and user-level status helper (CUDA lane).
 #Requires -Version 5.1
+param(
+    [switch]$Help
+)
+
+if ($Help) {
+    Write-Host @'
+Usage: .\8.3.ps1 [-Help]
+
+Lane: windows/cuda
+
+Prints the completion card and writes a user-level status helper during install.
+'@
+    exit 0
+}
+
 $ErrorActionPreference = 'Stop'
 $script:WinTargetLane = 'windows/cuda'
 $script:WinLogPrefix = '8.3'

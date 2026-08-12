@@ -186,7 +186,7 @@ function Get-OllamaNvidiaSupportInline {
     return 'supported'
 }
 
-function Write-CudaObservationFallback {
+function Get-CudaEvidenceReadOnly {
     if (-not (Get-Command nvidia-smi -ErrorAction SilentlyContinue)) {
         return [pscustomobject]@{
             observation_status = 'unavailable'
@@ -212,14 +212,31 @@ function Write-CudaObservationFallback {
             ollama_nvidia_support = $support
         }
     }
-    $payload = [ordered]@{
+    return [pscustomobject]@{
         os_family = 'windows'
         observation_status = if ($devices.Count -gt 0) { 'available' } else { 'unavailable' }
         devices = $devices
         cuda_runtime_ready = ($devices.Count -gt 0)
     }
+}
+
+function Resolve-WindowsTrialLaneDispatch {
+    $cuda = Get-CudaEvidenceReadOnly
+    if ($cuda.observation_status -ne 'available' -or -not $cuda.devices -or $cuda.devices.Count -eq 0) {
+        return 'cpu'
+    }
+    foreach ($device in $cuda.devices) {
+        if ($device.ollama_nvidia_support -eq 'unsupported') {
+            return 'cpu'
+        }
+    }
+    return 'cuda'
+}
+
+function Write-CudaObservationFallback {
+    $payload = Get-CudaEvidenceReadOnly
     ($payload | ConvertTo-Json -Depth 6) | Set-Content -LiteralPath $script:CudaObservationFile -Encoding UTF8
-    return ($payload | ConvertTo-Json -Depth 6 | ConvertFrom-Json)
+    return $payload
 }
 
 function Write-WindowsObservation {

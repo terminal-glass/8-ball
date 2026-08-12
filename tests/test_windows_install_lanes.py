@@ -13,6 +13,12 @@ WIN_LIB = REPO_ROOT / "install/windows/lib/Windows-Common.ps1"
 CPU_LANE = REPO_ROOT / "install/windows/cpu"
 CUDA_LANE = REPO_ROOT / "install/windows/cuda"
 LANE_SCRIPTS = ("trial-install.ps1", "8.1.ps1", "8.2.ps1", "8.3.ps1")
+ROOT_DISPATCH = REPO_ROOT / "install/windows/trial-install.ps1"
+PUBLIC_WINDOWS_EXECUTABLES = (
+    [ROOT_DISPATCH]
+    + [CPU_LANE / name for name in LANE_SCRIPTS]
+    + [CUDA_LANE / name for name in LANE_SCRIPTS]
+)
 PROTECTED_PATHS = (
     REPO_ROOT / "profiles/index.csv",
     REPO_ROOT / "profiles/provider-compatibility/windows/lane-runtime-contract-projection.json",
@@ -32,9 +38,9 @@ FORBIDDEN_UNIX_PATTERNS = (
     re.compile(r"\bopen -a\b"),
 )
 LINUX_DOWNLOAD_PATTERNS = (
-    re.compile(r"Invoke-WebRequest.*ollama", re.I),
-    re.compile(r"Start-Process.*OllamaSetup", re.I),
-    re.compile(r"ollama\.com/download", re.I),
+    re.compile(r"Invoke-WebRequest.*ollama", re.IGNORECASE),
+    re.compile(r"Start-Process.*OllamaSetup", re.IGNORECASE),
+    re.compile(r"ollama\.com/download", re.IGNORECASE),
 )
 
 
@@ -159,3 +165,48 @@ def test_all_windows_lane_files_exist() -> None:
         for name in (*LANE_SCRIPTS, "README.md"):
             assert (lane / name).is_file(), f"Missing {lane}/{name}"
         assert (lane / "assets/first-MOTD.txt").is_file()
+
+
+def test_all_public_executables_expose_help_switch() -> None:
+    for path in PUBLIC_WINDOWS_EXECUTABLES:
+        text = path.read_text(encoding="utf-8")
+        assert "[switch]$Help" in text, f"Missing -Help switch in {path}"
+
+
+RUNTIME_GUARD_MARKERS = (
+    "Assert-NonElevated",
+    "Assert-NativeWindows",
+    "Resolve-EightballRoot",
+    "Invoke-RestMethod",
+    "& $exe pull",
+)
+
+
+def test_help_exits_before_installer_mutations() -> None:
+    for path in PUBLIC_WINDOWS_EXECUTABLES:
+        text = path.read_text(encoding="utf-8")
+        help_idx = text.find("if ($Help)")
+        assert help_idx != -1, f"Missing early -Help handler in {path}"
+        exit_idx = text.find("exit 0", help_idx)
+        assert exit_idx != -1, f"-Help path must exit 0 in {path}"
+        for marker in RUNTIME_GUARD_MARKERS:
+            marker_idx = text.find(marker)
+            if marker_idx == -1:
+                continue
+            assert exit_idx < marker_idx, f"{path}: -Help must exit before {marker}"
+
+
+def test_root_dispatch_uses_common_fallback_not_repo_scripts() -> None:
+    text = ROOT_DISPATCH.read_text(encoding="utf-8")
+    assert "Resolve-WindowsTrialLaneDispatch" in text
+    assert "cuda-observe-windows.ps1" not in text
+    assert "Find-RepoRoot" not in text
+
+
+def test_dispatch_logic_prefers_cpu_for_unsupported_nvidia() -> None:
+    lib = WIN_LIB.read_text(encoding="utf-8")
+    assert "Get-CudaEvidenceReadOnly" in lib
+    assert "Resolve-WindowsTrialLaneDispatch" in lib
+    assert "ollama_nvidia_support -eq 'unsupported'" in lib
+    assert "return 'cpu'" in lib
+    assert "return 'cuda'" in lib
