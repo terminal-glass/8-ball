@@ -11,7 +11,7 @@ PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-}"
 REQUESTED_MODEL=""
-MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-qwen3}"
+MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 SKIP_MOTD=0
 MANIFEST="${EIGHTBALL_MANIFEST:-}"
 
@@ -166,9 +166,10 @@ main() {
   local -a model_args=()
   if [[ -n "${REQUESTED_MODEL}" ]]; then
     model_args=(--model "${REQUESTED_MODEL}")
-  elif [[ -n "${MODEL_SLUG}" ]]; then
+  fi
+  if [[ -n "${MODEL_SLUG}" ]]; then
     export EIGHTBALL_MODEL_SLUG="${MODEL_SLUG}"
-    model_args=(--model-slug "${MODEL_SLUG}")
+    model_args+=(--model-slug "${MODEL_SLUG}")
   fi
 
   log "[1/4] Loading the public 8-BALL components (profile=${EIGHTBALL_INSTALL_PROFILE}, release=${EIGHTBALL_RELEASE})"
