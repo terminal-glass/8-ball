@@ -12,7 +12,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-
 DEFAULT_PHILOSOPHER_ROOT = "/opt/philosopher"
 DEFAULT_OLLAMA_API = "http://127.0.0.1:11434"
 FORBIDDEN_LOGIN_COMMANDS = (

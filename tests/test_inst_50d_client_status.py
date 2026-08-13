@@ -9,8 +9,6 @@ import subprocess
 import textwrap
 from pathlib import Path
 
-import pytest
-
 REPO_ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = REPO_ROOT / "install/shared/8ball-client-status.py"
 SCRIPT_83 = REPO_ROOT / "install/ubuntu/8.3.sh"
