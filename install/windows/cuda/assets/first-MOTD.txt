@@ -7,5 +7,6 @@ Local Model ........ __MODEL_STATUS__
 8-BALL JETS ........ READY AFTER SIGN-IN
 
 Local:    ollama run __SELECTED_MODEL__
-Status:   cat /opt/philosopher/8ball-result.txt
-Upgrade:  sudo remember
+Status:   __EIGHTBALL_ROOT__\8ball-result.txt
+Helper:   __EIGHTBALL_ROOT__\bin\8ball-status.ps1
+Jets:     optional; run ollama signin separately
