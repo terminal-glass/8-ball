@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 # Public 8-BALL trial installer — detects platform lane and accepts a base model slug.
-# Usage: curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/trial-install.sh | sh -s -- gemma4
+# Usage: ./trial-install.sh --model-slug gemma
 set -euo pipefail
 
-MODEL_SLUG="${1:-}"
-RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main}"
+EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-funtech64/8-ball}"
+EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-7800b2c478b6f8e59a56e45dbc2c5de64106e032}"
 REPO_HINT="${EIGHTBALL_REPO_ROOT:-}"
-PROFILES_BASE="${EIGHTBALL_PROFILES_BASE:-${RAW_BASE}}"
+PHILO_ROOT="${PHILO_ROOT:-/opt/philosopher}"
+TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"
 
 detect_lane() {
-  local os arch gpu_vram cuda lane
+  local os arch gpu_vram
   os="$(uname -s 2>/dev/null || echo unknown)"
   arch="$(uname -m 2>/dev/null || echo unknown)"
 
@@ -49,9 +50,7 @@ detect_lane() {
       fi
       ;;
     Linux|GNU/Linux)
-      cuda="false"
       if command -v nvidia-smi >/dev/null 2>&1; then
-        cuda="true"
         gpu_vram="$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -n1 || echo 0)"
         if [[ "${gpu_vram}" =~ ^[0-9]+$ ]] && [[ "${gpu_vram}" -ge 6000 ]]; then
           echo "ubuntu/cuda"
@@ -68,23 +67,23 @@ detect_lane() {
 
 resolve_installer() {
   local lane="$1"
-  local local_path=""
   if [[ -n "${REPO_HINT}" && -f "${REPO_HINT}/install/${lane}/trial-install.sh" ]]; then
-    local_path="${REPO_HINT}/install/${lane}/trial-install.sh"
-  elif [[ -f "./install/${lane}/trial-install.sh" ]]; then
-    local_path="./install/${lane}/trial-install.sh"
-  fi
-  if [[ -n "${local_path}" ]]; then
-    printf '%s' "${local_path}"
+    printf '%s' "${REPO_HINT}/install/${lane}/trial-install.sh"
     return 0
   fi
-  local tmp
-  tmp="$(mktemp)"
-  curl -fsSL "${RAW_BASE}/install/${lane}/trial-install.sh" -o "${tmp}"
-  bash -n "${tmp}"
-  install -m 0755 "${tmp}" "${tmp}.run"
-  rm -f "${tmp}"
-  printf '%s' "${tmp}.run"
+  if [[ -f "./install/${lane}/trial-install.sh" ]]; then
+    printf '%s' "./install/${lane}/trial-install.sh"
+    return 0
+  fi
+  cat >&2 <<EOF
+Could not find install/${lane}/trial-install.sh in a local checkout.
+
+Clone https://github.com/${EIGHTBALL_RELEASE_REPO} at ref ${EIGHTBALL_RELEASE_REF}
+and run:
+  cd install/${lane}
+  sudo ./trial-install.sh --model-slug <slug> --yes
+EOF
+  exit 1
 }
 
 main() {
@@ -92,12 +91,7 @@ main() {
   lane="$(detect_lane)"
   installer="$(resolve_installer "${lane}")"
   export EIGHTBALL_INSTALL_LANE="${lane}"
-  export EIGHTBALL_MODEL_SLUG="${MODEL_SLUG}"
-  export EIGHTBALL_PROFILES_BASE="${PROFILES_BASE}"
-  export EIGHTBALL_RAW_BASE="${RAW_BASE}"
-  if [[ -n "${MODEL_SLUG}" ]]; then
-    exec "${installer}" --model-slug "${MODEL_SLUG}" "$@"
-  fi
+  export EIGHTBALL_RELEASE_REPO EIGHTBALL_RELEASE_REF PHILO_ROOT TRIAL_LOG
   exec "${installer}" "$@"
 }
 

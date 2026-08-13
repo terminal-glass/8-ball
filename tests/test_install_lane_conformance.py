@@ -88,7 +88,7 @@ def test_complete_lane_matrix_passes(validator):
     report = validator.validate_repo(REPO_ROOT)
     assert report["summary"]["lane_count"] == 10
     assert report["summary"]["failure_count"] == 0
-    assert report["summary"]["legacy_debt_count"] == 12
+    assert report["summary"]["legacy_debt_count"] == 8
 
 
 def test_missing_payload_fails(validator, tmp_path):
@@ -169,10 +169,10 @@ def test_unauthorized_remote_fetch_without_debt(validator, tmp_path):
 def test_legacy_debt_recorded_not_ignored(validator):
     report = validator.validate_repo(REPO_ROOT)
     debt = report["legacy_debt"]
-    assert len(debt) == 12
+    assert len(debt) == 8
     assert all(entry["follow_up"] == "C10.2-Linux-lanes" for entry in debt)
-    ubuntu = _lane(report, "ubuntu/cpu")
-    assert ubuntu["legacy_debt"]
+    cloud = _lane(report, "cloud/digitalocean/cpu-droplet")
+    assert cloud["legacy_debt"]
 
 
 def test_reject_mac_legacy_debt(validator):

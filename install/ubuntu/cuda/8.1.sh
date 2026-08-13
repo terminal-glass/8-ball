@@ -1,127 +1,68 @@
 #!/usr/bin/env bash
 # 8.1 — public 8-BALL foundation: Ollama install and local API verification.
-# Install profile: ubuntu
+# Install lane: ubuntu/cuda
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="ubuntu/cuda"
+EIGHTBALL_INSTALL_PROFILE="ubuntu/cuda"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cuda.json"
+UBUNTU_LOG_PREFIX="8.1"
 
-PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
-LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
-OLLAMA_API="${OLLAMA_API:-http://127.0.0.1:11434}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=../lib/ubuntu-common.sh
+source "${SCRIPT_DIR}/../lib/ubuntu-common.sh"
 
-log() {
-  printf '[8.1] %s\n' "$*"
-}
-
-require_root() {
-  if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
-    echo "8.1 requires root. Re-run with sudo." >&2
-    exit 1
-  fi
-}
-
-require_debian_family() {
-  if [[ ! -f /etc/os-release ]]; then
-    echo "8.1 supports Ubuntu/Debian hosts with /etc/os-release." >&2
-    exit 1
-  fi
-  # shellcheck source=/dev/null
-  source /etc/os-release
-  case "${ID:-}" in
-    ubuntu|debian) ;;
-    *)
-      echo "8.1 supports Ubuntu/Debian. Detected ID=${ID:-unknown}." >&2
-      exit 1
-      ;;
-  esac
-}
-
-install_packages() {
-  log "Installing minimal prerequisites"
-  export DEBIAN_FRONTEND=noninteractive
-  apt-get update -qq
-  apt-get install -y --no-install-recommends ca-certificates curl python3 zstd
-}
-
-ensure_philosopher_root() {
-  install -d -m 0755 "${PHILOSOPHER_ROOT}"
-  touch "${LOG_FILE}"
-  chmod 0644 "${LOG_FILE}"
-}
-
-install_ollama_if_missing() {
-  if command -v ollama >/dev/null 2>&1; then
-    log "Ollama already installed; reusing existing binary"
-    return 0
-  fi
-  log "Installing Ollama"
-  if ! curl -fsSL https://ollama.com/install.sh | sh; then
-    echo "Ollama installation failed." >&2
-    exit 1
-  fi
-  if ! command -v ollama >/dev/null 2>&1; then
-    echo "Ollama install script finished but ollama was not found in PATH." >&2
-    exit 1
-  fi
-}
-
-start_ollama() {
-  if curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then
-    log "Ollama API already responding on ${OLLAMA_API}"
-    return 0
-  fi
-
-  if command -v systemctl >/dev/null 2>&1 && [[ -d /run/systemd/system ]]; then
-    systemctl enable ollama >/dev/null 2>&1 || true
-    if systemctl restart ollama; then
-      return 0
-    fi
-    log "systemctl restart ollama failed; trying ollama serve"
-  else
-    log "systemd unavailable; starting ollama serve in background"
-  fi
-
-  if pgrep -x ollama >/dev/null 2>&1; then
-    return 0
-  fi
-
-  nohup ollama serve >>"${LOG_FILE}" 2>&1 &
-  sleep 2
-}
-
-wait_for_ollama() {
-  for _ in $(seq 1 30); do
-    if curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then
-      log "Ollama API is responding on ${OLLAMA_API}"
-      return 0
-    fi
-    sleep 2
-  done
-  echo "Ollama did not become ready at ${OLLAMA_API}" >&2
-  exit 1
-}
-
-main() {
-  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-    cat <<'EOF'
+usage() {
+  cat <<'EOF'
 Usage: 8.1.sh [options]
 
 Lane: ubuntu/cuda
 
 Options:
-  -h, --help    Show this help without mutating the host
+  --yes                               Non-interactive confirmation for planned system changes
+  --accept-ollama-install-risk        Development-only opt-in for unverified ollama.com/install.sh
+  -h, --help                          Show this help without mutating the host
 EOF
-    exit 0
-  fi
-  require_root
-  require_debian_family
-  ensure_philosopher_root
-  install_packages
-  install_ollama_if_missing
-  start_ollama
-  wait_for_ollama
-  log "Foundation step complete"
+}
+
+parse_args() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --yes)
+        export EIGHTBALL_NONINTERACTIVE_CONFIRM=1
+        shift
+        ;;
+      --accept-ollama-install-risk)
+        export EIGHTBALL_ACCEPT_OLLAMA_INSTALL_RISK=1
+        shift
+        ;;
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      *)
+        echo "Unknown argument: $1" >&2
+        usage >&2
+        exit 1
+        ;;
+    esac
+  done
+}
+
+main() {
+  parse_args "$@"
+  ubuntu_require_root
+  ubuntu_require_debian_family
+  ubuntu_validate_ollama_api
+  ubuntu_ensure_state_root
+  ubuntu_resolve_profile_dir
+  ubuntu_show_planned_changes
+  ubuntu_require_noninteractive_confirm
+  ubuntu_install_packages
+  ubuntu_install_ollama_if_missing
+  ubuntu_start_ollama
+  ubuntu_wait_for_ollama
+  ubuntu_log "Foundation step complete"
 }
 
 main "$@"
