@@ -12,6 +12,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../lib/ubuntu-common.sh
 source "${SCRIPT_DIR}/../lib/ubuntu-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.1.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify Debian-family host identity
+- Would install packages and Ollama and verify loopback API during a real install (requires root)"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 usage() {
   cat <<'EOF'
 Usage: 8.1.sh [options]
@@ -50,6 +57,7 @@ parse_args() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   ubuntu_require_root
   ubuntu_require_debian_family

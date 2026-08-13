@@ -12,6 +12,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../lib/ubuntu-common.sh
 source "${SCRIPT_DIR}/../lib/ubuntu-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify Debian-family host identity
+- Would orchestrate foundation (8.1), model ladder (8.2), and MOTD (8.3) during a real install (requires root)"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 REQUESTED_MODEL=""
 MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 SKIP_MOTD=0
@@ -33,7 +40,7 @@ Options:
                                       DEVELOPMENT ONLY: fetch lane scripts from a custom base URL
   -h, --help                          Show this help
 
-Release-pinned remote downloads use funtech64/8-ball at the commit recorded in
+Release-pinned remote downloads use terminal-glass/8-ball at the commit recorded in
 install/ubuntu/lib/ubuntu-common.sh. Profile sizing uses profiles/<slug>/ubuntu/cuda/.
 EOF
 }
@@ -105,6 +112,7 @@ run_step() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   if [[ "${NONINTERACTIVE_CONFIRM}" == "1" ]]; then
     export EIGHTBALL_NONINTERACTIVE_CONFIRM=1

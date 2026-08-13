@@ -2,7 +2,8 @@
 #Requires -Version 5.1
 param(
     [string]$Model,
-    [switch]$Help
+    [switch]$Help,
+    [switch]$Preflight
 )
 
 if ($Help) {
@@ -23,6 +24,13 @@ $script:WinLaneMode = 'cuda'
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
+. (Join-Path $ScriptDir '..\..\shared\installer-smoke-contract.ps1')
+if ($Preflight) {
+    Invoke-InstallerSmokePreflight -Lane 'windows/cuda' -Checks @'
+- Verify catalog manifest availability
+- Would run the Happy Nerds trial ladder with local inference checks during a real install
+'@ -LaneMode 'cuda'
+}
 
 Assert-NonElevated
 Assert-NativeWindows

@@ -12,6 +12,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../lib/ubuntu-common.sh
 source "${SCRIPT_DIR}/../lib/ubuntu-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.2.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify profile lane data availability
+- Would select and verify a local model from committed profiles during a real install (requires root)"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 REQUESTED_MODEL=""
 MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 
@@ -142,6 +149,7 @@ PY
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   if [[ "${EIGHTBALL_LEGACY_MANIFEST_SELECTION:-0}" == "1" ]]; then
     legacy_manifest_selection

@@ -1,7 +1,8 @@
 # 8.3.ps1 — Windows completion card and user-level status helper (CPU lane).
 #Requires -Version 5.1
 param(
-    [switch]$Help
+    [switch]$Help,
+    [switch]$Preflight
 )
 
 if ($Help) {
@@ -22,6 +23,13 @@ $script:WinLogPrefix = '8.3'
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $MotdTemplate = Join-Path $ScriptDir 'assets\first-MOTD.txt'
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
+. (Join-Path $ScriptDir '..\..\shared\installer-smoke-contract.ps1')
+if ($Preflight) {
+    Invoke-InstallerSmokePreflight -Lane 'windows/cpu' -Checks @'
+- Verify completion card assets
+- Would print completion card and status helper during a real install
+'@ -LaneMode 'cpu'
+}
 
 Assert-NonElevated
 Assert-NativeWindows

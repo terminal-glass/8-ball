@@ -14,6 +14,13 @@ MOTD_TEMPLATE="${SCRIPT_DIR}/assets/first-MOTD.txt"
 # shellcheck source=../lib/ubuntu-common.sh
 source "${SCRIPT_DIR}/../lib/ubuntu-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.3.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify MOTD template presence
+- Would install /etc/update-motd.d helper and remember script during a real install (requires root)"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 usage() {
   cat <<'EOF'
 Usage: 8.3.sh [options]
@@ -28,10 +35,7 @@ EOF
 }
 
 main() {
-  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-    usage
-    exit 0
-  fi
+  installer_smoke_prologue "$@"
   ubuntu_require_root
   ubuntu_ensure_state_root
   ubuntu_install_remember_helper

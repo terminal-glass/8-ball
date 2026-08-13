@@ -13,7 +13,15 @@ MOTD_TEMPLATE="${SCRIPT_DIR}/assets/first-MOTD.txt"
 # shellcheck source=../lib/macos-common.sh
 source "${SCRIPT_DIR}/../lib/macos-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.3.sh"
+INSTALLER_SMOKE_PLATFORM="mac"
+INSTALLER_SMOKE_CHECKS="- Verify completion assets are present
+- Would install login/completion helpers during a real install"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 main() {
+  installer_smoke_prologue "$@"
   if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
     cat <<'EOF'
 Usage: 8.3.sh [options]

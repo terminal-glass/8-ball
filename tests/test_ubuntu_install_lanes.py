@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import hashlib
 import os
-import re
 import stat
 import subprocess
 import textwrap
@@ -167,7 +166,6 @@ def test_bash_syntax_check(lane: Path) -> None:
 
 
 def test_no_corrupt_assignment_suffixes() -> None:
-    pattern = re.compile(r'åç|"åç')
     for lane in (CPU_LANE, CUDA_LANE):
         for name in LANE_SCRIPTS:
             text = (lane / name).read_text(encoding="utf-8")
@@ -287,9 +285,9 @@ def test_raw_base_rejected_on_public_path(tmp_path: Path) -> None:
     assert "--raw-base is not supported" in result.stderr
 
 
-def test_release_repo_points_to_funtech64() -> None:
+def test_release_repo_points_to_terminal_glass() -> None:
     common = (UBUNTU_LIB / "ubuntu-common.sh").read_text(encoding="utf-8")
-    assert 'EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-funtech64/8-ball}"' in common
+    assert 'EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"' in common
     root = (REPO_ROOT / "trial-install.sh").read_text(encoding="utf-8")
-    assert "funtech64/8-ball" in root
-    assert "terminal-glass/8-ball/main" not in root
+    assert "terminal-glass/8-ball" in root
+    assert "funtech64/8-ball" not in root

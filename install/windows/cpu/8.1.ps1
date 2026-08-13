@@ -1,7 +1,8 @@
 # 8.1.ps1 — Windows foundation: Ollama verification and runtime observation (CPU lane).
 #Requires -Version 5.1
 param(
-    [switch]$Help
+    [switch]$Help,
+    [switch]$Preflight
 )
 
 if ($Help) {
@@ -23,6 +24,13 @@ $script:WinLaneMode = 'cpu'
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
+. (Join-Path $ScriptDir '..\..\shared\installer-smoke-contract.ps1')
+if ($Preflight) {
+    Invoke-InstallerSmokePreflight -Lane 'windows/cpu' -Checks @'
+- Verify native Windows host and loopback Ollama API settings
+- Would observe Ollama runtime without installing during --preflight
+'@ -LaneMode 'cpu'
+}
 
 Assert-NonElevated
 Assert-NativeWindows

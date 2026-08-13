@@ -3,11 +3,18 @@
 # Install profile: digitalocean-droplet
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EIGHTBALL_INSTALL_LANE="cloud/digitalocean/cpu-droplet"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json"
 
+INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify host identity for this lane
+- Would orchestrate foundation (8.1), model ladder (8.2), and completion (8.3) during a real install"
+# shellcheck source=../../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../../shared/installer-smoke-contract.sh"
+
 EIGHTBALL_INSTALL_PROFILE="cloud/digitalocean/cpu-droplet"
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/cloud/digitalocean-droplet}"
@@ -115,6 +122,7 @@ run_step() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   require_root
   install -d -m 0755 "${PHILOSOPHER_ROOT}"
