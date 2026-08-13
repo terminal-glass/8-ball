@@ -48,38 +48,6 @@ LANE_SPECS: list[dict[str, str]] = [
 # Exact legacy debt entries only. No wildcards. Mac/Windows entries must fail validation.
 LEGACY_DEBT_SPECS: list[dict[str, str]] = [
     {
-        "lane": "ubuntu/cpu",
-        "path": "install/ubuntu/cpu/trial-install.sh",
-        "rule": "unreviewed_remote_payload_fetch",
-        "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
-        "follow_up": "C10.2-Linux-lanes",
-        "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
-    },
-    {
-        "lane": "ubuntu/cpu",
-        "path": "install/ubuntu/cpu/8.1.sh",
-        "rule": "unreviewed_remote_ollama_install",
-        "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
-        "follow_up": "C10.2-Linux-lanes",
-        "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
-    },
-    {
-        "lane": "ubuntu/cuda",
-        "path": "install/ubuntu/cuda/trial-install.sh",
-        "rule": "unreviewed_remote_payload_fetch",
-        "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
-        "follow_up": "C10.2-Linux-lanes",
-        "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
-    },
-    {
-        "lane": "ubuntu/cuda",
-        "path": "install/ubuntu/cuda/8.1.sh",
-        "rule": "unreviewed_remote_ollama_install",
-        "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
-        "follow_up": "C10.2-Linux-lanes",
-        "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
-    },
-    {
         "lane": "cloud/digitalocean/cpu-droplet",
         "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
         "rule": "unreviewed_remote_payload_fetch",
