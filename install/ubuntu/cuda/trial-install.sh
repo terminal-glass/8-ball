@@ -1,48 +1,52 @@
 #!/usr/bin/env bash
 # trial-install.sh — public 8-BALL free/trial installer entrypoint.
-# Install profile: ubuntu
+# Install lane: ubuntu/cuda
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="ubuntu/cuda"
-EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cuda.json"
-
 EIGHTBALL_INSTALL_PROFILE="ubuntu/cuda"
+EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cuda.json"
+UBUNTU_LOG_PREFIX="trial-install"
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
-LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
-RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/cuda}"
+# shellcheck source=../lib/ubuntu-common.sh
+source "${SCRIPT_DIR}/../lib/ubuntu-common.sh"
+
+INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify Debian-family host identity
+- Would orchestrate foundation (8.1), model ladder (8.2), and MOTD (8.3) during a real install (requires root)"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 REQUESTED_MODEL=""
 MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 SKIP_MOTD=0
-MANIFEST="${EIGHTBALL_MANIFEST:-}"
+NONINTERACTIVE_CONFIRM=0
 
 usage() {
   cat <<'EOF'
 Usage: trial-install.sh [options]
 
-Public free/trial 8-BALL installer for Ubuntu/Debian hosts.
+Public free/trial 8-BALL installer for Ubuntu/Debian hosts (ubuntu/cuda lane).
 
 Options:
-  --model TAG         Request a specific Ollama tag (passed to 8.2.sh)
-  --no-motd           Run 8.1 and 8.2 only
-  --manifest PATH     Override install-manifest.json path
-  --raw-base URL      Download helper scripts when local copies are missing
-  -h, --help          Show this help
+  --model TAG                         Request a specific Ollama tag (validated against profiles)
+  --model-slug SLUG                   Select from committed profile lane data (required without --model)
+  --no-motd                           Run 8.1 and 8.2 only
+  --yes                               Non-interactive confirmation for planned system changes
+  --accept-ollama-install-risk        Development-only opt-in for unverified ollama.com/install.sh
+  --i-understand-disable-integrity-checks --dev-raw-base URL
+                                      DEVELOPMENT ONLY: fetch lane scripts from a custom base URL
+  -h, --help                          Show this help
 
-Catalog data is read from data/generated/pages/install-manifest.json in this repo.
-Paid activation, Passport, Stripe, S3 bundles, and private customer logic are out of scope.
+Release-pinned remote downloads use terminal-glass/8-ball at the commit recorded in
+install/ubuntu/lib/ubuntu-common.sh. Profile sizing uses profiles/<slug>/ubuntu/cuda/.
 EOF
 }
 
 log() {
-  printf '[trial-install] %s\n' "$*"
-}
-
-require_root() {
-  if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
-    echo "trial-install.sh requires root. Re-run with sudo." >&2
-    exit 1
-  fi
+  ubuntu_log "$*"
 }
 
 parse_args() {
@@ -50,6 +54,7 @@ parse_args() {
     case "$1" in
       --model)
         REQUESTED_MODEL="$2"
+        ubuntu_validate_model_tag "${REQUESTED_MODEL}"
         shift 2
         ;;
       --model-slug)
@@ -61,13 +66,26 @@ parse_args() {
         SKIP_MOTD=1
         shift
         ;;
-      --manifest)
-        MANIFEST="$2"
+      --yes)
+        NONINTERACTIVE_CONFIRM=1
+        shift
+        ;;
+      --accept-ollama-install-risk)
+        export EIGHTBALL_ACCEPT_OLLAMA_INSTALL_RISK=1
+        shift
+        ;;
+      --i-understand-disable-integrity-checks)
+        export EIGHTBALL_ALLOW_UNVERIFIED_DOWNLOADS=1
+        shift
+        ;;
+      --dev-raw-base)
+        export EIGHTBALL_DEV_RAW_BASE="$2"
         shift 2
         ;;
       --raw-base)
-        RAW_BASE="$2"
-        shift 2
+        echo "--raw-base is not supported on the public installer path." >&2
+        echo "Use a local checkout or the development flags documented in --help." >&2
+        exit 1
         ;;
       -h|--help)
         usage
@@ -82,60 +100,34 @@ parse_args() {
   done
 }
 
-validate_raw_base() {
-  case "${RAW_BASE}" in
-    https://*) ;;
-    *)
-      echo "--raw-base must use HTTPS." >&2
-      exit 1
-      ;;
-  esac
-}
-
-resolve_script() {
-  local name="$1"
-  local local_path="${SCRIPT_DIR}/${name}"
-  if [[ -f "${local_path}" ]]; then
-    printf '%s' "${local_path}"
-    return 0
-  fi
-  validate_raw_base
-  local tmp
-  tmp="$(mktemp)"
-  curl -fsSL "${RAW_BASE}/${name}" -o "${tmp}"
-  bash -n "${tmp}"
-  install -m 0755 "${tmp}" "${local_path}"
-  rm -f "${tmp}"
-  printf '%s' "${local_path}"
-}
-
 run_step() {
   local label="$1"
   shift
   log "${label}"
-  if ! "$@" >>"${LOG_FILE}" 2>&1; then
+  if ! "$@" >>"${TRIAL_LOG}" 2>&1; then
     echo "Step failed: ${label}" >&2
-    tail -n 30 "${LOG_FILE}" >&2 || true
+    tail -n 30 "${TRIAL_LOG}" >&2 || true
     exit 1
   fi
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
-  require_root
-  install -d -m 0755 "${PHILOSOPHER_ROOT}"
-  touch "${LOG_FILE}"
-  chmod 0644 "${LOG_FILE}"
+  if [[ "${NONINTERACTIVE_CONFIRM}" == "1" ]]; then
+    export EIGHTBALL_NONINTERACTIVE_CONFIRM=1
+  fi
+  ubuntu_require_root
+  ubuntu_ensure_state_root
+  ubuntu_resolve_profile_dir
+  ubuntu_show_planned_changes
+  ubuntu_require_noninteractive_confirm
 
   local script_81 script_82 script_83
-  script_81="$(resolve_script "8.1.sh")"
-  script_82="$(resolve_script "8.2.sh")"
-  script_83="$(resolve_script "8.3.sh")"
+  script_81="$(ubuntu_resolve_lane_script "8.1.sh")"
+  script_82="$(ubuntu_resolve_lane_script "8.2.sh")"
+  script_83="$(ubuntu_resolve_lane_script "8.3.sh")"
 
-  local -a manifest_args=()
-  if [[ -n "${MANIFEST}" ]]; then
-    manifest_args=(--manifest "${MANIFEST}")
-  fi
   local -a model_args=()
   if [[ -n "${REQUESTED_MODEL}" ]]; then
     model_args=(--model "${REQUESTED_MODEL}")
@@ -143,12 +135,12 @@ main() {
     model_args=(--model-slug "${MODEL_SLUG}")
   fi
 
-  log "[1/4] Loading the public 8-BALL components (profile=${EIGHTBALL_INSTALL_PROFILE})"
+  log "[1/4] Loading the public 8-BALL components (lane=${EIGHTBALL_INSTALL_LANE}, suite=${SUITE_VERSION})"
   log "[2/4] Preparing Ubuntu/Debian and installing Ollama"
   run_step "running 8.1.sh" "${script_81}"
 
-  log "[3/4] Selecting and testing the local model"
-  run_step "running 8.2.sh" "${script_82}" "${manifest_args[@]}" "${model_args[@]}"
+  log "[3/4] Selecting and testing the local model from profile data"
+  run_step "running 8.2.sh" "${script_82}" "${model_args[@]}"
 
   if [[ "${SKIP_MOTD}" -eq 0 ]]; then
     log "[4/4] Installing the terminal.glass login experience"
@@ -157,8 +149,8 @@ main() {
     log "[4/4] Skipping MOTD (--no-motd)"
   fi
 
-  log "Trial install complete. Log: ${LOG_FILE}"
-  log "Result: ${PHILOSOPHER_ROOT}/8ball-result.txt"
+  log "Trial install complete. Log: ${TRIAL_LOG}"
+  log "Result: ${RESULT_FILE}"
 }
 
 main "$@"

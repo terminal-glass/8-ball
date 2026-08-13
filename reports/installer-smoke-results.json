@@ -1,0 +1,677 @@
+{
+  "checks": [
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/cpu/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/cpu/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/cpu/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/cpu/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/cpu/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/cpu/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "cloud/aws-lightsail/cpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/gpu/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/gpu/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/gpu/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/gpu/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/gpu/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/gpu/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "help",
+      "path": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "cloud/aws-lightsail/gpu",
+      "mode": "preflight",
+      "path": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/cpu-droplet/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/cpu-droplet/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/cpu-droplet/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/cpu-droplet/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/gpu-droplet/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/gpu-droplet/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/gpu-droplet/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/gpu-droplet/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "help",
+      "path": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "mode": "preflight",
+      "path": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "help",
+      "path": "install/mac/apple-silicon/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "preflight",
+      "path": "install/mac/apple-silicon/8.1.sh",
+      "reason": "unsupported: lane mac/apple-silicon requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/apple-silicon requires native macOS\n",
+      "stdout": "lane: mac/apple-silicon\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify host identity and loopback Ollama API settings\n- Would prepare foundation dependencies during a real install\n",
+      "stem": "8.1"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "help",
+      "path": "install/mac/apple-silicon/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "preflight",
+      "path": "install/mac/apple-silicon/8.2.sh",
+      "reason": "unsupported: lane mac/apple-silicon requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/apple-silicon requires native macOS\n",
+      "stdout": "lane: mac/apple-silicon\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify catalog or profile availability for model selection\n- Would run the trial model ladder with local inference checks during a real install\n",
+      "stem": "8.2"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "help",
+      "path": "install/mac/apple-silicon/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "preflight",
+      "path": "install/mac/apple-silicon/8.3.sh",
+      "reason": "unsupported: lane mac/apple-silicon requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/apple-silicon requires native macOS\n",
+      "stdout": "lane: mac/apple-silicon\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify completion assets are present\n- Would install login/completion helpers during a real install\n",
+      "stem": "8.3"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "help",
+      "path": "install/mac/apple-silicon/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "mac/apple-silicon",
+      "mode": "preflight",
+      "path": "install/mac/apple-silicon/trial-install.sh",
+      "reason": "unsupported: lane mac/apple-silicon requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/apple-silicon requires native macOS\n",
+      "stdout": "lane: mac/apple-silicon\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify host identity for this lane\n- Would orchestrate foundation (8.1), model ladder (8.2), and completion (8.3) during a real install\n",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "help",
+      "path": "install/mac/intel/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "preflight",
+      "path": "install/mac/intel/8.1.sh",
+      "reason": "unsupported: lane mac/intel requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/intel requires native macOS\n",
+      "stdout": "lane: mac/intel\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify host identity and loopback Ollama API settings\n- Would prepare foundation dependencies during a real install\n",
+      "stem": "8.1"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "help",
+      "path": "install/mac/intel/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "preflight",
+      "path": "install/mac/intel/8.2.sh",
+      "reason": "unsupported: lane mac/intel requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/intel requires native macOS\n",
+      "stdout": "lane: mac/intel\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify catalog or profile availability for model selection\n- Would run the trial model ladder with local inference checks during a real install\n",
+      "stem": "8.2"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "help",
+      "path": "install/mac/intel/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "preflight",
+      "path": "install/mac/intel/8.3.sh",
+      "reason": "unsupported: lane mac/intel requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/intel requires native macOS\n",
+      "stdout": "lane: mac/intel\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify completion assets are present\n- Would install login/completion helpers during a real install\n",
+      "stem": "8.3"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "help",
+      "path": "install/mac/intel/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "mac/intel",
+      "mode": "preflight",
+      "path": "install/mac/intel/trial-install.sh",
+      "reason": "unsupported: lane mac/intel requires native macOS",
+      "returncode": 2,
+      "status": "unsupported",
+      "stderr": "unsupported: lane mac/intel requires native macOS\n",
+      "stdout": "lane: mac/intel\nmode: preflight (no installation performed)\nplanned_checks:\n- Verify host identity for this lane\n- Would orchestrate foundation (8.1), model ladder (8.2), and completion (8.3) during a real install\n",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "help",
+      "path": "install/ubuntu/cpu/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "preflight",
+      "path": "install/ubuntu/cpu/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "help",
+      "path": "install/ubuntu/cpu/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "preflight",
+      "path": "install/ubuntu/cpu/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "help",
+      "path": "install/ubuntu/cpu/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "preflight",
+      "path": "install/ubuntu/cpu/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "help",
+      "path": "install/ubuntu/cpu/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "ubuntu/cpu",
+      "mode": "preflight",
+      "path": "install/ubuntu/cpu/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "help",
+      "path": "install/ubuntu/cuda/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "preflight",
+      "path": "install/ubuntu/cuda/8.1.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.1"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "help",
+      "path": "install/ubuntu/cuda/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "preflight",
+      "path": "install/ubuntu/cuda/8.2.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.2"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "help",
+      "path": "install/ubuntu/cuda/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "preflight",
+      "path": "install/ubuntu/cuda/8.3.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "8.3"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "help",
+      "path": "install/ubuntu/cuda/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "ubuntu/cuda",
+      "mode": "preflight",
+      "path": "install/ubuntu/cuda/trial-install.sh",
+      "returncode": 0,
+      "status": "pass",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "help",
+      "path": "install/windows/cpu/8.1.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.1"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "preflight",
+      "path": "install/windows/cpu/8.1.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.1"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "help",
+      "path": "install/windows/cpu/8.2.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.2"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "preflight",
+      "path": "install/windows/cpu/8.2.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.2"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "help",
+      "path": "install/windows/cpu/8.3.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.3"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "preflight",
+      "path": "install/windows/cpu/8.3.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.3"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "help",
+      "path": "install/windows/cpu/trial-install.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "windows/cpu",
+      "mode": "preflight",
+      "path": "install/windows/cpu/trial-install.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "help",
+      "path": "install/windows/cuda/8.1.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.1"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "preflight",
+      "path": "install/windows/cuda/8.1.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.1"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "help",
+      "path": "install/windows/cuda/8.2.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.2"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "preflight",
+      "path": "install/windows/cuda/8.2.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.2"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "help",
+      "path": "install/windows/cuda/8.3.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.3"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "preflight",
+      "path": "install/windows/cuda/8.3.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "8.3"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "help",
+      "path": "install/windows/cuda/trial-install.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "trial-install"
+    },
+    {
+      "lane": "windows/cuda",
+      "mode": "preflight",
+      "path": "install/windows/cuda/trial-install.ps1",
+      "reason": "pwsh unavailable",
+      "status": "not_run",
+      "stem": "trial-install"
+    }
+  ],
+  "lane_count": 10,
+  "schema_version": "c10.installer-smoke.v1",
+  "status": "pass",
+  "summary": {
+    "fail": 0,
+    "not_run": 16,
+    "pass": 56,
+    "unsupported": 8
+  }
+}

@@ -12,7 +12,15 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../lib/macos-common.sh
 source "${SCRIPT_DIR}/../lib/macos-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.1.sh"
+INSTALLER_SMOKE_PLATFORM="mac"
+INSTALLER_SMOKE_CHECKS="- Verify host identity and loopback Ollama API settings
+- Would prepare foundation dependencies during a real install"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 main() {
+  installer_smoke_prologue "$@"
   if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
     cat <<'EOF'
 Usage: 8.1.sh [options]

@@ -1,97 +1,47 @@
 #!/usr/bin/env bash
 # 8.3 — public 8-BALL login MOTD and remember helper (no network calls on login).
-# Install profile: ubuntu
+# Install lane: ubuntu/cpu
 set -euo pipefail
 
 EIGHTBALL_INSTALL_LANE="ubuntu/cpu"
+EIGHTBALL_INSTALL_PROFILE="ubuntu/cpu"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cpu.json"
+UBUNTU_LOG_PREFIX="8.3"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SUITE_VERSION="8BALL-0.8.0"
-PHILO_ROOT="${PHILO_ROOT:-/opt/philosopher}"
-PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-${PHILO_ROOT}}"
-TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"
 MOTD_TEMPLATE="${SCRIPT_DIR}/assets/first-MOTD.txt"
-MOTD_TARGET="/etc/update-motd.d/99-8ball-trial"
 
-log() {
-  printf '[8.3] %s\n' "$*"
-}
+# shellcheck source=../lib/ubuntu-common.sh
+source "${SCRIPT_DIR}/../lib/ubuntu-common.sh"
 
-require_root() {
-  if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
-    echo "8.3 requires root. Re-run with sudo." >&2
-    exit 1
-  fi
-}
+INSTALLER_SMOKE_SCRIPT_NAME="8.3.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify MOTD template presence
+- Would install /etc/update-motd.d helper and remember script during a real install (requires root)"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
 
-install_remember_helper() {
-  cat >/usr/local/bin/remember <<'EOF'
-#!/usr/bin/env bash
-set -euo pipefail
-cat <<EOM
-8-BALL persistent chat upgrades are handled outside this public catalog repository.
-
-Email: 8ball@terminal.glass
-Include: cat /opt/philosopher/8ball-result.txt
-
-This helper does not activate paid features, Passport, or commercial bundles.
-EOM
-EOF
-  chmod 0755 /usr/local/bin/remember
-}
-
-install_motd() {
-  if [[ ! -f "${MOTD_TEMPLATE}" ]]; then
-    echo "Missing MOTD template: ${MOTD_TEMPLATE}" >&2
-    exit 1
-  fi
-  install -d -m 0755 /etc/update-motd.d
-  cat >"${MOTD_TARGET}" <<'EOF'
-#!/usr/bin/env bash
-set -euo pipefail
-RESULT_FILE="/opt/philosopher/8ball-result.txt"
-TEMPLATE_FILE="__TEMPLATE_FILE__"
-ollama_status="STOPPED"
-model_status="UNKNOWN"
-selected_model="unknown"
-if systemctl is-active --quiet ollama 2>/dev/null || curl -fsS http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then
-  ollama_status="RUNNING"
-fi
-if [[ -f "${RESULT_FILE}" ]]; then
-  selected_model="$(awk -F': ' '$1 == "Model" {print $2}' "${RESULT_FILE}")"
-  if awk -F': ' '$1 == "Model test" && $2 == "PASSED"' "${RESULT_FILE}" >/dev/null; then
-    model_status="READY"
-  fi
-fi
-sed \
-  -e "s/__OLLAMA_STATUS__/${ollama_status}/g" \
-  -e "s/__MODEL_STATUS__/${model_status}/g" \
-  -e "s/__SELECTED_MODEL__/${selected_model}/g" \
-  "${TEMPLATE_FILE}"
-EOF
-  sed -i "s|__TEMPLATE_FILE__|${MOTD_TEMPLATE}|g" "${MOTD_TARGET}"
-  chmod 0755 "${MOTD_TARGET}"
-}
-
-main() {
-  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-    cat <<'EOF'
+usage() {
+  cat <<'EOF'
 Usage: 8.3.sh [options]
 
 Lane: ubuntu/cpu
 
+Reads ${PHILOSOPHER_ROOT}/profiles/90-result.env written by 8.2.
+
 Options:
   -h, --help    Show this help without mutating the host
 EOF
-    exit 0
-  fi
-  require_root
-  install_remember_helper
-  install_motd
-  log "Installed MOTD at ${MOTD_TARGET}"
-  log "Installed remember helper at /usr/local/bin/remember"
-  log "Login MOTD performs no network calls"
+}
+
+main() {
+  installer_smoke_prologue "$@"
+  ubuntu_require_root
+  ubuntu_ensure_state_root
+  ubuntu_install_remember_helper
+  ubuntu_install_motd "${MOTD_TEMPLATE}"
+  ubuntu_log "Installed MOTD helper and remember command"
+  ubuntu_log "Login MOTD performs no network calls"
 }
 
 main "$@"

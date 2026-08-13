@@ -14,24 +14,7 @@
         }
       },
       "lane": "ubuntu/cpu",
-      "legacy_debt": [
-        {
-          "follow_up": "C10.2-Linux-lanes",
-          "lane": "ubuntu/cpu",
-          "path": "install/ubuntu/cpu/8.1.sh",
-          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
-          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
-          "rule": "unreviewed_remote_ollama_install"
-        },
-        {
-          "follow_up": "C10.2-Linux-lanes",
-          "lane": "ubuntu/cpu",
-          "path": "install/ubuntu/cpu/trial-install.sh",
-          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
-          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
-          "rule": "unreviewed_remote_payload_fetch"
-        }
-      ],
+      "legacy_debt": [],
       "script_kind": "shell",
       "status": "pass",
       "syntax": {
@@ -71,24 +54,7 @@
         }
       },
       "lane": "ubuntu/cuda",
-      "legacy_debt": [
-        {
-          "follow_up": "C10.2-Linux-lanes",
-          "lane": "ubuntu/cuda",
-          "path": "install/ubuntu/cuda/8.1.sh",
-          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
-          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
-          "rule": "unreviewed_remote_ollama_install"
-        },
-        {
-          "follow_up": "C10.2-Linux-lanes",
-          "lane": "ubuntu/cuda",
-          "path": "install/ubuntu/cuda/trial-install.sh",
-          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
-          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
-          "rule": "unreviewed_remote_payload_fetch"
-        }
-      ],
+      "legacy_debt": [],
       "script_kind": "shell",
       "status": "pass",
       "syntax": {
@@ -568,38 +534,6 @@
       "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
       "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
       "rule": "unreviewed_remote_payload_fetch"
-    },
-    {
-      "follow_up": "C10.2-Linux-lanes",
-      "lane": "ubuntu/cpu",
-      "path": "install/ubuntu/cpu/8.1.sh",
-      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
-      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
-      "rule": "unreviewed_remote_ollama_install"
-    },
-    {
-      "follow_up": "C10.2-Linux-lanes",
-      "lane": "ubuntu/cpu",
-      "path": "install/ubuntu/cpu/trial-install.sh",
-      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
-      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
-      "rule": "unreviewed_remote_payload_fetch"
-    },
-    {
-      "follow_up": "C10.2-Linux-lanes",
-      "lane": "ubuntu/cuda",
-      "path": "install/ubuntu/cuda/8.1.sh",
-      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
-      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
-      "rule": "unreviewed_remote_ollama_install"
-    },
-    {
-      "follow_up": "C10.2-Linux-lanes",
-      "lane": "ubuntu/cuda",
-      "path": "install/ubuntu/cuda/trial-install.sh",
-      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
-      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
-      "rule": "unreviewed_remote_payload_fetch"
     }
   ],
   "schema_version": "c10.installer-lane-conformance.v1",
@@ -607,7 +541,7 @@
   "summary": {
     "failure_count": 0,
     "lane_count": 10,
-    "legacy_debt_count": 12
+    "legacy_debt_count": 8
   },
   "violations": []
 }

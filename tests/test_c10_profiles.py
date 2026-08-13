@@ -210,10 +210,10 @@ def test_aws_provisional_csv_is_registered() -> None:
     assert "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv" in paths
 
 
-def test_trial_install_raw_profiles_base_construction() -> None:
+def test_trial_install_release_repo_construction() -> None:
     script = (REPO_ROOT / "trial-install.sh").read_text(encoding="utf-8")
-    assert "EIGHTBALL_PROFILES_BASE" in script
-    assert "RAW_BASE" in script
+    assert "EIGHTBALL_RELEASE_REPO" in script
+    assert "funtech64/8-ball" in script or "terminal-glass/8-ball" in script
 
 
 def test_trial_install_local_checkout(tmp_path: Path) -> None:

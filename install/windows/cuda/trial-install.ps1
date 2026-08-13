@@ -4,7 +4,8 @@ param(
     [string]$Model,
     [string]$Manifest,
     [switch]$NoMotd,
-    [switch]$Help
+    [switch]$Help,
+    [switch]$Preflight
 )
 
 if ($Help) {
@@ -29,6 +30,13 @@ $script:WinLaneMode = 'cuda'
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 . (Join-Path $ScriptDir '..\lib\Windows-Common.ps1')
+. (Join-Path $ScriptDir '..\..\shared\installer-smoke-contract.ps1')
+if ($Preflight) {
+    Invoke-InstallerSmokePreflight -Lane 'windows/cuda' -Checks @'
+- Verify native Windows host and user-level install root
+- Would orchestrate foundation (8.1), model ladder (8.2), and completion card (8.3)
+'@ -LaneMode 'cuda'
+}
 
 foreach ($name in @('8.1.ps1', '8.2.ps1', '8.3.ps1')) {
     if (-not (Test-Path -LiteralPath (Join-Path $ScriptDir $name))) {
