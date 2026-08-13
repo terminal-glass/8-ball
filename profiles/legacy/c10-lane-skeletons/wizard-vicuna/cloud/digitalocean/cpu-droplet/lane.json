@@ -1,0 +1,156 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "wizard-vicuna",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:11Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "13b",
+      "ollama_ref": "wizard-vicuna:13b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-fp16",
+      "ollama_ref": "wizard-vicuna:13b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.2 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q2-k",
+      "ollama_ref": "wizard-vicuna:13b-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q3-k-l",
+      "ollama_ref": "wizard-vicuna:13b-q3_K_L",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q3-k-m",
+      "ollama_ref": "wizard-vicuna:13b-q3_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q3-k-s",
+      "ollama_ref": "wizard-vicuna:13b-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q4-k-m",
+      "ollama_ref": "wizard-vicuna:13b-q4_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q4-k-s",
+      "ollama_ref": "wizard-vicuna:13b-q4_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q40",
+      "ollama_ref": "wizard-vicuna:13b-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q41",
+      "ollama_ref": "wizard-vicuna:13b-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q5-k-m",
+      "ollama_ref": "wizard-vicuna:13b-q5_K_M",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q5-k-s",
+      "ollama_ref": "wizard-vicuna:13b-q5_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q50",
+      "ollama_ref": "wizard-vicuna:13b-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q51",
+      "ollama_ref": "wizard-vicuna:13b-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q6-k",
+      "ollama_ref": "wizard-vicuna:13b-q6_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-q80",
+      "ollama_ref": "wizard-vicuna:13b-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "wizard-vicuna:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

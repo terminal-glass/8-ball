@@ -1,0 +1,14 @@
+{
+  "schema_version": "profiles.stage.v1",
+  "model_slug": "devstral-2",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "fallback_lane": null,
+  "reason": "CPU-only fallback when GPU path is unavailable or lane is CPU-first."
+}

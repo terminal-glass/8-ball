@@ -1,0 +1,147 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "exaone3.5",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "exaone3.5:32b",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-fp16",
+      "ollama_ref": "exaone3.5:32b-instruct-fp16",
+      "min_system_ram_gb": 84.52,
+      "recommended_system_ram_gb": 101.43,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 84.52 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:32b-instruct-q4_K_M",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-q80",
+      "ollama_ref": "exaone3.5:32b-instruct-q8_0",
+      "min_system_ram_gb": 50.02,
+      "recommended_system_ram_gb": 60.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b",
+      "ollama_ref": "exaone3.5:7.8b",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-instruct-fp16",
+      "ollama_ref": "exaone3.5:7.8b-instruct-fp16",
+      "min_system_ram_gb": 22.37,
+      "recommended_system_ram_gb": 26.84,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.37 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q4_K_M",
+      "min_system_ram_gb": 9.49,
+      "recommended_system_ram_gb": 11.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-instruct-q80",
+      "ollama_ref": "exaone3.5:7.8b-instruct-q8_0",
+      "min_system_ram_gb": 13.51,
+      "recommended_system_ram_gb": 16.21,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.51 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b",
+      "ollama_ref": "exaone3.5:2.4b",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-instruct-fp16",
+      "ollama_ref": "exaone3.5:2.4b-instruct-fp16",
+      "min_system_ram_gb": 8.51,
+      "recommended_system_ram_gb": 10.21,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-instruct-q4-k-m",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q4_K_M",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-instruct-q80",
+      "ollama_ref": "exaone3.5:2.4b-instruct-q8_0",
+      "min_system_ram_gb": 5.63,
+      "recommended_system_ram_gb": 6.76,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "exaone3.5:latest",
+      "min_system_ram_gb": 7.24,
+      "recommended_system_ram_gb": 8.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

@@ -1,0 +1,277 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gemma3",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "27b",
+      "ollama_ref": "gemma3:27b",
+      "min_system_ram_gb": 29.04,
+      "recommended_system_ram_gb": 34.84,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-it-fp16",
+      "ollama_ref": "gemma3:27b-it-fp16",
+      "min_system_ram_gb": 72.74,
+      "recommended_system_ram_gb": 87.28,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 72.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-it-q4-k-m",
+      "ollama_ref": "gemma3:27b-it-q4_K_M",
+      "min_system_ram_gb": 29.04,
+      "recommended_system_ram_gb": 34.84,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-it-q80",
+      "ollama_ref": "gemma3:27b-it-q8_0",
+      "min_system_ram_gb": 43.99,
+      "recommended_system_ram_gb": 52.78,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.99 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "27b-it-qat",
+      "ollama_ref": "gemma3:27b-it-qat",
+      "min_system_ram_gb": 30.19,
+      "recommended_system_ram_gb": 36.22,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 30.19 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "12b",
+      "ollama_ref": "gemma3:12b",
+      "min_system_ram_gb": 14.49,
+      "recommended_system_ram_gb": 17.39,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.49 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "12b-it-fp16",
+      "ollama_ref": "gemma3:12b-it-fp16",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "12b-it-q4-k-m",
+      "ollama_ref": "gemma3:12b-it-q4_K_M",
+      "min_system_ram_gb": 14.49,
+      "recommended_system_ram_gb": 17.39,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.49 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "12b-it-q80",
+      "ollama_ref": "gemma3:12b-it-q8_0",
+      "min_system_ram_gb": 20.12,
+      "recommended_system_ram_gb": 24.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.12 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "12b-it-qat",
+      "ollama_ref": "gemma3:12b-it-qat",
+      "min_system_ram_gb": 15.41,
+      "recommended_system_ram_gb": 18.49,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.41 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "gemma3:4b",
+      "min_system_ram_gb": 6.67,
+      "recommended_system_ram_gb": 8.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-it-fp16",
+      "ollama_ref": "gemma3:4b-it-fp16",
+      "min_system_ram_gb": 12.76,
+      "recommended_system_ram_gb": 15.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.76 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-it-q4-k-m",
+      "ollama_ref": "gemma3:4b-it-q4_K_M",
+      "min_system_ram_gb": 6.67,
+      "recommended_system_ram_gb": 8.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-it-q80",
+      "ollama_ref": "gemma3:4b-it-q8_0",
+      "min_system_ram_gb": 8.62,
+      "recommended_system_ram_gb": 10.35,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-it-qat",
+      "ollama_ref": "gemma3:4b-it-qat",
+      "min_system_ram_gb": 7.47,
+      "recommended_system_ram_gb": 8.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b",
+      "ollama_ref": "gemma3:1b",
+      "min_system_ram_gb": 2.95,
+      "recommended_system_ram_gb": 3.54,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-it-fp16",
+      "ollama_ref": "gemma3:1b-it-fp16",
+      "min_system_ram_gb": 4.31,
+      "recommended_system_ram_gb": 5.17,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-it-q4-k-m",
+      "ollama_ref": "gemma3:1b-it-q4_K_M",
+      "min_system_ram_gb": 2.95,
+      "recommended_system_ram_gb": 3.54,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-it-q80",
+      "ollama_ref": "gemma3:1b-it-q8_0",
+      "min_system_ram_gb": 3.28,
+      "recommended_system_ram_gb": 3.93,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-it-qat",
+      "ollama_ref": "gemma3:1b-it-qat",
+      "min_system_ram_gb": 3.16,
+      "recommended_system_ram_gb": 3.79,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "270m",
+      "ollama_ref": "gemma3:270m",
+      "min_system_ram_gb": 2.14,
+      "recommended_system_ram_gb": 2.57,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "270m-it-bf16",
+      "ollama_ref": "gemma3:270m-it-bf16",
+      "min_system_ram_gb": 2.43,
+      "recommended_system_ram_gb": 2.91,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "270m-it-fp16",
+      "ollama_ref": "gemma3:270m-it-fp16",
+      "min_system_ram_gb": 2.43,
+      "recommended_system_ram_gb": 2.91,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "270m-it-q80",
+      "ollama_ref": "gemma3:270m-it-q8_0",
+      "min_system_ram_gb": 2.14,
+      "recommended_system_ram_gb": 2.57,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "270m-it-qat",
+      "ollama_ref": "gemma3:270m-it-qat",
+      "min_system_ram_gb": 2.08,
+      "recommended_system_ram_gb": 2.5,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gemma3:latest",
+      "min_system_ram_gb": 5.52,
+      "recommended_system_ram_gb": 6.62,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

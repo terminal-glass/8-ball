@@ -1,0 +1,14 @@
+{
+  "schema_version": "profiles.stage.v1",
+  "model_slug": "meditron",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": false,
+  "fallback_lane": "cloud/aws-lightsail/cpu",
+  "reason": "CPU-only fallback when GPU path is unavailable or lane is CPU-first."
+}

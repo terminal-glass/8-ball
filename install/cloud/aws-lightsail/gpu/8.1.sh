@@ -3,8 +3,16 @@
 # Install profile: aws-lightsail
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EIGHTBALL_INSTALL_LANE="cloud/aws-lightsail/gpu"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-aws-lightsail-gpu.json"
+
+INSTALLER_SMOKE_SCRIPT_NAME="8.1.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify host identity and loopback Ollama API settings
+- Would prepare foundation dependencies during a real install"
+# shellcheck source=../../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../../shared/installer-smoke-contract.sh"
 
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
@@ -103,6 +111,7 @@ wait_for_ollama() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
     cat <<'EOF'
 Usage: 8.1.sh [options]

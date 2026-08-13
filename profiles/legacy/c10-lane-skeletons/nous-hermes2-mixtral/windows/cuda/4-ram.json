@@ -1,0 +1,197 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nous-hermes2-mixtral",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 32.0,
+  "usable_model_ram_gb": 20.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "8x7b",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b",
+      "min_system_ram_gb": 31.62,
+      "recommended_system_ram_gb": 37.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-fp16",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-fp16",
+      "min_system_ram_gb": 108.67,
+      "recommended_system_ram_gb": 130.41,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.67 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q2-k",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q2_K",
+      "min_system_ram_gb": 21.27,
+      "recommended_system_ram_gb": 25.53,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.27 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q3-k-l",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q3_K_L",
+      "min_system_ram_gb": 29.32,
+      "recommended_system_ram_gb": 35.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.32 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q3-k-m",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q3_K_M",
+      "min_system_ram_gb": 28.17,
+      "recommended_system_ram_gb": 33.81,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.17 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q3-k-s",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q3_K_S",
+      "min_system_ram_gb": 24.72,
+      "recommended_system_ram_gb": 29.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q4-k-m",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_K_M",
+      "min_system_ram_gb": 33.92,
+      "recommended_system_ram_gb": 40.71,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.92 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q4-k-s",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_K_S",
+      "min_system_ram_gb": 32.77,
+      "recommended_system_ram_gb": 39.33,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q40",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_0",
+      "min_system_ram_gb": 31.62,
+      "recommended_system_ram_gb": 37.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q41",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q4_1",
+      "min_system_ram_gb": 35.07,
+      "recommended_system_ram_gb": 42.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q5-k-m",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_K_M",
+      "min_system_ram_gb": 39.67,
+      "recommended_system_ram_gb": 47.61,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.67 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q5-k-s",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_K_S",
+      "min_system_ram_gb": 38.52,
+      "recommended_system_ram_gb": 46.23,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q50",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_0",
+      "min_system_ram_gb": 38.52,
+      "recommended_system_ram_gb": 46.23,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q51",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q5_1",
+      "min_system_ram_gb": 41.97,
+      "recommended_system_ram_gb": 50.37,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.97 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q6-k",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q6_K",
+      "min_system_ram_gb": 45.42,
+      "recommended_system_ram_gb": 54.51,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 45.42 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8x7b-dpo-q80",
+      "ollama_ref": "nous-hermes2-mixtral:8x7b-dpo-q8_0",
+      "min_system_ram_gb": 59.22,
+      "recommended_system_ram_gb": 71.07,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.22 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "dpo",
+      "ollama_ref": "nous-hermes2-mixtral:dpo",
+      "min_system_ram_gb": 31.62,
+      "recommended_system_ram_gb": 37.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nous-hermes2-mixtral:latest",
+      "min_system_ram_gb": 31.62,
+      "recommended_system_ram_gb": 37.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.62 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

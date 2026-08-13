@@ -3,10 +3,17 @@
 # Install profile: digitalocean-droplet
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EIGHTBALL_INSTALL_LANE="cloud/digitalocean/gpu-droplet"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json"
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+INSTALLER_SMOKE_SCRIPT_NAME="8.3.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify completion assets are present
+- Would install login/completion helpers during a real install"
+# shellcheck source=../../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../../shared/installer-smoke-contract.sh"
+
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 MOTD_TEMPLATE="${SCRIPT_DIR}/assets/first-MOTD.txt"
 MOTD_TARGET="/etc/update-motd.d/99-8ball-trial"
@@ -72,6 +79,7 @@ EOF
 }
 
 main() {
+  installer_smoke_prologue "$@"
   if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
     cat <<'EOF'
 Usage: 8.3.sh [options]

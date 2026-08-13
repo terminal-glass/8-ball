@@ -1,0 +1,141 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama4",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-11T10:15:48Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "128x17b",
+      "ollama_ref": "llama4:128x17b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 283.47 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "16x17b",
+      "ollama_ref": "llama4:16x17b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-fp16",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 930.06 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 288.36 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q80",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 498.81 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-fp16",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 256.16 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 83.66 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q80",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 141.16 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama4:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "maverick",
+      "ollama_ref": "llama4:maverick",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 283.47 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "scout",
+      "ollama_ref": "llama4:scout",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    }
+  ]
+}

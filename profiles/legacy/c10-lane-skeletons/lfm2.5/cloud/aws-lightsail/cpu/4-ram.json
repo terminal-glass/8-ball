@@ -1,0 +1,67 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "lfm2.5",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-11T10:15:48Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 4.0,
+  "usable_model_ram_gb": 2.4,
+  "size_ram_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "lfm2.5:8b",
+      "min_system_ram_gb": 10.0,
+      "recommended_system_ram_gb": 12.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.0 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-a1b-bf16",
+      "ollama_ref": "lfm2.5:8b-a1b-bf16",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-a1b-q4-k-m",
+      "ollama_ref": "lfm2.5:8b-a1b-q4_K_M",
+      "min_system_ram_gb": 10.0,
+      "recommended_system_ram_gb": 12.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.0 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-a1b-q80",
+      "ollama_ref": "lfm2.5:8b-a1b-q8_0",
+      "min_system_ram_gb": 14.37,
+      "recommended_system_ram_gb": 17.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "lfm2.5:latest",
+      "min_system_ram_gb": 7.7,
+      "recommended_system_ram_gb": 9.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

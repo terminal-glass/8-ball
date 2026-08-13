@@ -1,0 +1,33 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nemotron-3-ultra",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "nemotron-3-ultra:cloud",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity, model_disk_requirement, model_ram_requirement, model_vram_requirement",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "model_disk_requirement",
+        "model_ram_requirement",
+        "model_vram_requirement"
+      ]
+    }
+  ]
+}

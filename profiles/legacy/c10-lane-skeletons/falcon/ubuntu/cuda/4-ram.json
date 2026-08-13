@@ -1,0 +1,397 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "falcon",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 24.0,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "180b",
+      "ollama_ref": "falcon:180b",
+      "min_system_ram_gb": 169.62,
+      "recommended_system_ram_gb": 203.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-chat",
+      "ollama_ref": "falcon:180b-chat",
+      "min_system_ram_gb": 169.62,
+      "recommended_system_ram_gb": 203.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-chat-q40",
+      "ollama_ref": "falcon:180b-chat-q4_0",
+      "min_system_ram_gb": 169.62,
+      "recommended_system_ram_gb": 203.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-text",
+      "ollama_ref": "falcon:180b-text",
+      "min_system_ram_gb": 169.62,
+      "recommended_system_ram_gb": 203.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-text-q40",
+      "ollama_ref": "falcon:180b-text-q4_0",
+      "min_system_ram_gb": 169.62,
+      "recommended_system_ram_gb": 203.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b",
+      "ollama_ref": "falcon:40b",
+      "min_system_ram_gb": 40.82,
+      "recommended_system_ram_gb": 48.99,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct",
+      "ollama_ref": "falcon:40b-instruct",
+      "min_system_ram_gb": 40.82,
+      "recommended_system_ram_gb": 48.99,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-fp16",
+      "ollama_ref": "falcon:40b-instruct-fp16",
+      "min_system_ram_gb": 109.82,
+      "recommended_system_ram_gb": 131.79,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 109.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q40",
+      "ollama_ref": "falcon:40b-instruct-q4_0",
+      "min_system_ram_gb": 40.82,
+      "recommended_system_ram_gb": 48.99,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q41",
+      "ollama_ref": "falcon:40b-instruct-q4_1",
+      "min_system_ram_gb": 43.12,
+      "recommended_system_ram_gb": 51.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.12 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q50",
+      "ollama_ref": "falcon:40b-instruct-q5_0",
+      "min_system_ram_gb": 46.57,
+      "recommended_system_ram_gb": 55.89,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 46.57 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q51",
+      "ollama_ref": "falcon:40b-instruct-q5_1",
+      "min_system_ram_gb": 50.02,
+      "recommended_system_ram_gb": 60.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q80",
+      "ollama_ref": "falcon:40b-instruct-q8_0",
+      "min_system_ram_gb": 63.82,
+      "recommended_system_ram_gb": 76.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text",
+      "ollama_ref": "falcon:40b-text",
+      "min_system_ram_gb": 40.82,
+      "recommended_system_ram_gb": 48.99,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-fp16",
+      "ollama_ref": "falcon:40b-text-fp16",
+      "min_system_ram_gb": 109.82,
+      "recommended_system_ram_gb": 131.79,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 109.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q40",
+      "ollama_ref": "falcon:40b-text-q4_0",
+      "min_system_ram_gb": 40.82,
+      "recommended_system_ram_gb": 48.99,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q41",
+      "ollama_ref": "falcon:40b-text-q4_1",
+      "min_system_ram_gb": 43.12,
+      "recommended_system_ram_gb": 51.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.12 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q50",
+      "ollama_ref": "falcon:40b-text-q5_0",
+      "min_system_ram_gb": 46.57,
+      "recommended_system_ram_gb": 55.89,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 46.57 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q51",
+      "ollama_ref": "falcon:40b-text-q5_1",
+      "min_system_ram_gb": 50.02,
+      "recommended_system_ram_gb": 60.03,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q80",
+      "ollama_ref": "falcon:40b-text-q8_0",
+      "min_system_ram_gb": 63.82,
+      "recommended_system_ram_gb": 76.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "falcon:7b",
+      "min_system_ram_gb": 8.57,
+      "recommended_system_ram_gb": 10.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct",
+      "ollama_ref": "falcon:7b-instruct",
+      "min_system_ram_gb": 8.57,
+      "recommended_system_ram_gb": 10.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-fp16",
+      "ollama_ref": "falcon:7b-instruct-fp16",
+      "min_system_ram_gb": 19.84,
+      "recommended_system_ram_gb": 23.8,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q40",
+      "ollama_ref": "falcon:7b-instruct-q4_0",
+      "min_system_ram_gb": 8.57,
+      "recommended_system_ram_gb": 10.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q41",
+      "ollama_ref": "falcon:7b-instruct-q4_1",
+      "min_system_ram_gb": 9.03,
+      "recommended_system_ram_gb": 10.83,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q50",
+      "ollama_ref": "falcon:7b-instruct-q5_0",
+      "min_system_ram_gb": 9.6,
+      "recommended_system_ram_gb": 11.52,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q51",
+      "ollama_ref": "falcon:7b-instruct-q5_1",
+      "min_system_ram_gb": 10.06,
+      "recommended_system_ram_gb": 12.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q80",
+      "ollama_ref": "falcon:7b-instruct-q8_0",
+      "min_system_ram_gb": 12.59,
+      "recommended_system_ram_gb": 15.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text",
+      "ollama_ref": "falcon:7b-text",
+      "min_system_ram_gb": 8.57,
+      "recommended_system_ram_gb": 10.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-fp16",
+      "ollama_ref": "falcon:7b-text-fp16",
+      "min_system_ram_gb": 19.84,
+      "recommended_system_ram_gb": 23.8,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q40",
+      "ollama_ref": "falcon:7b-text-q4_0",
+      "min_system_ram_gb": 8.57,
+      "recommended_system_ram_gb": 10.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q41",
+      "ollama_ref": "falcon:7b-text-q4_1",
+      "min_system_ram_gb": 9.03,
+      "recommended_system_ram_gb": 10.83,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q50",
+      "ollama_ref": "falcon:7b-text-q5_0",
+      "min_system_ram_gb": 9.6,
+      "recommended_system_ram_gb": 11.52,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q51",
+      "ollama_ref": "falcon:7b-text-q5_1",
+      "min_system_ram_gb": 10.06,
+      "recommended_system_ram_gb": 12.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q80",
+      "ollama_ref": "falcon:7b-text-q8_0",
+      "min_system_ram_gb": 12.59,
+      "recommended_system_ram_gb": 15.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "falcon:instruct",
+      "min_system_ram_gb": 6.55,
+      "recommended_system_ram_gb": 7.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "falcon:latest",
+      "min_system_ram_gb": 6.55,
+      "recommended_system_ram_gb": 7.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "text",
+      "ollama_ref": "falcon:text",
+      "min_system_ram_gb": 6.55,
+      "recommended_system_ram_gb": 7.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

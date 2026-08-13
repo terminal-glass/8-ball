@@ -1,0 +1,76 @@
+{
+  "schema_version": "c10.macos-lane-runtime-contract-projection.v1",
+  "canonical_lane_count": 2,
+  "lanes": {
+    "mac/apple-silicon": {
+      "target_lane": "mac/apple-silicon",
+      "observation_contract_path": "profiles/provider-compatibility/macos/runtime-observation-contract.json",
+      "lane_routing_category_id": "mac-lane-routing-apple-silicon",
+      "host_topology_category_ids": [
+        "mac-topology-bare-metal",
+        "mac-topology-virtual-machine",
+        "mac-topology-unknown"
+      ],
+      "display_category_ids": [
+        "mac-display-no-gpu-or-unknown",
+        "mac-display-gpu-present-unverified",
+        "mac-display-display-data-partial"
+      ],
+      "runtime_menu_band_ids": [
+        "mac-ram-band-under-4gib-or-unknown",
+        "mac-ram-band-4-to-8gib",
+        "mac-ram-band-8-to-12gib",
+        "mac-ram-band-12-to-24gib",
+        "mac-ram-band-24gib-plus"
+      ],
+      "disk_gate_candidate_refs": [
+        "qwen3:14b",
+        "qwen3:8b",
+        "qwen3:4b",
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "cuda_status": "not_applicable",
+      "notes": "Mac lane projection only; does not multiply the C10 model-size index."
+    },
+    "mac/intel": {
+      "target_lane": "mac/intel",
+      "observation_contract_path": "profiles/provider-compatibility/macos/runtime-observation-contract.json",
+      "lane_routing_category_id": "mac-lane-routing-intel",
+      "host_topology_category_ids": [
+        "mac-topology-bare-metal",
+        "mac-topology-virtual-machine",
+        "mac-topology-unknown"
+      ],
+      "display_category_ids": [
+        "mac-display-no-gpu-or-unknown",
+        "mac-display-gpu-present-unverified",
+        "mac-display-display-data-partial"
+      ],
+      "runtime_menu_band_ids": [
+        "mac-ram-band-under-4gib-or-unknown",
+        "mac-ram-band-4-to-8gib",
+        "mac-ram-band-8-to-12gib",
+        "mac-ram-band-12-to-24gib",
+        "mac-ram-band-24gib-plus"
+      ],
+      "disk_gate_candidate_refs": [
+        "qwen3:14b",
+        "qwen3:8b",
+        "qwen3:4b",
+        "qwen3:1.7b",
+        "qwen3:0.6b"
+      ],
+      "classification": "runtime-observed-host-category",
+      "model_fit_proven": false,
+      "runtime_trial_required": true,
+      "runtime_verification_required": true,
+      "cuda_status": "not_applicable",
+      "notes": "Mac lane projection only; does not multiply the C10 model-size index."
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "yi-coder",
+  "size_slug": "1.5b-base-q4-k-s",
+  "ollama_ref": "yi-coder:1.5b-base-q4_K_S",
+  "parameter_count": 1500000000,
+  "quantization": "q4_K_S",
+  "download_size_bytes": 904000000,
+  "estimated": {
+    "min_system_ram_gb": 3.2,
+    "recommended_system_ram_gb": 3.84,
+    "min_vram_gb": 1.04,
+    "recommended_vram_gb": 3.2,
+    "min_disk_gb": 6.08
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yi-coder/tags",
+    "retrieved_at": "2026-08-01T12:00:13Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 3.2,
+    "recommended_ram_gb": 3.84,
+    "minimum_vram_gb": 1.04,
+    "recommended_vram_gb": 3.2,
+    "minimum_disk_free_gb": 0.842,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=yi-coder;size_index=42;ollama_ref=yi-coder:1.5b-base-q4_K_S"
+  }
+}

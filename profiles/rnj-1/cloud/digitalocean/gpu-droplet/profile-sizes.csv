@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+8b,rnj-1:8b,../sizes/8b.json,fit
+8b-instruct-fp16,rnj-1:8b-instruct-fp16,../sizes/8b-instruct-fp16.json,no_fit
+8b-instruct-q4-k-m,rnj-1:8b-instruct-q4_K_M,../sizes/8b-instruct-q4-k-m.json,fit
+8b-instruct-q80,rnj-1:8b-instruct-q8_0,../sizes/8b-instruct-q80.json,fit
+latest,rnj-1:latest,../sizes/latest.json,fit

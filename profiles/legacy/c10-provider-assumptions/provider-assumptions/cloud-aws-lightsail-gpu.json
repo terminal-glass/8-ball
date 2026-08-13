@@ -1,0 +1,85 @@
+{
+  "schema_version": "c10.provider-assumption.v1",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "platform": "cloud",
+  "provider": "aws-lightsail",
+  "architecture": "x86_64",
+  "gpu_lane": true,
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "hardware": {
+    "cpu_cores": 4,
+    "system_ram_gb": 16.0,
+    "usable_model_ram_gb": 9.6,
+    "minimum_free_disk_gb": 50.0,
+    "total_vram_gb": null,
+    "vram_gb_per_gpu": null,
+    "gpu_count": 1,
+    "cuda_available": null,
+    "apple_metal_available": false,
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published",
+    "baseline_plan_id": "GPU XL",
+    "selection_policy": "smallest_published_plan_conservative_baseline",
+    "plans": [
+      {
+        "plan_id": "lightsail-research-gpu-xl",
+        "plan_name": "GPU XL",
+        "vcpu": 4,
+        "ram_gb": 16.0,
+        "disk_gb": 50.0,
+        "gpu_count": 1,
+        "vram_gb_per_gpu": null,
+        "total_vram_gb": null,
+        "cuda_expected": "runtime_detection_required",
+        "ollama_gpu_expected": "unknown",
+        "evidence_status": "provider_published",
+        "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+        "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
+      },
+      {
+        "plan_id": "lightsail-research-gpu-2xl",
+        "plan_name": "GPU 2XL",
+        "vcpu": 8,
+        "ram_gb": 32.0,
+        "disk_gb": 50.0,
+        "gpu_count": 1,
+        "vram_gb_per_gpu": null,
+        "total_vram_gb": null,
+        "cuda_expected": "runtime_detection_required",
+        "ollama_gpu_expected": "unknown",
+        "evidence_status": "provider_published",
+        "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+        "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
+      },
+      {
+        "plan_id": "lightsail-research-gpu-4xl",
+        "plan_name": "GPU 4XL",
+        "vcpu": 16,
+        "ram_gb": 64.0,
+        "disk_gb": 50.0,
+        "gpu_count": 1,
+        "vram_gb_per_gpu": null,
+        "total_vram_gb": null,
+        "cuda_expected": "runtime_detection_required",
+        "ollama_gpu_expected": "unknown",
+        "evidence_status": "provider_published",
+        "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+        "source_reference": "https://docs.aws.amazon.com/lightsail-for-research/latest/ug/blueprints-plans.html"
+      }
+    ],
+    "vram_status": "unknown"
+  },
+  "fallback_profile_id": null,
+  "assumed_profile_id": null,
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/TG-8Ball-AWS-Lightsail-GPU-Provisional-Behavior.csv"
+  ],
+  "generated_at": "2026-08-11T10:15:47Z",
+  "installer_reference": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+  "profiles_reference": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json"
+}

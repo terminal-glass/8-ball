@@ -1,0 +1,324 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "falcon",
+  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/gpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "gpu-droplet=true",
+    "nvidia"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "180b",
+      "ollama_ref": "falcon:180b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-chat",
+      "ollama_ref": "falcon:180b-chat",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-chat-q40",
+      "ollama_ref": "falcon:180b-chat-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-text",
+      "ollama_ref": "falcon:180b-text",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "180b-text-q40",
+      "ollama_ref": "falcon:180b-text-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 169.62 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b",
+      "ollama_ref": "falcon:40b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct",
+      "ollama_ref": "falcon:40b-instruct",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-fp16",
+      "ollama_ref": "falcon:40b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 109.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q40",
+      "ollama_ref": "falcon:40b-instruct-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q41",
+      "ollama_ref": "falcon:40b-instruct-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.12 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q50",
+      "ollama_ref": "falcon:40b-instruct-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 46.57 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q51",
+      "ollama_ref": "falcon:40b-instruct-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-instruct-q80",
+      "ollama_ref": "falcon:40b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text",
+      "ollama_ref": "falcon:40b-text",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-fp16",
+      "ollama_ref": "falcon:40b-text-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 109.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q40",
+      "ollama_ref": "falcon:40b-text-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q41",
+      "ollama_ref": "falcon:40b-text-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.12 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q50",
+      "ollama_ref": "falcon:40b-text-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 46.57 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q51",
+      "ollama_ref": "falcon:40b-text-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "40b-text-q80",
+      "ollama_ref": "falcon:40b-text-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 63.82 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "falcon:7b",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct",
+      "ollama_ref": "falcon:7b-instruct",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-fp16",
+      "ollama_ref": "falcon:7b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q40",
+      "ollama_ref": "falcon:7b-instruct-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q41",
+      "ollama_ref": "falcon:7b-instruct-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q50",
+      "ollama_ref": "falcon:7b-instruct-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q51",
+      "ollama_ref": "falcon:7b-instruct-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-instruct-q80",
+      "ollama_ref": "falcon:7b-instruct-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text",
+      "ollama_ref": "falcon:7b-text",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-fp16",
+      "ollama_ref": "falcon:7b-text-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 19.84 GB RAM; lane provides 19.2 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q40",
+      "ollama_ref": "falcon:7b-text-q4_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q41",
+      "ollama_ref": "falcon:7b-text-q4_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q50",
+      "ollama_ref": "falcon:7b-text-q5_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q51",
+      "ollama_ref": "falcon:7b-text-q5_1",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-text-q80",
+      "ollama_ref": "falcon:7b-text-q8_0",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "falcon:instruct",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "falcon:latest",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "text",
+      "ollama_ref": "falcon:text",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+90b,llama3.2-vision:90b,../sizes/90b.json,no_fit
+90b-instruct-fp16,llama3.2-vision:90b-instruct-fp16,../sizes/90b-instruct-fp16.json,no_fit
+90b-instruct-q4-k-m,llama3.2-vision:90b-instruct-q4_K_M,../sizes/90b-instruct-q4-k-m.json,no_fit
+90b-instruct-q80,llama3.2-vision:90b-instruct-q8_0,../sizes/90b-instruct-q80.json,no_fit
+11b,llama3.2-vision:11b,../sizes/11b.json,unknown
+11b-instruct-fp16,llama3.2-vision:11b-instruct-fp16,../sizes/11b-instruct-fp16.json,no_fit
+11b-instruct-q4-k-m,llama3.2-vision:11b-instruct-q4_K_M,../sizes/11b-instruct-q4-k-m.json,unknown
+11b-instruct-q80,llama3.2-vision:11b-instruct-q8_0,../sizes/11b-instruct-q80.json,unknown
+latest,llama3.2-vision:latest,../sizes/latest.json,unknown

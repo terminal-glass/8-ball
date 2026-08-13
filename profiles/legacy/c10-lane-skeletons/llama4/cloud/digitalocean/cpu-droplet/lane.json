@@ -1,0 +1,108 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama4",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
+  "detection_signals": [
+    "provider=digitalocean",
+    "droplet=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "128x17b",
+      "ollama_ref": "llama4:128x17b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 299.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "16x17b",
+      "ollama_ref": "llama4:16x17b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-fp16",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 968.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 299.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "17b-maverick128e-instruct-q80",
+      "ollama_ref": "llama4:17b-maverick-128e-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 518.6 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-fp16",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 265.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q4-k-m",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "17b-scout16e-instruct-q80",
+      "ollama_ref": "llama4:17b-scout-16e-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 145.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama4:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "maverick",
+      "ollama_ref": "llama4:maverick",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 299.0 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "scout",
+      "ollama_ref": "llama4:scout",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.4 GB disk; lane minimum free disk is 25 GB",
+      "missing_evidence": []
+    }
+  ]
+}

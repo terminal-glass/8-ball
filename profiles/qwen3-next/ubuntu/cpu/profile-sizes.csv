@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+80b,qwen3-next:80b,../sizes/80b.json,no_fit
+80b-a3b-instruct-fp16,qwen3-next:80b-a3b-instruct-fp16,../sizes/80b-a3b-instruct-fp16.json,no_fit
+80b-a3b-instruct-q4-k-m,qwen3-next:80b-a3b-instruct-q4_K_M,../sizes/80b-a3b-instruct-q4-k-m.json,no_fit
+80b-a3b-instruct-q80,qwen3-next:80b-a3b-instruct-q8_0,../sizes/80b-a3b-instruct-q80.json,no_fit
+80b-a3b-thinking,qwen3-next:80b-a3b-thinking,../sizes/80b-a3b-thinking.json,no_fit
+80b-a3b-thinking-fp16,qwen3-next:80b-a3b-thinking-fp16,../sizes/80b-a3b-thinking-fp16.json,no_fit
+80b-a3b-thinking-q4-k-m,qwen3-next:80b-a3b-thinking-q4_K_M,../sizes/80b-a3b-thinking-q4-k-m.json,no_fit
+80b-a3b-thinking-q80,qwen3-next:80b-a3b-thinking-q8_0,../sizes/80b-a3b-thinking-q80.json,no_fit
+latest,qwen3-next:latest,../sizes/latest.json,no_fit

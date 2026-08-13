@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file,fit_status
+335m,bge-large:335m,../sizes/335m.json,fit
+335m-en-v1.5-fp16,bge-large:335m-en-v1.5-fp16,../sizes/335m-en-v1.5-fp16.json,fit
+latest,bge-large:latest,../sizes/latest.json,fit

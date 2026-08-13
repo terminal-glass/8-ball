@@ -1,0 +1,539 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "hermes3",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/intel",
+  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "405b",
+      "ollama_ref": "hermes3:405b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 381.51 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-fp16",
+      "ollama_ref": "hermes3:405b-llama3.1-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 1051.96 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q2-k",
+      "ollama_ref": "hermes3:405b-llama3.1-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 289.51 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q3-k-l",
+      "ollama_ref": "hermes3:405b-llama3.1-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 363.11 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q3-k-m",
+      "ollama_ref": "hermes3:405b-llama3.1-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 342.41 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q3-k-s",
+      "ollama_ref": "hermes3:405b-llama3.1-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 319.41 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q4-k-m",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 397.61 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q4-k-s",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 383.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q40",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 381.51 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q41",
+      "ollama_ref": "hermes3:405b-llama3.1-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 410.26 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q5-k-m",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 448.21 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q5-k-s",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 439.01 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q50",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 439.01 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q51",
+      "ollama_ref": "hermes3:405b-llama3.1-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 468.91 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q6-k",
+      "ollama_ref": "hermes3:405b-llama3.1-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 501.11 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "405b-llama3.1-q80",
+      "ollama_ref": "hermes3:405b-llama3.1-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 613.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b",
+      "ollama_ref": "hermes3:70b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-fp16",
+      "ollama_ref": "hermes3:70b-llama3.1-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 184.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q2-k",
+      "ollama_ref": "hermes3:70b-llama3.1-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 51.75 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q3-k-l",
+      "ollama_ref": "hermes3:70b-llama3.1-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 64.4 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q3-k-m",
+      "ollama_ref": "hermes3:70b-llama3.1-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 60.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q3-k-s",
+      "ollama_ref": "hermes3:70b-llama3.1-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 57.5 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q4-k-m",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 71.3 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q4-k-s",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q40",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 67.85 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q41",
+      "ollama_ref": "hermes3:70b-llama3.1-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 72.45 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q5-k-m",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q5-k-s",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q50",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.2 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q51",
+      "ollama_ref": "hermes3:70b-llama3.1-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.8 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q6-k",
+      "ollama_ref": "hermes3:70b-llama3.1-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 88.55 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "70b-llama3.1-q80",
+      "ollama_ref": "hermes3:70b-llama3.1-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.1 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "hermes3:8b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-fp16",
+      "ollama_ref": "hermes3:8b-llama3.1-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q2-k",
+      "ollama_ref": "hermes3:8b-llama3.1-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.7 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q3-k-l",
+      "ollama_ref": "hermes3:8b-llama3.1-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.97 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q3-k-m",
+      "ollama_ref": "hermes3:8b-llama3.1-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q3-k-s",
+      "ollama_ref": "hermes3:8b-llama3.1-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.28 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q4-k-m",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q4-k-s",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q40",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q41",
+      "ollama_ref": "hermes3:8b-llama3.1-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.89 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q5-k-m",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q5-k-s",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q50",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q51",
+      "ollama_ref": "hermes3:8b-llama3.1-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q6-k",
+      "ollama_ref": "hermes3:8b-llama3.1-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-llama3.1-q80",
+      "ollama_ref": "hermes3:8b-llama3.1-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "hermes3:3b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.89 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-fp16",
+      "ollama_ref": "hermes3:3b-llama3.2-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q2-k",
+      "ollama_ref": "hermes3:3b-llama3.2-q2_K",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q3-k-l",
+      "ollama_ref": "hermes3:3b-llama3.2-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.66 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q3-k-m",
+      "ollama_ref": "hermes3:3b-llama3.2-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.54 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q3-k-s",
+      "ollama_ref": "hermes3:3b-llama3.2-q3_K_S",
+      "fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane hardware assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q4-k-m",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.89 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q4-k-s",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q40",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q41",
+      "ollama_ref": "hermes3:3b-llama3.2-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q5-k-m",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.23 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q5-k-s",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.23 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q50",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.23 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q51",
+      "ollama_ref": "hermes3:3b-llama3.2-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q6-k",
+      "ollama_ref": "hermes3:3b-llama3.2-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.58 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-llama3.2-q80",
+      "ollama_ref": "hermes3:3b-llama3.2-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.5 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "hermes3:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.13 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

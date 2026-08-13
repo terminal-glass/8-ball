@@ -1,0 +1,190 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen2.5vl",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "72b",
+      "ollama_ref": "qwen2.5vl:72b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "72b-fp16",
+      "ollama_ref": "qwen2.5vl:72b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 191.47 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "72b-q4-k-m",
+      "ollama_ref": "qwen2.5vl:72b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 78.77 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "72b-q80",
+      "ollama_ref": "qwen2.5vl:72b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 113.27 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b",
+      "ollama_ref": "qwen2.5vl:32b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-fp16",
+      "ollama_ref": "qwen2.5vl:32b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.97 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-q4-k-m",
+      "ollama_ref": "qwen2.5vl:32b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "32b-q80",
+      "ollama_ref": "qwen2.5vl:32b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.32 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b",
+      "ollama_ref": "qwen2.5vl:7b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-fp16",
+      "ollama_ref": "qwen2.5vl:7b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.29 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-q4-k-m",
+      "ollama_ref": "qwen2.5vl:7b-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "7b-q80",
+      "ollama_ref": "qwen2.5vl:7b-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "qwen2.5vl:3b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "3b-fp16",
+      "ollama_ref": "qwen2.5vl:3b-fp16",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "3b-q4-k-m",
+      "ollama_ref": "qwen2.5vl:3b-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "3b-q80",
+      "ollama_ref": "qwen2.5vl:3b-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen2.5vl:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file,fit_status
+671b,deepseek-v3.1:671b,../sizes/671b.json,no_fit
+671b-fp16,deepseek-v3.1:671b-fp16,../sizes/671b-fp16.json,no_fit
+671b-q80,deepseek-v3.1:671b-q8_0,../sizes/671b-q80.json,no_fit
+671b-terminus-fp16,deepseek-v3.1:671b-terminus-fp16,../sizes/671b-terminus-fp16.json,no_fit
+671b-terminus-q4-k-m,deepseek-v3.1:671b-terminus-q4_K_M,../sizes/671b-terminus-q4-k-m.json,no_fit
+671b-terminus-q80,deepseek-v3.1:671b-terminus-q8_0,../sizes/671b-terminus-q80.json,no_fit
+latest,deepseek-v3.1:latest,../sizes/latest.json,no_fit

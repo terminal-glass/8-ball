@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+671b,cogito-2.1:671b,../sizes/671b.json,no_fit
+671b-fp16,cogito-2.1:671b-fp16,../sizes/671b-fp16.json,no_fit
+671b-q4-k-m,cogito-2.1:671b-q4_K_M,../sizes/671b-q4-k-m.json,no_fit
+671b-q80,cogito-2.1:671b-q8_0,../sizes/671b-q80.json,no_fit
+latest,cogito-2.1:latest,../sizes/latest.json,no_fit

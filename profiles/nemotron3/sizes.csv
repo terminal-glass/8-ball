@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file
+33b,nemotron3:33b,sizes/33b.json
+33b-bf16,nemotron3:33b-bf16,sizes/33b-bf16.json
+33b-q4-k-m,nemotron3:33b-q4_K_M,sizes/33b-q4-k-m.json
+33b-q8,nemotron3:33b-q8,sizes/33b-q8.json

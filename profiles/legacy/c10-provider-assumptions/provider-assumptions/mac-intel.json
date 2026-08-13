@@ -1,0 +1,33 @@
+{
+  "schema_version": "c10.provider-assumption.v1",
+  "provider_assumption_id": "mac-intel",
+  "lane_path": "mac/intel",
+  "platform": "mac",
+  "provider": null,
+  "architecture": "x86_64",
+  "gpu_lane": false,
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "hardware": {
+    "cpu_cores": 8,
+    "system_ram_gb": 8.0,
+    "usable_model_ram_gb": 4.5,
+    "minimum_free_disk_gb": 20.0,
+    "total_vram_gb": null,
+    "cuda_available": false,
+    "apple_metal_available": false,
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class",
+    "vram_gb_per_gpu": null
+  },
+  "fallback_profile_id": null,
+  "assumed_profile_id": "mac_air_apple_silicon_8gb",
+  "source_paths": [
+    "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv"
+  ],
+  "generated_at": "2026-08-06T05:53:08Z",
+  "installer_reference": "install/mac/intel/trial-install.sh",
+  "profiles_reference": "profiles/provider-assumptions/mac-intel.json"
+}

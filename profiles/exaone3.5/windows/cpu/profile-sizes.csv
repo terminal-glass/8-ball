@@ -1,0 +1,14 @@
+size_slug,ollama_ref,size_file,fit_status
+32b,exaone3.5:32b,../sizes/32b.json,no_fit
+32b-instruct-fp16,exaone3.5:32b-instruct-fp16,../sizes/32b-instruct-fp16.json,no_fit
+32b-instruct-q4-k-m,exaone3.5:32b-instruct-q4_K_M,../sizes/32b-instruct-q4-k-m.json,no_fit
+32b-instruct-q80,exaone3.5:32b-instruct-q8_0,../sizes/32b-instruct-q80.json,no_fit
+7.8b,exaone3.5:7.8b,../sizes/7.8b.json,no_fit
+7.8b-instruct-fp16,exaone3.5:7.8b-instruct-fp16,../sizes/7.8b-instruct-fp16.json,no_fit
+7.8b-instruct-q4-k-m,exaone3.5:7.8b-instruct-q4_K_M,../sizes/7.8b-instruct-q4-k-m.json,no_fit
+7.8b-instruct-q80,exaone3.5:7.8b-instruct-q8_0,../sizes/7.8b-instruct-q80.json,no_fit
+2.4b,exaone3.5:2.4b,../sizes/2.4b.json,fit
+2.4b-instruct-fp16,exaone3.5:2.4b-instruct-fp16,../sizes/2.4b-instruct-fp16.json,fit
+2.4b-instruct-q4-k-m,exaone3.5:2.4b-instruct-q4_K_M,../sizes/2.4b-instruct-q4-k-m.json,fit
+2.4b-instruct-q80,exaone3.5:2.4b-instruct-q8_0,../sizes/2.4b-instruct-q80.json,fit
+latest,exaone3.5:latest,../sizes/latest.json,fit

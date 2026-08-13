@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+335m,mxbai-embed-large:335m,../sizes/335m.json,fit
+335m-v1-fp16,mxbai-embed-large:335m-v1-fp16,../sizes/335m-v1-fp16.json,fit
+latest,mxbai-embed-large:latest,../sizes/latest.json,fit
+v1,mxbai-embed-large:v1,../sizes/v1.json,fit

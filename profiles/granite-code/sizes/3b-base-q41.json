@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "granite-code",
+  "size_slug": "3b-base-q41",
+  "ollama_ref": "granite-code:3b-base-q4_1",
+  "parameter_count": 3000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 2200000000,
+  "estimated": {
+    "min_system_ram_gb": 5.12,
+    "recommended_system_ram_gb": 6.14,
+    "min_vram_gb": 2.53,
+    "recommended_vram_gb": 5.12,
+    "min_disk_gb": 7.64
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/granite-code/tags",
+    "retrieved_at": "2026-08-01T11:54:08Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 5.12,
+    "recommended_ram_gb": 6.14,
+    "minimum_vram_gb": 2.53,
+    "recommended_vram_gb": 5.12,
+    "minimum_disk_free_gb": 2.049,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=granite-code;size_index=124;ollama_ref=granite-code:3b-base-q4_1"
+  }
+}

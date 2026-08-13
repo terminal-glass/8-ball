@@ -1,0 +1,67 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gpt-oss",
+  "lane_path": "ubuntu/cpu",
+  "provider_assumption_id": "ubuntu-cpu",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "gpt-oss:120b",
+      "min_system_ram_gb": 110.97,
+      "recommended_system_ram_gb": 133.17,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 110.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "120b-cloud",
+      "ollama_ref": "gpt-oss:120b-cloud",
+      "min_system_ram_gb": 110.97,
+      "recommended_system_ram_gb": 133.17,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 110.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "20b",
+      "ollama_ref": "gpt-oss:20b",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "20b-cloud",
+      "ollama_ref": "gpt-oss:20b-cloud",
+      "min_system_ram_gb": 82.22,
+      "recommended_system_ram_gb": 98.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.22 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gpt-oss:latest",
+      "min_system_ram_gb": 17.82,
+      "recommended_system_ram_gb": 21.39,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

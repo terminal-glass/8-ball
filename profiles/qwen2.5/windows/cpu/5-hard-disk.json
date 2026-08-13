@@ -1,0 +1,14 @@
+{
+  "schema_version": "profiles.stage.v1",
+  "model_slug": "qwen2.5",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "minimum_free_disk_gb": 35.0,
+  "reason": "Disk headroom sourced from hardware or provider plan assumptions."
+}

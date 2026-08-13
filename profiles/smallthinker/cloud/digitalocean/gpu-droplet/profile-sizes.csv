@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+3b,smallthinker:3b,../sizes/3b.json,fit
+3b-preview-fp16,smallthinker:3b-preview-fp16,../sizes/3b-preview-fp16.json,fit
+3b-preview-q4-k-m,smallthinker:3b-preview-q4_K_M,../sizes/3b-preview-q4-k-m.json,fit
+3b-preview-q80,smallthinker:3b-preview-q8_0,../sizes/3b-preview-q80.json,fit
+latest,smallthinker:latest,../sizes/latest.json,fit

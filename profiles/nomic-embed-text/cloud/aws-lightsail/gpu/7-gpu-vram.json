@@ -1,0 +1,16 @@
+{
+  "schema_version": "profiles.stage.v1",
+  "model_slug": "nomic-embed-text",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "cuda_available": null,
+  "apple_metal_available": false,
+  "total_vram_gb": null,
+  "reason": "AWS Lightsail GPU instance lane when GPU bundles are available."
+}

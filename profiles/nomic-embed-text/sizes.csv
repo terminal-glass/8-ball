@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file
+137m-v1.5-fp16,nomic-embed-text:137m-v1.5-fp16,sizes/137m-v1.5-fp16.json
+latest,nomic-embed-text:latest,sizes/latest.json
+v1.5,nomic-embed-text:v1.5,sizes/v1.5.json

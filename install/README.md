@@ -97,6 +97,8 @@ sudo ./trial-install.sh --manifest ../../data/generated/pages/install-manifest.j
 ## Validation
 
 ```bash
+bash -n install/ubuntu/cpu/trial-install.sh install/ubuntu/cpu/8.1.sh install/ubuntu/cpu/8.2.sh install/ubuntu/cpu/8.3.sh
+bash tests/test-shell-baseline.sh
 bash -n install/*/*.sh install/cloud/*/*.sh install/trial-install.sh
 shellcheck install/ubuntu/*.sh   # when shellcheck is available
 ```

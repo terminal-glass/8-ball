@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+7b,marco-o1:7b,../sizes/7b.json,unknown
+7b-fp16,marco-o1:7b-fp16,../sizes/7b-fp16.json,no_fit
+7b-q4-k-m,marco-o1:7b-q4_K_M,../sizes/7b-q4-k-m.json,unknown
+7b-q80,marco-o1:7b-q8_0,../sizes/7b-q80.json,unknown
+latest,marco-o1:latest,../sizes/latest.json,unknown

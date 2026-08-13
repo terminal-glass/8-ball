@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "wizardlm",
+  "size_slug": "7b-q41",
+  "ollama_ref": "wizardlm:7b-q4_1",
+  "parameter_count": 7000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 4200000000,
+  "estimated": {
+    "min_system_ram_gb": 8.57,
+    "recommended_system_ram_gb": 10.28,
+    "min_vram_gb": 4.83,
+    "recommended_vram_gb": 8.57,
+    "min_disk_gb": 10.04
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/wizardlm/tags",
+    "retrieved_at": "2026-08-01T11:59:57Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 8.57,
+    "recommended_ram_gb": 10.28,
+    "minimum_vram_gb": 4.83,
+    "recommended_vram_gb": 8.57,
+    "minimum_disk_free_gb": 3.912,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=wizardlm;size_index=67;ollama_ref=wizardlm:7b-q4_1"
+  }
+}

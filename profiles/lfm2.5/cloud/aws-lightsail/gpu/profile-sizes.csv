@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+8b,lfm2.5:8b,../sizes/8b.json,no_fit
+8b-a1b-bf16,lfm2.5:8b-a1b-bf16,../sizes/8b-a1b-bf16.json,no_fit
+8b-a1b-q4-k-m,lfm2.5:8b-a1b-q4_K_M,../sizes/8b-a1b-q4-k-m.json,no_fit
+8b-a1b-q80,lfm2.5:8b-a1b-q8_0,../sizes/8b-a1b-q80.json,no_fit
+latest,lfm2.5:latest,../sizes/latest.json,unknown

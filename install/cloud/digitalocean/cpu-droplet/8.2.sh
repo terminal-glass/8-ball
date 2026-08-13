@@ -3,11 +3,18 @@
 # Install profile: digitalocean-droplet
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EIGHTBALL_INSTALL_LANE="cloud/digitalocean/cpu-droplet"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.2.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Verify catalog or profile availability for model selection
+- Would run the trial model ladder with local inference checks during a real install"
+# shellcheck source=../../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../../shared/installer-smoke-contract.sh"
+
 EIGHTBALL_INSTALL_PROFILE="cloud/digitalocean/cpu-droplet"
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT=""
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 RESULT_FILE="${PHILOSOPHER_ROOT}/8ball-result.txt"
@@ -216,6 +223,7 @@ EOF
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   require_manifest
   if ! curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then

@@ -336,6 +336,41 @@ def write_json_preserve_timestamp(path: Path, payload: dict[str, Any], *, build_
     path.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def iter_c10_model_page_paths(repo_root: Path | None = None) -> list[Path]:
+    root = repo_root or REPO_ROOT
+    profiles = root / "profiles"
+    search_dirs = (
+        profiles / "legacy" / "c10-model-pages",
+        profiles,
+    )
+    paths: list[Path] = []
+    for directory in search_dirs:
+        if not directory.is_dir():
+            continue
+        paths.extend(sorted(directory.glob("*.json")))
+    return paths
+
+
+def load_c10_model_pages(repo_root: Path | None = None) -> dict[str, dict[str, Any]]:
+    pages: dict[str, dict[str, Any]] = {}
+    for path in iter_c10_model_page_paths(repo_root):
+        if path.name in {"c10-index.json", "manifest.json", "lanes.json"}:
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if payload.get("schema_version") == "c10.model-page.v1":
+            pages[path.stem] = payload
+    return pages
+
+
+def profiles_entity_index_csv(repo_root: Path | None = None) -> Path:
+    """Return the C5 entity index used by capability validators."""
+    root = repo_root or REPO_ROOT
+    legacy = root / "profiles" / "legacy" / "c5-root-export" / "index.csv"
+    if legacy.is_file():
+        return legacy
+    return root / "profiles" / "index.csv"
+
+
 def build_timestamp() -> str:
     return os.environ.get("C10_BUILD_TIMESTAMP", "").strip() or __import__("datetime").datetime.now(
         __import__("datetime").timezone.utc

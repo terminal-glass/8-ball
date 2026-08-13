@@ -1,20 +1,24 @@
 {
-  "schema_version": "c10.stage.v1",
+  "schema_version": "profiles.lane.v1",
   "model_slug": "medgemma",
-  "lane_path": "cloud/digitalocean/gpu-droplet",
+  "target_lane": "cloud/digitalocean/gpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-gpu-droplet",
-  "generated_at": "2026-08-06T05:53:10Z",
-  "provenance": {
-    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv",
-    "provenance_status": "provider_published"
-  },
-  "lane_id": "cloud/digitalocean/gpu-droplet",
-  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-gpu-droplet.json",
   "detection_signals": [
     "provider=digitalocean",
     "gpu-droplet=true",
     "nvidia"
   ],
+  "hardware": {
+    "cpu_cores": 8,
+    "system_ram_gb": 32.0,
+    "usable_model_ram_gb": 19.2,
+    "minimum_free_disk_gb": 500.0,
+    "total_vram_gb": 20.0,
+    "cuda_available": true,
+    "apple_metal_available": false,
+    "provenance_status": "provider_published",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-DigitalOcean-GPU-Droplets-NVIDIA.csv"
+  },
   "size_fit": [
     {
       "size_slug": "27b",
@@ -88,5 +92,7 @@
       "reason": "fits lane hardware assumptions",
       "missing_evidence": []
     }
-  ]
+  ],
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z"
 }

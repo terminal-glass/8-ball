@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file
+bf16,glm-ocr:bf16,sizes/bf16.json
+latest,glm-ocr:latest,sizes/latest.json
+q80,glm-ocr:q8_0,sizes/q80.json

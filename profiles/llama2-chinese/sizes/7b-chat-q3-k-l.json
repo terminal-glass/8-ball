@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "llama2-chinese",
+  "size_slug": "7b-chat-q3-k-l",
+  "ollama_ref": "llama2-chinese:7b-chat-q3_K_L",
+  "parameter_count": 7000000000,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 3600000000,
+  "estimated": {
+    "min_system_ram_gb": 7.88,
+    "recommended_system_ram_gb": 9.45,
+    "min_vram_gb": 4.14,
+    "recommended_vram_gb": 7.88,
+    "min_disk_gb": 9.32
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llama2-chinese/tags",
+    "retrieved_at": "2026-08-01T11:55:09Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 7.88,
+    "recommended_ram_gb": 9.45,
+    "minimum_vram_gb": 4.14,
+    "recommended_vram_gb": 7.88,
+    "minimum_disk_free_gb": 3.353,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=llama2-chinese;size_index=22;ollama_ref=llama2-chinese:7b-chat-q3_K_L"
+  }
+}

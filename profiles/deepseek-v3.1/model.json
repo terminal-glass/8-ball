@@ -1,0 +1,12 @@
+{
+  "schema_version": "profiles.model.v1",
+  "model_slug": "deepseek-v3.1",
+  "display_name": "deepseek-v3.1",
+  "size_count": 7,
+  "promoted_size_slug": "671b",
+  "source_paths": [
+    "data/normalized/tags.json",
+    "data/normalized/models.json"
+  ],
+  "generated_at": "2026-01-01T22:38:27Z"
+}

@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+70b,tulu3:70b,../sizes/70b.json,no_fit
+70b-fp16,tulu3:70b-fp16,../sizes/70b-fp16.json,no_fit
+70b-q4-k-m,tulu3:70b-q4_K_M,../sizes/70b-q4-k-m.json,no_fit
+70b-q80,tulu3:70b-q8_0,../sizes/70b-q80.json,no_fit
+8b,tulu3:8b,../sizes/8b.json,no_fit
+8b-fp16,tulu3:8b-fp16,../sizes/8b-fp16.json,no_fit
+8b-q4-k-m,tulu3:8b-q4_K_M,../sizes/8b-q4-k-m.json,no_fit
+8b-q80,tulu3:8b-q8_0,../sizes/8b-q80.json,no_fit
+latest,tulu3:latest,../sizes/latest.json,no_fit

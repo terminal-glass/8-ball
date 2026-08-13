@@ -729,7 +729,8 @@ def validate_ubuntu_sources(repo_root: Path = REPO_ROOT) -> list[str]:
         if "never infer provider" not in md_text.lower() and "must **not** infer" not in md_text.lower():
             errors.append("Observation contract markdown must document provider non-inference")
 
-    index_csv = repo_root / "profiles" / "index.csv"
+    legacy_index = repo_root / "profiles" / "legacy" / "c5-root-export" / "index.csv"
+    index_csv = legacy_index if legacy_index.is_file() else repo_root / "profiles" / "index.csv"
     if index_csv.is_file():
         with index_csv.open(encoding="utf-8", newline="") as handle:
             row_count = sum(1 for _ in csv.DictReader(handle))

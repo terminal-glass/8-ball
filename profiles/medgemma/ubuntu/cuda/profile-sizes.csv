@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+27b,medgemma:27b,../sizes/27b.json,no_fit
+27b-it-bf16,medgemma:27b-it-bf16,../sizes/27b-it-bf16.json,no_fit
+27b-it-q4-k-m,medgemma:27b-it-q4_K_M,../sizes/27b-it-q4-k-m.json,no_fit
+27b-it-q80,medgemma:27b-it-q8_0,../sizes/27b-it-q80.json,no_fit
+4b,medgemma:4b,../sizes/4b.json,fit
+4b-it-bf16,medgemma:4b-it-bf16,../sizes/4b-it-bf16.json,fit
+4b-it-q4-k-m,medgemma:4b-it-q4_K_M,../sizes/4b-it-q4-k-m.json,fit
+4b-it-q80,medgemma:4b-it-q8_0,../sizes/4b-it-q80.json,fit
+latest,medgemma:latest,../sizes/latest.json,fit

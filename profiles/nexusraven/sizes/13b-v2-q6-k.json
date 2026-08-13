@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "nexusraven",
+  "size_slug": "13b-v2-q6-k",
+  "ollama_ref": "nexusraven:13b-v2-q6_K",
+  "parameter_count": 13000000000,
+  "quantization": "q6_K",
+  "download_size_bytes": 11000000000,
+  "estimated": {
+    "min_system_ram_gb": 18.11,
+    "recommended_system_ram_gb": 21.73,
+    "min_vram_gb": 12.65,
+    "recommended_vram_gb": 18.11,
+    "min_disk_gb": 18.2
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nexusraven/tags",
+    "retrieved_at": "2026-08-01T11:57:03Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 18.11,
+    "recommended_ram_gb": 21.73,
+    "minimum_vram_gb": 12.65,
+    "recommended_vram_gb": 18.11,
+    "minimum_disk_free_gb": 10.245,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=nexusraven;size_index=30;ollama_ref=nexusraven:13b-v2-q6_K"
+  }
+}

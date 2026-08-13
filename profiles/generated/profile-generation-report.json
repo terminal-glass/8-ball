@@ -1,0 +1,15 @@
+{
+  "schema_version": "profiles.generation-report.v1",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "generator": "python3 scripts/generate-profiles-from-agents.py",
+  "agents_files_inspected": 129,
+  "agents_files_parsed": 74,
+  "model_count": 234,
+  "distinct_model_size_count": 7271,
+  "profile_lane_count": 10,
+  "matrix_row_count": 72710,
+  "records_with_unknown_limits": 15,
+  "records_with_conflicts": 0,
+  "records_skipped": [],
+  "legacy_archived_paths": []
+}

@@ -120,7 +120,7 @@ def test_mac_lanes_are_never_cuda() -> None:
 
 
 def test_cuda_observation_does_not_change_catalog_model_fit() -> None:
-    video_path = REPO_ROOT / "profiles/llama3/ubuntu/cuda/7-video_card.json"
+    video_path = REPO_ROOT / "profiles/llama3/ubuntu/cuda/7-gpu-vram.json"
     before = json.loads(video_path.read_text(encoding="utf-8"))
     c10_cuda.generate_cuda_compatibility(REPO_ROOT)
     after = json.loads(video_path.read_text(encoding="utf-8"))
@@ -166,8 +166,11 @@ def test_cuda_capability_report_trackable_path() -> None:
     assert c10_cuda.REPORT_JSON == report_path
 
 
+LEGACY_C5_INDEX = REPO_ROOT / "profiles" / "legacy" / "c5-root-export" / "index.csv"
+
+
 def test_profiles_index_csv_unchanged() -> None:
-    with (REPO_ROOT / "profiles/index.csv").open(encoding="utf-8", newline="") as handle:
+    with LEGACY_C5_INDEX.open(encoding="utf-8", newline="") as handle:
         row_count = sum(1 for _ in csv.DictReader(handle))
     assert row_count == 2878
 

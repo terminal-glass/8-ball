@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file,fit_status
+132b,dbrx:132b,../sizes/132b.json,no_fit
+132b-instruct-fp16,dbrx:132b-instruct-fp16,../sizes/132b-instruct-fp16.json,no_fit
+132b-instruct-q2-k,dbrx:132b-instruct-q2_K,../sizes/132b-instruct-q2-k.json,no_fit
+132b-instruct-q40,dbrx:132b-instruct-q4_0,../sizes/132b-instruct-q40.json,no_fit
+132b-instruct-q80,dbrx:132b-instruct-q8_0,../sizes/132b-instruct-q80.json,no_fit
+instruct,dbrx:instruct,../sizes/instruct.json,no_fit
+latest,dbrx:latest,../sizes/latest.json,no_fit

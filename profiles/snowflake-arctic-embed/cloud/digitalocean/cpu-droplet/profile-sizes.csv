@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file,fit_status
+335m,snowflake-arctic-embed:335m,../sizes/335m.json,fit
+335m-l-fp16,snowflake-arctic-embed:335m-l-fp16,../sizes/335m-l-fp16.json,fit
+137m,snowflake-arctic-embed:137m,../sizes/137m.json,fit
+137m-m-long-fp16,snowflake-arctic-embed:137m-m-long-fp16,../sizes/137m-m-long-fp16.json,fit
+110m,snowflake-arctic-embed:110m,../sizes/110m.json,fit
+110m-m-fp16,snowflake-arctic-embed:110m-m-fp16,../sizes/110m-m-fp16.json,fit
+33m,snowflake-arctic-embed:33m,../sizes/33m.json,fit
+33m-s-fp16,snowflake-arctic-embed:33m-s-fp16,../sizes/33m-s-fp16.json,fit
+22m,snowflake-arctic-embed:22m,../sizes/22m.json,fit
+22m-xs-fp16,snowflake-arctic-embed:22m-xs-fp16,../sizes/22m-xs-fp16.json,fit
+l,snowflake-arctic-embed:l,../sizes/l.json,fit
+latest,snowflake-arctic-embed:latest,../sizes/latest.json,fit
+m,snowflake-arctic-embed:m,../sizes/m.json,fit
+m-long,snowflake-arctic-embed:m-long,../sizes/m-long.json,fit
+s,snowflake-arctic-embed:s,../sizes/s.json,fit
+xs,snowflake-arctic-embed:xs,../sizes/xs.json,fit

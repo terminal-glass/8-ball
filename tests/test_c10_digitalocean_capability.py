@@ -97,8 +97,11 @@ def test_compatibility_row_counts() -> None:
     assert report["compatibility_row_counts"]["gpu"] == size_count * 9
 
 
+LEGACY_C5_INDEX = REPO_ROOT / "profiles" / "legacy" / "c5-root-export" / "index.csv"
+
+
 def test_profiles_index_csv_unchanged() -> None:
-    with (REPO_ROOT / "profiles/index.csv").open(encoding="utf-8", newline="") as handle:
+    with LEGACY_C5_INDEX.open(encoding="utf-8", newline="") as handle:
         row_count = sum(1 for _ in csv.DictReader(handle))
     assert row_count == 2878
 

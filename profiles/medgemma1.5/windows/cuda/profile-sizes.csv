@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+4b,medgemma1.5:4b,../sizes/4b.json,unknown
+4b-it-bf16,medgemma1.5:4b-it-bf16,../sizes/4b-it-bf16.json,unknown
+4b-it-q4-k-m,medgemma1.5:4b-it-q4_K_M,../sizes/4b-it-q4-k-m.json,unknown
+4b-it-q80,medgemma1.5:4b-it-q8_0,../sizes/4b-it-q80.json,unknown
+latest,medgemma1.5:latest,../sizes/latest.json,unknown

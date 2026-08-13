@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "qwen",
+  "size_slug": "1.8b-text-v1.5-q4-k-m",
+  "ollama_ref": "qwen:1.8b-text-v1.5-q4_K_M",
+  "parameter_count": 1800000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 1200000000,
+  "estimated": {
+    "min_system_ram_gb": 3.62,
+    "recommended_system_ram_gb": 4.35,
+    "min_vram_gb": 1.38,
+    "recommended_vram_gb": 3.62,
+    "min_disk_gb": 6.44
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/qwen/tags",
+    "retrieved_at": "2026-08-01T11:58:11Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 3.62,
+    "recommended_ram_gb": 4.35,
+    "minimum_vram_gb": 1.38,
+    "recommended_vram_gb": 3.62,
+    "minimum_disk_free_gb": 1.118,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=qwen;size_index=336;ollama_ref=qwen:1.8b-text-v1.5-q4_K_M"
+  }
+}

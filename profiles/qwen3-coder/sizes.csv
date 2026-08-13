@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file
+480b,qwen3-coder:480b,sizes/480b.json
+480b-a35b-fp16,qwen3-coder:480b-a35b-fp16,sizes/480b-a35b-fp16.json
+480b-a35b-q4-k-m,qwen3-coder:480b-a35b-q4_K_M,sizes/480b-a35b-q4-k-m.json
+480b-a35b-q80,qwen3-coder:480b-a35b-q8_0,sizes/480b-a35b-q80.json
+30b,qwen3-coder:30b,sizes/30b.json
+30b-a3b-fp16,qwen3-coder:30b-a3b-fp16,sizes/30b-a3b-fp16.json
+30b-a3b-q4-k-m,qwen3-coder:30b-a3b-q4_K_M,sizes/30b-a3b-q4-k-m.json
+30b-a3b-q80,qwen3-coder:30b-a3b-q8_0,sizes/30b-a3b-q80.json
+latest,qwen3-coder:latest,sizes/latest.json

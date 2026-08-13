@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "llava",
+  "size_slug": "34b-v1.6-q5-k-m",
+  "ollama_ref": "llava:34b-v1.6-q5_K_M",
+  "parameter_count": 34000000000,
+  "quantization": "q5_K_M",
+  "download_size_bytes": 25000000000,
+  "estimated": {
+    "min_system_ram_gb": 40.25,
+    "recommended_system_ram_gb": 48.3,
+    "min_vram_gb": 28.75,
+    "recommended_vram_gb": 40.25,
+    "min_disk_gb": 35.0
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/llava/tags",
+    "retrieved_at": "2026-08-01T11:55:34Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 40.25,
+    "recommended_ram_gb": 48.3,
+    "minimum_vram_gb": 28.75,
+    "recommended_vram_gb": 40.25,
+    "minimum_disk_free_gb": 23.283,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=llava;size_index=12;ollama_ref=llava:34b-v1.6-q5_K_M"
+  }
+}

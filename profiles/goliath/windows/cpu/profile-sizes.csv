@@ -1,0 +1,17 @@
+size_slug,ollama_ref,size_file,fit_status
+120b-fp16,goliath:120b-fp16,../sizes/120b-fp16.json,no_fit
+120b-q2-k,goliath:120b-q2_K,../sizes/120b-q2-k.json,no_fit
+120b-q3-k-l,goliath:120b-q3_K_L,../sizes/120b-q3-k-l.json,no_fit
+120b-q3-k-m,goliath:120b-q3_K_M,../sizes/120b-q3-k-m.json,no_fit
+120b-q3-k-s,goliath:120b-q3_K_S,../sizes/120b-q3-k-s.json,no_fit
+120b-q4-k-m,goliath:120b-q4_K_M,../sizes/120b-q4-k-m.json,no_fit
+120b-q4-k-s,goliath:120b-q4_K_S,../sizes/120b-q4-k-s.json,no_fit
+120b-q40,goliath:120b-q4_0,../sizes/120b-q40.json,no_fit
+120b-q41,goliath:120b-q4_1,../sizes/120b-q41.json,no_fit
+120b-q5-k-m,goliath:120b-q5_K_M,../sizes/120b-q5-k-m.json,no_fit
+120b-q5-k-s,goliath:120b-q5_K_S,../sizes/120b-q5-k-s.json,no_fit
+120b-q50,goliath:120b-q5_0,../sizes/120b-q50.json,no_fit
+120b-q51,goliath:120b-q5_1,../sizes/120b-q51.json,no_fit
+120b-q6-k,goliath:120b-q6_K,../sizes/120b-q6-k.json,no_fit
+120b-q80,goliath:120b-q8_0,../sizes/120b-q80.json,no_fit
+latest,goliath:latest,../sizes/latest.json,no_fit

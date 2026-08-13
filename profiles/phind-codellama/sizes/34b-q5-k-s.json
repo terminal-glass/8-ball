@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "phind-codellama",
+  "size_slug": "34b-q5-k-s",
+  "ollama_ref": "phind-codellama:34b-q5_K_S",
+  "parameter_count": 34000000000,
+  "quantization": "q5_K_S",
+  "download_size_bytes": 23000000000,
+  "estimated": {
+    "min_system_ram_gb": 37.95,
+    "recommended_system_ram_gb": 45.54,
+    "min_vram_gb": 26.45,
+    "recommended_vram_gb": 37.95,
+    "min_disk_gb": 32.6
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/phind-codellama/tags",
+    "retrieved_at": "2026-08-01T11:58:09Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 37.95,
+    "recommended_ram_gb": 45.54,
+    "minimum_vram_gb": 26.45,
+    "recommended_vram_gb": 37.95,
+    "minimum_disk_free_gb": 21.42,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=phind-codellama;size_index=28;ollama_ref=phind-codellama:34b-q5_K_S"
+  }
+}

@@ -13,6 +13,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=../lib/macos-common.sh
 source "${SCRIPT_DIR}/../lib/macos-common.sh"
 
+INSTALLER_SMOKE_SCRIPT_NAME="8.2.sh"
+INSTALLER_SMOKE_PLATFORM="mac"
+INSTALLER_SMOKE_CHECKS="- Verify catalog or profile availability for model selection
+- Would run the trial model ladder with local inference checks during a real install"
+# shellcheck source=../../shared/installer-smoke-contract.sh
+source "${SCRIPT_DIR}/../../shared/installer-smoke-contract.sh"
+
 REQUESTED_MODEL=""
 
 usage() {
@@ -48,6 +55,7 @@ mac_resolve_acceleration() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   mac_refuse_root
   mac_require_darwin

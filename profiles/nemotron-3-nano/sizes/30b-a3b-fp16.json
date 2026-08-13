@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "nemotron-3-nano",
+  "size_slug": "30b-a3b-fp16",
+  "ollama_ref": "nemotron-3-nano:30b-a3b-fp16",
+  "parameter_count": 30000000000,
+  "quantization": "fp16",
+  "download_size_bytes": 63000000000,
+  "estimated": {
+    "min_system_ram_gb": 82.8,
+    "recommended_system_ram_gb": 99.36,
+    "min_vram_gb": 72.45,
+    "recommended_vram_gb": 82.8,
+    "min_disk_gb": 80.6
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/nemotron-3-nano/tags",
+    "retrieved_at": "2026-08-01T11:56:47Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 82.8,
+    "recommended_ram_gb": 99.36,
+    "minimum_vram_gb": 72.45,
+    "recommended_vram_gb": 82.8,
+    "minimum_disk_free_gb": 58.673,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=nemotron-3-nano;size_index=2;ollama_ref=nemotron-3-nano:30b-a3b-fp16"
+  }
+}
