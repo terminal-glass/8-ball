@@ -1,0 +1,613 @@
+{
+  "lane_count": 10,
+  "lanes": [
+    {
+      "boundary": "linux",
+      "files": {
+        "motd": "install/ubuntu/cpu/assets/first-MOTD.txt",
+        "readme": "install/ubuntu/cpu/README.md",
+        "scripts": {
+          "8.1": "install/ubuntu/cpu/8.1.sh",
+          "8.2": "install/ubuntu/cpu/8.2.sh",
+          "8.3": "install/ubuntu/cpu/8.3.sh",
+          "trial-install": "install/ubuntu/cpu/trial-install.sh"
+        }
+      },
+      "lane": "ubuntu/cpu",
+      "legacy_debt": [
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "ubuntu/cpu",
+          "path": "install/ubuntu/cpu/8.1.sh",
+          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+          "rule": "unreviewed_remote_ollama_install"
+        },
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "ubuntu/cpu",
+          "path": "install/ubuntu/cpu/trial-install.sh",
+          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/ubuntu/cpu/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/ubuntu/cpu/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/ubuntu/cpu/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/ubuntu/cpu/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "linux",
+      "files": {
+        "motd": "install/ubuntu/cuda/assets/first-MOTD.txt",
+        "readme": "install/ubuntu/cuda/README.md",
+        "scripts": {
+          "8.1": "install/ubuntu/cuda/8.1.sh",
+          "8.2": "install/ubuntu/cuda/8.2.sh",
+          "8.3": "install/ubuntu/cuda/8.3.sh",
+          "trial-install": "install/ubuntu/cuda/trial-install.sh"
+        }
+      },
+      "lane": "ubuntu/cuda",
+      "legacy_debt": [
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "ubuntu/cuda",
+          "path": "install/ubuntu/cuda/8.1.sh",
+          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+          "rule": "unreviewed_remote_ollama_install"
+        },
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "ubuntu/cuda",
+          "path": "install/ubuntu/cuda/trial-install.sh",
+          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/ubuntu/cuda/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/ubuntu/cuda/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/ubuntu/cuda/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/ubuntu/cuda/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "mac",
+      "files": {
+        "motd": "install/mac/apple-silicon/assets/first-MOTD.txt",
+        "readme": "install/mac/apple-silicon/README.md",
+        "scripts": {
+          "8.1": "install/mac/apple-silicon/8.1.sh",
+          "8.2": "install/mac/apple-silicon/8.2.sh",
+          "8.3": "install/mac/apple-silicon/8.3.sh",
+          "trial-install": "install/mac/apple-silicon/trial-install.sh"
+        }
+      },
+      "lane": "mac/apple-silicon",
+      "legacy_debt": [],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/mac/apple-silicon/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/mac/apple-silicon/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/mac/apple-silicon/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/mac/apple-silicon/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "mac",
+      "files": {
+        "motd": "install/mac/intel/assets/first-MOTD.txt",
+        "readme": "install/mac/intel/README.md",
+        "scripts": {
+          "8.1": "install/mac/intel/8.1.sh",
+          "8.2": "install/mac/intel/8.2.sh",
+          "8.3": "install/mac/intel/8.3.sh",
+          "trial-install": "install/mac/intel/trial-install.sh"
+        }
+      },
+      "lane": "mac/intel",
+      "legacy_debt": [],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/mac/intel/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/mac/intel/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/mac/intel/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/mac/intel/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "windows_cpu",
+      "files": {
+        "motd": "install/windows/cpu/assets/first-MOTD.txt",
+        "readme": "install/windows/cpu/README.md",
+        "scripts": {
+          "8.1": "install/windows/cpu/8.1.ps1",
+          "8.2": "install/windows/cpu/8.2.ps1",
+          "8.3": "install/windows/cpu/8.3.ps1",
+          "trial-install": "install/windows/cpu/trial-install.ps1"
+        }
+      },
+      "lane": "windows/cpu",
+      "legacy_debt": [],
+      "script_kind": "powershell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cpu/8.1.ps1",
+          "status": "not_run"
+        },
+        "8.2": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cpu/8.2.ps1",
+          "status": "not_run"
+        },
+        "8.3": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cpu/8.3.ps1",
+          "status": "not_run"
+        },
+        "trial-install": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cpu/trial-install.ps1",
+          "status": "not_run"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "windows_cuda",
+      "files": {
+        "motd": "install/windows/cuda/assets/first-MOTD.txt",
+        "readme": "install/windows/cuda/README.md",
+        "scripts": {
+          "8.1": "install/windows/cuda/8.1.ps1",
+          "8.2": "install/windows/cuda/8.2.ps1",
+          "8.3": "install/windows/cuda/8.3.ps1",
+          "trial-install": "install/windows/cuda/trial-install.ps1"
+        }
+      },
+      "lane": "windows/cuda",
+      "legacy_debt": [],
+      "script_kind": "powershell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cuda/8.1.ps1",
+          "status": "not_run"
+        },
+        "8.2": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cuda/8.2.ps1",
+          "status": "not_run"
+        },
+        "8.3": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cuda/8.3.ps1",
+          "status": "not_run"
+        },
+        "trial-install": {
+          "detail": "pwsh unavailable",
+          "path": "install/windows/cuda/trial-install.ps1",
+          "status": "not_run"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "linux",
+      "files": {
+        "motd": "install/cloud/digitalocean/cpu-droplet/assets/first-MOTD.txt",
+        "readme": "install/cloud/digitalocean/cpu-droplet/README.md",
+        "scripts": {
+          "8.1": "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+          "8.2": "install/cloud/digitalocean/cpu-droplet/8.2.sh",
+          "8.3": "install/cloud/digitalocean/cpu-droplet/8.3.sh",
+          "trial-install": "install/cloud/digitalocean/cpu-droplet/trial-install.sh"
+        }
+      },
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "legacy_debt": [
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/digitalocean/cpu-droplet",
+          "path": "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+          "rule": "unreviewed_remote_ollama_install"
+        },
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/digitalocean/cpu-droplet",
+          "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/cpu-droplet/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/cpu-droplet/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "linux",
+      "files": {
+        "motd": "install/cloud/digitalocean/gpu-droplet/assets/first-MOTD.txt",
+        "readme": "install/cloud/digitalocean/gpu-droplet/README.md",
+        "scripts": {
+          "8.1": "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+          "8.2": "install/cloud/digitalocean/gpu-droplet/8.2.sh",
+          "8.3": "install/cloud/digitalocean/gpu-droplet/8.3.sh",
+          "trial-install": "install/cloud/digitalocean/gpu-droplet/trial-install.sh"
+        }
+      },
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "legacy_debt": [
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/digitalocean/gpu-droplet",
+          "path": "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+          "rule": "unreviewed_remote_ollama_install"
+        },
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/digitalocean/gpu-droplet",
+          "path": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/gpu-droplet/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/gpu-droplet/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "linux",
+      "files": {
+        "motd": "install/cloud/aws-lightsail/cpu/assets/first-MOTD.txt",
+        "readme": "install/cloud/aws-lightsail/cpu/README.md",
+        "scripts": {
+          "8.1": "install/cloud/aws-lightsail/cpu/8.1.sh",
+          "8.2": "install/cloud/aws-lightsail/cpu/8.2.sh",
+          "8.3": "install/cloud/aws-lightsail/cpu/8.3.sh",
+          "trial-install": "install/cloud/aws-lightsail/cpu/trial-install.sh"
+        }
+      },
+      "lane": "cloud/aws-lightsail/cpu",
+      "legacy_debt": [
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/aws-lightsail/cpu",
+          "path": "install/cloud/aws-lightsail/cpu/8.1.sh",
+          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+          "rule": "unreviewed_remote_ollama_install"
+        },
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/aws-lightsail/cpu",
+          "path": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/cpu/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/cpu/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/cpu/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    },
+    {
+      "boundary": "linux",
+      "files": {
+        "motd": "install/cloud/aws-lightsail/gpu/assets/first-MOTD.txt",
+        "readme": "install/cloud/aws-lightsail/gpu/README.md",
+        "scripts": {
+          "8.1": "install/cloud/aws-lightsail/gpu/8.1.sh",
+          "8.2": "install/cloud/aws-lightsail/gpu/8.2.sh",
+          "8.3": "install/cloud/aws-lightsail/gpu/8.3.sh",
+          "trial-install": "install/cloud/aws-lightsail/gpu/trial-install.sh"
+        }
+      },
+      "lane": "cloud/aws-lightsail/gpu",
+      "legacy_debt": [
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/aws-lightsail/gpu",
+          "path": "install/cloud/aws-lightsail/gpu/8.1.sh",
+          "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+          "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+          "rule": "unreviewed_remote_ollama_install"
+        },
+        {
+          "follow_up": "C10.2-Linux-lanes",
+          "lane": "cloud/aws-lightsail/gpu",
+          "path": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+          "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+          "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
+      "script_kind": "shell",
+      "status": "pass",
+      "syntax": {
+        "8.1": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/gpu/8.1.sh",
+          "status": "pass"
+        },
+        "8.2": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/gpu/8.2.sh",
+          "status": "pass"
+        },
+        "8.3": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/gpu/8.3.sh",
+          "status": "pass"
+        },
+        "trial-install": {
+          "detail": "",
+          "path": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+          "status": "pass"
+        }
+      },
+      "violations": []
+    }
+  ],
+  "legacy_debt": [
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/aws-lightsail/cpu",
+      "path": "install/cloud/aws-lightsail/cpu/8.1.sh",
+      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+      "rule": "unreviewed_remote_ollama_install"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/aws-lightsail/cpu",
+      "path": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+      "rule": "unreviewed_remote_payload_fetch"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/aws-lightsail/gpu",
+      "path": "install/cloud/aws-lightsail/gpu/8.1.sh",
+      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+      "rule": "unreviewed_remote_ollama_install"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/aws-lightsail/gpu",
+      "path": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+      "rule": "unreviewed_remote_payload_fetch"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "path": "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+      "rule": "unreviewed_remote_ollama_install"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+      "rule": "unreviewed_remote_payload_fetch"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "path": "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+      "rule": "unreviewed_remote_ollama_install"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "path": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+      "rule": "unreviewed_remote_payload_fetch"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "ubuntu/cpu",
+      "path": "install/ubuntu/cpu/8.1.sh",
+      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+      "rule": "unreviewed_remote_ollama_install"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "ubuntu/cpu",
+      "path": "install/ubuntu/cpu/trial-install.sh",
+      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+      "rule": "unreviewed_remote_payload_fetch"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "ubuntu/cuda",
+      "path": "install/ubuntu/cuda/8.1.sh",
+      "rationale": "Legacy 8.1 uses the remote ollama.com/install.sh pipeline instead of a reviewed manual-install contract.",
+      "removal_condition": "Remove when 8.1 stops piping a remote shell installer.",
+      "rule": "unreviewed_remote_ollama_install"
+    },
+    {
+      "follow_up": "C10.2-Linux-lanes",
+      "lane": "ubuntu/cuda",
+      "path": "install/ubuntu/cuda/trial-install.sh",
+      "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
+      "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
+      "rule": "unreviewed_remote_payload_fetch"
+    }
+  ],
+  "schema_version": "c10.installer-lane-conformance.v1",
+  "status": "pass",
+  "summary": {
+    "failure_count": 0,
+    "lane_count": 10,
+    "legacy_debt_count": 12
+  },
+  "violations": []
+}
