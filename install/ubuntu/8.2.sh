@@ -1,24 +1,30 @@
 #!/usr/bin/env bash
-# 8.2 — public 8-BALL model selection using install-manifest.json.
+# 8.2 — public 8-BALL model selection via profile mapping + runtime proof.
 # Install profile: ubuntu
 set -euo pipefail
 
+EIGHTBALL_SCRIPT_VERSION="0.8.0"
 EIGHTBALL_INSTALL_PROFILE="ubuntu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SHARED_DIR="${SCRIPT_DIR}/../shared"
 REPO_ROOT=""
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 RESULT_FILE="${PHILOSOPHER_ROOT}/8ball-result.txt"
 MANIFEST="${EIGHTBALL_MANIFEST:-}"
 REQUESTED_MODEL=""
-MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
+MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-qwen3}"
 OLLAMA_API="${OLLAMA_API:-http://127.0.0.1:11434}"
+SELECTION_PLAN=""
 
-# Locate shared C10 helpers from lane or profile install directories.
+# shellcheck source=/dev/null
+source "${SHARED_DIR}/8ball-version.sh"
+# shellcheck source=/dev/null
+source "${SHARED_DIR}/8ball-model-test.sh"
+
 _C10_HOOK=""
 for _candidate in \
-  "${SCRIPT_DIR}/../shared/c10-model-hook.sh" \
-  "${SCRIPT_DIR}/../../shared/c10-model-hook.sh" \
-  "${SCRIPT_DIR}/../../../shared/c10-model-hook.sh"; do
+  "${SHARED_DIR}/c10-model-hook.sh" \
+  "${SCRIPT_DIR}/../shared/c10-model-hook.sh"; do
   if [[ -f "${_candidate}" ]]; then
     _C10_HOOK="${_candidate}"
     break
@@ -33,8 +39,8 @@ usage() {
   cat <<'EOF'
 Usage: 8.2.sh [--manifest PATH] [--model OLLAMA_TAG] [--model-slug SLUG]
 
-Reads profiles/<model-slug>.json when --model-slug is provided, otherwise uses
-data/generated/pages/install-manifest.json for conservative trial selection.
+Resolves hardware -> profile lane -> candidate models from profiles/<slug>/<lane>/lane.json
+with pilot-menu fallback, then proves the selection with a real inference test.
 EOF
 }
 
@@ -45,7 +51,7 @@ log() {
 resolve_repo_root() {
   local dir="${SCRIPT_DIR}"
   while [[ "${dir}" != "/" ]]; do
-    if [[ -f "${dir}/data/generated/pages/install-manifest.json" ]]; then
+    if [[ -d "${dir}/profiles" && -d "${dir}/install" ]]; then
       REPO_ROOT="${dir}"
       return 0
     fi
@@ -53,7 +59,7 @@ resolve_repo_root() {
   done
   cat >&2 <<EOF
 Could not locate 8-ball repository root from ${SCRIPT_DIR}.
-Clone the full repository or set EIGHTBALL_MANIFEST to install-manifest.json.
+Clone the full repository or set EIGHTBALL_REPO_ROOT.
 EOF
   exit 1
 }
@@ -86,162 +92,78 @@ parse_args() {
   done
 }
 
-require_manifest() {
-  if [[ -z "${MANIFEST}" ]]; then
-    resolve_repo_root
-    MANIFEST="${REPO_ROOT}/data/generated/pages/install-manifest.json"
+load_selection_plan() {
+  resolve_repo_root
+  export EIGHTBALL_REPO_ROOT="${REPO_ROOT}"
+  local -a args=(plan)
+  [[ -n "${REQUESTED_MODEL}" ]] && args+=(--model "${REQUESTED_MODEL}")
+  [[ -n "${MODEL_SLUG}" ]] && args+=(--slug "${MODEL_SLUG}")
+  if [[ -n "${EIGHTBALL_INSTALL_LANE:-}" ]]; then
+    args+=(--lane "${EIGHTBALL_INSTALL_LANE}")
   fi
-  if [[ ! -f "${MANIFEST}" ]]; then
-    cat >&2 <<EOF
-Missing catalog manifest: ${MANIFEST}
-
-Clone the full 8-ball repository or set EIGHTBALL_MANIFEST to a generated
-data/generated/pages/install-manifest.json file. This script does not guess models
-from Markdown or private installer assets.
-EOF
-    exit 1
-  fi
-}
-
-detect_hardware() {
-  RAM_MB="$(awk '/MemTotal/ {print int($2/1024)}' /proc/meminfo)"
-  CPU_THREADS="$(nproc 2>/dev/null || echo 1)"
-  FREE_DISK_MB="$(df -Pm / | awk 'NR==2 {print $4}')"
-  GPU_NAME="none"
-  GPU_VRAM_MB="0"
-  if command -v nvidia-smi >/dev/null 2>&1; then
-    GPU_NAME="$(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | head -n1 || echo none)"
-    GPU_VRAM_MB="$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -n1 || echo 0)"
-  fi
-}
-
-deployment_type_for_hardware() {
-  if [[ "${GPU_VRAM_MB}" =~ ^[0-9]+$ ]] && [[ "${GPU_VRAM_MB}" -ge 12000 ]]; then
-    echo 7
-  elif [[ "${GPU_VRAM_MB}" =~ ^[0-9]+$ ]] && [[ "${GPU_VRAM_MB}" -ge 6000 ]]; then
-    echo 6
-  elif [[ "${RAM_MB}" -ge 16000 ]]; then
-    echo 5
-  elif [[ "${RAM_MB}" -ge 8000 ]]; then
-    echo 4
-  else
-    echo 3
-  fi
-}
-
-select_model_from_manifest() {
-  local deployment_type="$1"
-  python3 - "${MANIFEST}" "${deployment_type}" "${REQUESTED_MODEL}" <<'PY'
-import json
-import sys
-from pathlib import Path
-
-manifest_path = Path(sys.argv[1])
-deployment_type = sys.argv[2]
-requested = sys.argv[3]
-manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-models = manifest.get("models", {})
-
-def deployment_entry(model_entry):
-    deployments = model_entry.get("deployments", {})
-    return deployments.get(deployment_type)
-
-preferred_order = [
-    "qwen3:0.6b",
-    "tinyllama:latest",
-    "llama3.2:1b",
-    "phi3:mini",
-]
-
-if requested:
-    for model_id, entry in models.items():
-        deployment = deployment_entry(entry)
-        if not deployment:
-            continue
-        ollama_id = deployment.get("ollama_identifier") or ""
-        if ollama_id == requested or ollama_id.endswith(f":{requested}"):
-            print(ollama_id)
-            raise SystemExit(0)
-    print(requested)
-    raise SystemExit(0)
-
-for candidate in preferred_order:
-    for model_id, entry in models.items():
-        deployment = deployment_entry(entry)
-        if not deployment:
-            continue
-        ollama_id = deployment.get("ollama_identifier") or ""
-        if ollama_id == candidate:
-            print(ollama_id)
-            raise SystemExit(0)
-
-for model_id, entry in sorted(models.items()):
-    deployment = deployment_entry(entry)
-    if deployment and deployment.get("ollama_identifier"):
-        print(deployment["ollama_identifier"])
-        raise SystemExit(0)
-
-raise SystemExit("No deployable model found in manifest")
-PY
-}
-
-test_model() {
-  local model="$1"
-  if ! ollama pull "${model}"; then
-    return 1
-  fi
-  local response
-  response="$(
-    curl -fsS "${OLLAMA_API}/api/generate" \
-      -H 'Content-Type: application/json' \
-      -d "{\"model\":\"${model}\",\"prompt\":\"Reply with only: 8-BALL READY\",\"stream\":false}" \
-      | python3 -c 'import json,sys; print(json.load(sys.stdin).get("response",""))'
+  SELECTION_PLAN="$(
+    python3 "${SHARED_DIR}/c10-hardware-resolve.py" "${args[@]}"
   )"
-  if grep -qi "8-BALL READY" <<<"${response}"; then
-    return 0
-  fi
-  log "Model response did not contain expected token: ${response}"
-  return 1
 }
 
-test_model_with_fallback() {
-  local primary="$1"
-  if test_model "${primary}"; then
-    printf '%s' "${primary}"
-    return 0
-  fi
-  if [[ -n "${MODEL_SLUG}" ]] && declare -F c10_fallback_pull >/dev/null 2>&1; then
-    local candidate
-    while IFS= read -r candidate; do
-      [[ -z "${candidate}" || "${candidate}" == "${primary}" ]] && continue
-      log "Pull failed for ${primary}; trying fallback ${candidate}"
-      if test_model "${candidate}"; then
-        printf '%s' "${candidate}"
-        return 0
-      fi
-    done < <(c10_fallback_pull "${MODEL_SLUG}")
-  fi
-  return 1
+plan_field() {
+  local field="$1"
+  python3 -c 'import json,sys; data=json.load(sys.stdin); print(data.get(sys.argv[1], ""))' "${field}" <<<"${SELECTION_PLAN}"
+}
+
+hardware_field() {
+  local field="$1"
+  python3 -c 'import json,sys; data=json.load(sys.stdin); print(data.get("hardware", {}).get(sys.argv[1], ""))' "${field}" <<<"${SELECTION_PLAN}"
+}
+
+gpu_field() {
+  local field="$1"
+  python3 -c 'import json,sys; data=json.load(sys.stdin); print(data.get("hardware", {}).get("gpu", {}).get(sys.argv[1], ""))' "${field}" <<<"${SELECTION_PLAN}"
+}
+
+candidate_list() {
+  python3 -c 'import json,sys; print("\n".join(json.load(sys.stdin).get("candidates", [])))' <<<"${SELECTION_PLAN}"
+}
+
+minimum_disk_for_model() {
+  local model="$1"
+  python3 -c 'import json,sys; data=json.load(sys.stdin); print(data.get("minimum_disk_mib", {}).get(sys.argv[1], 3072))' "${model}" <<<"${SELECTION_PLAN}"
 }
 
 write_result() {
-  local model="$1" tier="$2" test_status="$3"
+  local model="$1" test_status="$2" selection_source="$3"
+  local lane tier os_name distro ram cpu disk gpu_name gpu_vram
+  lane="$(plan_field lane_path)"
+  tier="$(plan_field tier)"
+  selection_source="$(plan_field selection_source)"
+  os_name="$(hardware_field os)"
+  distro="$(hardware_field distro)"
+  ram="$(hardware_field ram_mb)"
+  cpu="$(hardware_field cpu_threads)"
+  disk="$(hardware_field free_disk_mb)"
+  gpu_name="$(gpu_field name)"
+  gpu_vram="$(gpu_field vram_mb)"
   install -d -m 0755 "${PHILOSOPHER_ROOT}"
   cat >"${RESULT_FILE}" <<EOF
 Model: ${model}
 Profile: ${model//[:\/]/-}
 Install profile: ${EIGHTBALL_INSTALL_PROFILE}
-Install lane: ${EIGHTBALL_INSTALL_LANE:-${EIGHTBALL_INSTALL_PROFILE}}
-Model slug: ${MODEL_SLUG:-n/a}
+Install lane: ${EIGHTBALL_INSTALL_LANE:-${lane}}
+Detected OS: ${os_name}/${distro}
+Detected platform/profile: ${lane}
+Model slug: ${MODEL_SLUG}
 Tier: ${tier}
+Selection source: ${selection_source}
 Model test: ${test_status}
 Jets status: READY_AFTER_SIGNIN
-RAM MB: ${RAM_MB}
-CPU threads: ${CPU_THREADS}
-Free disk MB: ${FREE_DISK_MB}
-GPU: ${GPU_NAME}
-GPU VRAM MB: ${GPU_VRAM_MB}
-Manifest: ${MANIFEST}
+RAM MB: ${ram}
+CPU threads: ${cpu}
+Free disk MB: ${disk}
+GPU: ${gpu_name}
+GPU VRAM MB: ${gpu_vram}
+Provider assumption: $(plan_field provider_assumption)
+Resolution source: $(plan_field resolution_source)
+Manifest: ${MANIFEST:-n/a}
 EOF
   chmod 0644 "${RESULT_FILE}"
 }
@@ -257,36 +179,81 @@ EOF
   chmod 0755 /usr/local/bin/8balljets
 }
 
+run_manual_override() {
+  local model="$1"
+  local before_file free_disk min_disk
+  before_file="$(mktemp)"
+  eightball_models_before_pull >"${before_file}"
+  free_disk="$(hardware_field free_disk_mb)"
+  min_disk="$(minimum_disk_for_model "${model}")"
+  if [[ "${free_disk}" =~ ^[0-9]+$ ]] && [[ "${free_disk}" -lt "${min_disk}" ]]; then
+    echo "Insufficient free disk (${free_disk} MB) for ${model} (need ~${min_disk} MB)." >&2
+    rm -f "${before_file}"
+    exit 1
+  fi
+  if eightball_pull_and_test "${model}" "${before_file}"; then
+    write_result "${model}" "PASSED" "manual-override"
+    install_8balljets_helper
+    rm -f "${before_file}"
+    return 0
+  fi
+  write_result "${model}" "FAILED" "manual-override"
+  rm -f "${before_file}"
+  echo "Manual model override failed for ${model}." >&2
+  exit 1
+}
+
+run_candidate_chain() {
+  local candidate before_file tested_model=""
+  before_file="$(mktemp)"
+  eightball_models_before_pull >"${before_file}"
+  while IFS= read -r candidate; do
+    [[ -z "${candidate}" ]] && continue
+    log "Trying candidate ${candidate}"
+    if eightball_pull_and_test "${candidate}" "${before_file}"; then
+      tested_model="${candidate}"
+      break
+    fi
+    log "Candidate ${candidate} failed pull or inference test"
+  done < <(candidate_list)
+  rm -f "${before_file}"
+  if [[ -n "${tested_model}" ]]; then
+    write_result "${tested_model}" "PASSED" "$(plan_field selection_source)"
+    install_8balljets_helper
+    log "Model test passed; result written to ${RESULT_FILE}"
+    return 0
+  fi
+  write_result "$(candidate_list | head -n1)" "FAILED" "$(plan_field selection_source)"
+  echo "Model test failed for all candidates." >&2
+  exit 1
+}
+
 main() {
   parse_args "$@"
+  eightball_verify_script_version "${BASH_SOURCE[0]}" "8.2.sh"
   if ! curl -fsS "${OLLAMA_API}/api/tags" >/dev/null 2>&1; then
     echo "Ollama is not responding. Run 8.1.sh first." >&2
     exit 1
   fi
-  detect_hardware
-  selected_model=""
-  if [[ -n "${MODEL_SLUG}" ]] && declare -F c10_select_model_slug >/dev/null 2>&1; then
-    if selected_model="$(c10_select_model_slug "${MODEL_SLUG}")"; then
-      log "C10 selected ${selected_model} for model slug ${MODEL_SLUG}"
+
+  if [[ -n "${MODEL_SLUG}" && -z "${REQUESTED_MODEL}" ]] && declare -F c10_select_model_slug >/dev/null 2>&1; then
+    local c10_model=""
+    if c10_model="$(c10_select_model_slug "${MODEL_SLUG}")"; then
+      log "C10 selected ${c10_model} for model slug ${MODEL_SLUG}"
+      REQUESTED_MODEL="${c10_model}"
     fi
   fi
-  if [[ -z "${selected_model}" ]]; then
-    require_manifest
-    deployment_type="$(deployment_type_for_hardware)"
-    log "Using deployment type ${deployment_type} from manifest ${MANIFEST}"
-    selected_model="$(select_model_from_manifest "${deployment_type}")"
+
+  load_selection_plan
+  log "Resolved lane $(plan_field lane_path) via $(plan_field resolution_source)"
+  log "Selection source: $(plan_field selection_source)"
+
+  if [[ -n "${REQUESTED_MODEL}" ]]; then
+    run_manual_override "${REQUESTED_MODEL}"
+    exit 0
   fi
-  log "Selected model ${selected_model}"
-  tier="LOCAL LITE"
-  if tested_model="$(test_model_with_fallback "${selected_model}")"; then
-    write_result "${tested_model}" "${tier}" "PASSED"
-    install_8balljets_helper
-    log "Model test passed; result written to ${RESULT_FILE}"
-  else
-    write_result "${selected_model}" "${tier}" "FAILED"
-    echo "Model test failed for ${selected_model} (no smaller fallback succeeded)" >&2
-    exit 1
-  fi
+
+  run_candidate_chain
 }
 
 main "$@"

@@ -3,31 +3,41 @@
 # Install profile: ubuntu
 set -euo pipefail
 
+EIGHTBALL_SCRIPT_VERSION="0.8.0"
 EIGHTBALL_INSTALL_PROFILE="ubuntu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SHARED_DIR="${SCRIPT_DIR}/../shared"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
-RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu}"
+RAW_BASE="${EIGHTBALL_RAW_BASE:-}"
 REQUESTED_MODEL=""
-MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
+MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-qwen3}"
 SKIP_MOTD=0
 MANIFEST="${EIGHTBALL_MANIFEST:-}"
 
+# shellcheck source=/dev/null
+source "${SHARED_DIR}/8ball-version.sh"
+# shellcheck source=/dev/null
+source "${SHARED_DIR}/8ball-release.sh"
+
 usage() {
-  cat <<'EOF'
+  cat <<EOF
 Usage: trial-install.sh [options]
 
 Public free/trial 8-BALL installer for Ubuntu/Debian hosts.
+Suite: ${EIGHTBALL_SCRIPT_FAMILY} ${EIGHTBALL_SUITE_VERSION}
 
 Options:
   --model TAG         Request a specific Ollama tag (passed to 8.2.sh)
+  --model-slug SLUG   Select via profiles/<slug>/ lane mapping
   --no-motd           Run 8.1 and 8.2 only
   --manifest PATH     Override install-manifest.json path
   --raw-base URL      Download helper scripts when local copies are missing
   -h, --help          Show this help
 
-Catalog data is read from data/generated/pages/install-manifest.json in this repo.
-Paid activation, Passport, Stripe, S3 bundles, and private customer logic are out of scope.
+Environment:
+  EIGHTBALL_RELEASE   Tagged release (default: v0.8.0) or "main" for development
+  EIGHTBALL_RAW_BASE  Explicit raw script base URL override
 EOF
 }
 
@@ -50,7 +60,6 @@ parse_args() {
         shift 2
         ;;
       --model-slug)
-        REQUESTED_MODEL=""
         MODEL_SLUG="$2"
         shift 2
         ;;
@@ -93,14 +102,26 @@ resolve_script() {
   local name="$1"
   local local_path="${SCRIPT_DIR}/${name}"
   if [[ -f "${local_path}" ]]; then
+    eightball_verify_script_version "${local_path}" "${name}"
     printf '%s' "${local_path}"
     return 0
   fi
+  if [[ -z "${RAW_BASE}" ]]; then
+    RAW_BASE="$(eightball_release_raw_base "${EIGHTBALL_INSTALL_PROFILE}")"
+  fi
   validate_raw_base
-  local tmp
+  local tmp manifest_path=""
   tmp="$(mktemp)"
   curl -fsSL "${RAW_BASE}/${name}" -o "${tmp}"
   bash -n "${tmp}"
+  if manifest_path="$(eightball_manifest_path_for_release "${SCRIPT_DIR}" || true)"; then
+    eightball_verify_download_sha "${tmp}" "${name}" "${manifest_path}" || {
+      echo "Download integrity check failed for ${name}." >&2
+      rm -f "${tmp}"
+      exit 1
+    }
+  fi
+  eightball_verify_script_version "${tmp}" "${name}"
   install -m 0755 "${tmp}" "${local_path}"
   rm -f "${tmp}"
   printf '%s' "${local_path}"
@@ -117,12 +138,21 @@ run_step() {
   fi
 }
 
+verify_local_bundle() {
+  eightball_verify_bundle "${SCRIPT_DIR}" "trial-install.sh" "8.1.sh" "8.2.sh" "8.3.sh"
+}
+
 main() {
   parse_args "$@"
   require_root
+  eightball_verify_script_version "${BASH_SOURCE[0]}" "trial-install.sh"
   install -d -m 0755 "${PHILOSOPHER_ROOT}"
   touch "${LOG_FILE}"
   chmod 0644 "${LOG_FILE}"
+
+  verify_local_bundle || {
+    log "Local bundle version mismatch; will resolve scripts individually"
+  }
 
   local script_81 script_82 script_83
   script_81="$(resolve_script "8.1.sh")"
@@ -137,10 +167,11 @@ main() {
   if [[ -n "${REQUESTED_MODEL}" ]]; then
     model_args=(--model "${REQUESTED_MODEL}")
   elif [[ -n "${MODEL_SLUG}" ]]; then
+    export EIGHTBALL_MODEL_SLUG="${MODEL_SLUG}"
     model_args=(--model-slug "${MODEL_SLUG}")
   fi
 
-  log "[1/4] Loading the public 8-BALL components (profile=${EIGHTBALL_INSTALL_PROFILE})"
+  log "[1/4] Loading the public 8-BALL components (profile=${EIGHTBALL_INSTALL_PROFILE}, release=${EIGHTBALL_RELEASE})"
   log "[2/4] Preparing Ubuntu/Debian and installing Ollama"
   run_step "running 8.1.sh" "${script_81}"
 
@@ -156,6 +187,7 @@ main() {
 
   log "Trial install complete. Log: ${LOG_FILE}"
   log "Result: ${PHILOSOPHER_ROOT}/8ball-result.txt"
+  log "Marker: ${PHILOSOPHER_ROOT}/trial-installed"
 }
 
 main "$@"

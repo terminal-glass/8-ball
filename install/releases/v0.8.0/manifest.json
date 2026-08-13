@@ -1,0 +1,11 @@
+{
+  "suite_version": "0.8.0",
+  "script_family": "8-BALL",
+  "release_tag": "v0.8.0",
+  "scripts": {
+    "trial-install.sh": "70d7c98181c387f6f67153bfa188b95aa4110e14e85253df177f5d0e684fbf18",
+    "8.1.sh": "6fbd3bc960546797257ba20c6f8c85bef0946b73bba90f4734585987748e8555",
+    "8.2.sh": "b46aceb812e22c325d8a2657de6bc91b32bfd7970a42187f9d553c19e5aad10f",
+    "8.3.sh": "16af39606f7a9cfd5a09578b15f6ba0c7cf29d3f905b113907ff832cad2346f0"
+  }
+}
