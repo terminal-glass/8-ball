@@ -6,8 +6,10 @@ set -euo pipefail
 EIGHTBALL_INSTALL_LANE="ubuntu/cpu"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cpu.json"
 
-PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
-LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
+PHILO_ROOT="${PHILO_ROOT:-/opt/philosopher}"
+PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-${PHILO_ROOT}}"
+SUITE_VERSION="8BALL-0.8.0"
+TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"
 OLLAMA_API="${OLLAMA_API:-http://127.0.0.1:11434}"
 
 log() {
@@ -45,9 +47,9 @@ install_packages() {
 }
 
 ensure_philosopher_root() {
-  install -d -m 0755 "${PHILOSOPHER_ROOT}"
-  touch "${LOG_FILE}"
-  chmod 0644 "${LOG_FILE}"
+  install -d -m 0755 "${PHILO_ROOT}"
+  touch "${TRIAL_LOG}"
+  chmod 0644 "${TRIAL_LOG}"
 }
 
 install_ollama_if_missing() {
@@ -86,7 +88,7 @@ start_ollama() {
     return 0
   fi
 
-  nohup ollama serve >>"${LOG_FILE}" 2>&1 &
+  nohup ollama serve >>"${TRIAL_LOG}" 2>&1 &
   sleep 2
 }
 
