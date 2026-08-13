@@ -1,11 +1,11 @@
-# PR50A — 8-BALL Client Installer Audit, Architecture & Recovery
+# INST-50A — 8-BALL Client Installer Audit, Architecture & Recovery
 
 **Date:** 2026-08-13  
 **Audited branch:** `cursor/8ball-launch-hardening-1896` (PR #50)  
 **Base branch:** `main`  
-**Prior audit:** `PR50A-1-audit.md` (superseded by this document)  
-**Contract:** `PR50A-installer-scaffolding.md`  
-**Scope:** Audit and architecture only — no PR50B–PR50F implementation
+**Prior audit:** first-pass audit under PR50A naming (historical; superseded by this document)  
+**Contract:** `AGENTS/INST-client-installer-scaffolding.md`  
+**Scope:** Audit and architecture only — no INST-50B–INST-50F implementation
 
 ---
 
@@ -57,15 +57,15 @@ broken.
 | --- | --- |
 | `install/shared/` module extraction | Correct long-term structure; separates execution from data |
 | `8ball-model-test.sh` — inference test + remove-only-newly-pulled | Preserves pre-existing customer models; matches C4 invariant |
-| `8ball-version.sh` version contract skeleton | Needed for PR50E |
-| `generate-release-manifest.sh` + manifest JSON shape | Correct release-integrity mechanism for PR50E |
+| `8ball-version.sh` version contract skeleton | Needed for INST-50E |
+| `generate-release-manifest.sh` + manifest JSON shape | Correct release-integrity mechanism for INST-50E |
 | Ubuntu cpu/cuda thin wrappers | Reduces lane drift; preserves `EIGHTBALL_INSTALL_LANE` |
 | 8.3 MOTD `ollama list` check for READY/MISSING | Addresses observed customer bug class (result-file-only READY) |
 | 8.3 alert meta `0640` (not world-writable) | Permission improvement |
 | 8.3 login MOTD remains network-free | Correct |
 | `remember` helper | Unchanged, appropriate |
 | Offline harness with honest NOT TESTED labels | Good practice |
-| Proxmox matrix doc | Input for PR50F |
+| Proxmox matrix doc | Input for INST-50F |
 | `c10-select-model.py` (pre-existing, retained) | Generic X-capable selector — underused, not removed |
 
 ---
@@ -74,23 +74,23 @@ broken.
 
 | Item | Issue | Stage |
 | --- | --- | --- |
-| **8.1 localhost proof** | `ollama_verify_listener()` can pass via `curl` to loopback without proving exclusive bind; dual-bind (`127.0.0.1` + `0.0.0.0`) not detected | PR50B |
-| **8.1 override coverage** | Misses indirect `EnvironmentFile`, `OLLAMA_HOST=:port`, non-systemd `nohup serve` | PR50B |
-| **8.1 ordering** | `start_ollama` early-return on API response skips post-restart bind verification | PR50B |
-| **Default `MODEL_SLUG=qwen3`** | Forces `--model-slug` on every install; collapses to single-model manual path | PR50C |
-| **8.2 static lane fit** | Reads `lane.json` `fit_status=fit` precomputed for assumed hardware, not runtime host | PR50C |
-| **8.2 lane resolution** | Hard-coded heuristics in `c10-hardware-resolve.py`; ignores C10.1 observation contract / taxonomy | PR50C |
-| **8.2 RAM pilot bands** | Duplicated thresholds in Python; not taxonomy band IDs | PR50C |
-| **8.2 disk gates** | Applied only on manual `--model`; automatic chain skips disk check | PR50C |
-| **8.2 result `Profile:` field** | Derived from Ollama tag, not resolved profile identity | PR50C |
-| **`install-manifest.json` removed** | Regresses documented C5 contract (`docs/install-manifest-contract.md`) | PR50C |
-| **Remote/curl bootstrap** | `c10-hardware-resolve.py` requires local `profiles/` tree; no `EIGHTBALL_PROFILES_BASE` | PR50C / PR50E |
-| **trial-install version check** | `verify_local_bundle` warns on mismatch but continues | PR50E |
-| **Remote SHA verification** | Only when local manifest ships with scripts; `v0.8.0` tag unpublished | PR50E |
-| **8.3 MOTD tag matching** | Prefix/wildcard match may false-positive; untested on real login | PR50D |
-| **8.3 temp-alert decrement** | Root-only write path fragile; not VM-tested | PR50D |
-| **`--no-motd` skips 8.3 entirely** | Trial marker, alerts, permissions not applied | PR50D |
-| **8.3 Jets PARTIAL** | Template hardcodes `READY AFTER SIGN-IN`; no signed-in detection | PR50D |
+| **8.1 localhost proof** | `ollama_verify_listener()` can pass via `curl` to loopback without proving exclusive bind; dual-bind (`127.0.0.1` + `0.0.0.0`) not detected | INST-50B |
+| **8.1 override coverage** | Misses indirect `EnvironmentFile`, `OLLAMA_HOST=:port`, non-systemd `nohup serve` | INST-50B |
+| **8.1 ordering** | `start_ollama` early-return on API response skips post-restart bind verification | INST-50B |
+| **Default `MODEL_SLUG=qwen3`** | Forces `--model-slug` on every install; collapses to single-model manual path | INST-50C |
+| **8.2 static lane fit** | Reads `lane.json` `fit_status=fit` precomputed for assumed hardware, not runtime host | INST-50C |
+| **8.2 lane resolution** | Hard-coded heuristics in `c10-hardware-resolve.py`; ignores C10.1 observation contract / taxonomy | INST-50C |
+| **8.2 RAM pilot bands** | Duplicated thresholds in Python; not taxonomy band IDs | INST-50C |
+| **8.2 disk gates** | Applied only on manual `--model`; automatic chain skips disk check | INST-50C |
+| **8.2 result `Profile:` field** | Derived from Ollama tag, not resolved profile identity | INST-50C |
+| **`install-manifest.json` removed** | Regresses documented C5 contract (`docs/install-manifest-contract.md`) | INST-50C |
+| **Remote/curl bootstrap** | `c10-hardware-resolve.py` requires local `profiles/` tree; no `EIGHTBALL_PROFILES_BASE` | INST-50C / INST-50E |
+| **trial-install version check** | `verify_local_bundle` warns on mismatch but continues | INST-50E |
+| **Remote SHA verification** | Only when local manifest ships with scripts; `v0.8.0` tag unpublished | INST-50E |
+| **8.3 MOTD tag matching** | Prefix/wildcard match may false-positive; untested on real login | INST-50D |
+| **8.3 temp-alert decrement** | Root-only write path fragile; not VM-tested | INST-50D |
+| **`--no-motd` skips 8.3 entirely** | Trial marker, alerts, permissions not applied | INST-50D |
+| **8.3 Jets PARTIAL** | Template hardcodes `READY AFTER SIGN-IN`; no signed-in detection | INST-50D |
 
 ---
 
@@ -147,7 +147,7 @@ No full script revert recommended — most changes are directionally sound but i
 **Customer invariant:** Installing 8-BALL must not accidentally expose Ollama
 publicly. **PR 50 does not fully enforce this.**
 
-**PR50B must:** Prove exclusive localhost bind with `ss` (no `0.0.0.0:11434`),
+**INST-50B must:** Prove exclusive localhost bind with `ss` (no `0.0.0.0:11434`),
 remove curl-as-bind-proof, re-verify after all start paths, VM-test existing
 configs.
 
@@ -228,8 +228,8 @@ matrix validation** because:
 - Curl-only bootstrap cannot resolve profiles without full repo
 - No real VM evidence exists
 
-Y can be made validation-ready with PR50B (foundation) + PR50C (engine fixes) +
-PR50F (VM matrix). No full installer redesign required.
+Y can be made validation-ready with INST-50B (foundation) + INST-50C (engine fixes) +
+INST-50F (VM matrix). No full installer redesign required.
 
 ### X integration readiness: **SIGNIFICANT REWORK**
 
@@ -326,7 +326,7 @@ fabricated):
 - **Catalog-default model slug** — no committed "trial default model" separate
   from Qwen hard-coding.
 
-**PR50C target:** `profile/catalog → approved X candidates → generic 8.2 engine`
+**INST-50C target:** `profile/catalog → approved X candidates → generic 8.2 engine`
 without teaching 8.2 every model family.
 
 ---
@@ -335,7 +335,7 @@ without teaching 8.2 every model family.
 
 ### **PARTIAL**
 
-### Observed customer failure (pre-PR50)
+### Observed customer failure (pre-PR 50)
 
 ```text
 Ollama ............. RUNNING
@@ -393,7 +393,7 @@ real login; Jets PARTIAL not addressed.
 | Immutable release default | PASS — defaults `v0.8.0`, not `main` |
 | Download integrity (SHA) | PARTIAL — local manifest only; tag unpublished |
 
-**PR50E must:** Hard-fail version mismatch; fetch remote manifest; verify SHA on
+**INST-50E must:** Hard-fail version mismatch; fetch remote manifest; verify SHA on
 curl path; document `EIGHTBALL_RELEASE=main` dev override.
 
 ---
@@ -465,11 +465,11 @@ Files under `/opt/philosopher/` (PR 50):
 
 ---
 
-## PR50B Recommendation
+## INST-50B Recommendation
 
 **Scope: 8.1 foundation / Ollama safety ONLY.**
 
-### PR50B must deliver
+### INST-50B must deliver
 
 1. **Exclusive localhost bind proof** — after config + restart, `ss -ltn` must
    show `127.0.0.1:11434` (or `::1`) and **no** `0.0.0.0:11434` / `[::]:11434`
@@ -482,20 +482,20 @@ Files under `/opt/philosopher/` (PR 50):
 6. **Logging contract finalized** — binary path, service active, bind verified,
    API responding
 
-### PR50B must NOT
+### INST-50B must NOT
 
 - Change 8.2 model selection, profile resolution, or X/Y plumbing
 - Change 8.3 MOTD, alerts, or bulletin
-- Publish release tags (PR50E)
+- Publish release tags (INST-50E)
 - Modify C-series data
 
-### PR50B acceptance
+### INST-50B acceptance
 
 - Static: `bash -n`, shellcheck if available
-- VM checklist documented in `PR50B-foundation.md` (to be created in PR50B)
+- VM checklist documented in `INST-50B-foundation.md` (to be created in INST-50B)
 - Evidence tables: PASS / FAIL / NOT TESTED per environment
 
-### Handoff notes for PR50C (do not implement in PR50B)
+### Handoff notes for INST-50C (do not implement in INST-50B)
 
 - Revert default `MODEL_SLUG=qwen3`
 - Restore `install-manifest.json` as fallback authority
@@ -513,9 +513,9 @@ Files under `/opt/philosopher/` (PR 50):
 **Can we successfully prove Y across target client environments without
 redesigning the installer?**
 
-**Yes, with focused repair — not today.** The pipeline structure exists. PR50B
-(Ollama safety) + PR50C (fix default path, runtime fit, fallback chain, manifest
-fallback) + PR50F (VM matrix) can prove Y without architectural redesign. Today
+**Yes, with focused repair — not today.** The pipeline structure exists. INST-50B
+(Ollama safety) + INST-50C (fix default path, runtime fit, fallback chain, manifest
+fallback) + INST-50F (VM matrix) can prove Y without architectural redesign. Today
 the default path and static fit block reliable Y proof.
 
 ### Question 2
@@ -526,7 +526,7 @@ model-family-specific code?**
 **Not yet.** `lane_fit_candidates()` and `c10-select-model.py` are already
 parameterized by slug. Blockers: hard-coded `qwen3` defaults, Qwen-only pilot
 menu fallback, regex disk heuristics, and static fit without runtime gates.
-**Significant rework in PR50C**, not a new architecture.
+**Significant rework in INST-50C**, not a new architecture.
 
 ### Question 3
 
@@ -547,13 +547,13 @@ Generic interfaces to **preserve:** `REQUESTED_MODEL`, `c10_select_model_slug`,
 
 **Can model #201 eventually be added through data without changing `8.2.sh`?**
 
-**Not today. Possible after PR50C.**
+**Not today. Possible after INST-50C.**
 
 **Data side:** `profiles/<family>/` trees already exist for 200+ families. Adding
 model #201 is primarily a profile generation / promotion task (C-series), not an
 installer edit.
 
-**Installer side (PR50C must change):**
+**Installer side (INST-50C must change):**
 
 1. Remove hard-coded `qwen3` defaults — slug comes from CLI/catalog only
 2. Replace `pilot_menu_candidates()` Qwen ladder with slug-agnostic candidate
@@ -563,7 +563,7 @@ installer edit.
 5. Keep `8.2.sh` as orchestration only: load plan JSON → gate → pull → test →
    fallback
 
-After PR50C, adding model #201 should require **profile data update only**,
+After INST-50C, adding model #201 should require **profile data update only**,
 matching the long-term success criterion.
 
 ---
@@ -581,7 +581,7 @@ matching the long-term success criterion.
 | `AGENTS/data-science/profile-mapping/ubuntu-runtime-observation-contract.md` | Runtime evidence rules |
 | `docs/install-manifest-contract.md` | C5 manifest contract (regressed in PR 50) |
 | `profiles/manifest.json` | Catalog index and deployment classes |
-| `install/shared/c10-select-model.py` | Generic slug selector (pre-PR50) |
+| `install/shared/c10-select-model.py` | Generic slug selector (pre-PR 50) |
 
 ---
 
@@ -589,10 +589,10 @@ matching the long-term success criterion.
 
 | Document | Role |
 | --- | --- |
-| `PR50A-installer-scaffolding.md` | Contract and PR50A–F sequence |
-| `PR50A-1-audit.md` | First-pass audit (superseded) |
-| `PR50B-foundation.md` | To be created in PR50B |
-| `PR50C-profile-integration.md` | To be created in PR50C |
-| `PR50D-client-status.md` | To be created in PR50D |
-| `PR50E-release-integrity.md` | To be created in PR50E |
-| `PR50F-validation.md` | To be created in PR50F |
+| `AGENTS/INST-client-installer-scaffolding.md` | Contract and INST-50A–F sequence |
+| `PR50A-1-audit.md` (removed) | First-pass audit under PR50A naming (historical) |
+| `INST-50B-foundation.md` | To be created in INST-50B |
+| `INST-50C-profile-integration.md` | To be created in INST-50C |
+| `INST-50D-client-status.md` | To be created in INST-50D |
+| `INST-50E-release-integrity.md` | To be created in INST-50E |
+| `INST-50F-validation.md` | To be created in INST-50F |

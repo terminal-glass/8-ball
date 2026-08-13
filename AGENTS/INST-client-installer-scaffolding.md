@@ -1,14 +1,18 @@
-# PR50A — 8-BALL Client Installer Audit, Architecture & Recovery
+# INST — 8-BALL Client Installer Scaffolding
 
-**Contract document.** This file records the authoritative PR50A scope and the
-client-installer development sequence. Subsequent PR50B–PR50F work must align
-with this contract unless explicitly superseded by a later approved revision.
+**Governing contract.** This file defines the durable client-installer workstream
+that began during GitHub PR #50. Subsequent INST-50B–INST-50F stages must align with
+this contract unless explicitly superseded by a later approved revision.
+
+**PR boundary:** Completing INST-50A allows PR #50 to conclude. Later installer
+stages (INST-50B through INST-50F) are separate follow-on work — they do not need
+to remain inside PR #50.
 
 ---
 
 ## Purpose
 
-PR 50 begins a new phase of 8-BALL development: integrating the existing
+GitHub PR #50 began a new phase of 8-BALL development: integrating the existing
 data-science/profile work into the customer-facing installer and preparing it for
 real-machine validation.
 
@@ -23,8 +27,8 @@ AGENTS/data-science/client-installer/
 The existing C-series data-science work remains authoritative and must not be
 moved, renamed, duplicated, or replaced merely to simplify the installer.
 
-PR50A is an **audit and architecture** stage. Do not attempt to complete
-PR50B–PR50F during a PR50A run.
+INST-50A is an **audit and architecture** stage. Do not attempt to complete
+INST-50B–INST-50F during an INST-50A run or inside PR #50.
 
 ---
 
@@ -50,36 +54,42 @@ recreate that work as giant Bash decision trees.
 
 ---
 
-## 2. PR50A–PR50F Sequence
+## 2. INST-50A–INST-50F Workstream Sequence
 
 ```text
-PR50A   Audit, architecture and recovery
+INST-50A   Audit, architecture and recovery
           ↓
-PR50B   8.1 foundation / Ollama safety
+INST-50B   8.1 foundation / Ollama safety
           ↓
-PR50C   8.2 profile + model integration
+INST-50C   8.2 profile + model integration
           ↓
-PR50D   8.3 customer status / MOTD
+INST-50D   8.3 customer status / MOTD
           ↓
-PR50E   trial-install release integrity
+INST-50E   trial-install release integrity
           ↓
-PR50F   validation + real VM-test readiness
+INST-50F   validation + real VM-test readiness
 ```
 
-**Expected documentation area:**
+**Governing contract:**
+
+```text
+AGENTS/INST-client-installer-scaffolding.md
+```
+
+**Stage documentation area:**
 
 ```text
 AGENTS/data-science/client-installer/
-  PR50A-audit.md
-  PR50B-foundation.md
-  PR50C-profile-integration.md
-  PR50D-client-status.md
-  PR50E-release-integrity.md
-  PR50F-validation.md
+  INST-50A-audit.md
+  INST-50B-foundation.md
+  INST-50C-profile-integration.md
+  INST-50D-client-status.md
+  INST-50E-release-integrity.md
+  INST-50F-validation.md
 ```
 
-PR50A creates its own audit document. Do not create speculative completed B–F
-documents during PR50A.
+INST-50A creates its own audit document. Do not create speculative completed B–F
+documents during INST-50A.
 
 ---
 
@@ -165,7 +175,7 @@ primarily in **data**. Execution knowledge belongs primarily in the **installer*
 
 ---
 
-## 4. PR50 Development Goal
+## 4. Client Installer Development Goal
 
 **PROVE Y while PRESERVING X.**
 
@@ -219,23 +229,23 @@ automatically imply installer architecture failure.
 
 ---
 
-## 8. PR50A Definition of Done
+## 8. INST-50A Definition of Done
 
-PR50A is complete when we understand:
+INST-50A is complete when we understand:
 
 - what PR 50 actually did
 - what should be kept / repaired / reverted
 - whether Y is ready for validation
 - whether X has a clean future interface
-- what PR50B should do next
+- what INST-50B should do next
 
 Success is measured by accuracy of the map, not volume of code changed.
 
 ---
 
-## 9. Scope Guard (PR50A)
+## 9. Scope Guard (INST-50A / PR #50 closure)
 
-PR50A must **not**:
+INST-50A must **not**:
 
 - redesign 8-BALL or replace C7/C8/C9/C10/C10.1
 - rebuild the Ollama catalog or validate 200+ models
@@ -243,14 +253,14 @@ PR50A must **not**:
 - install OpenWebUI; add Passport/licensing
 - expose Ollama publicly or open firewall ports
 - claim VM validation that did not occur
-- automatically implement PR50B–PR50F
-- merge PR 50
+- automatically implement INST-50B–INST-50F
+- block PR #50 closure without an accepted INST-50A audit (INST-50A itself does not require B–F in the same PR)
 
 ---
 
 ## 10. Four Architectural Test Questions
 
-PR50A must answer:
+INST-50A must answer:
 
 1. Can we prove Y across target environments without redesigning the installer?
 2. If C-series supplies model X tomorrow, can 8.2 consume it without
@@ -258,7 +268,7 @@ PR50A must answer:
 3. What exact remaining code assumes Y/Qwen where it should consume X/data?
 4. Can model #201 be added through data without changing `8.2.sh`?
 
-If Question 4 is currently **no**, PR50A must explain what PR50C must change.
+If Question 4 is currently **no**, INST-50A must explain what INST-50C must change.
 
 ---
 
@@ -266,6 +276,7 @@ If Question 4 is currently **no**, PR50A must explain what PR50C must change.
 
 | Date | Document | Notes |
 | --- | --- | --- |
-| 2026-08-13 | `PR50A-installer-scaffolding.md` | Initial contract from PR50A assignment |
-| 2026-08-13 | `PR50A-1-audit.md` | First-pass audit (superseded by `PR50A-audit.md`) |
-| 2026-08-13 | `PR50A-audit.md` | Architecture-aware audit with X/Y boundary |
+| 2026-08-13 | `PR50A-installer-scaffolding.md` | Initial contract (PR50A naming; superseded) |
+| 2026-08-13 | `PR50A-audit.md` | Architecture-aware audit (PR50A naming; superseded) |
+| 2026-08-13 | `AGENTS/INST-client-installer-scaffolding.md` | Governing contract under INST naming |
+| 2026-08-13 | `INST-50A-audit.md` | Authoritative audit under INST naming |
