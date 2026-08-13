@@ -11,7 +11,7 @@ Usage: .\8.1.ps1 [-Help]
 
 Lane: windows/cuda
 
-Verifies native Windows, nvidia-smi CUDA evidence, loopback Ollama API settings, and runtime observation during install.
+Verifies native Windows, CUDA capability evidence, loopback Ollama API settings, and runtime observation during install.
 Does not install NVIDIA/CUDA drivers.
 '@
     exit 0

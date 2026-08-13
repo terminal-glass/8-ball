@@ -33,11 +33,11 @@ function Invoke-InstallerSmokePreflight {
     Write-Output $Checks
 
     if ($env:WSL_DISTRO_NAME) {
-        Write-Error "unsupported: lane $Lane requires native Windows (WSL detected)"
+        [Console]::Error.WriteLine("unsupported: lane $Lane requires native Windows (WSL detected)")
         exit 2
     }
     if ($env:OS -ne 'Windows_NT' -and -not $IsWindows) {
-        Write-Error "unsupported: lane $Lane requires native Windows; detected OS=$($env:OS)"
+        [Console]::Error.WriteLine("unsupported: lane $Lane requires native Windows; detected OS=$($env:OS)")
         exit 2
     }
 
