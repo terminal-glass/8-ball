@@ -1,0 +1,12 @@
+[Unit]
+Description=8-BALL bulletin cache refresh
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=PHILOSOPHER_ROOT=/opt/philosopher
+ExecStart=/opt/philosopher/bin/8ball-bulletin-refresh.sh
+
+[Install]
+WantedBy=multi-user.target

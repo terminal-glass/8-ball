@@ -4,7 +4,7 @@ terminal.glass
 SYSTEM STATUS
 Ollama ............. __OLLAMA_STATUS__
 Local Model ........ __MODEL_STATUS__
-8-BALL JETS ........ READY AFTER SIGN-IN
+8-BALL JETS ........ __JETS_STATUS__
 
 Local:    ollama run __SELECTED_MODEL__
 Status:   cat /opt/philosopher/8ball-result.txt
