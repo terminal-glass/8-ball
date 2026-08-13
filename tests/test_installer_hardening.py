@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import subprocess
 from pathlib import Path
@@ -29,8 +30,13 @@ def test_release_manifest_matches_scripts() -> None:
     assert manifest_path.is_file()
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     assert manifest["suite_version"] == "0.8.0"
+    assert manifest["repository"] == "terminal-glass/8-ball"
     for name in ("trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh"):
         assert name in manifest["scripts"]
+        rel = f"install/ubuntu/{name}"
+        script_path = REPO_ROOT / rel
+        digest = hashlib.sha256(script_path.read_bytes()).hexdigest()
+        assert manifest["artifacts"][rel] == digest
 
 
 def test_version_contract_declared_in_scripts() -> None:

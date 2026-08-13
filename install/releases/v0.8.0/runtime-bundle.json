@@ -1,0 +1,39 @@
+{
+  "schema_version": "8ball.runtime-bundle.v1",
+  "description": "Deterministic ubuntu trial runtime subset for release v0.8.0",
+  "model_slugs": [
+    "qwen3",
+    "tinyllama"
+  ],
+  "ubuntu_lanes": [
+    "ubuntu/cpu",
+    "ubuntu/cuda"
+  ],
+  "core_paths": [
+    "scripts/c10_common.py",
+    "AGENTS/data-science/profile-mapping/8ball-base-pilot-menu.json",
+    "install/releases/v0.8.0/install-manifest.json",
+    "profiles/lanes.json",
+    "profiles/manifest.json",
+    "profiles/provider-assumptions/ubuntu-cpu.json",
+    "profiles/provider-assumptions/ubuntu-cuda.json"
+  ],
+  "shared_paths": [
+    "install/shared/8ball-version.sh",
+    "install/shared/8ball-release.sh",
+    "install/shared/ollama-localhost.sh",
+    "install/shared/8ball-model-test.sh",
+    "install/shared/c10-hardware-resolve.py",
+    "install/shared/8ball-client-status.py",
+    "install/shared/8ball-bulletin-refresh.sh",
+    "install/shared/systemd/8ball-bulletin-refresh.service",
+    "install/shared/systemd/8ball-bulletin-refresh.timer",
+    "install/ubuntu/assets/first-MOTD.txt"
+  ],
+  "ubuntu_scripts": [
+    "install/ubuntu/trial-install.sh",
+    "install/ubuntu/8.1.sh",
+    "install/ubuntu/8.2.sh",
+    "install/ubuntu/8.3.sh"
+  ]
+}

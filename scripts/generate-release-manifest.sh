@@ -5,33 +5,85 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RELEASE="${1:-v0.8.0}"
 OUT_DIR="${REPO_ROOT}/install/releases/${RELEASE}"
+BUNDLE_CONFIG="${OUT_DIR}/runtime-bundle.json"
 mkdir -p "${OUT_DIR}"
 
-python3 - "${RELEASE}" "${OUT_DIR}/manifest.json" <<'PY'
+python3 - "${RELEASE}" "${OUT_DIR}/manifest.json" "${BUNDLE_CONFIG}" "${REPO_ROOT}" <<'PY'
 import hashlib
 import json
+import shutil
 import sys
 from pathlib import Path
 
-release, out_path = sys.argv[1:3]
-repo = Path(out_path).resolve().parents[3]
-scripts = {
-    "trial-install.sh": repo / "install/ubuntu/trial-install.sh",
-    "8.1.sh": repo / "install/ubuntu/8.1.sh",
-    "8.2.sh": repo / "install/ubuntu/8.2.sh",
-    "8.3.sh": repo / "install/ubuntu/8.3.sh",
-}
-checksums = {}
-for name, path in scripts.items():
+release, out_path, bundle_config_path, repo_root = sys.argv[1:5]
+repo = Path(repo_root)
+bundle = json.loads(Path(bundle_config_path).read_text(encoding="utf-8"))
+pinned_manifest = repo / "install/releases" / release / "install-manifest.json"
+source_manifest = repo / "data/generated/pages/install-manifest.json"
+if pinned_manifest in [repo / path for path in bundle.get("core_paths", [])]:
+    if not source_manifest.is_file():
+        raise SystemExit(f"Missing source install manifest: {source_manifest}")
+    shutil.copy2(source_manifest, pinned_manifest)
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+artifacts: dict[str, str] = {}
+
+for rel in bundle.get("ubuntu_scripts", []):
+    path = repo / rel
     if not path.is_file():
-        raise SystemExit(f"Missing script for manifest: {path}")
-    checksums[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        raise SystemExit(f"Missing ubuntu script for manifest: {path}")
+    artifacts[rel] = sha256_file(path)
+
+for rel in bundle.get("shared_paths", []):
+    path = repo / rel
+    if not path.is_file():
+        raise SystemExit(f"Missing shared artifact for manifest: {path}")
+    artifacts[rel] = sha256_file(path)
+
+for rel in bundle.get("core_paths", []):
+    path = repo / rel
+    if not path.is_file():
+        raise SystemExit(f"Missing core runtime artifact for manifest: {path}")
+    artifacts[rel] = sha256_file(path)
+
+for slug in bundle.get("model_slugs", []):
+    model_json = repo / "profiles" / slug / "model.json"
+    if not model_json.is_file():
+        raise SystemExit(f"Missing profile model.json for slug {slug}: {model_json}")
+    rel = str(model_json.relative_to(repo))
+    artifacts[rel] = sha256_file(model_json)
+
+    sizes_dir = repo / "profiles" / slug / "sizes"
+    if not sizes_dir.is_dir():
+        raise SystemExit(f"Missing profile sizes for slug {slug}: {sizes_dir}")
+    for size_path in sorted(sizes_dir.glob("*.json")):
+        rel = str(size_path.relative_to(repo))
+        artifacts[rel] = sha256_file(size_path)
+
+    for lane in bundle.get("ubuntu_lanes", []):
+        lane_json = repo / "profiles" / slug / lane / "lane.json"
+        if not lane_json.is_file():
+            raise SystemExit(f"Missing profile lane for slug {slug}: {lane_json}")
+        rel = str(lane_json.relative_to(repo))
+        artifacts[rel] = sha256_file(lane_json)
+
+scripts = {
+    Path(rel).name: digest
+    for rel, digest in artifacts.items()
+    if rel.startswith("install/ubuntu/") and rel.endswith(".sh")
+}
+
 manifest = {
     "suite_version": release.lstrip("v"),
     "script_family": "8-BALL",
     "release_tag": release,
-    "scripts": checksums,
+    "repository": "terminal-glass/8-ball",
+    "runtime_bundle": str(Path(bundle_config_path).relative_to(repo)),
+    "scripts": scripts,
+    "artifacts": artifacts,
 }
 Path(out_path).write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-print(f"Wrote {out_path}")
+print(f"Wrote {out_path} ({len(artifacts)} artifacts)")
 PY
