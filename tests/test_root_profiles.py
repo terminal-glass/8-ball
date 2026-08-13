@@ -202,14 +202,15 @@ def test_generate_root_profiles_includes_labeled_provider_assumptions(
 
 
 def test_committed_root_profiles_match_generated_pages() -> None:
-    manifest_path = PROFILES_DIR / "manifest.json"
-    assert manifest_path.is_file(), "profiles/manifest.json missing; run eight-ball generate-root-profiles"
+    manifest_path = PROFILES_DIR / "legacy" / "c5-root-export" / "manifest.json"
+    assert manifest_path.is_file(), "profiles/legacy/c5-root-export/manifest.json missing"
 
     manifest = load_json(manifest_path)
     install_manifest = load_json(GENERATED_PAGES_DIR / "install-manifest.json")
+    families_dir = PROFILES_DIR / "legacy" / "c5-root-export" / "families"
     assert manifest["primary_source"]["install_manifest_path"] == "data/generated/pages/install-manifest.json"
     assert manifest["primary_source"]["install_manifest_schema"] == install_manifest["schema_version"]
-    assert manifest["counts"]["families"] == len(list((PROFILES_DIR / "families").iterdir()))
+    assert manifest["counts"]["families"] == len(list(families_dir.iterdir()))
     assert manifest["counts"]["models"] == len(install_manifest["models"])
     assert manifest["counts"]["deployment_classes"] == 5
 

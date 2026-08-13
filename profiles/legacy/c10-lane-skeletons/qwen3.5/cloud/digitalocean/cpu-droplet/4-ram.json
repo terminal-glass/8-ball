@@ -1,0 +1,785 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3.5",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T07:44:42Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": null,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "397b-cloud",
+      "ollama_ref": "qwen3.5:397b-cloud",
+      "min_system_ram_gb": 209.01,
+      "recommended_system_ram_gb": 250.81,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "122b",
+      "ollama_ref": "qwen3.5:122b",
+      "min_system_ram_gb": 129.95,
+      "recommended_system_ram_gb": 155.94,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "122b-a10b",
+      "ollama_ref": "qwen3.5:122b-a10b",
+      "min_system_ram_gb": 129.95,
+      "recommended_system_ram_gb": 155.94,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "122b-a10b-q4-k-m",
+      "ollama_ref": "qwen3.5:122b-a10b-q4_K_M",
+      "min_system_ram_gb": 129.95,
+      "recommended_system_ram_gb": 155.94,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b",
+      "ollama_ref": "qwen3.5:35b",
+      "min_system_ram_gb": 39.39,
+      "recommended_system_ram_gb": 47.26,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b",
+      "ollama_ref": "qwen3.5:35b-a3b",
+      "min_system_ram_gb": 39.39,
+      "recommended_system_ram_gb": 47.26,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-bf16",
+      "ollama_ref": "qwen3.5:35b-a3b-bf16",
+      "min_system_ram_gb": 94.59,
+      "recommended_system_ram_gb": 113.5,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-coding-bf16",
+      "ollama_ref": "qwen3.5:35b-a3b-coding-bf16",
+      "min_system_ram_gb": 92.29,
+      "recommended_system_ram_gb": 110.74,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-coding-mxfp8",
+      "ollama_ref": "qwen3.5:35b-a3b-coding-mxfp8",
+      "min_system_ram_gb": 55.49,
+      "recommended_system_ram_gb": 66.58,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-coding-nvfp4",
+      "ollama_ref": "qwen3.5:35b-a3b-coding-nvfp4",
+      "min_system_ram_gb": 37.09,
+      "recommended_system_ram_gb": 44.5,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-int4",
+      "ollama_ref": "qwen3.5:35b-a3b-int4",
+      "min_system_ram_gb": 34.79,
+      "recommended_system_ram_gb": 41.74,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-int8",
+      "ollama_ref": "qwen3.5:35b-a3b-int8",
+      "min_system_ram_gb": 55.49,
+      "recommended_system_ram_gb": 66.58,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-mlx-bf16",
+      "ollama_ref": "qwen3.5:35b-a3b-mlx-bf16",
+      "min_system_ram_gb": 92.29,
+      "recommended_system_ram_gb": 110.74,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-mxfp8",
+      "ollama_ref": "qwen3.5:35b-a3b-mxfp8",
+      "min_system_ram_gb": 55.49,
+      "recommended_system_ram_gb": 66.58,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-nvfp4",
+      "ollama_ref": "qwen3.5:35b-a3b-nvfp4",
+      "min_system_ram_gb": 37.09,
+      "recommended_system_ram_gb": 44.5,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-q4-k-m",
+      "ollama_ref": "qwen3.5:35b-a3b-q4_K_M",
+      "min_system_ram_gb": 39.39,
+      "recommended_system_ram_gb": 47.26,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-a3b-q80",
+      "ollama_ref": "qwen3.5:35b-a3b-q8_0",
+      "min_system_ram_gb": 56.64,
+      "recommended_system_ram_gb": 67.96,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "35b-mlx",
+      "ollama_ref": "qwen3.5:35b-mlx",
+      "min_system_ram_gb": 37.09,
+      "recommended_system_ram_gb": 44.5,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b",
+      "ollama_ref": "qwen3.5:27b",
+      "min_system_ram_gb": 29.04,
+      "recommended_system_ram_gb": 34.84,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-bf16",
+      "ollama_ref": "qwen3.5:27b-bf16",
+      "min_system_ram_gb": 73.89,
+      "recommended_system_ram_gb": 88.66,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-coding-bf16",
+      "ollama_ref": "qwen3.5:27b-coding-bf16",
+      "min_system_ram_gb": 72.74,
+      "recommended_system_ram_gb": 87.28,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-coding-mxfp8",
+      "ollama_ref": "qwen3.5:27b-coding-mxfp8",
+      "min_system_ram_gb": 45.14,
+      "recommended_system_ram_gb": 54.16,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-coding-nvfp4",
+      "ollama_ref": "qwen3.5:27b-coding-nvfp4",
+      "min_system_ram_gb": 32.49,
+      "recommended_system_ram_gb": 38.98,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-int4",
+      "ollama_ref": "qwen3.5:27b-int4",
+      "min_system_ram_gb": 27.89,
+      "recommended_system_ram_gb": 33.46,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-int8",
+      "ollama_ref": "qwen3.5:27b-int8",
+      "min_system_ram_gb": 43.99,
+      "recommended_system_ram_gb": 52.78,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-mlx",
+      "ollama_ref": "qwen3.5:27b-mlx",
+      "min_system_ram_gb": 32.49,
+      "recommended_system_ram_gb": 38.98,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-mlx-bf16",
+      "ollama_ref": "qwen3.5:27b-mlx-bf16",
+      "min_system_ram_gb": 72.74,
+      "recommended_system_ram_gb": 87.28,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-mxfp8",
+      "ollama_ref": "qwen3.5:27b-mxfp8",
+      "min_system_ram_gb": 45.14,
+      "recommended_system_ram_gb": 54.16,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-nvfp4",
+      "ollama_ref": "qwen3.5:27b-nvfp4",
+      "min_system_ram_gb": 32.49,
+      "recommended_system_ram_gb": 38.98,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-q4-k-m",
+      "ollama_ref": "qwen3.5:27b-q4_K_M",
+      "min_system_ram_gb": 29.04,
+      "recommended_system_ram_gb": 34.84,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "27b-q80",
+      "ollama_ref": "qwen3.5:27b-q8_0",
+      "min_system_ram_gb": 43.99,
+      "recommended_system_ram_gb": 52.78,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b",
+      "ollama_ref": "qwen3.5:9b",
+      "min_system_ram_gb": 11.9,
+      "recommended_system_ram_gb": 14.28,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-bf16",
+      "ollama_ref": "qwen3.5:9b-bf16",
+      "min_system_ram_gb": 26.16,
+      "recommended_system_ram_gb": 31.39,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-mlx",
+      "ollama_ref": "qwen3.5:9b-mlx",
+      "min_system_ram_gb": 14.55,
+      "recommended_system_ram_gb": 17.46,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-mlx-bf16",
+      "ollama_ref": "qwen3.5:9b-mlx-bf16",
+      "min_system_ram_gb": 26.16,
+      "recommended_system_ram_gb": 31.39,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-mxfp8",
+      "ollama_ref": "qwen3.5:9b-mxfp8",
+      "min_system_ram_gb": 18.11,
+      "recommended_system_ram_gb": 21.73,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-nvfp4",
+      "ollama_ref": "qwen3.5:9b-nvfp4",
+      "min_system_ram_gb": 14.55,
+      "recommended_system_ram_gb": 17.46,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-q4-k-m",
+      "ollama_ref": "qwen3.5:9b-q4_K_M",
+      "min_system_ram_gb": 11.9,
+      "recommended_system_ram_gb": 14.28,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "9b-q80",
+      "ollama_ref": "qwen3.5:9b-q8_0",
+      "min_system_ram_gb": 16.96,
+      "recommended_system_ram_gb": 20.35,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "qwen3.5:4b",
+      "min_system_ram_gb": 6.79,
+      "recommended_system_ram_gb": 8.14,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-bf16",
+      "ollama_ref": "qwen3.5:4b-bf16",
+      "min_system_ram_gb": 13.57,
+      "recommended_system_ram_gb": 16.28,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-mlx",
+      "ollama_ref": "qwen3.5:4b-mlx",
+      "min_system_ram_gb": 7.47,
+      "recommended_system_ram_gb": 8.97,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-mlx-bf16",
+      "ollama_ref": "qwen3.5:4b-mlx-bf16",
+      "min_system_ram_gb": 13.34,
+      "recommended_system_ram_gb": 16.01,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-mxfp8",
+      "ollama_ref": "qwen3.5:4b-mxfp8",
+      "min_system_ram_gb": 9.31,
+      "recommended_system_ram_gb": 11.18,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-nvfp4",
+      "ollama_ref": "qwen3.5:4b-nvfp4",
+      "min_system_ram_gb": 7.47,
+      "recommended_system_ram_gb": 8.97,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-q4-k-m",
+      "ollama_ref": "qwen3.5:4b-q4_K_M",
+      "min_system_ram_gb": 6.79,
+      "recommended_system_ram_gb": 8.14,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "4b-q80",
+      "ollama_ref": "qwen3.5:4b-q8_0",
+      "min_system_ram_gb": 8.97,
+      "recommended_system_ram_gb": 10.76,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "qwen3.5:2b",
+      "min_system_ram_gb": 5.4,
+      "recommended_system_ram_gb": 6.49,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-bf16",
+      "ollama_ref": "qwen3.5:2b-bf16",
+      "min_system_ram_gb": 7.59,
+      "recommended_system_ram_gb": 9.11,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-mlx",
+      "ollama_ref": "qwen3.5:2b-mlx",
+      "min_system_ram_gb": 5.86,
+      "recommended_system_ram_gb": 7.04,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-mlx-bf16",
+      "ollama_ref": "qwen3.5:2b-mlx-bf16",
+      "min_system_ram_gb": 7.36,
+      "recommended_system_ram_gb": 8.83,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-mxfp8",
+      "ollama_ref": "qwen3.5:2b-mxfp8",
+      "min_system_ram_gb": 5.86,
+      "recommended_system_ram_gb": 7.04,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-nvfp4",
+      "ollama_ref": "qwen3.5:2b-nvfp4",
+      "min_system_ram_gb": 5.17,
+      "recommended_system_ram_gb": 6.21,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-q4-k-m",
+      "ollama_ref": "qwen3.5:2b-q4_K_M",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "2b-q80",
+      "ollama_ref": "qwen3.5:2b-q8_0",
+      "min_system_ram_gb": 5.4,
+      "recommended_system_ram_gb": 6.49,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "0.8b",
+      "ollama_ref": "qwen3.5:0.8b",
+      "min_system_ram_gb": 3.1,
+      "recommended_system_ram_gb": 3.73,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "0.8b-bf16",
+      "ollama_ref": "qwen3.5:0.8b-bf16",
+      "min_system_ram_gb": 4.02,
+      "recommended_system_ram_gb": 4.83,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "0.8b-mlx",
+      "ollama_ref": "qwen3.5:0.8b-mlx",
+      "min_system_ram_gb": 3.33,
+      "recommended_system_ram_gb": 4.0,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "0.8b-mlx-bf16",
+      "ollama_ref": "qwen3.5:0.8b-mlx-bf16",
+      "min_system_ram_gb": 3.91,
+      "recommended_system_ram_gb": 4.69,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "0.8b-mxfp8",
+      "ollama_ref": "qwen3.5:0.8b-mxfp8",
+      "min_system_ram_gb": 3.33,
+      "recommended_system_ram_gb": 4.0,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "0.8b-nvfp4",
+      "ollama_ref": "qwen3.5:0.8b-nvfp4",
+      "min_system_ram_gb": 3.1,
+      "recommended_system_ram_gb": 3.73,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "0.8b-q80",
+      "ollama_ref": "qwen3.5:0.8b-q8_0",
+      "min_system_ram_gb": 3.1,
+      "recommended_system_ram_gb": 3.73,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "cloud",
+      "ollama_ref": "qwen3.5:cloud",
+      "min_system_ram_gb": 94.87,
+      "recommended_system_ram_gb": 113.85,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3.5:latest",
+      "min_system_ram_gb": 9.31,
+      "recommended_system_ram_gb": 11.18,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

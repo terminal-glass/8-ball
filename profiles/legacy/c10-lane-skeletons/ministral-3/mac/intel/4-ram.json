@@ -1,0 +1,147 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "ministral-3",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 8.0,
+  "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "ministral-3:14b",
+      "min_system_ram_gb": 16.21,
+      "recommended_system_ram_gb": 19.46,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.21 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-instruct2512-fp16",
+      "ollama_ref": "ministral-3:14b-instruct-2512-fp16",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-instruct2512-q4-k-m",
+      "ollama_ref": "ministral-3:14b-instruct-2512-q4_K_M",
+      "min_system_ram_gb": 16.21,
+      "recommended_system_ram_gb": 19.46,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.21 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-instruct2512-q80",
+      "ollama_ref": "ministral-3:14b-instruct-2512-q8_0",
+      "min_system_ram_gb": 23.0,
+      "recommended_system_ram_gb": 27.6,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "ministral-3:8b",
+      "min_system_ram_gb": 10.92,
+      "recommended_system_ram_gb": 13.11,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct2512-fp16",
+      "ollama_ref": "ministral-3:8b-instruct-2512-fp16",
+      "min_system_ram_gb": 24.72,
+      "recommended_system_ram_gb": 29.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct2512-q4-k-m",
+      "ollama_ref": "ministral-3:8b-instruct-2512-q4_K_M",
+      "min_system_ram_gb": 10.92,
+      "recommended_system_ram_gb": 13.11,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.92 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct2512-q80",
+      "ollama_ref": "ministral-3:8b-instruct-2512-q8_0",
+      "min_system_ram_gb": 15.41,
+      "recommended_system_ram_gb": 18.49,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.41 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b",
+      "ollama_ref": "ministral-3:3b",
+      "min_system_ram_gb": 6.04,
+      "recommended_system_ram_gb": 7.24,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.04 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-instruct2512-fp16",
+      "ollama_ref": "ministral-3:3b-instruct-2512-fp16",
+      "min_system_ram_gb": 11.44,
+      "recommended_system_ram_gb": 13.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.44 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-instruct2512-q4-k-m",
+      "ollama_ref": "ministral-3:3b-instruct-2512-q4_K_M",
+      "min_system_ram_gb": 6.04,
+      "recommended_system_ram_gb": 7.24,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.04 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3b-instruct2512-q80",
+      "ollama_ref": "ministral-3:3b-instruct-2512-q8_0",
+      "min_system_ram_gb": 7.76,
+      "recommended_system_ram_gb": 9.31,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.76 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "ministral-3:latest",
+      "min_system_ram_gb": 8.62,
+      "recommended_system_ram_gb": 10.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.62 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

@@ -1,0 +1,347 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nous-hermes2",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "34b",
+      "ollama_ref": "nous-hermes2:34b",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-fp16",
+      "ollama_ref": "nous-hermes2:34b-yi-fp16",
+      "min_system_ram_gb": 90.85,
+      "recommended_system_ram_gb": 109.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 90.85 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q2-k",
+      "ollama_ref": "nous-hermes2:34b-yi-q2_K",
+      "min_system_ram_gb": 28.75,
+      "recommended_system_ram_gb": 34.5,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q3-k-l",
+      "ollama_ref": "nous-hermes2:34b-yi-q3_K_L",
+      "min_system_ram_gb": 32.2,
+      "recommended_system_ram_gb": 38.64,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.2 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q3-k-m",
+      "ollama_ref": "nous-hermes2:34b-yi-q3_K_M",
+      "min_system_ram_gb": 31.05,
+      "recommended_system_ram_gb": 37.26,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.05 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q3-k-s",
+      "ollama_ref": "nous-hermes2:34b-yi-q3_K_S",
+      "min_system_ram_gb": 28.75,
+      "recommended_system_ram_gb": 34.5,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q4-k-m",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_K_M",
+      "min_system_ram_gb": 35.65,
+      "recommended_system_ram_gb": 42.78,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q4-k-s",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_K_S",
+      "min_system_ram_gb": 34.5,
+      "recommended_system_ram_gb": 41.4,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q40",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_0",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q41",
+      "ollama_ref": "nous-hermes2:34b-yi-q4_1",
+      "min_system_ram_gb": 36.8,
+      "recommended_system_ram_gb": 44.16,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 36.8 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q5-k-m",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_K_M",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q5-k-s",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_K_S",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q50",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_0",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q51",
+      "ollama_ref": "nous-hermes2:34b-yi-q5_1",
+      "min_system_ram_gb": 41.4,
+      "recommended_system_ram_gb": 49.68,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 41.4 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q6-k",
+      "ollama_ref": "nous-hermes2:34b-yi-q6_K",
+      "min_system_ram_gb": 43.7,
+      "recommended_system_ram_gb": 52.44,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.7 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-yi-q80",
+      "ollama_ref": "nous-hermes2:34b-yi-q8_0",
+      "min_system_ram_gb": 54.05,
+      "recommended_system_ram_gb": 64.86,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 54.05 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b",
+      "ollama_ref": "nous-hermes2:10.7b",
+      "min_system_ram_gb": 11.82,
+      "recommended_system_ram_gb": 14.18,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-fp16",
+      "ollama_ref": "nous-hermes2:10.7b-solar-fp16",
+      "min_system_ram_gb": 28.95,
+      "recommended_system_ram_gb": 34.74,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.95 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q2-k",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q2_K",
+      "min_system_ram_gb": 9.98,
+      "recommended_system_ram_gb": 11.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.98 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q3-k-l",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q3_K_L",
+      "min_system_ram_gb": 11.36,
+      "recommended_system_ram_gb": 13.63,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.36 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q3-k-m",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q3_K_M",
+      "min_system_ram_gb": 10.78,
+      "recommended_system_ram_gb": 12.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.78 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q3-k-s",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q3_K_S",
+      "min_system_ram_gb": 10.21,
+      "recommended_system_ram_gb": 12.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.21 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q4-k-m",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_K_M",
+      "min_system_ram_gb": 12.28,
+      "recommended_system_ram_gb": 14.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.28 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q4-k-s",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_K_S",
+      "min_system_ram_gb": 11.82,
+      "recommended_system_ram_gb": 14.18,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q40",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_0",
+      "min_system_ram_gb": 11.82,
+      "recommended_system_ram_gb": 14.18,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.82 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q41",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q4_1",
+      "min_system_ram_gb": 12.51,
+      "recommended_system_ram_gb": 15.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.51 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q5-k-m",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_K_M",
+      "min_system_ram_gb": 13.54,
+      "recommended_system_ram_gb": 16.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.54 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q5-k-s",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_K_S",
+      "min_system_ram_gb": 13.31,
+      "recommended_system_ram_gb": 15.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.31 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q50",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_0",
+      "min_system_ram_gb": 13.31,
+      "recommended_system_ram_gb": 15.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.31 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q51",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q5_1",
+      "min_system_ram_gb": 14.12,
+      "recommended_system_ram_gb": 16.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.12 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q6-k",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q6_K",
+      "min_system_ram_gb": 14.92,
+      "recommended_system_ram_gb": 17.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "10.7b-solar-q80",
+      "ollama_ref": "nous-hermes2:10.7b-solar-q8_0",
+      "min_system_ram_gb": 17.45,
+      "recommended_system_ram_gb": 20.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.45 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nous-hermes2:latest",
+      "min_system_ram_gb": 8.74,
+      "recommended_system_ram_gb": 10.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

@@ -1068,7 +1068,8 @@ def validate_windows_sources(repo_root: Path = REPO_ROOT) -> list[str]:
         if set(projection.get("lanes", {})) != set(CANONICAL_LANES):
             errors.append("Lane projection must reference only windows/cpu and windows/cuda")
 
-    index_csv = repo_root / "profiles" / "index.csv"
+    legacy_index = repo_root / "profiles" / "legacy" / "c5-root-export" / "index.csv"
+    index_csv = legacy_index if legacy_index.is_file() else repo_root / "profiles" / "index.csv"
     if index_csv.is_file():
         with index_csv.open(encoding="utf-8", newline="") as handle:
             row_count = sum(1 for _ in csv.DictReader(handle))

@@ -1,0 +1,124 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "exaone-deep",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-11T10:15:47Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/cpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-cpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=false"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "32b",
+      "ollama_ref": "exaone-deep:32b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-fp16",
+      "ollama_ref": "exaone-deep:32b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 84.52 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q4-k-m",
+      "ollama_ref": "exaone-deep:32b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.77 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-q80",
+      "ollama_ref": "exaone-deep:32b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 50.02 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b",
+      "ollama_ref": "exaone-deep:7.8b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-fp16",
+      "ollama_ref": "exaone-deep:7.8b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.37 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-q4-k-m",
+      "ollama_ref": "exaone-deep:7.8b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.49 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7.8b-q80",
+      "ollama_ref": "exaone-deep:7.8b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.51 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b",
+      "ollama_ref": "exaone-deep:2.4b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.25 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-fp16",
+      "ollama_ref": "exaone-deep:2.4b-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.51 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-q4-k-m",
+      "ollama_ref": "exaone-deep:2.4b-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.25 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2.4b-q80",
+      "ollama_ref": "exaone-deep:2.4b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.63 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "exaone-deep:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.24 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

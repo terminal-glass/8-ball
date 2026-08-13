@@ -1,0 +1,2 @@
+size_slug,ollama_ref,size_file,fit_status
+cloud,nemotron-3-ultra:cloud,../sizes/cloud.json,unknown

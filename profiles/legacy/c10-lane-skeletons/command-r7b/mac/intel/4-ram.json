@@ -1,0 +1,67 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "command-r7b",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 8.0,
+  "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "7b",
+      "ollama_ref": "command-r7b:7b",
+      "min_system_ram_gb": 9.6,
+      "recommended_system_ram_gb": 11.52,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.6 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b122024-fp16",
+      "ollama_ref": "command-r7b:7b-12-2024-fp16",
+      "min_system_ram_gb": 22.14,
+      "recommended_system_ram_gb": 26.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.14 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b122024-q4-k-m",
+      "ollama_ref": "command-r7b:7b-12-2024-q4_K_M",
+      "min_system_ram_gb": 9.6,
+      "recommended_system_ram_gb": 11.52,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.6 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b122024-q80",
+      "ollama_ref": "command-r7b:7b-12-2024-q8_0",
+      "min_system_ram_gb": 13.51,
+      "recommended_system_ram_gb": 16.21,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.51 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "command-r7b:latest",
+      "min_system_ram_gb": 7.59,
+      "recommended_system_ram_gb": 9.11,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.59 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

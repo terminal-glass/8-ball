@@ -1,0 +1,97 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepseek-v2.5",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-11T10:15:47Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "lane_id": "cloud/aws-lightsail/gpu",
+  "provider_assumption": "profiles/provider-assumptions/cloud-aws-lightsail-gpu.json",
+  "detection_signals": [
+    "provider=aws",
+    "lightsail=true",
+    "gpu=true"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "236b",
+      "ollama_ref": "deepseek-v2.5:236b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 222.52 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "236b-q40",
+      "ollama_ref": "deepseek-v2.5:236b-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 222.52 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "236b-q41",
+      "ollama_ref": "deepseek-v2.5:236b-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 239.77 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "236b-q50",
+      "ollama_ref": "deepseek-v2.5:236b-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 255.87 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "236b-q51",
+      "ollama_ref": "deepseek-v2.5:236b-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 273.12 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "236b-q80",
+      "ollama_ref": "deepseek-v2.5:236b-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 358.22 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepseek-v2.5:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 154.67 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity",
+        "cuda_runtime_verification"
+      ]
+    }
+  ]
+}

@@ -25,9 +25,10 @@ STAGE_FILES = (
     "lane.json",
     "3-cpu.json",
     "4-ram.json",
-    "5-hard_disk.json",
-    "6-CPU_only.json",
-    "7-video_card.json",
+    "5-hard-disk.json",
+    "6-cpu-only.json",
+    "7-gpu-vram.json",
+    "profile-sizes.csv",
 )
 
 NON_MODEL_PROFILE_DIRS = frozenset(
@@ -36,6 +37,8 @@ NON_MODEL_PROFILE_DIRS = frozenset(
         "models",
         "deployment-classes",
         "provider-assumptions",
+        "legacy",
+        "generated",
     }
 )
 
@@ -62,18 +65,21 @@ def test_platform_lane_skeleton_for_sample_models(tmp_path: Path) -> None:
 
 
 @pytest.mark.skipif(
-    not (PROFILES_DIR / "c10-index.json").is_file(),
-    reason="C10 profile index missing",
+    not (PROFILES_DIR / "legacy" / "c10-index.json").is_file(),
+    reason="Legacy C10 profile index missing",
 )
 def test_c10_profile_platform_tree_complete_in_working_tree() -> None:
-    model_slugs = _c10_model_slugs()
+    index_path = PROFILES_DIR / "legacy" / "c10-index.json"
+    rows = json.loads(index_path.read_text(encoding="utf-8")).get("rows", [])
+    model_slugs = sorted({row["model_slug"] for row in rows})
     assert model_slugs, "C10 index must list model slugs"
 
     missing: list[str] = []
+    legacy_pages = PROFILES_DIR / "legacy" / "c10-model-pages"
     for slug in model_slugs:
-        page = PROFILES_DIR / f"{slug}.json"
+        page = legacy_pages / f"{slug}.json"
         if not page.is_file():
-            missing.append(f"{slug}.json")
+            missing.append(f"legacy/c10-model-pages/{slug}.json")
         for lane in PLATFORM_LANES:
             leaf = PROFILES_DIR / slug / lane
             if not leaf.is_dir():
@@ -92,6 +98,11 @@ def test_create_profile_platform_tree_script_runs(tmp_path: Path) -> None:
     if not GENERATED_INSTALL_MANIFEST_PATH.is_file():
         pytest.skip("install manifest missing")
     subprocess.run(["bash", str(script)], cwd=REPO_ROOT, check=True)
+    subprocess.run(
+        ["python3", str(REPO_ROOT / "scripts" / "generate-profiles-from-agents.py")],
+        cwd=REPO_ROOT,
+        check=True,
+    )
 
     model_dirs = sorted(
         path

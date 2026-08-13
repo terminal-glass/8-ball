@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+128b,mistral-medium-3.5:128b,../sizes/128b.json,no_fit
+128b-bf16,mistral-medium-3.5:128b-bf16,../sizes/128b-bf16.json,no_fit
+128b-q4-k-m,mistral-medium-3.5:128b-q4_K_M,../sizes/128b-q4-k-m.json,no_fit
+128b-q80,mistral-medium-3.5:128b-q8_0,../sizes/128b-q80.json,no_fit
+latest,mistral-medium-3.5:latest,../sizes/latest.json,no_fit

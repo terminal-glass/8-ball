@@ -1,0 +1,107 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "ornith",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-11T10:15:48Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "35b",
+      "ollama_ref": "ornith:35b",
+      "min_system_ram_gb": 35.94,
+      "recommended_system_ram_gb": 43.12,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.94 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-bf16",
+      "ollama_ref": "ornith:35b-bf16",
+      "min_system_ram_gb": 91.14,
+      "recommended_system_ram_gb": 109.36,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 91.14 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-q4-k-m",
+      "ollama_ref": "ornith:35b-q4_K_M",
+      "min_system_ram_gb": 35.94,
+      "recommended_system_ram_gb": 43.12,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.94 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "35b-q80",
+      "ollama_ref": "ornith:35b-q8_0",
+      "min_system_ram_gb": 54.34,
+      "recommended_system_ram_gb": 65.2,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 54.34 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b",
+      "ollama_ref": "ornith:9b",
+      "min_system_ram_gb": 10.75,
+      "recommended_system_ram_gb": 12.9,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.75 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-bf16",
+      "ollama_ref": "ornith:9b-bf16",
+      "min_system_ram_gb": 25.01,
+      "recommended_system_ram_gb": 30.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.01 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-q4-k-m",
+      "ollama_ref": "ornith:9b-q4_K_M",
+      "min_system_ram_gb": 10.75,
+      "recommended_system_ram_gb": 12.9,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.75 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "9b-q80",
+      "ollama_ref": "ornith:9b-q8_0",
+      "min_system_ram_gb": 15.24,
+      "recommended_system_ram_gb": 18.28,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.24 GB RAM; lane provides 9.6 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "ornith:latest",
+      "min_system_ram_gb": 8.16,
+      "recommended_system_ram_gb": 9.8,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

@@ -1,0 +1,7 @@
+size_slug,ollama_ref,size_file,fit_status
+24b,lfm2:24b,../sizes/24b.json,fit
+24b-a2b,lfm2:24b-a2b,../sizes/24b-a2b.json,fit
+24b-bf16,lfm2:24b-bf16,../sizes/24b-bf16.json,no_fit
+24b-q4-k-m,lfm2:24b-q4_K_M,../sizes/24b-q4-k-m.json,fit
+24b-q80,lfm2:24b-q8_0,../sizes/24b-q80.json,no_fit
+latest,lfm2:latest,../sizes/latest.json,fit

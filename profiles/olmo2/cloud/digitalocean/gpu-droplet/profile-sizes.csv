@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+13b,olmo2:13b,../sizes/13b.json,fit
+13b1124-instruct-fp16,olmo2:13b-1124-instruct-fp16,../sizes/13b1124-instruct-fp16.json,no_fit
+13b1124-instruct-q4-k-m,olmo2:13b-1124-instruct-q4_K_M,../sizes/13b1124-instruct-q4-k-m.json,fit
+13b1124-instruct-q80,olmo2:13b-1124-instruct-q8_0,../sizes/13b1124-instruct-q80.json,no_fit
+7b,olmo2:7b,../sizes/7b.json,fit
+7b1124-instruct-fp16,olmo2:7b-1124-instruct-fp16,../sizes/7b1124-instruct-fp16.json,no_fit
+7b1124-instruct-q4-k-m,olmo2:7b-1124-instruct-q4_K_M,../sizes/7b1124-instruct-q4-k-m.json,fit
+7b1124-instruct-q80,olmo2:7b-1124-instruct-q8_0,../sizes/7b1124-instruct-q80.json,fit
+latest,olmo2:latest,../sizes/latest.json,fit

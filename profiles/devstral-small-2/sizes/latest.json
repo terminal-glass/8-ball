@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "devstral-small-2",
+  "size_slug": "latest",
+  "ollama_ref": "devstral-small-2:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 15000000000,
+  "estimated": {
+    "min_system_ram_gb": 18.97,
+    "recommended_system_ram_gb": 22.77,
+    "min_vram_gb": 17.25,
+    "recommended_vram_gb": 18.97,
+    "min_disk_gb": 23.0
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/devstral-small-2/tags",
+    "retrieved_at": "2026-08-01T11:52:57Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 18.97,
+    "recommended_ram_gb": 22.77,
+    "minimum_vram_gb": 17.25,
+    "recommended_vram_gb": 18.97,
+    "minimum_disk_free_gb": 13.97,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=devstral-small-2;size_index=6;ollama_ref=devstral-small-2:latest"
+  }
+}

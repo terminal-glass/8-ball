@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "dolphin-mixtral",
+  "size_slug": "8x7b-v2.7-q5-k-s",
+  "ollama_ref": "dolphin-mixtral:8x7b-v2.7-q5_K_S",
+  "parameter_count": null,
+  "quantization": "q5_K_S",
+  "download_size_bytes": 32000000000,
+  "estimated": {
+    "min_system_ram_gb": 38.52,
+    "recommended_system_ram_gb": 46.23,
+    "min_vram_gb": 36.8,
+    "recommended_vram_gb": 38.52,
+    "min_disk_gb": 43.4
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/dolphin-mixtral/tags",
+    "retrieved_at": "2026-08-01T11:53:04Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 38.52,
+    "recommended_ram_gb": 46.23,
+    "minimum_vram_gb": 36.8,
+    "recommended_vram_gb": 38.52,
+    "minimum_disk_free_gb": 29.802,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=dolphin-mixtral;size_index=62;ollama_ref=dolphin-mixtral:8x7b-v2.7-q5_K_S"
+  }
+}

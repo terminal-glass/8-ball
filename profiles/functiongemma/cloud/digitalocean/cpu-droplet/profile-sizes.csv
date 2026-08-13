@@ -1,0 +1,5 @@
+size_slug,ollama_ref,size_file,fit_status
+270m,functiongemma:270m,../sizes/270m.json,fit
+270m-it-fp16,functiongemma:270m-it-fp16,../sizes/270m-it-fp16.json,fit
+270m-it-q80,functiongemma:270m-it-q8_0,../sizes/270m-it-q80.json,fit
+latest,functiongemma:latest,../sizes/latest.json,fit

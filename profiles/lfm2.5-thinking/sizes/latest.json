@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "lfm2.5-thinking",
+  "size_slug": "latest",
+  "ollama_ref": "lfm2.5-thinking:latest",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": 731000000,
+  "estimated": {
+    "min_system_ram_gb": 2.57,
+    "recommended_system_ram_gb": 3.08,
+    "min_vram_gb": 0.84,
+    "recommended_vram_gb": 2.57,
+    "min_disk_gb": 5.88
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/lfm2.5-thinking/tags",
+    "retrieved_at": "2026-08-01T11:55:00Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 2.57,
+    "recommended_ram_gb": 3.08,
+    "minimum_vram_gb": 0.84,
+    "recommended_vram_gb": 2.57,
+    "minimum_disk_free_gb": 0.681,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=lfm2.5-thinking;size_index=5;ollama_ref=lfm2.5-thinking:latest"
+  }
+}

@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file
+40b,alfred:40b,sizes/40b.json
+40b1023-q40,alfred:40b-1023-q4_0,sizes/40b1023-q40.json
+40b1023-q41,alfred:40b-1023-q4_1,sizes/40b1023-q41.json
+40b1023-q50,alfred:40b-1023-q5_0,sizes/40b1023-q50.json
+40b1023-q51,alfred:40b-1023-q5_1,sizes/40b1023-q51.json
+40b1023-q80,alfred:40b-1023-q8_0,sizes/40b1023-q80.json
+latest,alfred:latest,sizes/latest.json

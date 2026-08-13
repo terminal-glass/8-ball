@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+300m,embeddinggemma:300m,../sizes/300m.json,no_fit
+300m-bf16,embeddinggemma:300m-bf16,../sizes/300m-bf16.json,no_fit
+300m-qat-q40,embeddinggemma:300m-qat-q4_0,../sizes/300m-qat-q40.json,fit
+300m-qat-q80,embeddinggemma:300m-qat-q8_0,../sizes/300m-qat-q80.json,fit
+latest,embeddinggemma:latest,../sizes/latest.json,no_fit

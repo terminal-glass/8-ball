@@ -1,20 +1,24 @@
 {
-  "schema_version": "c10.stage.v1",
+  "schema_version": "profiles.lane.v1",
   "model_slug": "openthinker",
-  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "target_lane": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T05:53:10Z",
-  "provenance": {
-    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
-    "provenance_status": "provider_published"
-  },
-  "lane_id": "cloud/digitalocean/cpu-droplet",
-  "provider_assumption": "profiles/provider-assumptions/cloud-digitalocean-cpu-droplet.json",
   "detection_signals": [
     "provider=digitalocean",
     "droplet=true",
     "gpu=false"
   ],
+  "hardware": {
+    "cpu_cores": null,
+    "system_ram_gb": null,
+    "usable_model_ram_gb": null,
+    "minimum_free_disk_gb": 25,
+    "total_vram_gb": null,
+    "cuda_available": false,
+    "apple_metal_available": false,
+    "provenance_status": "provider_published",
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json"
+  },
   "size_fit": [
     {
       "size_slug": "32b",
@@ -136,5 +140,7 @@
       "reason": "fits lane hardware assumptions",
       "missing_evidence": []
     }
-  ]
+  ],
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z"
 }

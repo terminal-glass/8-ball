@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+8b,dolphin3:8b,../sizes/8b.json,unknown
+8b-llama3.1-fp16,dolphin3:8b-llama3.1-fp16,../sizes/8b-llama3.1-fp16.json,no_fit
+8b-llama3.1-q4-k-m,dolphin3:8b-llama3.1-q4_K_M,../sizes/8b-llama3.1-q4-k-m.json,unknown
+8b-llama3.1-q80,dolphin3:8b-llama3.1-q8_0,../sizes/8b-llama3.1-q80.json,unknown
+latest,dolphin3:latest,../sizes/latest.json,unknown

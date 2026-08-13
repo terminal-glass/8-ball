@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "olmo2",
+  "size_slug": "13b1124-instruct-q4-k-m",
+  "ollama_ref": "olmo2:13b-1124-instruct-q4_K_M",
+  "parameter_count": 13000000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 8400000000,
+  "estimated": {
+    "min_system_ram_gb": 15.12,
+    "recommended_system_ram_gb": 18.15,
+    "min_vram_gb": 9.66,
+    "recommended_vram_gb": 15.12,
+    "min_disk_gb": 15.08
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/olmo2/tags",
+    "retrieved_at": "2026-08-01T11:57:30Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 15.12,
+    "recommended_ram_gb": 18.15,
+    "minimum_vram_gb": 9.66,
+    "recommended_vram_gb": 15.12,
+    "minimum_disk_free_gb": 7.823,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=olmo2;size_index=3;ollama_ref=olmo2:13b-1124-instruct-q4_K_M"
+  }
+}

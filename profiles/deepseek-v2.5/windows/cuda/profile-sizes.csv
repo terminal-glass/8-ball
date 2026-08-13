@@ -1,0 +1,8 @@
+size_slug,ollama_ref,size_file,fit_status
+236b,deepseek-v2.5:236b,../sizes/236b.json,no_fit
+236b-q40,deepseek-v2.5:236b-q4_0,../sizes/236b-q40.json,no_fit
+236b-q41,deepseek-v2.5:236b-q4_1,../sizes/236b-q41.json,no_fit
+236b-q50,deepseek-v2.5:236b-q5_0,../sizes/236b-q50.json,no_fit
+236b-q51,deepseek-v2.5:236b-q5_1,../sizes/236b-q51.json,no_fit
+236b-q80,deepseek-v2.5:236b-q8_0,../sizes/236b-q80.json,no_fit
+latest,deepseek-v2.5:latest,../sizes/latest.json,no_fit

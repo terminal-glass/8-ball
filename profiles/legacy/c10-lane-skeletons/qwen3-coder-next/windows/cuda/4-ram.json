@@ -1,0 +1,47 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3-coder-next",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T07:44:42Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 32.0,
+  "usable_model_ram_gb": 20.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3-coder-next:latest",
+      "min_system_ram_gb": 61.52,
+      "recommended_system_ram_gb": 73.83,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 61.52 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "qwen3-coder-next:q4_K_M",
+      "min_system_ram_gb": 61.52,
+      "recommended_system_ram_gb": 73.83,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 61.52 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "qwen3-coder-next:q8_0",
+      "min_system_ram_gb": 99.47,
+      "recommended_system_ram_gb": 119.37,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 99.47 GB RAM; lane provides 20.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

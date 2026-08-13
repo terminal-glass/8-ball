@@ -1,0 +1,117 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "all-minilm",
+  "lane_path": "cloud/aws-lightsail/gpu",
+  "provider_assumption_id": "cloud-aws-lightsail-gpu",
+  "generated_at": "2026-08-11T10:15:47Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-research-gpu-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.6,
+  "size_ram_fit": [
+    {
+      "size_slug": "33m",
+      "ollama_ref": "all-minilm:33m",
+      "min_system_ram_gb": 1.81,
+      "recommended_system_ram_gb": 2.17,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33m-l12-v2-fp16",
+      "ollama_ref": "all-minilm:33m-l12-v2-fp16",
+      "min_system_ram_gb": 1.81,
+      "recommended_system_ram_gb": 2.17,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22m",
+      "ollama_ref": "all-minilm:22m",
+      "min_system_ram_gb": 1.78,
+      "recommended_system_ram_gb": 2.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22m-l6-v2-fp16",
+      "ollama_ref": "all-minilm:22m-l6-v2-fp16",
+      "min_system_ram_gb": 1.78,
+      "recommended_system_ram_gb": 2.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "l12",
+      "ollama_ref": "all-minilm:l12",
+      "min_system_ram_gb": 1.8,
+      "recommended_system_ram_gb": 2.16,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "l12-v2",
+      "ollama_ref": "all-minilm:l12-v2",
+      "min_system_ram_gb": 1.8,
+      "recommended_system_ram_gb": 2.16,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "l6",
+      "ollama_ref": "all-minilm:l6",
+      "min_system_ram_gb": 1.78,
+      "recommended_system_ram_gb": 2.13,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "l6-v2",
+      "ollama_ref": "all-minilm:l6-v2",
+      "min_system_ram_gb": 1.78,
+      "recommended_system_ram_gb": 2.13,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "all-minilm:latest",
+      "min_system_ram_gb": 1.78,
+      "recommended_system_ram_gb": 2.13,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v2",
+      "ollama_ref": "all-minilm:v2",
+      "min_system_ram_gb": 1.78,
+      "recommended_system_ram_gb": 2.13,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

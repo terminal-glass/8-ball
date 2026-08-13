@@ -1,0 +1,187 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "athene-v2",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "72b",
+      "ollama_ref": "athene-v2:72b",
+      "min_system_ram_gb": 76.47,
+      "recommended_system_ram_gb": 91.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 76.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-fp16",
+      "ollama_ref": "athene-v2:72b-fp16",
+      "min_system_ram_gb": 189.17,
+      "recommended_system_ram_gb": 227.01,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 189.17 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q2-k",
+      "ollama_ref": "athene-v2:72b-q2_K",
+      "min_system_ram_gb": 56.92,
+      "recommended_system_ram_gb": 68.31,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 56.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q3-k-l",
+      "ollama_ref": "athene-v2:72b-q3_K_L",
+      "min_system_ram_gb": 68.42,
+      "recommended_system_ram_gb": 82.11,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 68.42 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q3-k-m",
+      "ollama_ref": "athene-v2:72b-q3_K_M",
+      "min_system_ram_gb": 66.12,
+      "recommended_system_ram_gb": 79.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 66.12 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q3-k-s",
+      "ollama_ref": "athene-v2:72b-q3_K_S",
+      "min_system_ram_gb": 61.52,
+      "recommended_system_ram_gb": 73.83,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 61.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q4-k-m",
+      "ollama_ref": "athene-v2:72b-q4_K_M",
+      "min_system_ram_gb": 76.47,
+      "recommended_system_ram_gb": 91.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 76.47 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q4-k-s",
+      "ollama_ref": "athene-v2:72b-q4_K_S",
+      "min_system_ram_gb": 73.02,
+      "recommended_system_ram_gb": 87.63,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 73.02 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q40",
+      "ollama_ref": "athene-v2:72b-q4_0",
+      "min_system_ram_gb": 69.57,
+      "recommended_system_ram_gb": 83.49,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 69.57 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q41",
+      "ollama_ref": "athene-v2:72b-q4_1",
+      "min_system_ram_gb": 75.32,
+      "recommended_system_ram_gb": 90.39,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 75.32 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q5-k-m",
+      "ollama_ref": "athene-v2:72b-q5_K_M",
+      "min_system_ram_gb": 84.52,
+      "recommended_system_ram_gb": 101.43,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 84.52 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q5-k-s",
+      "ollama_ref": "athene-v2:72b-q5_K_S",
+      "min_system_ram_gb": 81.07,
+      "recommended_system_ram_gb": 97.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 81.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q50",
+      "ollama_ref": "athene-v2:72b-q5_0",
+      "min_system_ram_gb": 79.92,
+      "recommended_system_ram_gb": 95.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q51",
+      "ollama_ref": "athene-v2:72b-q5_1",
+      "min_system_ram_gb": 85.67,
+      "recommended_system_ram_gb": 102.81,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 85.67 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q6-k",
+      "ollama_ref": "athene-v2:72b-q6_K",
+      "min_system_ram_gb": 96.02,
+      "recommended_system_ram_gb": 115.23,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 96.02 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "72b-q80",
+      "ollama_ref": "athene-v2:72b-q8_0",
+      "min_system_ram_gb": 110.97,
+      "recommended_system_ram_gb": 133.17,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 110.97 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "athene-v2:latest",
+      "min_system_ram_gb": 55.77,
+      "recommended_system_ram_gb": 66.93,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 55.77 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

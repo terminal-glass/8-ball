@@ -1,0 +1,197 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "tinydolphin",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T07:44:42Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 24.0,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "1.1b",
+      "ollama_ref": "tinydolphin:1.1b",
+      "min_system_ram_gb": 2.77,
+      "recommended_system_ram_gb": 3.33,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-fp16",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-fp16",
+      "min_system_ram_gb": 4.57,
+      "recommended_system_ram_gb": 5.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q2-k",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q2_K",
+      "min_system_ram_gb": 2.54,
+      "recommended_system_ram_gb": 3.05,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q3-k-l",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q3_K_L",
+      "min_system_ram_gb": 2.72,
+      "recommended_system_ram_gb": 3.27,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q3-k-m",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q3_K_M",
+      "min_system_ram_gb": 2.67,
+      "recommended_system_ram_gb": 3.21,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q3-k-s",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q3_K_S",
+      "min_system_ram_gb": 2.62,
+      "recommended_system_ram_gb": 3.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q4-k-m",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q4_K_M",
+      "min_system_ram_gb": 2.81,
+      "recommended_system_ram_gb": 3.37,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q4-k-s",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q4_K_S",
+      "min_system_ram_gb": 2.78,
+      "recommended_system_ram_gb": 3.33,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q40",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q4_0",
+      "min_system_ram_gb": 2.77,
+      "recommended_system_ram_gb": 3.33,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q41",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q4_1",
+      "min_system_ram_gb": 2.85,
+      "recommended_system_ram_gb": 3.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q5-k-m",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q5_K_M",
+      "min_system_ram_gb": 2.94,
+      "recommended_system_ram_gb": 3.53,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q5-k-s",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q5_K_S",
+      "min_system_ram_gb": 2.92,
+      "recommended_system_ram_gb": 3.51,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q50",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q5_0",
+      "min_system_ram_gb": 2.92,
+      "recommended_system_ram_gb": 3.51,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q51",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q5_1",
+      "min_system_ram_gb": 3.0,
+      "recommended_system_ram_gb": 3.6,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q6-k",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q6_K",
+      "min_system_ram_gb": 3.08,
+      "recommended_system_ram_gb": 3.7,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.1b-v2.8-q80",
+      "ollama_ref": "tinydolphin:1.1b-v2.8-q8_0",
+      "min_system_ram_gb": 3.42,
+      "recommended_system_ram_gb": 4.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "tinydolphin:latest",
+      "min_system_ram_gb": 2.46,
+      "recommended_system_ram_gb": 2.95,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v2.8",
+      "ollama_ref": "tinydolphin:v2.8",
+      "min_system_ram_gb": 2.46,
+      "recommended_system_ram_gb": 2.95,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

@@ -1,0 +1,737 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "phi3",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 8.0,
+  "usable_model_ram_gb": 4.5,
+  "size_ram_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "phi3:14b",
+      "min_system_ram_gb": 14.83,
+      "recommended_system_ram_gb": 17.8,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.83 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-instruct",
+      "ollama_ref": "phi3:14b-instruct",
+      "min_system_ram_gb": 14.83,
+      "recommended_system_ram_gb": 17.8,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.83 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-fp16",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-fp16",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q2-k",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q2_K",
+      "min_system_ram_gb": 11.61,
+      "recommended_system_ram_gb": 13.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q3-k-l",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q3_K_L",
+      "min_system_ram_gb": 14.37,
+      "recommended_system_ram_gb": 17.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q3-k-m",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q3_K_M",
+      "min_system_ram_gb": 13.68,
+      "recommended_system_ram_gb": 16.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.68 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q3-k-s",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q3_K_S",
+      "min_system_ram_gb": 12.76,
+      "recommended_system_ram_gb": 15.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.76 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q4-k-m",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_K_M",
+      "min_system_ram_gb": 15.64,
+      "recommended_system_ram_gb": 18.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.64 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q4-k-s",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_K_S",
+      "min_system_ram_gb": 14.95,
+      "recommended_system_ram_gb": 17.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q40",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_0",
+      "min_system_ram_gb": 14.83,
+      "recommended_system_ram_gb": 17.8,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.83 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q41",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q4_1",
+      "min_system_ram_gb": 15.87,
+      "recommended_system_ram_gb": 19.04,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q5-k-m",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_K_M",
+      "min_system_ram_gb": 17.25,
+      "recommended_system_ram_gb": 20.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q5-k-s",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_K_S",
+      "min_system_ram_gb": 16.79,
+      "recommended_system_ram_gb": 20.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.79 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q50",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_0",
+      "min_system_ram_gb": 16.79,
+      "recommended_system_ram_gb": 20.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.79 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q51",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q5_1",
+      "min_system_ram_gb": 17.25,
+      "recommended_system_ram_gb": 20.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q6-k",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q6_K",
+      "min_system_ram_gb": 18.4,
+      "recommended_system_ram_gb": 22.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium128k-instruct-q80",
+      "ollama_ref": "phi3:14b-medium-128k-instruct-q8_0",
+      "min_system_ram_gb": 23.0,
+      "recommended_system_ram_gb": 27.6,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-fp16",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-fp16",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q2-k",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q2_K",
+      "min_system_ram_gb": 11.61,
+      "recommended_system_ram_gb": 13.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q3-k-l",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q3_K_L",
+      "min_system_ram_gb": 14.37,
+      "recommended_system_ram_gb": 17.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.37 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q3-k-m",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q3_K_M",
+      "min_system_ram_gb": 13.68,
+      "recommended_system_ram_gb": 16.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.68 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q3-k-s",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q3_K_S",
+      "min_system_ram_gb": 12.76,
+      "recommended_system_ram_gb": 15.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.76 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q4-k-m",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_K_M",
+      "min_system_ram_gb": 15.64,
+      "recommended_system_ram_gb": 18.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.64 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q4-k-s",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_K_S",
+      "min_system_ram_gb": 14.95,
+      "recommended_system_ram_gb": 17.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.95 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q40",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_0",
+      "min_system_ram_gb": 14.83,
+      "recommended_system_ram_gb": 17.8,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 14.83 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q41",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q4_1",
+      "min_system_ram_gb": 15.87,
+      "recommended_system_ram_gb": 19.04,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.87 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q5-k-m",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_K_M",
+      "min_system_ram_gb": 17.25,
+      "recommended_system_ram_gb": 20.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q5-k-s",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_K_S",
+      "min_system_ram_gb": 16.79,
+      "recommended_system_ram_gb": 20.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.79 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q50",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_0",
+      "min_system_ram_gb": 16.79,
+      "recommended_system_ram_gb": 20.15,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.79 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q51",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q5_1",
+      "min_system_ram_gb": 17.25,
+      "recommended_system_ram_gb": 20.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.25 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q6-k",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q6_K",
+      "min_system_ram_gb": 18.4,
+      "recommended_system_ram_gb": 22.08,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 18.4 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-medium4k-instruct-q80",
+      "ollama_ref": "phi3:14b-medium-4k-instruct-q8_0",
+      "min_system_ram_gb": 23.0,
+      "recommended_system_ram_gb": 27.6,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b",
+      "ollama_ref": "phi3:3.8b",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-instruct",
+      "ollama_ref": "phi3:3.8b-instruct",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-fp16",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-fp16",
+      "min_system_ram_gb": 11.56,
+      "recommended_system_ram_gb": 13.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.56 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q2-k",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q2_K",
+      "min_system_ram_gb": 4.43,
+      "recommended_system_ram_gb": 5.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q3-k-l",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q3_K_L",
+      "min_system_ram_gb": 5.23,
+      "recommended_system_ram_gb": 6.28,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.23 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q3-k-m",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q3_K_M",
+      "min_system_ram_gb": 5.12,
+      "recommended_system_ram_gb": 6.14,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q3-k-s",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q3_K_S",
+      "min_system_ram_gb": 4.77,
+      "recommended_system_ram_gb": 5.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q4-k-m",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_K_M",
+      "min_system_ram_gb": 5.58,
+      "recommended_system_ram_gb": 6.69,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.58 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q4-k-s",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_K_S",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q40",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_0",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q41",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q4_1",
+      "min_system_ram_gb": 5.58,
+      "recommended_system_ram_gb": 6.69,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.58 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q5-k-m",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_K_M",
+      "min_system_ram_gb": 6.04,
+      "recommended_system_ram_gb": 7.24,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.04 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q5-k-s",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_K_S",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q50",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_0",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q51",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q5_1",
+      "min_system_ram_gb": 6.15,
+      "recommended_system_ram_gb": 7.38,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.15 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q6-k",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q6_K",
+      "min_system_ram_gb": 6.38,
+      "recommended_system_ram_gb": 7.66,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.38 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini128k-instruct-q80",
+      "ollama_ref": "phi3:3.8b-mini-128k-instruct-q8_0",
+      "min_system_ram_gb": 7.53,
+      "recommended_system_ram_gb": 9.04,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.53 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-fp16",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-fp16",
+      "min_system_ram_gb": 11.56,
+      "recommended_system_ram_gb": 13.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.56 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q2-k",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q2_K",
+      "min_system_ram_gb": 4.43,
+      "recommended_system_ram_gb": 5.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q3-k-l",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q3_K_L",
+      "min_system_ram_gb": 5.23,
+      "recommended_system_ram_gb": 6.28,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.23 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q3-k-m",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q3_K_M",
+      "min_system_ram_gb": 5.12,
+      "recommended_system_ram_gb": 6.14,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.12 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q3-k-s",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q3_K_S",
+      "min_system_ram_gb": 4.77,
+      "recommended_system_ram_gb": 5.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 4.77 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q4-k-m",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_K_M",
+      "min_system_ram_gb": 5.58,
+      "recommended_system_ram_gb": 6.69,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.58 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q4-k-s",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_K_S",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q40",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_0",
+      "min_system_ram_gb": 5.35,
+      "recommended_system_ram_gb": 6.42,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.35 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q41",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q4_1",
+      "min_system_ram_gb": 5.58,
+      "recommended_system_ram_gb": 6.69,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.58 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q5-k-m",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_K_M",
+      "min_system_ram_gb": 6.04,
+      "recommended_system_ram_gb": 7.24,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.04 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q5-k-s",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_K_S",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q50",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_0",
+      "min_system_ram_gb": 5.81,
+      "recommended_system_ram_gb": 6.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q51",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q5_1",
+      "min_system_ram_gb": 6.15,
+      "recommended_system_ram_gb": 7.38,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.15 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q6-k",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q6_K",
+      "min_system_ram_gb": 6.38,
+      "recommended_system_ram_gb": 7.66,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 6.38 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "3.8b-mini4k-instruct-q80",
+      "ollama_ref": "phi3:3.8b-mini-4k-instruct-q8_0",
+      "min_system_ram_gb": 7.53,
+      "recommended_system_ram_gb": 9.04,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.53 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "medium128k",
+      "ollama_ref": "phi3:medium-128k",
+      "min_system_ram_gb": 10.81,
+      "recommended_system_ram_gb": 12.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mini128k",
+      "ollama_ref": "phi3:mini-128k",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "medium4k",
+      "ollama_ref": "phi3:medium-4k",
+      "min_system_ram_gb": 10.81,
+      "recommended_system_ram_gb": 12.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mini4k",
+      "ollama_ref": "phi3:mini-4k",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "instruct",
+      "ollama_ref": "phi3:instruct",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "phi3:latest",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "medium",
+      "ollama_ref": "phi3:medium",
+      "min_system_ram_gb": 10.81,
+      "recommended_system_ram_gb": 12.97,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.81 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "mini",
+      "ollama_ref": "phi3:mini",
+      "min_system_ram_gb": 4.25,
+      "recommended_system_ram_gb": 5.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "minimax-m3",
+  "size_slug": "cloud",
+  "ollama_ref": "minimax-m3:cloud",
+  "parameter_count": null,
+  "quantization": null,
+  "download_size_bytes": null,
+  "estimated": {
+    "min_system_ram_gb": null,
+    "recommended_system_ram_gb": null,
+    "min_vram_gb": null,
+    "recommended_vram_gb": null,
+    "min_disk_gb": null
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/minimax-m3/tags",
+    "retrieved_at": "2026-08-01T11:56:11Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": null,
+    "recommended_ram_gb": null,
+    "minimum_vram_gb": null,
+    "recommended_vram_gb": null,
+    "minimum_disk_free_gb": null,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=minimax-m3;size_index=1;ollama_ref=minimax-m3:cloud"
+  }
+}

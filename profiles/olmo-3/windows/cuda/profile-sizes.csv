@@ -1,0 +1,16 @@
+size_slug,ollama_ref,size_file,fit_status
+32b,olmo-3:32b,../sizes/32b.json,no_fit
+32b-think,olmo-3:32b-think,../sizes/32b-think.json,no_fit
+32b-think-fp16,olmo-3:32b-think-fp16,../sizes/32b-think-fp16.json,no_fit
+32b-think-q4-k-m,olmo-3:32b-think-q4_K_M,../sizes/32b-think-q4-k-m.json,no_fit
+32b-think-q80,olmo-3:32b-think-q8_0,../sizes/32b-think-q80.json,no_fit
+7b,olmo-3:7b,../sizes/7b.json,unknown
+7b-instruct,olmo-3:7b-instruct,../sizes/7b-instruct.json,unknown
+7b-instruct-fp16,olmo-3:7b-instruct-fp16,../sizes/7b-instruct-fp16.json,no_fit
+7b-instruct-q4-k-m,olmo-3:7b-instruct-q4_K_M,../sizes/7b-instruct-q4-k-m.json,unknown
+7b-instruct-q80,olmo-3:7b-instruct-q8_0,../sizes/7b-instruct-q80.json,unknown
+7b-think,olmo-3:7b-think,../sizes/7b-think.json,unknown
+7b-think-fp16,olmo-3:7b-think-fp16,../sizes/7b-think-fp16.json,no_fit
+7b-think-q4-k-m,olmo-3:7b-think-q4_K_M,../sizes/7b-think-q4-k-m.json,unknown
+7b-think-q80,olmo-3:7b-think-q8_0,../sizes/7b-think-q80.json,unknown
+latest,olmo-3:latest,../sizes/latest.json,unknown

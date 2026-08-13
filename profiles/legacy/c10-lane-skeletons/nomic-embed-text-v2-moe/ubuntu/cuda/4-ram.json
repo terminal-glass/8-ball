@@ -1,0 +1,27 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nomic-embed-text-v2-moe",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 24.0,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nomic-embed-text-v2-moe:latest",
+      "min_system_ram_gb": 2.83,
+      "recommended_system_ram_gb": 3.39,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

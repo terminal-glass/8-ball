@@ -1,0 +1,57 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "glm-4.7-flash",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "bf16",
+      "ollama_ref": "glm-4.7-flash:bf16",
+      "min_system_ram_gb": 70.72,
+      "recommended_system_ram_gb": 84.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 70.72 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "glm-4.7-flash:latest",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "glm-4.7-flash:q4_K_M",
+      "min_system_ram_gb": 23.57,
+      "recommended_system_ram_gb": 28.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.57 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "glm-4.7-flash:q8_0",
+      "min_system_ram_gb": 38.52,
+      "recommended_system_ram_gb": 46.23,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.52 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

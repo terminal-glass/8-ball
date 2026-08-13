@@ -1,9 +1,9 @@
 {
-  "schema_version": "c10.stage.v1",
+  "schema_version": "profiles.stage.v1",
   "model_slug": "qwen3-embedding",
   "lane_path": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-01-01T22:38:27Z",
   "provenance": {
     "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
     "provenance_status": "assumed_client_class"

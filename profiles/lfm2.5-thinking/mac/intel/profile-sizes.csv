@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+1.2b,lfm2.5-thinking:1.2b,../sizes/1.2b.json,fit
+1.2b-bf16,lfm2.5-thinking:1.2b-bf16,../sizes/1.2b-bf16.json,no_fit
+1.2b-q4-k-m,lfm2.5-thinking:1.2b-q4_K_M,../sizes/1.2b-q4-k-m.json,fit
+1.2b-q80,lfm2.5-thinking:1.2b-q8_0,../sizes/1.2b-q80.json,fit
+latest,lfm2.5-thinking:latest,../sizes/latest.json,fit

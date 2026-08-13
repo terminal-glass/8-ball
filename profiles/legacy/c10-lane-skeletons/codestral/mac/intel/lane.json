@@ -1,0 +1,155 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "codestral",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/intel",
+  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "22b",
+      "ollama_ref": "codestral:22b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q2-k",
+      "ollama_ref": "codestral:22b-v0.1-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.59 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q3-k-l",
+      "ollama_ref": "codestral:22b-v0.1-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 21.85 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q3-k-m",
+      "ollama_ref": "codestral:22b-v0.1-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 20.7 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q3-k-s",
+      "ollama_ref": "codestral:22b-v0.1-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 19.09 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q4-k-m",
+      "ollama_ref": "codestral:22b-v0.1-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q4-k-s",
+      "ollama_ref": "codestral:22b-v0.1-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q40",
+      "ollama_ref": "codestral:22b-v0.1-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 23.0 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q41",
+      "ollama_ref": "codestral:22b-v0.1-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.15 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q5-k-m",
+      "ollama_ref": "codestral:22b-v0.1-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 26.45 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q5-k-s",
+      "ollama_ref": "codestral:22b-v0.1-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q50",
+      "ollama_ref": "codestral:22b-v0.1-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 25.3 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q51",
+      "ollama_ref": "codestral:22b-v0.1-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.6 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q6-k",
+      "ollama_ref": "codestral:22b-v0.1-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "22b-v0.1-q80",
+      "ollama_ref": "codestral:22b-v0.1-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "codestral:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "v0.1",
+      "ollama_ref": "codestral:v0.1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.67 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

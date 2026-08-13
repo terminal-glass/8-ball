@@ -1,0 +1,4 @@
+size_slug,ollama_ref,size_file
+latest,qwen3-coder-next:latest,sizes/latest.json
+q4-k-m,qwen3-coder-next:q4_K_M,sizes/q4-k-m.json
+q80,qwen3-coder-next:q8_0,sizes/q80.json

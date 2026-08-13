@@ -1,0 +1,110 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "gemma3n",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T05:53:09Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "e4b",
+      "ollama_ref": "gemma3n:e4b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e4b-it-fp16",
+      "ollama_ref": "gemma3n:e4b-it-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 17.82 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e4b-it-q4-k-m",
+      "ollama_ref": "gemma3n:e4b-it-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e4b-it-q80",
+      "ollama_ref": "gemma3n:e4b-it-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e2b",
+      "ollama_ref": "gemma3n:e2b",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e2b-it-fp16",
+      "ollama_ref": "gemma3n:e2b-it-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.96 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e2b-it-q4-k-m",
+      "ollama_ref": "gemma3n:e2b-it-q4_K_M",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "e2b-it-q80",
+      "ollama_ref": "gemma3n:e2b-it-q8_0",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "gemma3n:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

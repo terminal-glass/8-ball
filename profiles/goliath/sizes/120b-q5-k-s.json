@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "goliath",
+  "size_slug": "120b-q5-k-s",
+  "ollama_ref": "goliath:120b-q5_K_S",
+  "parameter_count": 120000000000,
+  "quantization": "q5_K_S",
+  "download_size_bytes": 81000000000,
+  "estimated": {
+    "min_system_ram_gb": 129.38,
+    "recommended_system_ram_gb": 155.25,
+    "min_vram_gb": 93.15,
+    "recommended_vram_gb": 129.38,
+    "min_disk_gb": 102.2
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/goliath/tags",
+    "retrieved_at": "2026-08-01T11:54:01Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 129.38,
+    "recommended_ram_gb": 155.25,
+    "minimum_vram_gb": 93.15,
+    "recommended_vram_gb": 129.38,
+    "minimum_disk_free_gb": 75.437,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=goliath;size_index=11;ollama_ref=goliath:120b-q5_K_S"
+  }
+}

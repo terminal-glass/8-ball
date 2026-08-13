@@ -1,0 +1,91 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3-next",
+  "lane_path": "mac/intel",
+  "provider_assumption_id": "mac-intel",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/intel",
+  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=x86_64"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "80b",
+      "ollama_ref": "qwen3-next:80b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "80b-a3b-instruct-fp16",
+      "ollama_ref": "qwen3-next:80b-a3b-instruct-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 207.57 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "80b-a3b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-next:80b-a3b-instruct-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "80b-a3b-instruct-q80",
+      "ollama_ref": "qwen3-next:80b-a3b-instruct-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 122.47 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "80b-a3b-thinking",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "80b-a3b-thinking-fp16",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 207.57 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "80b-a3b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 82.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "80b-a3b-thinking-q80",
+      "ollama_ref": "qwen3-next:80b-a3b-thinking-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 122.47 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3-next:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 59.22 GB RAM; lane provides 4.5 GB usable",
+      "missing_evidence": []
+    }
+  ]
+}

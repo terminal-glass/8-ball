@@ -1,0 +1,687 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "wizardcoder",
+  "lane_path": "ubuntu/cuda",
+  "provider_assumption_id": "ubuntu-cuda",
+  "generated_at": "2026-08-06T07:44:42Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-CUDA-Server-Assumptions.csv",
+    "provenance_status": "internal_assumption_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 24.0,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "34b-python",
+      "ollama_ref": "wizardcoder:34b-python",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-fp16",
+      "ollama_ref": "wizardcoder:34b-python-fp16",
+      "min_system_ram_gb": 88.55,
+      "recommended_system_ram_gb": 106.26,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 88.55 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q2-k",
+      "ollama_ref": "wizardcoder:34b-python-q2_K",
+      "min_system_ram_gb": 27.6,
+      "recommended_system_ram_gb": 33.12,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.6 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q3-k-l",
+      "ollama_ref": "wizardcoder:34b-python-q3_K_L",
+      "min_system_ram_gb": 32.2,
+      "recommended_system_ram_gb": 38.64,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 32.2 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q3-k-m",
+      "ollama_ref": "wizardcoder:34b-python-q3_K_M",
+      "min_system_ram_gb": 29.9,
+      "recommended_system_ram_gb": 35.88,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.9 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q3-k-s",
+      "ollama_ref": "wizardcoder:34b-python-q3_K_S",
+      "min_system_ram_gb": 28.75,
+      "recommended_system_ram_gb": 34.5,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 28.75 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q4-k-m",
+      "ollama_ref": "wizardcoder:34b-python-q4_K_M",
+      "min_system_ram_gb": 34.5,
+      "recommended_system_ram_gb": 41.4,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.5 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q4-k-s",
+      "ollama_ref": "wizardcoder:34b-python-q4_K_S",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q40",
+      "ollama_ref": "wizardcoder:34b-python-q4_0",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q41",
+      "ollama_ref": "wizardcoder:34b-python-q4_1",
+      "min_system_ram_gb": 35.65,
+      "recommended_system_ram_gb": 42.78,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.65 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q5-k-m",
+      "ollama_ref": "wizardcoder:34b-python-q5_K_M",
+      "min_system_ram_gb": 39.1,
+      "recommended_system_ram_gb": 46.92,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.1 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q5-k-s",
+      "ollama_ref": "wizardcoder:34b-python-q5_K_S",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q50",
+      "ollama_ref": "wizardcoder:34b-python-q5_0",
+      "min_system_ram_gb": 37.95,
+      "recommended_system_ram_gb": 45.54,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.95 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q51",
+      "ollama_ref": "wizardcoder:34b-python-q5_1",
+      "min_system_ram_gb": 40.25,
+      "recommended_system_ram_gb": 48.3,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q6-k",
+      "ollama_ref": "wizardcoder:34b-python-q6_K",
+      "min_system_ram_gb": 43.7,
+      "recommended_system_ram_gb": 52.44,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 43.7 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "34b-python-q80",
+      "ollama_ref": "wizardcoder:34b-python-q8_0",
+      "min_system_ram_gb": 52.9,
+      "recommended_system_ram_gb": 63.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.9 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b",
+      "ollama_ref": "wizardcoder:33b",
+      "min_system_ram_gb": 33.06,
+      "recommended_system_ram_gb": 39.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.06 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1",
+      "ollama_ref": "wizardcoder:33b-v1.1",
+      "min_system_ram_gb": 33.06,
+      "recommended_system_ram_gb": 39.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.06 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-fp16",
+      "ollama_ref": "wizardcoder:33b-v1.1-fp16",
+      "min_system_ram_gb": 88.26,
+      "recommended_system_ram_gb": 105.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 88.26 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q2-k",
+      "ollama_ref": "wizardcoder:33b-v1.1-q2_K",
+      "min_system_ram_gb": 27.31,
+      "recommended_system_ram_gb": 32.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.31 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q3-k-l",
+      "ollama_ref": "wizardcoder:33b-v1.1-q3_K_L",
+      "min_system_ram_gb": 31.91,
+      "recommended_system_ram_gb": 38.29,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 31.91 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q3-k-m",
+      "ollama_ref": "wizardcoder:33b-v1.1-q3_K_M",
+      "min_system_ram_gb": 29.61,
+      "recommended_system_ram_gb": 35.53,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 29.61 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q3-k-s",
+      "ollama_ref": "wizardcoder:33b-v1.1-q3_K_S",
+      "min_system_ram_gb": 27.31,
+      "recommended_system_ram_gb": 32.77,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 27.31 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q4-k-m",
+      "ollama_ref": "wizardcoder:33b-v1.1-q4_K_M",
+      "min_system_ram_gb": 34.21,
+      "recommended_system_ram_gb": 41.05,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 34.21 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q4-k-s",
+      "ollama_ref": "wizardcoder:33b-v1.1-q4_K_S",
+      "min_system_ram_gb": 33.06,
+      "recommended_system_ram_gb": 39.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.06 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q40",
+      "ollama_ref": "wizardcoder:33b-v1.1-q4_0",
+      "min_system_ram_gb": 33.06,
+      "recommended_system_ram_gb": 39.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.06 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q41",
+      "ollama_ref": "wizardcoder:33b-v1.1-q4_1",
+      "min_system_ram_gb": 35.36,
+      "recommended_system_ram_gb": 42.43,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q5-k-m",
+      "ollama_ref": "wizardcoder:33b-v1.1-q5_K_M",
+      "min_system_ram_gb": 38.81,
+      "recommended_system_ram_gb": 46.57,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 38.81 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q5-k-s",
+      "ollama_ref": "wizardcoder:33b-v1.1-q5_K_S",
+      "min_system_ram_gb": 37.66,
+      "recommended_system_ram_gb": 45.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.66 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q50",
+      "ollama_ref": "wizardcoder:33b-v1.1-q5_0",
+      "min_system_ram_gb": 37.66,
+      "recommended_system_ram_gb": 45.19,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 37.66 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q51",
+      "ollama_ref": "wizardcoder:33b-v1.1-q5_1",
+      "min_system_ram_gb": 39.96,
+      "recommended_system_ram_gb": 47.95,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 39.96 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q6-k",
+      "ollama_ref": "wizardcoder:33b-v1.1-q6_K",
+      "min_system_ram_gb": 42.26,
+      "recommended_system_ram_gb": 50.71,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 42.26 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "33b-v1.1-q80",
+      "ollama_ref": "wizardcoder:33b-v1.1-q8_0",
+      "min_system_ram_gb": 51.46,
+      "recommended_system_ram_gb": 61.75,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 51.46 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python",
+      "ollama_ref": "wizardcoder:13b-python",
+      "min_system_ram_gb": 13.97,
+      "recommended_system_ram_gb": 16.77,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-fp16",
+      "ollama_ref": "wizardcoder:13b-python-fp16",
+      "min_system_ram_gb": 35.36,
+      "recommended_system_ram_gb": 42.43,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.36 GB RAM; lane provides 24.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q2-k",
+      "ollama_ref": "wizardcoder:13b-python-q2_K",
+      "min_system_ram_gb": 11.67,
+      "recommended_system_ram_gb": 14.01,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q3-k-l",
+      "ollama_ref": "wizardcoder:13b-python-q3_K_L",
+      "min_system_ram_gb": 13.4,
+      "recommended_system_ram_gb": 16.08,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q3-k-m",
+      "ollama_ref": "wizardcoder:13b-python-q3_K_M",
+      "min_system_ram_gb": 12.71,
+      "recommended_system_ram_gb": 15.25,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q3-k-s",
+      "ollama_ref": "wizardcoder:13b-python-q3_K_S",
+      "min_system_ram_gb": 12.02,
+      "recommended_system_ram_gb": 14.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q4-k-m",
+      "ollama_ref": "wizardcoder:13b-python-q4_K_M",
+      "min_system_ram_gb": 14.55,
+      "recommended_system_ram_gb": 17.46,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q4-k-s",
+      "ollama_ref": "wizardcoder:13b-python-q4_K_S",
+      "min_system_ram_gb": 13.97,
+      "recommended_system_ram_gb": 16.77,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q40",
+      "ollama_ref": "wizardcoder:13b-python-q4_0",
+      "min_system_ram_gb": 13.97,
+      "recommended_system_ram_gb": 16.77,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q41",
+      "ollama_ref": "wizardcoder:13b-python-q4_1",
+      "min_system_ram_gb": 14.89,
+      "recommended_system_ram_gb": 17.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q5-k-m",
+      "ollama_ref": "wizardcoder:13b-python-q5_K_M",
+      "min_system_ram_gb": 16.04,
+      "recommended_system_ram_gb": 19.25,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q5-k-s",
+      "ollama_ref": "wizardcoder:13b-python-q5_K_S",
+      "min_system_ram_gb": 15.81,
+      "recommended_system_ram_gb": 18.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q50",
+      "ollama_ref": "wizardcoder:13b-python-q5_0",
+      "min_system_ram_gb": 15.81,
+      "recommended_system_ram_gb": 18.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q51",
+      "ollama_ref": "wizardcoder:13b-python-q5_1",
+      "min_system_ram_gb": 16.73,
+      "recommended_system_ram_gb": 20.08,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q6-k",
+      "ollama_ref": "wizardcoder:13b-python-q6_K",
+      "min_system_ram_gb": 18.11,
+      "recommended_system_ram_gb": 21.73,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "13b-python-q80",
+      "ollama_ref": "wizardcoder:13b-python-q8_0",
+      "min_system_ram_gb": 21.56,
+      "recommended_system_ram_gb": 25.88,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python",
+      "ollama_ref": "wizardcoder:7b-python",
+      "min_system_ram_gb": 8.11,
+      "recommended_system_ram_gb": 9.73,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-fp16",
+      "ollama_ref": "wizardcoder:7b-python-fp16",
+      "min_system_ram_gb": 18.69,
+      "recommended_system_ram_gb": 22.43,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q2-k",
+      "ollama_ref": "wizardcoder:7b-python-q2_K",
+      "min_system_ram_gb": 6.96,
+      "recommended_system_ram_gb": 8.35,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q3-k-l",
+      "ollama_ref": "wizardcoder:7b-python-q3_K_L",
+      "min_system_ram_gb": 7.88,
+      "recommended_system_ram_gb": 9.45,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q3-k-m",
+      "ollama_ref": "wizardcoder:7b-python-q3_K_M",
+      "min_system_ram_gb": 7.53,
+      "recommended_system_ram_gb": 9.04,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q3-k-s",
+      "ollama_ref": "wizardcoder:7b-python-q3_K_S",
+      "min_system_ram_gb": 7.07,
+      "recommended_system_ram_gb": 8.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q4-k-m",
+      "ollama_ref": "wizardcoder:7b-python-q4_K_M",
+      "min_system_ram_gb": 8.45,
+      "recommended_system_ram_gb": 10.14,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q4-k-s",
+      "ollama_ref": "wizardcoder:7b-python-q4_K_S",
+      "min_system_ram_gb": 8.22,
+      "recommended_system_ram_gb": 9.87,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q40",
+      "ollama_ref": "wizardcoder:7b-python-q4_0",
+      "min_system_ram_gb": 8.11,
+      "recommended_system_ram_gb": 9.73,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q41",
+      "ollama_ref": "wizardcoder:7b-python-q4_1",
+      "min_system_ram_gb": 8.57,
+      "recommended_system_ram_gb": 10.28,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q5-k-m",
+      "ollama_ref": "wizardcoder:7b-python-q5_K_M",
+      "min_system_ram_gb": 9.26,
+      "recommended_system_ram_gb": 11.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q5-k-s",
+      "ollama_ref": "wizardcoder:7b-python-q5_K_S",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q50",
+      "ollama_ref": "wizardcoder:7b-python-q5_0",
+      "min_system_ram_gb": 9.14,
+      "recommended_system_ram_gb": 10.97,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q51",
+      "ollama_ref": "wizardcoder:7b-python-q5_1",
+      "min_system_ram_gb": 9.6,
+      "recommended_system_ram_gb": 11.52,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q6-k",
+      "ollama_ref": "wizardcoder:7b-python-q6_K",
+      "min_system_ram_gb": 10.06,
+      "recommended_system_ram_gb": 12.07,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "7b-python-q80",
+      "ollama_ref": "wizardcoder:7b-python-q8_0",
+      "min_system_ram_gb": 12.02,
+      "recommended_system_ram_gb": 14.42,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "wizardcoder:latest",
+      "min_system_ram_gb": 6.09,
+      "recommended_system_ram_gb": 7.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "python",
+      "ollama_ref": "wizardcoder:python",
+      "min_system_ram_gb": 6.09,
+      "recommended_system_ram_gb": 7.31,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

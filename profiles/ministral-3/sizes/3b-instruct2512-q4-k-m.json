@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "ministral-3",
+  "size_slug": "3b-instruct2512-q4-k-m",
+  "ollama_ref": "ministral-3:3b-instruct-2512-q4_K_M",
+  "parameter_count": 3000000000,
+  "quantization": "q4_K_M",
+  "download_size_bytes": 3000000000,
+  "estimated": {
+    "min_system_ram_gb": 6.04,
+    "recommended_system_ram_gb": 7.24,
+    "min_vram_gb": 3.45,
+    "recommended_vram_gb": 6.04,
+    "min_disk_gb": 8.6
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/ministral-3/tags",
+    "retrieved_at": "2026-08-01T11:56:13Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 6.04,
+    "recommended_ram_gb": 7.24,
+    "minimum_vram_gb": 3.45,
+    "recommended_vram_gb": 6.04,
+    "minimum_disk_free_gb": 2.794,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=ministral-3;size_index=11;ollama_ref=ministral-3:3b-instruct-2512-q4_K_M"
+  }
+}

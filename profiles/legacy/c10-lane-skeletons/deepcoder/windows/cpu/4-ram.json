@@ -1,0 +1,107 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "deepcoder",
+  "lane_path": "windows/cpu",
+  "provider_assumption_id": "windows-cpu",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 9.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "14b",
+      "ollama_ref": "deepcoder:14b",
+      "min_system_ram_gb": 16.1,
+      "recommended_system_ram_gb": 19.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-preview-fp16",
+      "ollama_ref": "deepcoder:14b-preview-fp16",
+      "min_system_ram_gb": 40.25,
+      "recommended_system_ram_gb": 48.3,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 40.25 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-preview-q4-k-m",
+      "ollama_ref": "deepcoder:14b-preview-q4_K_M",
+      "min_system_ram_gb": 16.1,
+      "recommended_system_ram_gb": 19.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 16.1 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "14b-preview-q80",
+      "ollama_ref": "deepcoder:14b-preview-q8_0",
+      "min_system_ram_gb": 24.15,
+      "recommended_system_ram_gb": 28.98,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.15 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.5b",
+      "ollama_ref": "deepcoder:1.5b",
+      "min_system_ram_gb": 3.42,
+      "recommended_system_ram_gb": 4.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.5b-preview-fp16",
+      "ollama_ref": "deepcoder:1.5b-preview-fp16",
+      "min_system_ram_gb": 6.3,
+      "recommended_system_ram_gb": 7.56,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.5b-preview-q4-k-m",
+      "ollama_ref": "deepcoder:1.5b-preview-q4_K_M",
+      "min_system_ram_gb": 3.42,
+      "recommended_system_ram_gb": 4.11,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1.5b-preview-q80",
+      "ollama_ref": "deepcoder:1.5b-preview-q8_0",
+      "min_system_ram_gb": 4.34,
+      "recommended_system_ram_gb": 5.21,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "deepcoder:latest",
+      "min_system_ram_gb": 12.07,
+      "recommended_system_ram_gb": 14.49,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 12.07 GB RAM; lane provides 9.0 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

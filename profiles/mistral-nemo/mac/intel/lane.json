@@ -1,19 +1,23 @@
 {
-  "schema_version": "c10.stage.v1",
+  "schema_version": "profiles.lane.v1",
   "model_slug": "mistral-nemo",
-  "lane_path": "mac/intel",
+  "target_lane": "mac/intel",
   "provider_assumption_id": "mac-intel",
-  "generated_at": "2026-08-06T05:53:10Z",
-  "provenance": {
-    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
-    "provenance_status": "assumed_client_class"
-  },
-  "lane_id": "mac/intel",
-  "provider_assumption": "profiles/provider-assumptions/mac-intel.json",
   "detection_signals": [
     "os=darwin",
     "arch=x86_64"
   ],
+  "hardware": {
+    "cpu_cores": 8,
+    "system_ram_gb": 8.0,
+    "usable_model_ram_gb": 4.5,
+    "minimum_free_disk_gb": 20.0,
+    "total_vram_gb": null,
+    "cuda_available": false,
+    "apple_metal_available": false,
+    "provenance_status": "assumed_client_class",
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv"
+  },
   "size_fit": [
     {
       "size_slug": "12b",
@@ -151,5 +155,7 @@
       "reason": "requires 9.89 GB RAM; lane provides 4.5 GB usable",
       "missing_evidence": []
     }
-  ]
+  ],
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z"
 }

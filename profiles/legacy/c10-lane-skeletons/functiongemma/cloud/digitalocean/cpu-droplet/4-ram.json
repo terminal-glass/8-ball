@@ -1,0 +1,65 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "functiongemma",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T07:44:40Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": null,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "270m",
+      "ollama_ref": "functiongemma:270m",
+      "min_system_ram_gb": 2.15,
+      "recommended_system_ram_gb": 2.58,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "270m-it-fp16",
+      "ollama_ref": "functiongemma:270m-it-fp16",
+      "min_system_ram_gb": 2.44,
+      "recommended_system_ram_gb": 2.92,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "270m-it-q80",
+      "ollama_ref": "functiongemma:270m-it-q8_0",
+      "min_system_ram_gb": 2.15,
+      "recommended_system_ram_gb": 2.58,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "functiongemma:latest",
+      "min_system_ram_gb": 2.07,
+      "recommended_system_ram_gb": 2.49,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

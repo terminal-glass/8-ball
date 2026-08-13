@@ -1,0 +1,101 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "laguna-s-2.1",
+  "lane_path": "cloud/digitalocean/cpu-droplet",
+  "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
+  "generated_at": "2026-08-06T07:44:41Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": null,
+  "usable_model_ram_gb": null,
+  "size_ram_fit": [
+    {
+      "size_slug": "f16",
+      "ollama_ref": "laguna-s-2.1:f16",
+      "min_system_ram_gb": 271.97,
+      "recommended_system_ram_gb": 326.37,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "laguna-s-2.1:latest",
+      "min_system_ram_gb": 112.12,
+      "recommended_system_ram_gb": 134.55,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "mlx-bf16",
+      "ollama_ref": "laguna-s-2.1:mlx-bf16",
+      "min_system_ram_gb": 271.97,
+      "recommended_system_ram_gb": 326.37,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "mxfp8",
+      "ollama_ref": "laguna-s-2.1:mxfp8",
+      "min_system_ram_gb": 158.12,
+      "recommended_system_ram_gb": 189.75,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "nvfp4",
+      "ollama_ref": "laguna-s-2.1:nvfp4",
+      "min_system_ram_gb": 78.77,
+      "recommended_system_ram_gb": 94.53,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "q4-k-m",
+      "ollama_ref": "laguna-s-2.1:q4_K_M",
+      "min_system_ram_gb": 112.12,
+      "recommended_system_ram_gb": 134.55,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    },
+    {
+      "size_slug": "q80",
+      "ollama_ref": "laguna-s-2.1:q8_0",
+      "min_system_ram_gb": 148.92,
+      "recommended_system_ram_gb": 178.71,
+      "ram_fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_ram_capacity",
+      "missing_evidence": [
+        "lane_ram_capacity"
+      ]
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

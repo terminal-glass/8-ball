@@ -1,0 +1,9 @@
+size_slug,ollama_ref,size_file,fit_status
+32b,qwq:32b,../sizes/32b.json,no_fit
+32b-fp16,qwq:32b-fp16,../sizes/32b-fp16.json,no_fit
+32b-preview-fp16,qwq:32b-preview-fp16,../sizes/32b-preview-fp16.json,no_fit
+32b-preview-q4-k-m,qwq:32b-preview-q4_K_M,../sizes/32b-preview-q4-k-m.json,no_fit
+32b-preview-q80,qwq:32b-preview-q8_0,../sizes/32b-preview-q80.json,no_fit
+32b-q4-k-m,qwq:32b-q4_K_M,../sizes/32b-q4-k-m.json,no_fit
+32b-q80,qwq:32b-q8_0,../sizes/32b-q80.json,no_fit
+latest,qwq:latest,../sizes/latest.json,no_fit

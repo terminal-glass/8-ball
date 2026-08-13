@@ -1,0 +1,50 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "nomic-embed-text",
+  "lane_path": "windows/cuda",
+  "provider_assumption_id": "windows-cuda",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "windows/cuda",
+  "provider_assumption": "profiles/provider-assumptions/windows-cuda.json",
+  "detection_signals": [
+    "os=windows",
+    "cuda=true",
+    "nvidia-smi"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "137m-v1.5-fp16",
+      "ollama_ref": "nomic-embed-text:137m-v1.5-fp16",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "nomic-embed-text:latest",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "v1.5",
+      "ollama_ref": "nomic-embed-text:v1.5",
+      "fit_status": "unknown",
+      "fits": false,
+      "reason": "missing evidence: lane_vram_capacity",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

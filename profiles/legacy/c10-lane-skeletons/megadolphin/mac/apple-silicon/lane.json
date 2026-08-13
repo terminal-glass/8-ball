@@ -1,0 +1,210 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "megadolphin",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T05:53:10Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "lane_id": "mac/apple-silicon",
+  "provider_assumption": "profiles/provider-assumptions/mac-apple-silicon.json",
+  "detection_signals": [
+    "os=darwin",
+    "arch=arm64",
+    "apple-metal"
+  ],
+  "size_fit": [
+    {
+      "size_slug": "120b",
+      "ollama_ref": "megadolphin:120b",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2",
+      "ollama_ref": "megadolphin:120b-v2.2",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-fp16",
+      "ollama_ref": "megadolphin:120b-v2.2-fp16",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 313.38 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q2-k",
+      "ollama_ref": "megadolphin:120b-v2.2-q2_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 94.87 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-l",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_L",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 108.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 102.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q3-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q3_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 96.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q4-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 119.02 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q4-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q40",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 114.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q41",
+      "ollama_ref": "megadolphin:120b-v2.2-q4_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 122.47 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q5-k-m",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_K_M",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 133.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q5-k-s",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_K_S",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 131.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q50",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 131.67 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q51",
+      "ollama_ref": "megadolphin:120b-v2.2-q5_1",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 139.72 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q6-k",
+      "ollama_ref": "megadolphin:120b-v2.2-q6_K",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 150.07 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "120b-v2.2-q80",
+      "ollama_ref": "megadolphin:120b-v2.2-q8_0",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 183.42 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "megadolphin:latest",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    },
+    {
+      "size_slug": "v2.2",
+      "ollama_ref": "megadolphin:v2.2",
+      "fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 79.92 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": [
+        "lane_vram_capacity"
+      ]
+    }
+  ]
+}

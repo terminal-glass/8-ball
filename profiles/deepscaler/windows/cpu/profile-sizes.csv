@@ -1,0 +1,6 @@
+size_slug,ollama_ref,size_file,fit_status
+1.5b,deepscaler:1.5b,../sizes/1.5b.json,fit
+1.5b-preview-fp16,deepscaler:1.5b-preview-fp16,../sizes/1.5b-preview-fp16.json,fit
+1.5b-preview-q4-k-m,deepscaler:1.5b-preview-q4_K_M,../sizes/1.5b-preview-q4-k-m.json,fit
+1.5b-preview-q80,deepscaler:1.5b-preview-q8_0,../sizes/1.5b-preview-q80.json,fit
+latest,deepscaler:latest,../sizes/latest.json,fit

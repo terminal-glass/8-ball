@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "sqlcoder",
+  "size_slug": "15b-q41",
+  "ollama_ref": "sqlcoder:15b-q4_1",
+  "parameter_count": 15000000000,
+  "quantization": "q4_1",
+  "download_size_bytes": 10000000000,
+  "estimated": {
+    "min_system_ram_gb": 17.54,
+    "recommended_system_ram_gb": 21.04,
+    "min_vram_gb": 11.5,
+    "recommended_vram_gb": 17.54,
+    "min_disk_gb": 17.0
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/sqlcoder/tags",
+    "retrieved_at": "2026-08-01T11:59:18Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 17.54,
+    "recommended_ram_gb": 21.04,
+    "minimum_vram_gb": 11.5,
+    "recommended_vram_gb": 17.54,
+    "minimum_disk_free_gb": 9.313,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=sqlcoder;size_index=25;ollama_ref=sqlcoder:15b-q4_1"
+  }
+}

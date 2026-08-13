@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+e4b,gemma3n:e4b,../sizes/e4b.json,no_fit
+e4b-it-fp16,gemma3n:e4b-it-fp16,../sizes/e4b-it-fp16.json,no_fit
+e4b-it-q4-k-m,gemma3n:e4b-it-q4_K_M,../sizes/e4b-it-q4-k-m.json,no_fit
+e4b-it-q80,gemma3n:e4b-it-q8_0,../sizes/e4b-it-q80.json,no_fit
+e2b,gemma3n:e2b,../sizes/e2b.json,no_fit
+e2b-it-fp16,gemma3n:e2b-it-fp16,../sizes/e2b-it-fp16.json,no_fit
+e2b-it-q4-k-m,gemma3n:e2b-it-q4_K_M,../sizes/e2b-it-q4-k-m.json,no_fit
+e2b-it-q80,gemma3n:e2b-it-q8_0,../sizes/e2b-it-q80.json,no_fit
+latest,gemma3n:latest,../sizes/latest.json,no_fit

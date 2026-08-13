@@ -1,0 +1,13 @@
+size_slug,ollama_ref,size_file,fit_status
+8b,qwen3-embedding:8b,../sizes/8b.json,fit
+8b-fp16,qwen3-embedding:8b-fp16,../sizes/8b-fp16.json,no_fit
+8b-q4-k-m,qwen3-embedding:8b-q4_K_M,../sizes/8b-q4-k-m.json,fit
+8b-q80,qwen3-embedding:8b-q8_0,../sizes/8b-q80.json,fit
+4b,qwen3-embedding:4b,../sizes/4b.json,fit
+4b-fp16,qwen3-embedding:4b-fp16,../sizes/4b-fp16.json,fit
+4b-q4-k-m,qwen3-embedding:4b-q4_K_M,../sizes/4b-q4-k-m.json,fit
+4b-q80,qwen3-embedding:4b-q8_0,../sizes/4b-q80.json,fit
+0.6b,qwen3-embedding:0.6b,../sizes/0.6b.json,fit
+0.6b-fp16,qwen3-embedding:0.6b-fp16,../sizes/0.6b-fp16.json,fit
+0.6b-q80,qwen3-embedding:0.6b-q8_0,../sizes/0.6b-q80.json,fit
+latest,qwen3-embedding:latest,../sizes/latest.json,fit

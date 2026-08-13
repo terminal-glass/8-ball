@@ -1,0 +1,587 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "qwen3-vl",
+  "lane_path": "mac/apple-silicon",
+  "provider_assumption_id": "mac-apple-silicon",
+  "generated_at": "2026-08-06T07:44:42Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/TG-8Ball-Client-Hardware-Assumptions.csv",
+    "provenance_status": "assumed_client_class"
+  },
+  "applicable": true,
+  "system_ram_gb": 16.0,
+  "usable_model_ram_gb": 10.0,
+  "size_ram_fit": [
+    {
+      "size_slug": "235b",
+      "ollama_ref": "qwen3-vl:235b",
+      "min_system_ram_gb": 233.74,
+      "recommended_system_ram_gb": 280.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 233.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b",
+      "ollama_ref": "qwen3-vl:235b-a22b",
+      "min_system_ram_gb": 233.74,
+      "recommended_system_ram_gb": 280.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 233.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-instruct",
+      "ollama_ref": "qwen3-vl:235b-a22b-instruct",
+      "min_system_ram_gb": 233.74,
+      "recommended_system_ram_gb": 280.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 233.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-instruct-bf16",
+      "ollama_ref": "qwen3-vl:235b-a22b-instruct-bf16",
+      "min_system_ram_gb": 610.94,
+      "recommended_system_ram_gb": 733.12,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 610.94 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-vl:235b-a22b-instruct-q4_K_M",
+      "min_system_ram_gb": 233.74,
+      "recommended_system_ram_gb": 280.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 233.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-instruct-q80",
+      "ollama_ref": "qwen3-vl:235b-a22b-instruct-q8_0",
+      "min_system_ram_gb": 357.94,
+      "recommended_system_ram_gb": 429.52,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 357.94 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-thinking",
+      "ollama_ref": "qwen3-vl:235b-a22b-thinking",
+      "min_system_ram_gb": 233.74,
+      "recommended_system_ram_gb": 280.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 233.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-thinking-bf16",
+      "ollama_ref": "qwen3-vl:235b-a22b-thinking-bf16",
+      "min_system_ram_gb": 610.94,
+      "recommended_system_ram_gb": 733.12,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 610.94 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-vl:235b-a22b-thinking-q4_K_M",
+      "min_system_ram_gb": 233.74,
+      "recommended_system_ram_gb": 280.48,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 233.74 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "235b-a22b-thinking-q80",
+      "ollama_ref": "qwen3-vl:235b-a22b-thinking-q8_0",
+      "min_system_ram_gb": 357.94,
+      "recommended_system_ram_gb": 429.52,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 357.94 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b",
+      "ollama_ref": "qwen3-vl:32b",
+      "min_system_ram_gb": 35.07,
+      "recommended_system_ram_gb": 42.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct",
+      "ollama_ref": "qwen3-vl:32b-instruct",
+      "min_system_ram_gb": 35.07,
+      "recommended_system_ram_gb": 42.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-bf16",
+      "ollama_ref": "qwen3-vl:32b-instruct-bf16",
+      "min_system_ram_gb": 87.97,
+      "recommended_system_ram_gb": 105.57,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-vl:32b-instruct-q4_K_M",
+      "min_system_ram_gb": 35.07,
+      "recommended_system_ram_gb": 42.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-instruct-q80",
+      "ollama_ref": "qwen3-vl:32b-instruct-q8_0",
+      "min_system_ram_gb": 52.32,
+      "recommended_system_ram_gb": 62.79,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.32 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-thinking",
+      "ollama_ref": "qwen3-vl:32b-thinking",
+      "min_system_ram_gb": 35.07,
+      "recommended_system_ram_gb": 42.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-thinking-bf16",
+      "ollama_ref": "qwen3-vl:32b-thinking-bf16",
+      "min_system_ram_gb": 87.97,
+      "recommended_system_ram_gb": 105.57,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 87.97 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-vl:32b-thinking-q4_K_M",
+      "min_system_ram_gb": 35.07,
+      "recommended_system_ram_gb": 42.09,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 35.07 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "32b-thinking-q80",
+      "ollama_ref": "qwen3-vl:32b-thinking-q8_0",
+      "min_system_ram_gb": 52.32,
+      "recommended_system_ram_gb": 62.79,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 52.32 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b",
+      "ollama_ref": "qwen3-vl:30b",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b",
+      "ollama_ref": "qwen3-vl:30b-a3b",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-instruct",
+      "ollama_ref": "qwen3-vl:30b-a3b-instruct",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-instruct-bf16",
+      "ollama_ref": "qwen3-vl:30b-a3b-instruct-bf16",
+      "min_system_ram_gb": 81.65,
+      "recommended_system_ram_gb": 97.98,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 81.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-vl:30b-a3b-instruct-q4_K_M",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-instruct-q80",
+      "ollama_ref": "qwen3-vl:30b-a3b-instruct-q8_0",
+      "min_system_ram_gb": 49.45,
+      "recommended_system_ram_gb": 59.34,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 49.45 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-thinking",
+      "ollama_ref": "qwen3-vl:30b-a3b-thinking",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-thinking-bf16",
+      "ollama_ref": "qwen3-vl:30b-a3b-thinking-bf16",
+      "min_system_ram_gb": 81.65,
+      "recommended_system_ram_gb": 97.98,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 81.65 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-vl:30b-a3b-thinking-q4_K_M",
+      "min_system_ram_gb": 33.35,
+      "recommended_system_ram_gb": 40.02,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 33.35 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "30b-a3b-thinking-q80",
+      "ollama_ref": "qwen3-vl:30b-a3b-thinking-q8_0",
+      "min_system_ram_gb": 49.45,
+      "recommended_system_ram_gb": 59.34,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 49.45 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b",
+      "ollama_ref": "qwen3-vl:8b",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct",
+      "ollama_ref": "qwen3-vl:8b-instruct",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-bf16",
+      "ollama_ref": "qwen3-vl:8b-instruct-bf16",
+      "min_system_ram_gb": 24.72,
+      "recommended_system_ram_gb": 29.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-vl:8b-instruct-q4_K_M",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-instruct-q80",
+      "ollama_ref": "qwen3-vl:8b-instruct-q8_0",
+      "min_system_ram_gb": 15.29,
+      "recommended_system_ram_gb": 18.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.29 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-thinking",
+      "ollama_ref": "qwen3-vl:8b-thinking",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-thinking-bf16",
+      "ollama_ref": "qwen3-vl:8b-thinking-bf16",
+      "min_system_ram_gb": 24.72,
+      "recommended_system_ram_gb": 29.67,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 24.72 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-vl:8b-thinking-q4_K_M",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-thinking-q80",
+      "ollama_ref": "qwen3-vl:8b-thinking-q8_0",
+      "min_system_ram_gb": 15.29,
+      "recommended_system_ram_gb": 18.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 15.29 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b",
+      "ollama_ref": "qwen3-vl:4b",
+      "min_system_ram_gb": 6.67,
+      "recommended_system_ram_gb": 8.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-instruct",
+      "ollama_ref": "qwen3-vl:4b-instruct",
+      "min_system_ram_gb": 6.67,
+      "recommended_system_ram_gb": 8.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-instruct-bf16",
+      "ollama_ref": "qwen3-vl:4b-instruct-bf16",
+      "min_system_ram_gb": 13.11,
+      "recommended_system_ram_gb": 15.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.11 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-vl:4b-instruct-q4_K_M",
+      "min_system_ram_gb": 6.67,
+      "recommended_system_ram_gb": 8.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-instruct-q80",
+      "ollama_ref": "qwen3-vl:4b-instruct-q8_0",
+      "min_system_ram_gb": 8.74,
+      "recommended_system_ram_gb": 10.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-thinking",
+      "ollama_ref": "qwen3-vl:4b-thinking",
+      "min_system_ram_gb": 6.67,
+      "recommended_system_ram_gb": 8.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-thinking-bf16",
+      "ollama_ref": "qwen3-vl:4b-thinking-bf16",
+      "min_system_ram_gb": 13.11,
+      "recommended_system_ram_gb": 15.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.11 GB RAM; lane provides 10.0 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-vl:4b-thinking-q4_K_M",
+      "min_system_ram_gb": 6.67,
+      "recommended_system_ram_gb": 8.0,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "4b-thinking-q80",
+      "ollama_ref": "qwen3-vl:4b-thinking-q8_0",
+      "min_system_ram_gb": 8.74,
+      "recommended_system_ram_gb": 10.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b",
+      "ollama_ref": "qwen3-vl:2b",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct",
+      "ollama_ref": "qwen3-vl:2b-instruct",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-bf16",
+      "ollama_ref": "qwen3-vl:2b-instruct-bf16",
+      "min_system_ram_gb": 7.24,
+      "recommended_system_ram_gb": 8.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q4-k-m",
+      "ollama_ref": "qwen3-vl:2b-instruct-q4_K_M",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-instruct-q80",
+      "ollama_ref": "qwen3-vl:2b-instruct-q8_0",
+      "min_system_ram_gb": 5.29,
+      "recommended_system_ram_gb": 6.35,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-thinking",
+      "ollama_ref": "qwen3-vl:2b-thinking",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-thinking-bf16",
+      "ollama_ref": "qwen3-vl:2b-thinking-bf16",
+      "min_system_ram_gb": 7.24,
+      "recommended_system_ram_gb": 8.69,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-thinking-q4-k-m",
+      "ollama_ref": "qwen3-vl:2b-thinking-q4_K_M",
+      "min_system_ram_gb": 4.48,
+      "recommended_system_ram_gb": 5.38,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "2b-thinking-q80",
+      "ollama_ref": "qwen3-vl:2b-thinking-q8_0",
+      "min_system_ram_gb": 5.29,
+      "recommended_system_ram_gb": 6.35,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "qwen3-vl:latest",
+      "min_system_ram_gb": 8.74,
+      "recommended_system_ram_gb": 10.49,
+      "ram_fit_status": "fit",
+      "fits": true,
+      "reason": "fits lane RAM assumptions",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "solar",
+  "size_slug": "10.7b-instruct-v1-q3-k-l",
+  "ollama_ref": "solar:10.7b-instruct-v1-q3_K_L",
+  "parameter_count": 10700000000,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 5700000000,
+  "estimated": {
+    "min_system_ram_gb": 11.36,
+    "recommended_system_ram_gb": 13.63,
+    "min_vram_gb": 6.55,
+    "recommended_vram_gb": 11.36,
+    "min_disk_gb": 11.84
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/solar/tags",
+    "retrieved_at": "2026-08-01T11:59:13Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 11.36,
+    "recommended_ram_gb": 13.63,
+    "minimum_vram_gb": 6.55,
+    "recommended_vram_gb": 11.36,
+    "minimum_disk_free_gb": 5.309,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=solar;size_index=4;ollama_ref=solar:10.7b-instruct-v1-q3_K_L"
+  }
+}

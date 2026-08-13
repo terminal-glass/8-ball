@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "yi-coder",
+  "size_slug": "9b-chat-q5-k-m",
+  "ollama_ref": "yi-coder:9b-chat-q5_K_M",
+  "parameter_count": 9000000000,
+  "quantization": "q5_K_M",
+  "download_size_bytes": 6300000000,
+  "estimated": {
+    "min_system_ram_gb": 11.56,
+    "recommended_system_ram_gb": 13.87,
+    "min_vram_gb": 7.24,
+    "recommended_vram_gb": 11.56,
+    "min_disk_gb": 12.56
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/yi-coder/tags",
+    "retrieved_at": "2026-08-01T12:00:13Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 11.56,
+    "recommended_ram_gb": 13.87,
+    "minimum_vram_gb": 7.24,
+    "recommended_vram_gb": 11.56,
+    "minimum_disk_free_gb": 5.867,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=yi-coder;size_index=28;ollama_ref=yi-coder:9b-chat-q5_K_M"
+  }
+}

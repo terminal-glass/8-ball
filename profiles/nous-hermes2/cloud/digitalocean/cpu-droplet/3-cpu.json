@@ -1,9 +1,9 @@
 {
-  "schema_version": "c10.stage.v1",
+  "schema_version": "profiles.stage.v1",
   "model_slug": "nous-hermes2",
   "lane_path": "cloud/digitalocean/cpu-droplet",
   "provider_assumption_id": "cloud-digitalocean-cpu-droplet",
-  "generated_at": "2026-08-06T02:17:55Z",
+  "generated_at": "2026-01-01T22:38:27Z",
   "provenance": {
     "source_path": "AGENTS/data-science/ollama-mapping/P2-Provider-Datasets/providers/digitalocean/general-purpose.json",
     "provenance_status": "provider_published"

@@ -1,0 +1,10 @@
+size_slug,ollama_ref,size_file,fit_status
+8b,granite3.2:8b,../sizes/8b.json,no_fit
+8b-instruct-fp16,granite3.2:8b-instruct-fp16,../sizes/8b-instruct-fp16.json,no_fit
+8b-instruct-q4-k-m,granite3.2:8b-instruct-q4_K_M,../sizes/8b-instruct-q4-k-m.json,no_fit
+8b-instruct-q80,granite3.2:8b-instruct-q8_0,../sizes/8b-instruct-q80.json,no_fit
+2b,granite3.2:2b,../sizes/2b.json,fit
+2b-instruct-fp16,granite3.2:2b-instruct-fp16,../sizes/2b-instruct-fp16.json,fit
+2b-instruct-q4-k-m,granite3.2:2b-instruct-q4_K_M,../sizes/2b-instruct-q4-k-m.json,fit
+2b-instruct-q80,granite3.2:2b-instruct-q8_0,../sizes/2b-instruct-q80.json,fit
+latest,granite3.2:latest,../sizes/latest.json,fit

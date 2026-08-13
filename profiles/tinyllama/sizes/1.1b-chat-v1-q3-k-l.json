@@ -1,0 +1,34 @@
+{
+  "schema_version": "profiles.size.v1",
+  "model_slug": "tinyllama",
+  "size_slug": "1.1b-chat-v1-q3-k-l",
+  "ollama_ref": "tinyllama:1.1b-chat-v1-q3_K_L",
+  "parameter_count": 1100000000,
+  "quantization": "q3_K_L",
+  "download_size_bytes": 593000000,
+  "estimated": {
+    "min_system_ram_gb": 2.72,
+    "recommended_system_ram_gb": 3.27,
+    "min_vram_gb": 0.68,
+    "recommended_vram_gb": 2.72,
+    "min_disk_gb": 5.71
+  },
+  "provenance": {
+    "source_path": "data/normalized/tags.json",
+    "source_url": "https://ollama.com/library/tinyllama/tags",
+    "retrieved_at": "2026-08-01T11:59:39Z"
+  },
+  "source_path": "data/normalized/tags.json",
+  "generated_at": "2026-01-01T22:38:27Z",
+  "normalized": {
+    "minimum_ram_gb": 2.72,
+    "recommended_ram_gb": 3.27,
+    "minimum_vram_gb": 0.68,
+    "recommended_vram_gb": 2.72,
+    "minimum_disk_free_gb": 0.552,
+    "fit_status": "unknown",
+    "source_kind": "normalized_catalog_tag",
+    "source_path": "data/normalized/tags.json",
+    "source_locator": "model_slug=tinyllama;size_index=20;ollama_ref=tinyllama:1.1b-chat-v1-q3_K_L"
+  }
+}

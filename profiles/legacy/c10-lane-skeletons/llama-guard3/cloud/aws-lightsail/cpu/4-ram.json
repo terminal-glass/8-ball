@@ -1,0 +1,347 @@
+{
+  "schema_version": "c10.stage.v1",
+  "model_slug": "llama-guard3",
+  "lane_path": "cloud/aws-lightsail/cpu",
+  "provider_assumption_id": "cloud-aws-lightsail-cpu",
+  "generated_at": "2026-08-11T10:15:48Z",
+  "provenance": {
+    "source_path": "AGENTS/data-science/profile-mapping/aws-lightsail-linux-bundles.csv",
+    "provenance_status": "provider_published"
+  },
+  "applicable": true,
+  "system_ram_gb": 4.0,
+  "usable_model_ram_gb": 2.4,
+  "size_ram_fit": [
+    {
+      "size_slug": "8b",
+      "ollama_ref": "llama-guard3:8b",
+      "min_system_ram_gb": 9.66,
+      "recommended_system_ram_gb": 11.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-fp16",
+      "ollama_ref": "llama-guard3:8b-fp16",
+      "min_system_ram_gb": 22.42,
+      "recommended_system_ram_gb": 26.91,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 22.42 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q2-k",
+      "ollama_ref": "llama-guard3:8b-q2_K",
+      "min_system_ram_gb": 7.7,
+      "recommended_system_ram_gb": 9.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.7 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q3-k-l",
+      "ollama_ref": "llama-guard3:8b-q3_K_L",
+      "min_system_ram_gb": 8.97,
+      "recommended_system_ram_gb": 10.76,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.97 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q3-k-m",
+      "ollama_ref": "llama-guard3:8b-q3_K_M",
+      "min_system_ram_gb": 8.62,
+      "recommended_system_ram_gb": 10.35,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.62 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q3-k-s",
+      "ollama_ref": "llama-guard3:8b-q3_K_S",
+      "min_system_ram_gb": 8.28,
+      "recommended_system_ram_gb": 9.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 8.28 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q4-k-m",
+      "ollama_ref": "llama-guard3:8b-q4_K_M",
+      "min_system_ram_gb": 9.66,
+      "recommended_system_ram_gb": 11.59,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.66 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q4-k-s",
+      "ollama_ref": "llama-guard3:8b-q4_K_S",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q40",
+      "ollama_ref": "llama-guard3:8b-q4_0",
+      "min_system_ram_gb": 9.43,
+      "recommended_system_ram_gb": 11.32,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.43 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q41",
+      "ollama_ref": "llama-guard3:8b-q4_1",
+      "min_system_ram_gb": 9.89,
+      "recommended_system_ram_gb": 11.87,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 9.89 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q5-k-m",
+      "ollama_ref": "llama-guard3:8b-q5_K_M",
+      "min_system_ram_gb": 10.58,
+      "recommended_system_ram_gb": 12.7,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.58 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q5-k-s",
+      "ollama_ref": "llama-guard3:8b-q5_K_S",
+      "min_system_ram_gb": 10.46,
+      "recommended_system_ram_gb": 12.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q50",
+      "ollama_ref": "llama-guard3:8b-q5_0",
+      "min_system_ram_gb": 10.46,
+      "recommended_system_ram_gb": 12.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 10.46 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q51",
+      "ollama_ref": "llama-guard3:8b-q5_1",
+      "min_system_ram_gb": 11.04,
+      "recommended_system_ram_gb": 13.25,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.04 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q6-k",
+      "ollama_ref": "llama-guard3:8b-q6_K",
+      "min_system_ram_gb": 11.61,
+      "recommended_system_ram_gb": 13.94,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 11.61 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "8b-q80",
+      "ollama_ref": "llama-guard3:8b-q8_0",
+      "min_system_ram_gb": 13.8,
+      "recommended_system_ram_gb": 16.56,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 13.8 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b",
+      "ollama_ref": "llama-guard3:1b",
+      "min_system_ram_gb": 3.85,
+      "recommended_system_ram_gb": 4.62,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.85 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-fp16",
+      "ollama_ref": "llama-guard3:1b-fp16",
+      "min_system_ram_gb": 5.46,
+      "recommended_system_ram_gb": 6.55,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 5.46 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q2-k",
+      "ollama_ref": "llama-guard3:1b-q2_K",
+      "min_system_ram_gb": 2.78,
+      "recommended_system_ram_gb": 3.34,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 2.78 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q3-k-l",
+      "ollama_ref": "llama-guard3:1b-q3_K_L",
+      "min_system_ram_gb": 2.98,
+      "recommended_system_ram_gb": 3.58,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 2.98 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q3-k-m",
+      "ollama_ref": "llama-guard3:1b-q3_K_M",
+      "min_system_ram_gb": 2.94,
+      "recommended_system_ram_gb": 3.52,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 2.94 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q3-k-s",
+      "ollama_ref": "llama-guard3:1b-q3_K_S",
+      "min_system_ram_gb": 2.88,
+      "recommended_system_ram_gb": 3.46,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 2.88 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q4-k-m",
+      "ollama_ref": "llama-guard3:1b-q4_K_M",
+      "min_system_ram_gb": 3.11,
+      "recommended_system_ram_gb": 3.73,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.11 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q4-k-s",
+      "ollama_ref": "llama-guard3:1b-q4_K_S",
+      "min_system_ram_gb": 3.07,
+      "recommended_system_ram_gb": 3.69,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.07 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q40",
+      "ollama_ref": "llama-guard3:1b-q4_0",
+      "min_system_ram_gb": 3.07,
+      "recommended_system_ram_gb": 3.68,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.07 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q41",
+      "ollama_ref": "llama-guard3:1b-q4_1",
+      "min_system_ram_gb": 3.16,
+      "recommended_system_ram_gb": 3.79,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.16 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q5-k-m",
+      "ollama_ref": "llama-guard3:1b-q5_K_M",
+      "min_system_ram_gb": 3.28,
+      "recommended_system_ram_gb": 3.93,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.28 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q5-k-s",
+      "ollama_ref": "llama-guard3:1b-q5_K_S",
+      "min_system_ram_gb": 3.28,
+      "recommended_system_ram_gb": 3.93,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.28 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q50",
+      "ollama_ref": "llama-guard3:1b-q5_0",
+      "min_system_ram_gb": 3.28,
+      "recommended_system_ram_gb": 3.93,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.28 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q51",
+      "ollama_ref": "llama-guard3:1b-q5_1",
+      "min_system_ram_gb": 3.39,
+      "recommended_system_ram_gb": 4.07,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.39 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q6-k",
+      "ollama_ref": "llama-guard3:1b-q6_K",
+      "min_system_ram_gb": 3.39,
+      "recommended_system_ram_gb": 4.07,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.39 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "1b-q80",
+      "ollama_ref": "llama-guard3:1b-q8_0",
+      "min_system_ram_gb": 3.85,
+      "recommended_system_ram_gb": 4.62,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 3.85 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    },
+    {
+      "size_slug": "latest",
+      "ollama_ref": "llama-guard3:latest",
+      "min_system_ram_gb": 7.36,
+      "recommended_system_ram_gb": 8.83,
+      "ram_fit_status": "no_fit",
+      "fits": false,
+      "reason": "requires 7.36 GB RAM; lane provides 2.4 GB usable",
+      "missing_evidence": []
+    }
+  ],
+  "reason": "RAM limits sourced from provider or client hardware assumptions."
+}
