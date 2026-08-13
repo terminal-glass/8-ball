@@ -17,6 +17,7 @@
 - **Configuration scanning** covers `/etc/default/ollama`, `/etc/sysconfig/ollama`, systemd unit files, drop-ins, `EnvironmentFile` indirection, and bare `:port` `OLLAMA_HOST` values.
 - **Idempotent drop-in** at `/etc/systemd/system/ollama.service.d/8ball-localhost.conf` — rewritten only when content changes.
 - **8-BALL-owned config:** `OLLAMA_HOST=127.0.0.1:11434` and `OLLAMA_ORIGINS=` via systemd drop-in.
+- **Final safety authority:** post-restart listener state (`ss`/`netstat`). Configuration scanning detects stale lower-precedence public binds (for example `/etc/default/ollama`) and triggers drop-in/restart, but does **not** fail installation solely because stale config remains on disk after the drop-in override is applied.
 
 ### 8.1 orchestration (`install/ubuntu/8.1.sh`)
 
@@ -61,7 +62,7 @@ OS validate → prerequisites → swap → Ollama install/reuse
 | `bash -n` (ubuntu/shared installer scripts) | PASS |
 | `scripts/test-installer-harness.sh` | PASS (8 pass, 11 NOT TESTED) |
 | `python3 scripts/validate-install-lanes.py` | PASS |
-| `pytest tests/test_inst_50b_ollama_foundation.py` | PASS (21 tests) |
+| `pytest tests/test_inst_50b_ollama_foundation.py` | PASS (22 tests) |
 | Full `pytest` | PASS (358 passed, 8 skipped) |
 
 ### INST-50B test coverage (mocked)
@@ -72,6 +73,7 @@ OS validate → prerequisites → swap → Ollama install/reuse
 - Public bind, IPv6 wildcard, and dual-bind rejection
 - Missing `ss`/`netstat` failure
 - Drop-in idempotency
+- Stale lower-precedence public config with safe post-override loopback listener (regression)
 - CPU/CUDA wrapper delegation
 - 8.1 model-neutrality (no profile/model selection logic)
 

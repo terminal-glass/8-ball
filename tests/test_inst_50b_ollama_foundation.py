@@ -140,6 +140,67 @@ def test_exclusive_listener_rejects_dual_bind(tmp_path: Path) -> None:
     assert "public or wildcard" in result.stderr
 
 
+def test_stale_public_config_does_not_fail_when_listener_is_loopback_only(tmp_path: Path) -> None:
+    """Stale lower-precedence OLLAMA_HOST must not fail after drop-in override wins."""
+    stale = tmp_path / "default-ollama"
+    stale.write_text("OLLAMA_HOST=0.0.0.0:11434\n", encoding="utf-8")
+    dropin_dir = tmp_path / "ollama.service.d"
+    dropin_dir.mkdir()
+    (dropin_dir / "8ball-localhost.conf").write_text(
+        '[Service]\n'
+        'Environment="OLLAMA_HOST=127.0.0.1:11434"\n'
+        'Environment="OLLAMA_ORIGINS="\n',
+        encoding="utf-8",
+    )
+    mock_bin = tmp_path / "bin"
+    _mock_ss(mock_bin, "LISTEN 0 4096 127.0.0.1:11434 0.0.0.0:*\n")
+    _write_executable(
+        mock_bin / "systemctl",
+        textwrap.dedent(
+            """\
+            #!/usr/bin/env bash
+            case "${1:-}" in
+              is-active) exit 0 ;;
+              *) exit 0 ;;
+            esac
+            """
+        ),
+    )
+    _write_executable(
+        mock_bin / "pgrep",
+        "#!/usr/bin/env bash\nexit 0\n",
+    )
+    _write_executable(
+        mock_bin / "curl",
+        textwrap.dedent(
+            """\
+            #!/usr/bin/env bash
+            if [[ "$*" == *api/tags* ]]; then
+              exit 0
+            fi
+            exit 1
+            """
+        ),
+    )
+    body = textwrap.dedent(
+        f"""\
+        export OLLAMA_DROPIN_DIR="{dropin_dir}"
+        if ! ollama_scan_file_for_public_bind "{stale}"; then
+          echo "expected stale public config detection" >&2
+          exit 2
+        fi
+        ollama_ensure_localhost_config >/dev/null
+        if ! ollama_verify_foundation; then
+          echo "foundation verify failed despite safe listener" >&2
+          exit 3
+        fi
+        """
+    )
+    result = _run_helper(body, mock_bin=mock_bin)
+    assert result.returncode == 0, result.stderr
+    assert "Ollama listener verified" in result.stdout
+
+
 def test_exclusive_listener_fails_without_socket_tool(tmp_path: Path) -> None:
     mock_bin = tmp_path / "bin"
     mock_bin.mkdir()
