@@ -252,7 +252,7 @@ def test_disk_thresholds_come_from_profile_sizes() -> None:
     result = _run_resolver("--slug", "tinyllama", "--lane", "ubuntu/cpu", env=_measured_env())
     payload = json.loads(result.stdout)
     assert payload["minimum_disk_mib"]
-    for ref, mib in payload["minimum_disk_mib"].items():
+    for mib in payload["minimum_disk_mib"].values():
         assert mib > 0
 
 
