@@ -8,8 +8,10 @@ EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cpu.json"
 
 EIGHTBALL_INSTALL_PROFILE="ubuntu/cpu"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
-LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
+SUITE_VERSION="8BALL-0.8.0"
+PHILO_ROOT="${PHILO_ROOT:-/opt/philosopher}"
+PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-${PHILO_ROOT}}"
+TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/cpu}"
 REQUESTED_MODEL=""
 MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
@@ -113,9 +115,9 @@ run_step() {
   local label="$1"
   shift
   log "${label}"
-  if ! "$@" >>"${LOG_FILE}" 2>&1; then
+  if ! "$@" >>"${TRIAL_LOG}" 2>&1; then
     echo "Step failed: ${label}" >&2
-    tail -n 30 "${LOG_FILE}" >&2 || true
+    tail -n 30 "${TRIAL_LOG}" >&2 || true
     exit 1
   fi
 }
@@ -123,9 +125,9 @@ run_step() {
 main() {
   parse_args "$@"
   require_root
-  install -d -m 0755 "${PHILOSOPHER_ROOT}"
-  touch "${LOG_FILE}"
-  chmod 0644 "${LOG_FILE}"
+  install -d -m 0755 "${PHILO_ROOT}"
+  touch "${TRIAL_LOG}"
+  chmod 0644 "${TRIAL_LOG}"
 
   local script_81 script_82 script_83
   script_81="$(resolve_script "8.1.sh")"
@@ -157,7 +159,7 @@ main() {
     log "[4/4] Skipping MOTD (--no-motd)"
   fi
 
-  log "Trial install complete. Log: ${LOG_FILE}"
+  log "Trial install complete. Log: ${TRIAL_LOG}"
   log "Result: ${PHILOSOPHER_ROOT}/8ball-result.txt"
 }
 

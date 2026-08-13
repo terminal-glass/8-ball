@@ -7,7 +7,10 @@ EIGHTBALL_INSTALL_LANE="ubuntu/cpu"
 EIGHTBALL_PROVIDER_ASSUMPTION="profiles/provider-assumptions/ubuntu-cpu.json"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
+SUITE_VERSION="8BALL-0.8.0"
+PHILO_ROOT="${PHILO_ROOT:-/opt/philosopher}"
+PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-${PHILO_ROOT}}"
+TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"
 MOTD_TEMPLATE="${SCRIPT_DIR}/assets/first-MOTD.txt"
 MOTD_TARGET="/etc/update-motd.d/99-8ball-trial"
 
