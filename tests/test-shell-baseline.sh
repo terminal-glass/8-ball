@@ -42,10 +42,17 @@ PY
   fi
 done
 
+COMMON_SH="${REPO_ROOT}/install/ubuntu/lib/ubuntu-common.sh"
+grep -Fq 'TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"' "${COMMON_SH}" \
+  || fail "${COMMON_SH} must define TRIAL_LOG from PHILO_ROOT/trial-log.txt"
+
 for script in trial-install.sh 8.1.sh; do
   path="${LANE_DIR}/${script}"
-  grep -Fq 'TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"' "${path}" \
-    || fail "${path} must set TRIAL_LOG from PHILO_ROOT/trial-log.txt"
+  if grep -Fq 'TRIAL_LOG="${PHILO_ROOT}/trial-log.txt"' "${path}"; then
+    continue
+  fi
+  grep -Fq 'ubuntu-common.sh' "${path}" \
+    || fail "${path} must set TRIAL_LOG or source install/ubuntu/lib/ubuntu-common.sh"
 done
 
 echo "test-shell-baseline: passed (${#CANONICAL_SCRIPTS[@]} scripts)"

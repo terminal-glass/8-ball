@@ -241,9 +241,9 @@ def test_model_cannot_bypass_profile_requirements(tmp_path: Path) -> None:
         CPU_LANE / "8.2.sh",
         env,
         "--model-slug",
-        "gemma",
+        "tinyllama",
         "--model",
-        "gemma:7b",
+        "tinyllama:1.1b",
     )
     assert result.returncode != 0
     assert "does not fit measured hardware" in result.stderr
@@ -262,7 +262,7 @@ def test_profile_selection_happy_path(tmp_path: Path) -> None:
             "EIGHTBALL_GPU_VRAM_GB": "0",
         },
     )
-    result = _run_bash(CPU_LANE / "8.2.sh", env, "--model-slug", "gemma")
+    result = _run_bash(CPU_LANE / "8.2.sh", env, "--model-slug", "tinyllama")
     assert result.returncode == 0, result.stderr
     result_env = Path(env["PHILOSOPHER_ROOT"]) / "profiles/90-result.env"
     assert result_env.is_file()
@@ -279,7 +279,7 @@ def test_raw_base_rejected_on_public_path(tmp_path: Path) -> None:
         "https://evil.example",
         "--yes",
         "--model-slug",
-        "gemma",
+        "tinyllama",
     )
     assert result.returncode != 0
     assert "--raw-base is not supported" in result.stderr

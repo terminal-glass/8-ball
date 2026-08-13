@@ -88,15 +88,41 @@ def lane_document(repo_root: Path, model_slug: str, lane_path: str) -> dict[str,
     return load_json(path)
 
 
+def lane_gpu_lane(lane: dict[str, Any], lane_path: str) -> bool:
+    if "gpu_lane" in lane:
+        return bool(lane.get("gpu_lane"))
+    return "cuda" in lane_path or "gpu" in lane_path
+
+
+def load_model_sizes(repo_root: Path, model_slug: str) -> list[dict[str, Any]]:
+    sizes_dir = repo_root / "profiles" / model_slug / "sizes"
+    if not sizes_dir.is_dir():
+        legacy = repo_root / "profiles" / f"{model_slug}.json"
+        if legacy.is_file():
+            return load_json(legacy).get("sizes", [])
+        raise SystemExit(f"Missing profile sizes for model: {model_slug}")
+    sizes: list[dict[str, Any]] = []
+    for path in sorted(sizes_dir.glob("*.json")):
+        sizes.append(load_json(path))
+    if not sizes:
+        raise SystemExit(f"No size records found under {sizes_dir}")
+    return sizes
+
+
 def model_page(repo_root: Path, model_slug: str) -> dict[str, Any]:
-    path = repo_root / "profiles" / f"{model_slug}.json"
+    path = repo_root / "profiles" / model_slug / "model.json"
     if not path.is_file():
+        legacy = repo_root / "profiles" / f"{model_slug}.json"
+        if legacy.is_file():
+            return load_json(legacy)
         raise SystemExit(f"Missing profile model page: {path}")
-    return load_json(path)
+    page = load_json(path)
+    page["sizes"] = load_model_sizes(repo_root, model_slug)
+    return page
 
 
-def find_size(page: dict[str, Any], ollama_ref: str) -> dict[str, Any] | None:
-    for size in page.get("sizes", []):
+def find_size(sizes: list[dict[str, Any]], ollama_ref: str) -> dict[str, Any] | None:
+    for size in sizes:
         if size.get("ollama_ref") == ollama_ref:
             return size
     return None
@@ -110,12 +136,13 @@ def select_for_slug(
 ) -> dict[str, Any]:
     lane = lane_document(repo_root, model_slug, lane_path)
     page = model_page(repo_root, model_slug)
-    lane_meta = {"gpu_lane": bool(lane.get("gpu_lane"))}
+    sizes = page.get("sizes", [])
+    lane_meta = {"gpu_lane": lane_gpu_lane(lane, lane_path)}
     hardware = c10_common.normalize_lane_hardware(hardware, lane_meta)
 
     selected = None
     fallback_chain: list[dict[str, Any]] = []
-    for size in page.get("sizes", []):
+    for size in sizes:
         ref = size.get("ollama_ref")
         if not ref:
             continue
@@ -166,12 +193,13 @@ def validate_requested_model(
     hardware: dict[str, Any],
 ) -> dict[str, Any]:
     page = model_page(repo_root, model_slug)
+    sizes = page.get("sizes", [])
     lane = lane_document(repo_root, model_slug, lane_path)
-    lane_meta = {"gpu_lane": bool(lane.get("gpu_lane"))}
+    lane_meta = {"gpu_lane": lane_gpu_lane(lane, lane_path)}
     hardware = c10_common.normalize_lane_hardware(hardware, lane_meta)
-    size = find_size(page, ollama_ref)
+    size = find_size(sizes, ollama_ref)
     if size is None:
-        for candidate in page.get("sizes", []):
+        for candidate in sizes:
             ref = candidate.get("ollama_ref") or ""
             if ref == ollama_ref or ref.endswith(f":{ollama_ref.split(':')[-1]}"):
                 size = candidate
@@ -183,7 +211,7 @@ def validate_requested_model(
             "selected_ollama_ref": None,
             "model_slug": model_slug,
             "lane_path": lane_path,
-            "message": f"Requested model {ollama_ref!r} is not present in profiles/{model_slug}.json",
+            "message": f"Requested model {ollama_ref!r} is not present in profiles/{model_slug}/sizes/",
         }
 
     fit = c10_common.evaluate_lane_fit(size, lane_meta, hardware)

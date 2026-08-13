@@ -41,16 +41,16 @@ ubuntu_set_release_hashes_for_lane() {
   local lane="${1:?lane required}"
   case "${lane}" in
     ubuntu/cpu)
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/trial-install.sh"]="465a5cd6624b589e3643d3a32ac1e4c159ee104928e8580a1fb5226b40897051"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.1.sh"]="88a31886ce8996778a2248f3e530072f13d6d25ea799f85ad7ce32236723a6dd"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.2.sh"]="f75b17e995cab65e3173541293a5c6f38fa4a43b3caebde106bbd3fed87dd7e5"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.3.sh"]="d78df5513a431a276f0a072e877866895ac8de43323f53e580557065a4ca2099"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/trial-install.sh"]="f670b1185e159b27fbe7e3fcc0d6e45e44519aa67742d461ed5badd8f6d52bdd"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.1.sh"]="c8dbdd3803c5131275ed450c8acac8b289e8f9c3a1a6f1ac639f8515dcd3700f"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.2.sh"]="4cfdec0e781461f9eef9f5c5a07af4c25c3ca2a108a2073d918d7212cb994562"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.3.sh"]="522b143679ec233dc4644274fcb84674c380b5cdc21430b6931a40f1012a5f8a"
       ;;
     ubuntu/cuda)
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/trial-install.sh"]="c507a7fbd0d531e191b5ac613e8fe2a0322f989c104f8194a4923e792f892aed"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.1.sh"]="6ded7ba1603b99d49b49124fa791275018c62c34b3d55d7b7fa4fba022cb8f38"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.2.sh"]="9e17b5fc92db8c3f5de81263bbbf1bc377f2f11d87c2cadd48f59ee177fedf0f"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.3.sh"]="89acad3dcce6796775b9caea1c8cf52db60cbf766d951e5003af3e8a8f0a0a62"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/trial-install.sh"]="9f7f46cd49c75120bbb46c09eee3f777e4024027188dd7b10429d4233e54420b"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.1.sh"]="3f39740b8ef71f1d20603061a4fd636f561e27f732f240fddc7c9232aac51cbd"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.2.sh"]="cb1137c84cd4104cf7256902b949fc7f57c3f754da8f76d8e2efa917c7397189"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.3.sh"]="6bfd8f518299933fb66cd00189be33a903a9f72f1e2a1c42d085f06f8170d862"
       ;;
     *)
       echo "No release hashes configured for lane ${lane}" >&2
