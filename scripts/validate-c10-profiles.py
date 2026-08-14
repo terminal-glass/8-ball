@@ -330,14 +330,14 @@ def validate(errors: list[str]) -> dict:
             if rel and not (REPO_ROOT / rel).exists():
                 fail(errors, f"Index points to missing file: {rel}")
 
-    root_trial = REPO_ROOT / "trial-install.sh"
+    root_trial = REPO_ROOT / "install/ubuntu/trial-install.sh"
     if not root_trial.is_file():
-        fail(errors, "Missing root trial-install.sh")
+        fail(errors, "Missing canonical Ubuntu trial-install.sh")
     else:
         result = subprocess.run(["bash", "-n", str(root_trial)], capture_output=True, text=True)
         stats["shell_checked"] += 1
         if result.returncode != 0:
-            fail(errors, f"bash -n failed for root trial-install.sh: {result.stderr.strip()}")
+            fail(errors, f"bash -n failed for install/ubuntu/trial-install.sh: {result.stderr.strip()}")
 
     return stats
 

@@ -10,11 +10,20 @@
           "8.1": "install/ubuntu/cpu/8.1.sh",
           "8.2": "install/ubuntu/cpu/8.2.sh",
           "8.3": "install/ubuntu/cpu/8.3.sh",
-          "trial-install": "install/ubuntu/cpu/trial-install.sh"
+          "trial-install": "install/ubuntu/trial-install.sh"
         }
       },
       "lane": "ubuntu/cpu",
-      "legacy_debt": [],
+      "legacy_debt": [
+        {
+          "follow_up": "PR57-canonical-ubuntu-bootstrap",
+          "lane": "ubuntu/cpu",
+          "path": "install/ubuntu/trial-install.sh",
+          "rationale": "Canonical Ubuntu trial-install bootstraps verified release runtime via SHA-256-checked GitHub fetches when not run from a local checkout.",
+          "removal_condition": "Remove when streamed installs no longer require runtime GitHub fetches.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
       "script_kind": "shell",
       "status": "pass",
       "syntax": {
@@ -35,7 +44,7 @@
         },
         "trial-install": {
           "detail": "",
-          "path": "install/ubuntu/cpu/trial-install.sh",
+          "path": "install/ubuntu/trial-install.sh",
           "status": "pass"
         }
       },
@@ -50,11 +59,20 @@
           "8.1": "install/ubuntu/cuda/8.1.sh",
           "8.2": "install/ubuntu/cuda/8.2.sh",
           "8.3": "install/ubuntu/cuda/8.3.sh",
-          "trial-install": "install/ubuntu/cuda/trial-install.sh"
+          "trial-install": "install/ubuntu/trial-install.sh"
         }
       },
       "lane": "ubuntu/cuda",
-      "legacy_debt": [],
+      "legacy_debt": [
+        {
+          "follow_up": "PR57-canonical-ubuntu-bootstrap",
+          "lane": "ubuntu/cuda",
+          "path": "install/ubuntu/trial-install.sh",
+          "rationale": "Canonical Ubuntu trial-install bootstraps verified release runtime via SHA-256-checked GitHub fetches when not run from a local checkout.",
+          "removal_condition": "Remove when streamed installs no longer require runtime GitHub fetches.",
+          "rule": "unreviewed_remote_payload_fetch"
+        }
+      ],
       "script_kind": "shell",
       "status": "pass",
       "syntax": {
@@ -75,7 +93,7 @@
         },
         "trial-install": {
           "detail": "",
-          "path": "install/ubuntu/cuda/trial-install.sh",
+          "path": "install/ubuntu/trial-install.sh",
           "status": "pass"
         }
       },
@@ -534,6 +552,22 @@
       "rationale": "Legacy trial-install may download sibling scripts from GitHub RAW_BASE when local copies are missing.",
       "removal_condition": "Remove when the lane bundle is self-contained without runtime GitHub script fetch.",
       "rule": "unreviewed_remote_payload_fetch"
+    },
+    {
+      "follow_up": "PR57-canonical-ubuntu-bootstrap",
+      "lane": "ubuntu/cpu",
+      "path": "install/ubuntu/trial-install.sh",
+      "rationale": "Canonical Ubuntu trial-install bootstraps verified release runtime via SHA-256-checked GitHub fetches when not run from a local checkout.",
+      "removal_condition": "Remove when streamed installs no longer require runtime GitHub fetches.",
+      "rule": "unreviewed_remote_payload_fetch"
+    },
+    {
+      "follow_up": "PR57-canonical-ubuntu-bootstrap",
+      "lane": "ubuntu/cuda",
+      "path": "install/ubuntu/trial-install.sh",
+      "rationale": "Canonical Ubuntu trial-install bootstraps verified release runtime via SHA-256-checked GitHub fetches when not run from a local checkout.",
+      "removal_condition": "Remove when streamed installs no longer require runtime GitHub fetches.",
+      "rule": "unreviewed_remote_payload_fetch"
     }
   ],
   "schema_version": "c10.installer-lane-conformance.v1",
@@ -541,7 +575,7 @@
   "summary": {
     "failure_count": 0,
     "lane_count": 10,
-    "legacy_debt_count": 8
+    "legacy_debt_count": 10
   },
   "violations": []
 }

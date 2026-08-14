@@ -21,13 +21,11 @@ def digest(lane: str, name: str) -> str:
 
 replacements = {
     "ubuntu/cpu": {
-        "trial-install.sh": digest("ubuntu/cpu", "trial-install.sh"),
         "8.1.sh": digest("ubuntu/cpu", "8.1.sh"),
         "8.2.sh": digest("ubuntu/cpu", "8.2.sh"),
         "8.3.sh": digest("ubuntu/cpu", "8.3.sh"),
     },
     "ubuntu/cuda": {
-        "trial-install.sh": digest("ubuntu/cuda", "trial-install.sh"),
         "8.1.sh": digest("ubuntu/cuda", "8.1.sh"),
         "8.2.sh": digest("ubuntu/cuda", "8.2.sh"),
         "8.3.sh": digest("ubuntu/cuda", "8.3.sh"),

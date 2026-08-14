@@ -30,8 +30,13 @@ eightball_release_raw_base() {
       "${EIGHTBALL_RELEASE_REPO}" "${profile}"
     return 0
   fi
-  printf 'https://raw.githubusercontent.com/%s/%s/install/%s' \
-    "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE}" "${profile}"
+  if [[ -n "${EIGHTBALL_RELEASE_REF:-}" ]]; then
+    printf 'https://raw.githubusercontent.com/%s/%s/install/%s' \
+      "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE_REF}" "${profile}"
+    return 0
+  fi
+  echo "EIGHTBALL_RELEASE_REF is required for verified release bootstrap." >&2
+  return 1
 }
 
 eightball_release_raw_repo_base() {
@@ -51,8 +56,8 @@ eightball_release_raw_repo_base() {
       "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE_REF}"
     return 0
   fi
-  printf 'https://raw.githubusercontent.com/%s/%s' \
-    "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE}"
+  echo "EIGHTBALL_RELEASE_REF is required for verified release bootstrap (logical ${EIGHTBALL_RELEASE} is not a Git ref)." >&2
+  return 1
 }
 
 eightball_manifest_path_for_release() {

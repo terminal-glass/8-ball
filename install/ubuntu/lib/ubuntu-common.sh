@@ -39,15 +39,17 @@ ubuntu_release_hash_key() {
 
 ubuntu_set_release_hashes_for_lane() {
   local lane="${1:?lane required}"
+  local canonical_trial
+  canonical_trial="$(ubuntu_sha256_file "${UBUNTU_LIB_DIR}/../trial-install.sh")"
   case "${lane}" in
     ubuntu/cpu)
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/trial-install.sh"]="f670b1185e159b27fbe7e3fcc0d6e45e44519aa67742d461ed5badd8f6d52bdd"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/trial-install.sh"]="${canonical_trial}"
       EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.1.sh"]="c8dbdd3803c5131275ed450c8acac8b289e8f9c3a1a6f1ac639f8515dcd3700f"
       EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.2.sh"]="4cfdec0e781461f9eef9f5c5a07af4c25c3ca2a108a2073d918d7212cb994562"
       EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.3.sh"]="522b143679ec233dc4644274fcb84674c380b5cdc21430b6931a40f1012a5f8a"
       ;;
     ubuntu/cuda)
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/trial-install.sh"]="9f7f46cd49c75120bbb46c09eee3f777e4024027188dd7b10429d4233e54420b"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/trial-install.sh"]="${canonical_trial}"
       EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.1.sh"]="3f39740b8ef71f1d20603061a4fd636f561e27f732f240fddc7c9232aac51cbd"
       EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.2.sh"]="cb1137c84cd4104cf7256902b949fc7f57c3f754da8f76d8e2efa917c7397189"
       EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.3.sh"]="6bfd8f518299933fb66cd00189be33a903a9f72f1e2a1c42d085f06f8170d862"
@@ -145,6 +147,11 @@ ubuntu_find_repo_root() {
 ubuntu_release_raw_url() {
   local lane="${EIGHTBALL_INSTALL_LANE:?EIGHTBALL_INSTALL_LANE is required}"
   local name="$1"
+  if [[ "${name}" == "trial-install.sh" ]]; then
+    printf 'https://raw.githubusercontent.com/%s/%s/install/ubuntu/trial-install.sh' \
+      "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE_REF}"
+    return 0
+  fi
   printf 'https://raw.githubusercontent.com/%s/%s/install/%s/%s' \
     "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE_REF}" "${lane}" "${name}"
 }

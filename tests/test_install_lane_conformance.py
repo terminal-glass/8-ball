@@ -42,13 +42,16 @@ def validator():
     return _load_validator()
 
 
-def _write_shell_lane(lane_dir: Path) -> None:
+def _write_shell_lane(lane_dir: Path, *, include_trial_install: bool = True) -> None:
     lane_dir.mkdir(parents=True, exist_ok=True)
     assets = lane_dir / "assets"
     assets.mkdir(exist_ok=True)
     (lane_dir / "README.md").write_text("# lane\n", encoding="utf-8")
     (assets / "first-MOTD.txt").write_text("motd\n", encoding="utf-8")
-    for stem in ("trial-install", "8.1", "8.2", "8.3"):
+    stems = ("8.1", "8.2", "8.3")
+    if include_trial_install:
+        stems = ("trial-install", *stems)
+    for stem in stems:
         script = lane_dir / f"{stem}.sh"
         content = "#!/usr/bin/env bash\n"
         content += 'if [[ "$1" == "--help" ]]; then echo help; exit 0; fi\n'
@@ -72,9 +75,16 @@ def _write_minimal_repo(base: Path) -> None:
     for lane, kind in LANE_MATRIX:
         lane_dir = base / "install" / lane
         if kind == "shell":
-            _write_shell_lane(lane_dir)
+            include_trial = not lane.startswith("ubuntu/")
+            _write_shell_lane(lane_dir, include_trial_install=include_trial)
         else:
             _write_powershell_lane(lane_dir)
+    ubuntu_dir = base / "install" / "ubuntu"
+    ubuntu_dir.mkdir(parents=True, exist_ok=True)
+    (ubuntu_dir / "trial-install.sh").write_text(
+        '#!/usr/bin/env bash\nif [[ "$1" == "--help" ]]; then echo help; exit 0; fi\n',
+        encoding="utf-8",
+    )
     lib_dir = base / "install" / "windows" / "lib"
     lib_dir.mkdir(parents=True, exist_ok=True)
     (lib_dir / "Windows-Common.ps1").write_text("param([switch]$Help)\n", encoding="utf-8")
@@ -88,7 +98,7 @@ def test_complete_lane_matrix_passes(validator):
     report = validator.validate_repo(REPO_ROOT)
     assert report["summary"]["lane_count"] == 10
     assert report["summary"]["failure_count"] == 0
-    assert report["summary"]["legacy_debt_count"] == 8
+    assert report["summary"]["legacy_debt_count"] == 10
 
 
 def test_missing_payload_fails(validator, tmp_path):
@@ -169,8 +179,13 @@ def test_unauthorized_remote_fetch_without_debt(validator, tmp_path):
 def test_legacy_debt_recorded_not_ignored(validator):
     report = validator.validate_repo(REPO_ROOT)
     debt = report["legacy_debt"]
-    assert len(debt) == 8
-    assert all(entry["follow_up"] == "C10.2-Linux-lanes" for entry in debt)
+    assert len(debt) == 10
+    cloud_debt = [entry for entry in debt if entry["lane"].startswith("cloud/")]
+    assert len(cloud_debt) == 8
+    assert all(entry["follow_up"] == "C10.2-Linux-lanes" for entry in cloud_debt)
+    ubuntu_debt = [entry for entry in debt if entry["lane"].startswith("ubuntu/")]
+    assert len(ubuntu_debt) == 2
+    assert all(entry["follow_up"] == "PR57-canonical-ubuntu-bootstrap" for entry in ubuntu_debt)
     cloud = _lane(report, "cloud/digitalocean/cpu-droplet")
     assert cloud["legacy_debt"]
 

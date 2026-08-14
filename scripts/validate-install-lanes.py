@@ -15,6 +15,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 INSTALL_DIR = REPO_ROOT / "install"
 DEFAULT_JSON_OUT = REPO_ROOT / "reports" / "installer-lane-conformance.json"
+UBUNTU_CANONICAL_TRIAL_INSTALL = INSTALL_DIR / "ubuntu" / "trial-install.sh"
 
 OPERATIONAL_STEMS = ("trial-install", "8.1", "8.2", "8.3")
 MOTD_REL = Path("assets") / "first-MOTD.txt"
@@ -47,6 +48,22 @@ LANE_SPECS: list[dict[str, str]] = [
 
 # Exact legacy debt entries only. No wildcards. Mac/Windows entries must fail validation.
 LEGACY_DEBT_SPECS: list[dict[str, str]] = [
+    {
+        "lane": "ubuntu/cpu",
+        "path": "install/ubuntu/trial-install.sh",
+        "rule": "unreviewed_remote_payload_fetch",
+        "rationale": "Canonical Ubuntu trial-install bootstraps verified release runtime via SHA-256-checked GitHub fetches when not run from a local checkout.",
+        "follow_up": "PR57-canonical-ubuntu-bootstrap",
+        "removal_condition": "Remove when streamed installs no longer require runtime GitHub fetches.",
+    },
+    {
+        "lane": "ubuntu/cuda",
+        "path": "install/ubuntu/trial-install.sh",
+        "rule": "unreviewed_remote_payload_fetch",
+        "rationale": "Canonical Ubuntu trial-install bootstraps verified release runtime via SHA-256-checked GitHub fetches when not run from a local checkout.",
+        "follow_up": "PR57-canonical-ubuntu-bootstrap",
+        "removal_condition": "Remove when streamed installs no longer require runtime GitHub fetches.",
+    },
     {
         "lane": "cloud/digitalocean/cpu-droplet",
         "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
@@ -244,7 +261,10 @@ def validate_legacy_debt_specs() -> list[Violation]:
                     remediation="Use an exact install/<lane>/<file> path with no wildcards.",
                 )
             )
-        expected_lane = entry["path"].removeprefix("install/")
+        if entry["path"].startswith(f"install/{lane}/"):
+            continue
+        if lane.startswith("ubuntu/") and entry["path"] == "install/ubuntu/trial-install.sh":
+            continue
         if not entry["path"].startswith(f"install/{lane}/"):
             violations.append(
                 Violation(
@@ -258,12 +278,15 @@ def validate_legacy_debt_specs() -> list[Violation]:
     return violations
 
 
-def expected_script_paths(lane_dir: Path, script_kind: str) -> dict[str, Path]:
+def expected_script_paths(lane_dir: Path, script_kind: str, *, lane: str = "", repo: RepoContext | None = None) -> dict[str, Path]:
     ext = ".ps1" if script_kind == "powershell" else ".sh"
     wrong_ext = ".sh" if script_kind == "powershell" else ".ps1"
     resolved: dict[str, Path] = {}
     for stem in OPERATIONAL_STEMS:
-        expected = lane_dir / f"{stem}{ext}"
+        if stem == "trial-install" and lane.startswith("ubuntu/") and repo is not None:
+            expected = repo.install_dir / "ubuntu" / "trial-install.sh"
+        else:
+            expected = lane_dir / f"{stem}{ext}"
         resolved[stem] = expected
         wrong = lane_dir / f"{stem}{wrong_ext}"
         if wrong.is_file():
@@ -395,7 +418,7 @@ def validate_lane(
         )
         return {"lane": lane, "status": "fail", "files": files_report, "syntax": {}}, violations, legacy_debt_hits
 
-    expected = expected_script_paths(lane_dir, script_kind)
+    expected = expected_script_paths(lane_dir, script_kind, lane=lane, repo=repo)
     readme_text = ""
     if expected["README"].is_file():
         readme_text = expected["README"].read_text(encoding="utf-8")

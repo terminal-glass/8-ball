@@ -3,7 +3,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-LANE_DIR="${REPO_ROOT}/install/ubuntu/cpu"
+LANE_DIR="${REPO_ROOT}/install/ubuntu"
 CANONICAL_SCRIPTS=(
   trial-install.sh
   8.1.sh

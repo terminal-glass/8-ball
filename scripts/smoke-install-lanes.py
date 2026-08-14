@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+INSTALL_DIR = REPO_ROOT / "install"
 DEFAULT_JSON_OUT = REPO_ROOT / "reports" / "installer-smoke-results.json"
 TIMEOUT_SECONDS = 30
 
@@ -60,6 +61,13 @@ def load_lane_matrix() -> Any:
 
 def rel_posix(path: Path) -> str:
     return path.relative_to(REPO_ROOT).as_posix()
+
+
+def resolve_script_path(lane: str, stem: str, lane_dir: Path, script_kind: str, install_dir: Path) -> Path:
+    ext = ".ps1" if script_kind == "powershell" else ".sh"
+    if stem == "trial-install" and lane.startswith("ubuntu/"):
+        return install_dir / "ubuntu" / "trial-install.sh"
+    return lane_dir / f"{stem}{ext}"
 
 
 def write_stub_commands(stub_dir: Path, log_file: Path) -> None:
@@ -234,6 +242,9 @@ def evaluate_mode(
     stub_log = work_dir / "stub-invocations.log"
     write_stub_commands(stub_dir, stub_log)
     env = build_shell_env(work_dir, stub_dir)
+    if lane.startswith("ubuntu/"):
+        env["EIGHTBALL_INSTALL_LANE"] = lane
+        env["EIGHTBALL_REPO_ROOT"] = str(REPO_ROOT)
 
     if script_kind == "powershell":
         run = run_powershell_mode(script_path=script_path, mode=mode, env=env, stub_log=stub_log)
@@ -291,7 +302,7 @@ def build_report(repo_root: Path | None = None) -> dict[str, Any]:
         ext = ".ps1" if script_kind == "powershell" else ".sh"
         lane_dir = install_dir / lane
         for stem in lane_module.OPERATIONAL_STEMS:
-            script_path = lane_dir / f"{stem}{ext}"
+            script_path = resolve_script_path(lane, stem, lane_dir, script_kind, install_dir)
             work_dir = Path(tempfile.mkdtemp(prefix=f"smoke-{lane.replace('/', '_')}-{stem}-"))
             for mode in ("help", "preflight"):
                 checks.append(
