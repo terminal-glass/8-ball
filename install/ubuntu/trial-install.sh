@@ -5,15 +5,160 @@ set -euo pipefail
 
 EIGHTBALL_SCRIPT_VERSION="0.8.0"
 EIGHTBALL_INSTALL_PROFILE="ubuntu"
+EIGHTBALL_RELEASE="${EIGHTBALL_RELEASE:-v0.8.0}"
+EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SHARED_DIR="${SCRIPT_DIR}/../shared"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
+TRIAL_MARKER="${PHILOSOPHER_ROOT}/trial-installed"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-}"
 REQUESTED_MODEL=""
 MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 SKIP_MOTD=0
 MANIFEST="${EIGHTBALL_MANIFEST:-}"
+INSTALL_SUCCEEDED=0
+
+eightball_entrypoint_release_repo_base() {
+  if [[ -n "${EIGHTBALL_RAW_BASE:-}" ]]; then
+    local trimmed="${EIGHTBALL_RAW_BASE%/}"
+    trimmed="${trimmed%/install/ubuntu}"
+    trimmed="${trimmed%/install}"
+    printf '%s' "${trimmed}"
+    return 0
+  fi
+  if [[ "${EIGHTBALL_RELEASE}" == "main" ]]; then
+    printf 'https://raw.githubusercontent.com/%s/main' "${EIGHTBALL_RELEASE_REPO}"
+    return 0
+  fi
+  printf 'https://raw.githubusercontent.com/%s/%s' \
+    "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE}"
+}
+
+eightball_entrypoint_verify_artifact() {
+  local manifest_path="$1"
+  local rel_path="$2"
+  local file_path="$3"
+  python3 - "${manifest_path}" "${rel_path}" "${file_path}" <<'PY'
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+manifest_path, rel_path, file_path = sys.argv[1:4]
+manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+expected = manifest.get("artifacts", {}).get(rel_path)
+if not expected:
+    print(f"[release] No checksum recorded for artifact {rel_path}", file=sys.stderr)
+    raise SystemExit(1)
+path = Path(file_path)
+if not path.is_file() or path.stat().st_size == 0:
+    print(f"[release] Missing or empty artifact file: {file_path}", file=sys.stderr)
+    raise SystemExit(1)
+digest = hashlib.sha256(path.read_bytes()).hexdigest()
+if digest != expected:
+    print(
+        f"[release] SHA-256 mismatch for {rel_path}\n"
+        f"  expected: {expected}\n"
+        f"  actual:   {digest}",
+        file=sys.stderr,
+    )
+    raise SystemExit(1)
+PY
+}
+
+eightball_entrypoint_download_verified() {
+  local rel_path="$1"
+  local dest_path="$2"
+  local manifest_path="$3"
+  local url="${4:-$(eightball_entrypoint_release_repo_base)/${rel_path}}"
+  local tmp parent
+  parent="$(dirname "${dest_path}")"
+  install -d -m 0755 "${parent}"
+  tmp="$(mktemp "${parent}/.artifact.XXXXXX")"
+  if ! curl -fsSL "${url}" -o "${tmp}"; then
+    rm -f "${tmp}"
+    echo "Failed to download release artifact: ${url}" >&2
+    return 1
+  fi
+  if ! eightball_entrypoint_verify_artifact "${manifest_path}" "${rel_path}" "${tmp}"; then
+    rm -f "${tmp}"
+    echo "Refusing to install unverified artifact: ${rel_path}" >&2
+    return 1
+  fi
+  install -m 0755 "${tmp}" "${dest_path}"
+  rm -f "${tmp}"
+}
+
+eightball_entrypoint_fetch_dev_shared() {
+  local base url tmp
+  if [[ -n "${EIGHTBALL_RAW_BASE:-}" ]]; then
+    base="${EIGHTBALL_RAW_BASE%/}"
+  elif [[ "${EIGHTBALL_RELEASE}" == "main" ]]; then
+    base="https://raw.githubusercontent.com/${EIGHTBALL_RELEASE_REPO}/main/install/shared"
+  else
+    echo "Development shared-helper fetch requires EIGHTBALL_RELEASE=main or EIGHTBALL_RAW_BASE." >&2
+    return 1
+  fi
+  install -d -m 0755 "${SHARED_DIR}"
+  for name in 8ball-version.sh 8ball-release.sh; do
+    url="${base}/${name}"
+    tmp="$(mktemp)"
+    if ! curl -fsSL "${url}" -o "${tmp}"; then
+      rm -f "${tmp}"
+      echo "Failed to download development helper: ${url}" >&2
+      return 1
+    fi
+    install -m 0755 "${tmp}" "${SHARED_DIR}/${name}"
+    rm -f "${tmp}"
+  done
+}
+
+eightball_entrypoint_fetch_verified_shared() {
+  local manifest_cache rel_path dest_path url
+  manifest_cache="$(mktemp)"
+  url="$(eightball_entrypoint_release_repo_base)/install/releases/${EIGHTBALL_RELEASE}/manifest.json"
+  if ! curl -fsSL "${url}" -o "${manifest_cache}"; then
+    rm -f "${manifest_cache}"
+    cat >&2 <<EOF
+Failed to download release manifest:
+  ${url}
+
+Published immutable release tag ${EIGHTBALL_RELEASE} is not available from ${EIGHTBALL_RELEASE_REPO}.
+A maintainer must tag the merged release commit before customer bootstrap can proceed.
+EOF
+    return 1
+  fi
+  if ! python3 -m json.tool "${manifest_cache}" >/dev/null 2>&1; then
+    rm -f "${manifest_cache}"
+    echo "Downloaded release manifest is not valid JSON: ${url}" >&2
+    return 1
+  fi
+  install -d -m 0755 "${SHARED_DIR}"
+  for rel_path in install/shared/8ball-version.sh install/shared/8ball-release.sh; do
+    dest_path="${SHARED_DIR}/$(basename "${rel_path}")"
+    if ! eightball_entrypoint_download_verified "${rel_path}" "${dest_path}" "${manifest_cache}"; then
+      rm -f "${manifest_cache}"
+      return 1
+    fi
+  done
+  rm -f "${manifest_cache}"
+}
+
+bootstrap_entrypoint_helpers() {
+  local version_sh="${SHARED_DIR}/8ball-version.sh"
+  local release_sh="${SHARED_DIR}/8ball-release.sh"
+  if [[ -f "${version_sh}" && -f "${release_sh}" ]]; then
+    return 0
+  fi
+  if [[ "${EIGHTBALL_ALLOW_UNVERIFIED_DOWNLOADS:-0}" == "1" || "${EIGHTBALL_RELEASE}" == "main" || -n "${EIGHTBALL_RAW_BASE:-}" ]]; then
+    eightball_entrypoint_fetch_dev_shared
+    return $?
+  fi
+  eightball_entrypoint_fetch_verified_shared
+}
+
+bootstrap_entrypoint_helpers
 
 # shellcheck source=/dev/null
 source "${SHARED_DIR}/8ball-version.sh"
@@ -38,6 +183,7 @@ Options:
 Environment:
   EIGHTBALL_RELEASE   Tagged release (default: v0.8.0) or "main" for development
   EIGHTBALL_RAW_BASE  Explicit raw script base URL override
+  EIGHTBALL_REPO_ROOT Full checkout override for local development bundles
 EOF
 }
 
@@ -46,6 +192,9 @@ log() {
 }
 
 require_root() {
+  if [[ "${EIGHTBALL_TEST_SKIP_ROOT:-0}" == "1" ]]; then
+    return 0
+  fi
   if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
     echo "trial-install.sh requires root. Re-run with sudo." >&2
     exit 1
@@ -98,10 +247,46 @@ validate_raw_base() {
   esac
 }
 
+clear_completion_marker() {
+  rm -f "${TRIAL_MARKER}"
+}
+
+write_completion_marker() {
+  cat >"${TRIAL_MARKER}" <<EOF
+suite_version=${EIGHTBALL_SUITE_VERSION}
+script_family=${EIGHTBALL_SCRIPT_FAMILY}
+installed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+install_profile=${EIGHTBALL_INSTALL_PROFILE}
+install_lane=${EIGHTBALL_INSTALL_LANE:-${EIGHTBALL_INSTALL_PROFILE}}
+release_tag=${EIGHTBALL_RELEASE}
+EOF
+  chmod 0644 "${TRIAL_MARKER}"
+}
+
+on_exit() {
+  local status=$?
+  if [[ "${status}" -ne 0 && "${INSTALL_SUCCEEDED}" -eq 0 ]]; then
+    clear_completion_marker
+  fi
+  return "${status}"
+}
+
 resolve_script() {
   local name="$1"
   local local_path="${SCRIPT_DIR}/${name}"
+  local skip_release_checksum=0
+  if [[ -n "${EIGHTBALL_REPO_ROOT:-}" ]] || eightball_release_is_development; then
+    skip_release_checksum=1
+  fi
   if [[ -f "${local_path}" ]]; then
+    if [[ "${skip_release_checksum}" -eq 0 ]]; then
+      if manifest_path="$(eightball_manifest_path_for_release "${SCRIPT_DIR}" 2>/dev/null || true)"; then
+        eightball_verify_download_sha "${local_path}" "${name}" "${manifest_path}" || {
+          echo "Local script failed release integrity check: ${name}" >&2
+          exit 1
+        }
+      fi
+    fi
     eightball_verify_script_version "${local_path}" "${name}"
     printf '%s' "${local_path}"
     return 0
@@ -113,18 +298,49 @@ resolve_script() {
   local tmp manifest_path=""
   tmp="$(mktemp)"
   curl -fsSL "${RAW_BASE}/${name}" -o "${tmp}"
-  bash -n "${tmp}"
-  if manifest_path="$(eightball_manifest_path_for_release "${SCRIPT_DIR}" || true)"; then
+  if manifest_path="$(eightball_manifest_path_for_release "${SCRIPT_DIR}" 2>/dev/null || true)"; then
     eightball_verify_download_sha "${tmp}" "${name}" "${manifest_path}" || {
       echo "Download integrity check failed for ${name}." >&2
       rm -f "${tmp}"
       exit 1
     }
+  elif ! eightball_release_is_development; then
+    echo "Release manifest unavailable; refusing unverified download of ${name}." >&2
+    rm -f "${tmp}"
+    exit 1
   fi
+  bash -n "${tmp}"
   eightball_verify_script_version "${tmp}" "${name}"
   install -m 0755 "${tmp}" "${local_path}"
   rm -f "${tmp}"
   printf '%s' "${local_path}"
+}
+
+prepare_release_context() {
+  if [[ -n "${EIGHTBALL_REPO_ROOT:-}" && -d "${EIGHTBALL_REPO_ROOT}/profiles" ]]; then
+    log "Using explicit development bundle at ${EIGHTBALL_REPO_ROOT}"
+    return 0
+  fi
+  if eightball_local_bundle_ready "${SCRIPT_DIR}"; then
+    export EIGHTBALL_REPO_ROOT="$(eightball_locate_repo_root_from "${SCRIPT_DIR}")"
+    log "Using local development bundle at ${EIGHTBALL_REPO_ROOT}"
+    return 0
+  fi
+  if eightball_release_is_development; then
+    log "Development release override (${EIGHTBALL_RELEASE:-main}); profile data must be supplied locally"
+    if repo_root="$(eightball_locate_repo_root_from "${SCRIPT_DIR}" 2>/dev/null || true)"; then
+      export EIGHTBALL_REPO_ROOT="${repo_root}"
+    fi
+    return 0
+  fi
+  log "Resolving verified release bundle ${EIGHTBALL_RELEASE}"
+  eightball_bootstrap_release_runtime "${SCRIPT_DIR}" "${BASH_SOURCE[0]}" || {
+    echo "Failed to bootstrap verified release runtime for ${EIGHTBALL_RELEASE}." >&2
+    exit 1
+  }
+  if [[ -z "${MANIFEST}" && -n "${EIGHTBALL_MANIFEST:-}" ]]; then
+    MANIFEST="${EIGHTBALL_MANIFEST}"
+  fi
 }
 
 run_step() {
@@ -138,21 +354,23 @@ run_step() {
   fi
 }
 
-verify_local_bundle() {
-  eightball_verify_bundle "${SCRIPT_DIR}" "trial-install.sh" "8.1.sh" "8.2.sh" "8.3.sh"
-}
-
 main() {
   parse_args "$@"
   require_root
+  trap on_exit EXIT
   eightball_verify_script_version "${BASH_SOURCE[0]}" "trial-install.sh"
   install -d -m 0755 "${PHILOSOPHER_ROOT}"
   touch "${LOG_FILE}"
   chmod 0644 "${LOG_FILE}"
+  clear_completion_marker
 
-  verify_local_bundle || {
-    log "Local bundle version mismatch; will resolve scripts individually"
-  }
+  prepare_release_context
+
+  if [[ "${EIGHTBALL_BOOTSTRAP_STOP:-0}" == "1" ]]; then
+    log "Bootstrap stop requested; release context prepared."
+    INSTALL_SUCCEEDED=1
+    exit 0
+  fi
 
   local script_81 script_82 script_83
   script_81="$(resolve_script "8.1.sh")"
@@ -186,9 +404,11 @@ main() {
     log "[4/4] Skipping MOTD (--no-motd)"
   fi
 
+  INSTALL_SUCCEEDED=1
+  write_completion_marker
   log "Trial install complete. Log: ${LOG_FILE}"
   log "Result: ${PHILOSOPHER_ROOT}/8ball-result.txt"
-  log "Marker: ${PHILOSOPHER_ROOT}/trial-installed"
+  log "Marker: ${TRIAL_MARKER}"
 }
 
 main "$@"
