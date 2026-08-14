@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 ROOT_TRIAL_INSTALL = REPO_ROOT / "trial-install.sh"
 RELEASE_MANIFEST = REPO_ROOT / "install/releases/v0.8.0/manifest.json"
 CUSTOMER_URL = "https://raw.githubusercontent.com/terminal-glass/8-ball/main/trial-install.sh"
-APPROVED_REF = "8c07c5844cdabd6c14c1b3b30919c71bffd18597"
+APPROVED_REF = "0370d8fd7f064374f19fcb8f1ca595ba62ba83a1"
 
 
 def _restore_release_tree() -> None:
