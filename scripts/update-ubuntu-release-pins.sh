@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 common_path = Path(sys.argv[1])
-root = common_path.parents[2]
+root = common_path.parents[3]
 text = common_path.read_text(encoding="utf-8")
 
 def digest(lane: str, name: str) -> str:

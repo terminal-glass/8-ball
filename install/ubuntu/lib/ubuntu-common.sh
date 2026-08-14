@@ -27,7 +27,7 @@ CUDA_AVAILABLE="false"
 
 # Release pin for remote bootstrap (maintainer: bump on each public installer release).
 EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"
-EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-7800b2c478b6f8e59a56e45dbc2c5de64106e032}"
+EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-1f3655acdcf469108d33fb886116847753959384}"
 
 UBUNTU_LIB_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -44,15 +44,15 @@ ubuntu_set_release_hashes_for_lane() {
   case "${lane}" in
     ubuntu/cpu)
       EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/trial-install.sh"]="${canonical_trial}"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.1.sh"]="c8dbdd3803c5131275ed450c8acac8b289e8f9c3a1a6f1ac639f8515dcd3700f"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.2.sh"]="4cfdec0e781461f9eef9f5c5a07af4c25c3ca2a108a2073d918d7212cb994562"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.3.sh"]="522b143679ec233dc4644274fcb84674c380b5cdc21430b6931a40f1012a5f8a"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.1.sh"]="2e69bc2d23af825edd9d19d7140f07ff0d936efed553245c4c37794eaccf68be"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.2.sh"]="77334d876d5134e381a5fb30db84badd3e2b99c906ce5ed8beec3519c7ba73da"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cpu/8.3.sh"]="33edfbc5922cc54aa64647d249623cc7542ba32683e1e408b0a74242ff99549b"
       ;;
     ubuntu/cuda)
       EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/trial-install.sh"]="${canonical_trial}"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.1.sh"]="3f39740b8ef71f1d20603061a4fd636f561e27f732f240fddc7c9232aac51cbd"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.2.sh"]="cb1137c84cd4104cf7256902b949fc7f57c3f754da8f76d8e2efa917c7397189"
-      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.3.sh"]="6bfd8f518299933fb66cd00189be33a903a9f72f1e2a1c42d085f06f8170d862"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.1.sh"]="94ad8c9bdcc8724e83e6bc9257ed8c104ac7d4c2274e6d6d3d282158fca447f6"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.2.sh"]="1a9641c9b71e93cb4f60b2823665cab9cf7a70309527f32aa51a441c3d0fe00d"
+      EIGHTBALL_RELEASE_SHA256["ubuntu/cuda/8.3.sh"]="6ff7df449a72e577330bc0d9cee35249faa0c588c33fca87f3cef842ffd7108d"
       ;;
     *)
       echo "No release hashes configured for lane ${lane}" >&2

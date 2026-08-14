@@ -18,7 +18,7 @@ CUSTOMER_URL = (
     "https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh"
 )
 RELEASE_MANIFEST = REPO_ROOT / "install/releases/v0.8.0/manifest.json"
-RELEASE_REF = "cabdec1bc61a240c22f5c1027edb7554eb4593b2"
+RELEASE_REF = "1f3655acdcf469108d33fb886116847753959384"
 
 
 def _restore_release_tree() -> None:

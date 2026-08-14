@@ -17,7 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 RELEASE_MANIFEST = REPO_ROOT / "install/releases/v0.8.0/manifest.json"
 TRIAL_INSTALL = REPO_ROOT / "install/ubuntu/trial-install.sh"
 RELEASE_SH = REPO_ROOT / "install/shared/8ball-release.sh"
-RELEASE_REF = "cabdec1bc61a240c22f5c1027edb7554eb4593b2"
+RELEASE_REF = "1f3655acdcf469108d33fb886116847753959384"
 
 
 @pytest.fixture(autouse=True)
