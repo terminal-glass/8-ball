@@ -6,7 +6,8 @@ set -euo pipefail
 EIGHTBALL_SCRIPT_VERSION="0.8.0"
 EIGHTBALL_INSTALL_PROFILE="ubuntu"
 EIGHTBALL_RELEASE="${EIGHTBALL_RELEASE:-v0.8.0}"
-EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-810b37dcd61e97de38860056f36e2061b6feeba9}"
+EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-b018f2154ffc185152e54ff4063fd1921dc22d0c}"
+export EIGHTBALL_RELEASE_REF
 EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
 EIGHTBALL_BOOTSTRAP_ROOT="${EIGHTBALL_BOOTSTRAP_ROOT:-${PHILOSOPHER_ROOT}/.8ball-bootstrap/ubuntu}"
@@ -404,7 +405,7 @@ prepare_release_context() {
     return 0
   fi
   log "Resolving verified release bundle ${EIGHTBALL_RELEASE}"
-  eightball_bootstrap_release_runtime "${SCRIPT_DIR}" "${ENTRY_SCRIPT}" || {
+  eightball_bootstrap_release_runtime "${SCRIPT_DIR}" || {
     echo "Failed to bootstrap verified release runtime for ${EIGHTBALL_RELEASE}." >&2
     exit 1
   }
