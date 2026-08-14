@@ -6,10 +6,10 @@ set -euo pipefail
 EIGHTBALL_SCRIPT_VERSION="0.8.0"
 EIGHTBALL_INSTALL_PROFILE="ubuntu"
 EIGHTBALL_RELEASE="${EIGHTBALL_RELEASE:-v0.8.0}"
+EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-810b37dcd61e97de38860056f36e2061b6feeba9}"
 EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SHARED_DIR="${SCRIPT_DIR}/../shared"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
+EIGHTBALL_BOOTSTRAP_ROOT="${EIGHTBALL_BOOTSTRAP_ROOT:-${PHILOSOPHER_ROOT}/.8ball-bootstrap/ubuntu}"
 LOG_FILE="${PHILOSOPHER_ROOT}/8ball-trial.log"
 TRIAL_MARKER="${PHILOSOPHER_ROOT}/trial-installed"
 RAW_BASE="${EIGHTBALL_RAW_BASE:-}"
@@ -18,6 +18,44 @@ MODEL_SLUG="${EIGHTBALL_MODEL_SLUG:-}"
 SKIP_MOTD=0
 MANIFEST="${EIGHTBALL_MANIFEST:-}"
 INSTALL_SUCCEEDED=0
+ENTRY_SCRIPT=""
+EIGHTBALL_STREAMED_INSTALL=0
+
+eightball_resolve_entry_context() {
+  local source_path="${BASH_SOURCE[0]:-}"
+  if [[ -n "${source_path}" && "${source_path}" != bash && -f "${source_path}" ]]; then
+    SCRIPT_DIR="$(cd "$(dirname "${source_path}")" && pwd)"
+    ENTRY_SCRIPT="${source_path}"
+    SHARED_DIR="${SCRIPT_DIR}/../shared"
+    EIGHTBALL_STREAMED_INSTALL=0
+    return 0
+  fi
+  EIGHTBALL_STREAMED_INSTALL=1
+  SCRIPT_DIR="${EIGHTBALL_BOOTSTRAP_ROOT}/install/ubuntu"
+  SHARED_DIR="${EIGHTBALL_BOOTSTRAP_ROOT}/install/shared"
+  ENTRY_SCRIPT="${SCRIPT_DIR}/trial-install.sh"
+  install -d -m 0755 "${SCRIPT_DIR}" "${SHARED_DIR}"
+}
+
+eightball_resolve_entry_context
+
+detect_ubuntu_install_lane() {
+  if [[ -n "${EIGHTBALL_INSTALL_LANE:-}" ]]; then
+    printf '%s' "${EIGHTBALL_INSTALL_LANE}"
+    return 0
+  fi
+  local gpu_vram
+  if command -v nvidia-smi >/dev/null 2>&1; then
+    gpu_vram="$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -n1 || echo 0)"
+    if [[ "${gpu_vram}" =~ ^[0-9]+$ ]] && [[ "${gpu_vram}" -ge 6000 ]]; then
+      printf '%s' "ubuntu/cuda"
+      return 0
+    fi
+  fi
+  printf '%s' "ubuntu/cpu"
+}
+
+export EIGHTBALL_INSTALL_LANE="${EIGHTBALL_INSTALL_LANE:-$(detect_ubuntu_install_lane)}"
 
 eightball_entrypoint_release_repo_base() {
   if [[ -n "${EIGHTBALL_RAW_BASE:-}" ]]; then
@@ -27,17 +65,17 @@ eightball_entrypoint_release_repo_base() {
     printf '%s' "${trimmed}"
     return 0
   fi
-  if [[ "${EIGHTBALL_RELEASE}" == "main" ]]; then
-    printf 'https://raw.githubusercontent.com/%s/main' "${EIGHTBALL_RELEASE_REPO}"
-    return 0
-  fi
   if [[ -n "${EIGHTBALL_RELEASE_REF:-}" ]]; then
     printf 'https://raw.githubusercontent.com/%s/%s' \
       "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE_REF}"
     return 0
   fi
-  printf 'https://raw.githubusercontent.com/%s/%s' \
-    "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE}"
+  if [[ "${EIGHTBALL_RELEASE}" == "main" ]]; then
+    printf 'https://raw.githubusercontent.com/%s/main' "${EIGHTBALL_RELEASE_REPO}"
+    return 0
+  fi
+  echo "EIGHTBALL_RELEASE_REF is required for verified release bootstrap (logical ${EIGHTBALL_RELEASE} is not a Git ref)." >&2
+  return 1
 }
 
 eightball_entrypoint_verify_artifact() {
@@ -129,8 +167,8 @@ eightball_entrypoint_fetch_verified_shared() {
 Failed to download release manifest:
   ${url}
 
-Published immutable release tag ${EIGHTBALL_RELEASE} is not available from ${EIGHTBALL_RELEASE_REPO}.
-A maintainer must tag the merged release commit before customer bootstrap can proceed.
+Published immutable release source is not available from ${EIGHTBALL_RELEASE_REPO}.
+Set EIGHTBALL_RELEASE_REF to the approved commit SHA for logical release ${EIGHTBALL_RELEASE}.
 EOF
     return 1
   fi
@@ -163,6 +201,24 @@ bootstrap_entrypoint_helpers() {
   eightball_entrypoint_fetch_verified_shared
 }
 
+eightball_entrypoint_ensure_smoke_contract() {
+  local dest="${SHARED_DIR}/installer-smoke-contract.sh"
+  local base url
+  if [[ -f "${dest}" ]]; then
+    return 0
+  fi
+  if ! base="$(eightball_entrypoint_release_repo_base)"; then
+    return 1
+  fi
+  url="${base}/install/shared/installer-smoke-contract.sh"
+  install -d -m 0755 "${SHARED_DIR}"
+  if ! curl -fsSL "${url}" -o "${dest}"; then
+    echo "Failed to download installer smoke contract: ${url}" >&2
+    return 1
+  fi
+  chmod 0755 "${dest}"
+}
+
 bootstrap_entrypoint_helpers
 
 # shellcheck source=/dev/null
@@ -186,11 +242,20 @@ Options:
   -h, --help          Show this help
 
 Environment:
-  EIGHTBALL_RELEASE   Tagged release (default: v0.8.0) or "main" for development
-  EIGHTBALL_RAW_BASE  Explicit raw script base URL override
-  EIGHTBALL_REPO_ROOT Full checkout override for local development bundles
+  EIGHTBALL_RELEASE       Logical product version (default: v0.8.0)
+  EIGHTBALL_RELEASE_REF   Approved immutable git ref for verified bootstrap
+  EIGHTBALL_RAW_BASE      Explicit raw script base URL override
+  EIGHTBALL_REPO_ROOT     Full checkout override for local development bundles
 EOF
 }
+
+INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Detect Ubuntu CPU or CUDA lane from host hardware
+- Would orchestrate foundation (8.1), model ladder (8.2), and MOTD (8.3) during a real install (requires root)"
+eightball_entrypoint_ensure_smoke_contract
+# shellcheck source=/dev/null
+source "${SHARED_DIR}/installer-smoke-contract.sh"
 
 log() {
   printf '[trial-install] %s\n' "$*"
@@ -339,7 +404,7 @@ prepare_release_context() {
     return 0
   fi
   log "Resolving verified release bundle ${EIGHTBALL_RELEASE}"
-  eightball_bootstrap_release_runtime "${SCRIPT_DIR}" "${BASH_SOURCE[0]}" || {
+  eightball_bootstrap_release_runtime "${SCRIPT_DIR}" "${ENTRY_SCRIPT}" || {
     echo "Failed to bootstrap verified release runtime for ${EIGHTBALL_RELEASE}." >&2
     exit 1
   }
@@ -360,10 +425,13 @@ run_step() {
 }
 
 main() {
+  installer_smoke_prologue "$@"
   parse_args "$@"
   require_root
   trap on_exit EXIT
-  eightball_verify_script_version "${BASH_SOURCE[0]}" "trial-install.sh"
+  if [[ -f "${ENTRY_SCRIPT}" ]]; then
+    eightball_verify_script_version "${ENTRY_SCRIPT}" "trial-install.sh"
+  fi
   install -d -m 0755 "${PHILOSOPHER_ROOT}"
   touch "${LOG_FILE}"
   chmod 0644 "${LOG_FILE}"

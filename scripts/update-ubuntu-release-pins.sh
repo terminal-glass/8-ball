@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 common_path = Path(sys.argv[1])
-root = common_path.parents[2]
+root = common_path.parents[3]
 text = common_path.read_text(encoding="utf-8")
 
 def digest(lane: str, name: str) -> str:
@@ -21,13 +21,11 @@ def digest(lane: str, name: str) -> str:
 
 replacements = {
     "ubuntu/cpu": {
-        "trial-install.sh": digest("ubuntu/cpu", "trial-install.sh"),
         "8.1.sh": digest("ubuntu/cpu", "8.1.sh"),
         "8.2.sh": digest("ubuntu/cpu", "8.2.sh"),
         "8.3.sh": digest("ubuntu/cpu", "8.3.sh"),
     },
     "ubuntu/cuda": {
-        "trial-install.sh": digest("ubuntu/cuda", "trial-install.sh"),
         "8.1.sh": digest("ubuntu/cuda", "8.1.sh"),
         "8.2.sh": digest("ubuntu/cuda", "8.2.sh"),
         "8.3.sh": digest("ubuntu/cuda", "8.3.sh"),

@@ -75,14 +75,20 @@ Paid and commercial install work remains **outside** this public catalog repo:
 ## Quick start (Ubuntu)
 
 ```bash
-cd install/ubuntu
-sudo ./trial-install.sh
+curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh -o trial-install.sh
+sudo bash trial-install.sh
 ```
 
-Backward-compatible wrapper:
+Or pipe directly:
 
 ```bash
-cd install
+curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh | sudo bash
+```
+
+From a repository checkout:
+
+```bash
+cd install/ubuntu
 sudo ./trial-install.sh
 ```
 
@@ -97,9 +103,10 @@ sudo ./trial-install.sh --manifest ../../data/generated/pages/install-manifest.j
 ## Validation
 
 ```bash
-bash -n install/ubuntu/cpu/trial-install.sh install/ubuntu/cpu/8.1.sh install/ubuntu/cpu/8.2.sh install/ubuntu/cpu/8.3.sh
+bash -n install/ubuntu/trial-install.sh install/ubuntu/8.1.sh install/ubuntu/8.2.sh install/ubuntu/8.3.sh
 bash tests/test-shell-baseline.sh
-bash -n install/*/*.sh install/cloud/*/*.sh install/trial-install.sh
+bash -n install/ubuntu/cpu/8.1.sh install/ubuntu/cpu/8.2.sh install/ubuntu/cpu/8.3.sh
+bash -n install/*/*.sh install/cloud/*/*.sh
 shellcheck install/ubuntu/*.sh   # when shellcheck is available
 ```
 

@@ -211,14 +211,14 @@ def test_aws_provisional_csv_is_registered() -> None:
 
 
 def test_trial_install_release_repo_construction() -> None:
-    script = (REPO_ROOT / "trial-install.sh").read_text(encoding="utf-8")
+    script = (REPO_ROOT / "install/ubuntu/trial-install.sh").read_text(encoding="utf-8")
     assert "EIGHTBALL_RELEASE_REPO" in script
-    assert "EIGHTBALL_APPROVED_REF" in script
+    assert "EIGHTBALL_RELEASE_REF" in script
     assert "terminal-glass/8-ball" in script
 
 
-def test_trial_install_local_checkout(tmp_path: Path) -> None:
-    result = subprocess.run(["bash", "-n", str(REPO_ROOT / "trial-install.sh")], check=False)
+def test_trial_install_local_checkout() -> None:
+    result = subprocess.run(["bash", "-n", str(REPO_ROOT / "install/ubuntu/trial-install.sh")], check=False)
     assert result.returncode == 0
 
 

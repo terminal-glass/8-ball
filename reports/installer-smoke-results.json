@@ -459,7 +459,7 @@
     {
       "lane": "ubuntu/cpu",
       "mode": "help",
-      "path": "install/ubuntu/cpu/trial-install.sh",
+      "path": "install/ubuntu/trial-install.sh",
       "returncode": 0,
       "status": "pass",
       "stem": "trial-install"
@@ -467,7 +467,7 @@
     {
       "lane": "ubuntu/cpu",
       "mode": "preflight",
-      "path": "install/ubuntu/cpu/trial-install.sh",
+      "path": "install/ubuntu/trial-install.sh",
       "returncode": 0,
       "status": "pass",
       "stem": "trial-install"
@@ -523,7 +523,7 @@
     {
       "lane": "ubuntu/cuda",
       "mode": "help",
-      "path": "install/ubuntu/cuda/trial-install.sh",
+      "path": "install/ubuntu/trial-install.sh",
       "returncode": 0,
       "status": "pass",
       "stem": "trial-install"
@@ -531,7 +531,7 @@
     {
       "lane": "ubuntu/cuda",
       "mode": "preflight",
-      "path": "install/ubuntu/cuda/trial-install.sh",
+      "path": "install/ubuntu/trial-install.sh",
       "returncode": 0,
       "status": "pass",
       "stem": "trial-install"

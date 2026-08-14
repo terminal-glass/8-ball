@@ -24,8 +24,9 @@ PR50_LANE_IMPL_SKIP = pytest.mark.skip(
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CPU_LANE = REPO_ROOT / "install/ubuntu/cpu"
 CUDA_LANE = REPO_ROOT / "install/ubuntu/cuda"
+UBUNTU_INSTALL = REPO_ROOT / "install/ubuntu"
 UBUNTU_LIB = REPO_ROOT / "install/ubuntu/lib"
-LANE_SCRIPTS = ("trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh")
+LANE_SCRIPTS = ("8.1.sh", "8.2.sh", "8.3.sh")
 PROTECTED_PATHS = (
     REPO_ROOT / "profiles/manifest.json",
     REPO_ROOT / "profiles/index.csv",
@@ -288,7 +289,7 @@ def test_profile_selection_happy_path(tmp_path: Path) -> None:
 def test_raw_base_rejected_on_public_path(tmp_path: Path) -> None:
     env = _ubuntu_env(tmp_path, CPU_LANE)
     result = _run_bash(
-        CPU_LANE / "trial-install.sh",
+        UBUNTU_INSTALL / "trial-install.sh",
         env,
         "--raw-base",
         "https://evil.example",
@@ -303,6 +304,7 @@ def test_raw_base_rejected_on_public_path(tmp_path: Path) -> None:
 def test_release_repo_points_to_terminal_glass() -> None:
     common = (UBUNTU_LIB / "ubuntu-common.sh").read_text(encoding="utf-8")
     assert 'EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"' in common
-    root = (REPO_ROOT / "trial-install.sh").read_text(encoding="utf-8")
-    assert "terminal-glass/8-ball" in root
-    assert "funtech64/8-ball" not in root
+    trial = (UBUNTU_INSTALL / "trial-install.sh").read_text(encoding="utf-8")
+    assert "terminal-glass/8-ball" in trial
+    assert "EIGHTBALL_RELEASE_REF" in trial
+    assert "funtech64/8-ball" not in trial

@@ -91,8 +91,14 @@ For developers
 ### Try 8-BALL on Ubuntu
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/trial-install.sh -o trial-install.sh
+curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh -o trial-install.sh
 sudo bash trial-install.sh
+```
+
+Or pipe directly:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh | sudo bash
 ```
 
 Optional flags include `--model`, `--model-slug`, and `--no-motd`.

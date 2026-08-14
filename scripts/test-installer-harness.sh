@@ -31,8 +31,7 @@ main() {
     "${REPO_ROOT}/install/ubuntu/trial-install.sh" \
     "${REPO_ROOT}/install/ubuntu/8.1.sh" \
     "${REPO_ROOT}/install/ubuntu/8.2.sh" \
-    "${REPO_ROOT}/install/ubuntu/8.3.sh" \
-    "${REPO_ROOT}/trial-install.sh"; do
+    "${REPO_ROOT}/install/ubuntu/8.3.sh"; do
     run_bash_n "${script}"
   done
 

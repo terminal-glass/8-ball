@@ -17,12 +17,18 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 RELEASE_MANIFEST = REPO_ROOT / "install/releases/v0.8.0/manifest.json"
 TRIAL_INSTALL = REPO_ROOT / "install/ubuntu/trial-install.sh"
 RELEASE_SH = REPO_ROOT / "install/shared/8ball-release.sh"
+RELEASE_REF = "810b37dcd61e97de38860056f36e2061b6feeba9"
 
 
 @pytest.fixture(autouse=True)
 def _restore_release_profile_files() -> None:
     subprocess.run(
         ["git", "checkout", "--", "profiles/"],
+        cwd=REPO_ROOT,
+        check=False,
+    )
+    subprocess.run(
+        ["bash", "scripts/generate-release-manifest.sh", "v0.8.0"],
         cwd=REPO_ROOT,
         check=False,
     )
@@ -36,7 +42,14 @@ def _manifest() -> dict:
     return json.loads(RELEASE_MANIFEST.read_text(encoding="utf-8"))
 
 
-def _write_mock_curl(mock_bin: Path, manifest: dict, *, corrupt: str = "", omit: str = "") -> None:
+def _write_mock_curl(
+    mock_bin: Path,
+    manifest: dict,
+    *,
+    corrupt: str = "",
+    omit: str = "",
+    ref: str = RELEASE_REF,
+) -> None:
     mock_bin.mkdir(parents=True, exist_ok=True)
     manifest_json = json.dumps(manifest)
     manifest_for_shell = manifest_json.replace("'", "'\"'\"'")
@@ -62,7 +75,7 @@ def _write_mock_curl(mock_bin: Path, manifest: dict, *, corrupt: str = "", omit:
             printf '%s' '{manifest_for_shell}' >"${{output}}"
             ;;
           *)
-            rel="${{url#*8-ball/v0.8.0/}}"
+            rel="${{url#*8-ball/{ref}/}}"
             if [[ "${{rel}}" == "{omit}" ]]; then
               exit 22
             fi
@@ -91,6 +104,7 @@ def _trial_env(tmp_path: Path, **overrides: str) -> dict[str, str]:
         "PATH": os.environ.get("PATH", ""),
         "PHILOSOPHER_ROOT": str(philo),
         "EIGHTBALL_RELEASE": "v0.8.0",
+        "EIGHTBALL_RELEASE_REF": RELEASE_REF,
         "EIGHTBALL_TEST_SKIP_ROOT": "1",
         "EIGHTBALL_ALLOW_UNVERIFIED_DOWNLOADS": "0",
         "HOME": str(tmp_path / "home"),
@@ -470,7 +484,7 @@ def test_clean_entrypoint_acquires_release_runtime(tmp_path: Path) -> None:
     assert (staging / "install/shared/c10-hardware-resolve.py").is_file()
 
 
-def test_unpublished_release_tag_fails_closed(tmp_path: Path) -> None:
+def test_unpublished_release_ref_fails_closed(tmp_path: Path) -> None:
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(TRIAL_INSTALL, entry_dir / "trial-install.sh")
@@ -481,7 +495,7 @@ def test_unpublished_release_tag_fails_closed(tmp_path: Path) -> None:
         encoding="utf-8",
     )
     (mock_bin / "curl").chmod(stat.S_IRWXU)
-    env = _trial_env(tmp_path)
+    env = _trial_env(tmp_path, EIGHTBALL_RELEASE_REF="deadbeefdeadbeefdeadbeefdeadbeefdeadbeef")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
 
     result = subprocess.run(
@@ -494,4 +508,3 @@ def test_unpublished_release_tag_fails_closed(tmp_path: Path) -> None:
     assert result.returncode != 0
     combined = result.stderr + result.stdout
     assert "Failed to download release manifest" in combined
-    assert "Published immutable release tag" in combined
