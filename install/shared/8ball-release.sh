@@ -206,7 +206,7 @@ eightball_locate_repo_root_from() {
 eightball_local_bundle_ready() {
   local script_dir="$1"
   local script
-  for script in trial-install.sh 8.1.sh 8.2.sh 8.3.sh; do
+  for script in 8.1.sh 8.2.sh 8.3.sh; do
     if [[ ! -f "${script_dir}/${script}" ]]; then
       return 1
     fi
@@ -222,12 +222,10 @@ eightball_local_bundle_ready() {
 
 eightball_bootstrap_release_runtime() {
   local script_dir="$1"
-  local entry_script="${2:-}"
   local staging_root="${EIGHTBALL_RELEASE_STAGING:-${PHILOSOPHER_ROOT:-/opt/philosopher}/.8ball-release/${EIGHTBALL_RELEASE}}"
   local manifest_cache="${staging_root}/manifest.json"
   local rel_path dest_path script_name local_script
-  local -a ubuntu_scripts=(
-    install/ubuntu/trial-install.sh
+  local -a ubuntu_runtime_scripts=(
     install/ubuntu/8.1.sh
     install/ubuntu/8.2.sh
     install/ubuntu/8.3.sh
@@ -251,16 +249,11 @@ import json, sys
 json.load(open(sys.argv[1], encoding="utf-8"))
 PY
 
-  local rel_self="install/ubuntu/trial-install.sh"
-  if [[ -n "${entry_script}" && -f "${entry_script}" ]]; then
-    if ! eightball_verify_artifact_sha "${rel_self}" "${entry_script}" "${manifest_cache}"; then
-      echo "trial-install.sh failed release integrity check for ${EIGHTBALL_RELEASE}." >&2
-      return 1
-    fi
-  fi
-
   while IFS= read -r rel_path; do
     [[ -z "${rel_path}" ]] && continue
+    case "${rel_path}" in
+      install/ubuntu/trial-install.sh) continue ;;
+    esac
     dest_path="${staging_root}/${rel_path}"
     if [[ -f "${dest_path}" ]] && eightball_verify_artifact_sha "${rel_path}" "${dest_path}" "${manifest_cache}" 2>/dev/null; then
       continue
@@ -283,7 +276,7 @@ PY
     export EIGHTBALL_MANIFEST="${staging_root}/data/generated/pages/install-manifest.json"
   fi
 
-  for rel_path in "${ubuntu_scripts[@]}"; do
+  for rel_path in "${ubuntu_runtime_scripts[@]}"; do
     script_name="${rel_path##*/}"
     local_script="${script_dir}/${script_name}"
     dest_path="${staging_root}/${rel_path}"
