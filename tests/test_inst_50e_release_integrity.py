@@ -28,6 +28,7 @@ def _manifest() -> dict:
 def _write_mock_curl(mock_bin: Path, manifest: dict, *, corrupt: str = "", omit: str = "") -> None:
     mock_bin.mkdir(parents=True, exist_ok=True)
     manifest_json = json.dumps(manifest)
+    manifest_for_shell = manifest_json.replace("'", "'\"'\"'")
     script = textwrap.dedent(
         f"""\
         #!/usr/bin/env bash
@@ -47,7 +48,7 @@ def _write_mock_curl(mock_bin: Path, manifest: dict, *, corrupt: str = "", omit:
         done
         case "${{url}}" in
           */install/releases/*/manifest.json)
-            printf '%s' '{manifest_json.replace("'", "'\"'\"'")}' >"${{output}}"
+            printf '%s' '{manifest_for_shell}' >"${{output}}"
             ;;
           *)
             rel="${{url#*8-ball/v0.8.0/}}"
