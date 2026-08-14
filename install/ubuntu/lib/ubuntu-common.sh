@@ -27,7 +27,7 @@ CUDA_AVAILABLE="false"
 
 # Release pin for remote bootstrap (maintainer: bump on each public installer release).
 EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"
-EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-1f3655acdcf469108d33fb886116847753959384}"
+EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-810b37dcd61e97de38860056f36e2061b6feeba9}"
 
 UBUNTU_LIB_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
