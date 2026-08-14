@@ -70,7 +70,7 @@ eightball_manifest_path_for_release() {
 eightball_fetch_release_manifest() {
   local dest="$1"
   local manifest_url
-  if manifest_path="$(eightball_manifest_path_for_release "${2:-.}" 2>/dev/null || true)"; then
+  if manifest_path="$(eightball_manifest_path_for_release "${2:-.}" 2>/dev/null)"; then
     install -D -m 0644 "${manifest_path}" "${dest}"
     printf '%s' "${dest}"
     return 0

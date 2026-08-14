@@ -406,3 +406,81 @@ def test_development_main_override_skips_checksum_enforcement() -> None:
         check=False,
     )
     assert result.returncode == 0
+
+
+def test_clean_entrypoint_bootstraps_shared_helpers(tmp_path: Path) -> None:
+    entry_dir = tmp_path / "customer"
+    entry_dir.mkdir()
+    shutil.copy(TRIAL_INSTALL, entry_dir / "trial-install.sh")
+    shared_dir = entry_dir.parent / "shared"
+    assert not shared_dir.exists()
+
+    mock_bin = tmp_path / "bin"
+    _write_mock_curl(mock_bin, _manifest())
+    env = _trial_env(tmp_path)
+    env["PATH"] = f"{mock_bin}:{env['PATH']}"
+
+    result = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh"), "--help"],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert result.returncode == 0, result.stderr
+    assert (shared_dir / "8ball-version.sh").is_file()
+    assert (shared_dir / "8ball-release.sh").is_file()
+
+
+def test_clean_entrypoint_acquires_release_runtime(tmp_path: Path) -> None:
+    entry_dir = tmp_path / "customer"
+    entry_dir.mkdir()
+    shutil.copy(TRIAL_INSTALL, entry_dir / "trial-install.sh")
+    shared_dir = entry_dir.parent / "shared"
+
+    mock_bin = tmp_path / "bin"
+    _write_mock_curl(mock_bin, _manifest())
+    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
+    env["PATH"] = f"{mock_bin}:{env['PATH']}"
+
+    result = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh")],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert result.returncode == 0, result.stderr + result.stdout
+    assert (shared_dir / "8ball-version.sh").is_file()
+    assert (shared_dir / "8ball-release.sh").is_file()
+    staging = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0"
+    assert (staging / "profiles/qwen3/model.json").is_file()
+    assert (staging / "scripts/c10_common.py").is_file()
+    assert (staging / "install/shared/c10-hardware-resolve.py").is_file()
+
+
+def test_unpublished_release_tag_fails_closed(tmp_path: Path) -> None:
+    entry_dir = tmp_path / "customer"
+    entry_dir.mkdir()
+    shutil.copy(TRIAL_INSTALL, entry_dir / "trial-install.sh")
+    mock_bin = tmp_path / "bin"
+    mock_bin.mkdir(parents=True, exist_ok=True)
+    (mock_bin / "curl").write_text(
+        "#!/usr/bin/env bash\nexit 22\n",
+        encoding="utf-8",
+    )
+    (mock_bin / "curl").chmod(stat.S_IRWXU)
+    env = _trial_env(tmp_path)
+    env["PATH"] = f"{mock_bin}:{env['PATH']}"
+
+    result = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh"), "--help"],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert result.returncode != 0
+    combined = result.stderr + result.stdout
+    assert "Failed to download release manifest" in combined
+    assert "Published immutable release tag" in combined
