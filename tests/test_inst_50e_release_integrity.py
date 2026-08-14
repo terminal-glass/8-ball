@@ -11,10 +11,21 @@ import subprocess
 import textwrap
 from pathlib import Path
 
+import pytest
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 RELEASE_MANIFEST = REPO_ROOT / "install/releases/v0.8.0/manifest.json"
 TRIAL_INSTALL = REPO_ROOT / "install/ubuntu/trial-install.sh"
 RELEASE_SH = REPO_ROOT / "install/shared/8ball-release.sh"
+
+
+@pytest.fixture(autouse=True)
+def _restore_release_profile_files() -> None:
+    subprocess.run(
+        ["git", "checkout", "--", "profiles/"],
+        cwd=REPO_ROOT,
+        check=False,
+    )
 
 
 def _sha256(path: Path) -> str:
