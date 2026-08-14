@@ -88,6 +88,15 @@ For developers
 
 8-BALL is also the Terminal.Glass model-intelligence catalog for publicly available Ollama models.
 
+### Try 8-BALL on Ubuntu
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/trial-install.sh -o trial-install.sh
+sudo bash trial-install.sh
+```
+
+Optional flags include `--model`, `--model-slug`, and `--no-motd`.
+
 The repository stores metadata rather than model weights and provides the data needed to reason about:
 
 * Ollama models and exact tags

@@ -46,6 +46,11 @@ eightball_release_raw_repo_base() {
     printf 'https://raw.githubusercontent.com/%s/main' "${EIGHTBALL_RELEASE_REPO}"
     return 0
   fi
+  if [[ -n "${EIGHTBALL_RELEASE_REF:-}" ]]; then
+    printf 'https://raw.githubusercontent.com/%s/%s' \
+      "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE_REF}"
+    return 0
+  fi
   printf 'https://raw.githubusercontent.com/%s/%s' \
     "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE}"
 }
