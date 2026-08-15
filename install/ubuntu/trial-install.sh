@@ -6,7 +6,7 @@ set -euo pipefail
 EIGHTBALL_SCRIPT_VERSION="0.8.0"
 EIGHTBALL_INSTALL_PROFILE="ubuntu"
 EIGHTBALL_RELEASE="${EIGHTBALL_RELEASE:-v0.8.0}"
-EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-ff9197ad0c3417b74b4ab580a099dfa49bf311ab}"
+EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-d8d49eea350cf4e70d6acaa6c41edb2119d9b3f7}"
 export EIGHTBALL_RELEASE_REF
 EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
@@ -111,27 +111,213 @@ if digest != expected:
 PY
 }
 
-eightball_entrypoint_download_verified() {
-  local rel_path="$1"
-  local dest_path="$2"
-  local manifest_path="$3"
-  local url="${4:-$(eightball_entrypoint_release_repo_base)/${rel_path}}"
-  local tmp parent
-  parent="$(dirname "${dest_path}")"
-  install -d -m 0755 "${parent}"
-  tmp="$(mktemp "${parent}/.artifact.XXXXXX")"
-  if ! curl -fsSL "${url}" -o "${tmp}"; then
+eightball_entrypoint_log() {
+  printf '[trial-install] %s\n' "$*"
+}
+
+eightball_entrypoint_download_url() {
+  local url="$1"
+  local dest="$2"
+  local tmp="${dest}.partial"
+  if ! curl -fsSL \
+    --retry 5 \
+    --retry-delay 2 \
+    --retry-all-errors \
+    --connect-timeout 15 \
+    "${url}" -o "${tmp}"; then
     rm -f "${tmp}"
-    echo "Failed to download release artifact: ${url}" >&2
+    echo "Failed to download: ${url}" >&2
     return 1
   fi
-  if ! eightball_entrypoint_verify_artifact "${manifest_path}" "${rel_path}" "${tmp}"; then
+  if [[ ! -s "${tmp}" ]]; then
     rm -f "${tmp}"
-    echo "Refusing to install unverified artifact: ${rel_path}" >&2
+    echo "Downloaded file is empty: ${url}" >&2
     return 1
   fi
-  install -m 0755 "${tmp}" "${dest_path}"
-  rm -f "${tmp}"
+  mv "${tmp}" "${dest}"
+}
+
+eightball_entrypoint_install_shared_from_staging() {
+  local staging_root="$1"
+  install -d -m 0755 "${SHARED_DIR}"
+  for shared_file in "${staging_root}"/install/shared/*; do
+    [[ -f "${shared_file}" ]] || continue
+    install -m 0755 "${shared_file}" "${SHARED_DIR}/$(basename "${shared_file}")"
+  done
+  if [[ -d "${staging_root}/install/shared/systemd" ]]; then
+    install -d -m 0755 "${SHARED_DIR}/systemd"
+    install -m 0644 "${staging_root}"/install/shared/systemd/* "${SHARED_DIR}/systemd/" 2>/dev/null || true
+  fi
+}
+
+eightball_entrypoint_verify_staging_local() {
+  local staging_root="$1"
+  local manifest_path="$2"
+  python3 - "${manifest_path}" "${staging_root}" <<'PY'
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+manifest_path, staging_root = sys.argv[1:3]
+manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+root = Path(staging_root)
+for rel_path, expected in manifest.get("artifacts", {}).items():
+    file_path = root / rel_path
+    if not file_path.is_file() or file_path.stat().st_size == 0:
+        raise SystemExit(1)
+    if hashlib.sha256(file_path.read_bytes()).hexdigest() != expected:
+        raise SystemExit(1)
+PY
+}
+
+eightball_entrypoint_bootstrap_verified_runtime() {
+  local staging_root manifest_cache archive_file archive_rel archive_sha base_url
+  staging_root="${EIGHTBALL_RELEASE_STAGING:-${PHILOSOPHER_ROOT}/.8ball-release/${EIGHTBALL_RELEASE}}"
+  manifest_cache="${staging_root}/manifest.json"
+
+  if [[ -f "${manifest_cache}" && -d "${staging_root}/profiles" ]]; then
+    if eightball_entrypoint_verify_staging_local "${staging_root}" "${manifest_cache}" 2>/dev/null; then
+      export EIGHTBALL_REPO_ROOT="${staging_root}"
+      export EIGHTBALL_RELEASE_STAGING="${staging_root}"
+      export EIGHTBALL_RELEASE_MANIFEST="${manifest_cache}"
+      eightball_entrypoint_install_shared_from_staging "${staging_root}"
+      return 0
+    fi
+  fi
+
+  install -d -m 0755 "${staging_root}"
+  base_url="$(eightball_entrypoint_release_repo_base)"
+
+  eightball_entrypoint_log "Resolving verified release ${EIGHTBALL_RELEASE}"
+  if ! eightball_entrypoint_download_url \
+    "${base_url}/install/releases/${EIGHTBALL_RELEASE}/manifest.json" \
+    "${manifest_cache}"; then
+    cat >&2 <<EOF
+Failed to download release manifest from ${EIGHTBALL_RELEASE_REPO}.
+Set EIGHTBALL_RELEASE_REF to the approved commit SHA for logical release ${EIGHTBALL_RELEASE}.
+EOF
+    return 1
+  fi
+  if ! python3 -m json.tool "${manifest_cache}" >/dev/null 2>&1; then
+    echo "Downloaded release manifest is not valid JSON." >&2
+    return 1
+  fi
+
+  archive_rel="$(python3 - "${manifest_cache}" <<'PY'
+import json, sys
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+archive = manifest.get("runtime_archive") or {}
+path = archive.get("path")
+if not path:
+    raise SystemExit("manifest missing runtime_archive.path")
+print(path)
+PY
+)"
+  archive_sha="$(python3 - "${manifest_cache}" <<'PY'
+import json, sys
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+archive = manifest.get("runtime_archive") or {}
+digest = archive.get("sha256")
+if not digest:
+    raise SystemExit("manifest missing runtime_archive.sha256")
+print(digest)
+PY
+)"
+  archive_file="${staging_root}/$(basename "${archive_rel}")"
+
+  eightball_entrypoint_log "Downloading 8-BALL runtime bundle"
+  if ! eightball_entrypoint_download_url "${base_url}/${archive_rel}" "${archive_file}"; then
+    echo "Failed to download runtime archive: ${base_url}/${archive_rel}" >&2
+    return 1
+  fi
+
+  eightball_entrypoint_log "Verifying runtime bundle"
+  if ! python3 - "${archive_file}" "${archive_sha}" <<'PY'
+import hashlib
+import sys
+from pathlib import Path
+
+archive_path, expected = sys.argv[1:3]
+actual = hashlib.sha256(Path(archive_path).read_bytes()).hexdigest()
+if actual != expected:
+    print(
+        f"[release] Runtime archive SHA-256 mismatch\n"
+        f"  expected: {expected}\n"
+        f"  actual:   {actual}",
+        file=sys.stderr,
+    )
+    raise SystemExit(1)
+PY
+  then
+    rm -f "${archive_file}"
+    return 1
+  fi
+
+  eightball_entrypoint_log "Extracting runtime bundle"
+  if ! python3 - "${archive_file}" "${staging_root}" <<'PY'
+import sys
+import tarfile
+from pathlib import Path
+
+archive_path, dest_root = sys.argv[1:3]
+dest = Path(dest_root)
+dest.mkdir(parents=True, exist_ok=True)
+with tarfile.open(archive_path, mode="r:gz") as tar:
+    for member in tar.getmembers():
+        if not member.isfile():
+            continue
+        name = member.name
+        if name.startswith("/") or name.startswith("../") or "/../" in f"/{name}/":
+            print(f"[release] Unsafe archive member path: {name}", file=sys.stderr)
+            raise SystemExit(1)
+        target = (dest / name).resolve()
+        if not str(target).startswith(str(dest.resolve()) + "/") and target != dest.resolve():
+            print(f"[release] Archive path escapes staging root: {name}", file=sys.stderr)
+            raise SystemExit(1)
+    tar.extractall(path=dest, filter="data")
+PY
+  then
+    rm -f "${archive_file}"
+    return 1
+  fi
+  rm -f "${archive_file}"
+
+  eightball_entrypoint_log "Verifying runtime files"
+  if ! python3 - "${manifest_cache}" "${staging_root}" <<'PY'
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+manifest_path, staging_root = sys.argv[1:3]
+manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+root = Path(staging_root)
+mismatches = []
+for rel_path, expected in sorted(manifest.get("artifacts", {}).items()):
+    file_path = root / rel_path
+    if not file_path.is_file() or file_path.stat().st_size == 0:
+        mismatches.append(rel_path)
+        continue
+    actual = hashlib.sha256(file_path.read_bytes()).hexdigest()
+    if actual != expected:
+        mismatches.append(rel_path)
+if mismatches:
+    print(
+        f"[release] Extracted artifact verification failed ({len(mismatches)} mismatch(es))",
+        file=sys.stderr,
+    )
+    raise SystemExit(1)
+PY
+  then
+    return 1
+  fi
+
+  export EIGHTBALL_REPO_ROOT="${staging_root}"
+  export EIGHTBALL_RELEASE_STAGING="${staging_root}"
+  export EIGHTBALL_RELEASE_MANIFEST="${manifest_cache}"
+  eightball_entrypoint_install_shared_from_staging "${staging_root}"
+  eightball_entrypoint_log "Runtime ready"
 }
 
 eightball_entrypoint_fetch_dev_shared() {
@@ -159,73 +345,124 @@ eightball_entrypoint_fetch_dev_shared() {
 }
 
 eightball_entrypoint_fetch_verified_shared() {
-  local manifest_cache rel_path dest_path url
-  manifest_cache="$(mktemp)"
-  url="$(eightball_entrypoint_release_repo_base)/install/releases/${EIGHTBALL_RELEASE}/manifest.json"
-  if ! curl -fsSL "${url}" -o "${manifest_cache}"; then
-    rm -f "${manifest_cache}"
-    cat >&2 <<EOF
-Failed to download release manifest:
-  ${url}
-
-Published immutable release source is not available from ${EIGHTBALL_RELEASE_REPO}.
-Set EIGHTBALL_RELEASE_REF to the approved commit SHA for logical release ${EIGHTBALL_RELEASE}.
-EOF
-    return 1
-  fi
-  if ! python3 -m json.tool "${manifest_cache}" >/dev/null 2>&1; then
-    rm -f "${manifest_cache}"
-    echo "Downloaded release manifest is not valid JSON: ${url}" >&2
-    return 1
-  fi
-  install -d -m 0755 "${SHARED_DIR}"
-  for rel_path in install/shared/8ball-version.sh install/shared/8ball-release.sh; do
-    dest_path="${SHARED_DIR}/$(basename "${rel_path}")"
-    if ! eightball_entrypoint_download_verified "${rel_path}" "${dest_path}" "${manifest_cache}"; then
-      rm -f "${manifest_cache}"
-      return 1
-    fi
-  done
-  rm -f "${manifest_cache}"
+  eightball_entrypoint_bootstrap_verified_runtime
 }
 
 bootstrap_entrypoint_helpers() {
-  local version_sh="${SHARED_DIR}/8ball-version.sh"
-  local release_sh="${SHARED_DIR}/8ball-release.sh"
-  if [[ -f "${version_sh}" && -f "${release_sh}" ]]; then
+  if [[ -n "${EIGHTBALL_REPO_ROOT:-}" && -d "${EIGHTBALL_REPO_ROOT}/profiles" ]]; then
+    install -d -m 0755 "${SHARED_DIR}"
+    for name in 8ball-version.sh 8ball-release.sh installer-smoke-contract.sh; do
+      local src="${EIGHTBALL_REPO_ROOT}/install/shared/${name}"
+      local dest="${SHARED_DIR}/${name}"
+      if [[ -f "${dest}" && "${src}" -ef "${dest}" ]]; then
+        :
+      else
+        install -m 0755 "${src}" "${dest}"
+      fi
+    done
     return 0
   fi
   if [[ "${EIGHTBALL_ALLOW_UNVERIFIED_DOWNLOADS:-0}" == "1" || "${EIGHTBALL_RELEASE}" == "main" || -n "${EIGHTBALL_RAW_BASE:-}" ]]; then
+    local version_sh="${SHARED_DIR}/8ball-version.sh"
+    local release_sh="${SHARED_DIR}/8ball-release.sh"
+    if [[ -f "${version_sh}" && -f "${release_sh}" ]]; then
+      return 0
+    fi
     eightball_entrypoint_fetch_dev_shared
     return $?
   fi
-  eightball_entrypoint_fetch_verified_shared
+  eightball_entrypoint_bootstrap_verified_runtime
+}
+
+eightball_entrypoint_wants_smoke_mode() {
+  local arg
+  for arg in "$@"; do
+    case "${arg}" in
+      -h|--help|--preflight)
+        return 0
+        ;;
+    esac
+  done
+  return 1
+}
+
+eightball_entrypoint_prepare_for_smoke() {
+  install -d -m 0755 "${SHARED_DIR}"
+  if [[ -n "${EIGHTBALL_REPO_ROOT:-}" && -f "${EIGHTBALL_REPO_ROOT}/install/shared/installer-smoke-contract.sh" ]]; then
+    local src="${EIGHTBALL_REPO_ROOT}/install/shared/installer-smoke-contract.sh"
+    local dest="${SHARED_DIR}/installer-smoke-contract.sh"
+    if [[ -f "${dest}" && "${src}" -ef "${dest}" ]]; then
+      :
+    else
+      install -m 0755 "${src}" "${dest}"
+    fi
+    return 0
+  fi
+  if [[ -f "${SCRIPT_DIR}/../shared/installer-smoke-contract.sh" ]]; then
+    local src="${SCRIPT_DIR}/../shared/installer-smoke-contract.sh"
+    local dest="${SHARED_DIR}/installer-smoke-contract.sh"
+    if [[ -f "${dest}" && "${src}" -ef "${dest}" ]]; then
+      :
+    else
+      install -m 0755 "${src}" "${dest}"
+    fi
+    return 0
+  fi
+  eightball_entrypoint_ensure_smoke_contract
+}
+
+eightball_entrypoint_bootstrap_installer() {
+  bootstrap_entrypoint_helpers
+  # shellcheck source=/dev/null
+  source "${SHARED_DIR}/8ball-version.sh"
+  # shellcheck source=/dev/null
+  source "${SHARED_DIR}/8ball-release.sh"
+  eightball_entrypoint_ensure_smoke_contract
+  # shellcheck source=/dev/null
+  source "${SHARED_DIR}/installer-smoke-contract.sh"
 }
 
 eightball_entrypoint_ensure_smoke_contract() {
   local dest="${SHARED_DIR}/installer-smoke-contract.sh"
-  local base url
   if [[ -f "${dest}" ]]; then
     return 0
   fi
-  if ! base="$(eightball_entrypoint_release_repo_base)"; then
-    return 1
+  if [[ -n "${EIGHTBALL_REPO_ROOT:-}" && -f "${EIGHTBALL_REPO_ROOT}/install/shared/installer-smoke-contract.sh" ]]; then
+    install -m 0755 "${EIGHTBALL_REPO_ROOT}/install/shared/installer-smoke-contract.sh" "${dest}"
+    return 0
   fi
-  url="${base}/install/shared/installer-smoke-contract.sh"
-  install -d -m 0755 "${SHARED_DIR}"
-  if ! curl -fsSL "${url}" -o "${dest}"; then
-    echo "Failed to download installer smoke contract: ${url}" >&2
-    return 1
+  if [[ "${EIGHTBALL_ALLOW_UNVERIFIED_DOWNLOADS:-0}" == "1" || "${EIGHTBALL_RELEASE}" == "main" || -n "${EIGHTBALL_RAW_BASE:-}" ]]; then
+    local base url
+    if ! base="$(eightball_entrypoint_release_repo_base)"; then
+      return 1
+    fi
+    url="${base}/install/shared/installer-smoke-contract.sh"
+    install -d -m 0755 "${SHARED_DIR}"
+    if ! curl -fsSL "${url}" -o "${dest}"; then
+      echo "Failed to download installer smoke contract: ${url}" >&2
+      return 1
+    fi
+    chmod 0755 "${dest}"
+    return 0
   fi
-  chmod 0755 "${dest}"
+  echo "installer-smoke-contract.sh missing from verified runtime bundle." >&2
+  return 1
 }
 
-bootstrap_entrypoint_helpers
+INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
+INSTALLER_SMOKE_PLATFORM="linux"
+INSTALLER_SMOKE_CHECKS="- Detect Ubuntu CPU or CUDA lane from host hardware
+- Would orchestrate foundation (8.1), model ladder (8.2), and MOTD (8.3) during a real install (requires root)"
 
-# shellcheck source=/dev/null
-source "${SHARED_DIR}/8ball-version.sh"
-# shellcheck source=/dev/null
-source "${SHARED_DIR}/8ball-release.sh"
+if eightball_entrypoint_wants_smoke_mode "$@"; then
+  eightball_entrypoint_prepare_for_smoke
+  # shellcheck source=/dev/null
+  source "${SHARED_DIR}/installer-smoke-contract.sh"
+  installer_smoke_prologue "$@"
+  exit $?
+fi
+
+eightball_entrypoint_bootstrap_installer
 
 usage() {
   cat <<EOF
@@ -249,14 +486,6 @@ Environment:
   EIGHTBALL_REPO_ROOT     Full checkout override for local development bundles
 EOF
 }
-
-INSTALLER_SMOKE_SCRIPT_NAME="trial-install.sh"
-INSTALLER_SMOKE_PLATFORM="linux"
-INSTALLER_SMOKE_CHECKS="- Detect Ubuntu CPU or CUDA lane from host hardware
-- Would orchestrate foundation (8.1), model ladder (8.2), and MOTD (8.3) during a real install (requires root)"
-eightball_entrypoint_ensure_smoke_contract
-# shellcheck source=/dev/null
-source "${SHARED_DIR}/installer-smoke-contract.sh"
 
 log() {
   printf '[trial-install] %s\n' "$*"
@@ -404,7 +633,6 @@ prepare_release_context() {
     fi
     return 0
   fi
-  log "Resolving verified release bundle ${EIGHTBALL_RELEASE}"
   eightball_bootstrap_release_runtime "${SCRIPT_DIR}" || {
     echo "Failed to bootstrap verified release runtime for ${EIGHTBALL_RELEASE}." >&2
     exit 1
@@ -465,6 +693,7 @@ main() {
   fi
 
   log "[1/4] Loading the public 8-BALL components (profile=${EIGHTBALL_INSTALL_PROFILE}, release=${EIGHTBALL_RELEASE})"
+  log "Starting 8.1"
   log "[2/4] Preparing Ubuntu/Debian and installing Ollama"
   run_step "running 8.1.sh" "${script_81}"
 
