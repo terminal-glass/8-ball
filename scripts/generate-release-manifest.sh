@@ -6,24 +6,29 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RELEASE="${1:-v0.8.0}"
 OUT_DIR="${REPO_ROOT}/install/releases/${RELEASE}"
 BUNDLE_CONFIG="${OUT_DIR}/runtime-bundle.json"
+ARCHIVE_PATH="${OUT_DIR}/8ball-ubuntu-runtime.tar.gz"
 mkdir -p "${OUT_DIR}"
 
-python3 - "${RELEASE}" "${OUT_DIR}/manifest.json" "${BUNDLE_CONFIG}" "${REPO_ROOT}" <<'PY'
+bash "${REPO_ROOT}/scripts/generate-runtime-archive.sh" "${RELEASE}"
+
+python3 - "${RELEASE}" "${OUT_DIR}/manifest.json" "${BUNDLE_CONFIG}" "${ARCHIVE_PATH}" "${REPO_ROOT}" <<'PY'
 import hashlib
 import json
-import shutil
 import sys
 from pathlib import Path
 
-release, out_path, bundle_config_path, repo_root = sys.argv[1:5]
+release, out_path, bundle_config_path, archive_path, repo_root = sys.argv[1:6]
 repo = Path(repo_root)
 bundle = json.loads(Path(bundle_config_path).read_text(encoding="utf-8"))
 pinned_manifest = repo / "install/releases" / release / "install-manifest.json"
-source_manifest = repo / "data/generated/pages/install-manifest.json"
 if pinned_manifest in [repo / path for path in bundle.get("core_paths", [])]:
-    if not source_manifest.is_file():
-        raise SystemExit(f"Missing source install manifest: {source_manifest}")
-    shutil.copy2(source_manifest, pinned_manifest)
+    if not pinned_manifest.is_file():
+        raise SystemExit(f"Missing pinned install manifest: {pinned_manifest}")
+
+archive_file = Path(archive_path)
+if not archive_file.is_file():
+    raise SystemExit(f"Missing runtime archive: {archive_file}")
+
 
 def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -75,12 +80,18 @@ scripts = {
     if rel.startswith("install/ubuntu/") and rel.endswith(".sh")
 }
 
+archive_rel = str(archive_file.relative_to(repo))
 manifest = {
     "suite_version": release.lstrip("v"),
     "script_family": "8-BALL",
     "release_tag": release,
     "repository": "terminal-glass/8-ball",
     "runtime_bundle": str(Path(bundle_config_path).relative_to(repo)),
+    "runtime_archive": {
+        "path": archive_rel,
+        "sha256": sha256_file(archive_file),
+        "artifact_count": len(artifacts),
+    },
     "scripts": scripts,
     "artifacts": artifacts,
 }
