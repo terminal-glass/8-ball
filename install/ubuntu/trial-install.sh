@@ -6,7 +6,7 @@ set -euo pipefail
 EIGHTBALL_SCRIPT_VERSION="0.8.0"
 EIGHTBALL_INSTALL_PROFILE="ubuntu"
 EIGHTBALL_RELEASE="${EIGHTBALL_RELEASE:-v0.8.0}"
-EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-d8d49eea350cf4e70d6acaa6c41edb2119d9b3f7}"
+EIGHTBALL_RELEASE_REF="${EIGHTBALL_RELEASE_REF:-59a7a34334d331e31de9cff1ca7e5c6644562e46}"
 export EIGHTBALL_RELEASE_REF
 EIGHTBALL_RELEASE_REPO="${EIGHTBALL_RELEASE_REPO:-terminal-glass/8-ball}"
 PHILOSOPHER_ROOT="${PHILOSOPHER_ROOT:-/opt/philosopher}"
@@ -263,19 +263,36 @@ from pathlib import Path
 archive_path, dest_root = sys.argv[1:3]
 dest = Path(dest_root)
 dest.mkdir(parents=True, exist_ok=True)
+dest_resolved = dest.resolve()
+
+def is_safe_member_path(name: str) -> bool:
+    return not (
+        name.startswith("/")
+        or name.startswith("../")
+        or "/../" in f"/{name}/"
+    )
+
 with tarfile.open(archive_path, mode="r:gz") as tar:
     for member in tar.getmembers():
-        if not member.isfile():
+        if member.isdir():
             continue
+        if not member.isreg():
+            print(f"[release] Unsupported archive member type: {member.name}", file=sys.stderr)
+            raise SystemExit(1)
         name = member.name
-        if name.startswith("/") or name.startswith("../") or "/../" in f"/{name}/":
+        if not is_safe_member_path(name):
             print(f"[release] Unsafe archive member path: {name}", file=sys.stderr)
             raise SystemExit(1)
         target = (dest / name).resolve()
-        if not str(target).startswith(str(dest.resolve()) + "/") and target != dest.resolve():
+        if target != dest_resolved and not str(target).startswith(f"{dest_resolved}/"):
             print(f"[release] Archive path escapes staging root: {name}", file=sys.stderr)
             raise SystemExit(1)
-    tar.extractall(path=dest, filter="data")
+        src = tar.extractfile(member)
+        if src is None:
+            print(f"[release] Could not extract archive member: {name}", file=sys.stderr)
+            raise SystemExit(1)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(src.read())
 PY
   then
     rm -f "${archive_file}"
@@ -374,11 +391,11 @@ bootstrap_entrypoint_helpers() {
   eightball_entrypoint_bootstrap_verified_runtime
 }
 
-eightball_entrypoint_wants_smoke_mode() {
+eightball_entrypoint_wants_help() {
   local arg
   for arg in "$@"; do
     case "${arg}" in
-      -h|--help|--preflight)
+      -h|--help)
         return 0
         ;;
     esac
@@ -386,29 +403,66 @@ eightball_entrypoint_wants_smoke_mode() {
   return 1
 }
 
-eightball_entrypoint_prepare_for_smoke() {
-  install -d -m 0755 "${SHARED_DIR}"
-  if [[ -n "${EIGHTBALL_REPO_ROOT:-}" && -f "${EIGHTBALL_REPO_ROOT}/install/shared/installer-smoke-contract.sh" ]]; then
-    local src="${EIGHTBALL_REPO_ROOT}/install/shared/installer-smoke-contract.sh"
-    local dest="${SHARED_DIR}/installer-smoke-contract.sh"
-    if [[ -f "${dest}" && "${src}" -ef "${dest}" ]]; then
-      :
-    else
-      install -m 0755 "${src}" "${dest}"
-    fi
-    return 0
+eightball_entrypoint_wants_preflight() {
+  local arg
+  for arg in "$@"; do
+    case "${arg}" in
+      --preflight)
+        return 0
+        ;;
+    esac
+  done
+  return 1
+}
+
+eightball_print_standalone_help() {
+  cat <<EOF
+Usage: trial-install.sh [options]
+
+Public free/trial 8-BALL installer for Ubuntu/Debian hosts.
+Suite: 8-BALL ${EIGHTBALL_SCRIPT_VERSION}
+
+Lane: ${EIGHTBALL_INSTALL_LANE}
+
+Options:
+  --model TAG         Request a specific Ollama tag (passed to 8.2.sh)
+  --model-slug SLUG   Select via profiles/<slug>/ lane mapping
+  --no-motd           Run 8.1 and 8.2 only
+  --manifest PATH     Override install-manifest.json path
+  --raw-base URL      Download helper scripts when local copies are missing
+  -h, --help          Show this help without mutating the host
+  --preflight         Report lane identity and planned checks without installing software
+
+Environment:
+  EIGHTBALL_RELEASE       Logical product version (default: v0.8.0)
+  EIGHTBALL_RELEASE_REF   Approved immutable git ref for verified bootstrap
+  EIGHTBALL_RAW_BASE      Explicit raw script base URL override
+  EIGHTBALL_REPO_ROOT     Full checkout override for local development bundles
+EOF
+}
+
+eightball_entrypoint_linux_preflight() {
+  if [[ ! -f /etc/os-release ]]; then
+    echo "unsupported: lane ${EIGHTBALL_INSTALL_LANE} requires a Debian-family host with /etc/os-release" >&2
+    return 2
   fi
-  if [[ -f "${SCRIPT_DIR}/../shared/installer-smoke-contract.sh" ]]; then
-    local src="${SCRIPT_DIR}/../shared/installer-smoke-contract.sh"
-    local dest="${SHARED_DIR}/installer-smoke-contract.sh"
-    if [[ -f "${dest}" && "${src}" -ef "${dest}" ]]; then
-      :
-    else
-      install -m 0755 "${src}" "${dest}"
-    fi
-    return 0
-  fi
-  eightball_entrypoint_ensure_smoke_contract
+  # shellcheck source=/dev/null
+  source /etc/os-release
+  case "${ID:-}" in
+    ubuntu|debian) ;;
+    *)
+      echo "unsupported: lane ${EIGHTBALL_INSTALL_LANE} requires Ubuntu or Debian; detected ID=${ID:-unknown}" >&2
+      return 2
+      ;;
+  esac
+  return 0
+}
+
+eightball_entrypoint_run_preflight() {
+  printf 'lane: %s\n' "${EIGHTBALL_INSTALL_LANE}"
+  printf 'mode: preflight (no installation performed)\n'
+  printf 'planned_checks:\n%s\n' "${INSTALLER_SMOKE_CHECKS}"
+  eightball_entrypoint_linux_preflight
 }
 
 eightball_entrypoint_bootstrap_installer() {
@@ -454,11 +508,13 @@ INSTALLER_SMOKE_PLATFORM="linux"
 INSTALLER_SMOKE_CHECKS="- Detect Ubuntu CPU or CUDA lane from host hardware
 - Would orchestrate foundation (8.1), model ladder (8.2), and MOTD (8.3) during a real install (requires root)"
 
-if eightball_entrypoint_wants_smoke_mode "$@"; then
-  eightball_entrypoint_prepare_for_smoke
-  # shellcheck source=/dev/null
-  source "${SHARED_DIR}/installer-smoke-contract.sh"
-  installer_smoke_prologue "$@"
+if eightball_entrypoint_wants_help "$@"; then
+  eightball_print_standalone_help
+  exit 0
+fi
+
+if eightball_entrypoint_wants_preflight "$@"; then
+  eightball_entrypoint_run_preflight
   exit $?
 fi
 
