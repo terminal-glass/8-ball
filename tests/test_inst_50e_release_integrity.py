@@ -68,20 +68,22 @@ def _manifest_for_mock() -> dict:
 
 def _build_deterministic_archive(manifest: dict) -> bytes:
     buf = io.BytesIO()
-    with gzip.GzipFile(fileobj=buf, mode="wb", mtime=0) as gz:
-        with tarfile.open(fileobj=gz, mode="w", format=tarfile.GNU_FORMAT) as tar:
-            for rel in sorted(manifest["artifacts"]):
-                src = REPO_ROOT / rel
-                data = src.read_bytes()
-                info = tarfile.TarInfo(name=rel)
-                info.size = len(data)
-                info.mtime = 0
-                info.uid = 0
-                info.gid = 0
-                info.uname = "root"
-                info.gname = "root"
-                info.mode = 0o755 if rel.endswith((".sh", ".py")) else 0o644
-                tar.addfile(info, io.BytesIO(data))
+    with (
+        gzip.GzipFile(fileobj=buf, mode="wb", mtime=0) as gz,
+        tarfile.open(fileobj=gz, mode="w", format=tarfile.GNU_FORMAT) as tar,
+    ):
+        for rel in sorted(manifest["artifacts"]):
+            src = REPO_ROOT / rel
+            data = src.read_bytes()
+            info = tarfile.TarInfo(name=rel)
+            info.size = len(data)
+            info.mtime = 0
+            info.uid = 0
+            info.gid = 0
+            info.uname = "root"
+            info.gname = "root"
+            info.mode = 0o755 if rel.endswith((".sh", ".py")) else 0o644
+            tar.addfile(info, io.BytesIO(data))
     return buf.getvalue()
 
 
