@@ -9,6 +9,7 @@ BUNDLE_CONFIG="${OUT_DIR}/runtime-bundle.json"
 ARCHIVE_PATH="${OUT_DIR}/8ball-ubuntu-runtime.tar.gz"
 
 python3 - "${RELEASE}" "${ARCHIVE_PATH}" "${BUNDLE_CONFIG}" "${REPO_ROOT}" <<'PY'
+import gzip
 import hashlib
 import io
 import json
@@ -79,19 +80,20 @@ for forbidden in (
         raise SystemExit(f"Forbidden archive member: {forbidden}")
 
 buf = io.BytesIO()
-with tarfile.open(fileobj=buf, mode="w:gz", format=tarfile.GNU_FORMAT) as tar:
-    for rel in artifact_paths:
-        src = repo / rel
-        data = src.read_bytes()
-        info = tarfile.TarInfo(name=rel)
-        info.size = len(data)
-        info.mtime = 0
-        info.uid = 0
-        info.gid = 0
-        info.uname = "root"
-        info.gname = "root"
-        info.mode = mode_for(rel)
-        tar.addfile(info, io.BytesIO(data))
+with gzip.GzipFile(fileobj=buf, mode="wb", mtime=0) as gz:
+    with tarfile.open(fileobj=gz, mode="w", format=tarfile.GNU_FORMAT) as tar:
+        for rel in artifact_paths:
+            src = repo / rel
+            data = src.read_bytes()
+            info = tarfile.TarInfo(name=rel)
+            info.size = len(data)
+            info.mtime = 0
+            info.uid = 0
+            info.gid = 0
+            info.uname = "root"
+            info.gname = "root"
+            info.mode = mode_for(rel)
+            tar.addfile(info, io.BytesIO(data))
 
 archive_bytes = buf.getvalue()
 archive_file.write_bytes(archive_bytes)

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gzip
 import hashlib
 import io
 import json
@@ -67,7 +68,10 @@ def _manifest_for_mock() -> dict:
 
 def _build_deterministic_archive(manifest: dict) -> bytes:
     buf = io.BytesIO()
-    with tarfile.open(fileobj=buf, mode="w:gz", format=tarfile.GNU_FORMAT) as tar:
+    with (
+        gzip.GzipFile(fileobj=buf, mode="wb", mtime=0) as gz,
+        tarfile.open(fileobj=gz, mode="w", format=tarfile.GNU_FORMAT) as tar,
+    ):
         for rel in sorted(manifest["artifacts"]):
             src = REPO_ROOT / rel
             data = src.read_bytes()

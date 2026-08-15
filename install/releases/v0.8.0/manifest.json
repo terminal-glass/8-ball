@@ -6,7 +6,7 @@
   "runtime_bundle": "install/releases/v0.8.0/runtime-bundle.json",
   "runtime_archive": {
     "path": "install/releases/v0.8.0/8ball-ubuntu-runtime.tar.gz",
-    "sha256": "59947e8a1d25b2e1cfe7d6665c6a07ac12cdf095f7fd7ffb8d966c4e8cd3e812",
+    "sha256": "b7bd4fc0428b8f14d8d4a5a30b227f6f9b575de5eacdc1ab7239efdd87c26337",
     "artifact_count": 121
   },
   "scripts": {

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gzip
 import hashlib
 import io
 import json
@@ -89,7 +90,10 @@ def restore_release_tree_fixture() -> None:
 
 def _build_deterministic_archive(snapshot: Path, manifest: dict) -> bytes:
     buf = io.BytesIO()
-    with tarfile.open(fileobj=buf, mode="w:gz", format=tarfile.GNU_FORMAT) as tar:
+    with (
+        gzip.GzipFile(fileobj=buf, mode="wb", mtime=0) as gz,
+        tarfile.open(fileobj=gz, mode="w", format=tarfile.GNU_FORMAT) as tar,
+    ):
         for rel in sorted(manifest["artifacts"]):
             src = snapshot / rel
             data = src.read_bytes()

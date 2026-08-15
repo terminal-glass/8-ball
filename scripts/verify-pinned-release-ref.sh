@@ -63,20 +63,27 @@ with tarfile.open(fileobj=io.BytesIO(archive_bytes), mode="r:gz") as tar:
 
 extracted_mismatches: list[str] = []
 missing_in_archive: list[str] = []
+rejected_members: list[str] = []
 with tempfile.TemporaryDirectory() as tmp:
-    root = Path(tmp)
-    with tarfile.open(fileobj=io.BytesIO(archive_bytes), mode="r:gz") as tar:
-        for member in tar.getmembers():
-            if not member.isfile():
-                continue
-            name = member.name
-            if name.startswith("/") or name.startswith("../") or "/../" in f"/{name}/":
-                continue
-            target = (root / name).resolve()
-            if not str(target).startswith(str(root.resolve()) + "/"):
-                unsafe_paths.append(name)
-                continue
-        tar.extractall(path=root, filter="data")
+    root = Path(tmp) / "extracted"
+    root.mkdir(parents=True, exist_ok=True)
+    archive_path = Path(tmp) / "archive.tar.gz"
+    archive_path.write_bytes(archive_bytes)
+    repo_root = Path.cwd()
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "extract_runtime_archive",
+        repo_root / "scripts/extract-runtime-archive.py",
+    )
+    if spec is None or spec.loader is None:
+        raise SystemExit("could not load scripts/extract-runtime-archive.py")
+    extract_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(extract_mod)
+    try:
+        extract_mod.extract_runtime_archive(archive_path, root)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
 
     for rel_path, expected in manifest.get("artifacts", {}).items():
         if rel_path not in archive_members:
