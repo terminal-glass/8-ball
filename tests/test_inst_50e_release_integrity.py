@@ -36,6 +36,10 @@ def _pinned_runtime_ref() -> str:
 RELEASE_REF = _pinned_runtime_ref()
 
 
+def _staging_root(tmp_path: Path, ref: str = RELEASE_REF) -> Path:
+    return tmp_path / "philosopher" / ".8ball-release" / "v0.8.0" / ref
+
+
 @pytest.fixture(autouse=True)
 def _restore_release_profile_files() -> None:
     subprocess.run(
@@ -331,7 +335,7 @@ def test_bootstrap_stages_profiles_from_same_release(tmp_path: Path) -> None:
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     result = _run_trial(install_dir, mock_bin, env)
     assert result.returncode == 0, result.stderr + result.stdout
-    staging = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0"
+    staging = _staging_root(tmp_path)
     assert (staging / "profiles/qwen3/model.json").is_file()
     assert (staging / "scripts/c10_common.py").is_file()
     assert (staging / "install/ubuntu/8.2.sh").is_file()
@@ -534,7 +538,7 @@ def test_clean_entrypoint_acquires_release_runtime(tmp_path: Path) -> None:
     assert result.returncode == 0, result.stderr + result.stdout
     assert (shared_dir / "8ball-version.sh").is_file()
     assert (shared_dir / "8ball-release.sh").is_file()
-    staging = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0"
+    staging = _staging_root(tmp_path)
     assert (staging / "profiles/qwen3/model.json").is_file()
     assert (staging / "scripts/c10_common.py").is_file()
     assert (staging / "install/shared/c10-hardware-resolve.py").is_file()

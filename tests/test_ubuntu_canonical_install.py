@@ -243,6 +243,40 @@ def _write_mock_curl_with_log(
     curl_path.chmod(stat.S_IRWXU)
 
 
+def _staging_root(tmp_path: Path, ref: str | None = None) -> Path:
+    runtime_ref = ref or _pinned_runtime_ref()
+    return tmp_path / "philosopher" / ".8ball-release" / "v0.8.0" / runtime_ref
+
+
+def _measured_env(**overrides: str) -> dict[str, str]:
+    base = {
+        "EIGHTBALL_USE_MEASURED_HARDWARE_ENV": "1",
+        "EIGHTBALL_SYSTEM_RAM_GB": "16.0",
+        "EIGHTBALL_USABLE_MODEL_RAM_GB": "9.0",
+        "EIGHTBALL_FREE_DISK_GB": "100.0",
+        "EIGHTBALL_CPU_THREADS": "6",
+        "EIGHTBALL_CUDA_AVAILABLE": "false",
+        "EIGHTBALL_GPU_VRAM_GB": "0",
+    }
+    base.update(overrides)
+    return base
+
+
+def _run_c10_resolver(repo_root: Path, lane: str, **env_overrides: str) -> subprocess.CompletedProcess[str]:
+    resolver = repo_root / "install/shared/c10-hardware-resolve.py"
+    env = os.environ.copy()
+    env["EIGHTBALL_REPO_ROOT"] = str(repo_root)
+    env.update(_measured_env())
+    env.update(env_overrides)
+    return subprocess.run(
+        ["python3", str(resolver), "plan", "--slug", "qwen3", "--lane", lane],
+        capture_output=True,
+        text=True,
+        check=False,
+        cwd=repo_root,
+        env=env,
+    )
+
 def _trial_env(tmp_path: Path, **overrides: str) -> dict[str, str]:
     philo = tmp_path / "philosopher"
     philo.mkdir(parents=True, exist_ok=True)
@@ -382,7 +416,7 @@ def test_clean_host_does_not_require_repository_checkout(tmp_path: Path) -> None
         env=env,
     )
     assert result.returncode == 0, result.stderr + result.stdout
-    staging = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0"
+    staging = _staging_root(tmp_path, ref)
     assert (staging / "profiles/qwen3/model.json").is_file()
 
 
@@ -554,8 +588,158 @@ def test_downloaded_helpers_not_mutated_after_verify(tmp_path: Path) -> None:
     if not release_path.is_file():
         release_path = bootstrap_root / "8ball-release.sh"
     if not release_path.is_file():
-        release_path = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0" / rel
+        release_path = _staging_root(tmp_path, ref) / rel
     assert release_path.is_file(), result.stderr + result.stdout
     actual = hashlib.sha256(release_path.read_bytes()).hexdigest()
     assert actual == expected_release
     assert actual == hashlib.sha256(_git_show_bytes(ref, rel)).hexdigest()
+
+
+def test_default_staging_path_is_sha_namespaced() -> None:
+    trial = CANONICAL_INSTALL.read_text(encoding="utf-8")
+    assert (
+        'staging_root="${EIGHTBALL_RELEASE_STAGING:-${PHILOSOPHER_ROOT}/.8ball-release/${EIGHTBALL_RELEASE}/${EIGHTBALL_RELEASE_REF}}"'
+        in trial
+    )
+
+
+def test_cache_isolation_different_refs_use_different_roots(tmp_path: Path) -> None:
+    ref_a = _pinned_runtime_ref()
+    ref_b = "0000000000000000000000000000000000000001"
+    assert ref_a != ref_b
+    root_a = _staging_root(tmp_path, ref_a)
+    root_b = _staging_root(tmp_path, ref_b)
+    assert root_a != root_b
+
+
+def test_same_ref_reuses_verified_cache(tmp_path: Path) -> None:
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
+    entry_dir = tmp_path / "customer"
+    entry_dir.mkdir()
+    shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
+    mock_bin = tmp_path / "bin"
+    curl_log = tmp_path / "curl.log"
+    _write_mock_curl_with_log(mock_bin, _manifest_for_tests(ref), snapshot, curl_log, ref=ref)
+    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
+    env["PATH"] = f"{mock_bin}:{env['PATH']}"
+
+    first = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh")],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert first.returncode == 0, first.stderr + first.stdout
+    first_urls = [line for line in curl_log.read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(first_urls) == 2
+
+    second = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh")],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert second.returncode == 0, second.stderr + second.stdout
+    all_urls = [line for line in curl_log.read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(all_urls) == 2
+    staging = _staging_root(tmp_path, ref)
+    assert (staging / "profiles/qwen3/model.json").is_file()
+
+
+def test_c10_cpu_profile_resolution_from_namespaced_runtime(tmp_path: Path) -> None:
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
+    entry_dir = tmp_path / "customer"
+    entry_dir.mkdir()
+    shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
+    mock_bin = tmp_path / "bin"
+    _write_mock_curl(mock_bin, _manifest_for_tests(ref), snapshot, ref=ref)
+    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
+    env["PATH"] = f"{mock_bin}:{env['PATH']}"
+    bootstrap = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh")],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert bootstrap.returncode == 0, bootstrap.stderr + bootstrap.stdout
+    staging = _staging_root(tmp_path, ref)
+    assert (staging / "profiles/provider-assumptions").is_dir()
+    assert (staging / "scripts/c10_common.py").is_file()
+    assert (staging / "profiles/qwen3/ubuntu/cpu/lane.json").is_file()
+    result = _run_c10_resolver(staging, "ubuntu/cpu")
+    assert result.returncode == 0, result.stderr
+    payload = json.loads(result.stdout)
+    assert payload["profile_id"] == "qwen3/ubuntu/cpu"
+
+
+def test_c10_cuda_profile_resolution_from_namespaced_runtime(tmp_path: Path) -> None:
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
+    entry_dir = tmp_path / "customer"
+    entry_dir.mkdir()
+    shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
+    mock_bin = tmp_path / "bin"
+    _write_mock_curl(mock_bin, _manifest_for_tests(ref), snapshot, ref=ref)
+    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
+    env["PATH"] = f"{mock_bin}:{env['PATH']}"
+    bootstrap = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh")],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert bootstrap.returncode == 0, bootstrap.stderr + bootstrap.stdout
+    staging = _staging_root(tmp_path, ref)
+    assert (staging / "profiles/qwen3/ubuntu/cuda/lane.json").is_file()
+    result = _run_c10_resolver(
+        staging,
+        "ubuntu/cuda",
+        EIGHTBALL_CUDA_AVAILABLE="true",
+        EIGHTBALL_GPU_VRAM_GB="12.0",
+    )
+    assert result.returncode == 0, result.stderr
+    payload = json.loads(result.stdout)
+    assert payload["profile_id"] == "qwen3/ubuntu/cuda"
+
+
+def test_customer_path_resolves_runtime_scripts_without_per_file_http(tmp_path: Path) -> None:
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
+    manifest = _manifest_for_tests(ref)
+    entry_dir = tmp_path / "customer"
+    entry_dir.mkdir()
+    shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
+    mock_bin = tmp_path / "bin"
+    curl_log = tmp_path / "curl.log"
+    _write_mock_curl_with_log(mock_bin, manifest, snapshot, curl_log, ref=ref)
+    env = _trial_env(tmp_path, EIGHTBALL_TEST_RESOLVE_SCRIPTS="1")
+    env["PATH"] = f"{mock_bin}:{env['PATH']}"
+    result = subprocess.run(
+        ["bash", str(entry_dir / "trial-install.sh"), "--no-motd"],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+    assert result.returncode == 0, result.stderr + result.stdout
+    staging = _staging_root(tmp_path, ref)
+    output = result.stdout
+    for script in ("8.1.sh", "8.2.sh", "8.3.sh"):
+        line = f"resolved_script:{script}="
+        assert line in output
+        resolved = output.split(line, 1)[1].splitlines()[0]
+        expected = staging / "install/ubuntu" / script
+        assert resolved == str(expected)
+        assert str(staging) in resolved
+    assert f"EIGHTBALL_REPO_ROOT={staging}" in output
+    urls = [line for line in curl_log.read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(urls) == 2
+    assert not any(url.endswith(("/8.1.sh", "/8.2.sh", "/8.3.sh")) for url in urls)
+    assert not any("/profiles/" in url for url in urls)
+    assert not any("/install/shared/" in url for url in urls)
