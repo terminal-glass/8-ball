@@ -497,7 +497,7 @@ def test_customer_bootstrap_uses_runtime_archive_only(tmp_path: Path) -> None:
     assert any("manifest.json" in url for url in urls)
     assert any("8ball-ubuntu-runtime.tar.gz" in url for url in urls)
     assert not any("/profiles/" in url for url in urls)
-    assert not any(url.endswith("/8.1.sh") or url.endswith("/8.2.sh") or url.endswith("/8.3.sh") for url in urls)
+    assert not any(url.endswith(("/8.1.sh", "/8.2.sh", "/8.3.sh")) for url in urls)
 
 
 def test_single_release_ref_controls_runtime_downloads(tmp_path: Path) -> None:
