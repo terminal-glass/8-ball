@@ -26,6 +26,7 @@
     "install/shared/c10-hardware-resolve.py",
     "install/shared/8ball-client-status.py",
     "install/shared/8ball-bulletin-refresh.sh",
+    "install/shared/installer-smoke-contract.sh",
     "install/shared/systemd/8ball-bulletin-refresh.service",
     "install/shared/systemd/8ball-bulletin-refresh.timer",
     "install/ubuntu/assets/first-MOTD.txt"

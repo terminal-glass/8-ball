@@ -168,26 +168,37 @@ if digest != expected:
 PY
 }
 
-eightball_download_verified_artifact() {
-  local rel_path="$1"
-  local dest_path="$2"
-  local manifest_path="$3"
-  local url="${4:-$(eightball_release_raw_repo_base)/${rel_path}}"
-  local tmp parent
-  parent="$(dirname "${dest_path}")"
-  install -d -m 0755 "${parent}"
-  tmp="$(mktemp "${parent}/.artifact.XXXXXX")"
-  if ! curl -fsSL "${url}" -o "${tmp}"; then
-    rm -f "${tmp}"
-    echo "Failed to download release artifact: ${url}" >&2
-    return 1
-  fi
-  if ! eightball_verify_artifact_sha "${rel_path}" "${tmp}" "${manifest_path}"; then
-    rm -f "${tmp}"
-    echo "Refusing to install unverified artifact: ${rel_path}" >&2
-    return 1
-  fi
-  mv "${tmp}" "${dest_path}"
+eightball_verify_manifest_artifacts_local() {
+  local manifest_path="$1"
+  local root_dir="$2"
+  local verbose="${3:-0}"
+  python3 - "${manifest_path}" "${root_dir}" "${verbose}" <<'PY'
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+manifest_path, root_dir, verbose = sys.argv[1:4]
+manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+root = Path(root_dir)
+mismatches = []
+for rel_path, expected in sorted(manifest.get("artifacts", {}).items()):
+    file_path = root / rel_path
+    if not file_path.is_file() or file_path.stat().st_size == 0:
+        mismatches.append(rel_path)
+        continue
+    actual = hashlib.sha256(file_path.read_bytes()).hexdigest()
+    if actual != expected:
+        mismatches.append(rel_path)
+        if verbose == "1":
+            print(f"[release] SHA-256 mismatch for {rel_path}", file=sys.stderr)
+if mismatches:
+    print(
+        f"[release] Local artifact verification failed ({len(mismatches)} mismatch(es))",
+        file=sys.stderr,
+    )
+    raise SystemExit(1)
+PY
 }
 
 eightball_locate_repo_root_from() {
@@ -239,9 +250,15 @@ eightball_bootstrap_release_runtime() {
     return 0
   fi
 
-  install -d -m 0755 "${staging_root}"
+  if [[ -z "${EIGHTBALL_REPO_ROOT:-}" || ! -d "${EIGHTBALL_REPO_ROOT}/profiles" ]]; then
+    echo "[release] Verified runtime staging missing; archive bootstrap required." >&2
+    return 1
+  fi
+  staging_root="${EIGHTBALL_REPO_ROOT}"
+  manifest_cache="${EIGHTBALL_RELEASE_MANIFEST:-${staging_root}/install/releases/${EIGHTBALL_RELEASE}/manifest.json}"
   if [[ ! -f "${manifest_cache}" ]]; then
-    eightball_fetch_release_manifest "${manifest_cache}" "${script_dir}" || return 1
+    echo "[release] Release manifest missing from verified runtime staging." >&2
+    return 1
   fi
 
   python3 - "${manifest_cache}" <<'PY' || return 1
@@ -249,24 +266,7 @@ import json, sys
 json.load(open(sys.argv[1], encoding="utf-8"))
 PY
 
-  while IFS= read -r rel_path; do
-    [[ -z "${rel_path}" ]] && continue
-    case "${rel_path}" in
-      install/ubuntu/trial-install.sh) continue ;;
-    esac
-    dest_path="${staging_root}/${rel_path}"
-    if [[ -f "${dest_path}" ]] && eightball_verify_artifact_sha "${rel_path}" "${dest_path}" "${manifest_cache}" 2>/dev/null; then
-      continue
-    fi
-    eightball_download_verified_artifact "${rel_path}" "${dest_path}" "${manifest_cache}" || return 1
-  done < <(
-    python3 - "${manifest_cache}" <<'PY'
-import json, sys
-manifest = json.load(open(sys.argv[1], encoding="utf-8"))
-for rel_path in sorted(manifest.get("artifacts", {})):
-    print(rel_path)
-PY
-  )
+  eightball_verify_manifest_artifacts_local "${manifest_cache}" "${staging_root}" || return 1
 
   export EIGHTBALL_REPO_ROOT="${staging_root}"
   export EIGHTBALL_RELEASE_STAGING="${staging_root}"

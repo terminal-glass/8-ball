@@ -4,6 +4,11 @@
   "release_tag": "v0.8.0",
   "repository": "terminal-glass/8-ball",
   "runtime_bundle": "install/releases/v0.8.0/runtime-bundle.json",
+  "runtime_archive": {
+    "path": "install/releases/v0.8.0/8ball-ubuntu-runtime.tar.gz",
+    "sha256": "59947e8a1d25b2e1cfe7d6665c6a07ac12cdf095f7fd7ffb8d966c4e8cd3e812",
+    "artifact_count": 121
+  },
   "scripts": {
     "8.1.sh": "3f15480d8fccad011c527ce39339d322a6cde2ecda021542aef7a6da86a1f682",
     "8.2.sh": "7a7ae37264aba744f28fe003ec7ef300576c928e2e880f06757872ed446959e8",
@@ -14,12 +19,13 @@
     "install/ubuntu/8.2.sh": "7a7ae37264aba744f28fe003ec7ef300576c928e2e880f06757872ed446959e8",
     "install/ubuntu/8.3.sh": "0abea5424241bff8243d7af3477d45ae0c5f889e9b9475ef7012060bbd17eeb1",
     "install/shared/8ball-version.sh": "ac360783108533c8a6624b82269348787b7b5410c76b67bca7cf859beb61f38d",
-    "install/shared/8ball-release.sh": "d83f0011fb790e56579e0f1974807595ef4d27ee2ca3e02bbdbebfc7d3cbc77b",
+    "install/shared/8ball-release.sh": "82309bbd99020ff6ca4dc26751f062763adff2a22bcbb59159b968787dbbe5d2",
     "install/shared/ollama-localhost.sh": "d1c81f6caf450bff04e744b7bc8cf3ad70b92066a3ff7a8c116ab4a01cfca6c8",
     "install/shared/8ball-model-test.sh": "bf55930240b91e4ab7f0d33a69b4bae1c6bead0a5f0adb2228ba8951c1af4b80",
     "install/shared/c10-hardware-resolve.py": "2a87d28ecb92e6112e972601ac1fee468df1659be08bcc87194313050a4c3ed2",
     "install/shared/8ball-client-status.py": "6b053c858147191f4e284f950151fc386ed45afd93ea8f347a37645a7853160b",
     "install/shared/8ball-bulletin-refresh.sh": "be895ad8225d5b2afd3c5dba4d1e34c5f28acdb121a246b28cdfe2af418f4b42",
+    "install/shared/installer-smoke-contract.sh": "016ee2f0e47417ed02959f2896784deae85cd6e935cc9d468cd8bf49cb4c8b0a",
     "install/shared/systemd/8ball-bulletin-refresh.service": "cc09e6e3fef5d418228fe2845da972eb01dc7c2b3d0cf406f94a0c7d8ed0ca3e",
     "install/shared/systemd/8ball-bulletin-refresh.timer": "a03c55b49eefee0fabcad7791dd233f725b93aabb0dbbb8f90a071f225509d8b",
     "install/ubuntu/assets/first-MOTD.txt": "54dfc8a6b80ea38bd04bf6c7082fd5278a74739a1b4eae1f5d40149d817330e6",

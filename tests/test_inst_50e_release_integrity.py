@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import os
+import re
 import shutil
 import stat
 import subprocess
+import tarfile
 import textwrap
 from pathlib import Path
 
@@ -17,7 +20,19 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 RELEASE_MANIFEST = REPO_ROOT / "install/releases/v0.8.0/manifest.json"
 TRIAL_INSTALL = REPO_ROOT / "install/ubuntu/trial-install.sh"
 RELEASE_SH = REPO_ROOT / "install/shared/8ball-release.sh"
-RELEASE_REF = "810b37dcd61e97de38860056f36e2061b6feeba9"
+
+
+def _pinned_runtime_ref() -> str:
+    trial = TRIAL_INSTALL.read_text(encoding="utf-8")
+    match = re.search(
+        r'EIGHTBALL_RELEASE_REF="\$\{EIGHTBALL_RELEASE_REF:-([0-9a-f]+)\}"',
+        trial,
+    )
+    assert match, "installer must pin EIGHTBALL_RELEASE_REF"
+    return match.group(1)
+
+
+RELEASE_REF = _pinned_runtime_ref()
 
 
 @pytest.fixture(autouse=True)
@@ -42,17 +57,52 @@ def _manifest() -> dict:
     return json.loads(RELEASE_MANIFEST.read_text(encoding="utf-8"))
 
 
+def _manifest_for_mock() -> dict:
+    manifest = _manifest()
+    archive_bytes = _build_deterministic_archive(manifest)
+    patched = json.loads(json.dumps(manifest))
+    patched["runtime_archive"]["sha256"] = hashlib.sha256(archive_bytes).hexdigest()
+    return patched
+
+
+def _build_deterministic_archive(manifest: dict) -> bytes:
+    buf = io.BytesIO()
+    with tarfile.open(fileobj=buf, mode="w:gz", format=tarfile.GNU_FORMAT) as tar:
+        for rel in sorted(manifest["artifacts"]):
+            src = REPO_ROOT / rel
+            data = src.read_bytes()
+            info = tarfile.TarInfo(name=rel)
+            info.size = len(data)
+            info.mtime = 0
+            info.uid = 0
+            info.gid = 0
+            info.uname = "root"
+            info.gname = "root"
+            info.mode = 0o755 if rel.endswith((".sh", ".py")) else 0o644
+            tar.addfile(info, io.BytesIO(data))
+    return buf.getvalue()
+
+
 def _write_mock_curl(
     mock_bin: Path,
     manifest: dict,
     *,
-    corrupt: str = "",
-    omit: str = "",
+    corrupt_archive: bool = False,
+    omit_archive: bool = False,
     ref: str = RELEASE_REF,
 ) -> None:
     mock_bin.mkdir(parents=True, exist_ok=True)
     manifest_json = json.dumps(manifest)
     manifest_for_shell = manifest_json.replace("'", "'\"'\"'")
+    archive_rel = manifest["runtime_archive"]["path"]
+    archive_path = mock_bin / "runtime-archive.tar.gz"
+    archive_path.write_bytes(_build_deterministic_archive(manifest))
+    if corrupt_archive:
+        archive_action = 'echo corrupt >"${output}"'
+    elif omit_archive:
+        archive_action = "exit 22"
+    else:
+        archive_action = f'cp "{archive_path}" "${{output}}"'
     script = textwrap.dedent(
         f"""\
         #!/usr/bin/env bash
@@ -74,20 +124,14 @@ def _write_mock_curl(
           */install/releases/*/manifest.json)
             printf '%s' '{manifest_for_shell}' >"${{output}}"
             ;;
+          */{archive_rel.split("/")[-1]})
+            {archive_action}
+            ;;
+          */profiles/*|*/install/shared/*|*/install/ubuntu/*.sh)
+            exit 22
+            ;;
           *)
-            rel="${{url#*8-ball/{ref}/}}"
-            if [[ "${{rel}}" == "{omit}" ]]; then
-              exit 22
-            fi
-            src="{REPO_ROOT}/${{rel}}"
-            if [[ ! -f "${{src}}" ]]; then
-              exit 22
-            fi
-            if [[ "${{rel}}" == "{corrupt}" ]]; then
-              echo corrupt >"${{output}}"
-              exit 0
-            fi
-            cp "${{src}}" "${{output}}"
+            exit 22
             ;;
         esac
         """
@@ -176,6 +220,7 @@ def test_all_runtime_artifacts_share_one_release_identity() -> None:
     manifest = _manifest()
     assert manifest["repository"] == "terminal-glass/8-ball"
     assert manifest["runtime_bundle"] == "install/releases/v0.8.0/runtime-bundle.json"
+    assert manifest["runtime_archive"]["path"] == "install/releases/v0.8.0/8ball-ubuntu-runtime.tar.gz"
     script_paths = {f"install/ubuntu/{name}" for name in manifest["scripts"]}
     assert script_paths.issubset(set(manifest["artifacts"]))
     assert any(path.startswith("profiles/qwen3/") for path in manifest["artifacts"])
@@ -230,17 +275,17 @@ def test_verify_artifact_sha_fails_closed_on_bad_checksum(tmp_path: Path) -> Non
 def test_missing_artifact_download_fails_closed(tmp_path: Path) -> None:
     install_dir = _isolated_install_tree(tmp_path)
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest(), omit="install/ubuntu/8.1.sh")
+    _write_mock_curl(mock_bin, _manifest_for_mock(), omit_archive=True)
     env = _trial_env(tmp_path)
     result = _run_trial(install_dir, mock_bin, env)
     assert result.returncode != 0
-    assert "Failed to bootstrap" in result.stderr + result.stdout
+    assert "Failed to download" in result.stderr + result.stdout
 
 
 def test_corrupt_artifact_download_fails_closed(tmp_path: Path) -> None:
     install_dir = _isolated_install_tree(tmp_path)
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest(), corrupt="install/ubuntu/8.1.sh")
+    _write_mock_curl(mock_bin, _manifest_for_mock(), corrupt_archive=True)
     env = _trial_env(tmp_path)
     result = _run_trial(install_dir, mock_bin, env)
     assert result.returncode != 0
@@ -278,29 +323,36 @@ def test_partial_download_is_not_executed(tmp_path: Path) -> None:
 def test_bootstrap_stages_profiles_from_same_release(tmp_path: Path) -> None:
     install_dir = _isolated_install_tree(tmp_path)
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest())
-    env = _trial_env(tmp_path)
+    _write_mock_curl(mock_bin, _manifest_for_mock())
+    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
+    result = _run_trial(install_dir, mock_bin, env)
+    assert result.returncode == 0, result.stderr + result.stdout
     staging = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0"
+    assert (staging / "profiles/qwen3/model.json").is_file()
+    assert (staging / "scripts/c10_common.py").is_file()
+    assert (staging / "install/ubuntu/8.2.sh").is_file()
     bootstrap = subprocess.run(
         [
             "bash",
             "-c",
             (
                 f'source "{install_dir.parent / "shared" / "8ball-release.sh"}"; '
-                f'export PHILOSOPHER_ROOT="{tmp_path / "philosopher"}"; '
                 "eightball_bootstrap_release_runtime "
-                f'"{install_dir}" "{install_dir / "trial-install.sh"}"'
+                f'"{install_dir}"'
             ),
         ],
         capture_output=True,
         text=True,
         check=False,
-        env={**env, "PATH": f"{mock_bin}:{env['PATH']}"},
+        env={
+            **env,
+            "PATH": f"{mock_bin}:{env['PATH']}",
+            "EIGHTBALL_REPO_ROOT": str(staging),
+            "EIGHTBALL_RELEASE_STAGING": str(staging),
+            "EIGHTBALL_RELEASE_MANIFEST": str(staging / "manifest.json"),
+        },
     )
     assert bootstrap.returncode == 0, bootstrap.stderr
-    assert (staging / "profiles/qwen3/model.json").is_file()
-    assert (staging / "scripts/c10_common.py").is_file()
-    assert (staging / "install/ubuntu/8.2.sh").is_file()
 
 
 def test_local_development_bundle_skips_remote_bootstrap(tmp_path: Path) -> None:
@@ -441,12 +493,12 @@ def test_clean_entrypoint_bootstraps_shared_helpers(tmp_path: Path) -> None:
     assert not shared_dir.exists()
 
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest())
-    env = _trial_env(tmp_path)
+    _write_mock_curl(mock_bin, _manifest_for_mock())
+    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
 
     result = subprocess.run(
-        ["bash", str(entry_dir / "trial-install.sh"), "--help"],
+        ["bash", str(entry_dir / "trial-install.sh"), "--no-motd"],
         capture_output=True,
         text=True,
         check=False,
@@ -464,7 +516,7 @@ def test_clean_entrypoint_acquires_release_runtime(tmp_path: Path) -> None:
     shared_dir = entry_dir.parent / "shared"
 
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest())
+    _write_mock_curl(mock_bin, _manifest_for_mock())
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
 
@@ -499,7 +551,7 @@ def test_unpublished_release_ref_fails_closed(tmp_path: Path) -> None:
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
 
     result = subprocess.run(
-        ["bash", str(entry_dir / "trial-install.sh"), "--help"],
+        ["bash", str(entry_dir / "trial-install.sh"), "--no-motd"],
         capture_output=True,
         text=True,
         check=False,
