@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import hashlib
 import io
-import json
 import os
 import shutil
 import stat
@@ -13,8 +12,6 @@ import tarfile
 import textwrap
 import time
 from pathlib import Path
-
-import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_INSTALL = REPO_ROOT / "install/ubuntu/trial-install.sh"
