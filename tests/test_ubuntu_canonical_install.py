@@ -1,4 +1,4 @@
-"""Canonical Ubuntu trial-install entrypoint tests (PR57)."""
+"""Canonical Ubuntu trial-install entrypoint tests (PR57+)."""
 
 from __future__ import annotations
 
@@ -20,7 +20,6 @@ CUSTOMER_URL = (
     "https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh"
 )
 RELEASE_MANIFEST = REPO_ROOT / "install/releases/v0.8.0/manifest.json"
-RUNTIME_REF = "b018f2154ffc185152e54ff4063fd1921dc22d0c"
 
 
 def _pinned_runtime_ref() -> str:
@@ -31,6 +30,46 @@ def _pinned_runtime_ref() -> str:
     )
     assert match, "installer must pin EIGHTBALL_RELEASE_REF"
     return match.group(1)
+
+
+def _ensure_git_ref_available(ref: str) -> None:
+    probe = subprocess.run(
+        ["git", "cat-file", "-e", f"{ref}^{{commit}}"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if probe.returncode == 0:
+        return
+    fetch = subprocess.run(
+        ["git", "fetch", "--depth", "1", "origin", ref],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if fetch.returncode != 0:
+        raise RuntimeError(
+            f"Pinned runtime ref {ref} is not available locally and could not be fetched."
+        )
+
+
+def _git_show_bytes(ref: str, rel_path: str) -> bytes:
+    _ensure_git_ref_available(ref)
+    return subprocess.check_output(["git", "show", f"{ref}:{rel_path}"])
+
+
+def _manifest_at_ref(ref: str) -> dict:
+    return json.loads(_git_show_bytes(ref, "install/releases/v0.8.0/manifest.json"))
+
+
+def _manifest_mismatches_at_ref(ref: str) -> list[tuple[str, str, str]]:
+    manifest = _manifest_at_ref(ref)
+    mismatches: list[tuple[str, str, str]] = []
+    for rel_path, expected in manifest["artifacts"].items():
+        actual = hashlib.sha256(_git_show_bytes(ref, rel_path)).hexdigest()
+        if actual != expected:
+            mismatches.append((rel_path, expected, actual))
+    return mismatches
 
 
 def _restore_release_tree() -> None:
@@ -46,35 +85,20 @@ def restore_release_tree_fixture() -> None:
     _restore_release_tree()
 
 
-def _manifest() -> dict:
-    return json.loads(RELEASE_MANIFEST.read_text(encoding="utf-8"))
-
-
-def _manifest_for_tests() -> dict:
-    manifest = _manifest()
-    artifacts = dict(manifest.get("artifacts", {}))
-    for rel_path in artifacts:
-        src = REPO_ROOT / rel_path
-        if src.is_file():
-            artifacts[rel_path] = hashlib.sha256(src.read_bytes()).hexdigest()
-    manifest["artifacts"] = artifacts
-    return manifest
-
-
-def _build_release_snapshot(root: Path) -> Path:
+def _build_release_snapshot(root: Path, ref: str | None = None) -> Path:
+    runtime_ref = ref or _pinned_runtime_ref()
+    manifest = _manifest_at_ref(runtime_ref)
     snap = root / "release_snapshot"
     if snap.exists():
         shutil.rmtree(snap)
     snap.mkdir(parents=True, exist_ok=True)
-    manifest = _manifest_for_tests()
     for rel_path in manifest["artifacts"]:
-        src = REPO_ROOT / rel_path
         dest = snap / rel_path
         dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src, dest)
+        dest.write_bytes(_git_show_bytes(runtime_ref, rel_path))
     manifest_dest = snap / "install/releases/v0.8.0/manifest.json"
     manifest_dest.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(RELEASE_MANIFEST, manifest_dest)
+    manifest_dest.write_bytes(_git_show_bytes(runtime_ref, "install/releases/v0.8.0/manifest.json"))
     return snap
 
 
@@ -83,7 +107,7 @@ def _write_mock_curl(
     manifest: dict,
     snapshot: Path,
     *,
-    ref: str = RUNTIME_REF,
+    ref: str,
     corrupt: str = "",
 ) -> None:
     mock_bin.mkdir(parents=True, exist_ok=True)
@@ -139,7 +163,7 @@ def _write_mock_curl_with_log(
     snapshot: Path,
     log_file: Path,
     *,
-    ref: str = RUNTIME_REF,
+    ref: str,
     corrupt: str = "",
 ) -> None:
     mock_bin.mkdir(parents=True, exist_ok=True)
@@ -197,7 +221,7 @@ def _trial_env(tmp_path: Path, **overrides: str) -> dict[str, str]:
         "PATH": os.environ.get("PATH", ""),
         "PHILOSOPHER_ROOT": str(philo),
         "EIGHTBALL_RELEASE": "v0.8.0",
-        "EIGHTBALL_RELEASE_REF": RUNTIME_REF,
+        "EIGHTBALL_RELEASE_REF": _pinned_runtime_ref(),
         "EIGHTBALL_TEST_SKIP_ROOT": "1",
         "EIGHTBALL_ALLOW_UNVERIFIED_DOWNLOADS": "0",
         "HOME": str(tmp_path / "home"),
@@ -235,14 +259,41 @@ def test_logical_release_is_not_used_as_git_ref() -> None:
     assert 'printf \'https://raw.githubusercontent.com/%s/%s\' \\\n    "${EIGHTBALL_RELEASE_REPO}" "${EIGHTBALL_RELEASE}"' not in release
 
 
+def test_pinned_commit_manifest_is_self_consistent() -> None:
+    ref = _pinned_runtime_ref()
+    mismatches = _manifest_mismatches_at_ref(ref)
+    assert mismatches == []
+
+
+def test_runtime_manifest_excludes_trial_install() -> None:
+    manifest = _manifest_at_ref(_pinned_runtime_ref())
+    assert "install/ubuntu/trial-install.sh" not in manifest["artifacts"]
+    assert "trial-install.sh" not in manifest.get("scripts", {})
+
+
+def test_customer_path_every_artifact_matches_manifest() -> None:
+    ref = _pinned_runtime_ref()
+    manifest = _manifest_at_ref(ref)
+    for rel_path, expected in manifest["artifacts"].items():
+        actual = hashlib.sha256(_git_show_bytes(ref, rel_path)).hexdigest()
+        assert actual == expected, rel_path
+
+
+def test_customer_path_8ball_release_matches_manifest() -> None:
+    ref = _pinned_runtime_ref()
+    manifest = _manifest_at_ref(ref)
+    rel = "install/shared/8ball-release.sh"
+    actual = hashlib.sha256(_git_show_bytes(ref, rel)).hexdigest()
+    assert actual == manifest["artifacts"][rel]
+
+
 def test_stdin_execution_does_not_require_bash_source(tmp_path: Path) -> None:
-    snapshot = _build_release_snapshot(tmp_path)
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest_for_tests(), snapshot)
+    _write_mock_curl(mock_bin, _manifest_at_ref(ref), snapshot, ref=ref)
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
-    script = CANONICAL_INSTALL.read_text(encoding="utf-8")
-    assert "eightball_resolve_entry_context" in script
 
     result = subprocess.run(
         ["bash", "-c", f"cat '{CANONICAL_INSTALL}' | bash"],
@@ -256,12 +307,13 @@ def test_stdin_execution_does_not_require_bash_source(tmp_path: Path) -> None:
 
 
 def test_downloaded_file_execution_works(tmp_path: Path) -> None:
-    snapshot = _build_release_snapshot(tmp_path)
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest_for_tests(), snapshot)
+    _write_mock_curl(mock_bin, _manifest_at_ref(ref), snapshot, ref=ref)
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
     result = subprocess.run(
@@ -275,13 +327,14 @@ def test_downloaded_file_execution_works(tmp_path: Path) -> None:
 
 
 def test_clean_host_does_not_require_repository_checkout(tmp_path: Path) -> None:
-    snapshot = _build_release_snapshot(tmp_path)
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
     assert not (tmp_path / "install").exists()
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest_for_tests(), snapshot)
+    _write_mock_curl(mock_bin, _manifest_at_ref(ref), snapshot, ref=ref)
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
     result = subprocess.run(
@@ -297,14 +350,16 @@ def test_clean_host_does_not_require_repository_checkout(tmp_path: Path) -> None
 
 
 def test_runtime_still_sha256_verified(tmp_path: Path) -> None:
+    ref = _pinned_runtime_ref()
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
     mock_bin = tmp_path / "bin"
     _write_mock_curl(
         mock_bin,
-        _manifest_for_tests(),
-        _build_release_snapshot(tmp_path),
+        _manifest_at_ref(ref),
+        _build_release_snapshot(tmp_path, ref),
+        ref=ref,
         corrupt="install/shared/8ball-version.sh",
     )
     env = _trial_env(tmp_path)
@@ -340,25 +395,28 @@ def test_no_patch_stale_release_helper() -> None:
 
 
 def test_runtime_snapshot_excludes_trial_install() -> None:
-    # Commit A runtime snapshot is the tree copy of install/shared/8ball-release.sh.
     release = (REPO_ROOT / "install/shared/8ball-release.sh").read_text(encoding="utf-8")
     runtime_block = release.split("ubuntu_runtime_scripts=(")[1].split(")")[0]
     assert "trial-install.sh" not in runtime_block
     assert "install/ubuntu/trial-install.sh) continue" in release
 
 
-def test_installer_pins_runtime_ref_to_commit_a() -> None:
-    assert _pinned_runtime_ref() == RUNTIME_REF
+def test_installer_pins_immutable_runtime_ref() -> None:
+    ref = _pinned_runtime_ref()
+    manifest = _manifest_at_ref(ref)
+    assert _manifest_mismatches_at_ref(ref) == []
+    assert "install/ubuntu/trial-install.sh" not in manifest["artifacts"]
 
 
 def test_bootstrap_never_downloads_trial_install_url(tmp_path: Path) -> None:
-    snapshot = _build_release_snapshot(tmp_path)
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
     mock_bin = tmp_path / "bin"
     curl_log = tmp_path / "curl.log"
-    _write_mock_curl_with_log(mock_bin, _manifest_for_tests(), snapshot, curl_log)
+    _write_mock_curl_with_log(mock_bin, _manifest_at_ref(ref), snapshot, curl_log, ref=ref)
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
     result = subprocess.run(
@@ -380,13 +438,14 @@ def test_bootstrap_never_execs_second_trial_install() -> None:
 
 
 def test_runtime_bundle_downloads_lane_scripts(tmp_path: Path) -> None:
-    snapshot = _build_release_snapshot(tmp_path)
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
     mock_bin = tmp_path / "bin"
     curl_log = tmp_path / "curl.log"
-    _write_mock_curl_with_log(mock_bin, _manifest_for_tests(), snapshot, curl_log)
+    _write_mock_curl_with_log(mock_bin, _manifest_at_ref(ref), snapshot, curl_log, ref=ref)
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
     result = subprocess.run(
@@ -403,14 +462,15 @@ def test_runtime_bundle_downloads_lane_scripts(tmp_path: Path) -> None:
 
 
 def test_single_release_ref_controls_runtime_downloads(tmp_path: Path) -> None:
-    snapshot = _build_release_snapshot(tmp_path)
+    ref = _pinned_runtime_ref()
+    snapshot = _build_release_snapshot(tmp_path, ref)
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
     mock_bin = tmp_path / "bin"
     curl_log = tmp_path / "curl.log"
-    _write_mock_curl_with_log(mock_bin, _manifest_for_tests(), snapshot, curl_log, ref=RUNTIME_REF)
-    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1", EIGHTBALL_RELEASE_REF=RUNTIME_REF)
+    _write_mock_curl_with_log(mock_bin, _manifest_at_ref(ref), snapshot, curl_log, ref=ref)
+    env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1", EIGHTBALL_RELEASE_REF=ref)
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
     result = subprocess.run(
         ["bash", str(entry_dir / "trial-install.sh")],
@@ -422,19 +482,20 @@ def test_single_release_ref_controls_runtime_downloads(tmp_path: Path) -> None:
     assert result.returncode == 0, result.stderr + result.stdout
     urls = [line for line in curl_log.read_text(encoding="utf-8").splitlines() if line.strip()]
     assert urls
-    assert all(f"/{RUNTIME_REF}/" in url for url in urls)
+    assert all(f"/{ref}/" in url for url in urls)
 
 
 def test_downloaded_helpers_not_mutated_after_verify(tmp_path: Path) -> None:
-    snapshot = _build_release_snapshot(tmp_path)
+    ref = _pinned_runtime_ref()
+    manifest = _manifest_at_ref(ref)
+    rel = "install/shared/8ball-release.sh"
+    expected_release = manifest["artifacts"][rel]
+    snapshot = _build_release_snapshot(tmp_path, ref)
     entry_dir = tmp_path / "customer"
     entry_dir.mkdir()
     shutil.copy(CANONICAL_INSTALL, entry_dir / "trial-install.sh")
-    expected_release = hashlib.sha256(
-        (REPO_ROOT / "install/shared/8ball-release.sh").read_bytes()
-    ).hexdigest()
     mock_bin = tmp_path / "bin"
-    _write_mock_curl(mock_bin, _manifest_for_tests(), snapshot)
+    _write_mock_curl(mock_bin, manifest, snapshot, ref=ref)
     env = _trial_env(tmp_path, EIGHTBALL_BOOTSTRAP_STOP="1")
     env["PATH"] = f"{mock_bin}:{env['PATH']}"
     bootstrap_root = tmp_path / "philosopher" / ".8ball-bootstrap" / "ubuntu" / "install" / "shared"
@@ -446,9 +507,12 @@ def test_downloaded_helpers_not_mutated_after_verify(tmp_path: Path) -> None:
         env=env,
     )
     assert result.returncode == 0, result.stderr + result.stdout
-    release_path = bootstrap_root / "8ball-release.sh"
+    release_path = entry_dir.parent / "shared" / "8ball-release.sh"
     if not release_path.is_file():
-        release_path = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0" / "install/shared/8ball-release.sh"
-    if release_path.is_file():
-        actual = hashlib.sha256(release_path.read_bytes()).hexdigest()
-        assert actual == expected_release
+        release_path = bootstrap_root / "8ball-release.sh"
+    if not release_path.is_file():
+        release_path = tmp_path / "philosopher" / ".8ball-release" / "v0.8.0" / rel
+    assert release_path.is_file(), result.stderr + result.stdout
+    actual = hashlib.sha256(release_path.read_bytes()).hexdigest()
+    assert actual == expected_release
+    assert actual == hashlib.sha256(_git_show_bytes(ref, rel)).hexdigest()

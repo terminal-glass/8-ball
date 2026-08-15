@@ -31,7 +31,6 @@
     "install/ubuntu/assets/first-MOTD.txt"
   ],
   "ubuntu_scripts": [
-    "install/ubuntu/trial-install.sh",
     "install/ubuntu/8.1.sh",
     "install/ubuntu/8.2.sh",
     "install/ubuntu/8.3.sh"

@@ -31,7 +31,9 @@ def test_release_manifest_matches_scripts() -> None:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     assert manifest["suite_version"] == "0.8.0"
     assert manifest["repository"] == "terminal-glass/8-ball"
-    for name in ("trial-install.sh", "8.1.sh", "8.2.sh", "8.3.sh"):
+    assert "trial-install.sh" not in manifest["scripts"]
+    assert "install/ubuntu/trial-install.sh" not in manifest["artifacts"]
+    for name in ("8.1.sh", "8.2.sh", "8.3.sh"):
         assert name in manifest["scripts"]
         rel = f"install/ubuntu/{name}"
         script_path = REPO_ROOT / rel

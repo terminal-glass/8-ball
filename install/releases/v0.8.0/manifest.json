@@ -5,18 +5,16 @@
   "repository": "terminal-glass/8-ball",
   "runtime_bundle": "install/releases/v0.8.0/runtime-bundle.json",
   "scripts": {
-    "trial-install.sh": "7c953dc6c3d2e42aa3f3a7f6ef2864f0dcf6253fa338e999944bd64e0fe13bda",
     "8.1.sh": "3f15480d8fccad011c527ce39339d322a6cde2ecda021542aef7a6da86a1f682",
     "8.2.sh": "7a7ae37264aba744f28fe003ec7ef300576c928e2e880f06757872ed446959e8",
     "8.3.sh": "0abea5424241bff8243d7af3477d45ae0c5f889e9b9475ef7012060bbd17eeb1"
   },
   "artifacts": {
-    "install/ubuntu/trial-install.sh": "7c953dc6c3d2e42aa3f3a7f6ef2864f0dcf6253fa338e999944bd64e0fe13bda",
     "install/ubuntu/8.1.sh": "3f15480d8fccad011c527ce39339d322a6cde2ecda021542aef7a6da86a1f682",
     "install/ubuntu/8.2.sh": "7a7ae37264aba744f28fe003ec7ef300576c928e2e880f06757872ed446959e8",
     "install/ubuntu/8.3.sh": "0abea5424241bff8243d7af3477d45ae0c5f889e9b9475ef7012060bbd17eeb1",
     "install/shared/8ball-version.sh": "ac360783108533c8a6624b82269348787b7b5410c76b67bca7cf859beb61f38d",
-    "install/shared/8ball-release.sh": "e988aff7b368c2d93498af53aa21c7256ad0b49b159958712f3a1273b640d53b",
+    "install/shared/8ball-release.sh": "d83f0011fb790e56579e0f1974807595ef4d27ee2ca3e02bbdbebfc7d3cbc77b",
     "install/shared/ollama-localhost.sh": "d1c81f6caf450bff04e744b7bc8cf3ad70b92066a3ff7a8c116ab4a01cfca6c8",
     "install/shared/8ball-model-test.sh": "bf55930240b91e4ab7f0d33a69b4bae1c6bead0a5f0adb2228ba8951c1af4b80",
     "install/shared/c10-hardware-resolve.py": "2a87d28ecb92e6112e972601ac1fee468df1659be08bcc87194313050a4c3ed2",
