@@ -173,7 +173,7 @@ PY
 
 eightball_entrypoint_bootstrap_verified_runtime() {
   local staging_root manifest_cache archive_file archive_rel archive_sha base_url
-  staging_root="${EIGHTBALL_RELEASE_STAGING:-${PHILOSOPHER_ROOT}/.8ball-release/${EIGHTBALL_RELEASE}}"
+  staging_root="${EIGHTBALL_RELEASE_STAGING:-${PHILOSOPHER_ROOT}/.8ball-release/${EIGHTBALL_RELEASE}/${EIGHTBALL_RELEASE_REF}}"
   manifest_cache="${staging_root}/manifest.json"
 
   if [[ -f "${manifest_cache}" && -d "${staging_root}/profiles" ]]; then
@@ -630,6 +630,30 @@ on_exit() {
 resolve_script() {
   local name="$1"
   local local_path="${SCRIPT_DIR}/${name}"
+  local staged_path manifest_path=""
+
+  if [[ -n "${EIGHTBALL_REPO_ROOT:-}" && -d "${EIGHTBALL_REPO_ROOT}/profiles" ]] \
+    && ! eightball_release_is_development \
+    && [[ -n "${EIGHTBALL_RELEASE_STAGING:-}" && "${EIGHTBALL_RELEASE_STAGING}" == "${EIGHTBALL_REPO_ROOT}" ]] \
+    && [[ -f "${EIGHTBALL_RELEASE_MANIFEST:-}" && "${EIGHTBALL_RELEASE_MANIFEST}" == "${EIGHTBALL_REPO_ROOT}/manifest.json" ]]; then
+    staged_path="${EIGHTBALL_REPO_ROOT}/install/${EIGHTBALL_INSTALL_PROFILE}/${name}"
+    if [[ ! -f "${staged_path}" ]]; then
+      echo "Verified runtime script missing: ${staged_path}" >&2
+      exit 1
+    fi
+    if ! manifest_path="$(eightball_manifest_path_for_release "${SCRIPT_DIR}" 2>/dev/null)"; then
+      echo "Release manifest unavailable; refusing unverified execution of ${name}." >&2
+      exit 1
+    fi
+    eightball_verify_download_sha "${staged_path}" "${name}" "${manifest_path}" || {
+      echo "Staged script failed release integrity check: ${name}" >&2
+      exit 1
+    }
+    eightball_verify_script_version "${staged_path}" "${name}"
+    printf '%s' "${staged_path}"
+    return 0
+  fi
+
   local skip_release_checksum=0
   if [[ -n "${EIGHTBALL_REPO_ROOT:-}" ]] || eightball_release_is_development; then
     skip_release_checksum=1
@@ -651,7 +675,7 @@ resolve_script() {
     RAW_BASE="$(eightball_release_raw_base "${EIGHTBALL_INSTALL_PROFILE}")"
   fi
   validate_raw_base
-  local tmp manifest_path=""
+  local tmp
   tmp="$(mktemp)"
   curl -fsSL "${RAW_BASE}/${name}" -o "${tmp}"
   if manifest_path="$(eightball_manifest_path_for_release "${SCRIPT_DIR}" 2>/dev/null || true)"; then
@@ -734,6 +758,15 @@ main() {
   script_81="$(resolve_script "8.1.sh")"
   script_82="$(resolve_script "8.2.sh")"
   script_83="$(resolve_script "8.3.sh")"
+
+  if [[ "${EIGHTBALL_TEST_RESOLVE_SCRIPTS:-0}" == "1" ]]; then
+    printf 'resolved_script:8.1.sh=%s\n' "${script_81}"
+    printf 'resolved_script:8.2.sh=%s\n' "${script_82}"
+    printf 'resolved_script:8.3.sh=%s\n' "${script_83}"
+    printf 'EIGHTBALL_REPO_ROOT=%s\n' "${EIGHTBALL_REPO_ROOT}"
+    INSTALL_SUCCEEDED=1
+    exit 0
+  fi
 
   local -a manifest_args=()
   if [[ -n "${MANIFEST}" ]]; then
