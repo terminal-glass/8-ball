@@ -1,0 +1,27 @@
+# Example unit. Adjust paths. The service user needs read access to the catalog and the profile,
+# write access to state_dir, and nothing else. It does not need root and never starts a shell.
+[Unit]
+Description=8-Ball console (loopback API and UI)
+After=network-online.target ollama.service
+Wants=network-online.target
+
+[Service]
+User=eightball
+Group=eightball
+Environment=EIGHTBALL_CONFIG=/etc/8ball/console.toml
+ExecStart=/opt/8ball/venv/bin/python -m eightball_console serve
+WorkingDirectory=/opt/8ball/app
+Restart=on-failure
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/8ball/console
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LockPersonality=yes
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

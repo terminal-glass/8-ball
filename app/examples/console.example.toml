@@ -1,0 +1,29 @@
+# /etc/8ball/console.toml  (environment variables EIGHTBALL_* override these)
+listen_host = "127.0.0.1"   # loopback only; publish through a same-host reverse proxy
+listen_port = 8788
+state_dir = "/var/lib/8ball/console"
+profile_path = "/var/lib/8ball/profile.v1.json"
+catalog_root = "/opt/8ball/catalog"   # a checkout (or sparse copy) of this repository
+# catalog_commit = ""                 # read from CATALOG_COMMIT or git when empty
+
+# "basic": the console's own users file (scrypt hashes). Put TLS in front of it.
+# "trusted-proxy": the reverse proxy authenticates and sends X-8Ball-User / X-8Ball-Role;
+#                  accepted only from trusted_proxies.
+auth_mode = "basic"
+users_file = "/etc/8ball/users.json"
+trusted_proxies = ["127.0.0.1", "::1"]
+
+models_dir = "/usr/share/ollama/.ollama/models"
+offline = "auto"          # auto probes the registry; "on" disables pulls and cloud actions
+profile_max_age_days = 30
+
+# Optional read-only terminal view (ttyd proxied at <app>/tty/). Empty disables it.
+console_path = ""
+console_token_ttl = 300
+max_parallel_jobs = 1
+
+# Fixed list of Ollama instances. The browser only ever chooses one by id.
+[[instances]]
+id = "local"
+label = "This machine"
+base_url = "http://127.0.0.1:11434"

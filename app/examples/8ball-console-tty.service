@@ -1,0 +1,22 @@
+# Optional read-only terminal view of job logs. ttyd runs WITHOUT -W, so the browser cannot type.
+# The only program it starts is the console viewer, which needs a short-lived token for one job.
+[Unit]
+Description=8-Ball console terminal view (read-only ttyd)
+After=8ball-console.service
+
+[Service]
+User=eightball
+Group=eightball
+Environment=EIGHTBALL_CONFIG=/etc/8ball/console.toml
+ExecStart=/opt/8ball/bin/ttyd -i 127.0.0.1 -p 8789 -b /apps/8ball/tty -a -O -m 8 -t disableLeaveAlert=true \
+  /opt/8ball/venv/bin/python -m eightball_console console-view
+WorkingDirectory=/opt/8ball/app
+Restart=on-failure
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadOnlyPaths=/var/lib/8ball/console
+
+[Install]
+WantedBy=multi-user.target

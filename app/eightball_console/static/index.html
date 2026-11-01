@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<title>🎱 8-Ball</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="static/app.css">
+</head>
+<body>
+<header class="eb-bar" role="banner">
+  <a class="eb-brand" href="#profile"><span aria-hidden="true">🎱</span> 8-Ball</a>
+  <nav class="eb-tabs" aria-label="Sections">
+    <a href="#profile" data-tab="profile">Profile</a>
+    <a href="#ollama" data-tab="ollama">Ollama</a>
+    <a href="#nerds" data-tab="nerds">Happy Nerds</a>
+    <a href="#console" data-tab="console">Console</a>
+    <a href="#settings" data-tab="settings">Settings</a>
+  </nav>
+  <span class="eb-status" id="eb-status" aria-live="polite"></span>
+</header>
+<div class="eb-banner" id="eb-banner" role="status" hidden></div>
+<main class="eb-main">
+  <section id="page-profile" class="eb-page" aria-labelledby="h-profile">
+    <h1 id="h-profile">Machine profile</h1>
+    <p class="eb-intro">What 8-Ball measured on this computer. Unknown values stay unknown; they are never counted as enough.</p>
+    <div id="profile-body" class="eb-grid"></div>
+  </section>
+
+  <section id="page-ollama" class="eb-page" aria-labelledby="h-ollama" hidden>
+    <h1 id="h-ollama">Ollama models</h1>
+    <div class="eb-row">
+      <label>Instance <select id="inst" class="eb-input"></select></label>
+      <button type="button" class="eb-btn eb-btn-2" id="refresh-models">Refresh list</button>
+    </div>
+    <div class="eb-card">
+      <h2>Pull an exact catalog tag</h2>
+      <form id="pull-form" class="eb-row" autocomplete="off">
+        <input id="pull-ref" class="eb-input" placeholder="e.g. all-minilm:22m" aria-label="Exact model tag" required>
+        <button type="submit" class="eb-btn" id="pull-btn">Pull</button>
+      </form>
+      <p class="eb-small">Only exact tags from the 8-Ball catalog. Cloud tags and pulls are disabled while offline.</p>
+      <div id="active-jobs"></div>
+    </div>
+    <h2>Installed on this instance</h2>
+    <div id="models-body"></div>
+  </section>
+
+  <section id="page-nerds" class="eb-page" aria-labelledby="h-nerds" hidden>
+    <h1 id="h-nerds">Happy Nerds</h1>
+    <p class="eb-intro" id="nerds-intro">Fifty featured model families (an editorial pick, not a ranking), resolved to exact tags and checked against this machine.</p>
+    <div class="eb-legend" id="legend"></div>
+    <div class="eb-row" id="nerd-cats" role="tablist" aria-label="Categories"></div>
+    <div class="eb-row"><label><input type="checkbox" id="show-all"> Show every variant (including rejected)</label></div>
+    <div id="nerds-body" class="eb-grid"></div>
+  </section>
+
+  <section id="page-console" class="eb-page" aria-labelledby="h-console" hidden>
+    <h1 id="h-console">Console</h1>
+    <p class="eb-intro">Read-only logs of 8-Ball jobs. Closing this page never stops a job; only Cancel does.</p>
+    <div class="eb-console">
+      <aside class="eb-joblist"><h2>Jobs</h2><ol id="job-list"></ol>
+        <h2>Workflows</h2><div id="wf-list"></div></aside>
+      <div class="eb-view">
+        <div class="eb-row" id="job-head"></div>
+        <div class="eb-row">
+          <button type="button" class="eb-btn eb-btn-2" id="reconnect">Reconnect</button>
+          <button type="button" class="eb-btn eb-btn-2" id="copy-log">Copy log</button>
+          <button type="button" class="eb-btn eb-btn-danger" id="cancel-job">Cancel job</button>
+          <label class="eb-small"><input type="checkbox" id="use-tty" checked> Terminal view</label>
+        </div>
+        <div id="tty-wrap" class="eb-tty" hidden><iframe id="tty" title="Job terminal (read-only)" sandbox="allow-scripts allow-same-origin"></iframe></div>
+        <pre id="log" class="eb-log" aria-live="polite" tabindex="0"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-settings" class="eb-page" aria-labelledby="h-settings" hidden>
+    <h1 id="h-settings">Settings</h1>
+    <div id="settings-body" class="eb-grid"></div>
+    <div class="eb-card"><h2>Theme</h2>
+      <select id="theme" class="eb-input" aria-label="Theme"><option value="auto">Auto</option><option value="light">Light</option><option value="dark">Dark</option><option value="contrast">High contrast</option></select></div>
+  </section>
+</main>
+<dialog id="confirm-dlg">
+  <form method="dialog">
+    <h2 id="dlg-title">Remove model</h2>
+    <p id="dlg-text"></p>
+    <input id="dlg-input" class="eb-input" aria-label="Type the exact tag" autocomplete="off">
+    <div class="eb-row"><button value="cancel" class="eb-btn eb-btn-2">Keep it</button>
+      <button value="ok" id="dlg-ok" class="eb-btn eb-btn-danger" disabled>Remove</button></div>
+  </form>
+</dialog>
+<script src="static/app.js"></script>
+</body>
+</html>

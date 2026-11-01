@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/terminal-glass/8-ball/app/schemas/host-profile.v1.schema.json",
+  "title": "8-Ball host profile snapshot (validated, stage role of 8-1.sh)",
+  "type": "object",
+  "required": ["schema_version", "state", "profile_id", "created_at", "captured_at", "scan_id", "scan_sha256", "producer",
+               "catalog", "fit_policy", "platform", "capacity", "lane", "classification", "unknowns"],
+  "properties": {
+    "schema_version": {"const": "8ball.host-profile.v1"},
+    "state": {"enum": ["complete", "partial"]},
+    "profile_id": {"type": "string"},
+    "created_at": {"type": "string"},
+    "captured_at": {"type": "string"},
+    "scan_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "catalog": {"type": "object", "required": ["commit"]},
+    "fit_policy": {"const": "fit-policy.v1"},
+    "platform": {"type": "object", "required": ["id", "authorized", "supported"],
+                 "properties": {"authorized": {"type": "boolean"}}},
+    "capacity": {"type": "object", "required": ["system_ram_gb", "gpu_vram_gb", "model_disk_free_gb"],
+                 "properties": {"system_ram_gb": {"type": ["number", "null"]}, "gpu_vram_gb": {"type": ["number", "null"]},
+                                "model_disk_free_gb": {"type": ["number", "null"]}}},
+    "lane": {"type": "object", "required": ["lane_path"]},
+    "classification": {"type": "object", "required": ["catalog_deployment_type_id", "p_identity", "m_tier"],
+      "properties": {
+        "catalog_deployment_type_id": {"type": ["string", "null"], "description": "catalog deployment type 3-7; NOT a P# identity or M tier"},
+        "p_identity": {"type": "object", "required": ["value", "status"], "properties": {"value": {"type": "null"}, "status": {"const": "unknown"}}},
+        "m_tier": {"type": "object", "required": ["value", "status"], "properties": {"value": {"type": "null"}, "status": {"const": "unclassified"}}}}},
+    "unknowns": {"type": "array", "items": {"type": "object", "required": ["field", "reason"]}},
+    "suitability": {"type": "object"}
+  }
+}
