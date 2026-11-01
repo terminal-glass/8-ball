@@ -1,0 +1,361 @@
+{
+  "schema_version": "nerds-menu.v1",
+  "curated_at": "2026-11-01",
+  "catalog_repository": "terminal-glass/8-ball",
+  "catalog_sources": {
+    "family_matrix": "profiles/<family-slug>/model.json",
+    "lane_matrix": "profiles/lanes.json",
+    "profile_index": "profiles/index.csv",
+    "install_manifest": "data/generated/pages/install-manifest.json",
+    "hardware_profiles": "config/hardware_profiles.yaml"
+  },
+  "rules": [
+    "These 50 are editorially featured model families, NOT a measured popularity ranking.",
+    "Do not treat family slugs as exact pull tags. Resolve exact verified tag and availability from the catalog on the target host.",
+    "Determine actual fit per machine and M1-M6 tier from 8-Ball-derived hardware facts, verified model metadata and versioned policy.",
+    "Target up to 50 compatible model variants per resolved tier; never pad results with incompatible or unverified model claims.",
+    "Local and cloud models are different modes; cloud-only models require connectivity and are not local weights.",
+    "Embeddings do not offer normal chat; apply type-aware actions.",
+    "Missing provenance or uncertain hardware fit must display as unknown, never as compatible.",
+    "No model pull, run, remove or inference happens during catalog/menu build."
+  ],
+  "categories": [
+    {
+      "id": "chat",
+      "label": "Chat Nerds",
+      "description": "Everyday conversation and general help"
+    },
+    {
+      "id": "coding",
+      "label": "Coding Nerds",
+      "description": "Programming, code explanation and developer tasks"
+    },
+    {
+      "id": "reasoning",
+      "label": "Thinking Nerds",
+      "description": "Analysis, math and multi-step problem solving"
+    },
+    {
+      "id": "vision",
+      "label": "Vision Nerds",
+      "description": "Visual input and image understanding"
+    },
+    {
+      "id": "language",
+      "label": "Language Nerds",
+      "description": "Multilingual communication and translation"
+    },
+    {
+      "id": "agents",
+      "label": "Tool Nerds",
+      "description": "Tool use and structured workflows"
+    },
+    {
+      "id": "embedding",
+      "label": "Knowledge Nerds",
+      "description": "Embeddings and search indexes; not normal chat models"
+    }
+  ],
+  "featured": [
+    {
+      "family_slug": "qwen3",
+      "display_name": "Qwen 3",
+      "category": "chat",
+      "bot_line": "A flexible general assistant; I'll find a variant suited to this computer."
+    },
+    {
+      "family_slug": "gemma4",
+      "display_name": "Gemma 4",
+      "category": "chat",
+      "bot_line": "A general-purpose model family; let's check its available local and cloud variants."
+    },
+    {
+      "family_slug": "llama3.2",
+      "display_name": "Llama 3.2",
+      "category": "chat",
+      "bot_line": "An everyday assistant option; the exact tag must match your hardware."
+    },
+    {
+      "family_slug": "llama3.3",
+      "display_name": "Llama 3.3",
+      "category": "chat",
+      "bot_line": "A larger conversational family; let 8-Ball check the requirements."
+    },
+    {
+      "family_slug": "mistral",
+      "display_name": "Mistral",
+      "category": "chat",
+      "bot_line": "A conversational model family; I'll look up its verified size choices."
+    },
+    {
+      "family_slug": "mistral-nemo",
+      "display_name": "Mistral Nemo",
+      "category": "chat",
+      "bot_line": "A general assistant candidate; I'll match a published variant."
+    },
+    {
+      "family_slug": "phi4-mini",
+      "display_name": "Phi-4 Mini",
+      "category": "chat",
+      "bot_line": "A smaller general-assistant family to consider for modest hardware."
+    },
+    {
+      "family_slug": "phi4",
+      "display_name": "Phi-4",
+      "category": "chat",
+      "bot_line": "A general model family; I'll check the memory fit before suggesting a download."
+    },
+    {
+      "family_slug": "gpt-oss",
+      "display_name": "GPT-OSS",
+      "category": "chat",
+      "bot_line": "An open-weight assistant family; I'll check the catalog for supported tags."
+    },
+    {
+      "family_slug": "olmo-3",
+      "display_name": "OLMo 3",
+      "category": "chat",
+      "bot_line": "A conversational model family; I'll consult the exact deployment metadata."
+    },
+    {
+      "family_slug": "granite4",
+      "display_name": "Granite 4",
+      "category": "chat",
+      "bot_line": "A general-assistant candidate; I'll compare compatible variants."
+    },
+    {
+      "family_slug": "hermes3",
+      "display_name": "Hermes 3",
+      "category": "chat",
+      "bot_line": "An assistant family worth considering; I'll verify its model tag first."
+    },
+    {
+      "family_slug": "qwen2.5-coder",
+      "display_name": "Qwen 2.5 Coder",
+      "category": "coding",
+      "bot_line": "For programming help; I'll recommend a tag that fits your machine."
+    },
+    {
+      "family_slug": "qwen3-coder",
+      "display_name": "Qwen 3 Coder",
+      "category": "coding",
+      "bot_line": "A code-focused family; I'll check local availability and memory."
+    },
+    {
+      "family_slug": "qwen3-coder-next",
+      "display_name": "Qwen 3 Coder Next",
+      "category": "coding",
+      "bot_line": "A coding-oriented option; let 8-Ball choose a compatible variant."
+    },
+    {
+      "family_slug": "codestral",
+      "display_name": "Codestral",
+      "category": "coding",
+      "bot_line": "For coding tasks; I'll check the documented Ollama tags."
+    },
+    {
+      "family_slug": "devstral",
+      "display_name": "Devstral",
+      "category": "coding",
+      "bot_line": "A developer-oriented family; I'll verify hardware suitability."
+    },
+    {
+      "family_slug": "devstral-2",
+      "display_name": "Devstral 2",
+      "category": "coding",
+      "bot_line": "A developer-focused family; the catalog decides whether it is local or cloud."
+    },
+    {
+      "family_slug": "deepseek-coder-v2",
+      "display_name": "DeepSeek Coder V2",
+      "category": "coding",
+      "bot_line": "A code-specialized family; I'll check its exact requirements."
+    },
+    {
+      "family_slug": "granite-code",
+      "display_name": "Granite Code",
+      "category": "coding",
+      "bot_line": "A coding-family option; let's find a verified tag."
+    },
+    {
+      "family_slug": "starcoder2",
+      "display_name": "StarCoder2",
+      "category": "coding",
+      "bot_line": "For code assistance; I'll see which size works here."
+    },
+    {
+      "family_slug": "opencoder",
+      "display_name": "OpenCoder",
+      "category": "coding",
+      "bot_line": "A code-oriented family; I'll verify its supported variants."
+    },
+    {
+      "family_slug": "deepseek-r1",
+      "display_name": "DeepSeek R1",
+      "category": "reasoning",
+      "bot_line": "A reasoning-family option; I'll account for RAM and VRAM."
+    },
+    {
+      "family_slug": "qwq",
+      "display_name": "QwQ",
+      "category": "reasoning",
+      "bot_line": "A reasoning-oriented family; I'll verify available variants."
+    },
+    {
+      "family_slug": "phi4-reasoning",
+      "display_name": "Phi-4 Reasoning",
+      "category": "reasoning",
+      "bot_line": "For step-by-step thinking tasks; fit depends on the exact tag."
+    },
+    {
+      "family_slug": "phi4-mini-reasoning",
+      "display_name": "Phi-4 Mini Reasoning",
+      "category": "reasoning",
+      "bot_line": "A smaller reasoning-oriented family to compare."
+    },
+    {
+      "family_slug": "nemotron-3-nano",
+      "display_name": "Nemotron 3 Nano",
+      "category": "reasoning",
+      "bot_line": "A compact reasoning-family candidate; I'll check the real variant."
+    },
+    {
+      "family_slug": "nemotron-3-super",
+      "display_name": "Nemotron 3 Super",
+      "category": "reasoning",
+      "bot_line": "A larger family; I'll check whether local or cloud access is appropriate."
+    },
+    {
+      "family_slug": "magistral",
+      "display_name": "Magistral",
+      "category": "reasoning",
+      "bot_line": "A reasoning-oriented option; the catalog supplies size and availability."
+    },
+    {
+      "family_slug": "glm-4.7-flash",
+      "display_name": "GLM 4.7 Flash",
+      "category": "reasoning",
+      "bot_line": "A thinking-oriented candidate; I'll look up supported tags."
+    },
+    {
+      "family_slug": "gemma3",
+      "display_name": "Gemma 3",
+      "category": "vision",
+      "bot_line": "A model family with image-capable variants; I'll verify the specific tag."
+    },
+    {
+      "family_slug": "gemma3n",
+      "display_name": "Gemma 3n",
+      "category": "vision",
+      "bot_line": "A compact multimodal family; I'll check the supported deployment."
+    },
+    {
+      "family_slug": "qwen3-vl",
+      "display_name": "Qwen 3 VL",
+      "category": "vision",
+      "bot_line": "A vision-language family; I will check exact availability."
+    },
+    {
+      "family_slug": "llama3.2-vision",
+      "display_name": "Llama 3.2 Vision",
+      "category": "vision",
+      "bot_line": "For image understanding; I'll match the memory requirements."
+    },
+    {
+      "family_slug": "llava",
+      "display_name": "LLaVA",
+      "category": "vision",
+      "bot_line": "A vision-language family; I'll check the verified Ollama variants."
+    },
+    {
+      "family_slug": "moondream",
+      "display_name": "Moondream",
+      "category": "vision",
+      "bot_line": "A visual-understanding family; I'll confirm the tag is compatible."
+    },
+    {
+      "family_slug": "aya-expanse",
+      "display_name": "Aya Expanse",
+      "category": "language",
+      "bot_line": "For multilingual assistance; I'll verify the available size."
+    },
+    {
+      "family_slug": "command-r7b-arabic",
+      "display_name": "Command R7B Arabic",
+      "category": "language",
+      "bot_line": "A language-focused family; let's check the exact supported tag."
+    },
+    {
+      "family_slug": "translategemma",
+      "display_name": "TranslateGemma",
+      "category": "language",
+      "bot_line": "A translation-oriented family; I'll check compatibility."
+    },
+    {
+      "family_slug": "qwen2.5",
+      "display_name": "Qwen 2.5",
+      "category": "language",
+      "bot_line": "A general family that may help with language tasks; I'll check tags."
+    },
+    {
+      "family_slug": "command-r",
+      "display_name": "Command R",
+      "category": "agents",
+      "bot_line": "An assistant family for workflows; exact tool capabilities require verification."
+    },
+    {
+      "family_slug": "command-r7b",
+      "display_name": "Command R7B",
+      "category": "agents",
+      "bot_line": "A smaller workflow candidate; I'll validate the specific variant."
+    },
+    {
+      "family_slug": "functiongemma",
+      "display_name": "FunctionGemma",
+      "category": "agents",
+      "bot_line": "A function-focused family; not every chat task needs this specialist."
+    },
+    {
+      "family_slug": "firefunction-v2",
+      "display_name": "FireFunction V2",
+      "category": "agents",
+      "bot_line": "A tool-calling-oriented family; I'll confirm supported runtime behavior."
+    },
+    {
+      "family_slug": "embeddinggemma",
+      "display_name": "EmbeddingGemma",
+      "category": "embedding",
+      "bot_line": "Creates text embeddings for retrieval, not conversational replies."
+    },
+    {
+      "family_slug": "nomic-embed-text",
+      "display_name": "Nomic Embed Text",
+      "category": "embedding",
+      "bot_line": "For semantic search vectors rather than chat."
+    },
+    {
+      "family_slug": "nomic-embed-text-v2-moe",
+      "display_name": "Nomic Embed Text V2 MoE",
+      "category": "embedding",
+      "bot_line": "For embedding-based retrieval; not a normal chat model."
+    },
+    {
+      "family_slug": "bge-m3",
+      "display_name": "BGE M3",
+      "category": "embedding",
+      "bot_line": "A retrieval embedding family; not intended for chat."
+    },
+    {
+      "family_slug": "mxbai-embed-large",
+      "display_name": "MXBAI Embed Large",
+      "category": "embedding",
+      "bot_line": "For search and similarity embeddings."
+    },
+    {
+      "family_slug": "snowflake-arctic-embed2",
+      "display_name": "Snowflake Arctic Embed 2",
+      "category": "embedding",
+      "bot_line": "A retrieval embedding option; I'll check compatible tags."
+    }
+  ]
+}
