@@ -22,3 +22,5 @@ jobs:
       - name: Validate sample catalog offline
         run: |
           eight-ball all --fixture --offline --sample
+      - name: Reject invalid catalog and contribution records
+        run: bash scripts/validate-catalog.sh

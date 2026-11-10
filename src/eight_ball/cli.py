@@ -770,7 +770,59 @@ def build_parser() -> argparse.ArgumentParser:
         help="Omit profiles/provider-assumptions/ even when C6 assumption data exists.",
     )
     generate_root_profiles.set_defaults(handler=cmd_generate_root_profiles)
+
+    validate_contributions = subparsers.add_parser(
+        "validate-contributions",
+        help="Reject invalid component inventory, change history, and unresolved-field reports.",
+    )
+    validate_contributions.set_defaults(handler=cmd_validate_contributions)
+
+    unresolved = subparsers.add_parser(
+        "unresolved-report",
+        help="Regenerate the unresolved-field summary from data/normalized/.",
+    )
+    unresolved.set_defaults(handler=cmd_unresolved_report)
+
+    components = subparsers.add_parser(
+        "components",
+        help="Regenerate docs/component-inventory.md from config/components.yaml.",
+    )
+    components.set_defaults(handler=cmd_components)
     return parser
+
+
+def cmd_validate_contributions(_args: argparse.Namespace) -> int:
+    from eight_ball.contributions.validate import validate_contribution_records
+
+    errors = validate_contribution_records()
+    if errors:
+        print(f"Contribution validation failed with {len(errors)} error(s).", file=sys.stderr)
+        for error in errors:
+            print(f"  - {error}", file=sys.stderr)
+        return 1
+    print("Contribution records passed.")
+    return 0
+
+
+def cmd_unresolved_report(_args: argparse.Namespace) -> int:
+    from eight_ball.report.unresolved import write_unresolved_summary
+
+    summary = write_unresolved_summary()
+    print(
+        "Unresolved-field summary: "
+        f"{summary['total_unresolved_fields']} fields, "
+        f"catalog {summary['catalog_version']}, "
+        f"size units {summary['size_unit_policy']}."
+    )
+    return 0
+
+
+def cmd_components(_args: argparse.Namespace) -> int:
+    from eight_ball.generate.component_display import write_component_inventory
+
+    path = write_component_inventory()
+    print(f"Component inventory written to {path}")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:

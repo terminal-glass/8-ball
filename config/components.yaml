@@ -1,0 +1,136 @@
+schema: terminal-glass.8-ball.component-inventory/1
+catalog_version: "2026.08.01"
+size_unit_policy: decimal
+components:
+  - id: catalog
+    display_name: Model catalog
+    role: catalog
+    required: true
+    placement: local
+    license: "Not chosen. Jonathan must choose a license. This placeholder grants nothing."
+    license_status: unchosen
+    source: https://github.com/terminal-glass/8-ball
+    source_path: data/normalized/catalog-meta.json
+    status: maintained
+    tested: repository-tests
+    notes: "Canonical public catalog 2026.08.01 in data/normalized/. Single source of truth. Metadata only. Decimal SI bytes."
+  - id: hardware-estimator
+    display_name: Hardware estimator
+    role: hardware
+    required: true
+    placement: local
+    license: "Not chosen. Jonathan must choose a license. This placeholder grants nothing."
+    license_status: unchosen
+    source: https://github.com/terminal-glass/8-ball
+    source_path: src/eight_ball/estimate/hardware.py
+    status: maintained
+    tested: repository-tests
+    notes: "Estimates are labeled estimated. Repository tests cover the estimator. Live hardware execution is untested in this change."
+  - id: trial-installer
+    display_name: Free trial installer
+    role: installer
+    required: true
+    placement: local
+    license: "Not chosen. Jonathan must choose a license. This placeholder grants nothing."
+    license_status: unchosen
+    source: https://github.com/terminal-glass/8-ball
+    source_path: install/ubuntu/trial-install.sh
+    status: maintained
+    tested: repository-tests
+    notes: "Chain is trial-install.sh then 8.1.sh then 8.2.sh then 8.3.sh. No paid license. Lane conformance tests exist. Live installs on macOS, Windows, Lightsail, and DigitalOcean are untested in this change."
+  - id: ollama-runtime
+    display_name: Ollama runtime
+    role: runtime
+    required: true
+    placement: local
+    license: "Upstream license is not vendored and is not relicensed here. Confirm at the source."
+    license_status: upstream-unvendored
+    source: https://github.com/ollama/ollama
+    source_path: null
+    status: external
+    tested: untested
+    notes: "Local runtime for list, pull, run, and remove. This repository does not vendor Ollama or download model weights in catalog work. Not started by the catalog tests."
+  - id: model-manager
+    display_name: Free model manager
+    role: manager
+    required: false
+    placement: local
+    license: "Not chosen. Jonathan must choose a license. This placeholder grants nothing."
+    license_status: unchosen
+    source: https://github.com/terminal-glass/8-ball
+    source_path: null
+    status: planned
+    tested: planned
+    notes: "Planned free lifecycle for browse, suitability, pull, use, list, and remove. Not part of the numbered 8.1-8.3 chain until a letter-suffixed experiment is validated."
+  - id: workspace-ui
+    display_name: Model workspace UI
+    role: ui
+    required: false
+    placement: local
+    license: "Not applicable until a UI is added. This repository does not grant a license."
+    license_status: not-applicable
+    source: https://github.com/terminal-glass/8-ball
+    source_path: null
+    status: planned
+    tested: planned
+    notes: "No free model-manager UI is in this repository. Display records are generated from validated catalog data, not from hand-kept HTML."
+  - id: open-webui
+    display_name: Open WebUI
+    role: ui
+    required: false
+    placement: local
+    license: "Upstream license is not vendored and is not relicensed here. Confirm at the source."
+    license_status: upstream-unvendored
+    source: https://github.com/open-webui/open-webui
+    source_path: null
+    status: external
+    tested: untested
+    notes: "Optional chat workspace. Not required for the free model workflow."
+  - id: ollama-cloud
+    display_name: Ollama Cloud
+    role: runtime
+    required: false
+    placement: hosted
+    license: "Upstream service terms are not vendored here."
+    license_status: upstream-unvendored
+    source: https://ollama.com
+    source_path: null
+    status: external
+    tested: untested
+    notes: "Optional hosted inference. Cloud-only catalog entries are not local downloads. No cloud purchase is required for the basic local workflow."
+  - id: openclaw-adapter
+    display_name: OpenClaw adapter
+    role: agent-adapter
+    required: false
+    placement: local
+    license: "Not chosen. An adapter is not implemented, so no adapter license is granted."
+    license_status: unchosen
+    source: https://github.com/terminal-glass/8-ball
+    source_path: null
+    status: planned
+    tested: planned
+    notes: "Optional agent adapter. Planned only. Not implemented and not tested."
+  - id: hermes-adapter
+    display_name: Hermes adapter
+    role: agent-adapter
+    required: false
+    placement: local
+    license: "Not chosen. An adapter is not implemented, so no adapter license is granted."
+    license_status: unchosen
+    source: https://github.com/terminal-glass/8-ball
+    source_path: null
+    status: planned
+    tested: planned
+    notes: "Optional agent adapter. Planned only. Not implemented and not tested."
+  - id: osamp-gate
+    display_name: OSAMP local gate
+    role: agent-adapter
+    required: false
+    placement: local
+    license: "Not chosen. Jonathan must choose a license. This placeholder grants nothing."
+    license_status: unchosen
+    source: https://github.com/terminal-glass/8-ball
+    source_path: null
+    status: planned
+    tested: planned
+    notes: "Optional local gate for OSAMP (Open Source Agent Mail Protocol, AfricaTogether Project by NoCloudGPT). Planned only. The white paper is a proposal, not a deployed federation."

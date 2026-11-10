@@ -1,0 +1,78 @@
+name: Model correction
+description: Add or correct public model metadata. Unknown facts stay null.
+title: "[catalog] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The canonical catalog is `data/normalized/` version 2026.08.01.
+        Cite official Ollama evidence. Do not attach weights, credentials, or customer data.
+        This repository has no chosen license.
+  - type: input
+    id: family
+    attributes:
+      label: Family slug
+      placeholder: tinyllama
+    validations:
+      required: true
+  - type: input
+    id: tag
+    attributes:
+      label: Exact Ollama tag
+      description: Preserve upstream spelling, including the colon.
+      placeholder: tinyllama:latest
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field to add or correct
+      placeholder: download_size_bytes
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current value
+      description: Use null when the catalog has no verified value.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed value
+      description: Use null when the fact is still unknown. Do not guess.
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Evidence URL
+      description: Official Ollama page or metadata response. Curated discovery pages are not authoritative for tags or sizes.
+      placeholder: https://ollama.com/library/tinyllama
+    validations:
+      required: true
+  - type: input
+    id: verified
+    attributes:
+      label: Verification date (UTC)
+      placeholder: 2026-11-10
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_kind
+    attributes:
+      label: If this is a capability, what kind of evidence is it?
+      options:
+        - Not a capability change
+        - Source claim
+        - Measured test
+        - Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Include quantization, architecture, and availability only when the source states them. Download size is not RAM or VRAM.
