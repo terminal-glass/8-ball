@@ -1,0 +1,286 @@
+# Source record for the component release manifest.
+# Hashes are filled by eight_ball.manager.release. Do not hand-write sha256 values.
+schema: terminal-glass.8-ball.component-release-source/1
+installer_suite_version: "0.8.0"
+catalog_version: "2026.08.01"
+components:
+  - id: catalog
+    version: "2026.08.01"
+    platform: any
+    role: catalog
+    required: true
+    dependencies: []
+    paths:
+      - data/normalized/catalog-meta.json
+      - data/normalized/publishers.json
+      - data/normalized/families.json
+      - data/normalized/models.json
+      - data/normalized/tags.json
+      - data/normalized/capabilities.json
+    entry_point: null
+    execution_order: []
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: not-applicable
+    repository_tests: present
+  - id: ubuntu-trial-chain
+    version: "0.8.0"
+    platform: linux
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/ubuntu/trial-install.sh
+      - install/ubuntu/8.1.sh
+      - install/ubuntu/8.2.sh
+      - install/ubuntu/8.3.sh
+    entry_point: install/ubuntu/trial-install.sh
+    execution_order:
+      - install/ubuntu/trial-install.sh
+      - install/ubuntu/8.1.sh
+      - install/ubuntu/8.2.sh
+      - install/ubuntu/8.3.sh
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: mac-apple-silicon-trial-chain
+    version: "0.8.0"
+    platform: darwin
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/mac/apple-silicon/trial-install.sh
+      - install/mac/apple-silicon/8.1.sh
+      - install/mac/apple-silicon/8.2.sh
+      - install/mac/apple-silicon/8.3.sh
+      - install/mac/lib/macos-common.sh
+    entry_point: install/mac/apple-silicon/trial-install.sh
+    execution_order:
+      - install/mac/apple-silicon/trial-install.sh
+      - install/mac/apple-silicon/8.1.sh
+      - install/mac/apple-silicon/8.2.sh
+      - install/mac/apple-silicon/8.3.sh
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: mac-intel-trial-chain
+    version: "0.8.0"
+    platform: darwin
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/mac/intel/trial-install.sh
+      - install/mac/intel/8.1.sh
+      - install/mac/intel/8.2.sh
+      - install/mac/intel/8.3.sh
+      - install/mac/lib/macos-common.sh
+    entry_point: install/mac/intel/trial-install.sh
+    execution_order:
+      - install/mac/intel/trial-install.sh
+      - install/mac/intel/8.1.sh
+      - install/mac/intel/8.2.sh
+      - install/mac/intel/8.3.sh
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: windows-cpu-trial-chain
+    version: "0.8.0"
+    platform: windows
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/windows/cpu/trial-install.ps1
+      - install/windows/cpu/8.1.ps1
+      - install/windows/cpu/8.2.ps1
+      - install/windows/cpu/8.3.ps1
+      - install/windows/lib/Windows-Common.ps1
+    entry_point: install/windows/cpu/trial-install.ps1
+    execution_order:
+      - install/windows/cpu/trial-install.ps1
+      - install/windows/cpu/8.1.ps1
+      - install/windows/cpu/8.2.ps1
+      - install/windows/cpu/8.3.ps1
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: windows-cuda-trial-chain
+    version: "0.8.0"
+    platform: windows
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/windows/cuda/trial-install.ps1
+      - install/windows/cuda/8.1.ps1
+      - install/windows/cuda/8.2.ps1
+      - install/windows/cuda/8.3.ps1
+      - install/windows/lib/Windows-Common.ps1
+    entry_point: install/windows/cuda/trial-install.ps1
+    execution_order:
+      - install/windows/cuda/trial-install.ps1
+      - install/windows/cuda/8.1.ps1
+      - install/windows/cuda/8.2.ps1
+      - install/windows/cuda/8.3.ps1
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: lightsail-cpu-trial-chain
+    version: "0.8.0"
+    platform: linux
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/cloud/aws-lightsail/cpu/trial-install.sh
+      - install/cloud/aws-lightsail/cpu/8.1.sh
+      - install/cloud/aws-lightsail/cpu/8.2.sh
+      - install/cloud/aws-lightsail/cpu/8.3.sh
+    entry_point: install/cloud/aws-lightsail/cpu/trial-install.sh
+    execution_order:
+      - install/cloud/aws-lightsail/cpu/trial-install.sh
+      - install/cloud/aws-lightsail/cpu/8.1.sh
+      - install/cloud/aws-lightsail/cpu/8.2.sh
+      - install/cloud/aws-lightsail/cpu/8.3.sh
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: lightsail-gpu-trial-chain
+    version: "0.8.0"
+    platform: linux
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/cloud/aws-lightsail/gpu/trial-install.sh
+      - install/cloud/aws-lightsail/gpu/8.1.sh
+      - install/cloud/aws-lightsail/gpu/8.2.sh
+      - install/cloud/aws-lightsail/gpu/8.3.sh
+    entry_point: install/cloud/aws-lightsail/gpu/trial-install.sh
+    execution_order:
+      - install/cloud/aws-lightsail/gpu/trial-install.sh
+      - install/cloud/aws-lightsail/gpu/8.1.sh
+      - install/cloud/aws-lightsail/gpu/8.2.sh
+      - install/cloud/aws-lightsail/gpu/8.3.sh
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: digitalocean-cpu-trial-chain
+    version: "0.8.0"
+    platform: linux
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/cloud/digitalocean/cpu-droplet/trial-install.sh
+      - install/cloud/digitalocean/cpu-droplet/8.1.sh
+      - install/cloud/digitalocean/cpu-droplet/8.2.sh
+      - install/cloud/digitalocean/cpu-droplet/8.3.sh
+    entry_point: install/cloud/digitalocean/cpu-droplet/trial-install.sh
+    execution_order:
+      - install/cloud/digitalocean/cpu-droplet/trial-install.sh
+      - install/cloud/digitalocean/cpu-droplet/8.1.sh
+      - install/cloud/digitalocean/cpu-droplet/8.2.sh
+      - install/cloud/digitalocean/cpu-droplet/8.3.sh
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: digitalocean-gpu-trial-chain
+    version: "0.8.0"
+    platform: linux
+    role: installer
+    required: true
+    dependencies: [catalog]
+    paths:
+      - install/cloud/digitalocean/gpu-droplet/trial-install.sh
+      - install/cloud/digitalocean/gpu-droplet/8.1.sh
+      - install/cloud/digitalocean/gpu-droplet/8.2.sh
+      - install/cloud/digitalocean/gpu-droplet/8.3.sh
+    entry_point: install/cloud/digitalocean/gpu-droplet/trial-install.sh
+    execution_order:
+      - install/cloud/digitalocean/gpu-droplet/trial-install.sh
+      - install/cloud/digitalocean/gpu-droplet/8.1.sh
+      - install/cloud/digitalocean/gpu-droplet/8.2.sh
+      - install/cloud/digitalocean/gpu-droplet/8.3.sh
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: false
+    hardware_execution: untested
+    repository_tests: present
+  - id: model-manager
+    version: "0.8.0a"
+    platform: any
+    role: manager
+    required: false
+    dependencies: [catalog]
+    paths:
+      - install/shared/8.4a-model-manager.sh
+    entry_point: install/shared/8.4a-model-manager.sh
+    execution_order:
+      - install/shared/8.4a-model-manager.sh
+    experimental: true
+    letter_suffix: a
+    not_in_default_chain: true
+    hardware_execution: untested
+    repository_tests: mock-api
+
+entry_points:
+  - consumer: funtech64/ycgpt-lightsail-installer#179
+    os: linux
+    lane: ubuntu/cpu
+    component_id: ubuntu-trial-chain
+  - consumer: funtech64/ycgpt-lightsail-installer#179
+    os: linux
+    lane: ubuntu/cuda
+    component_id: ubuntu-trial-chain
+  - consumer: funtech64/ycgpt-lightsail-installer#178
+    os: darwin
+    lane: mac/apple-silicon
+    component_id: mac-apple-silicon-trial-chain
+  - consumer: funtech64/ycgpt-lightsail-installer#178
+    os: darwin
+    lane: mac/intel
+    component_id: mac-intel-trial-chain
+  - consumer: funtech64/ycgpt-lightsail-installer#180
+    os: windows
+    lane: windows/cpu
+    component_id: windows-cpu-trial-chain
+  - consumer: funtech64/ycgpt-lightsail-installer#180
+    os: windows
+    lane: windows/cuda
+    component_id: windows-cuda-trial-chain
+  - consumer: funtech64/ycgpt-lightsail-installer#177
+    os: linux
+    lane: cloud/aws-lightsail/cpu
+    component_id: lightsail-cpu-trial-chain
+  - consumer: funtech64/ycgpt-lightsail-installer#177
+    os: linux
+    lane: cloud/aws-lightsail/gpu
+    component_id: lightsail-gpu-trial-chain
+  - consumer: public-install-tree
+    os: linux
+    lane: cloud/digitalocean/cpu-droplet
+    component_id: digitalocean-cpu-trial-chain
+  - consumer: public-install-tree
+    os: linux
+    lane: cloud/digitalocean/gpu-droplet
+    component_id: digitalocean-gpu-trial-chain

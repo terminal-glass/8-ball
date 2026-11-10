@@ -1,0 +1,757 @@
+{
+  "schema": "terminal-glass.8-ball.component-release/1",
+  "installer_suite_version": "0.8.0",
+  "catalog_version": "2026.08.01",
+  "catalog_version_independent": true,
+  "size_unit_policy": "decimal",
+  "signature_policy": {
+    "algorithm_when_signed": "ed25519",
+    "unsigned_allowed": true,
+    "note": "sha256 mismatch is rejected. A signed component with a bad or missing signature is rejected. Published components stay unsigned until a release key is chosen."
+  },
+  "auto_install_on_catalog_refresh": false,
+  "default_execution_order": [
+    "trial-install.sh",
+    "8.1.sh",
+    "8.2.sh",
+    "8.3.sh"
+  ],
+  "components": [
+    {
+      "id": "catalog",
+      "version": "2026.08.01",
+      "platform": "any",
+      "role": "catalog",
+      "required": true,
+      "dependencies": [],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "data/normalized/catalog-meta.json"
+      },
+      "artifacts": [
+        {
+          "path": "data/normalized/catalog-meta.json",
+          "sha256": "ae87daa2bde9d5b87fa97cff5b7677087759ee16f9c353f4a455c01e22a9f29a"
+        },
+        {
+          "path": "data/normalized/publishers.json",
+          "sha256": "3ae69ab64dda0fa9315bedb0de2f15364f713b6a5885515ea4c50ffe5601da94"
+        },
+        {
+          "path": "data/normalized/families.json",
+          "sha256": "5de61b5ac42de917d8349be962c83394f6a47a2c8ca8f62b28a86d68c6709d5b"
+        },
+        {
+          "path": "data/normalized/models.json",
+          "sha256": "e6526f49768dc3e5689569cf25ac0fad784bc6f86c32f35ed5efb151be76eb25"
+        },
+        {
+          "path": "data/normalized/tags.json",
+          "sha256": "666a2d59da9f022e10c4517fdd6157fd5603ffc16642d19825107f2b10bd8401"
+        },
+        {
+          "path": "data/normalized/capabilities.json",
+          "sha256": "751edec3909939f3e4e72a241f1a189984dc954a8fd1f15a3763442b8b38cec5"
+        }
+      ],
+      "sha256": "40c287bc355b81376829547fa374e0fbaca01e2b4f4fd7906381050474df7e0f",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": null,
+      "execution_order": [],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "not-applicable",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "ubuntu-trial-chain",
+      "version": "0.8.0",
+      "platform": "linux",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/ubuntu/trial-install.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/ubuntu/trial-install.sh",
+          "sha256": "ddb77d965d7cd7629476c32a7ecf099079a5af022209336cfaf872449499191d"
+        },
+        {
+          "path": "install/ubuntu/8.1.sh",
+          "sha256": "3f15480d8fccad011c527ce39339d322a6cde2ecda021542aef7a6da86a1f682"
+        },
+        {
+          "path": "install/ubuntu/8.2.sh",
+          "sha256": "7a7ae37264aba744f28fe003ec7ef300576c928e2e880f06757872ed446959e8"
+        },
+        {
+          "path": "install/ubuntu/8.3.sh",
+          "sha256": "0abea5424241bff8243d7af3477d45ae0c5f889e9b9475ef7012060bbd17eeb1"
+        }
+      ],
+      "sha256": "9c1f577689daa251004d9a57b40f9584106cc754bc209ce9b65a215d1a95c59e",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/ubuntu/trial-install.sh",
+      "execution_order": [
+        "install/ubuntu/trial-install.sh",
+        "install/ubuntu/8.1.sh",
+        "install/ubuntu/8.2.sh",
+        "install/ubuntu/8.3.sh"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "mac-apple-silicon-trial-chain",
+      "version": "0.8.0",
+      "platform": "darwin",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/mac/apple-silicon/trial-install.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/mac/apple-silicon/trial-install.sh",
+          "sha256": "6de12540e9b7907ddbaee1b99e2cdeae7f382a84bfb18df258592d9c2bafbf0d"
+        },
+        {
+          "path": "install/mac/apple-silicon/8.1.sh",
+          "sha256": "6684ac4e1860aab335eecc1fc75cc0c2f1d328f1ffd8edb0845c228a9192d103"
+        },
+        {
+          "path": "install/mac/apple-silicon/8.2.sh",
+          "sha256": "3fa28eeb901d184a95ae2a751f9de1e86531fe3a279923f0338ce3934785670b"
+        },
+        {
+          "path": "install/mac/apple-silicon/8.3.sh",
+          "sha256": "9cf3a38ec9fbd4059cc075c3d57371bce053e37563755c4cf5f0d322575f56d8"
+        },
+        {
+          "path": "install/mac/lib/macos-common.sh",
+          "sha256": "a1c5c8f7dbb5cd1920103dcdcd7754232398baf0672fe8cd6b8595bcd6f2a0c9"
+        }
+      ],
+      "sha256": "6f59b90debc3ef54b1bc9943e8eaa06f8b417f9e5f11054b1fab692cb17b0542",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/mac/apple-silicon/trial-install.sh",
+      "execution_order": [
+        "install/mac/apple-silicon/trial-install.sh",
+        "install/mac/apple-silicon/8.1.sh",
+        "install/mac/apple-silicon/8.2.sh",
+        "install/mac/apple-silicon/8.3.sh"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "mac-intel-trial-chain",
+      "version": "0.8.0",
+      "platform": "darwin",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/mac/intel/trial-install.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/mac/intel/trial-install.sh",
+          "sha256": "c9424e56f1e46a6be87dbf675273f0133daa8f9fb971e5c0f074324180c89667"
+        },
+        {
+          "path": "install/mac/intel/8.1.sh",
+          "sha256": "aa868da1d754ef2584ce78c350914ca66e1631a71e594bb26b2e21fda4f7c9ee"
+        },
+        {
+          "path": "install/mac/intel/8.2.sh",
+          "sha256": "75bce51a31e09bc35570c052b0f5e0af08734d162d2b6ce1f3fc892d0aaced67"
+        },
+        {
+          "path": "install/mac/intel/8.3.sh",
+          "sha256": "e3f4244be0877875f55a1b0194b7e3ae255bd8777a976d899c01cf5694a00fa9"
+        },
+        {
+          "path": "install/mac/lib/macos-common.sh",
+          "sha256": "a1c5c8f7dbb5cd1920103dcdcd7754232398baf0672fe8cd6b8595bcd6f2a0c9"
+        }
+      ],
+      "sha256": "2520bbd78161c389166b12287186d90806e96fa7396cb94dd4b52957ab12b2de",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/mac/intel/trial-install.sh",
+      "execution_order": [
+        "install/mac/intel/trial-install.sh",
+        "install/mac/intel/8.1.sh",
+        "install/mac/intel/8.2.sh",
+        "install/mac/intel/8.3.sh"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "windows-cpu-trial-chain",
+      "version": "0.8.0",
+      "platform": "windows",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/windows/cpu/trial-install.ps1"
+      },
+      "artifacts": [
+        {
+          "path": "install/windows/cpu/trial-install.ps1",
+          "sha256": "90a869da9117a6d63aa23a983eb2bcbec863cf961a1598911f32472ab5b1ad53"
+        },
+        {
+          "path": "install/windows/cpu/8.1.ps1",
+          "sha256": "8b76da0002e23ce4d52f45e1de4d82e2c27033a407e2e360cb1308dac6a1c064"
+        },
+        {
+          "path": "install/windows/cpu/8.2.ps1",
+          "sha256": "9d538c9d4de07ed4ca4b45f5175710233ee1fe7221ad92e8ddf36e43a8272776"
+        },
+        {
+          "path": "install/windows/cpu/8.3.ps1",
+          "sha256": "35a07a212eb88bb5ad05a2619006499d19467bfc52983d057dbca6e5d7b8a3b4"
+        },
+        {
+          "path": "install/windows/lib/Windows-Common.ps1",
+          "sha256": "da0f987add9704d1233a475c1db9ca4f389b734f02bf7cfabf110044271f4503"
+        }
+      ],
+      "sha256": "5a5e5e2bae98a35c1fe6e0ea1731d38bb7c47dd3a09240acf9df3b23f0c68db7",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/windows/cpu/trial-install.ps1",
+      "execution_order": [
+        "install/windows/cpu/trial-install.ps1",
+        "install/windows/cpu/8.1.ps1",
+        "install/windows/cpu/8.2.ps1",
+        "install/windows/cpu/8.3.ps1"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "windows-cuda-trial-chain",
+      "version": "0.8.0",
+      "platform": "windows",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/windows/cuda/trial-install.ps1"
+      },
+      "artifacts": [
+        {
+          "path": "install/windows/cuda/trial-install.ps1",
+          "sha256": "34c2ff38b6db5081b52c92f9199dd2722cc173136db2010fb6026c1f3a0ea272"
+        },
+        {
+          "path": "install/windows/cuda/8.1.ps1",
+          "sha256": "3eb758c1f71675656d361fde84e2d7d23bf55cfe7ef6ff1efd8da222bfaad082"
+        },
+        {
+          "path": "install/windows/cuda/8.2.ps1",
+          "sha256": "9df920e89887793be326e21255b67be25972e827b497166d29f011afa62c9942"
+        },
+        {
+          "path": "install/windows/cuda/8.3.ps1",
+          "sha256": "9605d91d29eeb36da4ea15ad0f38507946cc1a7ed3a04a43349f96d24ac37ebe"
+        },
+        {
+          "path": "install/windows/lib/Windows-Common.ps1",
+          "sha256": "da0f987add9704d1233a475c1db9ca4f389b734f02bf7cfabf110044271f4503"
+        }
+      ],
+      "sha256": "16777f776bc8344a1576d68d213df96237d181916fa0d87f1452832c3a58be9b",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/windows/cuda/trial-install.ps1",
+      "execution_order": [
+        "install/windows/cuda/trial-install.ps1",
+        "install/windows/cuda/8.1.ps1",
+        "install/windows/cuda/8.2.ps1",
+        "install/windows/cuda/8.3.ps1"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "lightsail-cpu-trial-chain",
+      "version": "0.8.0",
+      "platform": "linux",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/cloud/aws-lightsail/cpu/trial-install.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+          "sha256": "e8059564ec5538f8930e0fae5e86fa6b630fc635a70dfbddc40d5221e7e83ad2"
+        },
+        {
+          "path": "install/cloud/aws-lightsail/cpu/8.1.sh",
+          "sha256": "ced6f6730175e3d8ba3188b00596c3800070fd21dd16ae5178b27d78e95b6356"
+        },
+        {
+          "path": "install/cloud/aws-lightsail/cpu/8.2.sh",
+          "sha256": "3f6ba95b9a9a312de9e6ad826d87eee694d2bb8f564e2a3a087d248dfb0b5b27"
+        },
+        {
+          "path": "install/cloud/aws-lightsail/cpu/8.3.sh",
+          "sha256": "171129063bf1eeee1c152d5f0bdd2b722fa8275b9650ac61987c21813e727caf"
+        }
+      ],
+      "sha256": "379a62f846cf874aa20217f929c7152e54463289ee7cc97d279187c925541c40",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+      "execution_order": [
+        "install/cloud/aws-lightsail/cpu/trial-install.sh",
+        "install/cloud/aws-lightsail/cpu/8.1.sh",
+        "install/cloud/aws-lightsail/cpu/8.2.sh",
+        "install/cloud/aws-lightsail/cpu/8.3.sh"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "lightsail-gpu-trial-chain",
+      "version": "0.8.0",
+      "platform": "linux",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/cloud/aws-lightsail/gpu/trial-install.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+          "sha256": "c3ed6e135fa890c63bd05db51d06aa0a24240662534548e345a0dc31d79fa382"
+        },
+        {
+          "path": "install/cloud/aws-lightsail/gpu/8.1.sh",
+          "sha256": "09dbac5487cfeee85d298da5b7cb3f2299e673ce71bf57c96f9640ff4f5d8523"
+        },
+        {
+          "path": "install/cloud/aws-lightsail/gpu/8.2.sh",
+          "sha256": "1356014793ec1875b2ca6b91b8aaeb273598d16b509936092e54946d8090b549"
+        },
+        {
+          "path": "install/cloud/aws-lightsail/gpu/8.3.sh",
+          "sha256": "aba8925fdb65c8cc690934b5707447e2e661d73395746098a5e6c0fbc18c69da"
+        }
+      ],
+      "sha256": "557b51ebe3fddf7d3f905db331ba8f77b6d8e49425e81061aa332c11bd69c4b5",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+      "execution_order": [
+        "install/cloud/aws-lightsail/gpu/trial-install.sh",
+        "install/cloud/aws-lightsail/gpu/8.1.sh",
+        "install/cloud/aws-lightsail/gpu/8.2.sh",
+        "install/cloud/aws-lightsail/gpu/8.3.sh"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "digitalocean-cpu-trial-chain",
+      "version": "0.8.0",
+      "platform": "linux",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+          "sha256": "4628b800a4fb51179c02d847dc16c42f2f599ef6300f8eca406f1534691c62be"
+        },
+        {
+          "path": "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+          "sha256": "2ef4f5d596906362d6f0faf5e615dd4c0cacab3ae8f6400da578d14153d32123"
+        },
+        {
+          "path": "install/cloud/digitalocean/cpu-droplet/8.2.sh",
+          "sha256": "664d903e0caf5713ca9b01acfc5007d83fa039e731e03ca3f5f5291441a334ef"
+        },
+        {
+          "path": "install/cloud/digitalocean/cpu-droplet/8.3.sh",
+          "sha256": "1747c2f76e866c7d93a8628c1ce34488734e677b1c110d95a0a177318f5bcdc7"
+        }
+      ],
+      "sha256": "07d62417850271969cd8ad4dad05a1fb3cf9ece73926c2c9080122f751858358",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+      "execution_order": [
+        "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+        "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+        "install/cloud/digitalocean/cpu-droplet/8.2.sh",
+        "install/cloud/digitalocean/cpu-droplet/8.3.sh"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "digitalocean-gpu-trial-chain",
+      "version": "0.8.0",
+      "platform": "linux",
+      "role": "installer",
+      "required": true,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/cloud/digitalocean/gpu-droplet/trial-install.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+          "sha256": "725a307f398499c4c6cfa4203d6590c7d67303597ad203351df3bd89c48561b2"
+        },
+        {
+          "path": "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+          "sha256": "0030d34827faa92179f2f3ae505da00add7d728594eae86a46fa13f49d3ffed1"
+        },
+        {
+          "path": "install/cloud/digitalocean/gpu-droplet/8.2.sh",
+          "sha256": "dbbc13e7f3e4f5600479573c3903aca6ad4419f6e7f29a6aea1e0326249cfc11"
+        },
+        {
+          "path": "install/cloud/digitalocean/gpu-droplet/8.3.sh",
+          "sha256": "7bfc72b41dcb4d044620ddbc822ca00c84a91a520824e16085ab0fcfca1df23d"
+        }
+      ],
+      "sha256": "b81d9869cd9151ea2964f0cbf46f87e89be5a999e0887fc14f5c520c91b04890",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+      "execution_order": [
+        "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+        "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+        "install/cloud/digitalocean/gpu-droplet/8.2.sh",
+        "install/cloud/digitalocean/gpu-droplet/8.3.sh"
+      ],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": false,
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "model-manager",
+      "version": "0.8.0a",
+      "platform": "any",
+      "role": "manager",
+      "required": false,
+      "dependencies": [
+        "catalog"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/shared/8.4a-model-manager.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/shared/8.4a-model-manager.sh",
+          "sha256": "6bafa991ad20e3b6a909ef69f4703f520f80db697623abb661b9226488fd0ad7"
+        }
+      ],
+      "sha256": "96e38156d0129e6b15510bb9c03723baa2b41eb8853677b3f517f41d96f6d043",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/shared/8.4a-model-manager.sh",
+      "execution_order": [
+        "install/shared/8.4a-model-manager.sh"
+      ],
+      "experimental": true,
+      "letter_suffix": "a",
+      "not_in_default_chain": true,
+      "hardware_execution": "untested",
+      "repository_tests": "mock-api",
+      "auto_installs_models": false
+    }
+  ],
+  "entry_points": [
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#179",
+      "os": "linux",
+      "lane": "ubuntu/cpu",
+      "component_id": "ubuntu-trial-chain",
+      "entry_point": "install/ubuntu/trial-install.sh",
+      "execution_order": [
+        "install/ubuntu/trial-install.sh",
+        "install/ubuntu/8.1.sh",
+        "install/ubuntu/8.2.sh",
+        "install/ubuntu/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "9c1f577689daa251004d9a57b40f9584106cc754bc209ce9b65a215d1a95c59e"
+    },
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#179",
+      "os": "linux",
+      "lane": "ubuntu/cuda",
+      "component_id": "ubuntu-trial-chain",
+      "entry_point": "install/ubuntu/trial-install.sh",
+      "execution_order": [
+        "install/ubuntu/trial-install.sh",
+        "install/ubuntu/8.1.sh",
+        "install/ubuntu/8.2.sh",
+        "install/ubuntu/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "9c1f577689daa251004d9a57b40f9584106cc754bc209ce9b65a215d1a95c59e"
+    },
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#178",
+      "os": "darwin",
+      "lane": "mac/apple-silicon",
+      "component_id": "mac-apple-silicon-trial-chain",
+      "entry_point": "install/mac/apple-silicon/trial-install.sh",
+      "execution_order": [
+        "install/mac/apple-silicon/trial-install.sh",
+        "install/mac/apple-silicon/8.1.sh",
+        "install/mac/apple-silicon/8.2.sh",
+        "install/mac/apple-silicon/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "6f59b90debc3ef54b1bc9943e8eaa06f8b417f9e5f11054b1fab692cb17b0542"
+    },
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#178",
+      "os": "darwin",
+      "lane": "mac/intel",
+      "component_id": "mac-intel-trial-chain",
+      "entry_point": "install/mac/intel/trial-install.sh",
+      "execution_order": [
+        "install/mac/intel/trial-install.sh",
+        "install/mac/intel/8.1.sh",
+        "install/mac/intel/8.2.sh",
+        "install/mac/intel/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "2520bbd78161c389166b12287186d90806e96fa7396cb94dd4b52957ab12b2de"
+    },
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#180",
+      "os": "windows",
+      "lane": "windows/cpu",
+      "component_id": "windows-cpu-trial-chain",
+      "entry_point": "install/windows/cpu/trial-install.ps1",
+      "execution_order": [
+        "install/windows/cpu/trial-install.ps1",
+        "install/windows/cpu/8.1.ps1",
+        "install/windows/cpu/8.2.ps1",
+        "install/windows/cpu/8.3.ps1"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "5a5e5e2bae98a35c1fe6e0ea1731d38bb7c47dd3a09240acf9df3b23f0c68db7"
+    },
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#180",
+      "os": "windows",
+      "lane": "windows/cuda",
+      "component_id": "windows-cuda-trial-chain",
+      "entry_point": "install/windows/cuda/trial-install.ps1",
+      "execution_order": [
+        "install/windows/cuda/trial-install.ps1",
+        "install/windows/cuda/8.1.ps1",
+        "install/windows/cuda/8.2.ps1",
+        "install/windows/cuda/8.3.ps1"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "16777f776bc8344a1576d68d213df96237d181916fa0d87f1452832c3a58be9b"
+    },
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#177",
+      "os": "linux",
+      "lane": "cloud/aws-lightsail/cpu",
+      "component_id": "lightsail-cpu-trial-chain",
+      "entry_point": "install/cloud/aws-lightsail/cpu/trial-install.sh",
+      "execution_order": [
+        "install/cloud/aws-lightsail/cpu/trial-install.sh",
+        "install/cloud/aws-lightsail/cpu/8.1.sh",
+        "install/cloud/aws-lightsail/cpu/8.2.sh",
+        "install/cloud/aws-lightsail/cpu/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "379a62f846cf874aa20217f929c7152e54463289ee7cc97d279187c925541c40"
+    },
+    {
+      "consumer": "funtech64/ycgpt-lightsail-installer#177",
+      "os": "linux",
+      "lane": "cloud/aws-lightsail/gpu",
+      "component_id": "lightsail-gpu-trial-chain",
+      "entry_point": "install/cloud/aws-lightsail/gpu/trial-install.sh",
+      "execution_order": [
+        "install/cloud/aws-lightsail/gpu/trial-install.sh",
+        "install/cloud/aws-lightsail/gpu/8.1.sh",
+        "install/cloud/aws-lightsail/gpu/8.2.sh",
+        "install/cloud/aws-lightsail/gpu/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "557b51ebe3fddf7d3f905db331ba8f77b6d8e49425e81061aa332c11bd69c4b5"
+    },
+    {
+      "consumer": "public-install-tree",
+      "os": "linux",
+      "lane": "cloud/digitalocean/cpu-droplet",
+      "component_id": "digitalocean-cpu-trial-chain",
+      "entry_point": "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+      "execution_order": [
+        "install/cloud/digitalocean/cpu-droplet/trial-install.sh",
+        "install/cloud/digitalocean/cpu-droplet/8.1.sh",
+        "install/cloud/digitalocean/cpu-droplet/8.2.sh",
+        "install/cloud/digitalocean/cpu-droplet/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "07d62417850271969cd8ad4dad05a1fb3cf9ece73926c2c9080122f751858358"
+    },
+    {
+      "consumer": "public-install-tree",
+      "os": "linux",
+      "lane": "cloud/digitalocean/gpu-droplet",
+      "component_id": "digitalocean-gpu-trial-chain",
+      "entry_point": "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+      "execution_order": [
+        "install/cloud/digitalocean/gpu-droplet/trial-install.sh",
+        "install/cloud/digitalocean/gpu-droplet/8.1.sh",
+        "install/cloud/digitalocean/gpu-droplet/8.2.sh",
+        "install/cloud/digitalocean/gpu-droplet/8.3.sh"
+      ],
+      "hardware_execution": "untested",
+      "repository_tests": "present",
+      "sha256": "b81d9869cd9151ea2964f0cbf46f87e89be5a999e0887fc14f5c520c91b04890"
+    }
+  ]
+}

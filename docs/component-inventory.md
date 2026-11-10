@@ -18,7 +18,7 @@ Planned and untested parts are labeled that way.
 | Hardware estimator | hardware | required | local | unchosen | https://github.com/terminal-glass/8-ball | maintained | repository-tests |
 | Free trial installer | installer | required | local | unchosen | https://github.com/terminal-glass/8-ball | maintained | repository-tests |
 | Ollama runtime | runtime | required | local | upstream-unvendored | https://github.com/ollama/ollama | external | untested |
-| Free model manager | manager | optional | local | unchosen | https://github.com/terminal-glass/8-ball | planned | planned |
+| Free model manager | manager | optional | local | unchosen | https://github.com/terminal-glass/8-ball | experimental | mock-api |
 | Model workspace UI | ui | optional | local | not-applicable | https://github.com/terminal-glass/8-ball | planned | planned |
 | Open WebUI | ui | optional | local | upstream-unvendored | https://github.com/open-webui/open-webui | external | untested |
 | Ollama Cloud | runtime | optional | hosted | upstream-unvendored | https://ollama.com | external | untested |
@@ -36,7 +36,7 @@ Planned and untested parts are labeled that way.
   License text: Not chosen. Jonathan must choose a license. This placeholder grants nothing.
 - **Ollama runtime** (`ollama-runtime`): Local runtime for list, pull, run, and remove. This repository does not vendor Ollama or download model weights in catalog work. Not started by the catalog tests.
   License text: Upstream license is not vendored and is not relicensed here. Confirm at the source.
-- **Free model manager** (`model-manager`): Planned free lifecycle for browse, suitability, pull, use, list, and remove. Not part of the numbered 8.1-8.3 chain until a letter-suffixed experiment is validated.
+- **Free model manager** (`model-manager`): Experimental 8.4a lifecycle for browse, suitability, pull, use, list, and remove. Letter suffix: not part of trial-install.sh then 8.1.sh then 8.2.sh then 8.3.sh. Tested with a mocked Ollama API. Live hardware and a real model download are untested.
   License text: Not chosen. Jonathan must choose a license. This placeholder grants nothing.
 - **Model workspace UI** (`workspace-ui`): No free model-manager UI is in this repository. Display records are generated from validated catalog data, not from hand-kept HTML.
   License text: Not applicable until a UI is added. This repository does not grant a license.

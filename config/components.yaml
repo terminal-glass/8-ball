@@ -58,10 +58,10 @@ components:
     license: "Not chosen. Jonathan must choose a license. This placeholder grants nothing."
     license_status: unchosen
     source: https://github.com/terminal-glass/8-ball
-    source_path: null
-    status: planned
-    tested: planned
-    notes: "Planned free lifecycle for browse, suitability, pull, use, list, and remove. Not part of the numbered 8.1-8.3 chain until a letter-suffixed experiment is validated."
+    source_path: install/shared/8.4a-model-manager.sh
+    status: experimental
+    tested: mock-api
+    notes: "Experimental 8.4a lifecycle for browse, suitability, pull, use, list, and remove. Letter suffix: not part of trial-install.sh then 8.1.sh then 8.2.sh then 8.3.sh. Tested with a mocked Ollama API. Live hardware and a real model download are untested."
   - id: workspace-ui
     display_name: Model workspace UI
     role: ui
