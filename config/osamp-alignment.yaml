@@ -1,0 +1,176 @@
+schema: terminal-glass.8-ball.osamp-alignment/1
+protocol_name: "OSAMP: Open Source Agent Mail Protocol, AfricaTogether Project by NoCloudGPT"
+white_paper: OSAMP_Technical_Whitepaper_v0.8.md
+white_paper_date: 2026-11-07
+white_paper_status: >
+  Technical architecture proposal, not a deployed federation and not a ratified
+  standard. The paper is not vendored in this repository. Wire formats are
+  unresolved, and this matrix does not invent or rename them.
+rows:
+  - id: protocol-name
+    item: Use the name OSAMP. Do not create or rename a protocol.
+    status: implemented
+    evidence: The name is recorded here and in src/eight_ball/osamp. No alternate protocol name is introduced.
+  - id: proposal-not-federation
+    item: Readiness claims stay short of a deployed federation.
+    status: implemented
+    evidence: This matrix and the component inventory label federation and wire formats unresolved.
+  - id: standing-agreements
+    item: Standing agreements are Peer, Tribe, Clan, Table, and Work.
+    status: implemented
+    evidence: The local gate accepts only those names. It does not define their wire messages.
+  - id: work-kinds
+    item: Work is Project or Corridor.
+    status: implemented
+    evidence: A Work request without Project or Corridor is refused locally.
+  - id: bridge-acceptance
+    item: Bridge Acceptance is a scoped human receipt, not a sixth standing contract.
+    status: implemented
+    evidence: The local gate refuses Bridge Acceptance as a standing contract.
+  - id: self-governance
+    item: Self-Governance Covenant is built-in policy, not an extra negotiated contract.
+    status: implemented
+    evidence: PLAY, PAUSE, STOP, REWIND, REVIEW, FAST-FORWARD, and TIMEOUT run in the local covenant controller.
+  - id: trust-not-transitive
+    item: Trust is not transitive.
+    status: implemented
+    evidence: A request that carries trust_transitive or trusted_via is refused.
+  - id: delivery-not-acceptance
+    item: Invitation or delivery is not acceptance.
+    status: implemented
+    evidence: A delivered and unaccepted request is held and does not invoke a model.
+  - id: table-roles
+    item: A Table contains participants who explicitly accept bounded roles.
+    status: implemented
+    evidence: A Table request without accepted_roles is refused. Federation membership storage is not claimed.
+  - id: separate-from-8ball-fit
+    item: 8-BALL hardware fit stays separate from a measured 9-Ball profile.
+    status: implemented
+    evidence: Suitability does not authorize the gate. A fitting machine with no contract is refused.
+  - id: capacity-not-authority
+    item: Capacity does not grant authority.
+    status: implemented
+    evidence: The gate never reads RAM, VRAM, or download size as permission.
+  - id: adapter-boundary
+    item: Optional adapter boundary for agent runtimes.
+    status: implemented
+    evidence: The boundary exists and refuses calls. It is tested as a refusal.
+  - id: openclaw-adapter
+    item: OpenClaw adapter.
+    status: planned
+    evidence: Not implemented and not tested. The boundary reports status planned.
+  - id: hermes-adapter
+    item: Hermes adapter.
+    status: planned
+    evidence: Not implemented and not tested. The boundary reports status planned.
+  - id: local-gate
+    item: Deterministic local gate for identity, contract, scope, revocation, replay, expiry, and budget.
+    status: implemented
+    evidence: Unit tests refuse unauthorized, replayed, and expired work before the invoke callback.
+  - id: no-contract-no-relay
+    item: No contract means no relay.
+    status: implemented
+    evidence: A missing contract is refused and the invoke callback is not called.
+  - id: small-workers
+    item: Small local workers accepting bounded contributions.
+    status: planned
+    evidence: The gate can refuse out-of-scope work. A worker runtime is not shipped.
+  - id: refusal-hold-review
+    item: Explicit refusal, hold, and human review.
+    status: implemented
+    evidence: The gate returns refuse, hold, and human_review without calling a model.
+  - id: bounded-escalation
+    item: Bounded escalation to another clan or operator.
+    status: unresolved
+    evidence: Human review stops locally. No escalation transport is defined.
+  - id: no-broadcast
+    item: No unrestricted broadcast or automatic cross-clan disclosure.
+    status: implemented
+    evidence: broadcast and cross_clan_disclosure actions are refused.
+  - id: skip-noise
+    item: Do not invoke a model for duplicates, irrelevant messages, expired offers, or already-known data.
+    status: implemented
+    evidence: Replay, expiry, no_action, irrelevant, and already_known refuse before invoke.
+  - id: commitments
+    item: Retain accepted commitments and expire unaccepted noise.
+    status: implemented
+    evidence: The hold store keeps commitments across reload and drops expired unaccepted items.
+  - id: store-and-forward
+    item: Durable bounded store-and-forward and reconnect catch-up.
+    status: planned
+    evidence: The hold file survives a process restart. Network catch-up is not implemented.
+  - id: transport
+    item: OSAMP is transport-independent. Email is only one possible transport.
+    status: unresolved
+    evidence: No mail transport is implemented. None was invented here.
+  - id: no-nextcloud-git
+    item: Do not route Nextcloud or git replication through agent mail.
+    status: implemented
+    evidence: nextcloud_sync and git_replication actions are refused.
+  - id: rewind
+    item: Rewind is reviewed restoration, not a promise that every external effect can be undone.
+    status: implemented
+    evidence: REWIND sets review_required and leaves undo_promised false.
+  - id: unreachable-stop
+    item: Unreachable peers remain stop-pending until acknowledged.
+    status: implemented
+    evidence: STOP for an unreachable peer stays stop_pending until acknowledge_stop.
+  - id: markers
+    item: Preserve %% working, !! held, !* timeout, and ~ ~ external shared service markers.
+    status: implemented
+    evidence: The local covenant controller sets those markers. GridStack title rendering is separate.
+  - id: gridstack
+    item: GridStack status belongs in titles and application-box contents stay intact.
+    status: unresolved
+    evidence: This repository has no GridStack UI.
+  - id: modest-hardware
+    item: Modest hardware can contribute without a cloud purchase.
+    status: implemented
+    evidence: The free model path has no license check and no required cloud purchase. Geographic coverage is not claimed.
+  - id: connectivity-loss
+    item: Connectivity loss does not create false completion.
+    status: implemented
+    evidence: Catalog refresh failure keeps the last-known-good snapshot and reports failure. It does not install a model.
+  - id: budgets
+    item: Inference stays inside an agreed budget.
+    status: implemented
+    evidence: budget_remaining at or below zero is refused before invoke.
+  - id: wire-formats
+    item: White-paper message encodings and federation state.
+    status: unresolved
+    evidence: The white paper is not in this repository. No message schema was written from memory.
+  - id: nine-ball-profile
+    item: Measured 9-Ball capability and resource profile.
+    status: unresolved
+    evidence: 8-BALL suitability remains an estimate. It is not a 9-Ball profile.
+pilot:
+  - id: unauthorized
+    check: Unauthorized work is refused before inference.
+    coverage: tested
+  - id: replay
+    check: Replayed work is refused before inference.
+    coverage: tested
+  - id: expired
+    check: Expired work is refused before inference.
+    coverage: tested
+  - id: delivery
+    check: Delivery is distinguished from acceptance.
+    coverage: tested
+  - id: held-restart
+    check: Held work is still present after restart.
+    coverage: tested
+  - id: cloud-only
+    check: Cloud-only catalog entries are not local downloads.
+    coverage: tested
+  - id: refresh
+    check: A failed catalog refresh preserves the last-known-good catalog.
+    coverage: tested
+  - id: adapters
+    check: OpenClaw and Hermes adapters are tested end to end.
+    coverage: planned
+  - id: federation
+    check: A multi-node OSAMP federation exchanges white-paper messages.
+    coverage: unresolved
+  - id: hardware
+    check: Live installs on macOS, Windows, Lightsail, and DigitalOcean.
+    coverage: untested

@@ -24,7 +24,7 @@ Planned and untested parts are labeled that way.
 | Ollama Cloud | runtime | optional | hosted | upstream-unvendored | https://ollama.com | external | untested |
 | OpenClaw adapter | agent-adapter | optional | local | unchosen | https://github.com/terminal-glass/8-ball | planned | planned |
 | Hermes adapter | agent-adapter | optional | local | unchosen | https://github.com/terminal-glass/8-ball | planned | planned |
-| OSAMP local gate | agent-adapter | optional | local | unchosen | https://github.com/terminal-glass/8-ball | planned | planned |
+| OSAMP local gate | agent-adapter | optional | local | unchosen | https://github.com/terminal-glass/8-ball | experimental | repository-tests |
 
 ## Notes
 
@@ -48,5 +48,5 @@ Planned and untested parts are labeled that way.
   License text: Not chosen. An adapter is not implemented, so no adapter license is granted.
 - **Hermes adapter** (`hermes-adapter`): Optional agent adapter. Planned only. Not implemented and not tested.
   License text: Not chosen. An adapter is not implemented, so no adapter license is granted.
-- **OSAMP local gate** (`osamp-gate`): Optional local gate for OSAMP (Open Source Agent Mail Protocol, AfricaTogether Project by NoCloudGPT). Planned only. The white paper is a proposal, not a deployed federation.
+- **OSAMP local gate** (`osamp-gate`): Optional local gate for OSAMP (Open Source Agent Mail Protocol, AfricaTogether Project by NoCloudGPT). Identity, contract, scope, revocation, replay, expiry, and budget checks are tested. OpenClaw and Hermes adapters stay planned. Wire formats and federation are unresolved. The white paper is a proposal, not a deployed federation.
   License text: Not chosen. Jonathan must choose a license. This placeholder grants nothing.

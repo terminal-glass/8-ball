@@ -149,6 +149,8 @@ Developers and contributors: the canonical catalog is version **2026.08.01** in 
 
 The maintained component record is `config/components.yaml`. The readable inventory is generated at [docs/component-inventory.md](docs/component-inventory.md). Download sizes use decimal SI bytes and are not RAM or VRAM. Cloud-only models are not local downloads.
 
+OSAMP means the Open Source Agent Mail Protocol, AfricaTogether Project by NoCloudGPT. The alignment matrix at [docs/osamp-alignment.md](docs/osamp-alignment.md) labels each item implemented, planned, or unresolved. The local gate is tested. Wire formats and a deployed federation are unresolved. OpenClaw and Hermes adapters are planned, not tested.
+
 This repository has no chosen license. `LICENSE` is a placeholder until Jonathan chooses one.
 
 ⸻

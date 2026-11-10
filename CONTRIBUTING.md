@@ -59,8 +59,10 @@ size. It is not RAM and it is not VRAM.
 7. Validate, then open a pull request with the template.
 
 Capability labels must say whether the value is a source claim or a measured
-test. A model name or a parameter count does not make a model agent-ready.
-Leave measured-test fields empty until a real test exists.
+test. Record them in `data/normalized/capability-evidence.json`. A model name
+or a parameter count does not make a model agent-ready. Leave the registry
+empty until a real source or a measured test exists. The current registry has
+no measured tests.
 
 Do not copy private repository content into this public tree. Only sanitized
 public metadata belongs here.
