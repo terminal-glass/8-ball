@@ -8,6 +8,8 @@
        width="720">
 </p>
 
+8-BALL is the free Independent AI path for the computer you already have: detect the hardware, browse models that fit, install a local model, use it, and remove it. That basic workflow does not require a purchase or a paid license key.
+
 8-BALL helps match Ollama models and AI tools to the computer you actually have.
 
 Instead of guessing about RAM, VRAM, GPUs, model sizes, and cloud options, 8-BALL is building a hardware-aware catalog and installation system for local and hybrid AI.
@@ -74,6 +76,8 @@ Start with the machine you have and add what you need.
 
 ⸻
 
+The basic Independent AI workflow stays free. Paid help is optional and does not block browsing, suitability, local install, use, or removal.
+
 🚀 $99 Pilot
 
 Want help turning one machine into a complete 8-BALL system?
@@ -128,6 +132,23 @@ Development
 
 The current repository contains the catalog, normalized model metadata, hardware estimates, validation tooling, generated recommendations, and public free/trial installer resources.
 
-Developers and contributors: continue below for the repository architecture, catalog recreation workflow, CLI, validation, datasets, and provenance documentation.
+Developers and contributors: the canonical catalog is version **2026.08.01** in `data/normalized/`. That tree is the source of truth. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add or correct a model, cite evidence, update fixtures, validate, and open a pull request.
+
+## How the parts fit
+
+| Part | Role | Required | Where |
+| --- | --- | --- | --- |
+| Catalog | Public model metadata | Required | `data/normalized/` |
+| Hardware estimator | Labeled fit estimates | Required for guidance | `src/eight_ball/estimate/` |
+| Free trial installer | `trial-install.sh` → `8.1.sh` → `8.2.sh` → `8.3.sh` | Required to install the free path | `install/` |
+| Ollama | Local runtime | Required to run a local model | Upstream, installed on the machine |
+| Model manager | Browse, suitability, pull, use, list, remove | Planned in this repository | Not a paid entitlement |
+| Workspace UI | Customer display | Optional | Generated from validated records, not hand-kept HTML |
+| Open WebUI and Ollama Cloud | Chat workspace and hosted models | Optional | External |
+| Agent adapters and OSAMP | Tool use and agent mail | Optional | Planned until implemented and tested |
+
+The maintained component record is `config/components.yaml`. The readable inventory is generated at [docs/component-inventory.md](docs/component-inventory.md). Download sizes use decimal SI bytes and are not RAM or VRAM. Cloud-only models are not local downloads.
+
+This repository has no chosen license. `LICENSE` is a placeholder until Jonathan chooses one.
 
 ⸻
