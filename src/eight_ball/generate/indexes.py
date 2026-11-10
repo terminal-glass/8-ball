@@ -27,8 +27,12 @@ def build_indexes(
 
     by_family: dict[str, list[str]] = {}
     by_model: dict[str, list[str]] = {}
+    by_capability: dict[str, list[str]] = {}
     local_tags: list[str] = []
+    local_download_tags: list[str] = []
     cloud_tags: list[str] = []
+    cloud_only_tags: list[str] = []
+    download_sizes: list[dict[str, Any]] = []
 
     for tag in tags:
         ollama_id = tag["ollama_identifier"]
@@ -41,16 +45,34 @@ def build_indexes(
         availability = tag.get("availability")
         if availability in {"local", "both"}:
             local_tags.append(ollama_id)
+            local_download_tags.append(ollama_id)
         if availability in {"cloud", "cloud_only", "both"}:
             cloud_tags.append(ollama_id)
+        if availability == "cloud_only":
+            cloud_only_tags.append(ollama_id)
+        if tag.get("download_size_bytes") is not None:
+            download_sizes.append(
+                {
+                    "ollama_identifier": ollama_id,
+                    "download_size_bytes": tag["download_size_bytes"],
+                }
+            )
+        for capability_id, value in (tag.get("capabilities") or {}).items():
+            if value == "true":
+                by_capability.setdefault(capability_id, []).append(ollama_id)
 
     target_dir = indexes_dir or INDEXES_DIR
     target_dir.mkdir(parents=True, exist_ok=True)
+    download_sizes.sort(key=lambda row: (row["download_size_bytes"], row["ollama_identifier"]))
     indexes = {
         "by-family": by_family,
         "by-model": by_model,
+        "by-capability": {key: sorted(value) for key, value in sorted(by_capability.items())},
         "local-tags": sorted(local_tags),
+        "local-download-tags": sorted(local_download_tags),
         "cloud-tags": sorted(cloud_tags),
+        "cloud-only-tags": sorted(cloud_only_tags),
+        "download-size-bytes": download_sizes,
     }
     for name, payload in indexes.items():
         write_json(target_dir / f"{name}.json", payload)
@@ -58,5 +80,7 @@ def build_indexes(
         "families_indexed": len(by_family),
         "models_indexed": len(by_model),
         "local_tags": len(local_tags),
+        "local_download_tags": len(local_download_tags),
         "cloud_tags": len(cloud_tags),
+        "cloud_only_tags": len(cloud_only_tags),
     }

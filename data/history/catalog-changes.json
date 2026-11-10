@@ -1,0 +1,18 @@
+{
+  "schema": "terminal-glass.8-ball.catalog-change/1",
+  "changes": [
+    {
+      "catalog_version": "2026.08.01",
+      "changed_at": "2026-08-01T14:08:01Z",
+      "action": "established",
+      "source_note": "Public canonical catalog in data/normalized/. This repository is the source of truth. Older private catalog snapshots are not imported.",
+      "counts": {
+        "families": 234,
+        "models": 437,
+        "tags": 7271
+      },
+      "removed": [],
+      "added": []
+    }
+  ]
+}

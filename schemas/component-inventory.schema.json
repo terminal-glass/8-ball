@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/component-inventory.schema.json",
+  "title": "ComponentInventory",
+  "type": "object",
+  "required": ["schema", "catalog_version", "size_unit_policy", "components"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "terminal-glass.8-ball.component-inventory/1"
+    },
+    "catalog_version": { "type": "string", "minLength": 1 },
+    "size_unit_policy": { "type": "string", "const": "decimal" },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "display_name",
+          "role",
+          "required",
+          "placement",
+          "license",
+          "license_status",
+          "source",
+          "status",
+          "tested",
+          "notes"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+          "display_name": { "type": "string", "minLength": 1 },
+          "role": {
+            "type": "string",
+            "enum": ["runtime", "ui", "manager", "installer", "catalog", "hardware", "agent-adapter"]
+          },
+          "required": { "type": "boolean" },
+          "placement": { "type": "string", "enum": ["local", "hosted", "mixed"] },
+          "license": { "type": "string", "minLength": 1 },
+          "license_status": {
+            "type": "string",
+            "enum": ["unchosen", "upstream-unvendored", "not-applicable"]
+          },
+          "source": { "type": "string", "minLength": 1 },
+          "source_path": { "type": ["string", "null"] },
+          "status": {
+            "type": "string",
+            "enum": ["maintained", "experimental", "planned", "external"]
+          },
+          "tested": {
+            "type": "string",
+            "enum": ["repository-tests", "mock-api", "untested", "not-applicable", "planned"]
+          },
+          "notes": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
