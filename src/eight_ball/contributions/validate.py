@@ -115,9 +115,40 @@ def validate_contribution_records(
             )
             if not errors:
                 fresh = unresolved_summary_from_disk(normalized_dir)
-                if summary != fresh:
-                    errors.append(
-                        "reports/unresolved-fields-summary.json does not match "
-                        "data/normalized/. Regenerate the unresolved-field report."
-                    )
+            if summary != fresh:
+                errors.append(
+                    "reports/unresolved-fields-summary.json does not match "
+                    "data/normalized/. Regenerate the unresolved-field report."
+                )
+
+    errors.extend(_capability_evidence_errors(normalized_dir))
+    errors.extend(_alignment_errors())
+    return errors
+
+
+def _capability_evidence_errors(normalized_dir: Path) -> list[str]:
+    from eight_ball.evidence.capabilities import evidence_errors, load_evidence_registry
+
+    path = normalized_dir / "capability-evidence.json"
+    if not path.exists():
+        return ["data/normalized/capability-evidence.json is missing"]
+    registry = load_evidence_registry(path)
+    tags = {row["ollama_identifier"] for row in load_json(normalized_dir / "tags.json")}
+    errors = evidence_errors(registry, known_tags=tags)
+    meta_path = normalized_dir / "catalog-meta.json"
+    if meta_path.exists() and registry.get("catalog_version") != load_json(meta_path).get("catalog_version"):
+        errors.append("capability-evidence catalog_version does not match the canonical catalog")
+    return errors
+
+
+def _alignment_errors() -> list[str]:
+    from eight_ball.osamp.alignment import alignment_errors, load_alignment, render_alignment
+
+    document = load_alignment()
+    errors = alignment_errors(document)
+    path = REPO_ROOT / "docs" / "osamp-alignment.md"
+    if not path.exists():
+        return errors + ["docs/osamp-alignment.md is missing. Generate it from config/osamp-alignment.yaml."]
+    if not errors and path.read_text(encoding="utf-8") != render_alignment(document):
+        errors.append("docs/osamp-alignment.md drifted from config/osamp-alignment.yaml.")
     return errors

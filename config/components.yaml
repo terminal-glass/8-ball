@@ -130,7 +130,7 @@ components:
     license: "Not chosen. Jonathan must choose a license. This placeholder grants nothing."
     license_status: unchosen
     source: https://github.com/terminal-glass/8-ball
-    source_path: null
-    status: planned
-    tested: planned
-    notes: "Optional local gate for OSAMP (Open Source Agent Mail Protocol, AfricaTogether Project by NoCloudGPT). Planned only. The white paper is a proposal, not a deployed federation."
+    source_path: src/eight_ball/osamp/gate.py
+    status: experimental
+    tested: repository-tests
+    notes: "Optional local gate for OSAMP (Open Source Agent Mail Protocol, AfricaTogether Project by NoCloudGPT). Identity, contract, scope, revocation, replay, expiry, and budget checks are tested. OpenClaw and Hermes adapters stay planned. Wire formats and federation are unresolved. The white paper is a proposal, not a deployed federation."

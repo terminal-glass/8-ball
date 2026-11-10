@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/capability-evidence.schema.json",
+  "title": "CapabilityEvidenceRegistry",
+  "type": "object",
+  "required": ["schema", "catalog_version", "note", "records"],
+  "properties": {
+    "schema": { "const": "terminal-glass.8-ball.capability-evidence/1" },
+    "catalog_version": { "type": "string", "minLength": 1 },
+    "note": { "type": "string", "minLength": 1 },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "ollama_identifier",
+        "capability_id",
+        "kind",
+        "value",
+        "source_url",
+        "method",
+        "runtime_version",
+        "hardware",
+        "limitations",
+        "status"
+      ],
+      "properties": {
+        "ollama_identifier": { "type": "string", "minLength": 1 },
+        "capability_id": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["source_claim", "measured_test", "unknown"] },
+        "value": { "enum": ["true", "false", "unknown"] },
+        "source_url": { "type": ["string", "null"] },
+        "method": { "type": ["string", "null"] },
+        "runtime_version": { "type": ["string", "null"] },
+        "hardware": { "type": ["string", "null"] },
+        "limitations": { "type": ["string", "null"] },
+        "status": { "enum": ["tested", "planned", "untested"] }
+      },
+      "additionalProperties": false
+    }
+  }
+}
