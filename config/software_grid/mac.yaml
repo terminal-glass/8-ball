@@ -1,563 +1,1278 @@
-# macOS column of the shared per-OS software grid (levels 0-9).
-# Shared schema: config/software_grid/README.md (owned by Leonardo).
-# Linux: linux.yaml (Leonardo). Windows: windows.yaml (Raphael). Mac: this file (Monet).
+# macOS column of the per-OS software grid for the 0-9 hardware scale.
+# Owner: Monet (Mac column). Linux: Leonardo (linux.yaml, README.md with the
+# shared schema). Windows: Raphael (windows.yaml).
 #
-# DRAFT. Nothing here has run on a real Mac (Apple Silicon or Intel); measured is false everywhere.
-# Hardware levels, RAM bands and model tags come from config/hardware_scale.yaml and are not changed here.
-# Mac RAM placement uses eight_ball.scale.place_by_ram (min inclusive, max exclusive, decimal bytes):
-#   4 GiB -> 1, 8 GiB -> 2, 16/18 GiB -> 4, 24 GiB -> 5, 32/36/48 GiB -> 6,
-#   64/96 GiB -> 7, 128/192 GiB -> 8, 256/512 GiB -> 9. No current Mac lands on level 0 or 3.
+# Levels come from config/hardware_scale.yaml. Installer stage numbers are a
+# different sequence and are never renumbered here.
 #
-# Standing Mac rules that apply to every level:
-#   - Homebrew is never run as root. Every installer step runs as the logged-in user.
-#   - Generated credentials go only in the installing user's home (directories 0700, files 0600), never /root.
-#   - Services are user LaunchAgents in ~/Library/LaunchAgents (scheduler: launchd). No cron, systemd, snap or apt.
-#   - Ollama listens on 127.0.0.1:11434; it is never exposed on the tailnet or internet.
-#   - Installer stage and script numbers are never renumbered or aliased.
-#   - The ai-link Mac stays separate: no PhilosopherOS, WeKan or benchmark tools on it.
-#   - Mac App Store packaging is commercial tier only and separate from the pilot. It is not planned in this grid.
-# stage3_variant (required, shared schema): 3 = standard Open WebUI, 3-ram1 = low-RAM, OpenClaw chat only,
-#   3-ram2 = Open WebUI and OpenClaw chat side by side on one shared database plus a user setting that turns
-#   Open WebUI and Colima off to free RAM. These are names only; no installer scripts are created or renumbered here.
-# The optional key `dropped` lists what is removed at that level compared with the full Mac stack.
-schema_ref: config/software_grid/README.md
+# Status: DRAFT. Nothing in this file has run on a real Mac (Apple Silicon or
+# Intel). Every entry has measured: false. Colima VM sizes, Open WebUI caps
+# and loaded-model counts are estimates.
+# `dropped` lists what a level removes compared with the level above (level N
+# vs level N+1), as the shared README defines it. `stage3_variant` is the
+# default installer stage 3 variant; `stage3_options` lists every variant the
+# installer offers at that level (first = default). See stage3_variants.
+#
+# Mac rules that apply to every level:
+# - Homebrew is never run as root. Every step runs as the logged-in user.
+# - Services are user LaunchAgents in ~/Library/LaunchAgents (launchd). No
+#   cron, systemd, snap or apt on the Mac side.
+# - Chats are LAN-only. Open WebUI, the OpenClaw chat and Ollama bind to
+#   127.0.0.1 by default, or to the Mac's LAN address when the user opts in.
+#   They are never published on Tailscale Serve/Funnel or the internet.
+# - Tailscale is an option, never the default chat exposure. Remote chat over
+#   Tailscale needs proper app and chat interfaces first.
+# - Generated credentials live only in the installing user's home (folders
+#   0700, files 0600), never /root and never in the repo.
+# - WeKan is the core task board wherever a task board exists. Outside
+#   task services are never a replacement for it.
+# - Nextcloud is allowed only at levels 7-9.
+# - The ai-link Mac stays separate: no PhilosopherOS, WeKan or benchmark
+#   tools on it.
+# - Mac App Store packaging is commercial tier only and is not planned here.
+schema: terminal-glass.8-ball.software-grid/1
 os: mac
 owner: monet
 status: draft
 scale_ref: config/hardware_scale.yaml
-sources:
-  - ycgpt-lightsail-installer 1.0.27-MAC-PhilosopherOS-BETA (stages 0-6, 10-12, 21, 31, 32, 34, 35, 50)
-  - ycgpt-lightsail-installer branch feat/ai-link-mac-gridstack-8ball-20261101 (Mac 45.sh GridStack, 8-2.sh 8-Ball console)
-  - ycgpt-lightsail-installer branch cursor/osamp-9ball-beta-49c4, folder 1.0.39-MAC-9BALL-BETA (Mac 9-Ball)
-  - ycgpt-lightsail-installer PROD-1.0.11-MAC (stage map reference)
-  - lite-stack plan (OpenClaw Control UI + GridStack for levels 0-3), 2026-11-13
+supported_clients:
+- macOS on Apple Silicon (M1 and later)
+- macOS on Intel (best effort; no Metal acceleration in Ollama, Hermes unsupported)
+defaults:
+  open_webui_port: 3000
+  ollama_port: 11434
+  openclaw_port: 18789
+  gridstack_workspace_port: 8845
+  bind: 127.0.0.1 (LAN address opt-in; never tailnet or public)
+  chat_exposure: lan-only
+  jets_credential_path: ~/.config/8-ball/meta-api-key
+  launchd_domain: gui/<uid> user LaunchAgents
+  homebrew: logged-in user only, never root
+stage3_variants:
+  answered: 'Jonathan (2026-11-13): 3 is the standard Open WebUI stage, 3-ram1 is the low-RAM OpenClaw-chat-only
+    option, 3-ram2 runs both side by side on one shared database with a user setting that turns Docker/Colima and
+    Open WebUI off to free RAM. Slim Open WebUI on by default at 8 GB (level 2) is approved. stage3_variant is the
+    default per level; stage3_options is what the installer offers.'
+  '3':
+    linux_script: 3.sh
+    mac_script: 3.sh
+    does: Installs Open WebUI (full image, pinned by digest) in Colima for the logged-in user, bound to loopback
+      (LAN opt-in), ENABLE_OLLAMA_API=true.
+  3-ram1:
+    linux_script: 3-ram1.sh
+    mac_script: 3-ram1.sh
+    does: Low-RAM option. Skips Open WebUI and Colima; the GridStack Chat tile points at the OpenClaw Control UI
+      (Claw Chat). Requires stage 11 OpenClaw.
+  3-ram2:
+    linux_script: 3-ram2.sh
+    mac_script: 3-ram2.sh
+    does: Slim Open WebUI (in Colima) and the OpenClaw chat side by side on one shared database, with a user setting
+      that turns Open WebUI and Colima off to free RAM.
+    shared_database:
+      path: ~/.terminal-glass/stage3/shared-chat.sqlite3
+      status: tentative
+      permissions: folder 0700, file 0600, owned by the logged-in user
+      open_issue: Open WebUI runs inside the Colima Linux VM and would open the file through a virtiofs/sshfs mount,
+        while OpenClaw writes natively on macOS. SQLite locking across that mount is not reliable for two writers,
+        so the shared store may need to be a small loopback service or one writer with sync. TBD before 3-ram2.sh
+        is written.
+    free_ram_setting:
+      name: stage3.free_ram
+      where: GridStack Controls tile; stored in ~/.terminal-glass/settings.json (file 0600, folder 0700; tentative)
+      elevation: none (logged-in user; never root, never sudo, never root Homebrew)
+      when_on:
+      - stop the Open WebUI container
+      - colima stop (frees the Colima VM memory)
+      - GridStack Chat tile switches to Claw Chat (OpenClaw Control UI)
+      - the OpenClaw gateway keeps running and chat history stays in the shared database
+      when_off:
+      - colima start
+      - start the Open WebUI container again; it reopens the same shared database
+      - GridStack Chat tile switches back to Open WebUI
 levels:
-  - level: 0
-    hardware_profile_ref: config/hardware_scale.yaml#level-0
-    ui: see linux.yaml level 0
-    chat_frontend: see linux.yaml level 0
-    consultation: see linux.yaml level 0
-    local_models: see linux.yaml level 0
-    cloud_option: see linux.yaml level 0
-    scheduler: launchd
-    services: []
-    docker: see linux.yaml level 0
-    stage3_variant: "3-ram1"
-    open_webui: see linux.yaml level 0
-    notes:
-      - "stage3_variant 3-ram1 mirrors Leonardo's linux.yaml level 0 (consultation stack, OpenClaw chat only); his entry is authoritative."
-      - Placeholder. Level 0 is the consultation stack owned by Leonardo; this entry mirrors linux.yaml level 0.
-      - No Mac that runs a supported macOS has less than 4 GB, so no Mac is expected on level 0.
-    measured: false
-
-  - level: 1
-    hardware_profile_ref: config/hardware_scale.yaml#level-1
-    ui: gridstack-workspace45
-    chat_frontend: openclaw-control-ui
-    consultation:
-      runner: canary
-      model: tinyllama:1.1b
-      fallback: openclaw (only if canary is too large and OpenClaw is capable; adapter planned, not implemented)
-    local_models:
-      primary: tinyllama:1.1b
-      code_focus: null
-      load_policy: on demand only; OLLAMA_MAX_LOADED_MODELS=1, OLLAMA_NUM_PARALLEL=1, short OLLAMA_KEEP_ALIVE
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services:
-      - name: openclaw-gateway
-        launchd: user LaunchAgent created by `openclaw gateway install`
-        bind: 127.0.0.1:18789
-        source: 1.0.27-MAC stage 11 / 1.0.39 9-Ball (sits beside an existing OpenClaw)
-      - name: ollama
-        launchd: Ollama.app login item, or `brew services start ollama` as the user
-        bind: 127.0.0.1:11434
-        source: 1.0.27-MAC stage 2
-      - name: gridstack-workspace45
-        launchd: com.terminalglass.workspace45
-        bind: 127.0.0.1:8845
-        source: Mac 45.sh (Python server mac-workspace45.py)
-    docker:
-      runtime: none
-    stage3_variant: "3-ram1"
-    open_webui:
-      enabled: false
-    dropped:
-      - Open WebUI (no Docker at this level; chat is the OpenClaw Control UI tile)
-      - Colima / Docker
-      - DokuWiki (stage 5, Docker on Mac)
-      - SilverBullet (stage 34, Docker on Mac)
-      - 8-Ball console LaunchAgent (com.terminalglass.eightball)
-      - Tailscale (stage 12) by default; opt-in only
-      - PhilosopherOS add-ons (21 recording, 31 Hermes, 32 WeKan/task API, 35 GitHub)
-      - Nextcloud (stage 33 is omitted on Mac at every level)
-      - Kiwix Planet Library (not ported to Mac yet)
-      - Qwen code model (too large next to OpenClaw on 4 GB)
-    notes:
-      - "stage3_variant 3-ram1: low-RAM option. Skips Open WebUI and goes straight to the OpenClaw Control UI chat. No Colima."
-      - 9-Ball tier. Mirrors 1.0.39-MAC-9BALL-BETA, which runs as the user, refuses root and never calls Homebrew.
-      - Only older Intel Macs with 4 GB (for example 2014-2017 MacBook Air or Mac mini) land here. No Apple Silicon Mac does.
-      - Intel Macs have no Metal acceleration in Ollama, so local inference is CPU only and slow. The cloud jet is the main brain.
-      - Many 4 GB Intel Macs cannot run a macOS version that current Ollama and OpenClaw (Node 24) support. Treat as best effort.
-      - Not an App Store candidate.
-    measured: false
-
-  - level: 2
-    hardware_profile_ref: config/hardware_scale.yaml#level-2
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3.2:1b
-    local_models:
-      primary: llama3.2:1b
-      code_focus: qwen2.5-coder:1.5b (tentative)
-      load_policy: one model loaded at a time; OLLAMA_MAX_LOADED_MODELS=1, OLLAMA_NUM_PARALLEL=1
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services:
-      - name: openclaw-gateway
-        launchd: user LaunchAgent created by `openclaw gateway install`
-        bind: 127.0.0.1:18789
-        source: 1.0.27-MAC stage 11
-      - name: ollama
-        launchd: Ollama.app login item, or `brew services start ollama` as the user
-        bind: 127.0.0.1:11434
-        source: 1.0.27-MAC stage 2
-      - name: colima
-        launchd: "`brew services start colima` as the user"
-        source: 1.0.27-MAC stage 1
-      - name: open-webui
-        launchd: none (Docker container in Colima, restart unless-stopped)
-        bind: 127.0.0.1:3000
-        source: 1.0.27-MAC stage 3
-      - name: gridstack-workspace45
-        launchd: com.terminalglass.workspace45
-        bind: 127.0.0.1:8845
-        source: Mac 45.sh
-      - name: openclaw-control-ui
-        launchd: none (served by the OpenClaw gateway)
-        note: GridStack tile "Claw Chat"
-    docker:
-      runtime: colima
+- level: 0
+  hardware_profile_ref: config/hardware_scale.yaml#level-0
+  ui: see linux.yaml level 0
+  chat_frontend: none
+  stage3_variant: 3-ram1
+  stage3_options:
+  - 3-ram1
+  consultation: see linux.yaml level 0 (Leonardo owns the level-0 consultation stack)
+  local_models: []
+  cloud_option: see linux.yaml level 0
+  scheduler:
+    engine: launchd
+    jobs: []
+  services: {}
+  docker: false
+  open_webui:
+    installed: false
+  notes:
+    hardware_assumed:
+      ram_gb: <4
+      macs: none
+    stage3_variant_reason: 'Mirrors linux.yaml level 0, which uses 3-ram1 (README: low levels, including level 0,
+      use 3-ram1).'
+    stage3_scripts:
+      3-ram1: 3-ram1.sh
+    summary: Placeholder that mirrors Leonardo's linux.yaml level 0 (consultation stack). No Mac that runs a supported
+      macOS has less than 4 GB, so no Mac lands here. 2 GB machines are supported on the scale (Pi class on Linux);
+      that does not apply to Mac.
+  dropped:
+  - all Mac services (no Mac lands on level 0)
+  measured: false
+- level: 1
+  hardware_profile_ref: config/hardware_scale.yaml#level-1
+  ui: GridStack workspace (loopback) with Claw Chat as the main tile
+  chat_frontend: openclaw-control-ui
+  stage3_variant: 3-ram1
+  stage3_options:
+  - 3-ram1
+  consultation:
+    runner: 8-ball canary
+    model: tinyllama:1.1b
+    fallback: OpenClaw when the canary is too large and OpenClaw is capable (adapter planned, not implemented),
+      else jets
+  local_models:
+    canary: tinyllama:1.1b
+    llama: null
+    qwen: null
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 1
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+  services:
+    runtime: native macOS, no containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: false
+    gridstack_apps:
+    - Chat (Claw Chat)
+    - Controls
+    silverbullet:
+      installed: false
+    dokuwiki:
+      installed: false
+    wekan:
+      installed: false
+      reason: no task board at this level (4 GB); no outside replacement
+    task_api:
+      installed: false
+    eight_ball_console:
+      installed: false
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: false
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: false
+      recording_21: false
+      hermes_31: false
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: false
+  open_webui:
+    installed: false
+  notes:
+    hardware_assumed:
+      ram_gb: 4-8
+      macs: 4 GB Intel only (for example 2014-2017 MacBook Air or Mac mini)
+    stage3_variant_reason: No Docker or Open WebUI fits next to OpenClaw on 4 GB, so the low-RAM OpenClaw-chat-only
+      variant is the only option.
+    stage3_scripts:
+      3-ram1: 3-ram1.sh
+    summary: 9-Ball tier, like the 9-Ball Mac draft (runs as the user, refuses root, never calls Homebrew). Intel
+      only; CPU inference; many 4 GB Intel Macs cannot run a macOS version that current Ollama and OpenClaw (Node
+      24) support. 2 GB machines are supported on the scale (level 0, Linux/Pi), but no Mac has 2 GB.
+    untested: Not run on real Mac hardware.
+  dropped:
+  - Colima / Docker
+  - Open WebUI (slim)
+  - llama3.2:1b as default model (canary instead)
+  - qwen2.5-coder:1.5b code model
+  measured: false
+- level: 2
+  hardware_profile_ref: config/hardware_scale.yaml#level-2
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: 3-ram2
+  stage3_options:
+  - 3-ram2
+  - 3-ram1
+  consultation:
+    runner: local llama
+    model: llama3.2:1b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3.2:1b
+    qwen: qwen2.5-coder:1.5b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 1
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 2
       vm_cpus: 2
-      note: Colima defaults (2 CPU, 2 GiB). Homebrew installs Colima as the user, never as root.
-    stage3_variant: "3-ram2"
-    open_webui:
-      enabled: true
-      image: open-webui slim variant, pinned by digest (digest TODO)
-      mem_limit: 1g
-      embeddings: Ollama (no in-process embedding or Whisper models)
-      free_ram_setting:
-        default: open_webui_on
-        run_as: logged-in user, never root (no sudo, no root Homebrew)
-        turn_off: stop the Open WebUI container, then `colima stop`. The OpenClaw gateway and its Control UI chat keep running, and the shared chat database is left in place.
-        turn_on: run `colima start`, then start the Open WebUI container again. It reopens the same shared database.
-        persistence: the choice is stored in the user's home with the other 8-ball settings (directory 0700, file 0600) and survives reboots.
-    dropped:
-      - canary tinyllama:1.1b (replaced by llama3.2:1b)
-      - Open WebUI full image (slim only)
-      - DokuWiki (stage 5)
-      - SilverBullet (stage 34) by default; opt-in
-      - 8-Ball console LaunchAgent by default; opt-in
-      - PhilosopherOS add-ons (21, 31, 32, 35)
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3-ram2: slim Open WebUI and OpenClaw chat side by side on one shared database, on by default. The user can turn Open WebUI and Colima off to free RAM (see open_webui.free_ram_setting)."
-      - Every 8 GB Apple Silicon Mac (M1, M2, M3 base models) lands here, so this is the most common Mac level.
-      - Open WebUI is on by default because Jonathan asked for Mac on Open WebUI. The lite-stack plan drops it at levels 0-2; see open questions.
-      - Tailscale (stage 12) is opt-in.
-      - Not an App Store candidate.
-    measured: false
-
-  - level: 3
-    hardware_profile_ref: config/hardware_scale.yaml#level-3
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3.2:1b
-    local_models:
-      primary: llama3.2:1b
-      code_focus: qwen2.5-coder:1.5b (tentative)
-      load_policy: one model loaded at a time; OLLAMA_MAX_LOADED_MODELS=1
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services:
-      - name: openclaw-gateway
-        launchd: user LaunchAgent created by `openclaw gateway install`
-        bind: 127.0.0.1:18789
-      - name: ollama
-        launchd: Ollama.app login item, or `brew services start ollama` as the user
-        bind: 127.0.0.1:11434
-      - name: colima
-        launchd: "`brew services start colima` as the user"
-      - name: open-webui
-        launchd: none (Docker container in Colima)
-        bind: 127.0.0.1:3000
-      - name: silverbullet
-        launchd: none (Docker container in Colima)
-        source: 1.0.27-MAC stage 34
-      - name: gridstack-workspace45
-        launchd: com.terminalglass.workspace45
-        bind: 127.0.0.1:8845
-      - name: eightball-console
-        launchd: com.terminalglass.eightball
-        bind: 127.0.0.1 (loopback)
-        source: Mac 8-2.sh
-      - name: tailscale
-        launchd: Tailscale app (stage 12); opt-in
-    docker:
-      runtime: colima
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Controls
+    silverbullet:
+      installed: false
+      how: Docker in Colima
+      optional: true
+    dokuwiki:
+      installed: false
+      how: Docker in Colima
+    wekan:
+      installed: false
+      optional: true
+      role: core task board when installed
+      note: vendor asks for about 1 GB free; offered, not default, on 8-16 GB Macs
+    task_api:
+      installed: false
+      optional: true
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: false
+      bind: 127.0.0.1
+      optional: true
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: false
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: false
+      recording_21: false
+      hermes_31: false
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: slim, pinned by digest (digest TBD)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 1g
+    settings:
+      ENABLE_OLLAMA_API: true
+      embeddings: Ollama
+      WHISPER_STT: 'off'
+    free_ram_setting: stage3.free_ram (see stage3_variants.3-ram2)
+  notes:
+    hardware_assumed:
+      ram_gb: 8-12
+      macs: every 8 GB Apple Silicon Mac (M1, M2, M3 base)
+    stage3_variant_reason: Slim Open WebUI on by default at 8 GB (approved by Jonathan). The free-RAM setting turns
+      Open WebUI and Colima off; 3-ram1 is offered for users who never want Open WebUI.
+    stage3_scripts:
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+    summary: The most common Mac level. Slim Open WebUI and Claw Chat side by side.
+    untested: Not run on real Mac hardware.
+  dropped:
+  - SilverBullet by default (opt-in)
+  - 8-Ball console by default (opt-in)
+  measured: false
+- level: 3
+  hardware_profile_ref: config/hardware_scale.yaml#level-3
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: 3-ram2
+  stage3_options:
+  - 3-ram2
+  - 3-ram1
+  - '3'
+  consultation:
+    runner: local llama
+    model: llama3.2:1b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3.2:1b
+    qwen: qwen2.5-coder:1.5b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 1
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+    - label: com.terminalglass.eightball
+      runs_as: user
+      trigger: at login
+      action: 8-Ball console on loopback
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 3
       vm_cpus: 2
-    stage3_variant: "3-ram2"
-    open_webui:
-      enabled: true
-      image: open-webui slim variant, pinned by digest (digest TODO)
-      mem_limit: 1g
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Notes (SilverBullet)
+    - Controls
+    silverbullet:
+      installed: true
+      how: Docker in Colima
+    dokuwiki:
+      installed: false
+      how: Docker in Colima
+    wekan:
+      installed: false
+      optional: true
+      role: core task board when installed
+      note: vendor asks for about 1 GB free; offered, not default, on 8-16 GB Macs
+    task_api:
+      installed: false
+      optional: true
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: true
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: false
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: false
+      recording_21: false
+      hermes_31: false
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: slim, pinned by digest (digest TBD)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 1g
+    settings:
+      ENABLE_OLLAMA_API: true
       embeddings: Ollama
-      free_ram_setting:
-        default: open_webui_on
-        run_as: logged-in user, never root (no sudo, no root Homebrew)
-        turn_off: stop the Open WebUI container, then `colima stop`. The OpenClaw gateway and its Control UI chat keep running, and the shared chat database is left in place.
-        turn_on: run `colima start`, then start the Open WebUI container again. It reopens the same shared database.
-        persistence: the choice is stored in the user's home with the other 8-ball settings (directory 0700, file 0600) and survives reboots.
-    dropped:
-      - canary tinyllama:1.1b
-      - Open WebUI full image (slim only)
-      - DokuWiki (stage 5)
-      - PhilosopherOS add-ons (21, 31, 32, 35)
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3-ram2: same as level 2, slim Open WebUI plus OpenClaw chat on one shared database, with the free-RAM setting."
-      - No current Mac ships with 12-16 GB. A 16 GB Mac reports 17.18e9 bytes and lands on level 4. This row exists for completeness and for macOS VMs.
-      - Not an App Store candidate.
-    measured: false
-
-  - level: 4
-    hardware_profile_ref: config/hardware_scale.yaml#level-4
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3.2:3b
-    local_models:
-      primary: llama3.2:3b
-      code_focus: qwen2.5-coder:7b (tentative)
-      load_policy: one model loaded at a time; OLLAMA_MAX_LOADED_MODELS=1
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services:
-      - name: openclaw-gateway
-        launchd: user LaunchAgent created by `openclaw gateway install`
-        bind: 127.0.0.1:18789
-      - name: ollama
-        launchd: Ollama.app login item, or `brew services start ollama` as the user
-        bind: 127.0.0.1:11434
-      - name: colima
-        launchd: "`brew services start colima` as the user"
-      - name: open-webui
-        launchd: none (Docker container in Colima)
-        bind: 127.0.0.1:3000
-      - name: dokuwiki
-        launchd: none (Docker container in Colima)
-        source: 1.0.27-MAC stage 5
-      - name: silverbullet
-        launchd: none (Docker container in Colima)
-        source: 1.0.27-MAC stage 34
-      - name: gridstack-workspace45
-        launchd: com.terminalglass.workspace45
-        bind: 127.0.0.1:8845
-      - name: eightball-console
-        launchd: com.terminalglass.eightball
-        bind: 127.0.0.1 (loopback)
-      - name: tailscale
-        launchd: Tailscale app (stage 12)
-    docker:
-      runtime: colima
+      WHISPER_STT: 'off'
+    free_ram_setting: stage3.free_ram (see stage3_variants.3-ram2)
+  notes:
+    hardware_assumed:
+      ram_gb: 12-16
+      macs: none (a 16 GB Mac reports 17.18e9 bytes and lands on level 4)
+    stage3_variant_reason: Same as level 2. The full 3 variant is offered because 12-16 GB can hold it.
+    stage3_scripts:
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+      '3': 3.sh
+    summary: Exists for completeness and macOS VMs; no current Mac ships with 12-16 GB.
+    untested: Not run on real Mac hardware.
+  dropped:
+  - Open WebUI full image (slim only)
+  - DokuWiki
+  - WeKan task board and task API by default (optional)
+  - llama3.2:3b (llama3.2:1b instead)
+  - qwen2.5-coder:7b (1.5b instead)
+  measured: false
+- level: 4
+  hardware_profile_ref: config/hardware_scale.yaml#level-4
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: '3'
+  stage3_options:
+  - '3'
+  - 3-ram2
+  - 3-ram1
+  consultation:
+    runner: local llama
+    model: llama3.2:3b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3.2:3b
+    qwen: qwen2.5-coder:7b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 1
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+    - label: com.terminalglass.eightball
+      runs_as: user
+      trigger: at login
+      action: 8-Ball console on loopback
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 4
       vm_cpus: 4
-    stage3_variant: "3"
-    open_webui:
-      enabled: true
-      image: open-webui full image pinned by digest (1.0.27-MAC stage 3)
-      mem_limit: 1.5g (stage 3 has 1g today; sizing notes show 1g is starved)
-      embeddings: in-process or Ollama
-    dropped:
-      - canary tinyllama:1.1b
-      - PhilosopherOS add-ons (21, 31, 32, 35) unless the PhilosopherOS SKU is sold
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3: standard Open WebUI (1.0.27-MAC stage 3 behaviour). OpenClaw chat stays available as a GridStack tile."
-      - 16 GB and 18 GB Apple Silicon Macs (M1-M4 16 GB, M3 Pro 18 GB) land here.
-      - This is the standard Mac stack, the same stage set as 1.0.27-MAC minus the PhilosopherOS add-ons.
-      - App Store candidate only as a later commercial product; it would need a sandboxed redesign and is not planned here.
-    measured: false
-
-  - level: 5
-    hardware_profile_ref: config/hardware_scale.yaml#level-5
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3.2:3b
-    local_models:
-      primary: llama3.2:3b
-      code_focus: qwen2.5-coder:7b (tentative)
-      load_policy: one model loaded at a time; OLLAMA_MAX_LOADED_MODELS=1
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services:
-      - name: openclaw-gateway
-        launchd: user LaunchAgent created by `openclaw gateway install`
-      - name: ollama
-        launchd: Ollama.app login item, or `brew services start ollama` as the user
-      - name: colima
-        launchd: "`brew services start colima` as the user"
-      - name: open-webui
-        launchd: none (Docker container in Colima)
-      - name: dokuwiki
-        launchd: none (Docker container in Colima)
-      - name: silverbullet
-        launchd: none (Docker container in Colima)
-      - name: gridstack-workspace45
-        launchd: com.terminalglass.workspace45
-      - name: eightball-console
-        launchd: com.terminalglass.eightball
-      - name: tailscale
-        launchd: Tailscale app (stage 12)
-      - name: philosopheros-wekan
-        launchd: com.philosopheros.wekan and com.philosopheros.task-api
-        source: 1.0.27-MAC stage 32
-        note: PhilosopherOS SKU only; never on the ai-link Mac
-      - name: philosopheros-github
-        launchd: none (Homebrew CLI tools as the user)
-        source: 1.0.27-MAC stage 35
-        note: PhilosopherOS SKU only
-    docker:
-      runtime: colima
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Notes (SilverBullet)
+    - Wiki (DokuWiki)
+    - Tasks (WeKan)
+    - Controls
+    silverbullet:
+      installed: true
+      how: Docker in Colima
+    dokuwiki:
+      installed: true
+      how: Docker in Colima
+    wekan:
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+    task_api:
+      installed: true
+      bind: 127.0.0.1
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: true
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: false
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: false
+      recording_21: false
+      hermes_31: false
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: full image pinned by digest (Mac installer draft stage 3)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 1.5g
+    settings:
+      ENABLE_OLLAMA_API: true
+  notes:
+    hardware_assumed:
+      ram_gb: 16-24
+      macs: 16 GB and 18 GB Apple Silicon
+    stage3_variant_reason: Standard Open WebUI. 3-ram2 and 3-ram1 are offered for users who want to free RAM.
+    stage3_scripts:
+      '3': 3.sh
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+    summary: 'Standard Mac stack: full Open WebUI, DokuWiki, SilverBullet, WeKan as the core task board.'
+    untested: Not run on real Mac hardware.
+  dropped:
+  - PhilosopherOS GitHub tools (stage 35)
+  - larger Colima VM (6 GiB)
+  measured: false
+- level: 5
+  hardware_profile_ref: config/hardware_scale.yaml#level-5
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: '3'
+  stage3_options:
+  - '3'
+  - 3-ram2
+  - 3-ram1
+  consultation:
+    runner: local llama
+    model: llama3.2:3b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3.2:3b
+    qwen: qwen2.5-coder:7b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 1
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+    - label: com.terminalglass.eightball
+      runs_as: user
+      trigger: at login
+      action: 8-Ball console on loopback
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 6
       vm_cpus: 4
-    stage3_variant: "3"
-    open_webui:
-      enabled: true
-      image: open-webui full image pinned by digest (1.0.27-MAC stage 3)
-      mem_limit: 1.5g
-    dropped:
-      - canary tinyllama:1.1b
-      - Recording (21) and Hermes (31) unless the PhilosopherOS SKU is sold
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3: standard Open WebUI (1.0.27-MAC stage 3 behaviour). OpenClaw chat stays available as a GridStack tile."
-      - 24 GB Apple Silicon Macs land here.
-      - Not planned as an App Store product.
-    measured: false
-
-  - level: 6
-    hardware_profile_ref: config/hardware_scale.yaml#level-6
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3:8b
-    local_models:
-      primary: llama3:8b
-      code_focus: qwen2.5-coder:7b (tentative)
-      load_policy: OLLAMA_MAX_LOADED_MODELS=2 (estimate, untested)
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services: &full_mac_services
-      - name: openclaw-gateway
-        launchd: user LaunchAgent created by `openclaw gateway install`
-      - name: ollama
-        launchd: Ollama.app login item, or `brew services start ollama` as the user
-      - name: colima
-        launchd: "`brew services start colima` as the user"
-      - name: open-webui
-        launchd: none (Docker container in Colima)
-      - name: dokuwiki
-        launchd: none (Docker container in Colima)
-      - name: silverbullet
-        launchd: none (Docker container in Colima)
-      - name: gridstack-workspace45
-        launchd: com.terminalglass.workspace45
-      - name: eightball-console
-        launchd: com.terminalglass.eightball
-      - name: tailscale
-        launchd: Tailscale app (stage 12)
-      - name: philosopheros-recording
-        launchd: com.philosopheros.recording
-        source: 1.0.27-MAC stage 21
-        note: PhilosopherOS SKU only
-      - name: philosopheros-hermes
-        launchd: com.philosopheros.hermes
-        source: 1.0.27-MAC stage 31
-        note: PhilosopherOS SKU only; Apple Silicon only (Intel unsupported)
-      - name: philosopheros-wekan
-        launchd: com.philosopheros.wekan and com.philosopheros.task-api
-        source: 1.0.27-MAC stage 32
-        note: PhilosopherOS SKU only
-      - name: philosopheros-github
-        launchd: none (Homebrew CLI tools as the user)
-        source: 1.0.27-MAC stage 35
-        note: PhilosopherOS SKU only
-    docker:
-      runtime: colima
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Notes (SilverBullet)
+    - Wiki (DokuWiki)
+    - Tasks (WeKan)
+    - Controls
+    silverbullet:
+      installed: true
+      how: Docker in Colima
+    dokuwiki:
+      installed: true
+      how: Docker in Colima
+    wekan:
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+    task_api:
+      installed: true
+      bind: 127.0.0.1
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: true
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: false
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: true
+      recording_21: false
+      hermes_31: false
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: full image pinned by digest (Mac installer draft stage 3)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 1.5g
+    settings:
+      ENABLE_OLLAMA_API: true
+  notes:
+    hardware_assumed:
+      ram_gb: 24-32
+      macs: 24 GB Apple Silicon
+    stage3_variant_reason: Standard Open WebUI. 3-ram2 and 3-ram1 are offered for users who want to free RAM.
+    stage3_scripts:
+      '3': 3.sh
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+    summary: Standard stack with a larger Colima VM.
+    untested: Not run on real Mac hardware.
+  dropped:
+  - llama3:8b (llama3.2:3b instead)
+  - PhilosopherOS recording (21) and Hermes (31)
+  - larger Colima VM and 2 GB Open WebUI cap
+  measured: false
+- level: 6
+  hardware_profile_ref: config/hardware_scale.yaml#level-6
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: '3'
+  stage3_options:
+  - '3'
+  - 3-ram2
+  - 3-ram1
+  consultation:
+    runner: local llama
+    model: llama3:8b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3:8b
+    qwen: qwen2.5-coder:7b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 2
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+    - label: com.terminalglass.eightball
+      runs_as: user
+      trigger: at login
+      action: 8-Ball console on loopback
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
+    - label: com.philosopheros.recording and com.philosopheros.hermes
+      runs_as: user
+      trigger: at login
+      action: PhilosopherOS SKU only
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 8
       vm_cpus: 4
-    stage3_variant: "3"
-    open_webui:
-      enabled: true
-      image: open-webui full image pinned by digest (1.0.27-MAC stage 3)
-      mem_limit: 2g
-    dropped:
-      - canary tinyllama:1.1b
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3: standard Open WebUI (1.0.27-MAC stage 3 behaviour). OpenClaw chat stays available as a GridStack tile."
-      - 32, 36 and 48 GB Apple Silicon Macs (Pro and Max chips) land here.
-      - Full Mac stack. It equals the 1.0.27-MAC default set when the PhilosopherOS SKU is sold.
-      - Not planned as an App Store product.
-    measured: false
-
-  - level: 7
-    hardware_profile_ref: config/hardware_scale.yaml#level-7
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3:8b
-    local_models:
-      primary: llama3:8b
-      code_focus: qwen2.5-coder:7b (tentative)
-      load_policy: OLLAMA_MAX_LOADED_MODELS=2 (estimate, untested)
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services: *full_mac_services
-    docker:
-      runtime: colima
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Notes (SilverBullet)
+    - Wiki (DokuWiki)
+    - Tasks (WeKan)
+    - Controls
+    silverbullet:
+      installed: true
+      how: Docker in Colima
+    dokuwiki:
+      installed: true
+      how: Docker in Colima
+    wekan:
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+    task_api:
+      installed: true
+      bind: 127.0.0.1
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: true
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: false
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: true
+      recording_21: true
+      hermes_31: Apple Silicon only
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: full image pinned by digest (Mac installer draft stage 3)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 2g
+    settings:
+      ENABLE_OLLAMA_API: true
+  notes:
+    hardware_assumed:
+      ram_gb: 32-64
+      macs: 32, 36 and 48 GB Apple Silicon (Pro and Max)
+    stage3_variant_reason: Standard Open WebUI. 3-ram2 and 3-ram1 are offered for users who want to free RAM.
+    stage3_scripts:
+      '3': 3.sh
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+    summary: Full Mac stack. With the PhilosopherOS SKU it equals the Mac installer draft default set.
+    untested: Not run on real Mac hardware.
+  dropped:
+  - Nextcloud option (allowed only at levels 7-9)
+  measured: false
+- level: 7
+  hardware_profile_ref: config/hardware_scale.yaml#level-7
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: '3'
+  stage3_options:
+  - '3'
+  - 3-ram2
+  - 3-ram1
+  consultation:
+    runner: local llama
+    model: llama3:8b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3:8b
+    qwen: qwen2.5-coder:7b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 2
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+    - label: com.terminalglass.eightball
+      runs_as: user
+      trigger: at login
+      action: 8-Ball console on loopback
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
+    - label: com.philosopheros.recording and com.philosopheros.hermes
+      runs_as: user
+      trigger: at login
+      action: PhilosopherOS SKU only
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 8
       vm_cpus: 6
-    stage3_variant: "3"
-    open_webui:
-      enabled: true
-      image: open-webui full image pinned by digest (1.0.27-MAC stage 3)
-      mem_limit: 2g
-    dropped:
-      - canary tinyllama:1.1b
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3: standard Open WebUI (1.0.27-MAC stage 3 behaviour). OpenClaw chat stays available as a GridStack tile."
-      - 64 and 96 GB Apple Silicon Macs (Max and Ultra chips) land here.
-      - The scale keeps llama3:8b. Unified memory could hold much larger models; that is an open question, not a change here.
-    measured: false
-
-  - level: 8
-    hardware_profile_ref: config/hardware_scale.yaml#level-8
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3:8b
-    local_models:
-      primary: llama3:8b
-      code_focus: qwen2.5-coder:7b (tentative)
-      load_policy: OLLAMA_MAX_LOADED_MODELS=3 (estimate, untested)
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services: *full_mac_services
-    docker:
-      runtime: colima
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Notes (SilverBullet)
+    - Wiki (DokuWiki)
+    - Tasks (WeKan)
+    - Controls
+    silverbullet:
+      installed: true
+      how: Docker in Colima
+    dokuwiki:
+      installed: true
+      how: Docker in Colima
+    wekan:
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+    task_api:
+      installed: true
+      bind: 127.0.0.1
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: true
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: true
+      status: allowed at levels 7-9 if macOS supports it; not in any Mac installer yet (porting item)
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: true
+      recording_21: true
+      hermes_31: Apple Silicon only
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: full image pinned by digest (Mac installer draft stage 3)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 2g
+    settings:
+      ENABLE_OLLAMA_API: true
+  notes:
+    hardware_assumed:
+      ram_gb: 64-128
+      macs: 64 and 96 GB Apple Silicon (Max and Ultra)
+    stage3_variant_reason: Standard Open WebUI. 3-ram2 and 3-ram1 are offered for users who want to free RAM.
+    stage3_scripts:
+      '3': 3.sh
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+    summary: Nextcloud is allowed from here if macOS supports it; it is a porting item. The scale keeps llama3:8b
+      although unified memory could hold larger models.
+    untested: Not run on real Mac hardware.
+  dropped:
+  - a third loaded model (OLLAMA_MAX_LOADED_MODELS=3)
+  - larger Colima VM (12 GiB)
+  measured: false
+- level: 8
+  hardware_profile_ref: config/hardware_scale.yaml#level-8
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: '3'
+  stage3_options:
+  - '3'
+  - 3-ram2
+  - 3-ram1
+  consultation:
+    runner: local llama
+    model: llama3:8b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3:8b
+    qwen: qwen2.5-coder:7b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 3
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+    - label: com.terminalglass.eightball
+      runs_as: user
+      trigger: at login
+      action: 8-Ball console on loopback
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
+    - label: com.philosopheros.recording and com.philosopheros.hermes
+      runs_as: user
+      trigger: at login
+      action: PhilosopherOS SKU only
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 12
       vm_cpus: 8
-    stage3_variant: "3"
-    open_webui:
-      enabled: true
-      image: open-webui full image pinned by digest (1.0.27-MAC stage 3)
-      mem_limit: 2g
-    dropped:
-      - canary tinyllama:1.1b
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3: standard Open WebUI (1.0.27-MAC stage 3 behaviour). OpenClaw chat stays available as a GridStack tile."
-      - 128 and 192 GB Macs (Max, Ultra, Mac Studio, Mac Pro) land here.
-      - The scale calls level 8 a multi-GPU workstation. Macs have one unified-memory GPU, so the name does not fit; placement is by RAM only.
-    measured: false
-
-  - level: 9
-    hardware_profile_ref: config/hardware_scale.yaml#level-9
-    ui: gridstack-workspace45
-    chat_frontend: open-webui
-    consultation:
-      runner: local-llama
-      model: llama3:8b
-    local_models:
-      primary: llama3:8b
-      code_focus: qwen2.5-coder:7b (tentative)
-      load_policy: OLLAMA_MAX_LOADED_MODELS=3 (estimate, untested)
-    cloud_option:
-      id: jet-llama
-      provider: meta
-      credential: customer's own Meta API key in ~/.config/8-ball/meta-api-key (dir 0700, file 0600)
-      grok: false
-    scheduler: launchd
-    services: *full_mac_services
-    docker:
-      runtime: colima
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Notes (SilverBullet)
+    - Wiki (DokuWiki)
+    - Tasks (WeKan)
+    - Controls
+    silverbullet:
+      installed: true
+      how: Docker in Colima
+    dokuwiki:
+      installed: true
+      how: Docker in Colima
+    wekan:
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+    task_api:
+      installed: true
+      bind: 127.0.0.1
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: true
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: true
+      status: allowed at levels 7-9 if macOS supports it; not in any Mac installer yet (porting item)
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: true
+      recording_21: true
+      hermes_31: Apple Silicon only
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: full image pinned by digest (Mac installer draft stage 3)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 2g
+    settings:
+      ENABLE_OLLAMA_API: true
+  notes:
+    hardware_assumed:
+      ram_gb: 128-256
+      macs: 128 and 192 GB (Max, Ultra, Mac Studio, Mac Pro)
+    stage3_variant_reason: Standard Open WebUI. 3-ram2 and 3-ram1 are offered for users who want to free RAM.
+    stage3_scripts:
+      '3': 3.sh
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+    summary: The scale calls level 8 a multi-GPU workstation. Macs have one unified-memory GPU, so placement is
+      by RAM only.
+    untested: Not run on real Mac hardware.
+  dropped:
+  - larger Colima VM (16 GiB)
+  measured: false
+- level: 9
+  hardware_profile_ref: config/hardware_scale.yaml#level-9
+  ui: GridStack workspace (loopback) with Open WebUI and Claw Chat tiles
+  chat_frontend: both
+  stage3_variant: '3'
+  stage3_options:
+  - '3'
+  - 3-ram2
+  - 3-ram1
+  consultation:
+    runner: local llama
+    model: llama3:8b
+    fallback: jets
+  local_models:
+    canary: null
+    llama: llama3:8b
+    qwen: qwen2.5-coder:7b (tentative)
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 3
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 5m
+  cloud_option:
+    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: TBD
+    model_id: TBD
+    grok: false
+  scheduler:
+    engine: launchd
+    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: Ollama (Ollama.app login item or `brew services start ollama` as the user)
+      runs_as: user
+      trigger: at login
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+      action: GridStack workspace server on 127.0.0.1:8845
+    - label: Colima (`brew services start colima` as the user)
+      runs_as: user
+      trigger: at login
+      action: Docker runtime VM for Open WebUI and other containers
+    - label: com.terminalglass.eightball
+      runs_as: user
+      trigger: at login
+      action: 8-Ball console on loopback
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
+    - label: com.philosopheros.recording and com.philosopheros.hermes
+      runs_as: user
+      trigger: at login
+      action: PhilosopherOS SKU only
+  services:
+    runtime: native macOS plus Colima for containers
+    homebrew: logged-in user only, never root
+    openclaw:
+      installed: true
+      how: user install, launchd gateway
+      bind: 127.0.0.1:18789 (LAN opt-in)
+      chat: Control UI, GridStack tile Claw Chat
+    ollama:
+      install: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434 (LAN opt-in; never tailnet or internet)
+    colima:
+      installed: true
       vm_memory_gib: 16
       vm_cpus: 8
-    stage3_variant: "3"
-    open_webui:
-      enabled: true
-      image: open-webui full image pinned by digest (1.0.27-MAC stage 3)
-      mem_limit: 2g
-    dropped:
-      - canary tinyllama:1.1b
-      - Nextcloud (stage 33)
-      - Kiwix Planet Library (not ported to Mac yet)
-    notes:
-      - "stage3_variant 3: standard Open WebUI (1.0.27-MAC stage 3 behaviour). OpenClaw chat stays available as a GridStack tile."
-      - 256 and 512 GB Mac Studio (Ultra chips) land here.
-      - llama3:8b uses a small part of this machine. Larger local models are an open question for Jonathan.
-    measured: false
+      status: estimate
+    gridstack_apps:
+    - Chat (Open WebUI)
+    - Claw Chat
+    - Notes (SilverBullet)
+    - Wiki (DokuWiki)
+    - Tasks (WeKan)
+    - Controls
+    silverbullet:
+      installed: true
+      how: Docker in Colima
+    dokuwiki:
+      installed: true
+      how: Docker in Colima
+    wekan:
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+    task_api:
+      installed: true
+      bind: 127.0.0.1
+      pairs_with: WeKan
+    eight_ball_console:
+      installed: true
+      bind: 127.0.0.1
+    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
+      never serves 11434
+    nextcloud:
+      installed: false
+      allowed: true
+      status: allowed at levels 7-9 if macOS supports it; not in any Mac installer yet (porting item)
+    kiwix:
+      installed: false
+      reason: not ported to Mac yet
+    philosopheros_sku:
+      github_tools_35: true
+      recording_21: true
+      hermes_31: Apple Silicon only
+      note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+  docker: true
+  open_webui:
+    installed: true
+    variant: full image pinned by digest (Mac installer draft stage 3)
+    method: Docker in Colima
+    bind: 127.0.0.1:3000 (LAN opt-in)
+    mem_limit: 2g
+    settings:
+      ENABLE_OLLAMA_API: true
+  notes:
+    hardware_assumed:
+      ram_gb: 256+
+      macs: 256 and 512 GB Mac Studio (Ultra)
+    stage3_variant_reason: Standard Open WebUI. 3-ram2 and 3-ram1 are offered for users who want to free RAM.
+    stage3_scripts:
+      '3': 3.sh
+      3-ram2: 3-ram2.sh
+      3-ram1: 3-ram1.sh
+    summary: llama3:8b uses a small part of this machine. Larger local models are an open question.
+    untested: Not run on real Mac hardware.
+  dropped: []
+  measured: false
