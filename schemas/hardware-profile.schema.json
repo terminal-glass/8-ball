@@ -10,7 +10,8 @@
     "system_ram_gb": { "type": "number", "minimum": 0 },
     "vram_gb": { "type": "number", "minimum": 0 },
     "cpu_only": { "type": "boolean" },
-    "notes": { "type": ["string", "null"] }
+    "notes": { "type": ["string", "null"] },
+    "scale_level": { "type": "integer", "minimum": 0, "maximum": 9 }
   },
   "additionalProperties": false
 }

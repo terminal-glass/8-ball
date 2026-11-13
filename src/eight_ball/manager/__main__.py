@@ -7,6 +7,7 @@ from pathlib import Path
 
 from eight_ball.manager.argv import ArgvRejected
 from eight_ball.manager.catalog_view import browse, load_catalog
+from eight_ball.manager.consult import consult
 from eight_ball.manager.hardware import detect_hardware
 from eight_ball.manager.lifecycle import (
     list_state,
@@ -138,6 +139,42 @@ def cmd_remove(args: argparse.Namespace) -> int:
     return 0 if result.get("ok") else 1
 
 
+def cmd_consult(args: argparse.Namespace) -> int:
+    hardware = detect_hardware()
+    catalog = _catalog(args.catalog)
+    try:
+        from eight_ball.manager.ollama_http import OllamaClient, OllamaError
+
+        client = OllamaClient(args.ollama, timeout=5)
+        installed = {model.get("name") or model.get("model") for model in client.list_models()}
+        installed.discard(None)
+        measurement = None
+        measurement_error = None
+        from eight_ball.scale import load_scale
+
+        canary_tag = load_scale()["canary"]["tag"]
+        if canary_tag in installed:
+            try:
+                measurement = client.generate(canary_tag, "Say ok.")
+            except OllamaError as exc:
+                measurement_error = str(exc)
+    except OllamaError as exc:
+        installed = set()
+        measurement = None
+        measurement_error = str(exc)
+    result = consult(
+        catalog,
+        ram_bytes=hardware.get("ram_bytes"),
+        disk_free_bytes=hardware.get("disk_free_bytes"),
+        vram_bytes=hardware.get("vram_bytes"),
+        installed=installed,
+        measurement=measurement,
+        measurement_error=measurement_error,
+    )
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def cmd_refresh(args: argparse.Namespace) -> int:
     metadata = {
         "source_repository": args.source_repository,
@@ -194,6 +231,8 @@ def build_parser() -> argparse.ArgumentParser:
     remove.add_argument("--reassign-to")
     remove.add_argument("--home", default=str(Path.home()))
     remove.set_defaults(handler=cmd_remove)
+
+    sub.add_parser("consult").set_defaults(handler=cmd_consult)
 
     refresh = sub.add_parser("refresh")
     refresh.add_argument("--candidate", required=True)

@@ -28,5 +28,5 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y shellcheck
-          bash -n install/shared/8.4a-model-manager.sh
-          shellcheck install/shared/8.4a-model-manager.sh
+          bash -n install/shared/8.4a-model-manager.sh install/shared/8.4b-consult.sh
+          shellcheck install/shared/8.4a-model-manager.sh install/shared/8.4b-consult.sh

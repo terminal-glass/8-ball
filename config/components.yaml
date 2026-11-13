@@ -25,7 +25,7 @@ components:
     source_path: src/eight_ball/estimate/hardware.py
     status: maintained
     tested: repository-tests
-    notes: "Estimates are labeled estimated. Repository tests cover the estimator. Live hardware execution is untested in this change."
+    notes: "Machine placement uses config/hardware_scale.yaml levels 0-9. Older names in config/hardware_profiles.yaml are aliases. Estimates stay labeled estimated. Live hardware execution is untested in this change."
   - id: trial-installer
     display_name: Free trial installer
     role: installer

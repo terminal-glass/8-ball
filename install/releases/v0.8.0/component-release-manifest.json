@@ -590,6 +590,77 @@
       "hardware_execution": "untested",
       "repository_tests": "mock-api",
       "auto_installs_models": false
+    },
+    {
+      "id": "hardware-scale",
+      "version": "2026.08.01",
+      "platform": "any",
+      "role": "catalog",
+      "required": true,
+      "dependencies": [],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "config/hardware_scale.yaml"
+      },
+      "artifacts": [
+        {
+          "path": "config/hardware_scale.yaml",
+          "sha256": "1c2c395fafc82110237cc678f40d39c6ede7271ff05597e6871e099e3d55a20f"
+        }
+      ],
+      "sha256": "a7db7a90a2a53213079d28053b622c5d16eb89cae4994ee10ad36419e77c93ba",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": null,
+      "execution_order": [],
+      "experimental": false,
+      "letter_suffix": null,
+      "not_in_default_chain": true,
+      "hardware_execution": "not-applicable",
+      "repository_tests": "present",
+      "auto_installs_models": false
+    },
+    {
+      "id": "consultation",
+      "version": "0.8.0b",
+      "platform": "any",
+      "role": "manager",
+      "required": false,
+      "dependencies": [
+        "catalog",
+        "hardware-scale"
+      ],
+      "source": {
+        "repository": "terminal-glass/8-ball",
+        "path": "install/shared/8.4b-consult.sh"
+      },
+      "artifacts": [
+        {
+          "path": "install/shared/8.4b-consult.sh",
+          "sha256": "abf4488a16bd7843d70504bf0e6c46072c12b4eeda53b8503d11f934e0a0540e"
+        }
+      ],
+      "sha256": "0a9c7720d392ca7601af9b53b0b86aeadc90b1487ca4c79d6aa62b28c0a9bb19",
+      "signature": {
+        "status": "unsigned",
+        "algorithm": null,
+        "public_key_id": null,
+        "value": null
+      },
+      "entry_point": "install/shared/8.4b-consult.sh",
+      "execution_order": [
+        "install/shared/8.4b-consult.sh"
+      ],
+      "experimental": true,
+      "letter_suffix": "b",
+      "not_in_default_chain": true,
+      "hardware_execution": "untested",
+      "repository_tests": "mock-api",
+      "auto_installs_models": false
     }
   ],
   "entry_points": [

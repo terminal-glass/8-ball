@@ -1,0 +1,96 @@
+# Single machine scale for 8-BALL consultation.
+# Levels are 0 through 9. Installer stage numbers are a different sequence.
+schema: terminal-glass.8-ball.hardware-scale/1
+size_unit_policy: decimal
+canary:
+  tag: tinyllama:1.1b
+  min_ram_bytes: 2000000000
+  min_disk_bytes: 900000000
+  slow_tokens_per_second: 2
+levels:
+  - level: 0
+    display_name: Raspberry Pi class
+    min_ram_bytes: 0
+    max_ram_bytes: 4000000000
+    legacy_ids: []
+    min_tokens_per_second: null
+  - level: 1
+    display_name: Small board or low-memory PC
+    min_ram_bytes: 4000000000
+    max_ram_bytes: 8000000000
+    legacy_ids: []
+    min_tokens_per_second: null
+  - level: 2
+    display_name: Small computer
+    min_ram_bytes: 8000000000
+    max_ram_bytes: 12000000000
+    legacy_ids: [cpu-small]
+    min_tokens_per_second: 2
+  - level: 3
+    display_name: Everyday laptop
+    min_ram_bytes: 12000000000
+    max_ram_bytes: 16000000000
+    legacy_ids: []
+    min_tokens_per_second: 2
+  - level: 4
+    display_name: Standard desktop
+    min_ram_bytes: 16000000000
+    max_ram_bytes: 24000000000
+    legacy_ids: [desktop-standard, gpu-entry]
+    min_tokens_per_second: 2
+  - level: 5
+    display_name: Large desktop
+    min_ram_bytes: 24000000000
+    max_ram_bytes: 32000000000
+    legacy_ids: []
+    min_tokens_per_second: 2
+  - level: 6
+    display_name: Midrange workstation
+    min_ram_bytes: 32000000000
+    max_ram_bytes: 64000000000
+    legacy_ids: [gpu-midrange]
+    min_tokens_per_second: 2
+  - level: 7
+    display_name: High-memory workstation
+    min_ram_bytes: 64000000000
+    max_ram_bytes: 128000000000
+    legacy_ids: [server-high-mem, gpu-high-mem]
+    min_tokens_per_second: 2
+  - level: 8
+    display_name: Multi-GPU workstation
+    min_ram_bytes: 128000000000
+    max_ram_bytes: 256000000000
+    legacy_ids: [multi-gpu]
+    min_tokens_per_second: 2
+  - level: 9
+    display_name: Top of the line
+    min_ram_bytes: 256000000000
+    max_ram_bytes: null
+    legacy_ids: []
+    min_tokens_per_second: 2
+jets:
+  meaning: ollama-cloud-tags
+  options:
+    - id: llama
+      family_prefix: llama
+    - id: grok
+      family_prefix: grok
+  gap: >-
+    Catalog 2026.08.01 has no official Llama-family or Grok-family Ollama
+    cloud tag. A live Ollama cloud listing on 2026-11-13 also shows no
+    official library model in those families. Community forks are not offered.
+    Cloud tags that are present include deepseek-v4, gemma4, glm-5, gpt-oss,
+    kimi, minimax, mistral-large-3, nemotron-3, and qwen3.5.
+openclaw_consultation:
+  status: awaiting_jonathan_confirmation
+  runner: openclaw
+  uses: ollama-cloud
+  when_levels: [0, 1]
+  implemented: false
+jets_note: >-
+  The jets line means Ollama cloud models, the tags Ollama marks cloud.
+  It is not a separate product. The two built-in choices are a Llama-family
+  cloud tag and a Grok-family cloud tag when the catalog has them.
+  On level 0 or 1, when the canary is too small or too slow, OpenClaw may
+  run the consultation with an Ollama cloud model. That path is recorded
+  for Jonathan to confirm. The OpenClaw adapter is not called.

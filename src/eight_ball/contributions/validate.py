@@ -123,6 +123,7 @@ def validate_contribution_records(
 
     errors.extend(_capability_evidence_errors(normalized_dir))
     errors.extend(_alignment_errors())
+    errors.extend(_scale_errors())
     return errors
 
 
@@ -138,6 +139,19 @@ def _capability_evidence_errors(normalized_dir: Path) -> list[str]:
     meta_path = normalized_dir / "catalog-meta.json"
     if meta_path.exists() and registry.get("catalog_version") != load_json(meta_path).get("catalog_version"):
         errors.append("capability-evidence catalog_version does not match the canonical catalog")
+    return errors
+
+
+def _scale_errors() -> list[str]:
+    from eight_ball.scale import load_scale, render_scale, scale_errors
+
+    document = load_scale()
+    errors = [f"hardware-scale: {item}" for item in scale_errors(document)]
+    path = REPO_ROOT / "docs" / "hardware-scale.md"
+    if not path.exists():
+        return errors + ["docs/hardware-scale.md is missing. Generate it from config/hardware_scale.yaml."]
+    if not errors and path.read_text(encoding="utf-8") != render_scale(document):
+        errors.append("docs/hardware-scale.md drifted from config/hardware_scale.yaml.")
     return errors
 
 

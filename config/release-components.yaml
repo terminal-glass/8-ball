@@ -242,6 +242,37 @@ components:
     not_in_default_chain: true
     hardware_execution: untested
     repository_tests: mock-api
+  - id: hardware-scale
+    version: "2026.08.01"
+    platform: any
+    role: catalog
+    required: true
+    dependencies: []
+    paths:
+      - config/hardware_scale.yaml
+    entry_point: null
+    execution_order: []
+    experimental: false
+    letter_suffix: null
+    not_in_default_chain: true
+    hardware_execution: not-applicable
+    repository_tests: present
+  - id: consultation
+    version: "0.8.0b"
+    platform: any
+    role: manager
+    required: false
+    dependencies: [catalog, hardware-scale]
+    paths:
+      - install/shared/8.4b-consult.sh
+    entry_point: install/shared/8.4b-consult.sh
+    execution_order:
+      - install/shared/8.4b-consult.sh
+    experimental: true
+    letter_suffix: b
+    not_in_default_chain: true
+    hardware_execution: untested
+    repository_tests: mock-api
 
 entry_points:
   - consumer: funtech64/ycgpt-lightsail-installer#179

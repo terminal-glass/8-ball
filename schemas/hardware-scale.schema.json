@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/hardware-scale.schema.json",
+  "title": "HardwareScale",
+  "type": "object",
+  "required": ["schema", "size_unit_policy", "canary", "levels", "jets", "openclaw_consultation", "jets_note"],
+  "properties": {
+    "schema": { "const": "terminal-glass.8-ball.hardware-scale/1" },
+    "size_unit_policy": { "const": "decimal" },
+    "canary": {
+      "type": "object",
+      "required": ["tag", "min_ram_bytes", "min_disk_bytes", "slow_tokens_per_second"],
+      "properties": {
+        "tag": { "type": "string" },
+        "min_ram_bytes": { "type": "integer", "minimum": 0 },
+        "min_disk_bytes": { "type": "integer", "minimum": 0 },
+        "slow_tokens_per_second": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "levels": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "level",
+          "display_name",
+          "min_ram_bytes",
+          "max_ram_bytes",
+          "legacy_ids",
+          "min_tokens_per_second"
+        ],
+        "properties": {
+          "level": { "type": "integer", "minimum": 0, "maximum": 9 },
+          "display_name": { "type": "string" },
+          "min_ram_bytes": { "type": "integer", "minimum": 0 },
+          "max_ram_bytes": { "type": ["integer", "null"], "minimum": 0 },
+          "legacy_ids": { "type": "array", "items": { "type": "string" } },
+          "min_tokens_per_second": { "type": ["number", "null"], "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "jets": {
+      "type": "object",
+      "required": ["meaning", "options", "gap"],
+      "properties": {
+        "meaning": { "const": "ollama-cloud-tags" },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["id", "family_prefix"],
+            "properties": {
+              "id": { "type": "string" },
+              "family_prefix": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "gap": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "openclaw_consultation": {
+      "type": "object",
+      "required": ["status", "runner", "uses", "when_levels", "implemented"],
+      "properties": {
+        "status": { "const": "awaiting_jonathan_confirmation" },
+        "runner": { "const": "openclaw" },
+        "uses": { "const": "ollama-cloud" },
+        "when_levels": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "implemented": { "const": false }
+      },
+      "additionalProperties": false
+    },
+    "jets_note": { "type": "string" }
+  },
+  "additionalProperties": false
+}

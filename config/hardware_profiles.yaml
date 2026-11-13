@@ -1,49 +1,58 @@
+# Legacy names. The machine scale is config/hardware_scale.yaml levels 0-9.
+# scale_level is the alias. cloud-only is hosted access, not a machine level.
 profiles:
   - id: cpu-small
     display_name: Small CPU system
     system_ram_gb: 8
     vram_gb: 0
     cpu_only: true
-    notes: Laptop or small VM without discrete GPU
+    scale_level: 2
+    notes: Laptop or small VM without discrete GPU. Alias of hardware scale level 2.
   - id: desktop-standard
     display_name: Standard desktop or server
     system_ram_gb: 16
     vram_gb: 0
     cpu_only: true
-    notes: Typical developer workstation, CPU inference
+    scale_level: 4
+    notes: Typical developer workstation, CPU inference. Alias of hardware scale level 4.
   - id: server-high-mem
     display_name: High-memory CPU server
     system_ram_gb: 64
     vram_gb: 0
     cpu_only: true
-    notes: Large RAM server for bigger quantized models on CPU
+    scale_level: 7
+    notes: Large RAM server for bigger quantized models on CPU. Alias of hardware scale level 7.
   - id: gpu-entry
     display_name: Entry GPU
     system_ram_gb: 16
     vram_gb: 8
     cpu_only: false
-    notes: 8 GB VRAM class GPU
+    scale_level: 4
+    notes: 8 GB VRAM class GPU. Alias of hardware scale level 4.
   - id: gpu-midrange
     display_name: Midrange GPU
     system_ram_gb: 32
     vram_gb: 16
     cpu_only: false
-    notes: 16 GB VRAM class GPU
+    scale_level: 6
+    notes: 16 GB VRAM class GPU. Alias of hardware scale level 6.
   - id: gpu-high-mem
     display_name: High-memory GPU
     system_ram_gb: 64
     vram_gb: 24
     cpu_only: false
-    notes: 24 GB VRAM class GPU
+    scale_level: 7
+    notes: 24 GB VRAM class GPU. Alias of hardware scale level 7.
   - id: multi-gpu
     display_name: Multi-GPU
     system_ram_gb: 128
     vram_gb: 48
     cpu_only: false
-    notes: Multi-GPU or very large single-GPU workstation
+    scale_level: 8
+    notes: Multi-GPU or very large single-GPU workstation. Alias of hardware scale level 8.
   - id: cloud-only
     display_name: Cloud-only model access
     system_ram_gb: 8
     vram_gb: 0
     cpu_only: true
-    notes: Client device for cloud API access only
+    notes: Client device for cloud API access only. Not a machine level on the 0-9 scale.
