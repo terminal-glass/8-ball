@@ -57,12 +57,12 @@ def test_ram_placement_uses_measured_bytes():
     assert unknown["evidence"] == "unknown"
 
 
-def test_jets_are_official_cloud_tags_and_gaps_stay_gaps():
+def test_larger_level_drops_canary_and_jets_is_grok_cloud():
     catalog = _catalog(
         _tag("tinyllama:1.1b", "local"),
-        _tag("llama3.2:1b", "local", 1_300_000_000),
-        _tag("someone/llama:cloud", "cloud_only", None),
-        _tag("llama3.2:cloud", "cloud_only", None),
+        _tag("llama3.2:3b", "local", 2_000_000_000),
+        _tag("someone/grok:cloud", "cloud_only", None),
+        _tag("grok:cloud", "cloud_only", None),
     )
     offer = consult(
         catalog,
@@ -71,31 +71,42 @@ def test_jets_are_official_cloud_tags_and_gaps_stay_gaps():
         installed=set(),
     )
     by_id = {row["id"]: row for row in offer["options"]}
-    assert by_id["llama"]["offered"] is True
-    assert by_id["llama"]["tag"] == "llama3.2:cloud"
-    assert by_id["llama"]["local_download"] is False
-    assert by_id["llama"]["runtime"] == "ollama-cloud"
-    assert by_id["grok"]["offered"] is False
+    assert offer["level"] == 4
+    assert offer["canary"]["dropped"] is True
+    assert "canary" not in by_id
+    assert by_id["llama"]["tag"] == "llama3.2:3b"
+    assert by_id["llama"]["local_download"] is True
+    assert by_id["jets"]["offered"] is True
+    assert by_id["jets"]["tag"] == "grok:cloud"
+    assert by_id["jets"]["local_download"] is False
     assert offer["consultation"]["runner"] == "local"
     assert offer["install_performed"] is False
 
 
-def test_level_zero_canary_miss_offers_unconfirmed_openclaw_path():
+def test_level_zero_canary_too_large_uses_openclaw_when_capable():
     catalog = _catalog(_tag("tinyllama:1.1b", "local"))
     offer = consult(
         catalog,
         ram_bytes=1_000_000_000,
         disk_free_bytes=20_000_000_000,
         installed={"tinyllama:1.1b"},
+        openclaw_capable=True,
     )
     assert offer["level"] == 0
     assert offer["canary"]["fits"] is False
     assert offer["canary"]["ran"] is False
     assert offer["consultation"]["runner"] == "openclaw"
-    assert offer["consultation"]["status"] == "awaiting_jonathan_confirmation"
-    assert offer["consultation"]["uses"] == "ollama-cloud"
+    assert offer["consultation"]["status"] == "openclaw-capable"
     assert offer["consultation"]["invoked"] is False
     assert offer["consultation"]["implemented"] is False
+    unknown = consult(
+        catalog,
+        ram_bytes=1_000_000_000,
+        disk_free_bytes=20_000_000_000,
+        installed={"tinyllama:1.1b"},
+    )
+    assert unknown["consultation"]["status"] == "openclaw-capability-unknown"
+    assert unknown["consultation"]["invoked"] is False
 
 
 def test_slow_level_one_canary_is_measured_and_flags_openclaw():
@@ -111,15 +122,14 @@ def test_slow_level_one_canary_is_measured_and_flags_openclaw():
     assert offer["canary"]["ran"] is True
     assert offer["canary"]["evidence"] == "measured"
     assert offer["canary"]["tokens_per_second"] == 0.1
-    assert offer["consultation"]["runner"] == "openclaw"
-    assert offer["consultation"]["invoked"] is False
+    assert offer["consultation"]["runner"] == "local"
 
 
 def test_missing_eval_count_does_not_invent_speed():
     catalog = _catalog(_tag("tinyllama:1.1b", "local"))
     offer = consult(
         catalog,
-        ram_bytes=16_000_000_000,
+        ram_bytes=5_000_000_000,
         disk_free_bytes=20_000_000_000,
         installed={"tinyllama:1.1b"},
         measurement={"done": True},
@@ -127,22 +137,29 @@ def test_missing_eval_count_does_not_invent_speed():
     assert offer["canary"]["tokens_per_second"] is None
     assert offer["canary"]["ran"] is False
     assert "unmeasured" in offer["canary"]["reason"]
-    assert offer["level"] == 4
+    assert offer["level"] == 1
+    assert offer["consultation"]["runner"] == "local"
 
 
-def test_catalog_snapshot_has_no_official_llama_or_grok_cloud_tag():
+def test_catalog_snapshot_recommends_local_llama_and_records_grok_gap():
     tags = json.loads((NORMALIZED_DIR / "tags.json").read_text(encoding="utf-8"))
     offer = consult(
         {"tags": tags},
         ram_bytes=16_000_000_000,
         disk_free_bytes=80_000_000_000,
         installed=set(),
+        focus="code",
     )
     by_id = {row["id"]: row for row in offer["options"]}
-    assert by_id["llama"]["offered"] is False
-    assert by_id["grok"]["offered"] is False
-    assert by_id["llama"]["tag"] is None
-    assert "no official Llama-family or Grok-family" in by_id["llama"]["reason"]
+    assert offer["canary"]["dropped"] is True
+    assert by_id["llama"]["offered"] is True
+    assert by_id["llama"]["tag"] == "llama3.2:3b"
+    assert by_id["jets"]["offered"] is False
+    assert by_id["jets"]["tag"] is None
+    assert "no" in by_id["jets"]["reason"] and "Grok" in by_id["jets"]["reason"]
+    assert by_id["qwen"]["tentative"] is True
+    assert by_id["qwen"]["tag"] == "qwen2.5-coder:7b"
+    assert by_id["qwen"]["status"] == "tentative"
 
 
 def test_consultation_script_is_letter_suffixed():

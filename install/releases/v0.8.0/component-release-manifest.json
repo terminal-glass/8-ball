@@ -605,10 +605,10 @@
       "artifacts": [
         {
           "path": "config/hardware_scale.yaml",
-          "sha256": "1c2c395fafc82110237cc678f40d39c6ede7271ff05597e6871e099e3d55a20f"
+          "sha256": "b52ef883780695c075b1a59aa7452ce7b30cb4e61743cf5735ab8472135b0d93"
         }
       ],
-      "sha256": "a7db7a90a2a53213079d28053b622c5d16eb89cae4994ee10ad36419e77c93ba",
+      "sha256": "38498b9b7141a626e76d8f0f3d7c73cccad0e45d6663f746f963cfdd79604d55",
       "signature": {
         "status": "unsigned",
         "algorithm": null,

@@ -22,4 +22,4 @@ cloud-only is hosted access, not a row in this table.
 
 Canary tag: `tinyllama:1.1b`.
 
-The jets line means Ollama cloud models, the tags Ollama marks cloud. It is not a separate product. The two built-in choices are a Llama-family cloud tag and a Grok-family cloud tag when the catalog has them. On level 0 or 1, when the canary is too small or too slow, OpenClaw may run the consultation with an Ollama cloud model. That path is recorded for Jonathan to confirm. The OpenClaw adapter is not called.
+The jets model is Grok, offered only as an official Ollama cloud tag. Catalog 2026.08.01 and the 2026-11-13 Ollama cloud listing have no such tag. Levels 0 and 1 use the canary when it fits. If the canary is too large and OpenClaw is capable, OpenClaw gives the consultation. That adapter is planned and is not called. From level 2 upward the canary is dropped and a local Llama tag is recommended. A code or agentic focus adds a tentative Qwen recommendation.

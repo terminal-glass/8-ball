@@ -170,6 +170,8 @@ def cmd_consult(args: argparse.Namespace) -> int:
         installed=installed,
         measurement=measurement,
         measurement_error=measurement_error,
+        focus=None if args.focus == "general" else args.focus,
+        openclaw_capable={"yes": True, "no": False, "unknown": None}[args.openclaw_capable],
     )
     print(json.dumps(result, indent=2))
     return 0
@@ -232,7 +234,14 @@ def build_parser() -> argparse.ArgumentParser:
     remove.add_argument("--home", default=str(Path.home()))
     remove.set_defaults(handler=cmd_remove)
 
-    sub.add_parser("consult").set_defaults(handler=cmd_consult)
+    consult_parser = sub.add_parser("consult")
+    consult_parser.add_argument("--focus", choices=["general", "code"], default="general")
+    consult_parser.add_argument(
+        "--openclaw-capable",
+        choices=["yes", "no", "unknown"],
+        default="unknown",
+    )
+    consult_parser.set_defaults(handler=cmd_consult)
 
     refresh = sub.add_parser("refresh")
     refresh.add_argument("--candidate", required=True)

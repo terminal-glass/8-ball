@@ -25,12 +25,18 @@ These paths are on draft pull-request heads, not on installer main. Main has no 
 
 No 9-level hardware set was found. The 8-name set is `config/hardware_profiles.yaml`. The other customer scale is the 6-step M1–M6 list in the Mac and Windows drafts, repeated as empty M1–M6 keys in the Linux placeholder catalog.
 
-## Jets line
+## Jets model
 
-In this repository, 8-BALL JETS already means optional Ollama cloud use after sign-in (`install/ubuntu/8.2.sh` helper `8balljets`). Jonathan confirmed the jets line is Ollama's cloud model tags, not a separate product.
+Jonathan corrected the jets model: it is Grok, as an official Ollama cloud tag, not a separate product and not the whole cloud catalog.
 
-Catalog 2026.08.01 has no official Llama-family cloud tag and no Grok-family tag at all. A live Ollama cloud listing on 2026-11-13 (`https://ollama.com/search?c=cloud`) shows official cloud models such as deepseek-v4, glm-5, gemma4, kimi, minimax, mistral-large, nemotron, and qwen-class names. It does not show an official Llama cloud model or an official Grok cloud model. Community forks that mention those names are not offered.
+Catalog 2026.08.01 has no Grok family. A live Ollama cloud listing on 2026-11-13 (`https://ollama.com/search?c=cloud` and `https://ollama.com/search?q=grok`) shows no official Grok library model. Community forks are not offered. The consultation records that gap and does not invent a tag.
 
-## OpenClaw on level 0 or 1
+## Recommendations by level
 
-When the placed level is 0 or 1 and the canary does not fit or measures below 2 tokens per second, the consultation record sets `runner` to `openclaw` and `status` to `awaiting_jonathan_confirmation`. OpenClaw is not called. The OpenClaw adapter remains planned.
+Levels 0 and 1 use `tinyllama:1.1b` as the canary when measured memory and disk can hold it. From level 2 upward the canary is dropped. The database recommends a local Llama tag: `llama3.2:1b` at levels 2–3, `llama3.2:3b` at levels 4–5, and `llama3:8b` at levels 6–9. Those tags are in catalog 2026.08.01.
+
+A code or agentic focus adds Qwen. Jonathan wrote `qwen(?)`, so the recommendation is marked tentative: `qwen2.5-coder:1.5b` at levels 0–3 and `qwen2.5-coder:7b` at levels 4–9, both present as local tags.
+
+## OpenClaw on the lowest levels
+
+When the placed level is 0 or 1 and the canary is too large to run locally, OpenClaw gives the consultation if OpenClaw is capable on that machine. If capability was not measured, the record says so. The OpenClaw adapter remains planned and is not called. A slow canary that does fit stays a local measurement and does not hand the consultation to OpenClaw.

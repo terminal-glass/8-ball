@@ -1,4 +1,10 @@
-"""Consultation: measure a canary, then offer Llama and Grok for the machine level."""
+"""Consultation from the 0-9 scale.
+
+Levels 0 and 1 use the canary when it fits. If it is too large and OpenClaw
+is capable, OpenClaw gives the consultation. Larger levels drop the canary
+and recommend a local Llama tag. The jets model is an Ollama cloud Grok tag.
+A code or agentic focus adds a tentative Qwen recommendation.
+"""
 
 from __future__ import annotations
 
@@ -35,104 +41,63 @@ def consult(
     installed: set[str] | None = None,
     measurement: dict[str, Any] | None = None,
     measurement_error: str | None = None,
+    focus: str | None = None,
+    openclaw_capable: bool | None = None,
 ) -> dict[str, Any]:
-    """Build the customer offer. This does not install a model."""
+    """Build the customer offer. This does not install a model or call OpenClaw."""
     document = scale or load_scale()
     placed = place_by_ram(document, ram_bytes)
-    canary = document["canary"]
-    canary_tag = canary["tag"]
-    canary_record = _tag(catalog, canary_tag)
-    fits = _canary_fits(
-        canary_record,
+    level = placed["level"]
+    row = None if level is None else level_row(document, level)
+    use_canary = row is not None and row["local_model"] == "canary"
+    canary_result, speed = _canary_result(
+        document,
+        catalog,
+        use_canary=use_canary,
         ram_bytes=ram_bytes,
         disk_free_bytes=disk_free_bytes,
-        min_ram_bytes=canary["min_ram_bytes"],
-        min_disk_bytes=canary["min_disk_bytes"],
+        installed=installed,
+        measurement=measurement,
+        measurement_error=measurement_error,
     )
-    speed = None
-    canary_result = {
-        "tag": canary_tag,
-        "ran": False,
-        "fits": fits,
-        "tokens_per_second": None,
-        "evidence": "unknown",
-        "reason": "The canary was not run.",
-    }
-    level = placed["level"]
-    if not fits:
-        canary_result["reason"] = (
-            "The canary does not fit the measured memory or disk, so it was not run."
-        )
-        canary_result["evidence"] = "measured"
-        if level is not None and level > 0 and ram_bytes is not None and ram_bytes < canary["min_ram_bytes"]:
-            level = 0
-            placed = {
-                "level": 0,
-                "display_name": level_row(document, 0)["display_name"],
-                "evidence": "measured",
-                "reason": "Measured RAM is below the canary, so the machine is level 0.",
-            }
-    elif installed is not None and canary_tag not in installed:
-        canary_result["reason"] = (
-            "The canary fits and is not installed. It was not downloaded automatically."
-        )
-    elif measurement_error:
-        canary_result["reason"] = measurement_error
-    else:
-        speed = tokens_per_second(measurement)
-        if speed is None:
-            canary_result["reason"] = (
-                "The canary finished without an eval count, so speed stays unmeasured."
-            )
-        else:
-            canary_result["ran"] = True
-            canary_result["tokens_per_second"] = speed
-            canary_result["evidence"] = "measured"
-            threshold = None if level is None else level_row(document, level)["min_tokens_per_second"]
-            if threshold is not None and speed < threshold and level is not None and level > 0:
-                level -= 1
-                row = level_row(document, level)
-                placed = {
-                    "level": level,
-                    "display_name": row["display_name"],
-                    "evidence": "measured",
-                    "reason": (
-                        f"The canary measured {speed:.2f} tokens per second, "
-                        f"below {threshold}. The machine is level {level}."
-                    ),
-                }
-                canary_result["reason"] = placed["reason"]
-            else:
-                canary_result["reason"] = (
-                    f"The canary measured {speed:.2f} tokens per second."
-                )
-    options = _cloud_options(document, catalog)
-    too_small = not fits
-    slow_floor = canary["slow_tokens_per_second"]
-    too_slow = speed is not None and speed < slow_floor and placed["level"] in {0, 1}
-    low_level = placed["level"] in set(document["openclaw_consultation"]["when_levels"])
-    if low_level and (too_small or too_slow):
-        consultation = {
-            "runner": "openclaw",
-            "status": document["openclaw_consultation"]["status"],
-            "uses": "ollama-cloud",
-            "invoked": False,
-            "implemented": False,
+    if (
+        use_canary
+        and speed is not None
+        and level is not None
+        and row is not None
+        and row["min_tokens_per_second"] is not None
+        and speed < row["min_tokens_per_second"]
+        and level > 0
+    ):
+        level -= 1
+        dropped = level_row(document, level)
+        placed = {
+            "level": level,
+            "display_name": dropped["display_name"],
+            "evidence": "measured",
             "reason": (
-                "Level 0 or 1 and the canary is too small or too slow. "
-                "OpenClaw may run this consultation with an Ollama cloud model. "
-                "Jonathan has not confirmed this path, and OpenClaw is not called."
+                f"The canary measured {speed:.2f} tokens per second, "
+                f"below {row['min_tokens_per_second']}. The machine is level {level}."
             ),
         }
-    else:
-        consultation = {
-            "runner": "local",
-            "status": "local",
-            "uses": "local-canary",
-            "invoked": False,
-            "implemented": True,
-            "reason": "The consultation stays on this machine.",
-        }
+        canary_result["reason"] = placed["reason"]
+        row = dropped
+        use_canary = row["local_model"] == "canary"
+    options = _recommendations(
+        document,
+        catalog,
+        row=row,
+        use_canary=use_canary,
+        canary_fits=bool(canary_result["fits"]),
+        focus=focus,
+    )
+    consultation = _consultation_runner(
+        document,
+        level=placed["level"],
+        use_canary=use_canary,
+        canary_fits=bool(canary_result["fits"]),
+        openclaw_capable=openclaw_capable,
+    )
     return {
         "level": placed["level"],
         "display_name": placed["display_name"],
@@ -146,6 +111,70 @@ def consult(
         "install_performed": False,
         "auto_install": False,
     }
+
+
+def _canary_result(
+    document: dict[str, Any],
+    catalog: dict[str, Any],
+    *,
+    use_canary: bool,
+    ram_bytes: int | None,
+    disk_free_bytes: int | None,
+    installed: set[str] | None,
+    measurement: dict[str, Any] | None,
+    measurement_error: str | None,
+) -> tuple[dict[str, Any], float | None]:
+    canary = document["canary"]
+    canary_tag = canary["tag"]
+    if not use_canary:
+        return (
+            {
+                "tag": canary_tag,
+                "ran": False,
+                "fits": None,
+                "dropped": True,
+                "tokens_per_second": None,
+                "evidence": "not-used",
+                "reason": "This level drops the canary and recommends a Llama model.",
+            },
+            None,
+        )
+    record = _tag(catalog, canary_tag)
+    fits = _canary_fits(
+        record,
+        ram_bytes=ram_bytes,
+        disk_free_bytes=disk_free_bytes,
+        min_ram_bytes=canary["min_ram_bytes"],
+        min_disk_bytes=canary["min_disk_bytes"],
+    )
+    result = {
+        "tag": canary_tag,
+        "ran": False,
+        "fits": fits,
+        "dropped": False,
+        "tokens_per_second": None,
+        "evidence": "unknown",
+        "reason": "The canary was not run.",
+    }
+    if not fits:
+        result["reason"] = "The canary is too large for the measured memory or disk, so it was not run."
+        result["evidence"] = "measured"
+        return result, None
+    if installed is not None and canary_tag not in installed:
+        result["reason"] = "The canary fits and is not installed. It was not downloaded automatically."
+        return result, None
+    if measurement_error:
+        result["reason"] = measurement_error
+        return result, None
+    speed = tokens_per_second(measurement)
+    if speed is None:
+        result["reason"] = "The canary finished without an eval count, so speed stays unmeasured."
+        return result, None
+    result["ran"] = True
+    result["tokens_per_second"] = speed
+    result["evidence"] = "measured"
+    result["reason"] = f"The canary measured {speed:.2f} tokens per second."
+    return result, speed
 
 
 def _canary_fits(
@@ -166,38 +195,170 @@ def _canary_fits(
     return size is not None and disk_free_bytes >= int(size * 1.1)
 
 
-def _cloud_options(document: dict[str, Any], catalog: dict[str, Any]) -> list[dict[str, Any]]:
-    """Offer official Ollama cloud tags for the jets line. Missing families stay gaps."""
+def _recommendations(
+    document: dict[str, Any],
+    catalog: dict[str, Any],
+    *,
+    row: dict[str, Any] | None,
+    use_canary: bool,
+    canary_fits: bool,
+    focus: str | None,
+) -> list[dict[str, Any]]:
     options: list[dict[str, Any]] = []
-    for spec in document["jets"]["options"]:
-        matches = _official_cloud_tags(catalog, spec["family_prefix"])
-        if not matches:
-            options.append(
-                {
-                    "id": spec["id"],
-                    "family": spec["family_prefix"],
-                    "runtime": "ollama-cloud",
-                    "tag": None,
-                    "offered": False,
-                    "local_download": False,
-                    "reason": document["jets"]["gap"].strip(),
-                }
-            )
-            continue
-        chosen = matches[0]
+    if row is None:
+        return options
+    if use_canary and canary_fits:
         options.append(
             {
-                "id": spec["id"],
-                "family": spec["family_prefix"],
-                "runtime": "ollama-cloud",
-                "tag": chosen["ollama_identifier"],
+                "id": "canary",
+                "runtime": "ollama",
+                "tag": document["canary"]["tag"],
                 "offered": True,
-                "local_download": False,
-                "availability": chosen.get("availability"),
-                "reason": "Official Ollama cloud tag from the validated catalog. Not a local download.",
+                "local_download": True,
+                "tentative": False,
+                "reason": "The canary fits this low level and is the local model for the consultation.",
             }
         )
+    elif not use_canary:
+        llama_tag = row.get("llama_tag")
+        record = _tag(catalog, llama_tag) if llama_tag else None
+        if record is None:
+            options.append(
+                {
+                    "id": "llama",
+                    "runtime": "ollama",
+                    "tag": llama_tag,
+                    "offered": False,
+                    "local_download": False,
+                    "tentative": False,
+                    "reason": "The Llama tag for this level is not in the validated catalog.",
+                }
+            )
+        else:
+            options.append(
+                {
+                    "id": "llama",
+                    "runtime": "ollama",
+                    "tag": llama_tag,
+                    "offered": True,
+                    "local_download": record.get("availability") in {"local", "both"},
+                    "tentative": False,
+                    "reason": "This level drops the canary and recommends this local Llama tag.",
+                }
+            )
+    jets = document["jets"]
+    matches = _official_cloud_tags(catalog, jets["family_prefix"])
+    if matches:
+        options.append(
+            {
+                "id": "jets",
+                "family": "grok",
+                "runtime": "ollama-cloud",
+                "tag": matches[0]["ollama_identifier"],
+                "offered": True,
+                "local_download": False,
+                "tentative": False,
+                "reason": "Jets is this official Ollama cloud Grok tag. It is not a local download.",
+            }
+        )
+    else:
+        options.append(
+            {
+                "id": "jets",
+                "family": "grok",
+                "runtime": "ollama-cloud",
+                "tag": None,
+                "offered": False,
+                "local_download": False,
+                "tentative": False,
+                "reason": jets["gap"].strip(),
+            }
+        )
+    if focus == "code":
+        options.append(_qwen_option(document, catalog, row["level"]))
     return options
+
+
+def _qwen_option(document: dict[str, Any], catalog: dict[str, Any], level: int) -> dict[str, Any]:
+    code_focus = document["code_focus"]
+    tag = None
+    for band in code_focus["bands"]:
+        if band["from_level"] <= level <= band["to_level"]:
+            tag = band["tag"]
+            break
+    record = _tag(catalog, tag) if tag else None
+    if record is None:
+        reason = code_focus["note"].strip() + " The tentative tag is not in the validated catalog."
+        offered = False
+    else:
+        reason = code_focus["note"].strip()
+        offered = True
+    return {
+        "id": "qwen",
+        "family": "qwen",
+        "runtime": "ollama",
+        "tag": None if record is None else tag,
+        "offered": offered,
+        "local_download": bool(record and record.get("availability") in {"local", "both"}),
+        "tentative": True,
+        "status": "tentative",
+        "reason": reason,
+    }
+
+
+def _consultation_runner(
+    document: dict[str, Any],
+    *,
+    level: int | None,
+    use_canary: bool,
+    canary_fits: bool,
+    openclaw_capable: bool | None,
+) -> dict[str, Any]:
+    policy = document["openclaw_consultation"]
+    canary_too_large = use_canary and not canary_fits and level in set(policy["levels"])
+    if not canary_too_large:
+        return {
+            "runner": "local",
+            "status": "local",
+            "invoked": False,
+            "implemented": True,
+            "openclaw_capable": openclaw_capable,
+            "reason": "The consultation stays on this machine.",
+        }
+    if openclaw_capable is True:
+        return {
+            "runner": "openclaw",
+            "status": "openclaw-capable",
+            "invoked": False,
+            "implemented": False,
+            "adapter_status": "planned",
+            "openclaw_capable": True,
+            "reason": (
+                "The canary is too large for this low level and OpenClaw is capable, "
+                "so OpenClaw gives the consultation. The adapter is planned and was not called."
+            ),
+        }
+    if openclaw_capable is False:
+        return {
+            "runner": "none",
+            "status": "openclaw-not-capable",
+            "invoked": False,
+            "implemented": False,
+            "openclaw_capable": False,
+            "reason": "The canary is too large and OpenClaw is not capable on this machine.",
+        }
+    return {
+        "runner": "openclaw",
+        "status": "openclaw-capability-unknown",
+        "invoked": False,
+        "implemented": False,
+        "adapter_status": "planned",
+        "openclaw_capable": None,
+        "reason": (
+            "The canary is too large for this low level. OpenClaw gives the consultation "
+            "when it is capable. Capability was not measured, and the adapter was not called."
+        ),
+    }
 
 
 def _official_cloud_tags(catalog: dict[str, Any], family_prefix: str) -> list[dict[str, Any]]:
