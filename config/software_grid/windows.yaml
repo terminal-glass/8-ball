@@ -70,9 +70,8 @@ defaults:
     tailscale: only through proper app and chat interfaces (authenticated front door); no raw port exposure
     ollama_11434: loopback by default, LAN opt-in, never Tailscale or the internet
   windows_ram_floor_gb: 4
-stage3_variants:
-  # Installer stage 3 variants on Windows. Stage numbers are never renumbered;
-  # the Windows scripts are PowerShell equivalents of the Linux 3*.sh scripts.
+stage3_policy:
+  # Windows stage 3 decisions. Kept out of stage3_variants, which is keyed only by variant id.
   answered: >-
     Jonathan (2026-11-13): Windows keeps Open WebUI as the default, and a
     low-RAM 3-ram1 option must exist. stage3_variant is the default per
@@ -86,6 +85,9 @@ stage3_variants:
     linux: >-
       For comparison, Linux drops Open WebUI at levels 0-2 (lite plan) and
       uses the OpenClaw chat there; see linux.yaml.
+stage3_variants:
+  # Installer stage 3 variants on Windows. Stage numbers are never renumbered;
+  # the Windows scripts are PowerShell equivalents of the Linux 3*.sh scripts.
   '3':
     linux_script: 3.sh
     windows_script: 3.ps1
