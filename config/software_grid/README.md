@@ -69,7 +69,7 @@ Every entry in `levels` has these **13 required keys**, plus the new required
 | `stage3_variant` | yes (new) | string, quoted | Default installer stage 3 variant at this level: `'3'`, `'3-ram1'` or `'3-ram2'` (see below). |
 | `consultation` | yes | string or map | Who gives the 8-BALL install consultation at this level (canary, local Llama, OpenClaw, or jets) and the fallback. |
 | `local_models` | yes | map or `[]` | Exact Ollama tags: `canary`, `llama`, `qwen` (code/agentic focus, tentative), plus any tuning (`num_ctx`, Ollama env). |
-| `cloud_option` | yes | string or map | The hosted option. Today: `jet-llama`, a Llama on Meta's service that the customer signs into with their own API key (endpoint and model id are still TODO in `hardware_scale.yaml`). |
+| `cloud_option` | yes | string or map | The hosted option. Level 0 (and Linux level 1): Muse Spark (e.g. `meta/muse-spark-1.3`) through the `@openclaw/meta-provider` plugin, with the customer's own Meta API key (owner decision; Llama is too big for that tier). Higher levels: `jet-llama`, a hosted Llama on Meta's service with the same customer key (endpoint and model id are still TODO in `hardware_scale.yaml`). The key lives only in the installing user's home, file 600 in a 700 folder. |
 | `scheduler` | yes | map | Scheduler engine and how it is verified. **Linux: cron. Mac: launchd. Windows: Task Scheduler.** |
 | `services` | yes | map | Services and apps installed at this level, and how (native, Docker, snap). |
 | `docker` | yes | bool | Whether Docker is installed by default at this level. |

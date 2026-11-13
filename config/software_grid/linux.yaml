@@ -17,6 +17,13 @@
 # - WeKan stays in the core stack at every level. It is never replaced by
 #   Any.do or any other outside service.
 # - 2 GB machines are supported.
+# Owner decisions applied (2026-11-13, second set):
+# - The level-0 hosted consultation model is Muse Spark (e.g.
+#   meta/muse-spark-1.3) through the @openclaw/meta-provider plugin. Llama is
+#   too big for that tier. The customer supplies their own Meta key: one clear
+#   prompt at install, plus an 'add your key later' path when they skip it.
+#   The key is stored only in the installing user's home (file 600, dir 700).
+# - zram/swap at level 0 is configurable and not mandatory (off by default).
 schema: terminal-glass.8-ball.software-grid/1
 os: linux
 owner: leonardo
@@ -76,7 +83,7 @@ levels:
     stage3_options: ['3-ram1']
     consultation:
       runner: openclaw
-      model: jet-llama (hosted, customer's own Meta key)
+      model: Muse Spark (meta/muse-spark-1.3) via @openclaw/meta-provider, customer's own Meta key
       local_canary: >-
         tinyllama:1.1b only when the machine has >= 2 GB RAM and the canary
         measures >= 2 tok/s on it; otherwise OpenClaw consults on the hosted
@@ -94,7 +101,7 @@ levels:
       qwen: null
       ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 2m}
       num_ctx: 2048          # tinyllama's trained context; Ollama clamps it to 2048 anyway
-    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD, key: customer's own Meta API key}
+    cloud_option: {primary: muse-spark, provider: meta, endpoint: '@openclaw/meta-provider (OpenClaw Meta provider plugin)', model_id: meta/muse-spark-1.3, key: "customer's own Meta API key; one prompt at install, add-later path if skipped; ~/.config/8-ball/meta-api-key (file 600, dir 700)"}
     scheduler:
       engine: cron
       verified_by: benchmarks/level0/cron_test.sh (every-minute probe for 10 minutes under model load)
@@ -105,7 +112,7 @@ levels:
       wekan: {installed: true, how: native snap, status: core; RAM not yet measured at level 0}
       silverbullet: {installed: true, how: native binary}
       ollama: {installed: true, how: native systemd, bind: 127.0.0.1:11434, only_if: RAM >= 2 GB, models: [tinyllama:1.1b]}
-      swap: {installed: true, how: zram or 2 GB swapfile}
+      swap: {installed: optional, how: zram or 2 GB swapfile, default: 'off', enable: installer flag or prompt; not mandatory (owner decision)}
       tailscale: {installed: optional, use: remote access via Serve to the same nginx front door}
       mcp: remote connectors only (no local MCP processes)
     docker: false
@@ -119,7 +126,8 @@ levels:
       open_questions:
         - Whether WeKan fits next to OpenClaw and the canary on 2 GB (unmeasured). The OpenClaw 2026.11.3 gateway alone measured 1224 MB idle / 1603 MB peak on a 2 GB VM.
         - arm64 numbers pending (emulated 2 GB arm64 VM).
-        - Swap or zram looks mandatory at 2 GB with OpenClaw (measured 464 MB available with the gateway idle).
+        - Swap or zram is optional and off by default (owner decision). Measured 464 MB available with the OpenClaw gateway idle on 2 GB, so turning it on is recommended when WeKan runs too.
+        - The exact Muse Spark model id may change; meta/muse-spark-1.3 is the current example.
     dropped: [Kiwix Planet Library, DokuWiki, Mailpit, local stdio MCP servers, canary loaded by default, qwen2.5-coder:1.5b]
     measured: benchmarks/level0/RESULTS.md
 
@@ -132,14 +140,14 @@ levels:
     consultation:
       runner: 8-ball canary
       model: tinyllama:1.1b
-      fallback: OpenClaw on jet-llama when the canary is too large or too slow
+      fallback: OpenClaw on Muse Spark (meta/muse-spark-1.3, @openclaw/meta-provider) when the canary is too large or too slow
     local_models:
       canary: tinyllama:1.1b
       llama: null
       qwen: qwen2.5-coder:1.5b   # code/agentic focus, tentative
       ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 5m}
       num_ctx: 4096
-    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    cloud_option: {primary: muse-spark, provider: meta, endpoint: '@openclaw/meta-provider (OpenClaw Meta provider plugin)', model_id: meta/muse-spark-1.3, key: customer's own Meta API key (same file as level 0)}
     scheduler: {engine: cron, verified_by: stage 50 check (cron active, probe entry fires) - not yet measured}
     services:
       nginx: {installed: true, bind: LAN}
@@ -173,7 +181,7 @@ levels:
       qwen: qwen2.5-coder:1.5b   # tentative
       ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 5m}
       num_ctx: 4096
-    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}   # until a hosted Llama id is set, OpenClaw falls back to Muse Spark (meta/muse-spark-1.3) with the same customer key
     scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
     services:
       nginx: {installed: true, bind: LAN}
