@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/hardware-scale.schema.json",
+  "title": "HardwareScale",
+  "type": "object",
+  "required": ["schema", "size_unit_policy", "canary", "levels", "jets", "code_focus", "openclaw_consultation", "jets_note"],
+  "properties": {
+    "schema": { "const": "terminal-glass.8-ball.hardware-scale/1" },
+    "size_unit_policy": { "const": "decimal" },
+    "canary": {
+      "type": "object",
+      "required": ["tag", "min_ram_bytes", "min_disk_bytes", "slow_tokens_per_second"],
+      "properties": {
+        "tag": { "type": "string" },
+        "min_ram_bytes": { "type": "integer", "minimum": 0 },
+        "min_disk_bytes": { "type": "integer", "minimum": 0 },
+        "slow_tokens_per_second": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "levels": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "level",
+          "display_name",
+          "min_ram_bytes",
+          "max_ram_bytes",
+          "legacy_ids",
+          "min_tokens_per_second",
+          "local_model",
+          "llama_tag"
+        ],
+        "properties": {
+          "level": { "type": "integer", "minimum": 0, "maximum": 9 },
+          "display_name": { "type": "string" },
+          "min_ram_bytes": { "type": "integer", "minimum": 0 },
+          "max_ram_bytes": { "type": ["integer", "null"], "minimum": 0 },
+          "legacy_ids": { "type": "array", "items": { "type": "string" } },
+          "min_tokens_per_second": { "type": ["number", "null"], "minimum": 0 },
+          "local_model": { "enum": ["canary", "llama"] },
+          "llama_tag": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "jets": {
+      "type": "object",
+      "required": [
+        "id",
+        "provider",
+        "runtime",
+        "local_download",
+        "aim",
+        "model_id",
+        "endpoint",
+        "signup_url",
+        "credential_relative_path",
+        "docs_checked",
+        "todos",
+        "prompt"
+      ],
+      "properties": {
+        "id": { "const": "jet-llama" },
+        "provider": { "const": "meta" },
+        "runtime": { "const": "meta-hosted" },
+        "local_download": { "const": false },
+        "aim": { "type": "string" },
+        "model_id": { "type": "null" },
+        "endpoint": { "type": "null" },
+        "signup_url": { "type": "null" },
+        "credential_relative_path": { "type": "string" },
+        "docs_checked": { "type": "string" },
+        "todos": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["endpoint", "model_id", "signup_url"] }
+        },
+        "prompt": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "code_focus": {
+      "type": "object",
+      "required": ["status", "family_prefix", "note", "bands"],
+      "properties": {
+        "status": { "const": "tentative" },
+        "family_prefix": { "const": "qwen" },
+        "note": { "type": "string" },
+        "bands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from_level", "to_level", "tag"],
+            "properties": {
+              "from_level": { "type": "integer" },
+              "to_level": { "type": "integer" },
+              "tag": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "openclaw_consultation": {
+      "type": "object",
+      "required": ["runner", "levels", "when", "requires_capable", "implemented", "adapter_status"],
+      "properties": {
+        "runner": { "const": "openclaw" },
+        "levels": { "type": "array", "items": { "type": "integer" } },
+        "when": { "const": "canary_too_large" },
+        "requires_capable": { "const": true },
+        "implemented": { "const": false },
+        "adapter_status": { "const": "planned" }
+      },
+      "additionalProperties": false
+    },
+    "jets_note": { "type": "string" }
+  },
+  "additionalProperties": false
+}

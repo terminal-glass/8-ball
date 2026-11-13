@@ -7,6 +7,7 @@ from pathlib import Path
 
 from eight_ball.manager.argv import ArgvRejected
 from eight_ball.manager.catalog_view import browse, load_catalog
+from eight_ball.manager.consult import consult, jets_prompt, store_meta_api_key
 from eight_ball.manager.hardware import detect_hardware
 from eight_ball.manager.lifecycle import (
     list_state,
@@ -18,6 +19,7 @@ from eight_ball.manager.lifecycle import (
 from eight_ball.manager.ollama_http import OllamaClient
 from eight_ball.manager.refresh import adopt_snapshot
 from eight_ball.manager.release import verify_manifest, write_manifest
+from eight_ball.manager.secrets import assert_user_home
 from eight_ball.paths import REPO_ROOT
 
 
@@ -138,6 +140,70 @@ def cmd_remove(args: argparse.Namespace) -> int:
     return 0 if result.get("ok") else 1
 
 
+def _read_meta_key(home: Path) -> bool:
+    """Ask for the Meta API key on a terminal. Never take it from argv."""
+    print(jets_prompt(), file=sys.stderr)
+    if not sys.stdin.isatty():
+        print("No terminal is attached, so no API key was read.", file=sys.stderr)
+        return False
+    import getpass
+
+    secret = getpass.getpass("Meta API key: ")
+    if not secret.strip():
+        print("No API key was stored.", file=sys.stderr)
+        return False
+    store_meta_api_key(home, secret.encode())
+    return True
+
+
+def cmd_consult(args: argparse.Namespace) -> int:
+    try:
+        home = assert_user_home(Path(args.home))
+    except PermissionError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+    stored = _read_meta_key(home)
+    hardware = detect_hardware()
+    catalog = _catalog(args.catalog)
+    try:
+        from eight_ball.manager.ollama_http import OllamaClient, OllamaError
+
+        client = OllamaClient(args.ollama, timeout=5)
+        installed = {model.get("name") or model.get("model") for model in client.list_models()}
+        installed.discard(None)
+        measurement = None
+        measurement_error = None
+        from eight_ball.scale import load_scale
+
+        canary_tag = load_scale()["canary"]["tag"]
+        if canary_tag in installed:
+            try:
+                measurement = client.generate(canary_tag, "Say ok.")
+            except OllamaError as exc:
+                measurement_error = str(exc)
+    except OllamaError as exc:
+        installed = set()
+        measurement = None
+        measurement_error = str(exc)
+    result = consult(
+        catalog,
+        ram_bytes=hardware.get("ram_bytes"),
+        disk_free_bytes=hardware.get("disk_free_bytes"),
+        vram_bytes=hardware.get("vram_bytes"),
+        installed=installed,
+        measurement=measurement,
+        measurement_error=measurement_error,
+        focus=None if args.focus == "general" else args.focus,
+        openclaw_capable={"yes": True, "no": False, "unknown": None}[args.openclaw_capable],
+        home=home,
+    )
+    if stored:
+        result["credential_stored"] = True
+        result["credential_present"] = True
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def cmd_refresh(args: argparse.Namespace) -> int:
     metadata = {
         "source_repository": args.source_repository,
@@ -195,6 +261,16 @@ def build_parser() -> argparse.ArgumentParser:
     remove.add_argument("--home", default=str(Path.home()))
     remove.set_defaults(handler=cmd_remove)
 
+    consult_parser = sub.add_parser("consult")
+    consult_parser.add_argument("--focus", choices=["general", "code"], default="general")
+    consult_parser.add_argument("--home", default=str(Path.home()))
+    consult_parser.add_argument(
+        "--openclaw-capable",
+        choices=["yes", "no", "unknown"],
+        default="unknown",
+    )
+    consult_parser.set_defaults(handler=cmd_consult)
+
     refresh = sub.add_parser("refresh")
     refresh.add_argument("--candidate", required=True)
     refresh.add_argument("--store", required=True)
@@ -209,7 +285,15 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
-    args = parser.parse_args(argv)
+    args, unknown = parser.parse_known_args(argv)
+    if unknown:
+        if getattr(args, "command", None) == "consult":
+            print(
+                "Unrecognized arguments. The Meta API key is not accepted on the command line.",
+                file=sys.stderr,
+            )
+            return 2
+        parser.error("unrecognized arguments: " + " ".join(unknown))
     return args.handler(args)
 
 

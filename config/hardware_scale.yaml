@@ -1,0 +1,141 @@
+# Single machine scale for 8-BALL consultation.
+# Levels are 0 through 9. Installer stage numbers are a different sequence.
+schema: terminal-glass.8-ball.hardware-scale/1
+size_unit_policy: decimal
+canary:
+  tag: tinyllama:1.1b
+  min_ram_bytes: 2000000000
+  min_disk_bytes: 900000000
+  slow_tokens_per_second: 2
+levels:
+  - level: 0
+    display_name: Raspberry Pi class
+    min_ram_bytes: 0
+    max_ram_bytes: 4000000000
+    legacy_ids: []
+    min_tokens_per_second: null
+    local_model: canary
+    llama_tag: null
+  - level: 1
+    display_name: Small board or low-memory PC
+    min_ram_bytes: 4000000000
+    max_ram_bytes: 8000000000
+    legacy_ids: []
+    min_tokens_per_second: null
+    local_model: canary
+    llama_tag: null
+  - level: 2
+    display_name: Small computer
+    min_ram_bytes: 8000000000
+    max_ram_bytes: 12000000000
+    legacy_ids: [cpu-small]
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3.2:1b
+  - level: 3
+    display_name: Everyday laptop
+    min_ram_bytes: 12000000000
+    max_ram_bytes: 16000000000
+    legacy_ids: []
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3.2:1b
+  - level: 4
+    display_name: Standard desktop
+    min_ram_bytes: 16000000000
+    max_ram_bytes: 24000000000
+    legacy_ids: [desktop-standard, gpu-entry]
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3.2:3b
+  - level: 5
+    display_name: Large desktop
+    min_ram_bytes: 24000000000
+    max_ram_bytes: 32000000000
+    legacy_ids: []
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3.2:3b
+  - level: 6
+    display_name: Midrange workstation
+    min_ram_bytes: 32000000000
+    max_ram_bytes: 64000000000
+    legacy_ids: [gpu-midrange]
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3:8b
+  - level: 7
+    display_name: High-memory workstation
+    min_ram_bytes: 64000000000
+    max_ram_bytes: 128000000000
+    legacy_ids: [server-high-mem, gpu-high-mem]
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3:8b
+  - level: 8
+    display_name: Multi-GPU workstation
+    min_ram_bytes: 128000000000
+    max_ram_bytes: 256000000000
+    legacy_ids: [multi-gpu]
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3:8b
+  - level: 9
+    display_name: Top of the line
+    min_ram_bytes: 256000000000
+    max_ram_bytes: null
+    legacy_ids: []
+    min_tokens_per_second: 2
+    local_model: llama
+    llama_tag: llama3:8b
+jets:
+  id: jet-llama
+  provider: meta
+  runtime: meta-hosted
+  local_download: false
+  aim: Alignment with Meta for future business development.
+  model_id: null
+  endpoint: null
+  signup_url: null
+  credential_relative_path: .config/8-ball/meta-api-key
+  docs_checked: https://llama.developer.meta.com/docs/
+  todos:
+    - endpoint
+    - model_id
+    - signup_url
+  prompt: >-
+    Jets is a hosted Llama on Meta's service, so 8-BALL stays aligned with
+    Meta. Sign in or create your Meta account, then enter the API key.
+    The key is stored only in your home folder.
+code_focus:
+  status: tentative
+  family_prefix: qwen
+  note: >-
+    Jonathan wrote qwen(?). A code or agentic focus adds this tentative
+    recommendation. It is not a confirmed default.
+  bands:
+    - from_level: 0
+      to_level: 3
+      tag: qwen2.5-coder:1.5b
+    - from_level: 4
+      to_level: 9
+      tag: qwen2.5-coder:7b
+openclaw_consultation:
+  runner: openclaw
+  levels: [0, 1]
+  when: canary_too_large
+  requires_capable: true
+  implemented: false
+  adapter_status: planned
+jets_note: >-
+  The jets slot is a hosted Llama on Meta's service, for alignment with
+  Meta. It is not run locally. Meta's public Model API docs were checked
+  on 2026-11-13 at https://llama.developer.meta.com/docs/ and describe
+  Muse model ids, not a Llama model id or a stable sign-up URL. The
+  endpoint, model id, and sign-up URL stay TODO for Jonathan. The customer
+  signs in with Meta and the API key is stored only in the installing
+  user's home. Levels 0 and 1 use the canary when it fits. If the canary
+  is too large and OpenClaw is capable, OpenClaw gives the consultation.
+  That adapter is planned and is not called. From level 2 upward the
+  canary is dropped and a local Llama tag is recommended. A code or
+  agentic focus adds a tentative Qwen recommendation.

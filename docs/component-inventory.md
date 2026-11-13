@@ -30,7 +30,7 @@ Planned and untested parts are labeled that way.
 
 - **Model catalog** (`catalog`): Canonical public catalog 2026.08.01 in data/normalized/. Single source of truth. Metadata only. Decimal SI bytes.
   License text: Not chosen. Jonathan must choose a license. This placeholder grants nothing.
-- **Hardware estimator** (`hardware-estimator`): Estimates are labeled estimated. Repository tests cover the estimator. Live hardware execution is untested in this change.
+- **Hardware estimator** (`hardware-estimator`): Machine placement uses config/hardware_scale.yaml levels 0-9. Older names in config/hardware_profiles.yaml are aliases. Estimates stay labeled estimated. Live hardware execution is untested in this change.
   License text: Not chosen. Jonathan must choose a license. This placeholder grants nothing.
 - **Free trial installer** (`trial-installer`): Chain is trial-install.sh then 8.1.sh then 8.2.sh then 8.3.sh. No paid license. Lane conformance tests exist. Live installs on macOS, Windows, Lightsail, and DigitalOcean are untested in this change.
   License text: Not chosen. Jonathan must choose a license. This placeholder grants nothing.

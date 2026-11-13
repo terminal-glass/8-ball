@@ -70,6 +70,13 @@ class OllamaClient:
             raise OllamaError(f"Ollama pull failed: {exc.reason}") from exc
         return events
 
+    def generate(self, tag: str, prompt: str) -> dict[str, Any]:
+        return self._json(
+            "POST",
+            "/api/generate",
+            {"model": tag, "prompt": prompt, "stream": False},
+        )
+
     def chat(self, tag: str, prompt: str) -> str:
         payload = self._json(
             "POST",
