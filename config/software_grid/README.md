@@ -29,8 +29,8 @@ Owner decisions that apply to every file:
 - Chats are **LAN-only by default**. Remote access goes through Tailscale and
   must still get the proper app and chat interfaces (not a reduced view).
   Record it under `services` and `notes`.
-- **WeKan stays in the core stack.** It is never replaced by Any.do, which is
-  an outside service. Any.do may be offered as an extra connector only.
+- **WeKan is the core task board.** It is never replaced by Any.do, an
+  outside service.
 - Nextcloud is installed only at levels 7-9.
 - 2 GB machines are supported.
 
