@@ -83,7 +83,19 @@ def test_mac_grid_models_follow_the_scale():
         else:
             assert models["llama"] == level["llama_tag"], row["level"]
         assert row["cloud_option"]["grok"] is False
-        assert row["cloud_option"]["primary"].startswith("jet-llama")
+
+
+def test_mac_grid_hosted_model_matches_the_linux_column():
+    for row in _levels():
+        cloud = row["cloud_option"]
+        assert cloud["provider"] == "meta"
+        assert cloud["grok"] is False
+        if row["level"] <= 1:
+            assert cloud["primary"] == "muse-spark", row["level"]
+            assert cloud["model_id"] == "meta/muse-spark-1.3"
+            assert "@openclaw/meta-provider" in cloud["endpoint"]
+        else:
+            assert cloud["primary"] == "jet-llama", row["level"]
 
 
 def test_mac_grid_stage3_variant_and_options():
@@ -143,11 +155,11 @@ def test_mac_grid_has_no_root_homebrew_private_names_or_root_paths():
 def test_mac_level_zero_mirrors_the_linux_consultation_stack():
     row = _levels()[0]
     assert row["consultation"]["runner"] == "openclaw"
-    assert row["consultation"]["model"].startswith("jet-llama")
+    assert row["consultation"]["model"].startswith("Muse Spark")
     assert "before OpenClaw starts" in row["consultation"]["rule"]
     assert row["local_models"]["canary"] == load_scale()["canary"]["tag"]
     assert row["local_models"]["llama"] is None
-    assert row["cloud_option"]["primary"] == "jet-llama"
+    assert row["services"]["swap"]["default"] == "off"
     assert row["docker"] is False
     assert _owui_installed(row) is False
     assert "linux.yaml level 0" in row["notes"]["mirrors"]

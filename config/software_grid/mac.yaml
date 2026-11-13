@@ -22,6 +22,11 @@
 #   They are never published on Tailscale Serve/Funnel or the internet.
 # - Tailscale is an option, never the default chat exposure. Remote chat over
 #   Tailscale needs proper app and chat interfaces first.
+# - Hosted model: levels 0-1 use Muse Spark (meta/muse-spark-1.3) through the
+#   @openclaw/meta-provider plugin, as in linux.yaml. Levels 2-9 keep the
+#   jet-llama slot (endpoint and model id TBD). Either way the customer
+#   supplies their own Meta key: one prompt at install, plus an add-later
+#   path, stored only at ~/.config/8-ball/meta-api-key (file 600, dir 700).
 # - Generated credentials live only in the installing user's home (folders
 #   0700, files 0600), never /root and never in the repo.
 # - WeKan is the core task board wherever a task board exists. Outside
@@ -99,7 +104,7 @@ levels:
   - 3-ram1
   consultation:
     runner: openclaw
-    model: jet-llama (hosted, customer's own Meta key)
+    model: Muse Spark (meta/muse-spark-1.3) via @openclaw/meta-provider, customer's own Meta key
     local_canary: tinyllama:1.1b only when the machine has >= 2 GB RAM and the canary measures >= 2 tok/s on it;
       otherwise OpenClaw consults on the hosted model alone.
     rule: 'OpenClaw gives the consultation on the hosted model. The canary is a probe of the machine, not the consultant,
@@ -117,12 +122,12 @@ levels:
       OLLAMA_KEEP_ALIVE: 2m
     num_ctx: 2048
   cloud_option:
-    primary: jet-llama
+    primary: muse-spark
     provider: meta
-    endpoint: TBD
-    model_id: TBD
-    key: customer's own Meta API key
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: '@openclaw/meta-provider (OpenClaw Meta provider plugin)'
+    model_id: meta/muse-spark-1.3
+    key: customer's own Meta API key; one prompt at install, add-later path if skipped; ~/.config/8-ball/meta-api-key
+      (file 600, dir 700)
     grok: false
   scheduler:
     engine: launchd
@@ -164,8 +169,12 @@ levels:
       models:
       - tinyllama:1.1b
     swap:
-      installed: built in
-      how: macOS dynamic swap files and memory compression; no zram or swapfile step
+      installed: optional
+      default: 'off'
+      how: 8-Ball-managed extra swap (the macOS equivalent of the Linux zram or swapfile step) is optional and off
+        by default; macOS built-in dynamic swap and memory compression stay on as the OS default and cannot be turned
+        off
+      enable: installer flag or prompt; not mandatory (owner decision)
     tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
       must get the same full app and chat interfaces; never serves 11434
     mcp: remote connectors only (no local MCP processes)
@@ -176,8 +185,8 @@ levels:
   open_webui: false
   notes:
     mirrors: 'Copy of Leonardo''s linux.yaml level 0, adapted only where macOS differs: launchd instead of cron,
-      user LaunchAgents instead of systemd/snap, no nginx (services bind to loopback), macOS built-in swap instead
-      of zram/swapfile, and measured: false because nothing ran on a Mac.'
+      user LaunchAgents instead of systemd/snap, no nginx (services bind to loopback), macOS built-in swap as the
+      OS default with the 8-Ball extra swap optional and off, and measured: false because nothing ran on a Mac.'
     macs: No Apple Silicon Mac lands on level 0, and no Mac that runs a supported macOS has under 4 GB. This entry
       exists so the Mac column has all ten levels.
     summary: Consultation-first stack for Raspberry Pi class machines (under 4 GB). 2 GB is supported. Under 2 GB,
@@ -188,7 +197,9 @@ levels:
       3-ram1: 3-ram1.sh
     open_questions_from_linux:
     - Whether WeKan fits next to OpenClaw and the canary on 2 GB (unmeasured).
-    - Swap or zram looks mandatory at 2 GB with OpenClaw on Linux; macOS swaps on its own.
+    - Swap or zram is optional and off by default (owner decision). On Linux 2 GB it is recommended when WeKan runs
+      too; macOS always keeps its own built-in swap.
+    - The exact Muse Spark model id may change; meta/muse-spark-1.3 is the current example.
   dropped:
   - canary loaded by default (level 0 runs it only as a probe before OpenClaw starts)
   measured: false
@@ -202,7 +213,8 @@ levels:
   consultation:
     runner: 8-ball canary
     model: tinyllama:1.1b
-    fallback: OpenClaw on jet-llama when the canary is too large or too slow (OpenClaw adapter planned, not implemented)
+    fallback: OpenClaw on Muse Spark (meta/muse-spark-1.3, @openclaw/meta-provider) when the canary is too large
+      or too slow
   local_models:
     canary: tinyllama:1.1b
     llama: null
@@ -212,12 +224,11 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama
+    primary: muse-spark
     provider: meta
-    endpoint: TBD
-    model_id: TBD
-    key: customer's own Meta API key
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    endpoint: '@openclaw/meta-provider (OpenClaw Meta provider plugin)'
+    model_id: meta/muse-spark-1.3
+    key: customer's own Meta API key (same file as level 0)
     grok: false
   scheduler:
     engine: launchd
@@ -287,8 +298,12 @@ levels:
       hermes_31: false
       note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
     swap:
-      installed: built in
-      how: macOS dynamic swap files and memory compression; no zram or swapfile step
+      installed: optional
+      default: 'off'
+      how: 8-Ball-managed extra swap (the macOS equivalent of the Linux zram or swapfile step) is optional and off
+        by default; macOS built-in dynamic swap and memory compression stay on as the OS default and cannot be turned
+        off
+      enable: installer flag or prompt; not mandatory (owner decision)
   docker: false
   open_webui:
     installed: false
