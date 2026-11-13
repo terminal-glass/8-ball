@@ -1,0 +1,434 @@
+# Windows column of the per-OS software grid for the 0-9 hardware scale.
+# Owner: Raphael (Windows column). Linux: Leonardo (linux.yaml, README.md
+# with the shared schema). Mac: Monet (mac.yaml).
+#
+# Levels come from config/hardware_scale.yaml. Legacy profile ids come from
+# config/hardware_profiles.yaml. Installer stage numbers are a different
+# sequence and are never renumbered here.
+#
+# Status: DRAFT. Nothing in this file was measured on real Windows hardware.
+# Every entry has measured: false. Anything marked tentative or TBD needs an
+# owner decision or a measurement before an installer relies on it.
+#
+# Windows rules that apply to every level:
+# - Open WebUI is the Windows chat frontend at every level (owner direction:
+#   "Windows and Mac use Open WebUI"). It runs natively for the logged-in
+#   user (Python 3.11 venv managed by uv), bound to 127.0.0.1:8080.
+# - Ollama is the native Windows build. OLLAMA_HOST defaults to
+#   127.0.0.1:11434. A LAN bind is opt-in only. 11434 is never published on
+#   Tailscale (no Serve/Funnel) or the internet, and a public-profile
+#   inbound firewall block for TCP 11434 is always registered.
+# - ENABLE_OLLAMA_API is never set to False in Open WebUI.
+# - Generated credentials live only in the installing user's profile
+#   (%USERPROFILE%\.config\8-ball\ and %USERPROFILE%\.terminal-glass\),
+#   ACL owner-only (the Windows equivalent of folder 700 / files 600).
+#   Never in ProgramData, a system profile, or the repo.
+# - No Snap, no apt, no systemd on the Windows side. Cron is replaced by
+#   Windows Task Scheduler. WeKan and Nextcloud are never installed on
+#   Windows; they stay on a paired Linux helper.
+# - Docker Desktop is never required. WSL2 is only used where it is the
+#   supported runtime for a component (OpenClaw, see notes).
+schema: terminal-glass.8-ball.software-grid/1
+os: windows
+owner: raphael
+status: draft
+scale_ref: config/hardware_scale.yaml
+profiles_ref: config/hardware_profiles.yaml
+supported_clients:
+  - Windows 10 22H2 (build 19045) x64/arm64
+  - Windows 11 (build 22000+) x64/arm64
+defaults:
+  open_webui_port: 8080
+  ollama_port: 11434
+  openclaw_port: 18789
+  task_api_port: 18790
+  eight_ball_console_port: 8788
+  bind: 127.0.0.1
+  jets_credential_path: '%USERPROFILE%\.config\8-ball\meta-api-key'
+  firewall_rule: block inbound TCP 11434 on the public profile
+levels:
+  - level: 0
+    hardware_profile_ref:
+      scale_level: 0
+      legacy_profile_ids: []
+      assumed: {ram_gb: '<4', gpu: none, vram_gb: 0}
+    ui: none
+    chat_frontend: none
+    consultation: see linux.yaml level 0 (Leonardo owns the level-0 consultation stack)
+    local_models: []
+    cloud_option: none
+    scheduler: none
+    services: {}
+    docker: false
+    open_webui: {installed: false}
+    notes:
+      summary: >-
+        Stub only. Raspberry Pi class is not a Windows target. A Windows PC
+        under 4 GB is unsupported; it can use the hosted jet from a browser
+        on another machine.
+      dropped_vs_next_level: [everything]
+    measured: false
+
+  - level: 1
+    hardware_profile_ref:
+      scale_level: 1
+      legacy_profile_ids: []
+      assumed: {ram_gb: '4-8', gpu: integrated, vram_gb: 0, cpu: '2-4 cores'}
+    ui: GridStack workspace (static, loopback) with Chat as the main tile
+    chat_frontend: open-webui
+    consultation:
+      runner: 8-ball canary
+      model: tinyllama:1.1b
+      rule: canary runs only if free RAM >= 2 GB and >= 2 tok/s, else jets consult
+    local_models:
+      default: tinyllama:1.1b
+      code_focus_tentative: qwen2.5-coder:1.5b
+      embedding: none (Open WebUI RAG off at this level)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 5m, num_ctx: '4096 (tentative; stage 2 forces 8K today)'}
+    cloud_option:
+      primary: jet-llama (Meta-hosted Llama, customer's own Meta API key)
+      endpoint: TBD
+      model_id: TBD
+    scheduler:
+      engine: windows-task-scheduler
+      jobs:
+        - {name: '\NoCloudGPT\TerminalGlass-Health', trigger: 'every 15 min (interval TBD)', runs_as: SYSTEM, action: 'loopback health of 11434 and 8080; firewall rule present'}
+        - {name: '\TerminalGlass\OpenWebUI', trigger: at user logon, runs_as: user, action: start Open WebUI venv on 127.0.0.1:8080}
+    services:
+      runtime: native
+      wsl2: not used
+      openclaw: {installed: false, reason: 'needs WSL2 (vendor-recommended Windows path); too heavy for 4-8 GB'}
+      ollama: {install: native Windows installer (per-user), bind: 127.0.0.1:11434}
+      gridstack_apps: [Chat (Open WebUI), Notes (SilverBullet), Controls]
+      silverbullet: {installed: true, how: native binary, status: tentative (Windows build to verify)}
+      kiwix: {installed: false}
+      hermes: {installed: false}
+      task_api: {installed: false, tasks_via: Any.do remote MCP or a SilverBullet task page}
+      eight_ball_console: {installed: true, bind: 127.0.0.1:8788}
+      tailscale: optional (never serves 11434)
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11), `open-webui serve`
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, OLLAMA_BASE_URL: 'http://127.0.0.1:11434', RAG: off, WHISPER_STT: off, workers: 1}
+      ram_budget_gb: 0.6 (tentative, vendor idle ~0.3)
+    notes:
+      dropped_vs_next_level: [Open WebUI document RAG, Kiwix Planet Library, llama3.2:1b as default model]
+      open_questions:
+        - Is native Open WebUI acceptable at 4 GB, or is level 1 Windows chat-in-browser to jets only?
+        - Relax stage 2's 8K num_ctx to 4K on levels 1-3?
+    measured: false
+
+  - level: 2
+    hardware_profile_ref:
+      scale_level: 2
+      legacy_profile_ids: [cpu-small]
+      assumed: {ram_gb: '8-12', gpu: integrated, vram_gb: 0}
+    ui: GridStack workspace with Chat, Notes, Planet, Controls tiles
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: llama3.2:1b, fallback: jets}
+    local_models:
+      default: llama3.2:1b
+      code_focus_tentative: qwen2.5-coder:1.5b
+      embedding: nomic-embed-text via Ollama (tentative)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 5m}
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs:
+        - {name: '\NoCloudGPT\TerminalGlass-Health', trigger: every 15 min (TBD), runs_as: SYSTEM}
+        - {name: '\TerminalGlass\OpenWebUI', trigger: at user logon, runs_as: user}
+        - {name: '\TerminalGlass\Kiwix', trigger: at user logon, runs_as: user, action: kiwix-serve on loopback with small ZIM}
+    services:
+      runtime: native
+      wsl2: optional (only if the user opts into OpenClaw)
+      openclaw: {installed: optional, how: 'WSL2 Ubuntu, systemd user service, .wslconfig memory cap 3 GB (tentative)', bind: 127.0.0.1:18789}
+      ollama: {install: native, bind: 127.0.0.1:11434}
+      gridstack_apps: [Chat (Open WebUI), Notes (SilverBullet), Planet (Kiwix small ZIM), Controls]
+      silverbullet: {installed: true, how: native (to verify)}
+      kiwix: {installed: true, how: native kiwix-serve Windows build (to verify), zim_tier: small}
+      hermes: {installed: false}
+      task_api: {installed: false}
+      eight_ball_console: {installed: true, bind: 127.0.0.1:8788}
+      tailscale: optional (never serves 11434)
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on with Ollama embeddings, WHISPER_STT: off}
+      ram_budget_gb: 1.0 (tentative)
+    notes:
+      dropped_vs_next_level: [OpenClaw on by default, Claw Chat tile, Whisper STT]
+    measured: false
+
+  - level: 3
+    hardware_profile_ref:
+      scale_level: 3
+      legacy_profile_ids: []
+      assumed: {ram_gb: '12-16', gpu: 'integrated or <=4 GB discrete', vram_gb: '0-4'}
+    ui: GridStack workspace; Open WebUI chat plus Claw Chat tile for agent work
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: llama3.2:1b, fallback: jets}
+    local_models:
+      default: llama3.2:1b
+      code_focus_tentative: qwen2.5-coder:1.5b
+      embedding: nomic-embed-text (tentative)
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs:
+        - {name: '\NoCloudGPT\TerminalGlass-Health', trigger: every 15 min (TBD), runs_as: SYSTEM}
+        - {name: '\TerminalGlass\OpenWebUI', trigger: at user logon, runs_as: user}
+        - {name: '\TerminalGlass\Kiwix', trigger: at user logon, runs_as: user}
+        - {name: '\TerminalGlass\OpenClaw-WSL', trigger: at user logon, runs_as: user, action: start the WSL2 distro so the OpenClaw user service comes up}
+    services:
+      runtime: native + WSL2 for OpenClaw only
+      wsl2: required for OpenClaw
+      openclaw: {installed: true, how: 'WSL2 Ubuntu, systemd user service, .wslconfig memory cap 4 GB (tentative)', bind: 127.0.0.1:18789, ollama_provider: 'Windows host Ollama via 127.0.0.1:11434 (WSL2 mirrored networking, tentative)'}
+      ollama: {install: native, bind: 127.0.0.1:11434}
+      gridstack_apps: [Chat (Open WebUI), Claw Chat (OpenClaw Control UI), Notes, Planet, Controls]
+      kiwix: {installed: true, zim_tier: small or medium by free disk}
+      hermes: {installed: false}
+      task_api: {installed: false}
+      tailscale: optional (never serves 11434)
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on, WHISPER_STT: optional}
+    notes:
+      dropped_vs_next_level: [Hermes, PhilosopherOS dashboard and local task API, stage 21 recording, llama3.2:3b]
+      open_questions: [WSL2 mirrored vs NAT networking for OpenClaw to reach host Ollama on loopback]
+    measured: false
+
+  - level: 4
+    hardware_profile_ref:
+      scale_level: 4
+      legacy_profile_ids: [desktop-standard, gpu-entry]
+      assumed: {ram_gb: '16-24', gpu: 'none or entry discrete', vram_gb: '0-8'}
+    ui: GridStack workspace plus PhilosopherOS dashboard tile
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: llama3.2:3b, fallback: jets}
+    local_models:
+      default: llama3.2:3b
+      code_focus_tentative: qwen2.5-coder:7b
+      embedding: nomic-embed-text (tentative)
+      gpu: CUDA lane when an NVIDIA GPU is detected (8-ball windows/cuda), else windows/cpu
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs:
+        - {name: '\NoCloudGPT\TerminalGlass-Health', trigger: every 15 min (TBD), runs_as: SYSTEM}
+        - {name: '\TerminalGlass\OpenWebUI', trigger: at user logon}
+        - {name: '\TerminalGlass\Kiwix', trigger: at user logon}
+        - {name: '\TerminalGlass\OpenClaw-WSL', trigger: at user logon}
+        - {name: '\TerminalGlass\Hermes', trigger: at user logon, action: stage 31 keepalive}
+        - {name: '\TerminalGlass\TaskAPI', trigger: at user logon, action: local task API on 127.0.0.1:18790}
+        - {name: '\TerminalGlass\Recording21', trigger: at user logon, action: stage 21 feeder; health fails if not active}
+    services:
+      runtime: native + WSL2 for OpenClaw
+      wsl2: required for OpenClaw
+      openclaw: {installed: true, how: WSL2, memory_cap_gb: 6 (tentative)}
+      ollama: {install: native, bind: 127.0.0.1:11434 (LAN bind opt-in)}
+      hermes: {installed: true, stage: 31, how: official Windows install.ps1 (MSIX only on Windows 11 22H2+)}
+      philosopheros_dashboard: {installed: true, how: 'Windows-native (per the 1.0.28 Windows PhilosopherOS plan)'}
+      task_api: {installed: true, bind: 127.0.0.1:18790, store: SQLite in user profile, rule: Ready never grants run}
+      recording_21: {installed: true, mandatory: true}
+      wekan: {installed: false, where: paired Linux helper only}
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Controls]
+      kiwix: {installed: true, zim_tier: medium}
+      tailscale: optional (never serves 11434)
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on, WHISPER_STT: on (CPU)}
+    notes:
+      dropped_vs_next_level: [Mailpit, WeKan/Nextcloud helper pairing as default, Kiwix full tier]
+    measured: false
+
+  - level: 5
+    hardware_profile_ref:
+      scale_level: 5
+      legacy_profile_ids: []
+      assumed: {ram_gb: '24-32', gpu: 'entry or midrange discrete', vram_gb: '8-12'}
+    ui: GridStack workspace plus PhilosopherOS dashboard
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: llama3.2:3b, fallback: jets}
+    local_models:
+      default: llama3.2:3b
+      code_focus_tentative: qwen2.5-coder:7b
+      embedding: nomic-embed-text (tentative)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 2}
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs: [same as level 4, '\TerminalGlass\Mailpit at user logon (opt-in)']
+    services:
+      runtime: native + WSL2 for OpenClaw
+      wsl2: required for OpenClaw
+      openclaw: {installed: true, how: WSL2, memory_cap_gb: 8 (tentative)}
+      ollama: {install: native, bind: 127.0.0.1:11434 (LAN opt-in)}
+      hermes: {installed: true}
+      task_api: {installed: true}
+      recording_21: {installed: true, mandatory: true}
+      mailpit: {installed: opt-in, how: native Windows binary, bind: loopback}
+      helper_pairing: {wekan: optional, nextcloud: optional}
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail (opt-in), Controls]
+      tailscale: optional (never serves 11434)
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on, WHISPER_STT: on}
+    notes:
+      dropped_vs_next_level: [llama3:8b default, Kiwix full tier, multi-user Open WebUI]
+    measured: false
+
+  - level: 6
+    hardware_profile_ref:
+      scale_level: 6
+      legacy_profile_ids: [gpu-midrange]
+      assumed: {ram_gb: '32-64', gpu: midrange discrete, vram_gb: 16}
+    ui: GridStack workspace plus PhilosopherOS dashboard
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
+    local_models:
+      default: llama3:8b
+      code_focus_tentative: qwen2.5-coder:7b
+      embedding: nomic-embed-text (tentative)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 2, OLLAMA_NUM_PARALLEL: 2}
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs: [same as level 5]
+    services:
+      runtime: native + WSL2 for OpenClaw
+      openclaw: {installed: true, how: WSL2, memory_cap_gb: 12 (tentative)}
+      ollama: {install: native, gpu: CUDA (NVIDIA) or CPU; AMD/ROCm on Windows TBD}
+      hermes: {installed: true}
+      task_api: {installed: true}
+      recording_21: {installed: true, mandatory: true}
+      mailpit: {installed: true}
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
+      kiwix: {installed: true, zim_tier: full by free disk}
+      tailscale: optional (never serves 11434)
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on, WHISPER_STT: on (GPU if available), multi_user: on, signup: off}
+    notes:
+      dropped_vs_next_level: [larger-than-8B local model option (TBD, scale caps at llama3:8b)]
+    measured: false
+
+  - level: 7
+    hardware_profile_ref:
+      scale_level: 7
+      legacy_profile_ids: [server-high-mem, gpu-high-mem]
+      assumed: {ram_gb: '64-128', gpu: high-memory discrete or none (CPU server), vram_gb: '0-24'}
+    ui: GridStack workspace plus PhilosopherOS dashboard
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
+    local_models:
+      default: llama3:8b
+      code_focus_tentative: qwen2.5-coder:7b
+      larger_optional: TBD (no tag beyond llama3:8b in hardware_scale.yaml yet)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 3, OLLAMA_NUM_PARALLEL: 4}
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs: [same as level 6]
+    services:
+      runtime: native + WSL2 for OpenClaw
+      openclaw: {installed: true, how: WSL2, memory_cap_gb: 16 (tentative), agents: multiple}
+      ollama: {install: native}
+      hermes: {installed: true}
+      task_api: {installed: true}
+      recording_21: {installed: true, mandatory: true}
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on, multi_user: on, signup: off}
+    notes:
+      dropped_vs_next_level: [multi-GPU scheduling]
+    measured: false
+
+  - level: 8
+    hardware_profile_ref:
+      scale_level: 8
+      legacy_profile_ids: [multi-gpu]
+      assumed: {ram_gb: '128-256', gpu: multi-GPU, vram_gb: 48}
+    ui: GridStack workspace plus PhilosopherOS dashboard
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
+    local_models:
+      default: llama3:8b
+      code_focus_tentative: qwen2.5-coder:7b
+      larger_optional: TBD
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 4, OLLAMA_NUM_PARALLEL: 4, OLLAMA_SCHED_SPREAD: 1 (tentative)}
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs: [same as level 7]
+    services:
+      runtime: native + WSL2 for OpenClaw
+      openclaw: {installed: true, how: WSL2, memory_cap_gb: 32 (tentative)}
+      ollama: {install: native, gpu: multi-GPU CUDA}
+      hermes: {installed: true}
+      task_api: {installed: true}
+      recording_21: {installed: true, mandatory: true}
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on, multi_user: on, signup: off}
+    notes:
+      dropped_vs_next_level: [nothing confirmed; level 9 differs only in headroom (TBD)]
+    measured: false
+
+  - level: 9
+    hardware_profile_ref:
+      scale_level: 9
+      legacy_profile_ids: []
+      assumed: {ram_gb: '256+', gpu: 'top-end multi-GPU', vram_gb: '48+'}
+    ui: GridStack workspace plus PhilosopherOS dashboard
+    chat_frontend: open-webui
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
+    local_models:
+      default: llama3:8b
+      code_focus_tentative: qwen2.5-coder:7b
+      larger_optional: TBD (owner to pick a tag above 8B)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 4, OLLAMA_NUM_PARALLEL: 8, OLLAMA_SCHED_SPREAD: 1 (tentative)}
+    cloud_option: {primary: jet-llama, endpoint: TBD, model_id: TBD}
+    scheduler:
+      engine: windows-task-scheduler
+      jobs: [same as level 8]
+    services:
+      runtime: native + WSL2 for OpenClaw
+      openclaw: {installed: true, how: WSL2, memory_cap_gb: 64 (tentative)}
+      ollama: {install: native}
+      hermes: {installed: true}
+      task_api: {installed: true}
+      recording_21: {installed: true, mandatory: true}
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
+    docker: false
+    open_webui:
+      installed: true
+      method: native uv venv (Python 3.11)
+      bind: 127.0.0.1:8080
+      settings: {ENABLE_OLLAMA_API: true, RAG: on, multi_user: on, signup: off}
+    notes:
+      dropped_vs_next_level: [top level]
+    measured: false
