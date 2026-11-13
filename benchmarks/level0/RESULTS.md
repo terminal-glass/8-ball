@@ -65,16 +65,24 @@ Ollama stopped. No API key was available or used.
 
 - Install: works, but `npm install -g openclaw` needs several hundred MB; with
   a model still loaded the 2 GB VM thrashed until the model was unloaded.
-- Gateway start to "ready": about 48 s.
-- Gateway RSS: about 1.13 GB observed while idle (single `ps` sample; the
-  scripted idle/peak capture is being re-run, see `openclaw.json` when present).
-- Consultation turn: fails fast with `No API key found for provider "meta"`
-  (ProviderAuthError). The credential it needs is a **Meta Model API key**
-  (`MODEL_API_KEY`, or `openclaw models auth paste-api-key --provider meta`).
-- Cron next to the gateway: 5/5 fired, none late.
-- OpenClaw consultation through the local canary (`ollama/tinyllama:1.1b`):
-  first attempt timed out because the agent call started before the gateway
-  was ready; re-run pending.
+  The script now stops Ollama before installing.
+- Gateway start to "ready": 48 s and 108 s on two starts.
+- Gateway RAM (sum of OpenClaw processes): **1224 MB idle, 1603 MB peak**.
+  MemAvailable fell from 1533 MB to **464 MB** with the gateway idle.
+- Consultation turn with no key: fails in 15 s with
+  `No API key found for provider "meta"` (ProviderAuthError). The credential
+  it needs is a **Meta Model API key** (`MODEL_API_KEY`, or
+  `openclaw models auth paste-api-key --provider meta`). No key was used.
+- Cron next to the gateway, no Ollama: 5/5 fired twice, none late
+  (1.36-1.61 s after the minute).
+- OpenClaw consultation through the local canary (`ollama/tinyllama:1.1b`,
+  Ollama running again): **refused by OpenClaw**, "Model context window too
+  small (2048 tokens). Minimum is 4000." tinyllama's trained context is 2048
+  (Ollama clamps it), so OpenClaw cannot use the canary as its model at all.
+  System memory in use peaked at 1922 of 1967 MB during that attempt; no OOM
+  kill.
+
+Raw: `results/vm-x86-2c-2g/openclaw.json`.
 
 ## What this means for level 0
 
@@ -84,7 +92,11 @@ Ollama stopped. No API key was available or used.
 - `llama3.2:1b` needs about 1.5-1.9 GB. It fails at 1 GiB and fits a 2 GB
   machine only when nothing else large is running. It is not assigned to
   level 0.
-- The OpenClaw gateway alone uses about 1.1 GB on 2 GB. OpenClaw plus the
-  canary is roughly 1.8 GB, so a 2 GB level-0 machine needs swap or zram and
-  should load the canary only for the probe.
+- The OpenClaw gateway alone uses 1.2-1.6 GB on a 2 GB machine and leaves
+  about 0.46 GB available. OpenClaw plus the canary (0.7 GB) does not fit
+  without swap or zram, so on a 2 GB level-0 machine the canary should run
+  only as the 8-BALL probe, before or instead of OpenClaw, never alongside it.
+- OpenClaw cannot consult on the canary (its 4000-token context minimum is
+  above tinyllama's 2048). At level 0 OpenClaw consults on the hosted model,
+  which needs the customer's Meta key.
 - Cron never missed a minute under any load tested.

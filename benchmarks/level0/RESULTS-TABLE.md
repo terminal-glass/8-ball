@@ -6,7 +6,7 @@
 | `llama3.2:1b` bench | loaded 3/3 runs; peak RSS 1911 MB; cold load 3.86 s; cold TTFT 4.13 s; 36.8-42.4 tok/s (median 38.9) | loaded 3/3 runs; peak RSS 1911 MB; cold load 2.35 s; cold TTFT 2.83 s; 16.2-16.9 tok/s (median 16.6) | loaded 0/3 runs; OOM-killed (3x) | loaded 3/3 runs; peak RSS 1480 MB; cold load 17.54 s; cold TTFT 23.55 s; 5.8-5.9 tok/s (median 5.9) | pending |
 | cron, 10 min under `tinyllama:1.1b` load | not run | 10/10 fired, 0 missed, 0 late >5 s; lateness 1.121-1.37 s; load 32 gens at median 27.52 tok/s | not run | 10/10 fired, 0 missed, 0 late >5 s; lateness 1.569-2.035 s; load 5 gens at median 4.99 tok/s | pending |
 | cron, 10 min under `llama3.2:1b` load | not run | 10/10 fired, 0 missed, 0 late >5 s; lateness 1.034-2.01 s; load 20 gens at median 17.41 tok/s | not run | 10/10 fired, 0 missed, 0 late >5 s; lateness 1.128-1.998 s; load 5 gens at median 5.01 tok/s | pending |
-| OpenClaw, cloud model only, no Ollama | not run | not run | not run | not run | pending |
+| OpenClaw, cloud model only, no Ollama | not run | not run | not run | gateway ready 108.2 s; RSS idle 1224.2 MB, peak 1603.2 MB; consult: No API key found for provider "meta" | pending |
 
 Machine facts per column (from result headers):
 

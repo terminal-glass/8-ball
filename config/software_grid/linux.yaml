@@ -82,8 +82,11 @@ levels:
         measures >= 2 tok/s on it; otherwise OpenClaw consults on the hosted
         model alone.
       rule: >-
-        OpenClaw gives the consultation. The canary is a probe of the machine,
-        not the consultant. llama3.2:1b is never loaded at level 0.
+        OpenClaw gives the consultation on the hosted model. The canary is a
+        probe of the machine, not the consultant, and runs before OpenClaw
+        starts, not alongside it (measured: OpenClaw's gateway uses 1.2-1.6 GB
+        on 2 GB, and OpenClaw refuses models with under 4000 tokens of
+        context; tinyllama has 2048). llama3.2:1b is never loaded at level 0.
       measured_result: see benchmarks/level0/RESULTS.md
     local_models:
       canary: tinyllama:1.1b
@@ -114,8 +117,9 @@ levels:
         hosted model only. Use a USB SSD rather than an SD card for state.
       remote: Chats and apps are LAN-only by default; remote users come in through Tailscale and get the same interfaces.
       open_questions:
-        - Whether WeKan fits next to OpenClaw and the canary on 2 GB (unmeasured). The OpenClaw 2026.11.3 gateway alone was seen at ~1.1 GB RSS on a 2 GB VM.
+        - Whether WeKan fits next to OpenClaw and the canary on 2 GB (unmeasured). The OpenClaw 2026.11.3 gateway alone measured 1224 MB idle / 1603 MB peak on a 2 GB VM.
         - arm64 numbers pending (emulated 2 GB arm64 VM).
+        - Swap or zram looks mandatory at 2 GB with OpenClaw (measured 464 MB available with the gateway idle).
     dropped: [Kiwix Planet Library, DokuWiki, Mailpit, local stdio MCP servers, canary loaded by default, qwen2.5-coder:1.5b]
     measured: benchmarks/level0/RESULTS.md
 
