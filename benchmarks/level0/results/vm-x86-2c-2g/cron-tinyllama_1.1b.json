@@ -1,0 +1,1 @@
+{"label": "tinyllama_1.1b", "load_model": "tinyllama:1.1b", "minutes": 10, "expected_runs": 10, "fired": 10, "missed": 0, "late_over_s": 5.0, "late": 0, "lateness_s_min": 1.569, "lateness_s_median": 1.795, "lateness_s_max": 2.035, "load_generations": 5, "load_eval_tok_s_median": 4.99}

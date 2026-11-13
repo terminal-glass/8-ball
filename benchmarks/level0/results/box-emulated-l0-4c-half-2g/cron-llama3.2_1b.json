@@ -1,0 +1,1 @@
+{"label": "l0-4c-half-2g", "load_model": "llama3.2:1b", "minutes": 10, "expected_runs": 10, "fired": 10, "missed": 0, "late_over_s": 5.0, "late": 0, "lateness_s_min": 1.034, "lateness_s_median": 1.802, "lateness_s_max": 2.01, "load_generations": 20, "load_eval_tok_s_median": 17.41}
