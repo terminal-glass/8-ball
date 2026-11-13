@@ -1,133 +1,92 @@
-🎱 8-BALL
+# 8-BALL
 
-😎 Private AI with no more guesswork 😎
+**Independent AI that fits the computer you already have.**
 
-<p align="center">
-  <img src="assets/8ball-ollama-pool.jpg"
-       alt="8-BALL for Ollama — private AI without the hardware and model guesswork"
-       width="720">
-</p>
+8-BALL is the non-agentic starting point: public Ollama model metadata, hardware
+profiles, a free trial installer, and a proposed AI consultation. It assesses and
+recommends; the user decides which model, software, and actions to approve. Hardware
+estimates are planning guidance; a successful workload test is separate evidence.
 
-8-BALL helps match Ollama models and AI tools to the computer you actually have.
+## Find what you need
 
-Instead of guessing about RAM, VRAM, GPUs, model sizes, and cloud options, 8-BALL is building a hardware-aware catalog and installation system for local and hybrid AI.
+| I want to… | Start here |
+| --- | --- |
+| See CPU, RAM, GPU, and provider profiles | [Browse hardware](hardware/README.md) |
+| Search model sizes across platform lanes | [Profile matrix (CSV)](profiles/index.csv) |
+| Understand the generated profile folders | [Profile contract](profiles/README.md) |
+| Use the public free/trial installer | [Installer guide](install/README.md) |
+| Read normalized model and hardware data | [Canonical data](data/normalized/) |
+| Understand which files are active or historical | [Repository layout](docs/repository-layout.md) |
+| Contribute or work with an agent | [Repository instructions](AGENTS.md) |
 
-Start with Ollama
+## Hardware and model data
 
-Ollama gives you local AI models.
+The [hardware guide](hardware/README.md) puts planning profiles, measured hosts,
+provider snapshots, and the ten runtime lanes in readable tables with source
+links. It is generated from the existing records, so there is no second catalog
+to maintain.
 
-8-BALL helps answer the next question:
+The [profile matrix](profiles/index.csv) is the model-size-lane lookup table.
+Use [profiles/manifest.json](profiles/manifest.json) for current counts and the
+[profile contract](profiles/README.md) for file layout and regeneration.
+The catalog page contract remains in
+[docs/install-manifest-contract.md](docs/install-manifest-contract.md).
 
-What should I run on this machine?
+Published download size, estimated runtime memory, actual host capacity, and
+measured task performance remain separate. Unknown facts stay unknown. Provider
+snapshots do not establish current availability or pricing.
 
-8-BALL maps publicly available Ollama models against hardware profiles, model requirements, deployment types, and installation targets.
+## Try the free Ubuntu installer
 
-The goal is simple:
-
-Machine → right-sized Ollama model → working private AI
-
-Add the tools you recognize
-
-Once Ollama is running, 8-BALL is designed around familiar AI tools rather than replacing them.
-
-💬 Open WebUI
-
-Want a familiar browser-based chat interface?
-
-Open WebUI can turn your Ollama server into a persistent AI workspace with conversations, models, and a modern web interface.
-
-✈️ Ollama Cloud + 8-BALL JETS
-
-Small computer? Big job?
-
-Keep a useful model locally and use Ollama Cloud when larger models make more sense.
-
-8-BALL calls these optional cloud-powered models JETS:
-
-🎱 8-BALL JETS — Tiny server. Serious AI.
-
-Local when practical. Cloud when useful.
-
-🦞 OpenClaw
-
-Want AI that can do more than chat?
-
-OpenClaw adds an agent layer for tool-using and action-oriented AI workflows.
-
-8-BALL is being designed so the machine, models, chat interface, cloud models, and agents can fit together without turning installation into a research project.
-
-One machine. A simple path.
-
-🎱 8-BALL
-   │
-   ├── Ollama ─────────── Local AI
-   │
-   ├── Open WebUI ─────── Persistent Chat
-   │
-   ├── Ollama Cloud ───── 8-BALL JETS
-   │
-   └── OpenClaw ───────── AI Agents
-
-You don’t need every layer.
-
-Start with the machine you have and add what you need.
-
-⸻
-
-🚀 $99 Pilot
-
-Want help turning one machine into a complete 8-BALL system?
-
-The $99 8-BALL Pilot is intended for a single machine and can help connect the appropriate pieces around your hardware and intended use.
-
-Learn about the $99 Pilot → terminal.glass/8-ball
-
-⸻
-
-For developers
-
-8-BALL is also the Terminal.Glass model-intelligence catalog for publicly available Ollama models.
-
-### Try 8-BALL on Ubuntu
+Review the [installer guide](install/README.md) and script before running it:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh -o trial-install.sh
 sudo bash trial-install.sh
 ```
 
-Or pipe directly:
+Optional flags include `--model`, `--model-slug`, and `--no-motd`.
+See individual [platform lane documentation](install/README.md) for implementation
+and test status; a folder's presence is not proof of a successful hardware install.
+
+## Add tools as useful
+
+| Component | Role |
+| --- | --- |
+| Ollama | Run supported local models |
+| Open WebUI | Optional browser-based chat workspace |
+| 8-BALL JETS / Ollama Cloud | Optional remote models for workloads better served online |
+| OpenClaw / 9-ball | Separate, explicitly chosen agentic assistance |
+
+8-BALL does not autonomously select tools, execute model-directed actions, or enroll
+peers. The user makes the choices. Installing or activating a software license does
+not grant an agent permission to act.
+
+OpenClaw, unattended agent work, and agent-mail participation belong to a separate
+opt-in agentic path through 9-ball or the appropriate COLORS.chat / NoCloudGPT
+stack. COLORS.chat retains the choice of non-agentic use. 9-ball focuses on
+charitable OpenClaw-and-mail assistance. Proposed integrations are not presented
+here as shipped features.
+
+Optional installation assistance: the $99 single-machine pilot is described at
+[terminal.glass/8-ball](https://terminal.glass/8-ball).
+
+## Development
+
+This repository stores public metadata and free/trial resources, not model weights.
+Paid packaging, license fulfillment, customer records, and production credentials
+belong outside this public catalog. Read [AGENTS.md](AGENTS.md) and
+[AGENTS/cursorFileA0.md](AGENTS/cursorFileA0.md) before changing code.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/terminal-glass/8-ball/main/install/ubuntu/trial-install.sh | sudo bash
+python -m pip install -e ".[dev]"
+bash scripts/validate-catalog.sh
+python3 scripts/validate-install-lanes.py
+pytest
+python3 scripts/generate-hardware-guide.py --check
 ```
 
-Optional flags include `--model`, `--model-slug`, and `--no-motd`.
-
-The repository stores metadata rather than model weights and provides the data needed to reason about:
-
-* Ollama models and exact tags
-* Published model sizes
-* RAM and VRAM estimates
-* CPU and GPU hardware profiles
-* Model families and quantizations
-* Local versus cloud availability
-* Deployment recommendations
-* Installer-authoring datasets
-* Provenance and confidence
-* Validation and coverage
-
-8-BALL does not replace Ollama, Open WebUI, Ollama Cloud, or OpenClaw.
-
-It is the model and hardware intelligence that helps these pieces fit the machine.
-
-⸻
-
-Development
-
-8-BALL is under active development.
-
-The current repository contains the catalog, normalized model metadata, hardware estimates, validation tooling, generated recommendations, and public free/trial installer resources.
-
-Developers and contributors: continue below for the repository architecture, catalog recreation workflow, CLI, validation, datasets, and provenance documentation.
-
-⸻
+See the [data-science workflow](AGENTS/data-science/README.md) for source refreshes,
+[hardware import audit](docs/C6-hardware-data-import-audit.md) for provenance,
+and [repository layout](docs/repository-layout.md) for cleanup and retained
+compatibility paths. Catalog versions and installer versions remain independent.
