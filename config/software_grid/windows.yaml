@@ -31,8 +31,19 @@
 #   ACL owner-only (the Windows equivalent of folder 700 / files 600).
 #   Never in ProgramData, a system profile, or the repo.
 # - No Snap, no apt, no systemd on the Windows side. Cron is replaced by
-#   Windows Task Scheduler. WeKan and Nextcloud are never installed on
-#   Windows; they stay on a paired Linux helper.
+#   Windows Task Scheduler.
+# - Chats are LAN-only by default: Open WebUI and the OpenClaw chat bind
+#   127.0.0.1 by default, and a LAN bind is opt-in. Tailscale access goes
+#   only through proper app and chat interfaces (the authenticated GridStack
+#   front door and chat UIs), never raw port exposure. Ollama 11434 is never
+#   on Tailscale.
+# - WeKan is the task board wherever a level has one (level 4 and up). It
+#   runs inside the WSL2 distro (tentative); the task API on 127.0.0.1:18790
+#   stays the system of record, and a card moving to Ready never grants
+#   permission to run.
+# - Nextcloud is only at levels 7-9 (optional, tentative).
+# - Hardware floor: Windows level 1 needs at least 4 GB RAM. 2 GB machines
+#   are supported by the Linux/Pi grid (linux.yaml), not by Windows.
 # - Docker Desktop is never required. WSL2 is only used where it is the
 #   supported runtime for a component (OpenClaw, see notes).
 schema: terminal-glass.8-ball.software-grid/1
@@ -53,6 +64,12 @@ defaults:
   bind: 127.0.0.1
   jets_credential_path: '%USERPROFILE%\.config\8-ball\meta-api-key'
   firewall_rule: block inbound TCP 11434 on the public profile
+  chat_access:
+    default: LAN-only; Open WebUI and the OpenClaw chat bind 127.0.0.1
+    lan: opt-in bind of the chat front door to the LAN interface
+    tailscale: only through proper app and chat interfaces (authenticated front door); no raw port exposure
+    ollama_11434: loopback by default, LAN opt-in, never Tailscale or the internet
+  windows_ram_floor_gb: 4
 stage3_variants:
   # Installer stage 3 variants on Windows. Stage numbers are never renumbered;
   # the Windows scripts are PowerShell equivalents of the Linux 3*.sh scripts.
@@ -60,6 +77,15 @@ stage3_variants:
     Jonathan (2026-11-13): Windows keeps Open WebUI as the default, and a
     low-RAM 3-ram1 option must exist. stage3_variant is the default per
     level; stage3_options is what the installer offers.
+  applied: Jonathan's lite-plan answers (t757u) applied 2026-11-13.
+  open_webui_cutoff:
+    windows: >-
+      Windows sets its own cutoff. Open WebUI ('3') stays the default from
+      level 1 up; 3-ram1 (no Open WebUI) is selectable at every level.
+      Windows does not drop Open WebUI by level.
+    linux: >-
+      For comparison, Linux drops Open WebUI at levels 0-2 (lite plan) and
+      uses the OpenClaw chat there; see linux.yaml.
   '3':
     linux_script: 3.sh
     windows_script: 3.ps1
@@ -130,9 +156,10 @@ levels:
       stage3_variant_reason: 'Level 0 is not a Windows target; nothing runs, closest match is the no-Open-WebUI variant.'
       stage3_scripts: {'3-ram1': 3-ram1.ps1}
       summary: >-
-        Stub only. Raspberry Pi class is not a Windows target. A Windows PC
-        under 4 GB is unsupported; it can use the hosted jet from a browser
-        on another machine.
+        Stub only. Raspberry Pi class is not a Windows target. Windows needs
+        at least 4 GB RAM (level 1 floor). 2 GB machines are supported, but
+        through the Linux/Pi grid (linux.yaml), not on Windows.
+      chat_access: no Windows services at this level; chat rules are in defaults.chat_access
     dropped: [all Windows services (level 0 is not a Windows target)]
     measured: false
 
@@ -169,9 +196,10 @@ levels:
       silverbullet: {installed: true, how: native binary, status: tentative (Windows build to verify)}
       kiwix: {installed: false}
       hermes: {installed: false}
-      task_api: {installed: false, tasks_via: Any.do remote MCP or a SilverBullet task page}
+      task_api: {installed: false, note: no task board at this level; WeKan and the task API start at level 4}
       eight_ball_console: {installed: true, bind: 127.0.0.1:8788}
-      tailscale: optional (never serves 11434)
+      tailscale: {installed: optional, access: 'only through the app and chat interfaces (authenticated front door), no raw ports', ollama_11434: never}
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in (only if OpenClaw is installed)', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
     docker: false
     open_webui:
       installed: true
@@ -186,6 +214,8 @@ levels:
       stage3_scripts: {'3': 3.ps1, '3-ram1': 3-ram1.ps1}
       open_questions:
         - Relax stage 2's 8K num_ctx to 4K on levels 1-3?
+      open_webui_cutoff: 'Windows keeps Open WebUI (3) as the default here; 3-ram1 is selectable. Linux drops Open WebUI at levels 0-2.'
+      windows_floor: 'Windows level 1 needs at least 4 GB RAM. 2 GB machines are supported through the Linux/Pi grid, not on Windows.'
     dropped: [Open WebUI document RAG, Kiwix Planet Library, llama3.2:1b as default model]
     measured: false
 
@@ -219,7 +249,8 @@ levels:
       hermes: {installed: false}
       task_api: {installed: false}
       eight_ball_console: {installed: true, bind: 127.0.0.1:8788}
-      tailscale: optional (never serves 11434)
+      tailscale: {installed: optional, access: 'only through the app and chat interfaces (authenticated front door), no raw ports', ollama_11434: never}
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in (only if OpenClaw is installed)', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
     docker: false
     open_webui:
       installed: true
@@ -233,6 +264,7 @@ levels:
       stage3_variant_reason: 'Default 3: OpenClaw is optional at this level. 3-ram1 is offered as the low-RAM choice and turns OpenClaw on; 3-ram2 is not offered because OpenClaw is not on by default.'
       stage3_scripts: {'3': 3.ps1, '3-ram1': 3-ram1.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
+      open_webui_cutoff: 'Windows keeps Open WebUI (3) as the default here; 3-ram1 is selectable. Linux drops Open WebUI at levels 0-2.'
     dropped: [OpenClaw on by default, Claw Chat tile, Whisper STT]
     measured: false
 
@@ -264,7 +296,8 @@ levels:
       kiwix: {installed: true, zim_tier: small or medium by free disk}
       hermes: {installed: false}
       task_api: {installed: false}
-      tailscale: optional (never serves 11434)
+      tailscale: {installed: optional, access: 'only through the app and chat interfaces (authenticated front door), no raw ports', ollama_11434: never}
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
     docker: false
     open_webui:
       installed: true
@@ -277,7 +310,8 @@ levels:
       stage3_variant_reason: 'Open WebUI and the OpenClaw chat side by side on one shared database, with the user setting to turn Open WebUI off to free RAM (Windows has no Docker to turn off).'
       stage3_scripts: {'3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1, '3': 3.ps1}
       open_questions: [WSL2 mirrored vs NAT networking for OpenClaw to reach host Ollama on loopback]
-    dropped: [Hermes, PhilosopherOS dashboard and local task API, stage 21 recording, llama3.2:3b]
+      wekan: not installed at this level; it arrives with the task board at level 4
+    dropped: [Hermes, PhilosopherOS dashboard and local task API, WeKan task board, stage 21 recording, llama3.2:3b]
     measured: false
 
   - level: 4
@@ -310,12 +344,20 @@ levels:
       ollama: {install: native, bind: 127.0.0.1:11434 (LAN bind opt-in)}
       hermes: {installed: true, stage: 31, how: official Windows install.ps1 (MSIX only on Windows 11 22H2+)}
       philosopheros_dashboard: {installed: true, how: 'Windows-native (per the 1.0.28 Windows PhilosopherOS plan)'}
-      task_api: {installed: true, bind: 127.0.0.1:18790, store: SQLite in user profile, rule: Ready never grants run}
+      task_api: {installed: true, bind: 127.0.0.1:18790, store: SQLite in user profile, projects_to: WeKan, rule: a card moving to Ready never grants permission to run}
       recording_21: {installed: true, mandatory: true}
-      wekan: {installed: false, where: paired Linux helper only}
+      wekan:
+        installed: true
+        role: task board (core; display of task API state only)
+        how: 'inside the same WSL2 Ubuntu distro as OpenClaw, WeKan release bundle with FerretDB/SQLite (no Snap), systemd unit started by the OpenClaw-WSL logon task (tentative)'
+        bind: '127.0.0.1, port TBD (not 8080, which Open WebUI uses)'
+        alternate: pair with a Linux helper's WeKan (stage 32) if WSL2 is not wanted (tentative)
+        ram_budget_gb: 1.0 (vendor minimum free; not measured)
+        rule: the task API on 127.0.0.1:18790 is the system of record; a card moving to Ready never grants permission to run
       gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Controls]
       kiwix: {installed: true, zim_tier: medium}
-      tailscale: optional (never serves 11434)
+      tailscale: {installed: optional, access: 'only through the app and chat interfaces (authenticated front door), no raw ports', ollama_11434: never}
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
     docker: false
     open_webui:
       installed: true
@@ -328,7 +370,8 @@ levels:
       stage3_variant_reason: 'Same as level 3: side by side, Open WebUI can be turned off to free RAM.'
       stage3_scripts: {'3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1, '3': 3.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
-    dropped: [Mailpit, WeKan/Nextcloud helper pairing, Kiwix full tier]
+      wekan_choice: 'WSL2 is already present for OpenClaw from level 3, so WeKan reuses that distro instead of a Windows-native bundle (none is known) or a second machine. Tentative until measured.'
+    dropped: [Mailpit, Kiwix full tier]
     measured: false
 
   - level: 5
@@ -356,9 +399,10 @@ levels:
       task_api: {installed: true}
       recording_21: {installed: true, mandatory: true}
       mailpit: {installed: opt-in, how: native Windows binary, bind: loopback}
-      helper_pairing: {wekan: optional, nextcloud: optional}
+      wekan: {installed: true, how: 'same as level 4 (WSL2; tentative)'}
       gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail (opt-in), Controls]
-      tailscale: optional (never serves 11434)
+      tailscale: {installed: optional, access: 'only through the app and chat interfaces (authenticated front door), no raw ports', ollama_11434: never}
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
     docker: false
     open_webui:
       installed: true
@@ -400,7 +444,9 @@ levels:
       mailpit: {installed: true}
       gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
       kiwix: {installed: true, zim_tier: full by free disk}
-      tailscale: optional (never serves 11434)
+      tailscale: {installed: optional, access: 'only through the app and chat interfaces (authenticated front door), no raw ports', ollama_11434: never}
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
+      wekan: {installed: true, how: 'same as level 4 (WSL2; tentative)'}
     docker: false
     open_webui:
       installed: true
@@ -413,7 +459,7 @@ levels:
       stage3_variant_reason: 'Standard Open WebUI; RAM is ample so the RAM toggle is not needed. OpenClaw still runs alongside through stage 11.'
       stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
-    dropped: ['local models larger than 8B (TBD; the scale caps at llama3:8b)']
+    dropped: ['local models larger than 8B (TBD; the scale caps at llama3:8b)', Nextcloud (levels 7-9 only)]
     measured: false
 
   - level: 7
@@ -439,7 +485,10 @@ levels:
       hermes: {installed: true}
       task_api: {installed: true}
       recording_21: {installed: true, mandatory: true}
-      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks (WeKan), Dashboard, Mail, Files (Nextcloud, optional), Controls]
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
+      wekan: {installed: true, how: 'same as level 4 (WSL2; tentative)'}
+      nextcloud: {installed: optional, how: 'pair with a Linux helper running stage 33 (default); alternate: Nextcloud inside the WSL2 distro without Snap', status: tentative, gridstack_tile: Files}
     docker: false
     open_webui:
       installed: true
@@ -452,6 +501,7 @@ levels:
       stage3_variant_reason: 'Standard Open WebUI; OpenClaw alongside through stage 11.'
       stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
+      nextcloud_choice: 'Default is pairing with a Linux helper (stage 33 runs there unchanged; no Snap on Windows). Nextcloud inside WSL2 is the alternate when there is no helper. Tentative.'
     dropped: [multi-GPU scheduling]
     measured: false
 
@@ -478,7 +528,10 @@ levels:
       hermes: {installed: true}
       task_api: {installed: true}
       recording_21: {installed: true, mandatory: true}
-      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks (WeKan), Dashboard, Mail, Files (Nextcloud, optional), Controls]
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
+      wekan: {installed: true, how: 'same as level 4 (WSL2; tentative)'}
+      nextcloud: {installed: optional, how: 'pair with a Linux helper running stage 33 (default); alternate: Nextcloud inside the WSL2 distro without Snap', status: tentative, gridstack_tile: Files}
     docker: false
     open_webui:
       installed: true
@@ -491,6 +544,7 @@ levels:
       stage3_variant_reason: 'Standard Open WebUI; OpenClaw alongside through stage 11.'
       stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: Level 9 differs from level 8 only in headroom (TBD).
+      nextcloud_choice: 'Default is pairing with a Linux helper (stage 33 runs there unchanged; no Snap on Windows). Nextcloud inside WSL2 is the alternate when there is no helper. Tentative.'
     dropped: []
     measured: false
 
@@ -517,7 +571,10 @@ levels:
       hermes: {installed: true}
       task_api: {installed: true}
       recording_21: {installed: true, mandatory: true}
-      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks, Dashboard, Mail, Controls]
+      gridstack_apps: [Chat, Claw Chat, Notes, Planet, Tasks (WeKan), Dashboard, Mail, Files (Nextcloud, optional), Controls]
+      chat_access: {open_webui: '127.0.0.1:8080 by default, LAN opt-in', openclaw_chat: '127.0.0.1:18789 by default, LAN opt-in', tailscale: app and chat interfaces only, ollama_11434: never on Tailscale}
+      wekan: {installed: true, how: 'same as level 4 (WSL2; tentative)'}
+      nextcloud: {installed: optional, how: 'pair with a Linux helper running stage 33 (default); alternate: Nextcloud inside the WSL2 distro without Snap', status: tentative, gridstack_tile: Files}
     docker: false
     open_webui:
       installed: true
@@ -530,5 +587,6 @@ levels:
       stage3_variant_reason: 'Standard Open WebUI; OpenClaw alongside through stage 11.'
       stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: Top level of the scale.
+      nextcloud_choice: 'Default is pairing with a Linux helper (stage 33 runs there unchanged; no Snap on Windows). Nextcloud inside WSL2 is the alternate when there is no helper. Tentative.'
     dropped: []
     measured: false
