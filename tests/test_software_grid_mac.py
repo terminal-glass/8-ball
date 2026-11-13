@@ -38,6 +38,11 @@ def _levels() -> list[dict]:
     return _doc()["levels"]
 
 
+def _owui_installed(row: dict) -> bool:
+    value = row["open_webui"]
+    return value if isinstance(value, bool) else value["installed"]
+
+
 def test_mac_grid_header_matches_the_shared_schema():
     doc = _doc()
     assert doc["schema"] == "terminal-glass.8-ball.software-grid/1"
@@ -58,7 +63,7 @@ def test_mac_grid_has_levels_zero_through_nine_with_shared_keys():
         assert row["chat_frontend"] in CHAT_FRONTENDS
         assert row["scheduler"]["engine"] == "launchd"
         assert isinstance(row["docker"], bool)
-        assert isinstance(row["open_webui"]["installed"], bool)
+        assert isinstance(_owui_installed(row), bool)
         assert isinstance(row.get("dropped", []), list)
     assert levels[9].get("dropped", []) == []
 
@@ -89,10 +94,10 @@ def test_mac_grid_stage3_variant_and_options():
         assert options[0] == row["stage3_variant"], row["level"]
         assert set(options) <= VARIANTS
         if row["stage3_variant"] == "3-ram1":
-            assert row["open_webui"]["installed"] is False
+            assert _owui_installed(row) is False
             assert row["docker"] is False
         else:
-            assert row["open_webui"]["installed"] is True
+            assert _owui_installed(row) is True
             assert row["docker"] is True
 
 
@@ -104,7 +109,7 @@ def test_mac_grid_ram2_free_ram_setting_runs_as_the_user():
 
 
 def test_mac_grid_nextcloud_only_allowed_at_levels_seven_to_nine():
-    for row in _levels()[1:]:
+    for row in _levels():
         nextcloud = row["services"]["nextcloud"]
         assert nextcloud["allowed"] is (row["level"] >= 7), row["level"]
         assert nextcloud["installed"] is False
@@ -113,16 +118,16 @@ def test_mac_grid_nextcloud_only_allowed_at_levels_seven_to_nine():
 def test_mac_grid_wekan_is_the_core_task_board():
     text = MAC_GRID.read_text(encoding="utf-8").lower()
     assert not re.search(r"any\.?do", text)
-    for row in _levels()[1:]:
+    for row in _levels():
         wekan = row["services"]["wekan"]
-        if wekan["installed"] or wekan.get("optional"):
-            assert "core task board" in wekan["role"], row["level"]
+        assert wekan["installed"] is True, row["level"]
+        assert "core task board" in wekan["role"], row["level"]
 
 
 def test_mac_grid_chats_stay_off_tailscale_and_public():
     doc = _doc()
     assert doc["defaults"]["chat_exposure"] == "lan-only"
-    for row in _levels()[1:]:
+    for row in _levels():
         assert "never the default chat exposure" in row["services"]["tailscale"]
 
 
@@ -133,3 +138,17 @@ def test_mac_grid_has_no_root_homebrew_private_names_or_root_paths():
     assert "ycgpt" not in text
     assert "/workspace" not in text
     assert not re.search(r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b", text.replace("127.0.0.1", ""))
+
+
+def test_mac_level_zero_mirrors_the_linux_consultation_stack():
+    row = _levels()[0]
+    assert row["consultation"]["runner"] == "openclaw"
+    assert row["consultation"]["model"].startswith("jet-llama")
+    assert "before OpenClaw starts" in row["consultation"]["rule"]
+    assert row["local_models"]["canary"] == load_scale()["canary"]["tag"]
+    assert row["local_models"]["llama"] is None
+    assert row["cloud_option"]["primary"] == "jet-llama"
+    assert row["docker"] is False
+    assert _owui_installed(row) is False
+    assert "linux.yaml level 0" in row["notes"]["mirrors"]
+    assert "No Apple Silicon Mac lands on level 0" in row["notes"]["macs"]

@@ -92,34 +92,105 @@ stage3_variants:
 levels:
 - level: 0
   hardware_profile_ref: config/hardware_scale.yaml#level-0
-  ui: see linux.yaml level 0
-  chat_frontend: none
+  ui: GridStack workspace (static, served on loopback by the workspace LaunchAgent) with Claw Chat as the main tile
+  chat_frontend: openclaw-control-ui
   stage3_variant: 3-ram1
   stage3_options:
   - 3-ram1
-  consultation: see linux.yaml level 0 (Leonardo owns the level-0 consultation stack)
-  local_models: []
-  cloud_option: see linux.yaml level 0
+  consultation:
+    runner: openclaw
+    model: jet-llama (hosted, customer's own Meta key)
+    local_canary: tinyllama:1.1b only when the machine has >= 2 GB RAM and the canary measures >= 2 tok/s on it;
+      otherwise OpenClaw consults on the hosted model alone.
+    rule: 'OpenClaw gives the consultation on the hosted model. The canary is a probe of the machine, not the consultant,
+      and runs before OpenClaw starts, not alongside it (measured on Linux: OpenClaw''s gateway uses 1.2-1.6 GB
+      on 2 GB, and OpenClaw refuses models with under 4000 tokens of context; tinyllama has 2048). llama3.2:1b is
+      never loaded at level 0.'
+    measured_result: Linux level 0 benchmarks (linux.yaml level 0); none on Mac
+  local_models:
+    canary: tinyllama:1.1b
+    llama: null
+    qwen: null
+    ollama_env:
+      OLLAMA_MAX_LOADED_MODELS: 1
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_KEEP_ALIVE: 2m
+    num_ctx: 2048
+  cloud_option:
+    primary: jet-llama
+    provider: meta
+    endpoint: TBD
+    model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    grok: false
   scheduler:
     engine: launchd
-    jobs: []
-  services: {}
+    verified_by: not verified on Mac; the Linux level-0 column verifies cron with an every-minute probe under model
+      load
+    jobs:
+    - label: OpenClaw gateway (created by `openclaw gateway install`)
+      runs_as: user
+      trigger: at login (KeepAlive)
+    - label: com.terminalglass.workspace45
+      runs_as: user
+      trigger: at login
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+  services:
+    openclaw_gateway:
+      installed: true
+      how: native Node 24, user LaunchAgent
+      bind: 127.0.0.1:18789
+      chat: Control UI as the Claw Chat tile
+    gridstack_workspace:
+      installed: true
+      how: static files served by the workspace LaunchAgent
+      bind: 127.0.0.1:8845
+    wekan:
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+      status: core; RAM not yet measured at level 0
+    silverbullet:
+      installed: true
+      how: native binary (macOS build to verify)
+    ollama:
+      installed: true
+      how: Ollama.app or Homebrew as the user
+      bind: 127.0.0.1:11434
+      only_if: RAM >= 2 GB
+      models:
+      - tinyllama:1.1b
+    swap:
+      installed: built in
+      how: macOS dynamic swap files and memory compression; no zram or swapfile step
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
+    mcp: remote connectors only (no local MCP processes)
+    nextcloud:
+      installed: false
+      allowed: false
   docker: false
-  open_webui:
-    installed: false
+  open_webui: false
   notes:
-    hardware_assumed:
-      ram_gb: <4
-      macs: none
-    stage3_variant_reason: 'Mirrors linux.yaml level 0, which uses 3-ram1 (README: low levels, including level 0,
-      use 3-ram1).'
+    mirrors: 'Copy of Leonardo''s linux.yaml level 0, adapted only where macOS differs: launchd instead of cron,
+      user LaunchAgents instead of systemd/snap, no nginx (services bind to loopback), macOS built-in swap instead
+      of zram/swapfile, and measured: false because nothing ran on a Mac.'
+    macs: No Apple Silicon Mac lands on level 0, and no Mac that runs a supported macOS has under 4 GB. This entry
+      exists so the Mac column has all ten levels.
+    summary: Consultation-first stack for Raspberry Pi class machines (under 4 GB). 2 GB is supported. Under 2 GB,
+      no local model; OpenClaw runs on the hosted model only.
+    remote: Chats and apps are LAN-only by default; remote users come in through Tailscale and get the same interfaces.
+    stage3_variant_reason: 'Same as linux.yaml level 0 (README: low levels, including level 0, use 3-ram1).'
     stage3_scripts:
       3-ram1: 3-ram1.sh
-    summary: Placeholder that mirrors Leonardo's linux.yaml level 0 (consultation stack). No Mac that runs a supported
-      macOS has less than 4 GB, so no Mac lands here. 2 GB machines are supported on the scale (Pi class on Linux);
-      that does not apply to Mac.
+    open_questions_from_linux:
+    - Whether WeKan fits next to OpenClaw and the canary on 2 GB (unmeasured).
+    - Swap or zram looks mandatory at 2 GB with OpenClaw on Linux; macOS swaps on its own.
   dropped:
-  - all Mac services (no Mac lands on level 0)
+  - canary loaded by default (level 0 runs it only as a probe before OpenClaw starts)
   measured: false
 - level: 1
   hardware_profile_ref: config/hardware_scale.yaml#level-1
@@ -131,8 +202,7 @@ levels:
   consultation:
     runner: 8-ball canary
     model: tinyllama:1.1b
-    fallback: OpenClaw when the canary is too large and OpenClaw is capable (adapter planned, not implemented),
-      else jets
+    fallback: OpenClaw on jet-llama when the canary is too large or too slow (OpenClaw adapter planned, not implemented)
   local_models:
     canary: tinyllama:1.1b
     llama: null
@@ -142,14 +212,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -161,6 +234,10 @@ levels:
       runs_as: user
       trigger: at login
       action: GridStack workspace server on 127.0.0.1:8845
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
   services:
     runtime: native macOS, no containers
     homebrew: logged-in user only, never root
@@ -176,21 +253,28 @@ levels:
       installed: false
     gridstack_apps:
     - Chat (Claw Chat)
+    - Notes (SilverBullet)
+    - Tasks (WeKan)
     - Controls
     silverbullet:
-      installed: false
+      installed: true
+      how: native binary (macOS build to verify)
     dokuwiki:
       installed: false
     wekan:
-      installed: false
-      reason: no task board at this level (4 GB); no outside replacement
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+      status: core; RAM not yet measured on Mac
     task_api:
-      installed: false
+      installed: true
+      bind: 127.0.0.1
+      pairs_with: WeKan
     eight_ball_console:
       installed: false
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: false
@@ -202,6 +286,9 @@ levels:
       recording_21: false
       hermes_31: false
       note: Only when the PhilosopherOS product is sold. Never on the ai-link Mac.
+    swap:
+      installed: built in
+      how: macOS dynamic swap files and memory compression; no zram or swapfile step
   docker: false
   open_webui:
     installed: false
@@ -234,7 +321,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3.2:1b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3.2:1b
@@ -244,14 +331,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -267,6 +357,10 @@ levels:
       runs_as: user
       trigger: at login
       action: Docker runtime VM for Open WebUI and other containers
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
   services:
     runtime: native macOS plus Colima for containers
     homebrew: logged-in user only, never root
@@ -286,29 +380,30 @@ levels:
     gridstack_apps:
     - Chat (Open WebUI)
     - Claw Chat
+    - Notes (SilverBullet)
+    - Tasks (WeKan)
     - Controls
     silverbullet:
-      installed: false
-      how: Docker in Colima
-      optional: true
+      installed: true
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: false
       how: Docker in Colima
     wekan:
-      installed: false
-      optional: true
-      role: core task board when installed
-      note: vendor asks for about 1 GB free; offered, not default, on 8-16 GB Macs
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+      status: core; RAM not yet measured on Mac
     task_api:
-      installed: false
-      optional: true
+      installed: true
+      bind: 127.0.0.1
       pairs_with: WeKan
     eight_ball_console:
       installed: false
       bind: 127.0.0.1
       optional: true
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: false
@@ -341,10 +436,10 @@ levels:
     stage3_scripts:
       3-ram2: 3-ram2.sh
       3-ram1: 3-ram1.sh
-    summary: The most common Mac level. Slim Open WebUI and Claw Chat side by side.
+    summary: The most common Mac level. Slim Open WebUI and Claw Chat side by side. WeKan stays core; its RAM next
+      to slim Open WebUI on 8 GB is unmeasured.
     untested: Not run on real Mac hardware.
   dropped:
-  - SilverBullet by default (opt-in)
   - 8-Ball console by default (opt-in)
   measured: false
 - level: 3
@@ -359,7 +454,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3.2:1b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3.2:1b
@@ -369,14 +464,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -396,6 +494,10 @@ levels:
       runs_as: user
       trigger: at login
       action: 8-Ball console on loopback
+    - label: com.philosopheros.wekan and com.philosopheros.task-api
+      runs_as: user
+      trigger: at login
+      action: WeKan task board and local task API (labels from the Mac installer draft)
   services:
     runtime: native macOS plus Colima for containers
     homebrew: logged-in user only, never root
@@ -416,27 +518,28 @@ levels:
     - Chat (Open WebUI)
     - Claw Chat
     - Notes (SilverBullet)
+    - Tasks (WeKan)
     - Controls
     silverbullet:
       installed: true
-      how: Docker in Colima
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: false
       how: Docker in Colima
     wekan:
-      installed: false
-      optional: true
-      role: core task board when installed
-      note: vendor asks for about 1 GB free; offered, not default, on 8-16 GB Macs
+      installed: true
+      role: core task board
+      how: native, user LaunchAgent
+      status: core; RAM not yet measured on Mac
     task_api:
-      installed: false
-      optional: true
+      installed: true
+      bind: 127.0.0.1
       pairs_with: WeKan
     eight_ball_console:
       installed: true
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: false
@@ -474,7 +577,6 @@ levels:
   dropped:
   - Open WebUI full image (slim only)
   - DokuWiki
-  - WeKan task board and task API by default (optional)
   - llama3.2:3b (llama3.2:1b instead)
   - qwen2.5-coder:7b (1.5b instead)
   measured: false
@@ -490,7 +592,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3.2:3b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3.2:3b
@@ -500,14 +602,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -551,12 +656,12 @@ levels:
     - Chat (Open WebUI)
     - Claw Chat
     - Notes (SilverBullet)
-    - Wiki (DokuWiki)
     - Tasks (WeKan)
+    - Wiki (DokuWiki)
     - Controls
     silverbullet:
       installed: true
-      how: Docker in Colima
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: true
       how: Docker in Colima
@@ -564,6 +669,7 @@ levels:
       installed: true
       role: core task board
       how: native, user LaunchAgent
+      status: core
     task_api:
       installed: true
       bind: 127.0.0.1
@@ -571,8 +677,8 @@ levels:
     eight_ball_console:
       installed: true
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: false
@@ -620,7 +726,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3.2:3b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3.2:3b
@@ -630,14 +736,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -681,12 +790,12 @@ levels:
     - Chat (Open WebUI)
     - Claw Chat
     - Notes (SilverBullet)
-    - Wiki (DokuWiki)
     - Tasks (WeKan)
+    - Wiki (DokuWiki)
     - Controls
     silverbullet:
       installed: true
-      how: Docker in Colima
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: true
       how: Docker in Colima
@@ -694,6 +803,7 @@ levels:
       installed: true
       role: core task board
       how: native, user LaunchAgent
+      status: core
     task_api:
       installed: true
       bind: 127.0.0.1
@@ -701,8 +811,8 @@ levels:
     eight_ball_console:
       installed: true
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: false
@@ -751,7 +861,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3:8b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3:8b
@@ -761,14 +871,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -816,12 +929,12 @@ levels:
     - Chat (Open WebUI)
     - Claw Chat
     - Notes (SilverBullet)
-    - Wiki (DokuWiki)
     - Tasks (WeKan)
+    - Wiki (DokuWiki)
     - Controls
     silverbullet:
       installed: true
-      how: Docker in Colima
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: true
       how: Docker in Colima
@@ -829,6 +942,7 @@ levels:
       installed: true
       role: core task board
       how: native, user LaunchAgent
+      status: core
     task_api:
       installed: true
       bind: 127.0.0.1
@@ -836,8 +950,8 @@ levels:
     eight_ball_console:
       installed: true
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: false
@@ -884,7 +998,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3:8b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3:8b
@@ -894,14 +1008,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -949,12 +1066,12 @@ levels:
     - Chat (Open WebUI)
     - Claw Chat
     - Notes (SilverBullet)
-    - Wiki (DokuWiki)
     - Tasks (WeKan)
+    - Wiki (DokuWiki)
     - Controls
     silverbullet:
       installed: true
-      how: Docker in Colima
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: true
       how: Docker in Colima
@@ -962,6 +1079,7 @@ levels:
       installed: true
       role: core task board
       how: native, user LaunchAgent
+      status: core
     task_api:
       installed: true
       bind: 127.0.0.1
@@ -969,8 +1087,8 @@ levels:
     eight_ball_console:
       installed: true
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: true
@@ -1020,7 +1138,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3:8b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3:8b
@@ -1030,14 +1148,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -1085,12 +1206,12 @@ levels:
     - Chat (Open WebUI)
     - Claw Chat
     - Notes (SilverBullet)
-    - Wiki (DokuWiki)
     - Tasks (WeKan)
+    - Wiki (DokuWiki)
     - Controls
     silverbullet:
       installed: true
-      how: Docker in Colima
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: true
       how: Docker in Colima
@@ -1098,6 +1219,7 @@ levels:
       installed: true
       role: core task board
       how: native, user LaunchAgent
+      status: core
     task_api:
       installed: true
       bind: 127.0.0.1
@@ -1105,8 +1227,8 @@ levels:
     eight_ball_console:
       installed: true
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: true
@@ -1155,7 +1277,7 @@ levels:
   consultation:
     runner: local llama
     model: llama3:8b
-    fallback: jets
+    fallback: OpenClaw on jet-llama
   local_models:
     canary: null
     llama: llama3:8b
@@ -1165,14 +1287,17 @@ levels:
       OLLAMA_NUM_PARALLEL: 1
       OLLAMA_KEEP_ALIVE: 5m
   cloud_option:
-    primary: jet-llama (Meta-hosted Llama, customer signs in with their own Meta API key)
-    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
+    primary: jet-llama
+    provider: meta
     endpoint: TBD
     model_id: TBD
+    key: customer's own Meta API key
+    credential: ~/.config/8-ball/meta-api-key (folder 0700, file 0600)
     grok: false
   scheduler:
     engine: launchd
-    verify: launchctl print gui/<uid>/<label> shows the job loaded and running
+    verified_by: stage 50 check (launchctl print gui/<uid>/<label> shows each job loaded and running) - not yet
+      measured
     jobs:
     - label: OpenClaw gateway (created by `openclaw gateway install`)
       runs_as: user
@@ -1220,12 +1345,12 @@ levels:
     - Chat (Open WebUI)
     - Claw Chat
     - Notes (SilverBullet)
-    - Wiki (DokuWiki)
     - Tasks (WeKan)
+    - Wiki (DokuWiki)
     - Controls
     silverbullet:
       installed: true
-      how: Docker in Colima
+      how: Docker in Colima (Mac installer draft stage 34)
     dokuwiki:
       installed: true
       how: Docker in Colima
@@ -1233,6 +1358,7 @@ levels:
       installed: true
       role: core task board
       how: native, user LaunchAgent
+      status: core
     task_api:
       installed: true
       bind: 127.0.0.1
@@ -1240,8 +1366,8 @@ levels:
     eight_ball_console:
       installed: true
       bind: 127.0.0.1
-    tailscale: optional, never the default chat exposure; remote chat needs proper app and chat interfaces first;
-      never serves 11434
+    tailscale: optional remote access (tailnet only, never Funnel), never the default chat exposure; remote users
+      must get the same full app and chat interfaces; never serves 11434
     nextcloud:
       installed: false
       allowed: true
