@@ -27,9 +27,13 @@ No 9-level hardware set was found. The 8-name set is `config/hardware_profiles.y
 
 ## Jets model
 
-Jonathan corrected the jets model: it is Grok, as an official Ollama cloud tag, not a separate product and not the whole cloud catalog.
+Jonathan's decision (t749u) drops Grok as the jets model. The jets slot is a hosted Llama on Meta's service, for alignment with Meta on future business development. It is not a local Ollama tag and it is not run on this machine.
 
-Catalog 2026.08.01 has no Grok family. A live Ollama cloud listing on 2026-11-13 (`https://ollama.com/search?c=cloud` and `https://ollama.com/search?q=grok`) shows no official Grok library model. Community forks are not offered. The consultation records that gap and does not invent a tag.
+The local options stay. Levels 0 and 1 use the canary when it fits. From level 2 upward the canary is dropped and a local Llama tag is recommended. A code or agentic focus still adds the tentative Qwen recommendation.
+
+The consultation asks the customer to sign in or create a Meta account and enter an API key. The key is stored only under that user's home, in `.config/8-ball/meta-api-key`, with the directory mode 700 and the file mode 600. It is not written to `/root`, the repository, logs, or the consultation output, and it is not hardcoded.
+
+Meta's public docs were checked on 2026-11-13 at `https://llama.developer.meta.com/docs/` and `https://llama.developer.meta.com/docs/quickstart`. They describe the Meta Model API at `https://api.meta.ai/v1` with a bearer `MODEL_API_KEY` and Muse model ids. They do not document a Llama model id or a stable sign-up URL for this jets slot. The endpoint, model id, and sign-up URL stay TODO for Jonathan. The consultation does not call Meta until those are named.
 
 ## Recommendations by level
 

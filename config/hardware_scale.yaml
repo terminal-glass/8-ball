@@ -89,14 +89,24 @@ levels:
     local_model: llama
     llama_tag: llama3:8b
 jets:
-  id: grok
-  meaning: ollama-cloud-grok
-  family_prefix: grok
+  id: jet-llama
+  provider: meta
+  runtime: meta-hosted
   local_download: false
-  gap: >-
-    The jets model is an Ollama cloud Grok tag. Catalog 2026.08.01 has no
-    Grok family. A live Ollama cloud listing on 2026-11-13 also shows no
-    official Grok library model. Community forks are not offered.
+  aim: Alignment with Meta for future business development.
+  model_id: null
+  endpoint: null
+  signup_url: null
+  credential_relative_path: .config/8-ball/meta-api-key
+  docs_checked: https://llama.developer.meta.com/docs/
+  todos:
+    - endpoint
+    - model_id
+    - signup_url
+  prompt: >-
+    Jets is a hosted Llama on Meta's service, so 8-BALL stays aligned with
+    Meta. Sign in or create your Meta account, then enter the API key.
+    The key is stored only in your home folder.
 code_focus:
   status: tentative
   family_prefix: qwen
@@ -118,10 +128,14 @@ openclaw_consultation:
   implemented: false
   adapter_status: planned
 jets_note: >-
-  The jets model is Grok, offered only as an official Ollama cloud tag.
-  Catalog 2026.08.01 and the 2026-11-13 Ollama cloud listing have no such
-  tag. Levels 0 and 1 use the canary when it fits. If the canary is too
-  large and OpenClaw is capable, OpenClaw gives the consultation. That
-  adapter is planned and is not called. From level 2 upward the canary is
-  dropped and a local Llama tag is recommended. A code or agentic focus
-  adds a tentative Qwen recommendation.
+  The jets slot is a hosted Llama on Meta's service, for alignment with
+  Meta. It is not run locally. Meta's public Model API docs were checked
+  on 2026-11-13 at https://llama.developer.meta.com/docs/ and describe
+  Muse model ids, not a Llama model id or a stable sign-up URL. The
+  endpoint, model id, and sign-up URL stay TODO for Jonathan. The customer
+  signs in with Meta and the API key is stored only in the installing
+  user's home. Levels 0 and 1 use the canary when it fits. If the canary
+  is too large and OpenClaw is capable, OpenClaw gives the consultation.
+  That adapter is planned and is not called. From level 2 upward the
+  canary is dropped and a local Llama tag is recommended. A code or
+  agentic focus adds a tentative Qwen recommendation.

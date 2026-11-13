@@ -605,10 +605,10 @@
       "artifacts": [
         {
           "path": "config/hardware_scale.yaml",
-          "sha256": "b52ef883780695c075b1a59aa7452ce7b30cb4e61743cf5735ab8472135b0d93"
+          "sha256": "e7a7a3e73019bc9efeb103188b749fa98b40d66f51dc6c73940e980f3560d5b9"
         }
       ],
-      "sha256": "38498b9b7141a626e76d8f0f3d7c73cccad0e45d6663f746f963cfdd79604d55",
+      "sha256": "b3b6d270783cbfbae40b63f49b12c8c985a09149461a23dac02724051dc13cd4",
       "signature": {
         "status": "unsigned",
         "algorithm": null,
@@ -641,10 +641,10 @@
       "artifacts": [
         {
           "path": "install/shared/8.4b-consult.sh",
-          "sha256": "abf4488a16bd7843d70504bf0e6c46072c12b4eeda53b8503d11f934e0a0540e"
+          "sha256": "5efef464fe60b0e2495554e1f3f6e32397715f6d546578377c37170ebfe0d701"
         }
       ],
-      "sha256": "0a9c7720d392ca7601af9b53b0b86aeadc90b1487ca4c79d6aa62b28c0a9bb19",
+      "sha256": "8ac59d51f14861fb2c0daadacf13c5661a6af11e9fde376f4db8a0a16b04a243",
       "signature": {
         "status": "unsigned",
         "algorithm": null,

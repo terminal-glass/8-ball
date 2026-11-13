@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import json
+import stat
+from pathlib import Path
+
+import pytest
 
 from eight_ball.config import load_yaml
-from eight_ball.manager.consult import consult
+from eight_ball.manager.consult import consult, store_meta_api_key
 from eight_ball.paths import CONFIG_DIR, NORMALIZED_DIR, REPO_ROOT
 from eight_ball.scale import legacy_level, load_scale, place_by_ram, scale_errors
 
@@ -57,12 +61,11 @@ def test_ram_placement_uses_measured_bytes():
     assert unknown["evidence"] == "unknown"
 
 
-def test_larger_level_drops_canary_and_jets_is_grok_cloud():
+def test_larger_level_drops_canary_and_offers_hosted_jet_llama():
     catalog = _catalog(
         _tag("tinyllama:1.1b", "local"),
         _tag("llama3.2:3b", "local", 2_000_000_000),
         _tag("someone/grok:cloud", "cloud_only", None),
-        _tag("grok:cloud", "cloud_only", None),
     )
     offer = consult(
         catalog,
@@ -76,9 +79,17 @@ def test_larger_level_drops_canary_and_jets_is_grok_cloud():
     assert "canary" not in by_id
     assert by_id["llama"]["tag"] == "llama3.2:3b"
     assert by_id["llama"]["local_download"] is True
-    assert by_id["jets"]["offered"] is True
-    assert by_id["jets"]["tag"] == "grok:cloud"
-    assert by_id["jets"]["local_download"] is False
+    jets = by_id["jets"]
+    assert jets["offered"] is True
+    assert jets["runtime"] == "meta-hosted"
+    assert jets["tag"] is None
+    assert jets["model_id"] is None
+    assert jets["endpoint"] is None
+    assert jets["signup_url"] is None
+    assert jets["ready_to_call"] is False
+    assert jets["local_download"] is False
+    assert jets["todos"] == ["endpoint", "model_id", "signup_url"]
+    assert "Meta" in jets["aim"]
     assert offer["consultation"]["runner"] == "local"
     assert offer["install_performed"] is False
 
@@ -141,7 +152,7 @@ def test_missing_eval_count_does_not_invent_speed():
     assert offer["consultation"]["runner"] == "local"
 
 
-def test_catalog_snapshot_recommends_local_llama_and_records_grok_gap():
+def test_catalog_snapshot_recommends_local_llama_and_hosted_jet_llama():
     tags = json.loads((NORMALIZED_DIR / "tags.json").read_text(encoding="utf-8"))
     offer = consult(
         {"tags": tags},
@@ -154,9 +165,10 @@ def test_catalog_snapshot_recommends_local_llama_and_records_grok_gap():
     assert offer["canary"]["dropped"] is True
     assert by_id["llama"]["offered"] is True
     assert by_id["llama"]["tag"] == "llama3.2:3b"
-    assert by_id["jets"]["offered"] is False
-    assert by_id["jets"]["tag"] is None
-    assert "no" in by_id["jets"]["reason"] and "Grok" in by_id["jets"]["reason"]
+    assert by_id["jets"]["offered"] is True
+    assert by_id["jets"]["model_id"] is None
+    assert "TODO" in by_id["jets"]["reason"]
+    assert "Grok" not in by_id["jets"]["reason"]
     assert by_id["qwen"]["tentative"] is True
     assert by_id["qwen"]["tag"] == "qwen2.5-coder:7b"
     assert by_id["qwen"]["status"] == "tentative"
@@ -171,3 +183,44 @@ def test_consultation_script_is_letter_suffixed():
     text = (REPO_ROOT / "config/deployment_types.yaml").read_text(encoding="utf-8")
     assert 'deployment_type_id: "3"' in text
     assert 'deployment_type_id: "8"' not in text
+    assert "getpass" in script
+    assert "not accepted" in script
+
+
+def test_meta_key_stays_in_the_user_home_and_out_of_the_offer(tmp_path: Path):
+    secret = b"meta-test-key-do-not-print"
+    catalog = _catalog(_tag("llama3.2:3b", "local", 2_000_000_000))
+    offer = consult(
+        catalog,
+        ram_bytes=16_000_000_000,
+        disk_free_bytes=20_000_000_000,
+        installed=set(),
+        home=tmp_path,
+        meta_api_key=secret,
+    )
+    rendered = json.dumps(offer)
+    assert secret.decode() not in rendered
+    assert offer["credential_stored"] is True
+    assert offer["credential_present"] is True
+    path = tmp_path / ".config" / "8-ball" / "meta-api-key"
+    assert path.read_bytes() == secret
+    assert stat.S_IMODE(path.stat().st_mode) == 0o600
+    assert stat.S_IMODE(path.parent.stat().st_mode) == 0o700
+    with pytest.raises(PermissionError):
+        store_meta_api_key(Path("/root"), secret)
+    with pytest.raises(ValueError):
+        store_meta_api_key(tmp_path, b"   ")
+
+
+def test_consult_cli_does_not_accept_or_echo_a_key(capsys):
+    from eight_ball.manager.__main__ import main
+
+    code = main(["consult", "--api-key", "super-secret-value"])
+    assert code == 2
+    captured = capsys.readouterr()
+    assert "super-secret-value" not in captured.out
+    assert "super-secret-value" not in captured.err
+    root = main(["consult", "--home", "/root"])
+    assert root == 2
+    captured = capsys.readouterr()
+    assert "/root" in captured.err

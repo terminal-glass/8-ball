@@ -7,7 +7,7 @@ from pathlib import Path
 
 from eight_ball.manager.argv import ArgvRejected
 from eight_ball.manager.catalog_view import browse, load_catalog
-from eight_ball.manager.consult import consult
+from eight_ball.manager.consult import consult, jets_prompt, store_meta_api_key
 from eight_ball.manager.hardware import detect_hardware
 from eight_ball.manager.lifecycle import (
     list_state,
@@ -19,6 +19,7 @@ from eight_ball.manager.lifecycle import (
 from eight_ball.manager.ollama_http import OllamaClient
 from eight_ball.manager.refresh import adopt_snapshot
 from eight_ball.manager.release import verify_manifest, write_manifest
+from eight_ball.manager.secrets import assert_user_home
 from eight_ball.paths import REPO_ROOT
 
 
@@ -139,7 +140,29 @@ def cmd_remove(args: argparse.Namespace) -> int:
     return 0 if result.get("ok") else 1
 
 
+def _read_meta_key(home: Path) -> bool:
+    """Ask for the Meta API key on a terminal. Never take it from argv."""
+    print(jets_prompt(), file=sys.stderr)
+    if not sys.stdin.isatty():
+        print("No terminal is attached, so no API key was read.", file=sys.stderr)
+        return False
+    import getpass
+
+    secret = getpass.getpass("Meta API key: ")
+    if not secret.strip():
+        print("No API key was stored.", file=sys.stderr)
+        return False
+    store_meta_api_key(home, secret.encode())
+    return True
+
+
 def cmd_consult(args: argparse.Namespace) -> int:
+    try:
+        home = assert_user_home(Path(args.home))
+    except PermissionError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+    stored = _read_meta_key(home)
     hardware = detect_hardware()
     catalog = _catalog(args.catalog)
     try:
@@ -172,7 +195,11 @@ def cmd_consult(args: argparse.Namespace) -> int:
         measurement_error=measurement_error,
         focus=None if args.focus == "general" else args.focus,
         openclaw_capable={"yes": True, "no": False, "unknown": None}[args.openclaw_capable],
+        home=home,
     )
+    if stored:
+        result["credential_stored"] = True
+        result["credential_present"] = True
     print(json.dumps(result, indent=2))
     return 0
 
@@ -236,6 +263,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     consult_parser = sub.add_parser("consult")
     consult_parser.add_argument("--focus", choices=["general", "code"], default="general")
+    consult_parser.add_argument("--home", default=str(Path.home()))
     consult_parser.add_argument(
         "--openclaw-capable",
         choices=["yes", "no", "unknown"],
@@ -257,7 +285,15 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
-    args = parser.parse_args(argv)
+    args, unknown = parser.parse_known_args(argv)
+    if unknown:
+        if getattr(args, "command", None) == "consult":
+            print(
+                "Unrecognized arguments. The Meta API key is not accepted on the command line.",
+                file=sys.stderr,
+            )
+            return 2
+        parser.error("unrecognized arguments: " + " ".join(unknown))
     return args.handler(args)
 
 

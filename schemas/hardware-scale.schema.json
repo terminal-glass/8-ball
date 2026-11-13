@@ -49,13 +49,37 @@
     },
     "jets": {
       "type": "object",
-      "required": ["id", "meaning", "family_prefix", "local_download", "gap"],
+      "required": [
+        "id",
+        "provider",
+        "runtime",
+        "local_download",
+        "aim",
+        "model_id",
+        "endpoint",
+        "signup_url",
+        "credential_relative_path",
+        "docs_checked",
+        "todos",
+        "prompt"
+      ],
       "properties": {
-        "id": { "const": "grok" },
-        "meaning": { "const": "ollama-cloud-grok" },
-        "family_prefix": { "const": "grok" },
+        "id": { "const": "jet-llama" },
+        "provider": { "const": "meta" },
+        "runtime": { "const": "meta-hosted" },
         "local_download": { "const": false },
-        "gap": { "type": "string" }
+        "aim": { "type": "string" },
+        "model_id": { "type": "null" },
+        "endpoint": { "type": "null" },
+        "signup_url": { "type": "null" },
+        "credential_relative_path": { "type": "string" },
+        "docs_checked": { "type": "string" },
+        "todos": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["endpoint", "model_id", "signup_url"] }
+        },
+        "prompt": { "type": "string" }
       },
       "additionalProperties": false
     },

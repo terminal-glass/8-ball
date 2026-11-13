@@ -2,14 +2,16 @@
 
 Levels 0 and 1 use the canary when it fits. If it is too large and OpenClaw
 is capable, OpenClaw gives the consultation. Larger levels drop the canary
-and recommend a local Llama tag. The jets model is an Ollama cloud Grok tag.
-A code or agentic focus adds a tentative Qwen recommendation.
+and recommend a local Llama tag. The jets slot is a hosted Llama on Meta's
+service. A code or agentic focus adds a tentative Qwen recommendation.
 """
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
+from eight_ball.manager.secrets import write_private_file
 from eight_ball.scale import level_row, load_scale, place_by_ram
 
 
@@ -43,6 +45,8 @@ def consult(
     measurement_error: str | None = None,
     focus: str | None = None,
     openclaw_capable: bool | None = None,
+    home: Path | None = None,
+    meta_api_key: bytes | None = None,
 ) -> dict[str, Any]:
     """Build the customer offer. This does not install a model or call OpenClaw."""
     document = scale or load_scale()
@@ -98,6 +102,12 @@ def consult(
         canary_fits=bool(canary_result["fits"]),
         openclaw_capable=openclaw_capable,
     )
+    credential_stored = False
+    if meta_api_key is not None:
+        if home is None:
+            raise ValueError("A home directory is required before storing a Meta API key.")
+        store_meta_api_key(home, meta_api_key)
+        credential_stored = True
     return {
         "level": placed["level"],
         "display_name": placed["display_name"],
@@ -108,9 +118,25 @@ def consult(
         "options": options,
         "consultation": consultation,
         "jets_note": document["jets_note"].strip(),
+        "credential_stored": credential_stored,
+        "credential_present": _credential_present(document, home),
         "install_performed": False,
         "auto_install": False,
     }
+
+
+def jets_prompt(document: dict[str, Any] | None = None) -> str:
+    """Customer prompt. It never includes an API key."""
+    source = document or load_scale()
+    return source["jets"]["prompt"].strip()
+
+
+def store_meta_api_key(home: Path, secret: bytes) -> Path:
+    """Store the Meta API key in the installing user's home. Never under /root."""
+    if not secret or secret.strip() == b"":
+        raise ValueError("Refusing to store an empty Meta API key.")
+    relative = load_scale()["jets"]["credential_relative_path"]
+    return write_private_file(home / relative, secret, home=home)
 
 
 def _canary_result(
@@ -247,33 +273,29 @@ def _recommendations(
                 }
             )
     jets = document["jets"]
-    matches = _official_cloud_tags(catalog, jets["family_prefix"])
-    if matches:
-        options.append(
-            {
-                "id": "jets",
-                "family": "grok",
-                "runtime": "ollama-cloud",
-                "tag": matches[0]["ollama_identifier"],
-                "offered": True,
-                "local_download": False,
-                "tentative": False,
-                "reason": "Jets is this official Ollama cloud Grok tag. It is not a local download.",
-            }
-        )
-    else:
-        options.append(
-            {
-                "id": "jets",
-                "family": "grok",
-                "runtime": "ollama-cloud",
-                "tag": None,
-                "offered": False,
-                "local_download": False,
-                "tentative": False,
-                "reason": jets["gap"].strip(),
-            }
-        )
+    options.append(
+        {
+            "id": "jets",
+            "provider": jets["provider"],
+            "runtime": jets["runtime"],
+            "tag": None,
+            "model_id": jets["model_id"],
+            "endpoint": jets["endpoint"],
+            "signup_url": jets["signup_url"],
+            "offered": True,
+            "ready_to_call": False,
+            "local_download": False,
+            "tentative": False,
+            "aim": jets["aim"],
+            "todos": list(jets["todos"]),
+            "prompt": jets["prompt"].strip(),
+            "reason": (
+                "Jets is a hosted Llama on Meta's service. "
+                "Sign in or create a Meta account and enter the API key. "
+                "The endpoint, model id, and sign-up URL are TODO for Jonathan."
+            ),
+        }
+    )
     if focus == "code":
         options.append(_qwen_option(document, catalog, row["level"]))
     return options
@@ -361,26 +383,11 @@ def _consultation_runner(
     }
 
 
-def _official_cloud_tags(catalog: dict[str, Any], family_prefix: str) -> list[dict[str, Any]]:
-    found: list[dict[str, Any]] = []
-    prefix = family_prefix.casefold()
-    for record in catalog.get("tags", []):
-        identifier = str(record.get("ollama_identifier") or "")
-        if "/" in identifier:
-            continue
-        family, separator, name = identifier.partition(":")
-        if not separator or not family.casefold().startswith(prefix):
-            continue
-        cloud_name = name.casefold().endswith("cloud") or name.casefold().endswith("-cloud")
-        availability = record.get("availability")
-        if availability not in {"cloud", "cloud_only", "both"} and not cloud_name:
-            continue
-        if availability == "local" and not cloud_name:
-            continue
-        if cloud_name or availability in {"cloud", "cloud_only"}:
-            found.append(record)
-    found.sort(key=lambda row: row["ollama_identifier"])
-    return found
+def _credential_present(document: dict[str, Any], home: Path | None) -> bool:
+    if home is None:
+        return False
+    path = home / document["jets"]["credential_relative_path"]
+    return path.is_file()
 
 
 def _tag(catalog: dict[str, Any], tag: str) -> dict[str, Any] | None:
