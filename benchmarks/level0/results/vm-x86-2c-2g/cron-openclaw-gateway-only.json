@@ -1,0 +1,1 @@
+{"label": "openclaw-gateway-only", "load_model": "none", "minutes": 5, "expected_runs": 5, "fired": 5, "missed": 0, "late_over_s": 5.0, "late": 0, "lateness_s_min": 1.36, "lateness_s_median": 1.472, "lateness_s_max": 1.503, "load_generations": 0, "load_eval_tok_s_median": null}

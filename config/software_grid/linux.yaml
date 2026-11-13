@@ -1,0 +1,422 @@
+# Linux column of the per-OS software grid for the 0-9 hardware scale.
+# Owner: Leonardo. Mac: Monet (mac.yaml). Windows: Raphael (windows.yaml).
+# Shared schema: README.md in this folder.
+#
+# Levels come from config/hardware_scale.yaml. Installer stage numbers are a
+# different sequence and are never renumbered here.
+#
+# Status: DRAFT. Only level 0 has measurements (benchmarks/level0/). Every
+# other level is measured: false until it is benchmarked.
+#
+# Owner decisions applied (2026-11-13):
+# - No Open WebUI on Linux levels 0-2 (stage3_variant '3-ram1'). Linux
+#   cutoffs are Linux-only; Mac and Windows set their own.
+# - Chats are LAN-only by default. Remote access goes through Tailscale and
+#   must still get the full app and chat interfaces.
+# - Nextcloud only at levels 7-9.
+# - WeKan stays in the core stack at every level. It is never replaced by
+#   Any.do or any other outside service.
+# - 2 GB machines are supported.
+# Owner decisions applied (2026-11-13, second set):
+# - The level-0 hosted consultation model is Muse Spark (e.g.
+#   meta/muse-spark-1.3) through the @openclaw/meta-provider plugin. Llama is
+#   too big for that tier. The customer supplies their own Meta key: one clear
+#   prompt at install, plus an 'add your key later' path when they skip it.
+#   The key is stored only in the installing user's home (file 600, dir 700).
+# - zram/swap at level 0 is configurable and not mandatory (off by default).
+schema: terminal-glass.8-ball.software-grid/1
+os: linux
+owner: leonardo
+status: draft
+scale_ref: config/hardware_scale.yaml
+benchmarks_ref: benchmarks/level0/RESULTS.md
+supported_clients:
+  - Ubuntu 24.04 LTS (x86_64, arm64)
+  - Raspberry Pi OS Lite 64-bit (tentative, untested)
+defaults:
+  bind: 127.0.0.1            # every service; nginx is the only LAN listener
+  lan_front_door: nginx on the LAN interface (chats and apps LAN-only by default)
+  remote_access: >-
+    Tailscale Serve (tailnet only, never Funnel) to the same nginx front door,
+    so remote users get the same GridStack workspace, Claw Chat tile, and
+    (where installed) Open WebUI as LAN users. Ollama 11434 is never exposed
+    on the LAN, the tailnet, or the internet.
+  ollama_port: 11434
+  openclaw_port: 18789
+  scheduler: cron
+  jets_credential_path: ~/.config/8-ball/meta-api-key   # installing user's home, dir 700, file 600
+
+stage3_variants:
+  '3':
+    script: 3.sh
+    does: Standard Open WebUI stage (Docker container, loopback, behind nginx).
+  '3-ram1':
+    script: 3-ram1.sh
+    does: >-
+      Low-RAM install. Runs only the lightweight OpenClaw chat (the gateway's
+      Control UI, as the Claw Chat tile in GridStack) and bypasses Open WebUI.
+      No Docker. Needs the OpenClaw gateway stage.
+  '3-ram2':
+    script: 3-ram2.sh
+    does: >-
+      OpenClaw chat and Open WebUI side by side on the same shared database,
+      plus a user setting that turns off Docker and Open WebUI to free RAM.
+    free_ram_setting:
+      name: stage3.free_ram
+      where: GridStack Controls tile (tentative)
+      when_on:
+        - stop the Open WebUI container and disable its restart
+        - stop docker.service and containerd.service (only if nothing else needs Docker)
+        - GridStack Chat tile switches to Claw Chat
+        - chat history stays in the shared database
+      when_off:
+        - start Docker and the Open WebUI container again
+        - GridStack Chat tile switches back to Open WebUI
+    shared_database: {status: tentative, note: format and location TBD before 3-ram2.sh is written}
+
+levels:
+  - level: 0
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-0'
+    ui: GridStack workspace (static, served by nginx) with Claw Chat as the main tile
+    chat_frontend: openclaw-control-ui
+    stage3_variant: '3-ram1'
+    stage3_options: ['3-ram1']
+    consultation:
+      runner: openclaw
+      model: Muse Spark (meta/muse-spark-1.3) via @openclaw/meta-provider, customer's own Meta key
+      local_canary: >-
+        tinyllama:1.1b only when the machine has >= 2 GB RAM and the canary
+        measures >= 2 tok/s on it; otherwise OpenClaw consults on the hosted
+        model alone.
+      rule: >-
+        OpenClaw gives the consultation on the hosted model. The canary is a
+        probe of the machine, not the consultant, and runs before OpenClaw
+        starts, not alongside it (measured: OpenClaw's gateway uses 1.2-1.6 GB
+        on 2 GB, and OpenClaw refuses models with under 4000 tokens of
+        context; tinyllama has 2048). llama3.2:1b is never loaded at level 0.
+      measured_result: see benchmarks/level0/RESULTS.md
+    local_models:
+      canary: tinyllama:1.1b
+      llama: null            # llama3.2:1b loads alone on a 2 GB VM (~1.47 GB RSS, ~5.9 tok/s) but leaves no room for the OpenClaw gateway
+      qwen: null
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 2m}
+      num_ctx: 2048          # tinyllama's trained context; Ollama clamps it to 2048 anyway
+    cloud_option: {primary: muse-spark, provider: meta, endpoint: '@openclaw/meta-provider (OpenClaw Meta provider plugin)', model_id: meta/muse-spark-1.3, key: "customer's own Meta API key; one prompt at install, add-later path if skipped; ~/.config/8-ball/meta-api-key (file 600, dir 700)"}
+    scheduler:
+      engine: cron
+      verified_by: benchmarks/level0/cron_test.sh (every-minute probe for 10 minutes under model load)
+    services:
+      nginx: {installed: true, bind: LAN, role: front door for GridStack, Claw Chat and apps}
+      openclaw_gateway: {installed: true, how: native Node 24, systemd, bind: 127.0.0.1:18789, chat: Control UI via /apps/claw/}
+      gridstack_workspace: {installed: true, how: static files}
+      wekan: {installed: true, how: native snap, status: core; RAM not yet measured at level 0}
+      silverbullet: {installed: true, how: native binary}
+      ollama: {installed: true, how: native systemd, bind: 127.0.0.1:11434, only_if: RAM >= 2 GB, models: [tinyllama:1.1b]}
+      swap: {installed: optional, how: zram or 2 GB swapfile, default: 'off', enable: installer flag or prompt; not mandatory (owner decision)}
+      tailscale: {installed: optional, use: remote access via Serve to the same nginx front door}
+      mcp: remote connectors only (no local MCP processes)
+    docker: false
+    open_webui: false
+    notes:
+      summary: >-
+        Consultation-first stack for Raspberry Pi class machines (under 4 GB).
+        2 GB is supported. Under 2 GB, no local model; OpenClaw runs on the
+        hosted model only. Use a USB SSD rather than an SD card for state.
+      remote: Chats and apps are LAN-only by default; remote users come in through Tailscale and get the same interfaces.
+      open_questions:
+        - Whether WeKan fits next to OpenClaw and the canary on 2 GB (unmeasured). The OpenClaw 2026.11.3 gateway alone measured 1224 MB idle / 1603 MB peak on a 2 GB VM.
+        - arm64 numbers pending (emulated 2 GB arm64 VM).
+        - Swap or zram is optional and off by default (owner decision). Measured 464 MB available with the OpenClaw gateway idle on 2 GB, so turning it on is recommended when WeKan runs too.
+        - The exact Muse Spark model id may change; meta/muse-spark-1.3 is the current example.
+    dropped: [Kiwix Planet Library, DokuWiki, Mailpit, local stdio MCP servers, canary loaded by default, qwen2.5-coder:1.5b]
+    measured: benchmarks/level0/RESULTS.md
+
+  - level: 1
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-1'
+    ui: GridStack workspace with Claw Chat, Notes, Tasks, Planet, Controls tiles
+    chat_frontend: openclaw-control-ui
+    stage3_variant: '3-ram1'
+    stage3_options: ['3-ram1']
+    consultation:
+      runner: 8-ball canary
+      model: tinyllama:1.1b
+      fallback: OpenClaw on Muse Spark (meta/muse-spark-1.3, @openclaw/meta-provider) when the canary is too large or too slow
+    local_models:
+      canary: tinyllama:1.1b
+      llama: null
+      qwen: qwen2.5-coder:1.5b   # code/agentic focus, tentative
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 5m}
+      num_ctx: 4096
+    cloud_option: {primary: muse-spark, provider: meta, endpoint: '@openclaw/meta-provider (OpenClaw Meta provider plugin)', model_id: meta/muse-spark-1.3, key: customer's own Meta API key (same file as level 0)}
+    scheduler: {engine: cron, verified_by: stage 50 check (cron active, probe entry fires) - not yet measured}
+    services:
+      nginx: {installed: true, bind: LAN}
+      openclaw_gateway: {installed: true, bind: 127.0.0.1:18789}
+      gridstack_workspace: {installed: true}
+      wekan: {installed: true, how: native snap, status: core}
+      silverbullet: {installed: true, how: native}
+      kiwix: {installed: true, how: native kiwix-serve, zim_tier: small}
+      dokuwiki: {installed: optional, how: php-fpm}
+      mailpit: {installed: optional, cap: 512M}
+      ollama: {installed: true, bind: 127.0.0.1:11434}
+      swap: {installed: true, how: zram}
+      tailscale: {installed: optional, use: remote access via Serve}
+      mcp: remote connectors plus at most 1 local stdio server
+    docker: false
+    open_webui: false
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: [llama3.2:1b, DokuWiki by default]
+    measured: false
+
+  - level: 2
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-2'
+    ui: GridStack workspace with Claw Chat, Notes, Tasks, Planet, Wiki, Controls tiles
+    chat_frontend: openclaw-control-ui
+    stage3_variant: '3-ram1'
+    stage3_options: ['3-ram1']
+    consultation: {runner: local llama, model: llama3.2:1b, fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3.2:1b
+      qwen: qwen2.5-coder:1.5b   # tentative
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 1, OLLAMA_NUM_PARALLEL: 1, OLLAMA_KEEP_ALIVE: 5m}
+      num_ctx: 4096
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}   # until a hosted Llama id is set, OpenClaw falls back to Muse Spark (meta/muse-spark-1.3) with the same customer key
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services:
+      nginx: {installed: true, bind: LAN}
+      openclaw_gateway: {installed: true}
+      gridstack_workspace: {installed: true}
+      wekan: {installed: true, how: native snap, status: core}
+      silverbullet: {installed: true, how: native}
+      kiwix: {installed: true, how: native, zim_tier: small or medium by free disk}
+      dokuwiki: {installed: true, how: php-fpm}
+      mailpit: {installed: optional}
+      ollama: {installed: true}
+      tailscale: {installed: optional, use: remote access via Serve}
+      mcp: remote connectors plus at most 3 local stdio servers
+    docker: false
+    open_webui: false
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: [Open WebUI (slim), Docker, the stage3.free_ram toggle]
+    measured: false
+
+  - level: 3
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-3'
+    ui: GridStack workspace; Claw Chat and Open WebUI tiles side by side
+    chat_frontend: both
+    stage3_variant: '3-ram2'
+    stage3_options: ['3-ram2', '3-ram1']
+    consultation: {runner: local llama, model: llama3.2:1b, fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3.2:1b
+      qwen: qwen2.5-coder:1.5b   # tentative
+      embedding: nomic-embed-text (tentative, for Open WebUI RAG via Ollama)
+      num_ctx: 8192
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services:
+      nginx: {installed: true, bind: LAN}
+      openclaw_gateway: {installed: true}
+      gridstack_workspace: {installed: true}
+      wekan: {installed: true, status: core}
+      silverbullet: {installed: true}
+      kiwix: {installed: true, zim_tier: medium}
+      dokuwiki: {installed: true}
+      mailpit: {installed: optional}
+      ollama: {installed: true}
+      tailscale: {installed: optional, use: remote access via Serve}
+      mcp: remote connectors plus at most 5 local stdio servers
+    docker: true
+    open_webui: {installed: true, image: slim, method: Docker, bind: 127.0.0.1, can_be_turned_off: stage3.free_ram}
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: [llama3.2:3b, qwen2.5-coder:7b, full Open WebUI image (slim only)]
+    measured: false
+
+  - level: 4
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-4'
+    ui: GridStack workspace; Claw Chat and Open WebUI tiles side by side
+    chat_frontend: both
+    stage3_variant: '3-ram2'
+    stage3_options: ['3-ram2', '3', '3-ram1']
+    consultation: {runner: local llama, model: llama3.2:3b, fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3.2:3b
+      qwen: qwen2.5-coder:7b   # tentative
+      embedding: nomic-embed-text (tentative)
+      gpu: CUDA lane when an NVIDIA GPU is detected, else CPU
+      num_ctx: 8192
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services:
+      nginx: {installed: true, bind: LAN}
+      openclaw_gateway: {installed: true}
+      gridstack_workspace: {installed: true}
+      wekan: {installed: true, status: core}
+      silverbullet: {installed: true}
+      kiwix: {installed: true, zim_tier: medium}
+      dokuwiki: {installed: true}
+      mailpit: {installed: optional}
+      openwebui_tool_bridge: {installed: optional}
+      ollama: {installed: true}
+      tailscale: {installed: optional, use: remote access via Serve}
+    docker: true
+    open_webui: {installed: true, image: full, method: Docker, mem_limit: 1.5g (tentative), can_be_turned_off: stage3.free_ram}
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: [Mailpit by default, Open WebUI tool bridge by default]
+    measured: false
+
+  - level: 5
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-5'
+    ui: GridStack workspace; Claw Chat and Open WebUI tiles side by side
+    chat_frontend: both
+    stage3_variant: '3-ram2'
+    stage3_options: ['3-ram2', '3', '3-ram1']
+    consultation: {runner: local llama, model: llama3.2:3b, fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3.2:3b
+      qwen: qwen2.5-coder:7b   # tentative
+      embedding: nomic-embed-text (tentative)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 2, OLLAMA_NUM_PARALLEL: 2}
+      num_ctx: 8192
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services:
+      nginx: {installed: true, bind: LAN}
+      openclaw_gateway: {installed: true}
+      gridstack_workspace: {installed: true}
+      wekan: {installed: true, status: core}
+      silverbullet: {installed: true}
+      kiwix: {installed: true, zim_tier: medium or full by free disk}
+      dokuwiki: {installed: true}
+      mailpit: {installed: true, cap: 512M}
+      openwebui_tool_bridge: {installed: true}
+      ollama: {installed: true}
+      tailscale: {installed: optional, use: remote access via Serve}
+    docker: true
+    open_webui: {installed: true, image: full, method: Docker, can_be_turned_off: stage3.free_ram}
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: [llama3:8b, standard stage 3 as the default]
+    measured: false
+
+  - level: 6
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-6'
+    ui: GridStack workspace; Open WebUI main chat plus Claw Chat tile
+    chat_frontend: both
+    stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3:8b
+      qwen: qwen2.5-coder:7b   # tentative
+      embedding: nomic-embed-text (tentative)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 2, OLLAMA_NUM_PARALLEL: 2}
+      num_ctx: 8192
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services:
+      nginx: {installed: true, bind: LAN}
+      openclaw_gateway: {installed: true}
+      gridstack_workspace: {installed: true}
+      wekan: {installed: true, status: core}
+      silverbullet: {installed: true}
+      kiwix: {installed: true, zim_tier: by free disk, up to full}
+      dokuwiki: {installed: true}
+      mailpit: {installed: true}
+      openwebui_tool_bridge: {installed: true}
+      ollama: {installed: true}
+      tailscale: {installed: optional, use: remote access via Serve}
+    docker: true
+    open_webui: {installed: true, image: full, method: Docker}
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: [Nextcloud, GPU-first model placement]
+    measured: false
+
+  - level: 7
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-7'
+    ui: GridStack workspace; Open WebUI main chat plus Claw Chat and Files tiles
+    chat_frontend: both
+    stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3:8b
+      qwen: qwen2.5-coder:7b   # tentative
+      embedding: nomic-embed-text (tentative)
+      gpu: CUDA lane when an NVIDIA GPU is detected
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 3, OLLAMA_NUM_PARALLEL: 4}
+      num_ctx: 8192
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services:
+      nginx: {installed: true, bind: LAN}
+      openclaw_gateway: {installed: true}
+      gridstack_workspace: {installed: true}
+      wekan: {installed: true, status: core}
+      nextcloud: {installed: true, how: native snap}
+      silverbullet: {installed: true}
+      kiwix: {installed: true, zim_tier: full}
+      dokuwiki: {installed: true}
+      mailpit: {installed: true}
+      openwebui_tool_bridge: {installed: true, tools: [wekan, planet, notes, nextcloud, mail]}
+      ollama: {installed: true}
+      tailscale: {installed: optional, use: remote access via Serve}
+    docker: true
+    open_webui: {installed: true, image: full, method: Docker}
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: [multi-GPU scheduling]
+    measured: false
+
+  - level: 8
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-8'
+    ui: GridStack workspace; Open WebUI main chat plus Claw Chat and Files tiles
+    chat_frontend: both
+    stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3:8b
+      qwen: qwen2.5-coder:7b   # tentative
+      embedding: nomic-embed-text (tentative)
+      gpu: CUDA, multi-GPU (OLLAMA_SCHED_SPREAD=1, tentative)
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 4, OLLAMA_NUM_PARALLEL: 8}
+      num_ctx: 8192
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services: {same_as_level: 7, multi_gpu: true}
+    docker: true
+    open_webui: {installed: true, image: full, method: Docker, multi_user: true}
+    notes: {remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: ['local models larger than 8B (TBD; the scale caps at llama3:8b)']
+    measured: false
+
+  - level: 9
+    hardware_profile_ref: 'config/hardware_scale.yaml#level-9'
+    ui: GridStack workspace; Open WebUI main chat plus Claw Chat and Files tiles
+    chat_frontend: both
+    stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
+    consultation: {runner: local llama, model: 'llama3:8b', fallback: jet-llama}
+    local_models:
+      canary: null
+      llama: llama3:8b
+      qwen: qwen2.5-coder:7b   # tentative
+      larger_optional: TBD (owner to pick a tag above 8B)
+      embedding: nomic-embed-text (tentative)
+      gpu: CUDA, multi-GPU
+      ollama_env: {OLLAMA_MAX_LOADED_MODELS: 4, OLLAMA_NUM_PARALLEL: 8}
+      num_ctx: 8192
+    cloud_option: {primary: jet-llama, provider: meta, endpoint: TBD, model_id: TBD}
+    scheduler: {engine: cron, verified_by: stage 50 check - not yet measured}
+    services: {same_as_level: 8}
+    docker: true
+    open_webui: {installed: true, image: full, method: Docker, multi_user: true}
+    notes: {summary: Top of the scale., remote: LAN-only by default; Tailscale gives remote users the same interfaces., status: unmeasured}
+    dropped: []
+    measured: false
