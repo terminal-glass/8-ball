@@ -13,8 +13,9 @@
 # (optional key from the shared README schema). `stage3_variant` is the
 # installer stage 3 variant: '3' standard Open WebUI, '3-ram1' OpenClaw chat
 # only (no Open WebUI), '3-ram2' both side by side on one shared database
-# with a user setting to turn Open WebUI off. The level-to-variant mapping
-# is tentative.
+# with a user setting to turn Open WebUI off. `stage3_options` lists the
+# variants the installer offers at that level (first = default). See the
+# stage3_variants block. The level-to-variant mapping is tentative.
 #
 # Windows rules that apply to every level:
 # - Open WebUI is the Windows chat frontend at every level (owner direction:
@@ -52,12 +53,70 @@ defaults:
   bind: 127.0.0.1
   jets_credential_path: '%USERPROFILE%\.config\8-ball\meta-api-key'
   firewall_rule: block inbound TCP 11434 on the public profile
+stage3_variants:
+  # Installer stage 3 variants on Windows. Stage numbers are never renumbered;
+  # the Windows scripts are PowerShell equivalents of the Linux 3*.sh scripts.
+  answered: >-
+    Jonathan (2026-11-13): Windows keeps Open WebUI as the default, and a
+    low-RAM 3-ram1 option must exist. stage3_variant is the default per
+    level; stage3_options is what the installer offers.
+  '3':
+    linux_script: 3.sh
+    windows_script: 3.ps1
+    does: >-
+      Installs Open WebUI natively for the logged-in user (uv-managed Python
+      3.11 venv under %USERPROFILE%\.terminal-glass\openwebui), binds
+      127.0.0.1:8080, ENABLE_OLLAMA_API=true, and registers the per-user
+      logon task \TerminalGlass\OpenWebUI. No Docker.
+  '3-ram1':
+    linux_script: 3-ram1.sh
+    windows_script: 3-ram1.ps1
+    does: >-
+      Low-RAM option. Skips Open WebUI entirely; the GridStack Chat tile
+      points at the OpenClaw Control UI (Claw Chat) instead. Requires stage
+      11 OpenClaw.
+    caveat: >-
+      Tentative. On Windows OpenClaw runs in WSL2, and the WSL2 VM has its
+      own overhead, so 3-ram1 only saves RAM once OpenClaw is installed for
+      other reasons, or if a native Windows OpenClaw (or a small .wslconfig
+      cap) is measured to cost less than native Open WebUI (~0.6 GB budget).
+      Needs measurement before it is recommended at levels 1-2.
+  '3-ram2':
+    linux_script: 3-ram2.sh
+    windows_script: 3-ram2.ps1
+    does: >-
+      Open WebUI and the OpenClaw chat side by side on one shared database,
+      with a user setting to turn Open WebUI off to free RAM.
+    shared_database:
+      path: '%USERPROFILE%\.terminal-glass\stage3\shared-chat.sqlite3'
+      status: tentative
+      acl: owner-only (equivalent of folder 700 / file 600)
+      open_issue: >-
+        OpenClaw runs inside WSL2 and would open the file through /mnt/c.
+        SQLite locking over the WSL2 Windows-drive mount is not reliable for
+        two concurrent writers, so the shared store may need to be a small
+        loopback service (or one writer with sync) instead of a raw shared
+        file. TBD before 3-ram2.ps1 is written.
+    free_ram_setting:
+      name: stage3.free_ram
+      where: 'GridStack Controls tile; stored in %USERPROFILE%\.terminal-glass\settings.json (tentative)'
+      elevation: none (per-user task and process)
+      when_on:
+        - 'Disable-ScheduledTask -TaskPath \TerminalGlass\ -TaskName OpenWebUI'
+        - stop the Open WebUI process (the uv venv server listening on 127.0.0.1:8080)
+        - GridStack Chat tile switches to Claw Chat
+        - Docker Desktop is stopped only if the user runs it themselves; the installer never installs or requires it
+        - chat history stays in the shared database
+      when_off:
+        - 'Enable-ScheduledTask and Start-ScheduledTask for \TerminalGlass\OpenWebUI'
+        - GridStack Chat tile switches back to Open WebUI
 levels:
   - level: 0
     hardware_profile_ref: 'config/hardware_scale.yaml#level-0'
     ui: none
     chat_frontend: none
     stage3_variant: '3-ram1'
+    stage3_options: ['3-ram1']
     consultation: see linux.yaml level 0 (Leonardo owns the level-0 consultation stack)
     local_models: []
     cloud_option: none
@@ -69,6 +128,7 @@ levels:
       legacy_profile_ids: []
       hardware_assumed: {ram_gb: '<4', gpu: none, vram_gb: 0}
       stage3_variant_reason: 'Level 0 is not a Windows target; nothing runs, closest match is the no-Open-WebUI variant.'
+      stage3_scripts: {'3-ram1': 3-ram1.ps1}
       summary: >-
         Stub only. Raspberry Pi class is not a Windows target. A Windows PC
         under 4 GB is unsupported; it can use the hosted jet from a browser
@@ -81,6 +141,7 @@ levels:
     ui: GridStack workspace (static, loopback) with Chat as the main tile
     chat_frontend: open-webui
     stage3_variant: '3'
+    stage3_options: ['3', '3-ram1']
     consultation:
       runner: 8-ball canary
       model: tinyllama:1.1b
@@ -121,9 +182,9 @@ levels:
     notes:
       legacy_profile_ids: []
       hardware_assumed: {ram_gb: '4-8', gpu: integrated, vram_gb: 0, cpu: '2-4 cores'}
-      stage3_variant_reason: 'Standard Open WebUI (RAG and Whisper off). Alternate 3-ram1 (OpenClaw chat only, no Open WebUI) if Jonathan allows Windows without Open WebUI at 4 GB.'
+      stage3_variant_reason: 'Default 3: Windows keeps Open WebUI (RAG and Whisper off). 3-ram1 is offered as the low-RAM choice (answered by Jonathan 2026-11-13); choosing it also installs stage 11 OpenClaw in WSL2. See the 3-ram1 caveat at the top of this file.'
+      stage3_scripts: {'3': 3.ps1, '3-ram1': 3-ram1.ps1}
       open_questions:
-        - Is native Open WebUI acceptable at 4 GB, or is level 1 Windows chat-in-browser to jets only?
         - Relax stage 2's 8K num_ctx to 4K on levels 1-3?
     dropped: [Open WebUI document RAG, Kiwix Planet Library, llama3.2:1b as default model]
     measured: false
@@ -133,6 +194,7 @@ levels:
     ui: GridStack workspace with Chat, Notes, Planet, Controls tiles
     chat_frontend: open-webui
     stage3_variant: '3'
+    stage3_options: ['3', '3-ram1']
     consultation: {runner: local llama, model: llama3.2:1b, fallback: jets}
     local_models:
       default: llama3.2:1b
@@ -168,7 +230,8 @@ levels:
     notes:
       legacy_profile_ids: [cpu-small]
       hardware_assumed: {ram_gb: '8-12', gpu: integrated, vram_gb: 0}
-      stage3_variant_reason: 'Standard Open WebUI. OpenClaw is optional at this level, so no side-by-side variant by default. Alternate 3-ram2 when the user opts into OpenClaw.'
+      stage3_variant_reason: 'Default 3: OpenClaw is optional at this level. 3-ram1 is offered as the low-RAM choice and turns OpenClaw on; 3-ram2 is not offered because OpenClaw is not on by default.'
+      stage3_scripts: {'3': 3.ps1, '3-ram1': 3-ram1.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
     dropped: [OpenClaw on by default, Claw Chat tile, Whisper STT]
     measured: false
@@ -178,6 +241,7 @@ levels:
     ui: GridStack workspace; Open WebUI chat plus Claw Chat tile for agent work
     chat_frontend: open-webui
     stage3_variant: '3-ram2'
+    stage3_options: ['3-ram2', '3-ram1', '3']
     consultation: {runner: local llama, model: llama3.2:1b, fallback: jets}
     local_models:
       default: llama3.2:1b
@@ -211,6 +275,7 @@ levels:
       legacy_profile_ids: []
       hardware_assumed: {ram_gb: '12-16', gpu: 'integrated or <=4 GB discrete', vram_gb: '0-4'}
       stage3_variant_reason: 'Open WebUI and the OpenClaw chat side by side on one shared database, with the user setting to turn Open WebUI off to free RAM (Windows has no Docker to turn off).'
+      stage3_scripts: {'3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1, '3': 3.ps1}
       open_questions: [WSL2 mirrored vs NAT networking for OpenClaw to reach host Ollama on loopback]
     dropped: [Hermes, PhilosopherOS dashboard and local task API, stage 21 recording, llama3.2:3b]
     measured: false
@@ -220,6 +285,7 @@ levels:
     ui: GridStack workspace plus PhilosopherOS dashboard tile
     chat_frontend: open-webui
     stage3_variant: '3-ram2'
+    stage3_options: ['3-ram2', '3-ram1', '3']
     consultation: {runner: local llama, model: llama3.2:3b, fallback: jets}
     local_models:
       default: llama3.2:3b
@@ -260,6 +326,7 @@ levels:
       legacy_profile_ids: [desktop-standard, gpu-entry]
       hardware_assumed: {ram_gb: '16-24', gpu: 'none or entry discrete', vram_gb: '0-8'}
       stage3_variant_reason: 'Same as level 3: side by side, Open WebUI can be turned off to free RAM.'
+      stage3_scripts: {'3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1, '3': 3.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
     dropped: [Mailpit, WeKan/Nextcloud helper pairing, Kiwix full tier]
     measured: false
@@ -269,6 +336,7 @@ levels:
     ui: GridStack workspace plus PhilosopherOS dashboard
     chat_frontend: open-webui
     stage3_variant: '3-ram2'
+    stage3_options: ['3-ram2', '3-ram1', '3']
     consultation: {runner: local llama, model: llama3.2:3b, fallback: jets}
     local_models:
       default: llama3.2:3b
@@ -301,6 +369,7 @@ levels:
       legacy_profile_ids: []
       hardware_assumed: {ram_gb: '24-32', gpu: 'entry or midrange discrete', vram_gb: '8-12'}
       stage3_variant_reason: 'Same as level 3: side by side, Open WebUI can be turned off to free RAM.'
+      stage3_scripts: {'3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1, '3': 3.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
     dropped: [llama3:8b default, Kiwix full tier, multi-user Open WebUI]
     measured: false
@@ -310,6 +379,7 @@ levels:
     ui: GridStack workspace plus PhilosopherOS dashboard
     chat_frontend: open-webui
     stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
     consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
     local_models:
       default: llama3:8b
@@ -341,6 +411,7 @@ levels:
       legacy_profile_ids: [gpu-midrange]
       hardware_assumed: {ram_gb: '32-64', gpu: midrange discrete, vram_gb: 16}
       stage3_variant_reason: 'Standard Open WebUI; RAM is ample so the RAM toggle is not needed. OpenClaw still runs alongside through stage 11.'
+      stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
     dropped: ['local models larger than 8B (TBD; the scale caps at llama3:8b)']
     measured: false
@@ -350,6 +421,7 @@ levels:
     ui: GridStack workspace plus PhilosopherOS dashboard
     chat_frontend: open-webui
     stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
     consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
     local_models:
       default: llama3:8b
@@ -378,6 +450,7 @@ levels:
       legacy_profile_ids: [server-high-mem, gpu-high-mem]
       hardware_assumed: {ram_gb: '64-128', gpu: high-memory discrete or none (CPU server), vram_gb: '0-24'}
       stage3_variant_reason: 'Standard Open WebUI; OpenClaw alongside through stage 11.'
+      stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: See the dropped list for what this level removes compared with the level above.
     dropped: [multi-GPU scheduling]
     measured: false
@@ -387,6 +460,7 @@ levels:
     ui: GridStack workspace plus PhilosopherOS dashboard
     chat_frontend: open-webui
     stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
     consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
     local_models:
       default: llama3:8b
@@ -415,6 +489,7 @@ levels:
       legacy_profile_ids: [multi-gpu]
       hardware_assumed: {ram_gb: '128-256', gpu: multi-GPU, vram_gb: 48}
       stage3_variant_reason: 'Standard Open WebUI; OpenClaw alongside through stage 11.'
+      stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: Level 9 differs from level 8 only in headroom (TBD).
     dropped: []
     measured: false
@@ -424,6 +499,7 @@ levels:
     ui: GridStack workspace plus PhilosopherOS dashboard
     chat_frontend: open-webui
     stage3_variant: '3'
+    stage3_options: ['3', '3-ram2', '3-ram1']
     consultation: {runner: local llama, model: 'llama3:8b', fallback: jets}
     local_models:
       default: llama3:8b
@@ -452,6 +528,7 @@ levels:
       legacy_profile_ids: []
       hardware_assumed: {ram_gb: '256+', gpu: 'top-end multi-GPU', vram_gb: '48+'}
       stage3_variant_reason: 'Standard Open WebUI; OpenClaw alongside through stage 11.'
+      stage3_scripts: {'3': 3.ps1, '3-ram2': 3-ram2.ps1, '3-ram1': 3-ram1.ps1}
       summary: Top level of the scale.
     dropped: []
     measured: false
