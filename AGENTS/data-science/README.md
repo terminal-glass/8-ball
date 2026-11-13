@@ -4,16 +4,17 @@ This directory contains the **repeatable catalog and data-science workflow**
 used when Ollama metadata, provider plans, workload assumptions, or public
 catalog exports need to be refreshed.
 
-It is **not** for Cursor agent handoff briefs. Those live directly under
-[`../`](../):
+It is **not** for Cursor agent handoff briefs. Historical briefs live under
+[`../history/`](../history/):
 
-- [`../CursorFileC1-environment-artifacts.md`](../CursorFileC1-environment-artifacts.md)
-- [`../CursorFileC2-environment-artifact-sequencing.md`](../CursorFileC2-environment-artifact-sequencing.md)
-- [`../CursorFileC3-environment-gates-testing-plan.md`](../CursorFileC3-environment-gates-testing-plan.md)
+- [`../history/CursorFileC1-environment-artifacts.md`](../history/CursorFileC1-environment-artifacts.md)
+- [`../history/CursorFileC2-environment-artifact-sequencing.md`](../history/CursorFileC2-environment-artifact-sequencing.md)
+- [`../history/CursorFileC3-environment-gates-testing-plan.md`](../history/CursorFileC3-environment-gates-testing-plan.md)
 
 The runtime profile contract is documented under
-[`../../profiles/`](../../profiles/README.md). Canonical generated model pages
-live under `data/generated/pages/` (see `docs/install-manifest-contract.md`).
+[`profiles/`](../../profiles/README.md). Canonical generated model pages
+live under [data/generated/pages/](../../data/generated/pages/) (see the
+[install-manifest contract](../../docs/install-manifest-contract.md)).
 
 ## Layout
 
@@ -37,6 +38,9 @@ live under `data/generated/pages/` (see `docs/install-manifest-contract.md`).
 
 ## Profile mapping (`profile-mapping/`)
 
+Start with the public [hardware guide](../../hardware/README.md) for readable
+profiles and provenance, or the [canonical matrix](../../profiles/index.csv).
+
 TG-8Ball CSV/XLSX hardware assumption files and C10 profile-generation reports
 live under `profile-mapping/`.
 
@@ -53,4 +57,4 @@ live under `profile-mapping/`.
 ## Related governance
 
 - [`../cursorFileA0.md`](../cursorFileA0.md) — repository constitution
-- [`../../AGENTS.md`](../../AGENTS.md) — agent rules and prohibited actions
+- [`AGENTS.md`](../../AGENTS.md) — agent rules and prohibited actions
