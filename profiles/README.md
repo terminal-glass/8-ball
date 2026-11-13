@@ -3,6 +3,8 @@
 This directory is the **data-only**, runtime-facing profile matrix for later
 `8.1` / `8.2` / `8.3` resolver work. It does not contain installer scripts.
 
+Browse [hardware profiles](../hardware/README.md) for readable capacity and evidence tables.
+
 ## Canonical artifacts
 
 | Path | Role |
