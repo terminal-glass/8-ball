@@ -2,6 +2,8 @@
 
 😎 Private AI with no more guesswork 😎
 
+> **Looking for the agentic, mail-between-bots build for emergency help? That's [9-ball](https://github.com/terminal-glass/9-ball).** 8-ball is the non-agentic model and hardware catalog.
+
 <p align="center">
   <img src="assets/8ball-ollama-pool.jpg"
        alt="8-BALL for Ollama — private AI without the hardware and model guesswork"
