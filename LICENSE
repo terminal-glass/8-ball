@@ -1,0 +1,16 @@
+LICENSE NOT CHOSEN
+
+This file is a placeholder. It is not a license and it does not grant any
+rights to use, copy, modify, or distribute this repository.
+
+Jonathan must choose the license before contributors or downstream
+installers treat this project as reusable open-source work.
+
+Do not assume MIT, Apache-2.0, GPL, BSD, or any other license until that
+choice replaces this placeholder.
+
+Until a license is chosen:
+
+- this repository does not grant a copyright license;
+- downstream packaging must not present these files as licensed; and
+- contribution instructions describe the technical process only.

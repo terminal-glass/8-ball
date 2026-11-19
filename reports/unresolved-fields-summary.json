@@ -1,0 +1,15 @@
+{
+  "schema": "terminal-glass.8-ball.unresolved-fields/1",
+  "catalog_version": "2026.08.01",
+  "size_unit_policy": "decimal",
+  "si_note": "Published sizes use decimal SI units (1 KB = 1000 bytes). download_size_bytes is disk size, not RAM or VRAM.",
+  "total_unresolved_fields": 8929,
+  "counts": {
+    "tag.architecture": 7271,
+    "tag.context_window_tokens": 40,
+    "tag.download_size_bytes": 15,
+    "tag.download_size_text": 15,
+    "tag.parameter_count": 578,
+    "tag.quantization": 1010
+  }
+}

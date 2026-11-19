@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/unresolved-field-report.schema.json",
+  "title": "UnresolvedFieldReport",
+  "type": "object",
+  "required": ["schema", "catalog_version", "size_unit_policy", "total_unresolved_fields", "counts"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "terminal-glass.8-ball.unresolved-fields/1"
+    },
+    "catalog_version": { "type": "string", "minLength": 1 },
+    "size_unit_policy": { "type": "string", "const": "decimal" },
+    "si_note": { "type": "string" },
+    "total_unresolved_fields": { "type": "integer", "minimum": 0 },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    }
+  },
+  "additionalProperties": false
+}

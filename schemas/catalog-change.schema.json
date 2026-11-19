@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://terminal.glass/schemas/catalog-change.schema.json",
+  "title": "CatalogChangeHistory",
+  "type": "object",
+  "required": ["schema", "changes"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "terminal-glass.8-ball.catalog-change/1"
+    },
+    "changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["catalog_version", "changed_at", "action", "source_note", "counts", "removed", "added"],
+        "properties": {
+          "catalog_version": { "type": "string", "minLength": 1 },
+          "changed_at": { "type": "string", "minLength": 1 },
+          "action": { "type": "string", "enum": ["established", "promoted", "corrected"] },
+          "source_note": { "type": "string", "minLength": 1 },
+          "counts": {
+            "type": "object",
+            "required": ["families", "models", "tags"],
+            "properties": {
+              "families": { "type": "integer", "minimum": 0 },
+              "models": { "type": "integer", "minimum": 0 },
+              "tags": { "type": "integer", "minimum": 0 }
+            },
+            "additionalProperties": false
+          },
+          "removed": { "type": "array", "items": { "type": "string" } },
+          "added": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -509,6 +509,18 @@ def promote_candidate_catalog(
 
     result["applied"] = True
     result["dry_run"] = False
+    from eight_ball.history.changes import record_promotion
+
+    change = record_promotion(
+        history_dir=history_dir,
+        archive_path=archive_path,
+        new_dir=target_dir,
+    )
+    result["notes"].append(
+        "Recorded catalog change "
+        f"{change['catalog_version']}: removed {len(change['removed'])}, "
+        f"added {len(change['added'])}."
+    )
     result["notes"].append(f"Archived previous canonical catalog to {archive_path}")
     result["notes"].append(f"Promoted candidate catalog to {target_dir}")
     result["notes"].append("Legacy data/families remains untouched.")

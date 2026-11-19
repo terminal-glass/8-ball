@@ -411,8 +411,80 @@ def _validate_indexes(
     if sorted(cloud_index) != expected_cloud:
         errors.append("index cloud-tags inconsistent with normalized tag availability")
 
+    errors.extend(_validate_optional_indexes(indexes_dir, tags))
+
     summary["families_indexed"] = len(by_family)
     summary["models_indexed"] = len(by_model)
     summary["local_tags"] = len(local_index)
     summary["cloud_tags"] = len(cloud_index)
     return errors, summary
+
+
+def _validate_optional_indexes(indexes_dir: Path, tags: list[dict[str, Any]]) -> list[str]:
+    """Check extended indexes when a generator wrote them.
+
+    Older fixtures that only have the original four index files stay valid.
+    """
+    errors: list[str] = []
+    ollama_ids = {tag["ollama_identifier"] for tag in tags}
+
+    local_download_path = indexes_dir / "local-download-tags.json"
+    if local_download_path.exists():
+        local_download = load_json(local_download_path)
+        expected = sorted(
+            tag["ollama_identifier"]
+            for tag in tags
+            if tag.get("availability") in {"local", "both"}
+        )
+        if sorted(local_download) != expected:
+            errors.append("index local-download-tags inconsistent with local availability")
+        for tag_id in local_download:
+            if tag_id not in ollama_ids:
+                errors.append(f"index local-download-tags references unknown tag {tag_id}")
+        cloud_only_ids = {
+            tag["ollama_identifier"] for tag in tags if tag.get("availability") == "cloud_only"
+        }
+        overlap = cloud_only_ids.intersection(local_download)
+        if overlap:
+            errors.append(
+                "index local-download-tags includes cloud-only tags: " + ", ".join(sorted(overlap))
+            )
+
+    cloud_only_path = indexes_dir / "cloud-only-tags.json"
+    if cloud_only_path.exists():
+        cloud_only = load_json(cloud_only_path)
+        expected_cloud_only = sorted(
+            tag["ollama_identifier"] for tag in tags if tag.get("availability") == "cloud_only"
+        )
+        if sorted(cloud_only) != expected_cloud_only:
+            errors.append("index cloud-only-tags inconsistent with cloud_only availability")
+
+    capability_path = indexes_dir / "by-capability.json"
+    if capability_path.exists():
+        by_capability = load_json(capability_path)
+        expected_caps: dict[str, list[str]] = {}
+        for tag in tags:
+            for capability_id, value in (tag.get("capabilities") or {}).items():
+                if value == "true":
+                    expected_caps.setdefault(capability_id, []).append(tag["ollama_identifier"])
+        expected_caps = {key: sorted(value) for key, value in expected_caps.items()}
+        if by_capability != expected_caps:
+            errors.append("index by-capability inconsistent with tag capabilities")
+
+    size_path = indexes_dir / "download-size-bytes.json"
+    if size_path.exists():
+        recorded = load_json(size_path)
+        expected_sizes = sorted(
+            (
+                {
+                    "ollama_identifier": tag["ollama_identifier"],
+                    "download_size_bytes": tag["download_size_bytes"],
+                }
+                for tag in tags
+                if tag.get("download_size_bytes") is not None
+            ),
+            key=lambda row: (row["download_size_bytes"], row["ollama_identifier"]),
+        )
+        if recorded != expected_sizes:
+            errors.append("index download-size-bytes inconsistent with tag download_size_bytes")
+    return errors
